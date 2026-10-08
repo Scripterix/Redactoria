@@ -1,5 +1,5 @@
 {
-  "name": "asto",
+  "name": "redactoria",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -9,9 +9,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "astro check",
+    "inventory": "node --experimental-strip-types scripts/legacy/scan.ts",
+    "cartographer": "node --experimental-strip-types scripts/cartographer.ts"
   },
   "dependencies": {
     "astro": "^7.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^22.20.5",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
   }
 }

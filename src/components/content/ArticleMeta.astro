@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+const dateFormatter = new Intl.DateTimeFormat('pl-PL', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
+---
+
+<dl class="meta">
+	<div>
+		<dt>Opublikowano</dt>
+		<dd><time datetime={article.data.created.toISOString()}>{dateFormatter.format(article.data.created)}</time></dd>
+	</div>
+	<div>
+		<dt>Autor</dt>
+		<dd>{article.data.author.name}</dd>
+	</div>
+	<div>
+		<dt>Temat</dt>
+		<dd><a href={`/tematy/${article.data.topic.id}/`}>{article.data.topic.id.replaceAll('-', ' ')}</a></dd>
+	</div>
+</dl>
+
+<style>
+	.meta {
+		display: flex;
+		margin: 2rem 0 0;
+		flex-wrap: wrap;
+		gap: 1.25rem 2.5rem;
+	}
+
+	.meta div {
+		display: grid;
+		gap: 0.25rem;
+	}
+
+	.meta dt {
+		color: var(--color-subtle);
+		font-size: 0.64rem;
+		font-weight: 750;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.meta dd {
+		margin: 0;
+		font-family: var(--font-serif);
+	}
+
+	.meta a {
+		text-decoration-color: var(--color-accent);
+		text-underline-offset: 0.2em;
+	}
+</style>

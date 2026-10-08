@@ -1,0 +1,97 @@
+<header class="site-header">
+	<div class="container site-header__inner">
+		<a class="brand" href="/" aria-label="Redactoria EDU — strona główna">
+			<span class="brand__mark" aria-hidden="true">R</span>
+			<span class="brand__name">Redactoria</span>
+		</a>
+		<nav aria-label="Główna nawigacja">
+			<a href="/artykuly/">Artykuły</a>
+			<a href="/tematy/">Tematy</a>
+			<a href="/o-projekcie/">O projekcie</a>
+		</nav>
+		<span class="pilot"><span class="pilot__dot" aria-hidden="true"></span> EDU · Pilot</span>
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: relative;
+		z-index: 10;
+		padding-block: clamp(1.25rem, 3vw, 2.5rem);
+	}
+
+	.site-header__inner,
+	.brand,
+	.pilot {
+		display: flex;
+		align-items: center;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		gap: clamp(0.9rem, 2vw, 1.75rem);
+	}
+
+	nav a {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	nav a:hover {
+		color: var(--color-accent);
+	}
+
+	.site-header__inner {
+		justify-content: space-between;
+	}
+
+	.brand {
+		gap: 0.7rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.brand__mark {
+		display: grid;
+		width: 2rem;
+		height: 2rem;
+		place-items: center;
+		border: 1px solid rgba(39, 37, 31, 0.45);
+		border-radius: 50%;
+		font-family: var(--font-serif);
+		font-size: 0.9rem;
+		font-style: italic;
+		font-weight: 400;
+	}
+
+	.pilot {
+		gap: 0.55rem;
+		color: var(--color-muted);
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.pilot__dot {
+		width: 0.4rem;
+		height: 0.4rem;
+		border-radius: 50%;
+		background: var(--color-accent);
+		box-shadow: 0 0 0 4px var(--color-accent-soft);
+	}
+
+	@media (max-width: 35rem) {
+		.brand__name,
+		.pilot {
+			display: none;
+		}
+	}
+</style>

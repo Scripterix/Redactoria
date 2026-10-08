@@ -1,0 +1,18 @@
+:root {
+	--color-canvas: #f5f2ea;
+	--color-surface: #fcfaf4;
+	--color-ink: #27251f;
+	--color-muted: #676259;
+	--color-subtle: #817a6d;
+	--color-line: rgba(39, 37, 31, 0.15);
+	--color-accent: #b85f3c;
+	--color-accent-soft: rgba(184, 95, 60, 0.12);
+	--color-secondary-soft: rgba(111, 139, 119, 0.18);
+	--font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--font-serif: Georgia, "Times New Roman", serif;
+	--content-width: 72rem;
+	--text-width: 46rem;
+	--page-gutter: clamp(1.25rem, 5vw, 5rem);
+	--radius-small: 0.5rem;
+	--radius-medium: 1rem;
+}

@@ -1,11 +1,202 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout
+	title="Redactoria EDU"
+	description="Redactoria EDU — uporządkowana wiedza o programowaniu, web developmencie i AI."
+>
+	<div class="landing">
+		<div class="glow glow--top" aria-hidden="true"></div>
+		<div class="glow glow--bottom" aria-hidden="true"></div>
+
+		<section class="hero">
+			<p class="eyebrow">Wiedza, która rozwija się razem z technologią</p>
+			<h1>Witamy w<br /><em>Redactoria</em></h1>
+			<p class="intro">
+				Budujemy czytelną bazę wiedzy o programowaniu, web developmencie<br class="desktop" />
+				i sztucznej inteligencji.
+			</p>
+			<div class="actions">
+				<a class="actions__primary" href="/artykuly/">Zobacz artykuły</a>
+				<a href="/o-projekcie/">Poznaj projekt</a>
+			</div>
+			<div class="line" aria-hidden="true"><span></span></div>
+		</section>
+	</div>
+</BaseLayout>
+
+<style>
+	.landing {
+		position: relative;
+		display: flex;
+		min-height: calc(100svh - 10rem);
+		align-items: center;
+		overflow: hidden;
+		isolation: isolate;
+	}
+
+	.landing::before {
+		position: absolute;
+		inset: 0;
+		z-index: -2;
+		background-image: radial-gradient(rgba(39, 37, 31, 0.12) 0.6px, transparent 0.6px);
+		background-size: 5px 5px;
+		content: '';
+		opacity: 0.18;
+	}
+
+	.glow {
+		position: absolute;
+		z-index: -1;
+		width: 42rem;
+		height: 42rem;
+		border-radius: 50%;
+		filter: blur(2px);
+		pointer-events: none;
+	}
+
+	.glow--top {
+		top: -28rem;
+		right: -10rem;
+		background: radial-gradient(circle, rgba(202, 116, 80, 0.2), transparent 68%);
+	}
+
+	.glow--bottom {
+		bottom: -30rem;
+		left: -8rem;
+		background: radial-gradient(circle, rgba(111, 139, 119, 0.18), transparent 68%);
+	}
+
+	.hero {
+		width: min(100% - (2 * var(--page-gutter)), var(--content-width));
+		margin-inline: auto;
+		padding-block: clamp(5rem, 12vh, 9rem);
+		text-align: center;
+	}
+
+	.eyebrow {
+		margin: 0 0 1.75rem;
+		color: var(--color-subtle);
+		font-size: clamp(0.65rem, 1vw, 0.76rem);
+		font-weight: 700;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(4rem, 10vw, 9rem);
+		font-weight: 400;
+		letter-spacing: -0.065em;
+		line-height: 0.82;
+	}
+
+	h1 em {
+		color: var(--color-accent);
+		font-weight: 400;
+	}
+
+	.intro {
+		margin: clamp(2rem, 4vw, 3.25rem) auto 0;
+		color: var(--color-muted);
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 1.7vw, 1.3rem);
+		line-height: 1.65;
+	}
+
+	.actions {
+		display: flex;
+		margin-top: 2rem;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+	}
+
+	.actions a {
+		padding: 0.75rem 1rem;
+		border-radius: 999px;
+		font-size: 0.72rem;
+		font-weight: 750;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.actions a:hover {
+		color: var(--color-accent);
+	}
+
+	.actions .actions__primary {
+		background: var(--color-ink);
+		color: var(--color-canvas);
+	}
+
+	.actions .actions__primary:hover {
+		background: var(--color-accent);
+		color: #fff;
+	}
+
+	.line {
+		width: min(12rem, 38vw);
+		height: 1px;
+		margin: clamp(2.25rem, 5vw, 4rem) auto 0;
+		background: var(--color-line);
+	}
+
+	.line span {
+		display: block;
+		width: 35%;
+		height: 100%;
+		margin: auto;
+		background: var(--color-accent);
+	}
+
+	@media (max-width: 600px) {
+		.desktop {
+			display: none;
+		}
+
+		.hero {
+			padding-block: 4rem;
+		}
+
+		h1 {
+			font-size: clamp(3.7rem, 19vw, 6rem);
+			line-height: 0.88;
+		}
+
+		.intro {
+			max-width: 20rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.eyebrow,
+		h1,
+		.intro,
+		.actions,
+		.line {
+			opacity: 0;
+			animation: reveal 0.8s ease forwards;
+		}
+
+		h1 { animation-delay: 0.08s; }
+		.intro { animation-delay: 0.18s; }
+		.actions { animation-delay: 0.26s; }
+		.line { animation-delay: 0.34s; }
+	}
+
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

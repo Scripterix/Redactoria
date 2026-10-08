@@ -1,0 +1,1344 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "Codex session (model identifier not exposed)",
+    "description": "Focused MERGE analysis authored in this session from exactly two full selected PHP array articles and their metadata; no external model API or PHP research/code execution."
+  },
+  "focused-merge": {
+    "requestHash": "6e6d1d410a37dfd42e1981073bd0f212552450eb83296c54694d82fc098ba1c4",
+    "response": {
+      "task": "MERGE",
+      "artifactName": "php-arrays-merge",
+      "recommended": true,
+      "confidence": 0.96,
+      "reason": "Część I dostarcza model tablicy, klucze, typy, dostęp, mutacje i iterację; część II rozwija sortowanie, łączenie oraz mapowanie/filtrowanie/redukcję. To komplementarne etapy jednej lekcji, nie dwa identyczne artykuły. Połączenie jest rekomendowane jako plan redakcyjny pod warunkiem uporządkowania przykładów i zamknięcia wskazanych potrzeb researchu; nie jest zgodą na publikację.",
+      "evidence": [
+        {
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "field": "body",
+          "value": "Tablice w PHP - Część 1 - Podstawy i struktura danych"
+        },
+        {
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "field": "body",
+          "value": "PHP Tablice – Część II Operacje Zaawansowane"
+        }
+      ],
+      "sharedTopics": [
+        {
+          "id": "shared-array-model",
+          "interpretation": "Oba teksty opierają operacje na tablicach jako zbiorach wartości powiązanych z kluczami. Model z części I jest podstawą funkcji przedstawionych w II.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Tablica w PHP to uporządkowana mapa"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "kluczy tablicy asocjacyjnej"
+            }
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "shared-creation-examples",
+          "interpretation": "W obu częściach przykłady zaczynają się od utworzenia małej tablicy danych (m.in. owoców). W nowym materiale można używać jednej spójnej rodziny przykładów, zamiast osobnych restartów.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$fruits = array(\"jabłko\", \"banan\", \"pomarańcza\");"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$owoce = array(\"banan\", \"jablko\", \"pomarancza\");"
+            }
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "shared-operations-practice",
+          "interpretation": "Wspólny cel to praktyczna manipulacja danymi: część I dodaje/usuwa elementy, II sortuje i przekształca. To kolejne poziomy umiejętności, a nie duplikacja tych samych operacji.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Podstawowe operacje na tablicach"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sortowanie, filtrowanie, mapowanie i łączenie"
+            }
+          ],
+          "confidence": 0.98
+        }
+      ],
+      "uniqueToFirst": [
+        {
+          "id": "first-indexed-associative",
+          "interpretation": "Szczegółowe wprowadzenie do tablic indeksowanych i asocjacyjnych, odczytu, przypisania i zmiany wartości.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Tablice indeksowane kontra tablice asocjacyjne"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$person[\"age\"] = 31;"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "first-presence-null-types",
+          "interpretation": "Sprawdzanie klucza/wartości, isset()/empty(), wartości domyślne oraz różne typy danych, w tym null i obiekt.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_key_exists(\"user\", $data)"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "\"null_value\" => null"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "new stdClass()"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "first-nested-data",
+          "interpretation": "Tablice wielowymiarowe, zagnieżdżone dane użytkowników i dostęp do elementów macierzy.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Tablice wielowymiarowe"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo $matrix[1][2];"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "first-mutations-iteration",
+          "interpretation": "Dodawanie/usuwanie (push/unshift/splice/pop/shift/unset) i foreach z kluczami lub samymi wartościami.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_push($fruits"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "unset($numbers[1]);"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "foreach ($data as $key => $value)"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "first-practical-data",
+          "interpretation": "Przykłady konfiguracji, jawnie zbudowanej mapy danych formularza i zagnieżdżonego menu nawigacyjnego.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "### 1. Przechowywanie konfiguracji"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$form_data = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "### 3. Tworzenie menu nawigacyjnego"
+            }
+          ],
+          "confidence": 0.99
+        }
+      ],
+      "uniqueToSecond": [
+        {
+          "id": "second-extraction",
+          "interpretation": "extract() jako konwersja kluczy tablicy na zmienne, wraz z ostrzeżeniem o nadpisywaniu i przykładem $_POST.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "Funkcja extract()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "może nadpisać istniejące zmienne"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "second-sort-merge",
+          "interpretation": "Przykłady sort(), rsort() i array_merge(), których część I nie realizuje w kodzie.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "rsort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "array_merge($owoce, $warzywa)"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "second-functional-operations",
+          "interpretation": "Przykłady array_map(), array_filter(), array_reduce() i array_count_values(); część I jedynie zapowiada dalsze funkcje.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_map()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_filter()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_reduce()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_count_values()"
+            }
+          ],
+          "confidence": 0.99
+        }
+      ],
+      "duplicates": [
+        {
+          "id": "duplicate-sentence-first",
+          "interpretation": "W części I dosłownie powtórzono zdanie wprowadzające sprawdzanie zawartości tablicy. Zostawić jedno, potem przejść do różnic między funkcjami.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "PHP oferuje kilka sposobów na sprawdzanie zawartości tablicy. PHP oferuje kilka sposobów"
+            }
+          ],
+          "confidence": 1
+        },
+        {
+          "id": "duplicate-introductions",
+          "interpretation": "Część I kilkakrotnie tłumaczy przechowywanie wielu wartości; część II znów wprowadza zestaw operacji. Skrócić rozwlekłe wstępy do jednego modelu i krótkich przejść między sekcjami.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "W tablicy w PHP możemy przechowywać wiele wartości jednocześnie"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Tablice PHP mogą przechowywać wartości różnych typów"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "PHP oferuje zestaw funkcji do modyfikacji tablic"
+            }
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "duplicate-wrapping",
+          "interpretation": "Dwa podsumowania i dwa bloki pytań są oprawą dwóch publikacji. Po scaleniu potrzebne są jedno podsumowanie i wspólne FAQ, z zachowaniem różnych pytań merytorycznych.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## QA Tablice"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Podsumowanie"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### 14. Podsumowanie"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### 15. AI Search Ready Qestion & Answers"
+            }
+          ],
+          "confidence": 0.99
+        }
+      ],
+      "conflicts": [
+        {
+          "id": "conflict-post-reference",
+          "interpretation": "Koniec części II nazywa poprzednią część Post #60, podczas gdy title wskazanego pierwszego źródła to Post #61. To pewna niespójność numeracji/odsyłacza, nie spór o semantykę PHP.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "W poprzedniej części I Post #60"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "title",
+              "value": "Post #61 Tablice w PHP - Część 1"
+            }
+          ],
+          "confidence": 1
+        },
+        {
+          "id": "conflict-code-under-heading",
+          "interpretation": "W części II nagłówek array_count_values() i jego opis pojawiają się przed kodem $suma = array_reduce(...). Przykład sumowania trzeba przypisać do redukcji, a liczenie owoców do count_values.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "#### Przykład – suma liczb\n\n### array_count_values()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$suma = array_reduce($liczby"
+            }
+          ],
+          "confidence": 1
+        },
+        {
+          "id": "conflict-form-patterns",
+          "interpretation": "Przykład formularza w I jawnie odczytuje klucze i pokazuje walidację, a II pokazuje extract($_POST) z ostrzeżeniem. To różne podejścia, nie formalnie sprzeczne definicje; nowa lekcja musi jasno rozdzielić domyślny wzorzec i przykład ryzyka.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$_POST[\"email\"] ?? \"\""
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "FILTER_VALIDATE_EMAIL"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "Zawsze filtruj dane wejściowe"
+            }
+          ],
+          "confidence": 0.96
+        }
+      ],
+      "logicalOrder": [
+        {
+          "id": "order-before-functions",
+          "interpretation": "Zachować kierunek podstawy → bardziej złożone operacje. Klucze, odczyt, mutacje i foreach powinny poprzedzać map/filter/reduce.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Czym są tablice w PHP?"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "foreach ($data as $key => $value)"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### 13. Funkcje tablicowe i mapowanie"
+            }
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "order-extract-later",
+          "interpretation": "Obecną pierwszą sekcję II o extract() przenieść do ramki zaawansowanej/bezpieczeństwa po funkcjach tablicowych. Jest operacją na zakresie zmiennych, a nie koniecznym krokiem do sortowania tablic.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "## 11. Konwertowanie między tablicami a zmiennymi"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### 12. Działania na tablicach"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "może nadpisać istniejące zmienne w zakresie"
+            }
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "order-normalize-examples",
+          "interpretation": "Przed aplikacyjnymi przykładami zebrać funkcje i ich wyniki w poprawnych sekcjach. Ujednolicić ciąg przykładów z nazwami zmiennych, bez zmiany danych źródłowych w tym przebiegu.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Praktyczne przykłady zastosowań"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "#### Przykład – suma liczb\n\n### array_count_values()"
+            }
+          ],
+          "confidence": 0.97
+        }
+      ],
+      "outdatedOrUncertain": [
+        {
+          "id": "uncertain-notice-version",
+          "interpretation": "Opis nieistniejącego klucza jako Notice: Undefined index i komentarz o Notice wymagają sprawdzenia dla wybranej wersji PHP. Nie potwierdzamy aktualnej treści komunikatu ani poziomu diagnostyki w tym przebiegu.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Notice: Undefined index"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "// BŁĄD - może generować Notice"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "uncertain-null-presence",
+          "interpretation": "Wyjaśnienia array_key_exists(), isset() i empty() są ogólne, a źródło zawiera null. Doprecyzować różnice przy null, false, zerze i pustej wartości, po sprawdzeniu oficjalnej semantyki.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "\"null_value\" => null"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_key_exists(), isset() oraz empty()"
+            }
+          ],
+          "confidence": 0.94
+        },
+        {
+          "id": "uncertain-keys",
+          "interpretation": "Zdanie o automatycznym początku indeksów od 0 wymaga doprecyzowania kontekstu; przykłady pokazują ręczny indeks 10, unset i wynik filtrowania z kluczami 1 oraz 3. Zbadać zachowanie kluczy dla użytych operacji, nie utożsamiać indeksu z pozycją.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "liczbowych indeksów, które automatycznie zaczynają się od 0"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$numbers[10] = 100;"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "unset($numbers[1]);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "[1] => 2\n    [3] => 4"
+            }
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "uncertain-data-safety",
+          "interpretation": "extract($_POST) wymaga osobnego przeglądu bezpieczeństwa; menu wypisuje title/url do HTML. Przykład menu ma stałe dane, więc nie zgłaszamy potwierdzonej luki — trzeba ustalić zasady przy danych zewnętrznych.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "może nadpisać istniejące zmienne"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo \"<a href="
+            }
+          ],
+          "confidence": 0.96
+        }
+      ],
+      "keep": [
+        {
+          "id": "keep-model-types",
+          "interpretation": "Zachować zwięzłą definicję uporządkowanej mapy, porównanie kluczy liczbowych/nazwanych i małe przykłady odczytu/przypisania.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Tablica w PHP to uporządkowana mapa"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Tablice indeksowane kontra tablice asocjacyjne"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "keep-nesting-iteration",
+          "interpretation": "Zachować macierz, listę użytkowników i foreach, łącząc je w ćwiczenie odczytu zagnieżdżonych danych.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$matrix = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$users = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "foreach ($data as $key => $value)"
+            }
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "keep-advanced-functions",
+          "interpretation": "Zachować przykłady sortowania/łączenia i map/filter/reduce/count_values, po rozdzieleniu nagłówków oraz sprawdzeniu oczekiwanych wyników.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "array_merge($owoce, $warzywa)"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$suma = array_reduce($liczby"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$licznik = array_count_values($produkty);"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "keep-applications",
+          "interpretation": "Zachować kształt konfiguracji, formularza i menu jako aplikacyjne użycie tablic; nie przenosić bez review całego kodu obsługi wejścia i HTML.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$config = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$form_data = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$navigation = ["
+            }
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "keep-faq",
+          "interpretation": "Zachować różne pytania o klucze, typy danych i funkcje w jednym FAQ. Wyjaśnienie ryzyka extract() ma wartość jako ostrzeżenie, nie zachęta do automatycznej ekstrakcji wejścia.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## QA Tablice"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### Dlaczego extract() może być niebezpieczne?"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### Dlaczego warto używać array_reduce()?"
+            }
+          ],
+          "confidence": 0.98
+        }
+      ],
+      "remove": [
+        {
+          "id": "remove-verbatim-repeat",
+          "interpretation": "Usunąć drugie wystąpienie tego samego zdania i skrócić redundantne definicje; nie usuwać unikalnych przykładów.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "PHP oferuje kilka sposobów na sprawdzanie zawartości tablicy. PHP oferuje kilka sposobów"
+            }
+          ],
+          "confidence": 1
+        },
+        {
+          "id": "remove-two-part-shell",
+          "interpretation": "Usunąć oprawę części I/II, numerację sekcji od 11 i stary spis kotwic. Nowy TOC powinien wynikać z jednej struktury, a odsyłacze między częściami znikną z treści głównej.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "W drugiej części artykułu"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "## 11. Konwertowanie"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "(#12-podsumtablice)"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "W poprzedniej części I Post #60"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "remove-promotion",
+          "interpretation": "Usunąć stopkę reklamową i zaproszenie do PHP vs Python ze środka lekcji; przydatne odnośniki można przenieść do Co dalej/proweniencji.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "OpenGate Web - Twój partner w rozwoju aplikacji PHP"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "Zapraszam do przeczytania  Post #52"
+            }
+          ],
+          "confidence": 0.96
+        },
+        {
+          "id": "remove-post-extract-default",
+          "interpretation": "Nie zachowywać extract($_POST) jako domyślnej instrukcji dla początkującego formularza. Proponujemy usunięcie tego przykładu z podstawowej ścieżki; samo extract() może pozostać w kontrolowanej ramce po researchu.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "może nadpisać istniejące zmienne"
+            }
+          ],
+          "confidence": 0.95
+        },
+        {
+          "id": "remove-html-distraction",
+          "interpretation": "Długi rekurencyjny renderer HTML można przenieść do dodatku zamiast głównej ścieżki o tablicach. Zachować strukturę danych menu i krótszą ilustrację zagnieżdżenia; ewentualny dodatek wymaga przeglądu kodu.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "function generateMenu($items)"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "generateMenu($item[\"submenu\"]);"
+            }
+          ],
+          "confidence": 0.9
+        }
+      ],
+      "needsResearch": [
+        {
+          "id": "research-php-baseline",
+          "interpretation": "Ustalić docelową wspieraną wersję PHP, a następnie zweryfikować komunikat/poziom diagnostyki nieistniejącego klucza. Historyczna wzmianka o PHP 5.4 nie jest sama w sobie dowodem przestarzałości obu składni.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Alternatywna składnia (od PHP 5.4)"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Notice: Undefined index"
+            }
+          ],
+          "confidence": 0.99
+        },
+        {
+          "id": "research-presence-checks",
+          "interpretation": "Sprawdzić array_key_exists vs isset vs empty oraz użycie ?? na macierzy przypadków: brak klucza, null, false, zero, pusty string. Wyniki mają zostać potwierdzone dla docelowego PHP przed redakcją przykładów.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_key_exists(), isset() oraz empty()"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "\"null_value\" => null"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo $array[\"key\"] ?? \"domyślna wartość\";"
+            }
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "research-key-behavior",
+          "interpretation": "Zweryfikować i przetestować klucze dla unset, array_splice, sort/rsort, array_merge, array_filter i array_map. Sprawdzić także wynik sortowania dla kluczy nazwanych i wartości mieszanych, jeśli nowa lekcja je pokaże.",
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "unset($numbers[1]);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "array_merge($owoce, $warzywa)"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "[1] => 2\n    [3] => 4"
+            }
+          ],
+          "confidence": 0.98
+        },
+        {
+          "id": "research-safety-and-completeness",
+          "interpretation": "Sprawdzić ryzyko extract() dla wejścia użytkownika i escaping title/url w rozszerzonym menu. Przykład processFormData nie zawiera implementacji tej funkcji; odróżnić demonstrację fragmentu od samodzielnego, uruchamialnego ćwiczenia.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo \"<a href="
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "processFormData($form_data);"
+            }
+          ],
+          "confidence": 0.97
+        },
+        {
+          "id": "research-runnable-snippets",
+          "interpretation": "Zweryfikować składnię każdego wydzielonego bloku oraz deklarowane wyniki funkcji. W II kod PHP i tekst Markdown są przeplatane bez ogrodzonych bloków; przykład reduce stoi pod count_values. Nie uruchamiano teraz tych fragmentów.",
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "<?php\n$user = array"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "#### Przykład – suma liczb\n\n### array_count_values()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "echo $suma; // wypisze: 15"
+            }
+          ],
+          "confidence": 0.99
+        }
+      ],
+      "proposedTitle": "Tablice w PHP — od podstaw do sortowania i mapowania",
+      "proposedStructure": [
+        {
+          "order": 1,
+          "title": "Cel lekcji i model tablicy jako mapy",
+          "purpose": "Wyjaśnić, co łączy klucze i wartości oraz zapowiedzieć przejście od prostych danych do transformacji; jeden wstęp bez powtórzeń.",
+          "sourceIds": [
+            "1324",
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Tablica w PHP to uporządkowana mapa"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sortowanie, filtrowanie, mapowanie i łączenie"
+            }
+          ],
+          "needsResearch": false
+        },
+        {
+          "order": 2,
+          "title": "Tworzenie tablic: składnia i rodzaje kluczy",
+          "purpose": "Zestawić [] i array(), pokazać tablicę indeksowaną i asocjacyjną; ustalić kontekst indeksów, nie obiecywać ich zawsze ciągłej numeracji.",
+          "sourceIds": [
+            "1324"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$colors = [\"czerwony\", \"niebieski\", \"zielony\"];"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## Tablice indeksowane kontra tablice asocjacyjne"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 3,
+          "title": "Odczyt, przypisanie i zmiana wartości",
+          "purpose": "Użyć małych przykładów $numbers/$person; odróżnić klucz od pozycji i pokazać nowy klucz.",
+          "sourceIds": [
+            "1324"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo $numbers[0];"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$person[\"age\"] = 31;"
+            }
+          ],
+          "needsResearch": false
+        },
+        {
+          "order": 4,
+          "title": "Istnienie klucza, null i wartości domyślne",
+          "purpose": "Porównać array_key_exists(), isset(), empty(), in_array() i ?? z potwierdzonymi przypadkami testowymi.",
+          "sourceIds": [
+            "1324"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_key_exists(), isset() oraz empty()"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "\"null_value\" => null"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 5,
+          "title": "Różne typy danych i tablice zagnieżdżone",
+          "purpose": "Połączyć mixed_data, macierz i listę użytkowników; zachować czytelne przykłady odczytu dwóch poziomów.",
+          "sourceIds": [
+            "1324"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$mixed_data = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$matrix = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$users = ["
+            }
+          ],
+          "needsResearch": false
+        },
+        {
+          "order": 6,
+          "title": "Dodawanie i usuwanie elementów",
+          "purpose": "Ułożyć append/push/unshift/splice oraz pop/shift/unset w jeden ciąg przykładów; sprawdzić wpływ na klucze.",
+          "sourceIds": [
+            "1324"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_push($fruits"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_splice($numbers, 1, 2);"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "unset($numbers[1]);"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 7,
+          "title": "Iteracja foreach: klucze i wartości",
+          "purpose": "Wyjaśnić dwie wersje foreach przed funkcjami przekształcającymi i wykorzystać zagnieżdżone dane.",
+          "sourceIds": [
+            "1324"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "foreach ($data as $key => $value)"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "foreach ($data as $value)"
+            }
+          ],
+          "needsResearch": false
+        },
+        {
+          "order": 8,
+          "title": "Łączenie tablic",
+          "purpose": "Umieścić array_merge po mutacjach/iteracji; sprawdzić i opisać zachowanie kluczy liczbowych i nazwanych.",
+          "sourceIds": [
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "array_merge($owoce, $warzywa)"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 9,
+          "title": "Sortowanie rosnące i malejące",
+          "purpose": "Zachować sort/rsort i wyniki, po weryfikacji reguł porównywania oraz wpływu na klucze; nie rozszerzać na nieprzetestowane przypadki.",
+          "sourceIds": [
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "rsort($owoce);"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 10,
+          "title": "Przekształcanie danych: array_map",
+          "purpose": "Zachować przykład podwajania liczb i wyjaśnić wejście, callback oraz wynik.",
+          "sourceIds": [
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_map()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "return $n * 2;"
+            }
+          ],
+          "needsResearch": false
+        },
+        {
+          "order": 11,
+          "title": "Filtrowanie danych: array_filter",
+          "purpose": "Zachować przykład liczb parzystych i zwrócić uwagę na klucze widoczne w wyniku; potwierdzić zachowanie testem.",
+          "sourceIds": [
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_filter()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "[1] => 2\n    [3] => 4"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 12,
+          "title": "Agregacja i liczność: array_reduce oraz array_count_values",
+          "purpose": "Oddzielić sumowanie od zliczania owoców; umieścić każdy fragment pod właściwym nagłówkiem i sprawdzić wyniki.",
+          "sourceIds": [
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$suma = array_reduce($liczby"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$licznik = array_count_values($produkty);"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 13,
+          "title": "Praktyka: konfiguracja, formularz i dane menu",
+          "purpose": "Zachować aplikacyjne kształty danych, skrócić renderer HTML; zastosowanie extract do wejścia formularza nie jest wzorcem podstawowej ścieżki.",
+          "sourceIds": [
+            "1324",
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$config = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$form_data = ["
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$navigation = ["
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 14,
+          "title": "Typowe błędy i ostrożne użycie extract",
+          "purpose": "Zebrać brak klucza, null/empty i błędy pracy z indeksem; extract przedstawić w ramce z kontrolowanymi danymi i ostrzeżeniem po researchu, nie jako instrukcję dla $_POST.",
+          "sourceIds": [
+            "1324",
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Notice: Undefined index"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($user);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "może nadpisać istniejące zmienne"
+            }
+          ],
+          "needsResearch": true
+        },
+        {
+          "order": 15,
+          "title": "FAQ, krótkie ćwiczenia i co dalej",
+          "purpose": "Złożyć jedno FAQ z unikalnych pytań, dodać zadania oparte na istniejących przykładach i końcowe podsumowanie; odsyłacze do innych tematów przenieść poza tok lekcji.",
+          "sourceIds": [
+            "1324",
+            "1356"
+          ],
+          "evidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "## QA Tablice"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### Dlaczego warto używać array_reduce()?"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "Post #52  PHP vs Python"
+            }
+          ],
+          "needsResearch": false
+        }
+      ],
+      "limitations": [
+        "Zakres obejmuje wyłącznie source_id 1324 i 1356. Przeczytano oba body w całości, bez truncation; inventory służy tylko identyfikacji i metadanym tych dwóch źródeł.",
+        "To plan MERGE i propozycja decyzji, nie nowy artykuł. recommended=true oznacza zasadność połączenia po review, nie approved ani zgodę na publikację.",
+        "Nie wykonywano zewnętrznego API, przeglądu dokumentacji PHP, uruchomienia kodu ani audytu bezpieczeństwa. Kwestie wersjonujące i semantyka wymagają przyszłego researchu.",
+        "Evidence jest dokładnym cytatem/metadanymi wybranych źródeł; interpretacje i proposedStructure wymagają oceny człowieka. Confidence jest deklarowaną pewnością, nie prawdopodobieństwem.",
+        "Nie analizowano pozostałych artykułów, nie zmieniano SOURCE ani CONTENT i nie uruchomiono Researchera ani Writera."
+      ]
+    }
+  }
+}

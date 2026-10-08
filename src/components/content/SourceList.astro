@@ -1,0 +1,53 @@
+---
+interface Source {
+	title: string;
+	url: string;
+	publisher?: string | null;
+	accessed?: Date;
+}
+
+interface Props {
+	sources: Source[];
+}
+
+const { sources } = Astro.props;
+---
+
+{sources.length > 0 && (
+	<section class="sources" aria-labelledby="sources-title">
+		<h2 id="sources-title">Źródła</h2>
+		<ol>
+			{sources.map((source) => (
+				<li>
+					<a href={source.url} rel="noopener noreferrer">{source.title}</a>
+					{source.publisher && <span> — {source.publisher}</span>}
+				</li>
+			))}
+		</ol>
+	</section>
+)}
+
+<style>
+	.sources {
+		margin-top: 4rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--color-line);
+	}
+
+	h2 {
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+
+	ol {
+		padding-left: 1.3rem;
+		color: var(--color-muted);
+		line-height: 1.7;
+	}
+
+	a {
+		text-decoration-color: var(--color-accent);
+		text-underline-offset: 0.2em;
+	}
+</style>

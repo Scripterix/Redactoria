@@ -1,0 +1,44 @@
+{
+  "action": "MERGE",
+  "analysisHash": "d3dc07359e5fe69055c4d0610b382f13a715e6f2bef7c053ec9ab51a7c6f0a23",
+  "analysisRef": "lab/cartography/php-arrays-merge.json",
+  "approvedAt": "2026-10-08T21:23:48Z",
+  "approvedBy": "human",
+  "confidence": 0.96,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "1324",
+      "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+      "value": "Tablice w PHP - Część 1 - Podstawy i struktura danych"
+    },
+    {
+      "field": "body",
+      "sourceId": "1356",
+      "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+      "value": "PHP Tablice – Część II Operacje Zaawansowane"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Część I dostarcza model tablicy, klucze, typy, dostęp, mutacje i iterację; część II rozwija sortowanie, łączenie oraz mapowanie/filtrowanie/redukcję. To komplementarne etapy jednej lekcji, nie dwa identyczne artykuły. Połączenie jest rekomendowane jako plan redakcyjny pod warunkiem uporządkowania przykładów i zamknięcia wskazanych potrzeb researchu; nie jest zgodą na publikację.",
+  "schemaVersion": 1,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "45a70e243361632e60992e1ef1ba91d7cdd073306b552b7bd4a148250b786d90",
+      "providedCharacters": 10906,
+      "sourceId": "1324",
+      "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+      "title": "Post #61 Tablice w PHP - Część 1",
+      "truncated": false
+    },
+    {
+      "contentHash": "845bd2e7b8d36e669688e4638c6e7c2f8ee7403aece887c423921d9282afcc5c",
+      "providedCharacters": 4548,
+      "sourceId": "1356",
+      "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+      "title": "Post #62 PHP Tablice – Część II",
+      "truncated": false
+    }
+  ]
+}

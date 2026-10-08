@@ -1,0 +1,76 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ArticleCard from '../../components/content/ArticleCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { filterArticlesByTopic, getPublishedArticles, getPublishedTopics } from '../../lib/content';
+
+export const getStaticPaths = (async () => {
+	const [topics, articles] = await Promise.all([getPublishedTopics(), getPublishedArticles()]);
+
+	return topics.map((topic) => ({
+		params: { slug: topic.data.slug },
+		props: {
+			topic,
+			articles: filterArticlesByTopic(articles, topic.id),
+		},
+	}));
+}) satisfies GetStaticPaths;
+
+const { topic, articles } = Astro.props;
+---
+
+<BaseLayout title={topic.data.name} description={topic.data.description}>
+	<section class="topic-page container">
+		<header>
+			<a href="/tematy/">Wszystkie tematy</a>
+			<h1>{topic.data.name}</h1>
+			<p>{topic.data.description}</p>
+		</header>
+
+		<div class="topic-page__grid">
+			{articles.map((article) => <ArticleCard {article} />)}
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.topic-page {
+		padding-block: clamp(4rem, 9vw, 8rem);
+	}
+
+	header {
+		max-width: 55rem;
+		margin-bottom: clamp(3rem, 6vw, 5rem);
+	}
+
+	header a {
+		color: var(--color-accent);
+		font-size: 0.7rem;
+		font-weight: 750;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 1rem 0;
+		font-family: var(--font-serif);
+		font-size: clamp(3.5rem, 9vw, 7.5rem);
+		font-weight: 400;
+		letter-spacing: -0.055em;
+		line-height: 0.9;
+	}
+
+	header p {
+		margin: 0;
+		color: var(--color-muted);
+		font-family: var(--font-serif);
+		font-size: clamp(1.1rem, 2vw, 1.35rem);
+		line-height: 1.6;
+	}
+
+	.topic-page__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+		gap: 1.25rem;
+	}
+</style>

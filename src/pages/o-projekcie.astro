@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="O projekcie"
+	description="Redactoria EDU to lokalny pilot statycznej, rozwijanej redakcyjnie bazy wiedzy technicznej."
+>
+	<article class="about container">
+		<header>
+			<p>O projekcie</p>
+			<h1>Wiedza z historią</h1>
+			<div>
+				Redactoria EDU odzyskuje, porządkuje i aktualizuje materiały o programowaniu —
+				bez automatycznego publikowania i bez niszczenia źródeł.
+			</div>
+		</header>
+
+		<section>
+			<h2>Najpierw jakość</h2>
+			<p>
+				Nie mierzymy sukcesu liczbą wygenerowanych tekstów. Każda propozycja przechodzi
+				przez LAB, weryfikację źródeł i review, zanim stanie się publicznym artykułem.
+			</p>
+		</section>
+
+		<section>
+			<h2>Strona działa niezależnie</h2>
+			<p>
+				Astro generuje statyczny serwis, który pozostaje dostępny niezależnie od przyszłego
+				Engine. Automatyzacja wspiera redakcję, ale nie obsługuje każdej odsłony strony.
+			</p>
+		</section>
+	</article>
+</BaseLayout>
+
+<style>
+	.about {
+		padding-block: clamp(4rem, 9vw, 8rem);
+	}
+
+	header {
+		max-width: 64rem;
+		margin-bottom: clamp(4rem, 9vw, 8rem);
+	}
+
+	header > p {
+		margin: 0 0 1rem;
+		color: var(--color-accent);
+		font-size: 0.7rem;
+		font-weight: 750;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(3.5rem, 9vw, 7.5rem);
+		font-weight: 400;
+		letter-spacing: -0.055em;
+		line-height: 0.9;
+	}
+
+	header div {
+		max-width: 47rem;
+		margin-top: 2rem;
+		color: var(--color-muted);
+		font-family: var(--font-serif);
+		font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+		line-height: 1.55;
+	}
+
+	section {
+		display: grid;
+		max-width: 58rem;
+		margin-left: auto;
+		padding-block: 2.25rem;
+		border-top: 1px solid var(--color-line);
+		grid-template-columns: minmax(11rem, 0.8fr) 2fr;
+		gap: 2rem;
+	}
+
+	h2,
+	section p {
+		margin: 0;
+	}
+
+	h2 {
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+
+	section p {
+		color: var(--color-muted);
+		line-height: 1.75;
+	}
+
+	@media (max-width: 42rem) {
+		section {
+			grid-template-columns: 1fr;
+			gap: 0.8rem;
+		}
+	}
+</style>

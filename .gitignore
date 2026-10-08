@@ -15,10 +15,31 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
+
+# credentials and local secrets
+secrets
+.secrets/
+credentials*.json
+api-key*
+api_keys*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# the legacy source checkout stays outside this repository
+/temp-ogwo/
 
 # macOS-specific files
 .DS_Store
+Thumbs.db
+Desktop.ini
 
 # jetbrains setting folder
 .idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.temp

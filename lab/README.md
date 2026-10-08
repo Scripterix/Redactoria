@@ -1,0 +1,56 @@
+# Redactoria LAB
+
+LAB jest roboczą przestrzenią Redactorii. Materiały znajdujące się tutaj **nie są
+automatycznie publikowane** i nie są ładowane przez Astro Content Collections.
+
+```text
+SOURCE (read-only) → LAB (work in progress) → human review → content/ (published)
+```
+
+## Katalogi
+
+- `inventory/` — deterministyczny katalog źródłowego korpusu.
+- `candidates/` — kandydaci wskazani do dalszej analizy.
+- `research/` — źródła, ustalenia i sprawdzenie aktualności technicznej.
+- `drafts/` — robocze wersje nowych lub modernizowanych materiałów.
+- `decisions/` — propozycje decyzji redakcyjnych i wyniki review; `proposed` nie
+  oznacza akceptacji ani zgody na publikację.
+- `cartography/` — walidowana mapa wiedzy, propozycje redakcyjne i audytowe wejścia
+  oraz odpowiedzi modelu Cartographera.
+- `reports/` — raporty zbiorcze, w tym wyniki Cartographera 0.1.
+
+## Zasady
+
+1. Źródłowy korpus pozostaje niezmieniony.
+2. Brakujące dane oznaczamy jako `null`, `unknown` lub `needs-review`.
+3. Research i draft nie są zgodą na publikację.
+4. Tylko zaakceptowany materiał może zostać przeniesiony do `content/`.
+5. Każda opublikowana modernizacja zachowuje proweniencję oryginału.
+6. Nie wykonujemy automatycznego merge ani publikacji.
+
+## Inventory
+
+`npm run inventory -- ../temp-ogwo/posts` aktualizuje wyłącznie
+`inventory/inventory.json` i `reports/corpus-summary.md`. Status `parse_status`
+opisuje odczyt metadanych. Każdy rekord zachowuje `review_status: unreviewed`, nawet
+jeśli metadane są poprawne; inventory nie zatwierdza materiałów do publikacji.
+
+## Cartographer
+
+`npm run cartographer` odtwarza jawnie importowaną analizę pierwszej sesji Codex
+zapisując tylko mapę, projekcję kandydatów i raport w LAB. Odpowiedzi są powiązane
+hashami z dokładnymi requestami; niezgodne lub niepoprawne wyniki są odrzucane.
+Propozycje KEEP/UPDATE/MERGE/SPLIT/ARCHIVE/REVIEW/NEW_CONTENT wymagają decyzji człowieka.
+Przygotowanie nowej analizy i limit selektywnych odczytów opisuje
+[kontrakt Cartographera](../docs/architecture/cartographer.md).
+
+Focused run (`--task merge` i dokładnie dwa `--focus`) zapisuje plan porównania
+pełnych tekstów oraz proponowaną strukturę w `cartography/`, raport w `reports/`
+i — tylko przy rekomendacji MERGE — propozycję w `decisions/`. Nie aktualizuje
+wcześniejszej mapy całego korpusu. Propozycja ma status `proposed` oraz hash analizy
+i źródeł do sprawdzenia przed review. Nie uruchamia researchu ani pisania artykułu.
+
+Decyzja PHP MERGE została następnie zatwierdzona przez człowieka: `approved`,
+`approvedBy: human`, `nextStep: research`. Raport i plan Cartographera pozostają
+historycznym zapisem analizy. Writer LAB blokuje zastąpienie zatwierdzonej decyzji;
+akceptacja nie wykonuje MERGE ani nie uruchamia kolejnego agenta.

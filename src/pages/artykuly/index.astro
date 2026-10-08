@@ -1,0 +1,70 @@
+---
+import ArticleCard from '../../components/content/ArticleCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../../lib/content';
+
+const articles = await getPublishedArticles();
+---
+
+<BaseLayout
+	title="Artykuły"
+	description="Artykuły Redactoria EDU o programowaniu, web developmencie, AI i software engineeringu."
+>
+	<section class="listing container">
+		<header class="listing__header">
+			<p>Biblioteka wiedzy</p>
+			<h1>Artykuły</h1>
+			<span>{articles.length} {articles.length === 1 ? 'materiał' : 'materiałów'}</span>
+		</header>
+
+		<div class="listing__grid">
+			{articles.map((article) => <ArticleCard {article} />)}
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.listing {
+		padding-block: clamp(4rem, 9vw, 8rem);
+	}
+
+	.listing__header {
+		display: grid;
+		margin-bottom: clamp(3rem, 6vw, 5rem);
+		grid-template-columns: 1fr auto;
+		align-items: end;
+		gap: 0.5rem 2rem;
+	}
+
+	.listing__header p {
+		margin: 0;
+		color: var(--color-accent);
+		font-size: 0.7rem;
+		font-weight: 750;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+
+	.listing__header h1 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(3.5rem, 9vw, 7.5rem);
+		font-weight: 400;
+		letter-spacing: -0.055em;
+		line-height: 0.9;
+	}
+
+	.listing__header span {
+		color: var(--color-subtle);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.listing__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+		gap: 1.25rem;
+	}
+</style>

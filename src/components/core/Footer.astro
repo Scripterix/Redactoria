@@ -1,0 +1,31 @@
+<footer class="site-footer">
+	<div class="container site-footer__inner">
+		<span>Studio wiedzy</span>
+		<span>© {new Date().getFullYear()} Redactoria</span>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		padding-block: 1.5rem 2rem;
+		color: var(--color-subtle);
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.site-footer__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	@media (max-width: 35rem) {
+		.site-footer__inner {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+</style>

@@ -1,0 +1,36 @@
+---
+import Footer from '../components/core/Footer.astro';
+import Header from '../components/core/Header.astro';
+import SeoHead from '../components/core/SeoHead.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	canonical?: string | URL;
+	image?: string;
+	type?: 'website' | 'article';
+}
+
+const { title, description, canonical, image, type = 'website' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<SeoHead {title} {description} {canonical} {image} {type} />
+	</head>
+	<body>
+		<a class="skip-link" href="#main-content">Przejdź do treści</a>
+		<Header />
+		<main id="main-content">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

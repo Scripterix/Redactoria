@@ -1,0 +1,2249 @@
+{
+  "analysisContext": {
+    "deepReads": [
+      {
+        "contentHash": "45a70e243361632e60992e1ef1ba91d7cdd073306b552b7bd4a148250b786d90",
+        "providedCharacters": 10906,
+        "sourceId": "1324",
+        "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "845bd2e7b8d36e669688e4638c6e7c2f8ee7403aece887c423921d9282afcc5c",
+        "providedCharacters": 4548,
+        "sourceId": "1356",
+        "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "7826f03a865f62ae6872e2b3ca45c99e03ccf81a3d4cdd29c2492477d893ecb6",
+        "providedCharacters": 5929,
+        "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+        "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "93d09a08ff09dc0caae7b57d401d7a4207334f0de4d2e56859ccaede1db41741",
+        "providedCharacters": 6573,
+        "sourceId": "981",
+        "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+        "providedCharacters": 7595,
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "0e553e9c89fb6acbbf72c7a087a72779bf4d6b57598984f2dde612437df127c1",
+        "providedCharacters": 2,
+        "sourceId": "2070",
+        "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "859167a42df584bb748f1db5315b2e8bab289c6cd21130da935870b644f4edf4",
+        "providedCharacters": 1217,
+        "sourceId": "1770",
+        "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+        "truncated": false
+      },
+      {
+        "contentHash": "25cf598e06537edb97fcc504d1e2939d2ccc211170fb8804ff491cd2a3b57b8a",
+        "providedCharacters": 9893,
+        "sourceId": "1799",
+        "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+        "truncated": false
+      }
+    ],
+    "inventoryHash": "3a715b48a0feb57374790c8954ddcfceef102ab0cd135b40919c6686cd192039",
+    "limits": {
+      "maxBodyCharacters": 18000,
+      "maxDeepReads": 8,
+      "maxSourceBytes": 1048576
+    },
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "Codex session (model identifier not exposed)"
+    }
+  },
+  "candidates": [
+    {
+      "action": "MERGE",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "Tablice w PHP - Część 1 - Podstawy i struktura danych"
+        },
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "PHP Tablice – Część II Operacje Zaawansowane"
+        }
+      ],
+      "id": "php-arrays-series",
+      "priority": "high",
+      "reason": "Propozycja połączenia dwóch kolejnych części w spójny moduł EDU (lub dwóch jawnie powiązanych lekcji). Zakresy są komplementarne, nie identyczne; zachować pochodzenie i poddać przykłady review.",
+      "target": {
+        "domainId": "php",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "1324",
+          "1356"
+        ]
+      }
+    },
+    {
+      "action": "REVIEW",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Plan artykułu WP"
+        },
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "### 5. Pełne wdrożenie – Angular v20"
+        }
+      ],
+      "id": "signals-outline-review",
+      "priority": "high",
+      "reason": "Rozróżnić szkic od gotowego tutorialu, sprawdzić twierdzenia wersjonujące i zdecydować o rozwoju planu w lekcję. Nie uznawać konspektu za istniejące pokrycie praktyczne.",
+      "target": {
+        "domainId": "angular",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "1770"
+        ]
+      }
+    },
+    {
+      "action": "REVIEW",
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "field": "warnings",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "[\"missing:post_id\",\"missing:slug\",\"missing:original_url\",\"missing:author\",\"scalar_list:categories\",\"missing:tags\"]"
+        },
+        {
+          "field": "body",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "Standalone Components"
+        },
+        {
+          "field": "body",
+          "sourceId": "981",
+          "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+          "value": "Każda aplikacja zaczyna się od modułu AppModule."
+        }
+      ],
+      "id": "angular-role-version-review",
+      "priority": "high",
+      "reason": "Zweryfikować brakujące metadane oraz rozdzielić relację z kursu od lekcji. Zestawić opis standalone z uniwersalnym twierdzeniem o AppModule i ustalić kontekst wersji. Nie ogłaszamy frameworka przestarzałym na podstawie daty.",
+      "target": {
+        "domainId": "angular",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "path:143-post-4-angular-podstawy-praktyka.md",
+          "981"
+        ]
+      }
+    },
+    {
+      "action": "UPDATE",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "własnych hooków"
+        },
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "c7omponentDidUpdate"
+        },
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "https://sdmntprpolandcentral.oaiusercontent.com/files/"
+        }
+      ],
+      "id": "react-hooks-cleanup",
+      "priority": "high",
+      "reason": "Zachować bazę trzech praktycznych przykładów, doprecyzować obietnicę własnych hooków oraz zredagować pozostałości kopiowania i tymczasowe adresy obrazków. Aktualność API nie została zewnętrznie zweryfikowana.",
+      "target": {
+        "domainId": "react",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "1799"
+        ]
+      }
+    },
+    {
+      "action": "NEW_CONTENT",
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "TypeScript – wprowadzenie"
+        },
+        {
+          "field": "body",
+          "sourceId": "981",
+          "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+          "value": "TypeScript – Zawiera logikę komponentu"
+        }
+      ],
+      "id": "typescript-bridge",
+      "priority": "high",
+      "reason": "Zaproponować mały moduł TypeScript: typy, interfejsy i przykłady przed Angular. Najpierw sprawdzić, czy obecne teksty zawierają gotowe fragmenty do ponownego użycia; hipoteza luki opiera się na rozpoznanej roli prerequisitu.",
+      "target": {
+        "domainId": "angular",
+        "kind": "new-content",
+        "proposedTitle": "TypeScript przed Angularem — typy, interfejsy i krótkie ćwiczenia",
+        "sourceIds": []
+      }
+    },
+    {
+      "action": "REVIEW",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "2070",
+          "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+          "value": "Console.log triki jakich nie znają Juniorzy"
+        },
+        {
+          "field": "word_count",
+          "sourceId": "2070",
+          "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+          "value": "0"
+        }
+      ],
+      "id": "empty-console-review",
+      "priority": "medium",
+      "reason": "Odczyt zawiera wyłącznie dwa znaki nowej linii, a word_count wynosi 0. Sprawdzić eksport lub pochodzenie szkicu przed decyzją o odzyskaniu treści, rozwinięciu albo pominięciu; niczego nie usuwać ze SOURCE.",
+      "target": {
+        "domainId": "javascript",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "2070"
+        ]
+      }
+    },
+    {
+      "action": "UPDATE",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "extract($_POST);"
+        },
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "W poprzedniej części I Post #60"
+        },
+        {
+          "field": "title",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "Post #61 Tablice w PHP - Część 1"
+        }
+      ],
+      "id": "php-advanced-examples",
+      "priority": "medium",
+      "reason": "Przed migracją do EDU przejrzeć przykład extract($_POST), wzmocnić wyjaśnienie ryzyka oraz uporządkować kod i odnośnik do poprzedniej części. Tekst na końcu nazywa poprzednią część Post #60, choć inventory wskazuje tytuł Post #61.",
+      "target": {
+        "domainId": "php",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "1356"
+        ]
+      }
+    },
+    {
+      "action": "UPDATE",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "funkcyjne (proceduralne)"
+        },
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "parseInt(input1.value || 0)"
+        }
+      ],
+      "id": "calculator-exercise-cleanup",
+      "priority": "medium",
+      "reason": "Rozdzielić rozumienie proceduralnych funkcji i podejścia funkcyjnego, uporządkować przykład kalkulatora i dodać sprawdzalne przypadki danych wejściowych. To propozycja redakcji, nie dowód nieaktualności JavaScript.",
+      "target": {
+        "domainId": "javascript",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "281"
+        ]
+      }
+    },
+    {
+      "action": "NEW_CONTENT",
+      "confidence": 0.83,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum()"
+        },
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator"
+        }
+      ],
+      "id": "calculator-tests-module",
+      "priority": "medium",
+      "reason": "Rozwinąć istniejący przykład funkcji i klas w lekcję oczekiwanych wyników, przypadków brzegowych i testów. Nie oznaczamy funkcji/OOP jako brakujących, bo są już w przeczytanym materiale.",
+      "target": {
+        "domainId": "javascript",
+        "kind": "new-content",
+        "proposedTitle": "Testowanie małych funkcji JavaScript na przykładzie kalkulatora",
+        "sourceIds": []
+      }
+    },
+    {
+      "action": "NEW_CONTENT",
+      "confidence": 0.67,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum()"
+        },
+        {
+          "field": "title",
+          "sourceId": "410",
+          "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+          "value": "Post #11 API Advanced Programming Interface"
+        },
+        {
+          "field": "title",
+          "sourceId": "741",
+          "sourcePath": "741-post-28-angular-api.md",
+          "value": "Post #28 Angular Api"
+        }
+      ],
+      "id": "async-api-module",
+      "priority": "medium",
+      "reason": "Hipoteza przydatnego łącznika: fetch/async, błędy i prezentacja danych po lokalnych ćwiczeniach DOM. Przed pisaniem sprawdzić teksty API; ich body nie było czytane w tym przebiegu.",
+      "target": {
+        "domainId": "javascript",
+        "kind": "new-content",
+        "proposedTitle": "JavaScript i API — async, obsługa błędów oraz prosty interfejs",
+        "sourceIds": []
+      }
+    },
+    {
+      "action": "KEEP",
+      "confidence": 0.61,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "2048",
+          "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+          "value": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73"
+        }
+      ],
+      "id": "js-arrays-retain",
+      "priority": "medium",
+      "reason": "Zachować jako obiecującego kandydata do podstawowej ścieżki JS: tytuł łączy tablice, filtrowanie i konkretny wynik. KEEP jest tu propozycją utrzymania w puli do review, nie zatwierdzeniem jakości ani publikacji.",
+      "target": {
+        "domainId": "javascript",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "2048"
+        ]
+      }
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "410",
+          "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+          "value": "Post #11 API Advanced Programming Interface"
+        },
+        {
+          "field": "title",
+          "sourceId": "578",
+          "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+          "value": "Post #22 Wprowadzenie do API."
+        }
+      ],
+      "id": "api-intros-compare",
+      "priority": "low",
+      "reason": "Tytuły sugerują dwa wprowadzenia do API. Porównać treści i dopiero potem rozważyć jedno wprowadzenie lub dwie uzupełniające lekcje; możliwa relacja, nie stwierdzony duplikat.",
+      "target": {
+        "domainId": "apis",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "410",
+          "578"
+        ]
+      }
+    },
+    {
+      "action": "SPLIT",
+      "confidence": 0.58,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "826",
+          "sourcePath": "826-post-43-najpopularniejsze-frameworki-i-biblioteki.md",
+          "value": "Post #43 Najpopularniejsze Frameworki i Biblioteki"
+        },
+        {
+          "field": "tags",
+          "sourceId": "826",
+          "sourcePath": "826-post-43-najpopularniejsze-frameworki-i-biblioteki.md",
+          "value": "[\"angular-podstawy\",\"django\",\"flask\",\"node\",\"react\"]"
+        },
+        {
+          "field": "word_count",
+          "sourceId": "826",
+          "sourcePath": "826-post-43-najpopularniejsze-frameworki-i-biblioteki.md",
+          "value": "4549"
+        }
+      ],
+      "id": "framework-overview-scope",
+      "priority": "low",
+      "reason": "Tytuł i tagi łączą Angular, Django, Flask, Node i React. Po odczycie rozważyć podział bardzo szerokiego overview na porównanie i osobne ścieżki; granice sekcji pozostają nieznane.",
+      "target": {
+        "domainId": "react",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "826"
+        ]
+      }
+    },
+    {
+      "action": "ARCHIVE",
+      "confidence": 0.57,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "2022",
+          "sourcePath": "2022-wyzwanie-10000-godzin-programowania-podsumowanie-w.md",
+          "value": "Wyzwanie 10000 godzin programowania Podsumowanie wrzesień 2025"
+        },
+        {
+          "field": "word_count",
+          "sourceId": "2022",
+          "sourcePath": "2022-wyzwanie-10000-godzin-programowania-podsumowanie-w.md",
+          "value": "19"
+        }
+      ],
+      "id": "journal-separate-archive",
+      "priority": "low",
+      "reason": "Rozważyć pozostawienie krótkiego miesięcznego podsumowania w osobnym archiwum dziennika, zamiast traktować je jako samodzielną lekcję EDU. ARCHIVE nie oznacza kasowania źródła; przydatność kontekstu wymaga decyzji autora.",
+      "target": {
+        "domainId": "journey",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "2022"
+        ]
+      }
+    },
+    {
+      "action": "REVIEW",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1098",
+          "sourcePath": "1098-post-55-najciekawsze-news-ai-z-polski-i-swiata.md",
+          "value": "Post #55 Najciekawsze news AI z Polski i świata"
+        },
+        {
+          "field": "original_date",
+          "sourceId": "1098",
+          "sourcePath": "1098-post-55-najciekawsze-news-ai-z-polski-i-swiata.md",
+          "value": "2025-05-05 18:34:32"
+        }
+      ],
+      "id": "ai-news-fact-review",
+      "priority": "low",
+      "reason": "Newsowy tytuł i kontekst daty sugerują potrzebę osobnego fact-checkingu przed wykorzystaniem edukacyjnym. Data sama nie dowodzi, że tekst jest nieaktualny; body i odnośniki nie zostały sprawdzone.",
+      "target": {
+        "domainId": "ai-news",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "1098"
+        ]
+      }
+    },
+    {
+      "action": "REVIEW",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "363",
+          "sourcePath": "363-wordpress.md",
+          "value": "WordPress"
+        },
+        {
+          "field": "word_count",
+          "sourceId": "363",
+          "sourcePath": "363-wordpress.md",
+          "value": "65"
+        }
+      ],
+      "id": "wordpress-scope-review",
+      "priority": "low",
+      "reason": "Krótki tekst i ogólny tytuł wymagają sprawdzenia, czy to notatka, wprowadzenie czy indeks. Nie budować z samego tytułu obrazu kompletnej lekcji WordPress.",
+      "target": {
+        "domainId": "wordpress",
+        "kind": "articles",
+        "proposedTitle": null,
+        "sourceIds": [
+          "363"
+        ]
+      }
+    }
+  ],
+  "clusters": [
+    {
+      "articleIds": [
+        "281",
+        "542",
+        "2068"
+      ],
+      "confidence": 0.93,
+      "coverage": "partial",
+      "domainId": "javascript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator"
+        },
+        {
+          "field": "title",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji"
+        }
+      ],
+      "id": "js-language",
+      "interpretation": "Kalkulator faktycznie ma funkcje i klasy. Nie należy zgłaszać luki 'brak funkcji'; brakuje raczej potwierdzonej, spójnej progresji ćwiczeń.",
+      "name": "Funkcje, OOP i warunki"
+    },
+    {
+      "articleIds": [
+        "2048"
+      ],
+      "confidence": 0.73,
+      "coverage": "partial",
+      "domainId": "javascript",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "2048",
+          "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+          "value": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73"
+        }
+      ],
+      "id": "js-arrays",
+      "interpretation": "Tytuł zapowiada konkretny przykład ze średnią ocen. Nie wykonano odczytu ani testu kodu.",
+      "name": "Tablice, sortowanie i filtrowanie JS"
+    },
+    {
+      "articleIds": [
+        "940",
+        "942",
+        "966",
+        "145"
+      ],
+      "confidence": 0.8,
+      "coverage": "partial",
+      "domainId": "javascript",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "940",
+          "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+          "value": "Post #45 JavaScript DOM selections i proste funkcje"
+        },
+        {
+          "field": "title",
+          "sourceId": "966",
+          "sourcePath": "966-post-48-proste-filtrowanie-istotope.md",
+          "value": "Post #48 proste filtrowanie Istotope"
+        },
+        {
+          "field": "tags",
+          "sourceId": "145",
+          "sourcePath": "145-post-5-wielowatkowy-zaczynam-wyzwanie.md",
+          "value": "[\"fuse\",\"fuse-search\",\"fuseJS\"]"
+        }
+      ],
+      "id": "js-dom",
+      "interpretation": "Tytuły/tagi wskazują DOM i biblioteki interakcji. Materiały mogą być połączone w ścieżkę po podstawach języka.",
+      "name": "DOM, selektory i interakcje"
+    },
+    {
+      "articleIds": [
+        "2070"
+      ],
+      "confidence": 0.99,
+      "coverage": "weak",
+      "domainId": "javascript",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "2070",
+          "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+          "value": "Console.log triki jakich nie znają Juniorzy"
+        },
+        {
+          "field": "word_count",
+          "sourceId": "2070",
+          "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+          "value": "0"
+        }
+      ],
+      "id": "js-empty-note",
+      "interpretation": "Wybrany odczyt zawiera tylko dwa znaki nowej linii. Tytuł nie stanowi pokrycia tematu debugowania.",
+      "name": "Console.log — pusty korpus wpisu"
+    },
+    {
+      "articleIds": [
+        "1324",
+        "1356"
+      ],
+      "confidence": 0.96,
+      "coverage": "strong",
+      "domainId": "php",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "## Tablice indeksowane kontra tablice asocjacyjne"
+        },
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "### array_filter()"
+        }
+      ],
+      "id": "php-arrays",
+      "interpretation": "Dwie odczytane części tworzą serię: struktury/klucze, potem sortowanie/mapowanie. Strong oznacza szeroki zakres tej podtematyki, nie audyt poprawności całego kodu.",
+      "name": "Tablice PHP — części I i II"
+    },
+    {
+      "articleIds": [
+        "1166",
+        "1308",
+        "977"
+      ],
+      "confidence": 0.84,
+      "coverage": "partial",
+      "domainId": "php",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1166",
+          "sourcePath": "1166-post-58-php-kodowanie-i-znaki-specjalne.md",
+          "value": "Post #58 PHP Kodowanie i znaki specjalne"
+        },
+        {
+          "field": "title",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Post #60 Instrukcje sterujące PHP"
+        },
+        {
+          "field": "title",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "Post #52 Jakie są PHP i Python"
+        }
+      ],
+      "id": "php-basics",
+      "interpretation": "Rozpoznanie tylko z metadanych; możliwy wstęp do serii tablic.",
+      "name": "Kodowanie, sterowanie i porównanie PHP/Python"
+    },
+    {
+      "articleIds": [
+        "974"
+      ],
+      "confidence": 0.7,
+      "coverage": "unknown",
+      "domainId": "php",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "974",
+          "sourcePath": "974-post-51-db-test-php-mysql-apps.md",
+          "value": "Post #51 DB Test PHP MySql Apps"
+        },
+        {
+          "field": "tags",
+          "sourceId": "974",
+          "sourcePath": "974-post-51-db-test-php-mysql-apps.md",
+          "value": "[\"crud\",\"data-base\",\"php\",\"portfolio\",\"programming\"]"
+        }
+      ],
+      "id": "php-db",
+      "interpretation": "Tytuł i tagi sugerują backend z bazą danych; bez odczytu nie można ocenić zakresu SQL ani bezpieczeństwa.",
+      "name": "PHP/MySQL w aplikacji CRUD"
+    },
+    {
+      "articleIds": [
+        "283",
+        "2003",
+        "977"
+      ],
+      "confidence": 0.85,
+      "coverage": "partial",
+      "domainId": "python",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "Post #10 Python Crash Course"
+        },
+        {
+          "field": "title",
+          "sourceId": "2003",
+          "sourcePath": "2003-jak-zaczac-nauke-pythona-w-windows-i-visual-studio.md",
+          "value": "Jak zacząć naukę Pythona w Windows i Visual Studio Code Post #70"
+        }
+      ],
+      "id": "python-start",
+      "interpretation": "Widoczny start i porównanie języków; dalsza progresja ma status niezweryfikowany.",
+      "name": "Python: instalacja i crash course"
+    },
+    {
+      "articleIds": [
+        "path:143-post-4-angular-podstawy-praktyka.md",
+        "981",
+        "755",
+        "771"
+      ],
+      "confidence": 0.95,
+      "coverage": "partial",
+      "domainId": "angular",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "Moja Ścieżka"
+        },
+        {
+          "field": "body",
+          "sourceId": "981",
+          "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+          "value": "### Instalacja Angular CLI"
+        }
+      ],
+      "id": "angular-intro",
+      "interpretation": "Przeczytane teksty pełnią różne role: relacja z kursu oraz instrukcje CLI/komponentów. Podobne tytuły nie dowodzą duplikatu.",
+      "name": "Wprowadzenia do Angulara i droga nauki"
+    },
+    {
+      "articleIds": [
+        "741",
+        "753"
+      ],
+      "confidence": 0.71,
+      "coverage": "unknown",
+      "domainId": "angular",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "741",
+          "sourcePath": "741-post-28-angular-api.md",
+          "value": "Post #28 Angular Api"
+        },
+        {
+          "field": "title",
+          "sourceId": "753",
+          "sourcePath": "753-layout-promtow-baza-angular-18.md",
+          "value": "Layout promtów baza Angular 18"
+        }
+      ],
+      "id": "angular-projects",
+      "interpretation": "Tematy widoczne z tytułów; zakres projektu i kompletność nie zostały sprawdzone.",
+      "name": "Angular API i układ projektu"
+    },
+    {
+      "articleIds": [
+        "1770"
+      ],
+      "confidence": 0.98,
+      "coverage": "weak",
+      "domainId": "angular",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Plan artykułu WP"
+        },
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Przykłady kodu „przed/po”."
+        }
+      ],
+      "id": "angular-signals",
+      "interpretation": "Treść jest konspektem z punktami do opracowania. Nie potwierdza realizacji przykładów ani poprawności osi wersji.",
+      "name": "Signals — plan przyszłego artykułu"
+    },
+    {
+      "articleIds": [
+        "1799"
+      ],
+      "confidence": 0.94,
+      "coverage": "partial",
+      "domainId": "react",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "Przewodnik po React Hooks: useState, useEffect i useContext"
+        },
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "własnych hooków"
+        }
+      ],
+      "id": "react-hooks",
+      "interpretation": "Trzy odczytane przykłady dają bazę lekcji. Własne hooki zapowiedziane w nagłówku wymagają rozwinięcia, a ślady kopiowania wymagają redakcji.",
+      "name": "useState, useEffect i useContext"
+    },
+    {
+      "articleIds": [
+        "410",
+        "578",
+        "507",
+        "514",
+        "522",
+        "675",
+        "738",
+        "1336",
+        "1142"
+      ],
+      "confidence": 0.83,
+      "coverage": "partial",
+      "domainId": "apis",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "410",
+          "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+          "value": "Post #11 API Advanced Programming Interface"
+        },
+        {
+          "field": "tags",
+          "sourceId": "514",
+          "sourcePath": "514-post-13-crud.md",
+          "value": "[\"crud\",\"Express.js\",\"teachers grade book\"]"
+        },
+        {
+          "field": "title",
+          "sourceId": "1336",
+          "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+          "value": "Post #64 Curl – Twoje Terminalowe Okno na Świat"
+        }
+      ],
+      "id": "api-crud",
+      "interpretation": "Metadane łączą ogólne API, Express, aplikację nauczycielską, planner, curl i AI-assisted CRUD. Nie jest to jeszcze zweryfikowana kompletna ścieżka.",
+      "name": "Od API do aplikacji CRUD"
+    },
+    {
+      "articleIds": [
+        "1575",
+        "534",
+        "48",
+        "277"
+      ],
+      "confidence": 0.85,
+      "coverage": "partial",
+      "domainId": "tooling",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1575",
+          "sourcePath": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+          "value": "Post #66 – Jak zbudować środowisko programistyczne na Windows Visual Studio Code, Git, Node.js"
+        },
+        {
+          "field": "title",
+          "sourceId": "534",
+          "sourcePath": "534-post-16-docker-konteneryzacja.md",
+          "value": "Post #16 Docker konteneryzacja"
+        },
+        {
+          "field": "title",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Post #2 język Markdown"
+        }
+      ],
+      "id": "developer-setup",
+      "interpretation": "Tytuły dostarczają bazę warsztatową przed projektami; nie sprawdzono instrukcji ani wersji.",
+      "name": "Setup, Docker i Markdown"
+    },
+    {
+      "articleIds": [
+        "556"
+      ],
+      "confidence": 0.76,
+      "coverage": "partial",
+      "domainId": "mobile",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "556",
+          "sourcePath": "556-post-20-fluter-pierwsza-mobile-app.md",
+          "value": "Post #20 Fluter pierwsza mobile app"
+        }
+      ],
+      "id": "flutter-start",
+      "interpretation": "Pojedynczy temat mobile; kolejnych kroków nie można potwierdzić na podstawie samych metadanych.",
+      "name": "Pierwsza aplikacja Flutter"
+    },
+    {
+      "articleIds": [
+        "1789",
+        "230",
+        "942",
+        "966",
+        "968",
+        "970"
+      ],
+      "confidence": 0.86,
+      "coverage": "partial",
+      "domainId": "design",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1789",
+          "sourcePath": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+          "value": "Zrównoważony web design – jak tworzyć harmonijne i estetyczne strony internetowe Post #67"
+        },
+        {
+          "field": "title",
+          "sourceId": "942",
+          "sourcePath": "942-post-46-biblioteki-do-animacji-z-elementami-w-java.md",
+          "value": "Post #46 Biblioteki do animacji z elementami w JavaScript"
+        },
+        {
+          "field": "title",
+          "sourceId": "970",
+          "sourcePath": "970-post-50-glide-jak-zrobic-kontent-slider.md",
+          "value": "Post #50 Glide Jak zrobić kontent slider?"
+        }
+      ],
+      "id": "ui-components",
+      "interpretation": "Materiały wskazują projektowanie layoutu, animację, filtrowanie i slider. Przydatność gotowych przykładów wymaga odczytu.",
+      "name": "Layout i elementy interaktywne"
+    },
+    {
+      "articleIds": [
+        "147",
+        "519"
+      ],
+      "confidence": 0.9,
+      "coverage": "partial",
+      "domainId": "static-sites",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "147",
+          "sourcePath": "147-post-6-hugo-generator-kompletny-przewodnik-2025-od.md",
+          "value": "Post #6 Hugo generator kompletny przewodnik 2025. Od Migracji do Optymalizacji"
+        },
+        {
+          "field": "title",
+          "sourceId": "519",
+          "sourcePath": "519-post-14-hugo-layout-development.md",
+          "value": "Post #14 Hugo Layout Development"
+        }
+      ],
+      "id": "hugo",
+      "interpretation": "Dwa tytuły sugerują wspólny mini-moduł publikowania statycznego.",
+      "name": "Migracja i layout Hugo"
+    },
+    {
+      "articleIds": [
+        "746",
+        "748",
+        "761",
+        "763",
+        "765",
+        "1577",
+        "1584"
+      ],
+      "confidence": 0.9,
+      "coverage": "partial",
+      "domainId": "seo",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "763",
+          "sourcePath": "763-post-32-przyklady-audytu-seo.md",
+          "value": "Post #32 Przykłady Audytu SEO"
+        },
+        {
+          "field": "tags",
+          "sourceId": "746",
+          "sourcePath": "746-post-29-telomerspl-najlepsze-zrodla-bialka.md",
+          "value": "[\"key-words\",\"seo-audit\"]"
+        },
+        {
+          "field": "title",
+          "sourceId": "1584",
+          "sourcePath": "1584-co-zrobic-gdy-linki-przestaja-dzialac-praktyczny-t.md",
+          "value": "Co zrobić, gdy linki przestają działać – praktyczny test Broken Link Check Post #72"
+        }
+      ],
+      "id": "seo-audits",
+      "interpretation": "Widoczna seria wokół audytu realnego serwisu; w tej analizie brak oceny wyników wyszukiwania lub skuteczności porad.",
+      "name": "Praktyka audytów i przebudowy SEO"
+    },
+    {
+      "articleIds": [
+        "767",
+        "761",
+        "1584"
+      ],
+      "confidence": 0.88,
+      "coverage": "partial",
+      "domainId": "seo",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "767",
+          "sourcePath": "767-post-34-anatomia-linkow.md",
+          "value": "Post #34 Anatomia linków"
+        },
+        {
+          "field": "title",
+          "sourceId": "1584",
+          "sourcePath": "1584-co-zrobic-gdy-linki-przestaja-dzialac-praktyczny-t.md",
+          "value": "Co zrobić, gdy linki przestają działać – praktyczny test Broken Link Check Post #72"
+        }
+      ],
+      "id": "seo-links",
+      "interpretation": "Tytuły/tagi łączą backlinki, strukturę odnośników i test linków.",
+      "name": "Linki i kontrola uszkodzonych odnośników"
+    },
+    {
+      "articleIds": [
+        "363",
+        "1135"
+      ],
+      "confidence": 0.78,
+      "coverage": "weak",
+      "domainId": "wordpress",
+      "evidence": [
+        {
+          "field": "word_count",
+          "sourceId": "363",
+          "sourcePath": "363-wordpress.md",
+          "value": "65"
+        },
+        {
+          "field": "title",
+          "sourceId": "1135",
+          "sourcePath": "1135-post-56-7-najlepszych-wtyczek-seo-do-wordpress.md",
+          "value": "Post #56 7 Najlepszych wtyczek SEO do WordPress"
+        }
+      ],
+      "id": "wordpress",
+      "interpretation": "Wpis WordPress ma 65 tokenów body według inventory; lista wtyczek jest odrębnym zakresem. Nie potwierdzono pełnej ścieżki CMS.",
+      "name": "CMS i wtyczki SEO"
+    },
+    {
+      "articleIds": [
+        "100",
+        "1142",
+        "1779"
+      ],
+      "confidence": 0.88,
+      "coverage": "partial",
+      "domainId": "ai-workflows",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "100",
+          "sourcePath": "100-post-3-jak-pisac-dobre-prompty-do-ai.md",
+          "value": "Post #3 Jak pisać dobre prompty do AI"
+        },
+        {
+          "field": "title",
+          "sourceId": "1142",
+          "sourcePath": "1142-post-57-vibe-coding-tworzenie-formularza-crud-z-wy.md",
+          "value": "Post #57 Vibe Coding Tworzenie formularza CRUD z wykorzystaniem Agentic Mode w GitHub Copilot."
+        },
+        {
+          "field": "title",
+          "sourceId": "1779",
+          "sourcePath": "1779-software-sie-zmienia-znowu-andrew-karpathy-llm-y-i.md",
+          "value": "Software się zmienia (znowu) Andrew Karpathy, LLM-y i przyszłość, która już się zaczęła Post #68"
+        }
+      ],
+      "id": "ai-dev",
+      "interpretation": "Metadane sugerują przejście od promptów do pracy z agentic mode i refleksji o software.",
+      "name": "Prompty i programowanie wspomagane AI"
+    },
+    {
+      "articleIds": [
+        "1098",
+        "1197",
+        "269",
+        "859"
+      ],
+      "confidence": 0.82,
+      "coverage": "unknown",
+      "domainId": "ai-news",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1098",
+          "sourcePath": "1098-post-55-najciekawsze-news-ai-z-polski-i-swiata.md",
+          "value": "Post #55 Najciekawsze news AI z Polski i świata"
+        },
+        {
+          "field": "title",
+          "sourceId": "1197",
+          "sourcePath": "1197-post-59-sztuczna-inteligencja-rewolucjonizuje-cybe.md",
+          "value": "Post #59 Sztuczna Inteligencja Rewolucjonizuje Cyberbezpieczeństwo."
+        }
+      ],
+      "id": "ai-news",
+      "interpretation": "Tytuły określają temat, ale nie potwierdzają aktualności faktów ani źródeł.",
+      "name": "AI newsy i kontekst branżowy"
+    },
+    {
+      "articleIds": [
+        "46",
+        "145",
+        "1802",
+        "2022",
+        "277",
+        "507",
+        "522",
+        "553",
+        "670",
+        "736",
+        "738",
+        "818",
+        "822",
+        "824",
+        "865",
+        "936",
+        "944"
+      ],
+      "confidence": 0.83,
+      "coverage": "partial",
+      "domainId": "journey",
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "2022",
+          "sourcePath": "2022-wyzwanie-10000-godzin-programowania-podsumowanie-w.md",
+          "value": "Wyzwanie 10000 godzin programowania Podsumowanie wrzesień 2025"
+        },
+        {
+          "field": "title",
+          "sourceId": "736",
+          "sourcePath": "736-post-26-update-portfolio.md",
+          "value": "Post #26 Update Portfolio"
+        },
+        {
+          "field": "title",
+          "sourceId": "46",
+          "sourcePath": "46-post-1-powitanie-opengateweb.md",
+          "value": "Post #1 Powitanie OpenGateWeb"
+        }
+      ],
+      "id": "project-diary",
+      "interpretation": "Kontekst rozwoju autora może zostać zachowany oddzielnie od lekcji. Nie każdy wpis Wyzwanie jest samodzielnym materiałem EDU.",
+      "name": "Dziennik projektów, portfolio i nauki"
+    }
+  ],
+  "corpusOverview": {
+    "articleCount": 83,
+    "mappedArticleCount": 83,
+    "parseErrors": 0,
+    "parsedOk": 82,
+    "reviewRequired": 1,
+    "unmappedArticleIds": []
+  },
+  "domains": [
+    {
+      "articleIds": [
+        "1142",
+        "1166",
+        "1308",
+        "1324",
+        "1336",
+        "1356",
+        "145",
+        "1575",
+        "1770",
+        "1799",
+        "2003",
+        "2048",
+        "2068",
+        "2070",
+        "230",
+        "277",
+        "281",
+        "283",
+        "410",
+        "48",
+        "507",
+        "514",
+        "522",
+        "534",
+        "542",
+        "551",
+        "553",
+        "556",
+        "578",
+        "672",
+        "675",
+        "738",
+        "741",
+        "753",
+        "755",
+        "771",
+        "826",
+        "940",
+        "942",
+        "944",
+        "966",
+        "974",
+        "977",
+        "981",
+        "path:143-post-4-angular-podstawy-praktyka.md"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "Post #61 Tablice w PHP - Część 1"
+        },
+        {
+          "field": "title",
+          "sourceId": "940",
+          "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+          "value": "Post #45 JavaScript DOM selections i proste funkcje"
+        },
+        {
+          "field": "title",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "Post #4 Angular Podstawy + Praktyka"
+        }
+      ],
+      "id": "programming",
+      "interpretation": "Tytuły i etykiety wskazują języki, frameworki, projekty oraz narzędzia. Osiem wybranych odczytów częściowo potwierdza zakres; nie jest to pełny przegląd techniczny.",
+      "name": "Programowanie i warsztat developerski",
+      "parentId": null
+    },
+    {
+      "articleIds": [
+        "1135",
+        "1329",
+        "147",
+        "1577",
+        "1584",
+        "1789",
+        "230",
+        "363",
+        "519",
+        "553",
+        "670",
+        "675",
+        "736",
+        "746",
+        "748",
+        "761",
+        "763",
+        "765",
+        "767",
+        "769",
+        "818",
+        "822",
+        "831",
+        "834",
+        "936",
+        "942",
+        "944",
+        "966",
+        "968",
+        "970"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "147",
+          "sourcePath": "147-post-6-hugo-generator-kompletny-przewodnik-2025-od.md",
+          "value": "Post #6 Hugo generator kompletny przewodnik 2025. Od Migracji do Optymalizacji"
+        },
+        {
+          "field": "title",
+          "sourceId": "763",
+          "sourcePath": "763-post-32-przyklady-audytu-seo.md",
+          "value": "Post #32 Przykłady Audytu SEO"
+        },
+        {
+          "field": "title",
+          "sourceId": "1789",
+          "sourcePath": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+          "value": "Zrównoważony web design – jak tworzyć harmonijne i estetyczne strony internetowe Post #67"
+        }
+      ],
+      "id": "web",
+      "interpretation": "Korpus łączy wykonanie witryny z layoutem, generatorami, WordPressem i SEO. Członkostwo wynika głównie z metadanych i może się pokrywać z programowaniem.",
+      "name": "Budowa, projektowanie i widoczność WWW",
+      "parentId": null
+    },
+    {
+      "articleIds": [
+        "100",
+        "1098",
+        "1142",
+        "1197",
+        "1329",
+        "1779",
+        "1786",
+        "269",
+        "273",
+        "576",
+        "672",
+        "831",
+        "834",
+        "859"
+      ],
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "100",
+          "sourcePath": "100-post-3-jak-pisac-dobre-prompty-do-ai.md",
+          "value": "Post #3 Jak pisać dobre prompty do AI"
+        },
+        {
+          "field": "title",
+          "sourceId": "1142",
+          "sourcePath": "1142-post-57-vibe-coding-tworzenie-formularza-crud-z-wy.md",
+          "value": "Post #57 Vibe Coding Tworzenie formularza CRUD z wykorzystaniem Agentic Mode w GitHub Copilot."
+        },
+        {
+          "field": "title",
+          "sourceId": "1098",
+          "sourcePath": "1098-post-55-najciekawsze-news-ai-z-polski-i-swiata.md",
+          "value": "Post #55 Najciekawsze news AI z Polski i świata"
+        }
+      ],
+      "id": "ai",
+      "interpretation": "Obecne są materiały o promptach, narzędziach, programowaniu z AI, wyszukiwaniu i newsach. Tytuły nie wystarczają do oceny ich aktualności.",
+      "name": "AI: narzędzia, zastosowania i refleksje",
+      "parentId": null
+    },
+    {
+      "articleIds": [
+        "46",
+        "145",
+        "1802",
+        "2022",
+        "277",
+        "507",
+        "522",
+        "553",
+        "670",
+        "736",
+        "738",
+        "818",
+        "822",
+        "824",
+        "865",
+        "936",
+        "944"
+      ],
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "46",
+          "sourcePath": "46-post-1-powitanie-opengateweb.md",
+          "value": "Post #1 Powitanie OpenGateWeb"
+        },
+        {
+          "field": "title",
+          "sourceId": "2022",
+          "sourcePath": "2022-wyzwanie-10000-godzin-programowania-podsumowanie-w.md",
+          "value": "Wyzwanie 10000 godzin programowania Podsumowanie wrzesień 2025"
+        },
+        {
+          "field": "title",
+          "sourceId": "1802",
+          "sourcePath": "1802-brakuje-ludzi-w-it-czy-to-jest-clickbajt-analiza-r.md",
+          "value": "Brakuje ludzi w IT czy to jest clickbajt – analiza rynku, zarobków i szans w 2025 Post #71"
+        }
+      ],
+      "id": "journey",
+      "interpretation": "To kontekst autora, projekty i droga nauki, nie jednolity kurs. Dziennik warto oddzielić od samodzielnych lekcji EDU.",
+      "name": "Dziennik projektowy i rozwój w IT",
+      "parentId": null
+    },
+    {
+      "articleIds": [
+        "281",
+        "542",
+        "940",
+        "2048",
+        "2068",
+        "2070",
+        "942",
+        "966",
+        "145"
+      ],
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum()"
+        },
+        {
+          "field": "title",
+          "sourceId": "2048",
+          "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+          "value": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73"
+        },
+        {
+          "field": "title",
+          "sourceId": "940",
+          "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+          "value": "Post #45 JavaScript DOM selections i proste funkcje"
+        }
+      ],
+      "id": "javascript",
+      "interpretation": "Kalkulator potwierdza obecność funkcji, klas i obsługi DOM; tablice, warunki i selektory mają dodatkowe sygnały w tytułach.",
+      "name": "JavaScript: język, DOM i interakcje",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "1166",
+        "1308",
+        "1324",
+        "1356",
+        "974",
+        "977"
+      ],
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "## Tablice indeksowane kontra tablice asocjacyjne"
+        },
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "### array_map()"
+        },
+        {
+          "field": "title",
+          "sourceId": "974",
+          "sourcePath": "974-post-51-db-test-php-mysql-apps.md",
+          "value": "Post #51 DB Test PHP MySql Apps"
+        }
+      ],
+      "id": "php",
+      "interpretation": "Dwie przeczytane części obejmują tablice od struktur do mapowania. Pozostałe tytuły wskazują kodowanie, sterowanie i bazę danych.",
+      "name": "PHP: podstawy, tablice i backend",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "283",
+        "2003",
+        "977"
+      ],
+      "confidence": 0.83,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "Post #10 Python Crash Course"
+        },
+        {
+          "field": "title",
+          "sourceId": "2003",
+          "sourcePath": "2003-jak-zaczac-nauke-pythona-w-windows-i-visual-studio.md",
+          "value": "Jak zacząć naukę Pythona w Windows i Visual Studio Code Post #70"
+        }
+      ],
+      "id": "python",
+      "interpretation": "Widać crash course i start środowiska Windows/VS Code; treści nie były czytane w tym przebiegu.",
+      "name": "Python: wejście do nauki",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "path:143-post-4-angular-podstawy-praktyka.md",
+        "741",
+        "771",
+        "753",
+        "755",
+        "981",
+        "1770"
+      ],
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "TypeScript – wprowadzenie"
+        },
+        {
+          "field": "body",
+          "sourceId": "981",
+          "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+          "value": "### Instalacja Angular CLI"
+        },
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Plan artykułu WP"
+        }
+      ],
+      "id": "angular",
+      "interpretation": "Przeczytane wprowadzenia łączą opis drogi autora i przykłady komponentów; Signals występuje jako szkic planu, nie ukończony tutorial.",
+      "name": "Angular: od wprowadzenia do aplikacji",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "1799",
+        "826",
+        "944"
+      ],
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "Przewodnik po React Hooks: useState, useEffect i useContext"
+        },
+        {
+          "field": "tags",
+          "sourceId": "826",
+          "sourcePath": "826-post-43-najpopularniejsze-frameworki-i-biblioteki.md",
+          "value": "[\"angular-podstawy\",\"django\",\"flask\",\"node\",\"react\"]"
+        },
+        {
+          "field": "tags",
+          "sourceId": "944",
+          "sourcePath": "944-post-47-projekty-wykonane.md",
+          "value": "[\"front-end\",\"portfolio\",\"react\"]"
+        }
+      ],
+      "id": "react",
+      "interpretation": "Poradnik Hooks pokazuje trzy podstawowe hooki. Overview frameworków i portfolio mają tylko metadane wiążące je z React.",
+      "name": "React i porównania frameworków",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "410",
+        "578",
+        "507",
+        "514",
+        "522",
+        "675",
+        "738",
+        "1336",
+        "1142"
+      ],
+      "confidence": 0.82,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "410",
+          "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+          "value": "Post #11 API Advanced Programming Interface"
+        },
+        {
+          "field": "title",
+          "sourceId": "578",
+          "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+          "value": "Post #22 Wprowadzenie do API."
+        },
+        {
+          "field": "tags",
+          "sourceId": "514",
+          "sourcePath": "514-post-13-crud.md",
+          "value": "[\"crud\",\"Express.js\",\"teachers grade book\"]"
+        }
+      ],
+      "id": "apis",
+      "interpretation": "Dwa wprowadzenia API, dziennik aplikacji i materiały CRUD sugerują możliwą ścieżkę projektową. Kompletność pozostaje niezweryfikowana.",
+      "name": "API, CRUD i projekty aplikacyjne",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "1575",
+        "534",
+        "230",
+        "48",
+        "277",
+        "553",
+        "145"
+      ],
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1575",
+          "sourcePath": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+          "value": "Post #66 – Jak zbudować środowisko programistyczne na Windows Visual Studio Code, Git, Node.js"
+        },
+        {
+          "field": "title",
+          "sourceId": "534",
+          "sourcePath": "534-post-16-docker-konteneryzacja.md",
+          "value": "Post #16 Docker konteneryzacja"
+        },
+        {
+          "field": "title",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Post #2 język Markdown"
+        }
+      ],
+      "id": "tooling",
+      "interpretation": "Metadane wskazują setup Windows, kontenery, bundling i Markdown; nie przesądzają o jakości instrukcji.",
+      "name": "Środowisko, narzędzia i dokumentacja",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "556"
+      ],
+      "confidence": 0.77,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "556",
+          "sourcePath": "556-post-20-fluter-pierwsza-mobile-app.md",
+          "value": "Post #20 Fluter pierwsza mobile app"
+        },
+        {
+          "field": "tags",
+          "sourceId": "556",
+          "sourcePath": "556-post-20-fluter-pierwsza-mobile-app.md",
+          "value": "[\"crash-course\",\"dart\",\"flutter\",\"mobile-dev\"]"
+        }
+      ],
+      "id": "mobile",
+      "interpretation": "Jedyny jawny sygnał tutorialu mobile w tytule i tagach; nie dowód braku tematów mobile w innych treściach.",
+      "name": "Flutter i aplikacje mobilne",
+      "parentId": "programming"
+    },
+    {
+      "articleIds": [
+        "1135",
+        "1329",
+        "1577",
+        "1584",
+        "746",
+        "748",
+        "761",
+        "763",
+        "765",
+        "767",
+        "769",
+        "818",
+        "831",
+        "834"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "763",
+          "sourcePath": "763-post-32-przyklady-audytu-seo.md",
+          "value": "Post #32 Przykłady Audytu SEO"
+        },
+        {
+          "field": "title",
+          "sourceId": "767",
+          "sourcePath": "767-post-34-anatomia-linkow.md",
+          "value": "Post #34 Anatomia linków"
+        },
+        {
+          "field": "title",
+          "sourceId": "1329",
+          "sourcePath": "1329-post-63-ai-seo-2025-jak-google-ai-overview-i-promp.md",
+          "value": "Post #63 AI SEO 2025. Jak Google AI Overview i Prompt SEO rewolucjonizują pozycjonowanie?"
+        }
+      ],
+      "id": "seo",
+      "interpretation": "Wiele materiałów wiąże SEO z pracą nad realnym serwisem. Ta mapa nie ocenia rankingu, ruchu ani poprawności twierdzeń o Google.",
+      "name": "SEO: audyty, linki, metryki i AI search",
+      "parentId": "web"
+    },
+    {
+      "articleIds": [
+        "1789",
+        "230",
+        "553",
+        "670",
+        "675",
+        "736",
+        "822",
+        "936",
+        "942",
+        "944",
+        "966",
+        "968",
+        "970"
+      ],
+      "confidence": 0.87,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1789",
+          "sourcePath": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+          "value": "Zrównoważony web design – jak tworzyć harmonijne i estetyczne strony internetowe Post #67"
+        },
+        {
+          "field": "title",
+          "sourceId": "942",
+          "sourcePath": "942-post-46-biblioteki-do-animacji-z-elementami-w-java.md",
+          "value": "Post #46 Biblioteki do animacji z elementami w JavaScript"
+        },
+        {
+          "field": "title",
+          "sourceId": "970",
+          "sourcePath": "970-post-50-glide-jak-zrobic-kontent-slider.md",
+          "value": "Post #50 Glide Jak zrobić kontent slider?"
+        }
+      ],
+      "id": "design",
+      "interpretation": "Zbiór obejmuje projekty stron, UI, animacje, filtrowanie i slider; część wpisów jest dziennikiem projektu.",
+      "name": "Layout, komponenty UI i portfolio",
+      "parentId": "web"
+    },
+    {
+      "articleIds": [
+        "147",
+        "519"
+      ],
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "147",
+          "sourcePath": "147-post-6-hugo-generator-kompletny-przewodnik-2025-od.md",
+          "value": "Post #6 Hugo generator kompletny przewodnik 2025. Od Migracji do Optymalizacji"
+        },
+        {
+          "field": "title",
+          "sourceId": "519",
+          "sourcePath": "519-post-14-hugo-layout-development.md",
+          "value": "Post #14 Hugo Layout Development"
+        }
+      ],
+      "id": "static-sites",
+      "interpretation": "Tytuły łączą migrację/konfigurację Hugo z pracą nad layoutem. Szczegółowy zakres wymaga kolejnego odczytu.",
+      "name": "Hugo i generatory statyczne",
+      "parentId": "web"
+    },
+    {
+      "articleIds": [
+        "363",
+        "1135"
+      ],
+      "confidence": 0.78,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "363",
+          "sourcePath": "363-wordpress.md",
+          "value": "WordPress"
+        },
+        {
+          "field": "word_count",
+          "sourceId": "363",
+          "sourcePath": "363-wordpress.md",
+          "value": "65"
+        },
+        {
+          "field": "title",
+          "sourceId": "1135",
+          "sourcePath": "1135-post-56-7-najlepszych-wtyczek-seo-do-wordpress.md",
+          "value": "Post #56 7 Najlepszych wtyczek SEO do WordPress"
+        }
+      ],
+      "id": "wordpress",
+      "interpretation": "Krótki wpis WordPress i lista wtyczek SEO nie wystarczają do potwierdzenia kompletnej ścieżki administracji CMS.",
+      "name": "WordPress i ekosystem wtyczek",
+      "parentId": "web"
+    },
+    {
+      "articleIds": [
+        "100",
+        "1142",
+        "1779",
+        "1786",
+        "273",
+        "576"
+      ],
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "100",
+          "sourcePath": "100-post-3-jak-pisac-dobre-prompty-do-ai.md",
+          "value": "Post #3 Jak pisać dobre prompty do AI"
+        },
+        {
+          "field": "title",
+          "sourceId": "1142",
+          "sourcePath": "1142-post-57-vibe-coding-tworzenie-formularza-crud-z-wy.md",
+          "value": "Post #57 Vibe Coding Tworzenie formularza CRUD z wykorzystaniem Agentic Mode w GitHub Copilot."
+        },
+        {
+          "field": "title",
+          "sourceId": "576",
+          "sourcePath": "576-post-21-piai-pierwsza-ai-z-wielka-empatia.md",
+          "value": "Post #21 Pi.ai pierwsza AI z wielką empatią."
+        }
+      ],
+      "id": "ai-workflows",
+      "interpretation": "Metadane wskazują naukę promptów, Copilot CRUD, ChatGPT, Pi.ai i kreatywność. To zróżnicowane zastosowania, nie jedna ścieżka narzędzia.",
+      "name": "Prompty, asystenci i praca z AI",
+      "parentId": "ai"
+    },
+    {
+      "articleIds": [
+        "1329",
+        "831",
+        "834"
+      ],
+      "confidence": 0.84,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1329",
+          "sourcePath": "1329-post-63-ai-seo-2025-jak-google-ai-overview-i-promp.md",
+          "value": "Post #63 AI SEO 2025. Jak Google AI Overview i Prompt SEO rewolucjonizują pozycjonowanie?"
+        },
+        {
+          "field": "title",
+          "sourceId": "831",
+          "sourcePath": "831-post-39-gpt-nowy-sposob-wyszukiwania-search-ai.md",
+          "value": "Post #39 GPT Nowy sposób wyszukiwania Search AI"
+        }
+      ],
+      "id": "ai-search",
+      "interpretation": "Tytuły dotyczą AI Overview, Search AI i trendów; weryfikacja konkretnych obietnic lub efektów nie była wykonywana.",
+      "name": "AI w wyszukiwaniu i SEO",
+      "parentId": "ai"
+    },
+    {
+      "articleIds": [
+        "1098",
+        "1197",
+        "269",
+        "859"
+      ],
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "1098",
+          "sourcePath": "1098-post-55-najciekawsze-news-ai-z-polski-i-swiata.md",
+          "value": "Post #55 Najciekawsze news AI z Polski i świata"
+        },
+        {
+          "field": "title",
+          "sourceId": "1197",
+          "sourcePath": "1197-post-59-sztuczna-inteligencja-rewolucjonizuje-cybe.md",
+          "value": "Post #59 Sztuczna Inteligencja Rewolucjonizuje Cyberbezpieczeństwo."
+        },
+        {
+          "field": "title",
+          "sourceId": "859",
+          "sourcePath": "859-post-54-deep-seek-ai-nowej-generacji-z-chin.md",
+          "value": "Post #54 Deep Seek AI nowej generacji z Chin"
+        }
+      ],
+      "id": "ai-news",
+      "interpretation": "Tytuły dotyczą newsów, cyberbezpieczeństwa i DeepSeek; czasowe twierdzenia wymagają osobnego fact-checkingu.",
+      "name": "AI: newsy i zastosowania branżowe",
+      "parentId": "ai"
+    },
+    {
+      "articleIds": [
+        "672"
+      ],
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "field": "title",
+          "sourceId": "672",
+          "sourcePath": "672-post-24-trenning-tensor-flow-i-keras.md",
+          "value": "Post #24 Trenning Tensor Flow i Keras."
+        },
+        {
+          "field": "word_count",
+          "sourceId": "672",
+          "sourcePath": "672-post-24-trenning-tensor-flow-i-keras.md",
+          "value": "71"
+        }
+      ],
+      "id": "ml",
+      "interpretation": "To krótki sygnał uczenia maszynowego w metadanych, nie potwierdzony kurs lub kompletny przykład.",
+      "name": "TensorFlow i Keras",
+      "parentId": "ai"
+    }
+  ],
+  "gaps": [
+    {
+      "confidence": 0.86,
+      "description": "Potwierdzony samodzielny moduł TypeScript przed ścieżką Angular",
+      "domainId": "angular",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "TypeScript – wprowadzenie"
+        },
+        {
+          "field": "body",
+          "sourceId": "981",
+          "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+          "value": "TypeScript – Zawiera logikę komponentu"
+        }
+      ],
+      "id": "typescript-prerequisite",
+      "priority": "high",
+      "reason": "W przeczytanych wprowadzeniach TypeScript jest punktem kursu i językiem komponentu. Metadane nie pokazują jawnego samodzielnego tutorialu TypeScript; to hipoteza brakującego łącznika, nie dowód braku wszystkich wyjaśnień w korpusie."
+    },
+    {
+      "confidence": 0.67,
+      "description": "Łącznik między podstawami JavaScript a asynchronicznym API",
+      "domainId": "javascript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum()"
+        },
+        {
+          "field": "title",
+          "sourceId": "410",
+          "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+          "value": "Post #11 API Advanced Programming Interface"
+        },
+        {
+          "field": "title",
+          "sourceId": "741",
+          "sourcePath": "741-post-28-angular-api.md",
+          "value": "Post #28 Angular Api"
+        }
+      ],
+      "id": "async-api-bridge",
+      "priority": "medium",
+      "reason": "Kalkulator ma lokalne funkcje/DOM, a tytuły wskazują ogólne API i Angular API. W metadanych nie widać jednoznacznie wyodrębnionej lekcji async i obsługi błędów; przed NEW_CONTENT potrzebny jest przegląd obecnych tekstów API."
+    },
+    {
+      "confidence": 0.97,
+      "description": "Uruchamialna lekcja Signals zamiast samego konspektu",
+      "domainId": "angular",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Plan artykułu WP"
+        },
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Przykłady kodu „przed/po”."
+        }
+      ],
+      "id": "signals-working-example",
+      "priority": "high",
+      "reason": "Pełny odczyt wybranego wpisu pokazuje plan i obietnicę przykładów przed/po. Brakuje zrealizowanego przykładu w tym konkretnym wpisie; poprawność historii wersji wymaga osobnego review."
+    },
+    {
+      "confidence": 0.9,
+      "description": "Bezpieczne i sprawdzalne ćwiczenia do zaawansowanych tablic PHP",
+      "domainId": "php",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "extract($_POST);"
+        },
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "może nadpisać istniejące zmienne"
+        }
+      ],
+      "id": "php-safe-examples",
+      "priority": "medium",
+      "reason": "Część II pokazuje extract($_POST) i ostrzega o nadpisywaniu zmiennych. W module EDU warto uzupełnić uzasadnienie oraz ćwiczenia z danymi wejściowymi; nie wykonano audytu bezpieczeństwa kodu."
+    },
+    {
+      "confidence": 0.9,
+      "description": "Ćwiczenie własnego hooka zgodne z zapowiedzią poradnika",
+      "domainId": "react",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "własnych hooków"
+        },
+        {
+          "field": "body",
+          "sourceId": "1799",
+          "sourcePath": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+          "value": "Przewodnik po React Hooks: useState, useEffect i useContext"
+        }
+      ],
+      "id": "react-custom-hooks",
+      "priority": "medium",
+      "reason": "Nagłówek przeczytanego poradnika obiecuje własne hooki, a jego konkretne przykłady skupiają się na useState/useEffect/useContext. Należy rozwinąć przykład albo zawęzić obietnicę tytułu; nie jest to twierdzenie o całym korpusie."
+    },
+    {
+      "confidence": 0.83,
+      "description": "Sprawdzalne ćwiczenia i przypadki brzegowe do kalkulatora",
+      "domainId": "javascript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "parseInt(input1.value || 0)"
+        },
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator"
+        }
+      ],
+      "id": "js-exercise-tests",
+      "priority": "medium",
+      "reason": "Przeczytany kalkulator zawiera funkcje, klasy i parser wejścia. Kolejny moduł z oczekiwanymi wynikami i testami może połączyć wyjaśnienia z praktyką; nie zakładamy, że nigdzie indziej nie ma testowania."
+    }
+  ],
+  "limitations": [
+    "Przeanalizowano metadane wszystkich 83 artykułów; głęboko przeczytano tylko osiem wybranych tekstów, bez obcięcia któregokolwiek. Pozostałe 75 body nie było czytane.",
+    "Domeny i klastry mogą się pokrywać. Strong/partial/weak to interpretacja lokalnego pokrycia, nie miernik kompletności całej dziedziny ani ocena jakości kodu.",
+    "Brak jawnego sygnału w tytule/tagach nie dowodzi nieobecności tematu. Prerequisity i NEW_CONTENT to uzasadnione hipotezy do review.",
+    "Nie uruchamiano przykładów kodu, nie sprawdzano linków ani aktualnych wersji frameworków; twierdzenia wersjonujące pozostają do weryfikacji.",
+    "Wynik jest jawnym importem analizy tej sesji Codex, nie automatycznym wywołaniem API. Hash obu requestów wiąże odpowiedzi z inventory, promptem, budżetem i wybranymi body.",
+    "Żadna akcja KEEP/UPDATE/MERGE/SPLIT/ARCHIVE/REVIEW/NEW_CONTENT nie stanowi finalnej decyzji ani uprawnienia do zapisu w SOURCE lub CONTENT."
+  ],
+  "observations": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function Person(name, age)"
+        },
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator"
+        }
+      ],
+      "id": "functions-already-present",
+      "interpretation": "Funkcje, konstruktor Person i klasa Calculator są obecne w odczytanym JavaScript. Luka 'brak funkcji lub obiektów' byłaby nieuzasadniona."
+    },
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "field": "word_count",
+          "sourceId": "2070",
+          "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+          "value": "0"
+        },
+        {
+          "field": "body",
+          "sourceId": "1770",
+          "sourcePath": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+          "value": "Plan artykułu WP"
+        }
+      ],
+      "id": "draft-versus-published-body",
+      "interpretation": "Parse status OK oznacza poprawny odczyt front matter, nie gotowy artykuł: Console.log jest pusty, a Signals to plan."
+    },
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "field": "categories",
+          "sourceId": "2022",
+          "sourcePath": "2022-wyzwanie-10000-godzin-programowania-podsumowanie-w.md",
+          "value": "[\"Wyzwanie\"]"
+        },
+        {
+          "field": "categories",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "[\"coding corner\"]"
+        },
+        {
+          "field": "categories",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "[\"Coding Corner\",\"Wyzwanie\"]"
+        }
+      ],
+      "id": "metadata-labels-not-taxonomy",
+      "interpretation": "Wyzwanie porządkuje serię/dziennik. Kategoria coding corner różni się zapisem od Coding Corner; źródło zachowano, a domeny są interpretacją, nie zmianą kategorii."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+          "value": "Moja Ścieżka"
+        },
+        {
+          "field": "body",
+          "sourceId": "981",
+          "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+          "value": "### Instalacja Angular CLI"
+        }
+      ],
+      "id": "angular-roles",
+      "interpretation": "Wprowadzenie osobiste opisuje drogę autora, drugie daje komendy CLI i przykłady. Sam zbliżony tytuł nie uzasadnia odrzucenia jednego jako duplikatu."
+    },
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1356",
+          "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+          "value": "W poprzedniej części I Post #60"
+        },
+        {
+          "field": "title",
+          "sourceId": "1324",
+          "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+          "value": "Post #61 Tablice w PHP - Część 1"
+        }
+      ],
+      "id": "series-reference-review",
+      "interpretation": "Część II tablic PHP nazywa poprzednią część Post #60, podczas gdy pierwsza część w inventory ma Post #61. Odnośnik i numerację należy sprawdzić podczas redakcji."
+    }
+  ],
+  "schemaVersion": 1,
+  "uncertainties": [
+    "Wyzwanie jest etykietą serii, nie samodzielną dziedziną wiedzy; część materiałów to dziennik pracy.",
+    "Brak jawnego tytułu o TypeScript lub async nie dowodzi braku tej treści w niesprawdzonych artykułach.",
+    "Data z eksportu nie została uznana za dowód aktualności albo nieaktualności technologii.",
+    "Podobne tytuły wprowadzeń do Angulara oraz dwie części PHP wymagają porównania treści przed decyzją o scaleniu.",
+    "Zakres przykładu Calculator Math Func OOP oraz wpisów o Signals i React wynika dopiero z selektywnego odczytu."
+  ]
+}

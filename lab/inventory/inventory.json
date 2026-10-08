@@ -1,0 +1,1881 @@
+{
+  "schema_version": 1,
+  "articles": [
+    {
+      "source_id": "100",
+      "source_path": "100-post-3-jak-pisac-dobre-prompty-do-ai.md",
+      "title": "Post #3 Jak pisać dobre prompty do AI",
+      "slug": "3-jak-pisac-dobre-prompty-do-ai",
+      "original_url": "https://opengateweb.com/posts/3-jak-pisac-dobre-prompty-do-ai/",
+      "original_date": "2025-02-07 01:50:33",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "artificial-intelligence",
+        "artificial-intelligence-opengateweb",
+        "gemini",
+        "open-ai",
+        "promt"
+      ],
+      "word_count": 849,
+      "content_hash": "d2a3ead8d6dc094313cc6a3387f8b6c67cdf4c6eaad463c7426f8e943587e5c4",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1098",
+      "source_path": "1098-post-55-najciekawsze-news-ai-z-polski-i-swiata.md",
+      "title": "Post #55 Najciekawsze news AI z Polski i świata",
+      "slug": "post-55-najciekawsze-news-ai-z-polski-i-swiata",
+      "original_url": "https://opengateweb.com/posts/post-55-najciekawsze-news-ai-z-polski-i-swiata/",
+      "original_date": "2025-05-05 18:34:32",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "agent",
+        "ai-news"
+      ],
+      "word_count": 5631,
+      "content_hash": "08bdfc9e857ff71b2cc9dda2cd43433ad38aadf4097eae18967d5f8c0e5dd829",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1135",
+      "source_path": "1135-post-56-7-najlepszych-wtyczek-seo-do-wordpress.md",
+      "title": "Post #56 7 Najlepszych wtyczek SEO do WordPress",
+      "slug": "post-56-7-najlepszych-wtyczek-seo-do-wordpress",
+      "original_url": "https://opengateweb.com/posts/post-56-7-najlepszych-wtyczek-seo-do-wordpress/",
+      "original_date": "2025-05-17 00:26:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ahrefs",
+        "rankmath",
+        "seo-sem",
+        "yoast"
+      ],
+      "word_count": 657,
+      "content_hash": "ca358c848e1b2efb931d07f5ff2c0ececd96e02deb414c6e29a1a67f0abf73da",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1142",
+      "source_path": "1142-post-57-vibe-coding-tworzenie-formularza-crud-z-wy.md",
+      "title": "Post #57 Vibe Coding Tworzenie formularza CRUD z wykorzystaniem Agentic Mode w GitHub Copilot.",
+      "slug": "post-57-vibe-coding-formularz",
+      "original_url": "https://opengateweb.com/posts/post-57-vibe-coding-formularz/",
+      "original_date": "2025-05-19 21:55:56",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "agent",
+        "vibe-coding"
+      ],
+      "word_count": 1947,
+      "content_hash": "56e9fbbf7f4f3f74e0c97125a44dc58c361526ab5b8d9a1d4f8f19437c017853",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1166",
+      "source_path": "1166-post-58-php-kodowanie-i-znaki-specjalne.md",
+      "title": "Post #58 PHP Kodowanie i znaki specjalne",
+      "slug": "post-58-php-kodowanie-i-znaki-specjalne",
+      "original_url": "https://opengateweb.com/posts/post-58-php-kodowanie-i-znaki-specjalne/",
+      "original_date": "2025-06-16 20:35:33",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner"
+      ],
+      "tags": [
+        "php",
+        "znaki specjalne"
+      ],
+      "word_count": 956,
+      "content_hash": "b64a9b0356808731ddd4d3edebcfcb4a203f8e46d42aa2492a2b212c6833e4ec",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1197",
+      "source_path": "1197-post-59-sztuczna-inteligencja-rewolucjonizuje-cybe.md",
+      "title": "Post #59 Sztuczna Inteligencja Rewolucjonizuje Cyberbezpieczeństwo.",
+      "slug": "posts-post-59-sztuczna-inteligencja-rewolucjonizuje-cyberbezpieczenstwo",
+      "original_url": "https://opengateweb.com/posts/posts-post-59-sztuczna-inteligencja-rewolucjonizuje-cyberbezpieczenstwo/",
+      "original_date": "2025-06-26 13:15:45",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Ogólne"
+      ],
+      "tags": [
+        "ai-news",
+        "cyberbezpieczeństwo"
+      ],
+      "word_count": 1459,
+      "content_hash": "28656b71ceb6304edfd464d14f735877a1423371f364bbe1887ebb28bb27e7e0",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1308",
+      "source_path": "1308-post-60-instrukcje-sterujace-php.md",
+      "title": "Post #60 Instrukcje sterujące PHP",
+      "slug": "post-60-instrukcje-sterujace-php",
+      "original_url": "https://opengateweb.com/posts/post-60-instrukcje-sterujace-php/",
+      "original_date": "2025-07-02 21:10:16",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "php",
+        "POST",
+        "programming",
+        "python"
+      ],
+      "word_count": 530,
+      "content_hash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1324",
+      "source_path": "1324-post-61-tablice-w-php-czesc-1.md",
+      "title": "Post #61 Tablice w PHP - Część 1",
+      "slug": "post-61-tablice-w-php-czesc-1",
+      "original_url": "https://opengateweb.com/posts/post-61-tablice-w-php-czesc-1/",
+      "original_date": "2025-07-07 16:31:49",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "php"
+      ],
+      "word_count": 1256,
+      "content_hash": "45a70e243361632e60992e1ef1ba91d7cdd073306b552b7bd4a148250b786d90",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1329",
+      "source_path": "1329-post-63-ai-seo-2025-jak-google-ai-overview-i-promp.md",
+      "title": "Post #63 AI SEO 2025. Jak Google AI Overview i Prompt SEO rewolucjonizują pozycjonowanie?",
+      "slug": "ai-seo-2025-jak-google-ai-overview-i-prompt-seo-rewolucjonizuja-pozycjonowanie",
+      "original_url": "https://opengateweb.com/posts/ai-seo-2025-jak-google-ai-overview-i-prompt-seo-rewolucjonizuja-pozycjonowanie/",
+      "original_date": "2025-07-14 20:59:07",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ai citattions",
+        "ai overwiew",
+        "ai seo"
+      ],
+      "word_count": 3020,
+      "content_hash": "daee30fa51a85b629b031eff82d7b951b0942504e5422a72bdaf99a9e17219fc",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1336",
+      "source_path": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+      "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat",
+      "slug": "post-64-curl-twoje-terminalowe-okno-na-swiat",
+      "original_url": "https://opengateweb.com/posts/post-64-curl-twoje-terminalowe-okno-na-swiat/",
+      "original_date": "2025-07-18 21:21:56",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "curl",
+        "endpoint"
+      ],
+      "word_count": 1204,
+      "content_hash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1356",
+      "source_path": "1356-post-62-php-tablice-czesc-ii.md",
+      "title": "Post #62 PHP Tablice – Część II",
+      "slug": "post-62-php-tablice-czesc-ii",
+      "original_url": "https://opengateweb.com/posts/post-62-php-tablice-czesc-ii/",
+      "original_date": "2025-07-07 17:18:10",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 544,
+      "content_hash": "845bd2e7b8d36e669688e4638c6e7c2f8ee7403aece887c423921d9282afcc5c",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "path:143-post-4-angular-podstawy-praktyka.md",
+      "source_path": "143-post-4-angular-podstawy-praktyka.md",
+      "title": "Post #4 Angular Podstawy + Praktyka",
+      "slug": null,
+      "original_url": null,
+      "original_date": "2024-10-08 15:28:57",
+      "original_author": null,
+      "categories": [
+        "coding corner"
+      ],
+      "tags": [],
+      "word_count": 702,
+      "content_hash": "7826f03a865f62ae6872e2b3ca45c99e03ccf81a3d4cdd29c2492477d893ecb6",
+      "bom_detected": true,
+      "parse_status": "needs-review",
+      "warnings": [
+        "missing:post_id",
+        "missing:slug",
+        "missing:original_url",
+        "missing:author",
+        "scalar_list:categories",
+        "missing:tags"
+      ],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "145",
+      "source_path": "145-post-5-wielowatkowy-zaczynam-wyzwanie.md",
+      "title": "Post #5 wielowątkowy zaczynam wyzwanie",
+      "slug": "5-post",
+      "original_url": "https://opengateweb.com/posts/5-post/",
+      "original_date": "2025-02-08 15:35:05",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Ogólne"
+      ],
+      "tags": [
+        "fuse",
+        "fuse-search",
+        "fuseJS"
+      ],
+      "word_count": 410,
+      "content_hash": "88233442b1136511e68baf7e1a0405c98b4991f80591b5f6a2b343884313cdb2",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "147",
+      "source_path": "147-post-6-hugo-generator-kompletny-przewodnik-2025-od.md",
+      "title": "Post #6 Hugo generator kompletny przewodnik 2025. Od Migracji do Optymalizacji",
+      "slug": "6-post-hugo",
+      "original_url": "https://opengateweb.com/posts/6-post-hugo/",
+      "original_date": "2025-02-10 00:28:34",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Ogólne"
+      ],
+      "tags": [
+        "hugo",
+        "hugo-generator"
+      ],
+      "word_count": 2027,
+      "content_hash": "ffe30a425f49a919449f036c22f1c34d57edf6d2fa4f843afc426e2ada7d2a82",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1575",
+      "source_path": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+      "title": "Post #66 – Jak zbudować środowisko programistyczne na Windows Visual Studio Code, Git, Node.js",
+      "slug": "post-66-jak-zbudowac-srodowisko-programistyczne-na-windows-visual-studio-code-git-node-js",
+      "original_url": "https://opengateweb.com/posts/post-66-jak-zbudowac-srodowisko-programistyczne-na-windows-visual-studio-code-git-node-js/",
+      "original_date": "2025-08-07 22:16:59",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "front-end",
+        "programming"
+      ],
+      "word_count": 1837,
+      "content_hash": "92515775269ad4c74584ce313a5049f9978a624644c258f1df7c780db019a2d2",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1577",
+      "source_path": "1577-post-65-najwazniejsze-metryki-seo-i-ux-2025-ktore.md",
+      "title": "Post #65 Najważniejsze metryki SEO i UX 2025, które Google naprawdę bierze pod uwagę",
+      "slug": "post-65-najwazniejsze-metryki-seo-i-ux-2025-ktore-google-naprawde-bierze-pod-uwage",
+      "original_url": "https://opengateweb.com/posts/post-65-najwazniejsze-metryki-seo-i-ux-2025-ktore-google-naprawde-bierze-pod-uwage/",
+      "original_date": "2025-08-01 06:55:31",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ahrefs",
+        "ai citation",
+        "ai seo",
+        "digital marketing",
+        "marketing-cyfrowy",
+        "rank"
+      ],
+      "word_count": 2419,
+      "content_hash": "4ae47f797ccdcfe508725e950cc8644141bea5cdbe93efe94ff01272df9a0d45",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1584",
+      "source_path": "1584-co-zrobic-gdy-linki-przestaja-dzialac-praktyczny-t.md",
+      "title": "Co zrobić, gdy linki przestają działać – praktyczny test Broken Link Check Post #72",
+      "slug": "co-zrobic-gdy-linki-przestaja-dzialac-praktyczny-test-broken-link-check",
+      "original_url": "https://opengateweb.com/posts/co-zrobic-gdy-linki-przestaja-dzialac-praktyczny-test-broken-link-check/",
+      "original_date": "2025-09-06 20:25:22",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ai seo",
+        "backlink",
+        "seo-audit"
+      ],
+      "word_count": 700,
+      "content_hash": "42c06d17f41728f258741b8d203b2782bad6c4d34d712b7948f2c4c14af6e574",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1770",
+      "source_path": "1770-angular-signals-od-dema-do-stabilizacji-v16v20.md",
+      "title": "Angular Signals – od dema do stabilizacji (v16→v20+)",
+      "slug": "angular-signals-od-dema-do-stabilizacji-v16%e2%86%92v20",
+      "original_url": "https://opengateweb.com/posts/angular-signals-od-dema-do-stabilizacji-v16%e2%86%92v20/",
+      "original_date": "2025-09-29 16:13:19",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 150,
+      "content_hash": "859167a42df584bb748f1db5315b2e8bab289c6cd21130da935870b644f4edf4",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1779",
+      "source_path": "1779-software-sie-zmienia-znowu-andrew-karpathy-llm-y-i.md",
+      "title": "Software się zmienia (znowu) Andrew Karpathy, LLM-y i przyszłość, która już się zaczęła Post #68",
+      "slug": "software-sie-zmienia-znowu-andrew-karpathy-llm-y-i-przyszlosc-ktora-juz-sie-zaczela-post-68",
+      "original_url": "https://opengateweb.com/posts/software-sie-zmienia-znowu-andrew-karpathy-llm-y-i-przyszlosc-ktora-juz-sie-zaczela-post-68/",
+      "original_date": "2025-08-18 11:41:06",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ai",
+        "artificial-intelligence"
+      ],
+      "word_count": 1155,
+      "content_hash": "f309993ca479ae5640b18f01ea2bb4ea8b894debbefd24ffe975c98f86c75fd2",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1786",
+      "source_path": "1786-about-chatgpt-what-are-typical-use.md",
+      "title": "About ChatGPT what are typical use",
+      "slug": "about-chatgpt-what-are-typical-use",
+      "original_url": "https://opengateweb.com/posts/about-chatgpt-what-are-typical-use/",
+      "original_date": "2025-09-29 16:13:16",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 497,
+      "content_hash": "bb701eeb46121a96e031cb184749a247fcf0a7be55e4b465b806bc54965150de",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1789",
+      "source_path": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+      "title": "Zrównoważony web design – jak tworzyć harmonijne i estetyczne strony internetowe Post #67",
+      "slug": "zrownowazony-web-design",
+      "original_url": "https://opengateweb.com/posts/zrownowazony-web-design/",
+      "original_date": "2025-08-17 11:07:17",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "design-layout",
+        "front-end"
+      ],
+      "word_count": 571,
+      "content_hash": "87ef95d54d040d71cb4d290b62a06f2c545e27839928471b7644b354444a930b",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1799",
+      "source_path": "1799-jak-uzywac-react-hooks-w-2025-przyklady-i-najlepsz.md",
+      "title": "Jak używać React Hooks w 2025 – przykłady i najlepsze praktyki Post #69.",
+      "slug": "react-hooks-w-2025",
+      "original_url": "https://opengateweb.com/posts/react-hooks-w-2025/",
+      "original_date": "2025-08-24 21:53:36",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "react"
+      ],
+      "word_count": 1144,
+      "content_hash": "25cf598e06537edb97fcc504d1e2939d2ccc211170fb8804ff491cd2a3b57b8a",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "1802",
+      "source_path": "1802-brakuje-ludzi-w-it-czy-to-jest-clickbajt-analiza-r.md",
+      "title": "Brakuje ludzi w IT czy to jest clickbajt – analiza rynku, zarobków i szans w 2025 Post #71",
+      "slug": "brakuje-ludzi-w-it-czy-to-clickbajt-analiza-rynku-zarobkow-i-szans-w-2025-post-71",
+      "original_url": "https://opengateweb.com/posts/brakuje-ludzi-w-it-czy-to-clickbajt-analiza-rynku-zarobkow-i-szans-w-2025-post-71/",
+      "original_date": "2025-09-03 16:51:46",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Tech News",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "praca IT",
+        "rynek programistów",
+        "zarobki IT",
+        "zarobki programistów"
+      ],
+      "word_count": 837,
+      "content_hash": "a1f6a5d367f4001dd31b739b5e8edb9f35dc626257463040d13d92aeb0c6f932",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "2003",
+      "source_path": "2003-jak-zaczac-nauke-pythona-w-windows-i-visual-studio.md",
+      "title": "Jak zacząć naukę Pythona w Windows i Visual Studio Code Post #70",
+      "slug": "jak-zaczac-nauke-pythona-w-windows-i-visual-studio-code-post-70",
+      "original_url": "https://opengateweb.com/posts/jak-zaczac-nauke-pythona-w-windows-i-visual-studio-code-post-70/",
+      "original_date": "2025-08-28 05:29:38",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "python"
+      ],
+      "word_count": 409,
+      "content_hash": "5b93cb6b0282293c687709f16fb1d0b35f12754679a8478c4412e07e28314f18",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "2022",
+      "source_path": "2022-wyzwanie-10000-godzin-programowania-podsumowanie-w.md",
+      "title": "Wyzwanie 10000 godzin programowania Podsumowanie wrzesień 2025",
+      "slug": "wyzwanie-10000-godzin-programowania-podsumowanie-wrzesien-2025",
+      "original_url": "https://opengateweb.com/posts/wyzwanie-10000-godzin-programowania-podsumowanie-wrzesien-2025/",
+      "original_date": "2025-09-29 16:09:13",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 19,
+      "content_hash": "8d639a77ff24c87eecae4e6cbafd35910491e5b18e6d28b24c88146deaebfd19",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "2048",
+      "source_path": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+      "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+      "slug": "tablice-javascript-js-arrays-sortowanie-filtrowanie-i-srednia-ocen-krok-po-kroku",
+      "original_url": "https://opengateweb.com/posts/tablice-javascript-js-arrays-sortowanie-filtrowanie-i-srednia-ocen-krok-po-kroku/",
+      "original_date": "2025-09-09 20:23:59",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "js dom",
+        "programming"
+      ],
+      "word_count": 743,
+      "content_hash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "2068",
+      "source_path": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+      "slug": "if-i-else-w-javascript-od-prostych-warunkow-do-praktycznych-aplikacji",
+      "original_url": "https://opengateweb.com/posts/if-i-else-w-javascript-od-prostych-warunkow-do-praktycznych-aplikacji/",
+      "original_date": "2025-09-21 18:39:36",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "javascript",
+        "js dom",
+        "programming"
+      ],
+      "word_count": 1174,
+      "content_hash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "2070",
+      "source_path": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+      "title": "Console.log triki jakich nie znają Juniorzy",
+      "slug": "console-log-triki-jakich-nie-znaja-juniorzy",
+      "original_url": "https://opengateweb.com/posts/console-log-triki-jakich-nie-znaja-juniorzy/",
+      "original_date": "2025-09-29 16:07:41",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 0,
+      "content_hash": "0e553e9c89fb6acbbf72c7a087a72779bf4d6b57598984f2dde612437df127c1",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "230",
+      "source_path": "230-post-7-bootstrap-and-webpack.md",
+      "title": "Post #7 Bootstrap and WebPack",
+      "slug": "7-post-bootstrap",
+      "original_url": "https://opengateweb.com/posts/7-post-bootstrap/",
+      "original_date": "2025-02-11 15:24:15",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub"
+      ],
+      "tags": [
+        "bootstrap",
+        "webpack"
+      ],
+      "word_count": 819,
+      "content_hash": "12bb7906bb8de78893d143e33159ca6b8e0b7ee09671e57996736be2d088b2b2",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "269",
+      "source_path": "269-unveiling-the-potential-impact-of-deepseek-on-tech.md",
+      "title": "Unveiling the Potential Impact of DeepSeek on Tech Industry and Wall Street",
+      "slug": "unveiling-the-potential-impact-of-deepseek-on-tech-industry-and-wall-street",
+      "original_url": "https://opengateweb.com/posts/unveiling-the-potential-impact-of-deepseek-on-tech-industry-and-wall-street/",
+      "original_date": "2025-09-29 16:06:38",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne"
+      ],
+      "tags": [],
+      "word_count": 740,
+      "content_hash": "78cf8de436e59db3c1364da7975ee8cd07c78aa95637eea409d077b4e8c3e64e",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "273",
+      "source_path": "273-next-gen-creativity.md",
+      "title": "Next-Gen Creativity",
+      "slug": "next-gen-creativity",
+      "original_url": "https://opengateweb.com/posts/next-gen-creativity/",
+      "original_date": "2025-09-29 16:16:07",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI"
+      ],
+      "tags": [
+        "artificial-intelligence-opengateweb"
+      ],
+      "word_count": 1789,
+      "content_hash": "0ae27ede651dd45cd15aa2e11885d38a53aa8e66108cc63d6d03c28f740b60fb",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "277",
+      "source_path": "277-post-8-moj-gist.md",
+      "title": "Post #8 Mój Gist",
+      "slug": "8-post-gist",
+      "original_url": "https://opengateweb.com/posts/8-post-gist/",
+      "original_date": "2025-02-13 22:27:46",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne"
+      ],
+      "tags": [],
+      "word_count": 470,
+      "content_hash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "281",
+      "source_path": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "slug": "9-post-calc",
+      "original_url": "https://opengateweb.com/posts/9-post-calc/",
+      "original_date": "2025-02-15 06:31:24",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner"
+      ],
+      "tags": [
+        "functions",
+        "oop",
+        "procedruralne"
+      ],
+      "word_count": 878,
+      "content_hash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "283",
+      "source_path": "283-post-10-python-crash-course.md",
+      "title": "Post #10 Python Crash Course",
+      "slug": "10-post-python",
+      "original_url": "https://opengateweb.com/posts/10-post-python/",
+      "original_date": "2025-02-17 14:33:36",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner"
+      ],
+      "tags": [
+        "crash-course",
+        "python"
+      ],
+      "word_count": 883,
+      "content_hash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "363",
+      "source_path": "363-wordpress.md",
+      "title": "WordPress",
+      "slug": "wordpress",
+      "original_url": "https://opengateweb.com/posts/wordpress/",
+      "original_date": "2025-09-29 16:08:26",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne"
+      ],
+      "tags": [],
+      "word_count": 65,
+      "content_hash": "dfa80a478f799f98779b01d8070903275d4d3af60b1c64fe01a208e9ba3bc32d",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "410",
+      "source_path": "410-post-11-api-advanced-programming-interface.md",
+      "title": "Post #11 API Advanced Programming Interface",
+      "slug": "11-post-api",
+      "original_url": "https://opengateweb.com/posts/11-post-api/",
+      "original_date": "2025-02-21 10:45:24",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "api",
+        "JSON"
+      ],
+      "word_count": 630,
+      "content_hash": "392d05b7db1574b6523df0ea3519b334a672b8b076bb3b0c7e117b8ca8661870",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "46",
+      "source_path": "46-post-1-powitanie-opengateweb.md",
+      "title": "Post #1 Powitanie OpenGateWeb",
+      "slug": "1-powitanie-opengateweb",
+      "original_url": "https://opengateweb.com/posts/1-powitanie-opengateweb/",
+      "original_date": "2025-02-06 07:12:46",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne"
+      ],
+      "tags": [
+        "opengateweb"
+      ],
+      "word_count": 273,
+      "content_hash": "d4812d83595de2d7fa5e9a47fc4314fd4161919a89d2a5cdc6cc2cdad44a05bf",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "48",
+      "source_path": "48-post-2-jezyk-markdown.md",
+      "title": "Post #2 język Markdown",
+      "slug": "2-jezyk-mark-down",
+      "original_url": "https://opengateweb.com/posts/2-jezyk-mark-down/",
+      "original_date": "2025-02-06 07:36:08",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner"
+      ],
+      "tags": [
+        "mark-down",
+        "markdown"
+      ],
+      "word_count": 348,
+      "content_hash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "507",
+      "source_path": "507-post-12-app-teachers-grade-logbook.md",
+      "title": "Post #12 App Teachers Grade logbook",
+      "slug": "12-post-teachers",
+      "original_url": "https://opengateweb.com/posts/12-post-teachers/",
+      "original_date": "2025-02-23 03:22:32",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 397,
+      "content_hash": "bd61a2dfec54f494c629206adae921aea873c458095f20c0f6175e152b637e33",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "514",
+      "source_path": "514-post-13-crud.md",
+      "title": "Post #13 CRUD",
+      "slug": "13-post-crud-2",
+      "original_url": "https://opengateweb.com/posts/13-post-crud-2/",
+      "original_date": "2025-02-23 15:46:41",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "crud",
+        "Express.js",
+        "teachers grade book"
+      ],
+      "word_count": 1011,
+      "content_hash": "7322fab3f8e7136b773e944ef17ad0cdabf72efa7c91423783ce2548e63c4981",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "519",
+      "source_path": "519-post-14-hugo-layout-development.md",
+      "title": "Post #14 Hugo Layout Development",
+      "slug": "14-post-hugo-layouts-2",
+      "original_url": "https://opengateweb.com/posts/14-post-hugo-layouts-2/",
+      "original_date": "2025-02-26 00:06:50",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub"
+      ],
+      "tags": [
+        "design-layout",
+        "hugo-generator"
+      ],
+      "word_count": 589,
+      "content_hash": "73f2df5cf31f07ee2cad4c827b361b1e6f5e096de97e64514168048e62095a11",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "522",
+      "source_path": "522-post-15-teachers-app-finished.md",
+      "title": "Post #15 Teachers App Finished",
+      "slug": "15-post-app-teachers-2",
+      "original_url": "https://opengateweb.com/posts/15-post-app-teachers-2/",
+      "original_date": "2025-02-27 07:10:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "api",
+        "crud",
+        "Express.js",
+        "teachers grade book"
+      ],
+      "word_count": 282,
+      "content_hash": "4c3c31190b30d4ec5c48dbd617a038916dbef66e3ac3b22f841ae10cb80c4921",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "534",
+      "source_path": "534-post-16-docker-konteneryzacja.md",
+      "title": "Post #16 Docker konteneryzacja",
+      "slug": "16-post-docker",
+      "original_url": "https://opengateweb.com/posts/16-post-docker/",
+      "original_date": "2025-02-28 07:39:55",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner"
+      ],
+      "tags": [
+        "container",
+        "docker",
+        "tools"
+      ],
+      "word_count": 645,
+      "content_hash": "5f0f426d157c91ede15dcc433894ae652204211d94d59686c4256c03030b82f3",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "542",
+      "source_path": "542-post-17-przeglad-js-html-css.md",
+      "title": "Post #17 Przegląd JS Html CSS",
+      "slug": "17-post-js",
+      "original_url": "https://opengateweb.com/posts/17-post-js/",
+      "original_date": "2025-03-01 06:07:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "css",
+        "html",
+        "javascript",
+        "tools"
+      ],
+      "word_count": 155,
+      "content_hash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "551",
+      "source_path": "551-post-18-front-end-jakie-sa-wymagania.md",
+      "title": "Post #18 Front-End Jakie są wymagania ?",
+      "slug": "18-post-front-end",
+      "original_url": "https://opengateweb.com/posts/18-post-front-end/",
+      "original_date": "2025-03-03 22:55:51",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "front-end",
+        "skills"
+      ],
+      "word_count": 680,
+      "content_hash": "a99f5d391143e2ed1cae0ac52903d769a2262037709af72b7590525d1b8dd50d",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "553",
+      "source_path": "553-post-19-docker-toolbox-teachers-portfolio-i-glitch.md",
+      "title": "Post #19 Docker Toolbox, Teachers, Portfolio i Glitch",
+      "slug": "19-post-glitch",
+      "original_url": "https://opengateweb.com/posts/19-post-glitch/",
+      "original_date": "2025-03-04 08:01:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "design-layout",
+        "portfolio"
+      ],
+      "word_count": 521,
+      "content_hash": "6ff5a9fb7656b4b04fb51b6b3e6194281ac1a4d0e5b50d9da4f923d64d74f422",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "556",
+      "source_path": "556-post-20-fluter-pierwsza-mobile-app.md",
+      "title": "Post #20 Fluter pierwsza mobile app",
+      "slug": "20-post-flutter",
+      "original_url": "https://opengateweb.com/posts/20-post-flutter/",
+      "original_date": "2025-03-04 09:28:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner"
+      ],
+      "tags": [
+        "crash-course",
+        "dart",
+        "flutter",
+        "mobile-dev"
+      ],
+      "word_count": 1186,
+      "content_hash": "c7331bda4d746a0ae62aa562ada2120b33793260a1a395123f17e8b58508cbcb",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "576",
+      "source_path": "576-post-21-piai-pierwsza-ai-z-wielka-empatia.md",
+      "title": "Post #21 Pi.ai pierwsza AI z wielką empatią.",
+      "slug": "21-post-ai-pi",
+      "original_url": "https://opengateweb.com/posts/21-post-ai-pi/",
+      "original_date": "2025-03-05 08:10:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ai",
+        "artificial-intelligence"
+      ],
+      "word_count": 1046,
+      "content_hash": "d95250be3f478d446a2ed234c8d55ea95c97cbd0a913b065d0c50f0ba2f97f28",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "578",
+      "source_path": "578-post-22-wprowadzenie-do-api.md",
+      "title": "Post #22 Wprowadzenie do API.",
+      "slug": "22-post-api",
+      "original_url": "https://opengateweb.com/posts/22-post-api/",
+      "original_date": "2025-03-07 00:54:46",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 555,
+      "content_hash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "670",
+      "source_path": "670-post-23-zlecenie-wykonania-strony.md",
+      "title": "Post #23 Zlecenie wykonania strony.",
+      "slug": "23-post-new-job",
+      "original_url": "https://opengateweb.com/posts/23-post-new-job/",
+      "original_date": "2025-03-11 09:49:29",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "design-layout"
+      ],
+      "word_count": 176,
+      "content_hash": "d8a73295d49eab7b9925f253d163d7ab3411587cd7ec5dce5fb69bec1198580c",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "672",
+      "source_path": "672-post-24-trenning-tensor-flow-i-keras.md",
+      "title": "Post #24 Trenning Tensor Flow i Keras.",
+      "slug": "24-post-ai-model",
+      "original_url": "https://opengateweb.com/posts/24-post-ai-model/",
+      "original_date": "2025-03-12 08:40:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "keras AI",
+        "tensor flow"
+      ],
+      "word_count": 71,
+      "content_hash": "6c86070d5d4f4e1676b70616a63e8d3ed552d318271b5d0304ff41d8e8468b6a",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "675",
+      "source_path": "675-post-25-financial-planner.md",
+      "title": "Post #25 Financial Planner",
+      "slug": "post-25-financial-planner",
+      "original_url": "https://opengateweb.com/posts/post-25-financial-planner/",
+      "original_date": "2025-03-13 08:04:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "api",
+        "design-layout"
+      ],
+      "word_count": 538,
+      "content_hash": "9237a84e06c028be67721c9015119ddf772487234ce7dfeddeefefc06c649376",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "736",
+      "source_path": "736-post-26-update-portfolio.md",
+      "title": "Post #26 Update Portfolio",
+      "slug": "26-post-portfolio-up",
+      "original_url": "https://opengateweb.com/posts/26-post-portfolio-up/",
+      "original_date": "2025-03-16 01:41:51",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 88,
+      "content_hash": "2538faedc33428b1e6e29619e4a75e5a295004229eca372326319ecdc09ad96c",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "738",
+      "source_path": "738-post-27-update-fin-planner.md",
+      "title": "Post #27 Update Fin Planner",
+      "slug": "27-post-planner-up",
+      "original_url": "https://opengateweb.com/posts/27-post-planner-up/",
+      "original_date": "2025-03-17 01:42:25",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "Express.js",
+        "programming"
+      ],
+      "word_count": 131,
+      "content_hash": "33cc713851e54eda09a6d8bac5e59bf98e68096357e69581367da42c293c4cb8",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "741",
+      "source_path": "741-post-28-angular-api.md",
+      "title": "Post #28 Angular Api",
+      "slug": "28-post-angular-api",
+      "original_url": "https://opengateweb.com/posts/28-post-angular-api/",
+      "original_date": "2025-03-18 02:47:07",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "angular",
+        "api",
+        "programming"
+      ],
+      "word_count": 458,
+      "content_hash": "eee62468d9d4ad5abfc867517f6e0c3c89999e565101e93977fa18542122a7c8",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "746",
+      "source_path": "746-post-29-telomerspl-najlepsze-zrodla-bialka.md",
+      "title": "Post #29 Telomers.PL Najlepsze źródła białka",
+      "slug": "29-post-telomers-pl",
+      "original_url": "https://opengateweb.com/posts/29-post-telomers-pl/",
+      "original_date": "2025-03-19 16:41:29",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "key-words",
+        "seo-audit"
+      ],
+      "word_count": 460,
+      "content_hash": "5e8aa84505790f1f47d03bd93f96814349acea5ab9fd3a2a8128153b060dc36a",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "748",
+      "source_path": "748-post-30-telomerspl-frudizajnpl.md",
+      "title": "Post #30 Telomers.pl Frudizajn.pl",
+      "slug": "30-telo-frudes-pl",
+      "original_url": "https://opengateweb.com/posts/30-telo-frudes-pl/",
+      "original_date": "2025-03-20 06:27:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "seo-audit",
+        "seo-sem"
+      ],
+      "word_count": 673,
+      "content_hash": "9bb7ecd19eaa8f8aca8cf13d8a6ae0e8489ab89b8b3683e3d3648b507ef9eea9",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "753",
+      "source_path": "753-layout-promtow-baza-angular-18.md",
+      "title": "Layout promtów baza Angular 18",
+      "slug": "layout-promtow-baza-angular-18",
+      "original_url": "https://opengateweb.com/posts/layout-promtow-baza-angular-18/",
+      "original_date": "2025-09-29 16:17:14",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 586,
+      "content_hash": "21f2f825fed7cd9464edce30f7be36e56ad961e2edcf2532933713277c115210",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "755",
+      "source_path": "755-post-100-introduction-to-angulara-18.md",
+      "title": "Post #100 Introduction to Angulara 18",
+      "slug": "introduction-to-angular-18",
+      "original_url": "https://opengateweb.com/posts/introduction-to-angular-18/",
+      "original_date": "2025-09-29 16:17:32",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 420,
+      "content_hash": "3c4a4d723a7803f44d7c9960d86d583599cae03248468ce3af41d0156bee32e1",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "761",
+      "source_path": "761-post-31-seo-alchemia-dla-telomerss.md",
+      "title": "Post #31 SEO Alchemia dla Telomerss",
+      "slug": "31-seo",
+      "original_url": "https://opengateweb.com/posts/31-seo/",
+      "original_date": "2025-03-21 08:03:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "backlink",
+        "seo-audit"
+      ],
+      "word_count": 303,
+      "content_hash": "c338877187346a828796d3c0db11646a768aaa08d44aede43711cadacd88d8c5",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "763",
+      "source_path": "763-post-32-przyklady-audytu-seo.md",
+      "title": "Post #32 Przykłady Audytu SEO",
+      "slug": "32-examples-seo-audit",
+      "original_url": "https://opengateweb.com/posts/32-examples-seo-audit/",
+      "original_date": "2025-03-21 13:24:18",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "seo-audit",
+        "tools"
+      ],
+      "word_count": 742,
+      "content_hash": "160f2546cf37363e353005f66d22edf61f16a3824400343d63a54cc82d5ada2e",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "765",
+      "source_path": "765-post-33-seo-przebudowa-telomers.md",
+      "title": "Post #33 SEO Przebudowa Telomers",
+      "slug": "33-seo-przebudowa",
+      "original_url": "https://opengateweb.com/posts/33-seo-przebudowa/",
+      "original_date": "2025-03-23 01:21:41",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 301,
+      "content_hash": "cf539d327df379e1abe788637e1fbfb41e623cb79631ebff06b247fdd63a62ad",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "767",
+      "source_path": "767-post-34-anatomia-linkow.md",
+      "title": "Post #34 Anatomia linków",
+      "slug": "34-anatomia-linkow",
+      "original_url": "https://opengateweb.com/posts/34-anatomia-linkow/",
+      "original_date": "2025-03-24 18:23:28",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "backlink"
+      ],
+      "word_count": 1676,
+      "content_hash": "22992f1089e0a1bf46ee432d6672720f6b4235e1b9c35f1839bda2dc6dc702ea",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "769",
+      "source_path": "769-post-35-e-a-t.md",
+      "title": "Post #35 E-A-T",
+      "slug": "35-eat-algorytm",
+      "original_url": "https://opengateweb.com/posts/35-eat-algorytm/",
+      "original_date": "2025-03-25 10:10:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "eat-update",
+        "google"
+      ],
+      "word_count": 651,
+      "content_hash": "fe67e864a01cbb26450d75bfcf2a742d11679ad7e7caaa7e5513776d6daced50",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "771",
+      "source_path": "771-post-36-powrot-do-angular.md",
+      "title": "Post #36 Powrót do Angular",
+      "slug": "36-angular-academid",
+      "original_url": "https://opengateweb.com/posts/36-angular-academid/",
+      "original_date": "2025-03-26 08:22:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "angular-podstawy",
+        "crash-course"
+      ],
+      "word_count": 533,
+      "content_hash": "45feced143185b25ba610504ad7d27b3fb6abc7cb1813e65bdf34f130cdf600e",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "818",
+      "source_path": "818-post-37-podsumowanie-do-lipca.md",
+      "title": "Post #37 podsumowanie do Lipca",
+      "slug": "37-suma-lipca",
+      "original_url": "https://opengateweb.com/posts/37-suma-lipca/",
+      "original_date": "2025-03-27 08:52:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "seo-audit"
+      ],
+      "word_count": 223,
+      "content_hash": "6af156d5ffd90669ad6fc3d165e54d6dff76e36ed7b68a0ba634a7d20a20e195",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "822",
+      "source_path": "822-post-41-duze-prace-z-witryna-telomerspl.md",
+      "title": "Post #41 Duże prace z witryną Telomers.pl",
+      "slug": "41-prace-telomers",
+      "original_url": "https://opengateweb.com/posts/41-prace-telomers/",
+      "original_date": "2025-03-29 03:07:08",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "design-layout",
+        "telomers"
+      ],
+      "word_count": 174,
+      "content_hash": "2505b1a570c01927099ae0626353fdbb725f68b3bf6223d5420b4ce8ec5db37d",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "824",
+      "source_path": "824-post-42-nowe-tematy-i-trendy-programistyczne.md",
+      "title": "Post #42 Nowe tematy i trendy programistyczne",
+      "slug": "42-nowe-programistyczne",
+      "original_url": "https://opengateweb.com/posts/42-nowe-programistyczne/",
+      "original_date": "2025-03-29 10:53:16",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "nowości",
+        "opengateweb"
+      ],
+      "word_count": 554,
+      "content_hash": "949b1250842115e801d8e42750758441c5451ce22769a637ee41b9d48ead3f49",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "826",
+      "source_path": "826-post-43-najpopularniejsze-frameworki-i-biblioteki.md",
+      "title": "Post #43 Najpopularniejsze Frameworki i Biblioteki",
+      "slug": "post-43-najpopularniejsze-frameworki-i-biblioteki",
+      "original_url": "https://opengateweb.com/posts/post-43-najpopularniejsze-frameworki-i-biblioteki/",
+      "original_date": "2025-03-31 21:20:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "angular-podstawy",
+        "django",
+        "flask",
+        "node",
+        "react"
+      ],
+      "word_count": 4549,
+      "content_hash": "b226bef1d5dadca59c105a64537a5a2c693e6b6a8bea80d05b9611c6bb37a6b2",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "831",
+      "source_path": "831-post-39-gpt-nowy-sposob-wyszukiwania-search-ai.md",
+      "title": "Post #39 GPT Nowy sposób wyszukiwania Search AI",
+      "slug": "39-search-ai-2",
+      "original_url": "https://opengateweb.com/posts/39-search-ai-2/",
+      "original_date": "2025-03-28 08:56:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "SEO SEM",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ai seo"
+      ],
+      "word_count": 1692,
+      "content_hash": "e9fd87bb4701217d209dc4f27d42d29e6368cd608e2fb79e8dff91803135eb00",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "834",
+      "source_path": "834-trendy-i-slowa-kluczowe-dla-wd-webdev-tech-i-ai.md",
+      "title": "Trendy i słowa kluczowe dla WD WebDEV Tech i AI",
+      "slug": "trendy-i-slowa-kluczowe-dla-wd-webdev-tech-i-ai",
+      "original_url": "https://opengateweb.com/posts/trendy-i-slowa-kluczowe-dla-wd-webdev-tech-i-ai/",
+      "original_date": "2025-09-29 16:14:45",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 1024,
+      "content_hash": "f9b39bb518e2e4f42d039d09b818b317302a967800a0627a4b0efe0b50de4708",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "859",
+      "source_path": "859-post-54-deep-seek-ai-nowej-generacji-z-chin.md",
+      "title": "Post #54 Deep Seek AI nowej generacji z Chin",
+      "slug": "deep-seek-pl",
+      "original_url": "https://opengateweb.com/posts/deep-seek-pl/",
+      "original_date": "2025-04-16 08:56:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "AI",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "artificial-intelligence",
+        "artificial-intelligence-opengateweb"
+      ],
+      "word_count": 954,
+      "content_hash": "7b93a2da3dc4fc6af893176973b3dd0151a93f6960511b326eb1fe159e65b00b",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "865",
+      "source_path": "865-elevating-skills.md",
+      "title": "Elevating Skills",
+      "slug": "elevating-skills",
+      "original_url": "https://opengateweb.com/posts/elevating-skills/",
+      "original_date": "2025-09-29 16:15:21",
+      "original_author": "Scripterix",
+      "categories": [
+        "Wyzwanie"
+      ],
+      "tags": [],
+      "word_count": 1077,
+      "content_hash": "6e7c477277d8d9f13a48312e2fd38635089475c9a2d0bf2c8dc9216916b45903",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "936",
+      "source_path": "936-post-44-co-nowego-podsumowanie-oraz-portfolio.md",
+      "title": "Post #44 co nowego, podsumowanie oraz Portfolio",
+      "slug": "44-whats-new",
+      "original_url": "https://opengateweb.com/posts/44-whats-new/",
+      "original_date": "2025-04-01 08:39:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "ai",
+        "programming"
+      ],
+      "word_count": 1293,
+      "content_hash": "a2f280d226110e458c1f0a6ebfdd2aab84909a0374b9e17db02525739828e30b",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "940",
+      "source_path": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+      "title": "Post #45 JavaScript DOM selections i proste funkcje",
+      "slug": "45-js-dom",
+      "original_url": "https://opengateweb.com/posts/45-js-dom/",
+      "original_date": "2025-04-05 05:59:03",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "dom",
+        "javascript",
+        "js dom",
+        "selectors"
+      ],
+      "word_count": 1817,
+      "content_hash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "942",
+      "source_path": "942-post-46-biblioteki-do-animacji-z-elementami-w-java.md",
+      "title": "Post #46 Biblioteki do animacji z elementami w JavaScript",
+      "slug": "46-anime",
+      "original_url": "https://opengateweb.com/posts/46-anime/",
+      "original_date": "2025-04-06 14:14:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "animacje",
+        "anime-js",
+        "web-design"
+      ],
+      "word_count": 697,
+      "content_hash": "e75eafa28d7e421a953c5e5bfb9424d72317e495604f381553d4db6eaf8bbff2",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "944",
+      "source_path": "944-post-47-projekty-wykonane.md",
+      "title": "Post #47 Projekty wykonane",
+      "slug": "47-telo-react",
+      "original_url": "https://opengateweb.com/posts/47-telo-react/",
+      "original_date": "2025-04-07 00:14:57",
+      "original_author": "Scripterix",
+      "categories": [
+        "Ogólne",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "front-end",
+        "portfolio",
+        "react"
+      ],
+      "word_count": 374,
+      "content_hash": "06646ecb291365a7d7b91a862151594decc4a5b05744b79a4bebd3c374dff448",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "966",
+      "source_path": "966-post-48-proste-filtrowanie-istotope.md",
+      "title": "Post #48 proste filtrowanie Istotope",
+      "slug": "48-isotope",
+      "original_url": "https://opengateweb.com/posts/48-isotope/",
+      "original_date": "2025-04-08 16:21:49",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "isotope",
+        "tools"
+      ],
+      "word_count": 476,
+      "content_hash": "7c99063f67e04c944b054fdcb94c7cff26f6e8932be33a0c8572f537a88f343a",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "968",
+      "source_path": "968-post-49-web-design.md",
+      "title": "Post #49 Web-design",
+      "slug": "web-design",
+      "original_url": "https://opengateweb.com/posts/web-design/",
+      "original_date": "2025-04-09 08:26:00",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "design-layout",
+        "front-end"
+      ],
+      "word_count": 215,
+      "content_hash": "63556126b2375266e1db9af4dbfd49b36f294dad1cb6e834594145beb4640afa",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "970",
+      "source_path": "970-post-50-glide-jak-zrobic-kontent-slider.md",
+      "title": "Post #50 Glide Jak zrobić kontent slider?",
+      "slug": "50-glide",
+      "original_url": "https://opengateweb.com/posts/50-glide/",
+      "original_date": "2025-04-10 16:34:10",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "design-layout",
+        "front-end",
+        "tools"
+      ],
+      "word_count": 637,
+      "content_hash": "a0846fabb58b86261e5b7802e341e113f055d73a0832bfd22f6976653f869c9a",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "974",
+      "source_path": "974-post-51-db-test-php-mysql-apps.md",
+      "title": "Post #51 DB Test PHP MySql Apps",
+      "slug": "51-db-test",
+      "original_url": "https://opengateweb.com/posts/51-db-test/",
+      "original_date": "2025-04-11 18:08:37",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "crud",
+        "data-base",
+        "php",
+        "portfolio",
+        "programming"
+      ],
+      "word_count": 495,
+      "content_hash": "cdd0fd20ad96e8211ff74549c5e0c7f995333f44cece57f984a342bb248eae57",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "977",
+      "source_path": "977-post-52-jakie-sa-php-i-python.md",
+      "title": "Post #52 Jakie są PHP i Python",
+      "slug": "52-php-python",
+      "original_url": "https://opengateweb.com/posts/52-php-python/",
+      "original_date": "2025-04-14 18:21:36",
+      "original_author": "Scripterix",
+      "categories": [
+        "Coding Corner",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "php",
+        "programming",
+        "python"
+      ],
+      "word_count": 662,
+      "content_hash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    },
+    {
+      "source_id": "981",
+      "source_path": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+      "title": "Post #53 Angular Podstawy kompleksowy przewodnik dla początkujących",
+      "slug": "post-53-angular-podstawy-kompleksowy-przewodnik-dla-poczatkujacych",
+      "original_url": "https://opengateweb.com/posts/post-53-angular-podstawy-kompleksowy-przewodnik-dla-poczatkujacych/",
+      "original_date": "2025-04-15 18:03:50",
+      "original_author": "Scripterix",
+      "categories": [
+        "Design Hub",
+        "Wyzwanie"
+      ],
+      "tags": [
+        "angular",
+        "angular-podstawy",
+        "programming",
+        "tools"
+      ],
+      "word_count": 766,
+      "content_hash": "93d09a08ff09dc0caae7b57d401d7a4207334f0de4d2e56859ccaede1db41741",
+      "bom_detected": true,
+      "parse_status": "ok",
+      "warnings": [],
+      "review_status": "unreviewed"
+    }
+  ]
+}

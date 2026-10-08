@@ -1,0 +1,81 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--color-canvas);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	min-width: 20rem;
+	min-height: 100svh;
+	margin: 0;
+	flex-direction: column;
+}
+
+main {
+	display: block;
+	flex: 1;
+}
+
+a {
+	color: inherit;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+.container {
+	width: min(100% - (2 * var(--page-gutter)), var(--content-width));
+	margin-inline: auto;
+}
+
+.skip-link {
+	position: fixed;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 100;
+	padding: 0.65rem 0.9rem;
+	border-radius: var(--radius-small);
+	background: var(--color-ink);
+	color: var(--color-canvas);
+	transform: translateY(-200%);
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+:focus-visible {
+	outline: 3px solid var(--color-accent);
+	outline-offset: 3px;
+}
+
+::selection {
+	background: var(--color-accent);
+	color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
