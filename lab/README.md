@@ -54,3 +54,18 @@ Decyzja PHP MERGE została następnie zatwierdzona przez człowieka: `approved`,
 `approvedBy: human`, `nextStep: research`. Raport i plan Cartographera pozostają
 historycznym zapisem analizy. Writer LAB blokuje zastąpienie zatwierdzonej decyzji;
 akceptacja nie wykonuje MERGE ani nie uruchamia kolejnego agenta.
+
+## Researcher
+
+Osobno zaakceptowany milestone Researcher 0.1 utworzył
+[Research Packet PHP arrays](research/php-arrays/research.md). Structured JSON jest
+kontraktem; raport jest jego projekcją. Snapshot oficjalnych dokumentów i kontrolowane
+próby kodu są oddzielone od importowanej interpretacji sesji. Powtórzenie polecenia
+`npm run researcher -- --decision lab/decisions/php-arrays-merge-proposal.json`
+nie odświeża źródeł ani nie wykonuje nowej inferencji. Zapis tylko LAB/research;
+approved decision i Cartographer pozostają niezmienione. Research nie jest zgodą
+na artykuł ani publikację. Kolejny approval gate zapisał
+[akceptację człowieka](decisions/php-arrays-research-approval.json) po rzeczywistej
+[weryfikacji PHP 8.4.26 / 8.5.11](research/php-arrays/runtime-verification.md).
+Pierwotny pakiet i evidence nie zostały przepisane; runtime addendum jest obowiązkowe
+dla Writera. `nextStep: writer` oznacza kolejny etap, nie jego automatyczne rozpoczęcie.

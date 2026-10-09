@@ -1,0 +1,332 @@
+[
+  {
+    "code": "    'keys' => function () {\n        $a = [];\n        $a[0] = 'int'; $a['0'] = 'string'; $a[true] = 'bool';\n        $a[null] = 'null'; $a[1.5] = 'float';\n        $b = [10 => 'ten']; unset($b[10]); $b[] = 'next';\n        $negative = []; $negative[-5] = 'negative'; $negative[] = 'next';\n        return ['castKeys' => $a, 'castKeyOrder' => array_keys($a), 'appendAfterUnset' => $b, 'negativeAppend' => $negative];\n    },\n",
+    "codeHash": "36b31b97e8e548b90228ab8a338d6340c0950326b2ab5bd1e6bf476d46bcf8d0",
+    "description": "Controlled PHP array probe: keys",
+    "diagnostics": [
+      {
+        "level": 8192,
+        "message": "Implicit conversion from float 1.5 to int loses precision"
+      }
+    ],
+    "id": "keys",
+    "phpVersion": "8.2.4",
+    "result": {
+      "appendAfterUnset": {
+        "11": "next"
+      },
+      "castKeyOrder": [
+        0,
+        1,
+        ""
+      ],
+      "castKeys": {
+        "0": "string",
+        "1": "float",
+        "": "null"
+      },
+      "negativeAppend": {
+        "0": "next",
+        "-5": "negative"
+      }
+    }
+  },
+  {
+    "code": "    'presence' => function () {\n        $a = ['null' => null, 'zero' => 0, 'text-zero' => '0', 'false' => false, 'empty' => ''];\n        $rows = [];\n        foreach (['missing', 'null', 'zero', 'text-zero', 'false', 'empty'] as $key) {\n            $rows[$key] = ['isset' => isset($a[$key]), 'keyExists' => array_key_exists($key, $a),\n                'coalesce' => $a[$key] ?? 'fallback', 'empty' => empty($a[$key])];\n        }\n        $missing = $a['missing'];\n        return ['checks' => $rows, 'directMissing' => $missing];\n    },\n",
+    "codeHash": "b8bad8edb6ef8322b6d445742cbcfec2b5b0ec6c84d654efbc7bc8c6d11754f7",
+    "description": "Controlled PHP array probe: presence",
+    "diagnostics": [
+      {
+        "level": 2,
+        "message": "Undefined array key \"missing\""
+      }
+    ],
+    "id": "presence",
+    "phpVersion": "8.2.4",
+    "result": {
+      "checks": {
+        "empty": {
+          "coalesce": "",
+          "empty": true,
+          "isset": true,
+          "keyExists": true
+        },
+        "false": {
+          "coalesce": false,
+          "empty": true,
+          "isset": true,
+          "keyExists": true
+        },
+        "missing": {
+          "coalesce": "fallback",
+          "empty": true,
+          "isset": false,
+          "keyExists": false
+        },
+        "null": {
+          "coalesce": "fallback",
+          "empty": true,
+          "isset": false,
+          "keyExists": true
+        },
+        "text-zero": {
+          "coalesce": "0",
+          "empty": true,
+          "isset": true,
+          "keyExists": true
+        },
+        "zero": {
+          "coalesce": 0,
+          "empty": true,
+          "isset": true,
+          "keyExists": true
+        }
+      },
+      "directMissing": null
+    }
+  },
+  {
+    "code": "    'operations' => function () {\n        $numbers = [1, 2, 3, 4, 5]; $last = array_pop($numbers); $first = array_shift($numbers);\n        $afterShift = $numbers; unset($numbers[1]); $afterUnset = $numbers;\n        $removed = array_splice($numbers, 1, 2);\n        $fruits = ['apple', 'pear']; $fruits[] = 'plum';\n        $pushSize = array_push($fruits, 'cherry'); $unshiftSize = array_unshift($fruits, 'peach');\n        return compact('last', 'first', 'afterShift', 'afterUnset', 'removed', 'numbers', 'fruits', 'pushSize', 'unshiftSize');\n    },\n",
+    "codeHash": "0f8a38add8b3ebb8dd3c453fe6e9e8c4f5175ef85ee4c68312ef657155af45b1",
+    "description": "Controlled PHP array probe: operations",
+    "diagnostics": [],
+    "id": "operations",
+    "phpVersion": "8.2.4",
+    "result": {
+      "afterShift": [
+        2,
+        3,
+        4
+      ],
+      "afterUnset": {
+        "0": 2,
+        "2": 4
+      },
+      "first": 1,
+      "fruits": [
+        "peach",
+        "apple",
+        "pear",
+        "plum",
+        "cherry"
+      ],
+      "last": 5,
+      "numbers": [
+        2
+      ],
+      "pushSize": 4,
+      "removed": [
+        4
+      ],
+      "unshiftSize": 5
+    }
+  },
+  {
+    "code": "    'iteration' => function () {\n        $a = ['x' => 1, 4 => 2]; $pairs = [];\n        foreach ($a as $key => $value) $pairs[] = [$key, $value];\n        foreach ($a as &$value) $value *= 2;\n        unset($value); $value = 99;\n        return ['pairs' => $pairs, 'afterReferenceLoop' => $a];\n    },\n",
+    "codeHash": "c15c3481fd6c1a688cdc4178b691f3e8ac0817edca5bb9120c92a22c0d99de74",
+    "description": "Controlled PHP array probe: iteration",
+    "diagnostics": [],
+    "id": "iteration",
+    "phpVersion": "8.2.4",
+    "result": {
+      "afterReferenceLoop": {
+        "4": 4,
+        "x": 2
+      },
+      "pairs": [
+        [
+          "x",
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "code": "    'merge' => function () {\n        $a = [2 => 'left-number', 'x' => 'left']; $b = [2 => 'right-number', 'x' => 'right', 7 => 'seven'];\n        return ['merge' => array_merge($a, $b), 'union' => $a + $b, 'replace' => array_replace($a, $b), 'leftUnchanged' => $a];\n    },\n",
+    "codeHash": "9274bda74a7bbc0b5406378b34c0c8c837ede455e06d38cdfe0e04899ab3009c",
+    "description": "Controlled PHP array probe: merge",
+    "diagnostics": [],
+    "id": "merge",
+    "phpVersion": "8.2.4",
+    "result": {
+      "leftUnchanged": {
+        "2": "left-number",
+        "x": "left"
+      },
+      "merge": {
+        "0": "left-number",
+        "1": "right-number",
+        "2": "seven",
+        "x": "right"
+      },
+      "replace": {
+        "2": "right-number",
+        "7": "seven",
+        "x": "right"
+      },
+      "union": {
+        "2": "left-number",
+        "7": "seven",
+        "x": "left"
+      }
+    }
+  },
+  {
+    "code": "    'sorting' => function () {\n        $initial = ['b' => 2, 'a' => 3, 'c' => 1]; $rows = [];\n        foreach (['sort', 'rsort', 'asort', 'arsort', 'ksort', 'krsort'] as $function) {\n            $a = $initial; $returned = $function($a); $rows[$function] = ['array' => $a, 'keyOrder' => array_keys($a), 'return' => $returned];\n        }\n        return $rows;\n    },\n",
+    "codeHash": "5a599cf4a0f358b79450dc4edc9e8e4e2273e97da9d5e3d1f73b542626dc606d",
+    "description": "Controlled PHP array probe: sorting",
+    "diagnostics": [],
+    "id": "sorting",
+    "phpVersion": "8.2.4",
+    "result": {
+      "arsort": {
+        "array": {
+          "a": 3,
+          "b": 2,
+          "c": 1
+        },
+        "keyOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "return": true
+      },
+      "asort": {
+        "array": {
+          "a": 3,
+          "b": 2,
+          "c": 1
+        },
+        "keyOrder": [
+          "c",
+          "b",
+          "a"
+        ],
+        "return": true
+      },
+      "krsort": {
+        "array": {
+          "a": 3,
+          "b": 2,
+          "c": 1
+        },
+        "keyOrder": [
+          "c",
+          "b",
+          "a"
+        ],
+        "return": true
+      },
+      "ksort": {
+        "array": {
+          "a": 3,
+          "b": 2,
+          "c": 1
+        },
+        "keyOrder": [
+          "a",
+          "b",
+          "c"
+        ],
+        "return": true
+      },
+      "rsort": {
+        "array": [
+          3,
+          2,
+          1
+        ],
+        "keyOrder": [
+          0,
+          1,
+          2
+        ],
+        "return": true
+      },
+      "sort": {
+        "array": [
+          1,
+          2,
+          3
+        ],
+        "keyOrder": [
+          0,
+          1,
+          2
+        ],
+        "return": true
+      }
+    }
+  },
+  {
+    "code": "    'functional' => function () {\n        $numbers = [1, 2, 3, 4, 5];\n        $map = array_map(fn($n) => $n * 2, $numbers);\n        $filter = array_filter($numbers, fn($n) => $n % 2 === 0);\n        $reduce = array_reduce($numbers, fn($carry, $n) => $carry + $n, 0);\n        $counts = array_count_values(['apple', 'pear', 'apple', 'cherry', 'pear']);\n        return compact('numbers', 'map', 'filter', 'reduce', 'counts');\n    },\n",
+    "codeHash": "22667b7414863a7e5378ed7db68d2ce901f0c1e77e2bd69305443f40302b2723",
+    "description": "Controlled PHP array probe: functional",
+    "diagnostics": [],
+    "id": "functional",
+    "phpVersion": "8.2.4",
+    "result": {
+      "counts": {
+        "apple": 2,
+        "cherry": 1,
+        "pear": 2
+      },
+      "filter": {
+        "1": 2,
+        "3": 4
+      },
+      "map": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reduce": 15
+    }
+  },
+  {
+    "code": "    'extract' => function () {\n        $name = 'trusted'; $untrusted = ['name' => 'overwritten'];\n        $count = extract($untrusted);\n        return ['name' => $name, 'createdVariables' => $count];\n    },\n",
+    "codeHash": "045b9b2997a8859348a814aaad6db2115bbbf71df7caee4e12ae8759fe2a2ce9",
+    "description": "Controlled PHP array probe: extract",
+    "diagnostics": [],
+    "id": "extract",
+    "phpVersion": "8.2.4",
+    "result": {
+      "createdVariables": 1,
+      "name": "overwritten"
+    }
+  },
+  {
+    "code": "    'forms-menu' => function () {\n        $request = ['email' => ['unexpected-array'], 'name' => '<b>name</b>'];\n        $email = $request['email'] ?? '';\n        $escaped = htmlspecialchars($request['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');\n        $submenuItem = ['title' => 'Child', 'url' => '/child']; $active = $submenuItem['active'];\n        return ['emailIsString' => is_string($email), 'validEmail' => filter_var('user@example.com', FILTER_VALIDATE_EMAIL),\n            'invalidEmail' => filter_var('invalid', FILTER_VALIDATE_EMAIL), 'escaped' => $escaped, 'active' => $active];\n    },\n",
+    "codeHash": "f32d2c2f3f8bbb6ab6315c98facba92e7be8400f3367e62c43c477959de025a9",
+    "description": "Controlled PHP array probe: forms-menu",
+    "diagnostics": [
+      {
+        "level": 2,
+        "message": "Undefined array key \"active\""
+      }
+    ],
+    "id": "forms-menu",
+    "phpVersion": "8.2.4",
+    "result": {
+      "active": null,
+      "emailIsString": false,
+      "escaped": "&lt;b&gt;name&lt;/b&gt;",
+      "invalidEmail": false,
+      "validEmail": "user@example.com"
+    }
+  }
+]

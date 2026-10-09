@@ -4,6 +4,27 @@
 
 ### Added
 
+- Research Packet approval gate: actual PHP 8.4.26 / 8.5.11 portable CLI verification,
+  12 fixed probes and 60 assertions per version, archive/executable/code provenance,
+  expected diagnostics, JSON evidence and derived runtime report in LAB.
+- Eight offline runtime-evidence regression tests; no external runtime/API in tests
+  and no general CI system or global PHP installation.
+- Separate human-approved research decision with packet/evidence hashes and
+  `nextStep: writer`; no automatic start of Writer/Critic.
+- Scoped LF checkout attributes for LAB JSON/Markdown and controlled PHP probes,
+  preserving byte-hash provenance across Windows checkouts.
+- Mandatory PHP 8.5 null-offset deprecation addendum grounded in actual probes and
+  official migration documentation; initial 8.5 58/60 failure retained for audit.
+- Researcher 0.1 runtime module: strict approved-only input, versioned Research Packet,
+  prompt/policies, grounded documentation/article evidence, confidence and references.
+- Manual Researcher CLI, exact request hashes and explicit recorded-session import;
+  narrowed LAB/research writer and deterministic JSON-derived report.
+- PHP arrays research: 34 official documents, 13 questions, 9 controlled local PHP
+  8.2.4 probes, 25 facts, 4 corrections, 3 security notes and 8 code findings.
+- Two explicit needs-review items: target runtime 8.4/8.5 execution and completeness
+  of final standalone examples/form skeleton. No article or application handler.
+- Researcher fake/recorded-model contract, evidence, replay and filesystem tests;
+  explicit bounded pilot capture scripts, separate from model interpretation.
 - Redactoria EDU static Astro pilot.
 - Validated `articles` and `topics` Content Collections.
 - Static article, topic, homepage, and project routes.
@@ -33,6 +54,13 @@
 
 ### Changed
 
+- Target-runtime research question resolved by actual 8.4/8.5 execution; original
+  Research Packet and its 8.2.4 evidence retained byte-identically. Future final
+  Writer examples/form handler still require their own output validation.
+- Shared recorded model port accepts a minimal `research` phase without providers,
+  API keys or inference HTTP layer; existing Cartographer replay stays compatible.
+- LAB writer permits research artifacts; Researcher capability restricts writes to
+  its own research subtree. Approved MERGE and Cartographer artifacts are preserved.
 - Replaced the Astro starter presentation with the Redactoria EDU interface.
 - Renamed the package from the temporary `asto` name to `redactoria`.
 - Made `AGENTS.md` the sole main instruction file for coding agents.
@@ -57,6 +85,14 @@
 
 ### Documentation
 
+- Approval gate plan 006 and Project Brain: Milestone 3 DONE, packet APPROVED,
+  PHP 8.4/8.5 PASS, Milestone 4 Writer/Critic NEXT and not started.
+- Approval quality gate: 123 passing tests, clean 61-file diagnostics, six-page
+  build and all 107 protected file hashes unchanged, including original research.
+- Researcher operation/evidence documentation, pilot audit guide, execution plan 005,
+  updated Project Brain and ADR 0003 evidence clarification (no duplicate ADR).
+- Milestone 3 quality gate: 115 passing tests, clean 58-file diagnostics, six-page
+  build, validated Researcher pilot, identical replay and 100 protected file hashes.
 - Added ADR 0001 for system boundaries and future runtime agent-modules.
 - Added ADR 0002 for local validated content collections.
 - Replaced the starter README with project-specific guidance.

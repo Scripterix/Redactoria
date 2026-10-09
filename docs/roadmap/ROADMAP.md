@@ -36,19 +36,30 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Focused PHP experiment completed; human MERGE approval recorded with confidence
   0.96, preserved evidence/source hashes and `nextStep: research`.
 - Session status/file map in `docs/STATUS.md`; plan 004 remains completed.
+- Milestone 3 — Researcher 0.1: independent agent, approved-only scope, strict
+  evidence contracts, manual CLI and narrowed research-only LAB writer.
+- PHP Research Packet: 34 primary documents, two full source reads, 9 controlled
+  PHP 8.2.4 probes, 25 facts, 4 corrections and 2 explicitly unresolved questions.
+- Hash-bound recorded-session research import/replay; no production LLM API.
+- Research Packet approved by human, with a separate hash-bound decision and
+  `nextStep: writer`; original evidence/provenance and packet remain unchanged.
+- Actual PHP 8.4.26 and 8.5.11 approval verification: PASS, 12 controlled probes and
+  60 assertions each. Official portable archives verified by published SHA-256.
+- Required PHP 8.5 null-offset deprecation addendum; initial 58/60 result and official
+  migration evidence preserved separately. Target-runtime question resolved.
 
 ## NOW
 
-- Session closed. No active Researcher, Writer or other next-milestone implementation.
-- PHP MERGE is approved and ready for research, but has not been executed.
+- Milestone 3 — Researcher 0.1 DONE; Research Packet APPROVED; PHP 8.4/8.5 PASS.
+- PHP MERGE remains approved; no source merge, final article or publication performed.
+- Approval gate closed; no further runtime agent started.
 
 ## NEXT
 
-- **Milestone 3 — Researcher 0.1** (NEXT, not started).
-- Pilot: PHP Arrays I + II → approved MERGE → Research Packet grounded in current
-  PHP documentation, version behavior, keys/null, security and verified examples.
-- Human review of the Research Packet before authorizing the future Writer/Critic
-  pipeline. No Researcher plan or implementation is created in this session.
+- Milestone 4 — Writer/Critic, not started; wait for an explicit start instruction.
+- Use the approved packet plus mandatory runtime addendum, including PHP 8.5 null
+  offset caution. Validate future final standalone examples and form skeleton when
+  they exist; runtime gate tests controlled examples, not a yet-unwritten article.
 
 ## LATER
 
@@ -57,7 +68,7 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Single-Step Agent Loop.
 - Dispatcher and job state.
 - Further runtime agent-modules.
-- Writer/Critic pipeline after research and human review; Publisher Agent later.
+- Publisher Agent, after writing/critique and a separate publication decision.
 - Production LLM API after the explicit session-import pilot.
 - Domain Packs.
 - Multi-site Engine.

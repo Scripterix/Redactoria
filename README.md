@@ -7,8 +7,8 @@ Projekt ma trzy wyraźnie oddzielone obszary:
 
 - **Website** — publiczna strona Astro i zatwierdzone treści.
 - **LAB** — materiały robocze, research, propozycje i decyzje redakcyjne.
-- **Redactoria Engine** — niezależna warstwa automatyzacji. Pilot zawiera pierwszy
-  ręcznie uruchamiany moduł Cartographer 0.1; pełny Engine pozostaje przyszłością.
+- **Redactoria Engine** — niezależna warstwa automatyzacji. Pilot zawiera
+  ręcznie uruchamiane moduły Cartographer 0.1 i Researcher 0.1; pełny Engine pozostaje przyszłością.
 
 Materiały w LAB nie są automatycznie publikowane. Źródłowy korpus artykułów jest
 traktowany jako tylko do odczytu.
@@ -103,6 +103,25 @@ bez zewnętrznego API i bez ponownej analizy całego korpusu. Wyniki:
 SOURCE/CONTENT. Nowy import przygotowuje `--prepare merge` z tymi samymi argumentami.
 
 Obecna decyzja PHP MERGE została zatwierdzona przez człowieka; następny krok to
-research, jeszcze nie uruchomiony. Powyższy zapis focused run jest teraz blokowany,
+research, którego pierwszy pakiet jest już gotowy. Powyższy zapis focused run jest teraz blokowany,
 aby nie nadpisać `approved` nową propozycją. Raport Cartographera pozostaje zapisem
 historycznej rekomendacji, a aktualna akceptacja znajduje się w pliku decyzji.
+
+## Researcher 0.1
+
+```sh
+npm run researcher -- --decision lab/decisions/php-arrays-merge-proposal.json
+```
+
+Odtwarza jawny import analizy sesji bez API i bez ponownej analizy korpusu. Czyta
+dokładnie dwa zatwierdzone teksty, waliduje evidence i zapisuje tylko
+[Research Packet JSON](lab/research/php-arrays/research.json) oraz
+[raport/handoff](lab/research/php-arrays/research.md) w LAB. Fakty pochodzą z 34
+oficjalnych dokumentów PHP, nie z pamięci modelu. Pierwotne próby na PHP 8.2.4
+pozostają w niezmienionym pakiecie. Oddzielna [weryfikacja runtime](lab/research/php-arrays/runtime-verification.md)
+przeszła na rzeczywistym PHP 8.4.26 i 8.5.11: po 12 prób i 60 asercji; zawiera
+obowiązkowe uzupełnienie o deprecacji offsetów `null` w PHP 8.5.
+[Research approval](lab/decisions/php-arrays-research-approval.json) zapisuje decyzję
+człowieka: `approved`, `approvedBy: human`, `nextStep: writer`.
+Instrukcje: [Researcher](docs/architecture/researcher.md). Następny krok to Milestone 4
+— Writer/Critic, nie rozpoczęty. Nie ma zgody na publikację.

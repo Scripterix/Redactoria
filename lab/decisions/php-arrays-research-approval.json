@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-09T08:40:55.180Z",
+  "nextStep": "writer",
+  "scope": "Research Packet as substantive basis for Milestone 4; no authorization to start Writer in this gate.",
+  "topic": "PHP arrays",
+  "packetRef": "lab/research/php-arrays/research.json",
+  "packetHash": "3437fb991ebd1707c0ca04092a2143ade10704dd1168749eff694d3b4d0a3a42",
+  "targets": [
+    {
+      "contentHash": "45a70e243361632e60992e1ef1ba91d7cdd073306b552b7bd4a148250b786d90",
+      "providedCharacters": 10906,
+      "sourceId": "1324",
+      "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+      "title": "Post #61 Tablice w PHP - Część 1",
+      "truncated": false
+    },
+    {
+      "contentHash": "845bd2e7b8d36e669688e4638c6e7c2f8ee7403aece887c423921d9282afcc5c",
+      "providedCharacters": 4548,
+      "sourceId": "1356",
+      "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+      "title": "Post #62 PHP Tablice – Część II",
+      "truncated": false
+    }
+  ],
+  "requestHash": "9fe6e26a5da722bccc0a74afc43ead40525932cb1342330deb19fde1f844fa64",
+  "inputHash": "514dc218b2f848833bd75aa7e191df50c368f6d659ee9e7f3bf1162f46ff0b75",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "Codex current session — Researcher 0.1"
+  },
+  "evidence": {
+    "humanApproval": "Explicit user instruction: Akceptuję Research Packet z Milestone 3 jako merytoryczną podstawę dalszej pracy. Approval recorded after successful PHP 8.4/8.5 runtime verification.",
+    "artifacts": [
+      {
+        "path": "lab/research/php-arrays/research.json",
+        "sha256": "3437fb991ebd1707c0ca04092a2143ade10704dd1168749eff694d3b4d0a3a42"
+      },
+      {
+        "path": "lab/research/php-arrays/research.md",
+        "sha256": "8e0f0d64eba3545d43762f9635e3ac570e228d843d67184ee4142518097bf5f6"
+      },
+      {
+        "path": "lab/research/php-arrays/sources.json",
+        "sha256": "1dcef458c15bb6bdeb11c59a21e10aaf50ca1bcf26ea58b2a5619781c35d0570"
+      },
+      {
+        "path": "lab/research/php-arrays/probes.json",
+        "sha256": "0325ebe7a9aa25548329959fca5426358dba9830a9974946dfbc02795134b243"
+      },
+      {
+        "path": "lab/research/php-arrays/request.json",
+        "sha256": "38e1d2a8ea1ea9516773b325825e2e96756835c7d8ec0bedd3d538fae0f43f38"
+      },
+      {
+        "path": "lab/research/php-arrays/session-responses.json",
+        "sha256": "7e4bebd40a0a1732ac4543a5ad1f2e3ac0083faf2be0269b10fe5f44771ef022"
+      },
+      {
+        "path": "lab/decisions/php-arrays-merge-proposal.json",
+        "sha256": "7ca8e47a26954b32d2e145f396472f16d6dc90b0371ae5c12ce9e0c37cdb8622"
+      },
+      {
+        "path": "lab/cartography/php-arrays-merge.json",
+        "sha256": "d3dc07359e5fe69055c4d0610b382f13a715e6f2bef7c053ec9ab51a7c6f0a23"
+      },
+      {
+        "path": "lab/research/php-arrays/runtime-verification.json",
+        "sha256": "9de0371329ffa6758853087f3f4b402607b6ab1a2ec2467478143c5c128a4338"
+      },
+      {
+        "path": "lab/research/php-arrays/runtime-verification-initial.json",
+        "sha256": "2812421e1394dc03d4055dbb6c9d9be66c7f460d91731f8777d7640337f765ae"
+      },
+      {
+        "path": "lab/research/php-arrays/runtime-source-supplement.json",
+        "sha256": "02fc3fcc16e7520d4ea569b21b8593dc240b8005e56dbd3ef477725b5b6dd10f"
+      }
+    ],
+    "runtimeVerification": {
+      "ref": "lab/research/php-arrays/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "version": "8.4.26",
+          "status": "PASS",
+          "assertions": 60,
+          "probes": 12
+        },
+        {
+          "version": "8.5.11",
+          "status": "PASS",
+          "assertions": 60,
+          "probes": 12
+        }
+      ]
+    }
+  },
+  "requiredAddenda": [
+    {
+      "ref": "lab/research/php-arrays/runtime-verification.md",
+      "findingId": "php85-null-offset",
+      "instruction": "PHP 8.5 deprecates null array offsets as well as null array_key_exists key argument; use explicit empty-string keys. This is mandatory Writer caution."
+    }
+  ],
+  "resolvedQuestionIds": [
+    "target-runtime"
+  ],
+  "remainingWriterBoundary": "Final standalone Writer-authored examples and a complete form handler do not exist yet and must not be represented as executed. This is future output validation, not an unresolved research-runtime gate."
+}

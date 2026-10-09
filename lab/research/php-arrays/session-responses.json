@@ -1,0 +1,1763 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "Codex current session — Researcher 0.1",
+    "description": "Jawny import interpretacji wykonanej w sesji Codex na 2026-10-09. Fakty pochodzą z oddzielnie pobranych oficjalnych źródeł PHP i kontrolowanych prób PHP 8.2.4, nie z samego modelu. Bez API inference i bez fake odpowiedzi pilota."
+  },
+  "research": {
+    "requestHash": "9fe6e26a5da722bccc0a74afc43ead40525932cb1342330deb19fde1f844fa64",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "topic": "Tablice PHP — Research Packet do zatwierdzonego połączenia części I i II",
+      "environment": {
+        "phpVersionScope": "PHP 8.4–8.5 na aktualnych wydaniach poprawkowych; zakres redakcyjny proponowany na podstawie aktywnego wsparcia. Ogólne objaśnienia PHP 8.x z wyraźnymi uwagami 8.1/8.3/8.5. Lokalne kontrolowane próby wykonane wyłącznie na PHP 8.2.4; brak macierzy runtime 8.4/8.5.",
+        "asOfDate": "2026-10-09",
+        "evidence": [
+          {
+            "documentId": "php-support",
+            "excerptId": "branches"
+          },
+          {
+            "documentId": "arrays",
+            "excerptId": "append"
+          },
+          {
+            "documentId": "key-exists",
+            "excerptId": "null"
+          }
+        ]
+      },
+      "verifiedFacts": [
+        {
+          "id": "php-lifecycle",
+          "questionIds": [
+            "versions"
+          ],
+          "claim": "Na 2026-10-09 stabilne wspierane gałęzie to PHP 8.2, 8.3, 8.4 i 8.5. PHP 8.4 i 8.5 mają aktywne wsparcie; 8.2 i 8.3 wyłącznie poprawki bezpieczeństwa. Wsparcie bezpieczeństwa 8.2 kończy się 2026-12-31, 8.3: 2027-12-31, 8.4: 2028-12-31, 8.5: 2029-12-31.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "php-support",
+              "excerptId": "branches"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 1,
+          "recommendation": "Przyjąć redakcyjnie PHP 8.4–8.5, zawsze aktualne wydanie poprawkowe. Nie rekomendować lokalnego 8.2.4 jako środowiska docelowego."
+        },
+        {
+          "id": "array-model",
+          "questionIds": [
+            "arrays"
+          ],
+          "claim": "PHP array jest uporządkowaną mapą, nie osobnymi typami dla tablicy indeksowanej i asocjacyjnej. Jedna tablica może mieszać klucze int/string i zawierać wartości dowolnego typu, również inne tablice.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "definition"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Tablica w PHP to uporządkowana mapa"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zachować definicję, przykłady mixed_data, matrix i users; odróżnić rodzaj użycia od osobnego typu."
+        },
+        {
+          "id": "array-syntax",
+          "questionIds": [
+            "arrays",
+            "versions"
+          ],
+          "claim": "array(...) oraz [...] są poprawnymi zapisami tablic w aktualnym PHP; długa składnia nie jest przez sam fakt użycia przestarzała.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "definition"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$fruits = array(\"jabłko\", \"banan\", \"pomarańcza\");"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Ujednolicić stylistycznie do []; nie nazywać array() usuniętym ani deprecated."
+        },
+        {
+          "id": "key-casts",
+          "questionIds": [
+            "keys"
+          ],
+          "claim": "Klucze 0 i \"0\" oznaczają ten sam klucz int 0. true staje się int 1, false int 0, null pustym stringiem \"\", a 1.5 int 1. Ostatnie przypisanie do tego samego klucza zastępuje wcześniejszą wartość; \"08\" pozostaje stringiem, inaczej niż \"8\".",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Dodać mały przykład kolizji kluczy; nie używać float jako praktycznego klucza."
+        },
+        {
+          "id": "float-key-deprecation",
+          "questionIds": [
+            "keys",
+            "versions"
+          ],
+          "claim": "Od PHP 8.1 niejawna konwersja float do int z utratą precyzji, także w kluczu tablicy, jest deprecated. Dla 1.5 następuje obcięcie do 1 i diagnostyka E_DEPRECATED; nie należy przedstawiać tego jako cichej zalecanej konwersji.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "migration81",
+              "excerptId": "float-keys"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Zaznaczyć ostrzeżenie wersyjne i używać int/string świadomie."
+        },
+        {
+          "id": "append-key-history",
+          "questionIds": [
+            "keys",
+            "operations"
+          ],
+          "claim": "Dopisywanie [] dobiera następny klucz całkowity według historii użytych indeksów; usunięcie najwyższego elementu przez unset nie cofa licznika. Nie należy utożsamiać count($a) z następnym indeksem.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "append"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Po ręcznie nadanym kluczu 10 wyjaśnić dziury oraz kolejny klucz; klucz to nie pozycja."
+        },
+        {
+          "id": "negative-append-version",
+          "questionIds": [
+            "keys",
+            "versions"
+          ],
+          "claim": "Po przypisaniu ujemnego klucza n do początkowo pustej tablicy dopisanie [] od PHP 8.3 używa n+1; wcześniej używało 0. Kontrolowana próba przypisania -5 na 8.2.4 dała klucz 0, więc jej wyniku nie wolno przenieść na 8.4/8.5.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "append"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Ograniczyć początkujący przykład do nieujemnych kluczy, różnicę opisać w uwadze wersyjnej."
+        },
+        {
+          "id": "missing-warning",
+          "questionIds": [
+            "presence",
+            "versions"
+          ],
+          "claim": "Odczyt nieistniejącego klucza tablicy w PHP 8 emituje E_WARNING i daje null. Opis Notice: Undefined index odnosi się do starszego zachowania; ?? pozwala odczytać fallback bez ostrzeżenia o brakującym kluczu.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "missing"
+            },
+            {
+              "documentId": "migration80",
+              "excerptId": "warnings"
+            },
+            {
+              "documentId": "coalesce",
+              "excerptId": "fallback"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Notice: Undefined index"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Poprawić FAQ i komentarz; inicjalizować $array przed demonstracją."
+        },
+        {
+          "id": "presence-comparison",
+          "questionIds": [
+            "presence"
+          ],
+          "claim": "Dla brakującego klucza: isset=false, array_key_exists=false, ?? wybiera fallback. Dla istniejącego klucza o wartości null: isset=false, array_key_exists=true, ?? wybiera fallback. Dla wartości 0, \"0\", false i \"\": isset=true, klucz istnieje, ?? zachowuje wartość.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "isset",
+              "excerptId": "presence"
+            },
+            {
+              "documentId": "key-exists",
+              "excerptId": "null"
+            },
+            {
+              "documentId": "coalesce",
+              "excerptId": "fallback"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Dodać tabelę brak/null/0/false/\"\"; dobierać narzędzie do pytania, nie zamieniać ich bez objaśnienia."
+        },
+        {
+          "id": "empty-is-not-existence",
+          "questionIds": [
+            "presence"
+          ],
+          "claim": "empty zwraca true dla braku elementu i wartości falsey, m.in. null, false, 0, \"0\" oraz pustego stringa. Nie jest testem samego istnienia klucza ani walidatorem pola tekstowego.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "empty",
+              "excerptId": "falsey"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "W formularzu jawnie ustalić, czy string \"0\" jest akceptowany; nie zastępować sprawdzenia typu przez empty."
+        },
+        {
+          "id": "key-exists-null-argument",
+          "questionIds": [
+            "presence",
+            "keys",
+            "versions"
+          ],
+          "claim": "PHP 8.5 deprecates przekazywanie null jako argumentu key funkcji array_key_exists; dla klucza pustego stringa użyć \"\". To osobna kwestia od wartości null pod istniejącym kluczem oraz od konwersji $array[null] do klucza \"\".",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "key-exists",
+              "excerptId": "null"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Tabelę presence oprzeć na nazwanym kluczu ze stanem null, nie na array_key_exists(null, ...)."
+        },
+        {
+          "id": "mutating-operations",
+          "questionIds": [
+            "operations"
+          ],
+          "claim": "[] przypisuje nowy element. array_push i array_unshift mutują wejście i zwracają liczbę elementów po operacji, nie nową tablicę. unshift przesuwa i reindeksuje numeryczne klucze od 0, zachowując nazwane klucze.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "push",
+              "excerptId": "size"
+            },
+            {
+              "documentId": "unshift",
+              "excerptId": "numeric"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "append"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Zachować dodawanie; przy każdej funkcji rozdzielić efekt na tablicy od return value."
+        },
+        {
+          "id": "removal-operations",
+          "questionIds": [
+            "operations"
+          ],
+          "claim": "unset usuwa element bez automatycznego reindeksowania. array_pop i array_shift mutują wejście i zwracają usuniętą wartość (dla pustej tablicy null); shift reindeksuje klucze numeryczne, zachowując stringowe. array_splice używa offsetu pozycyjnego, reindeksuje klucze numeryczne i zwraca usunięty wycinek.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "definition"
+            },
+            {
+              "documentId": "pop",
+              "excerptId": "last"
+            },
+            {
+              "documentId": "shift",
+              "excerptId": "numeric"
+            },
+            {
+              "documentId": "splice",
+              "excerptId": "numeric"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Pokazać stan po każdym kroku; odróżnić unset($a[klucz]) od splice($a, pozycja, długość)."
+        },
+        {
+          "id": "foreach-contract",
+          "questionIds": [
+            "iteration"
+          ],
+          "claim": "foreach ($a as $value) udostępnia wartości; foreach ($a as $key => $value) także rzeczywiste klucze w kolejności iteracji. Pętla po referencji &$value może zmieniać wartości i zostawia referencję do ostatniego elementu; po niej trzeba świadomie przerwać ją przez unset($value).",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "foreach",
+              "excerptId": "reference"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Zachować pętle po wartości; referencje tylko jako krótka uwaga advanced, nie domyślny wzorzec."
+        },
+        {
+          "id": "merge-comparison",
+          "questionIds": [
+            "merge"
+          ],
+          "claim": "array_merge zwraca nową tablicę: późniejsza wartość pod tym samym kluczem string wygrywa, elementy z kluczami int są dopisywane i reindeksowane od 0. Operator + zachowuje lewą wartość przy kolizji każdego klucza, bez reindeksowania. array_replace zastępuje kolidujące wartości z prawej dla kluczy int i string, bez reindeksowania; nie jest rekurencyjny.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "merge",
+              "excerptId": "numeric"
+            },
+            {
+              "documentId": "union",
+              "excerptId": "left"
+            },
+            {
+              "documentId": "replace",
+              "excerptId": "right"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Dodać jedno porównanie trzech operacji na tej samej parze danych; nie traktować ich jako synonimów."
+        },
+        {
+          "id": "sorting-contract",
+          "questionIds": [
+            "sorting"
+          ],
+          "claim": "sort/rsort sortują po wartościach rosnąco/malejąco i nadają nowe klucze int 0..n-1. asort/arsort sortują po wartościach, zachowując powiązanie klucz–wartość. ksort/krsort sortują po kluczach i zachowują powiązania. Wszystkie sześć mutuje wejściową tablicę i zwraca true, a nie nową tablicę.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "sorting",
+              "excerptId": "mutates"
+            },
+            {
+              "documentId": "sort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "rsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "asort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "arsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "ksort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "krsort",
+              "excerptId": "return"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Dodać zwartą tabelę sześciu funkcji z kolumnami: kierunek, po czym, klucze, mutacja, return."
+        },
+        {
+          "id": "sorting-version-caution",
+          "questionIds": [
+            "sorting",
+            "versions"
+          ],
+          "claim": "Równe elementy zachowują pierwotną kolejność od PHP 8.0. W PHP 8.2 typ zwracany sześciu funkcji doprecyzowano z bool do true; ksort/krsort przy SORT_REGULAR zmieniły porównywanie kluczy będących numerycznymi stringami.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "sorting",
+              "excerptId": "mutates"
+            },
+            {
+              "documentId": "sort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "rsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "asort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "arsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "ksort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "krsort",
+              "excerptId": "return"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Początkujące przykłady oprzeć na jednorodnych danych; nie obiecywać polskiej kolejności leksykograficznej na podstawie sort z domyślnymi flagami."
+        },
+        {
+          "id": "map-contract",
+          "questionIds": [
+            "functional"
+          ],
+          "claim": "array_map zwraca tablicę wyników callbacku. Dla dokładnie jednej wejściowej tablicy zachowuje klucze, dla wielu tworzy sekwencyjne klucze int. Przykład podwajania 1..5 daje [2,4,6,8,10].",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "map",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Zachować podwajanie i dopisać zasadę kluczy, bez rozwijania wszystkich wariantów callbacku."
+        },
+        {
+          "id": "filter-contract",
+          "questionIds": [
+            "functional"
+          ],
+          "claim": "array_filter zwraca wybrane elementy z zachowaniem kluczy; wynik [1=>2,3=>4] dla parzystych z [1,2,3,4,5] jest poprawny, nie jest błędem eksportu. Bez callbacku usuwa wartości empty/falsey. Jeśli potrzebna jest lista o indeksach ciągłych, wynik można przepuścić przez array_values.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "filter",
+              "excerptId": "keys"
+            },
+            {
+              "documentId": "empty",
+              "excerptId": "falsey"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Zachować widoczne klucze 1 i 3; nie reindeksować niejawnie w objaśnieniu."
+        },
+        {
+          "id": "reduce-contract",
+          "questionIds": [
+            "functional"
+          ],
+          "claim": "array_reduce składa elementy do jednego akumulatora. Dla sumowania 1..5 i initial=0 daje 15; dla pustej tablicy z initial zwraca initial, bez initial zwraca null.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "reduce",
+              "excerptId": "result"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Przenieść kod sumy bezpośrednio pod array_reduce i wyjaśnić początkowe 0."
+        },
+        {
+          "id": "count-values-contract",
+          "questionIds": [
+            "functional"
+          ],
+          "claim": "array_count_values liczy częstości wartości int/string, używając ich jako kluczy wyniku. Dla elementów innych typów zgłasza E_WARNING. Nie wykonuje callbacku redukującego ani nie zwraca sumy 15.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "count-values",
+              "excerptId": "types"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Oddzielić przykład liczenia owoców od sumowania; zaznaczyć ograniczenie typów."
+        },
+        {
+          "id": "extract-contract",
+          "questionIds": [
+            "extract"
+          ],
+          "claim": "extract importuje zmienne do bieżącej tablicy symboli; domyślny EXTR_OVERWRITE nadpisuje istniejące zmienne o kolidujących nazwach. Oficjalny manual przestrzega przed użyciem z niezaufanymi danymi.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "extract",
+              "excerptId": "untrusted"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Ograniczyć do advanced/caution na zaufanych stałych danych lub pominąć z głównej ścieżki; nie uczyć extract($_POST)."
+        },
+        {
+          "id": "post-and-validation",
+          "questionIds": [
+            "forms"
+          ],
+          "claim": "$_POST jest tablicą danych formularza dla application/x-www-form-urlencoded lub multipart/form-data, nie automatycznym parserem JSON. Składnia formularzy może utworzyć zagnieżdżone tablice, więc $_POST[\"email\"] ?? \"\" nie gwarantuje stringa. filter_var z FILTER_VALIDATE_EMAIL waliduje wartość; FILTER_DEFAULT nie filtruje danych.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "post",
+              "excerptId": "forms"
+            },
+            {
+              "documentId": "external",
+              "excerptId": "array-input"
+            },
+            {
+              "documentId": "filter-var",
+              "excerptId": "validation"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Pokazać oczekiwane klucze i is_string przed walidacją; sprawdzać wynik walidacji jawnie, nie mylić jej z sanitization lub autoryzacją."
+        },
+        {
+          "id": "html-output-boundary",
+          "questionIds": [
+            "forms",
+            "extract"
+          ],
+          "claim": "htmlspecialchars zamienia znaki specjalne do reprezentacji HTML i może służyć do escape tekstu oraz poprawnie cytowanych atrybutów przy zgodnym kodowaniu. Nie jest uniwersalnym oczyszczaniem danych ani zabezpieczeniem kontekstu JavaScript, SQL lub dowolnego URL.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "escape",
+              "excerptId": "html"
+            }
+          ],
+          "articleEvidence": [],
+          "confidence": 0.99,
+          "recommendation": "Przy demonstracyjnym wyświetleniu użyć jawnych ENT_QUOTES | ENT_SUBSTITUTE i UTF-8; walidacja danych wejściowych jest oddzielnym krokiem."
+        },
+        {
+          "id": "membership-types",
+          "questionIds": [
+            "presence"
+          ],
+          "claim": "in_array porównuje luźno, jeśli strict nie jest ustawione; parametr true włącza także porównanie typów. Obecny przykład z samymi stringami jest poprawny, lecz nie uzasadnia bezwarunkowego uogólnienia na dane mieszane.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "in-array",
+              "excerptId": "strict"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "in_array(\"admin\", $data)"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "W przykładzie edukacyjnym wybrać in_array(\"admin\", $data, true) i krótko wyjaśnić parametr."
+        }
+      ],
+      "outdatedClaims": [
+        {
+          "id": "dated-version-framing",
+          "questionIds": [
+            "versions"
+          ],
+          "claim": "Adnotacja „od PHP 5.4” jest historyczną ramą dla krótkiej składni, nie uzasadnieniem traktowania array() jako niepoprawnego. SOURCE nie określa aktualnego celu PHP 8.4–8.5 ani różnic zachowania zależnych od wersji.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "definition"
+            },
+            {
+              "documentId": "php-support",
+              "excerptId": "branches"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "// Alternatywna składnia (od PHP 5.4)"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Wprowadzić jawny target wersji na początku; historię składni skrócić do opcjonalnej uwagi bez udawania pełnego audytu wersji 5.x."
+        }
+      ],
+      "incorrectClaims": [
+        {
+          "id": "correct-multiple-values",
+          "questionIds": [
+            "arrays"
+          ],
+          "claim": "Zdanie o przechowywaniu wielu wartości pod jednym kluczem jest mylące: klucz wskazuje jedną wartość; tą wartością może być zagnieżdżona tablica, a ponowne przypisanie zastępuje poprzednią.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "przechowywanie wielu wartości pod jednym kluczem"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zastąpić zdanie opisem jednej wartości na klucz i osobnym przykładem tablicy zagnieżdżonej."
+        },
+        {
+          "id": "correct-zero-index",
+          "questionIds": [
+            "keys"
+          ],
+          "claim": "Klucze tablicy nie muszą zaczynać się od zera ani być ciągłe. Zero jest początkiem prostej listy utworzonej bez jawnych kluczy; zdanie w SOURCE zbyt szeroko opisuje wszystkie tablice indeksowane.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "keys"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "append"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Tablice indeksowane używają liczbowych indeksów, które automatycznie zaczynają się od 0:"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$numbers[10] = 100; // Dodaje na pozycji 10"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zawęzić twierdzenie do listy; mówić o kluczu 10, nie dziesiątej pozycji."
+        },
+        {
+          "id": "correct-warning",
+          "questionIds": [
+            "presence",
+            "versions"
+          ],
+          "claim": "FAQ i komentarz o Notice nie pasują do PHP 8: odczyt brakującego klucza jest E_WARNING. Brak wcześniejszej inicjalizacji $array w wyizolowanym fragmencie dodatkowo zaciemnia przykład.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "migration80",
+              "excerptId": "warnings"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "missing"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "// BŁĄD - może generować Notice"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "Notice: Undefined index"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zainicjalizować $array = []; pokazać ostrzeżenie kontrolowanie lub tylko wyjaśnić, następnie ?? i test obecności."
+        },
+        {
+          "id": "correct-reduce-placement",
+          "questionIds": [
+            "functional",
+            "snippets"
+          ],
+          "claim": "Po nagłówku array_count_values umieszczono kod $suma = array_reduce(..., 0) i wynik 15. To właściwy przykład reduce, a nie count_values; oddzielny licznik owoców poniżej jest poprawnym count_values.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "reduce",
+              "excerptId": "result"
+            },
+            {
+              "documentId": "count-values",
+              "excerptId": "types"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "### array_count_values()"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$suma = array_reduce($liczby, function($carry, $item) {"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Przenieść sumę pod array_reduce; zachować osobno licznik produktów i jego wynik 2/2/1."
+        }
+      ],
+      "ambiguousClaims": [
+        {
+          "id": "hidden-state",
+          "questionIds": [
+            "sorting",
+            "merge",
+            "snippets"
+          ],
+          "claim": "Wynik łączenia owoców w części II jest spójny z wcześniejszym rsort($owoce); nie jest sam w sobie błędny. Wyrwany blok array_merge zakłada jednak zmienną i stan z poprzednich bloków.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "rsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "merge",
+              "excerptId": "numeric"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "rsort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$wszystko = array_merge($owoce, $warzywa);"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Każdy blok inicjalizować samodzielnie albo jawnie oznaczyć wspólny scenariusz, bez przypisywania tej różnicy funkcji merge."
+        },
+        {
+          "id": "form-skeleton",
+          "questionIds": [
+            "snippets",
+            "forms"
+          ],
+          "claim": "processFormData($form_data) jest wywołane, lecz jego implementacji nie ma w obu przekazanych artykułach. Nie potwierdzono kompletnego przebiegu formularza ani reguł domenowych; fragment jest szkieletem, nie gotowym handlerem.",
+          "sourceType": "official-documentation",
+          "status": "needs-review",
+          "evidence": [
+            {
+              "documentId": "post",
+              "excerptId": "forms"
+            },
+            {
+              "documentId": "filter-var",
+              "excerptId": "validation"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "processFormData($form_data);"
+            }
+          ],
+          "confidence": 0.98,
+          "recommendation": "Oznaczyć jako pseudokod/szkic lub usunąć wywołanie z samodzielnego przykładu. Ustalenie pełnego handlera wymaga osobnej decyzji, nie rozbudowy tego tutorialu."
+        },
+        {
+          "id": "mixed-markdown-php",
+          "questionIds": [
+            "snippets"
+          ],
+          "claim": "Część II przeplata otwierające tagi PHP, Markdown i wyniki bez wydzielonych bloków kodu. Nie należy uruchamiać całego pliku .md jako skryptu; kompletność finalnych bloków po redakcji nie została jeszcze sprawdzona.",
+          "sourceType": "official-documentation",
+          "status": "needs-review",
+          "evidence": [
+            {
+              "documentId": "map",
+              "excerptId": "keys"
+            },
+            {
+              "documentId": "reduce",
+              "excerptId": "result"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "echo $role; // wypisze: admin\n\n**Zalety:**"
+            }
+          ],
+          "confidence": 1,
+          "recommendation": "Przyszły Writer ma wydzielić samodzielne fenced code blocks, potem zlecić ich wykonanie na docelowym runtime. Nie zastępować tego uruchomieniem SOURCE."
+        }
+      ],
+      "securityNotes": [
+        {
+          "id": "unsafe-extract-post",
+          "questionIds": [
+            "extract",
+            "forms"
+          ],
+          "claim": "extract($_POST) bezpośrednio importuje niezaufane klucze jako zmienne i domyślnie może nadpisać stan scope. Późniejsze echo interpolowanego $imie nie wykonuje HTML escaping. Ogólna uwaga „filtruj” nie czyni tego bezpiecznym wzorcem.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "extract",
+              "excerptId": "untrusted"
+            },
+            {
+              "documentId": "escape",
+              "excerptId": "html"
+            },
+            {
+              "documentId": "external",
+              "excerptId": "array-input"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($_POST);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "echo \"Dziękujemy, $imie, za kontakt!\";"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Usunąć przykład kontaktowy extract($_POST). Dla formularzy jawnie pobierać oczekiwane pola, sprawdzić typ, walidować i oddzielnie escape przy wyświetlaniu."
+        },
+        {
+          "id": "post-type-boundary",
+          "questionIds": [
+            "forms"
+          ],
+          "claim": "Fallback ?? zapobiega brakowi klucza, ale nie odrzuca wartości będącej tablicą w polu name/email/message. empty(name) i walidacja email nie zastępują spójnego sprawdzenia oczekiwanego typu każdego pola.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "external",
+              "excerptId": "array-input"
+            },
+            {
+              "documentId": "empty",
+              "excerptId": "falsey"
+            },
+            {
+              "documentId": "filter-var",
+              "excerptId": "validation"
+            },
+            {
+              "documentId": "coalesce",
+              "excerptId": "fallback"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "\"name\" => $_POST[\"name\"] ?? \"\""
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "\"email\" => $_POST[\"email\"] ?? \"\""
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Dodać małą uwagę o is_string i odrzuceniu nieoczekiwanego kształtu. Nie rozbudowywać do CSRF, bazy danych, wysyłki e-mail czy pełnej aplikacji."
+        },
+        {
+          "id": "menu-dynamic-output",
+          "questionIds": [
+            "forms",
+            "snippets"
+          ],
+          "claim": "Menu w SOURCE korzysta ze stałych nazw i URL-i, więc nie stwierdzono ataku na aktualne dane. Wariant przyjmujący dane z zewnątrz wymagałby escape tekstu/cytowanych atrybutów i osobnej walidacji URL; samo htmlspecialchars nie narzuca dozwolonego schematu URL.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "escape",
+              "excerptId": "html"
+            },
+            {
+              "documentId": "external",
+              "excerptId": "array-input"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo \"<a href='{$item[\"url\"]}'>{$item[\"title\"]}</a>\";"
+            }
+          ],
+          "confidence": 0.96,
+          "recommendation": "Nie opisywać obecnego statycznego przykładu jako dowiedzionej exploitable luki. Zaznaczyć granicę: zaufane stałe dane kontra dynamiczne wejście."
+        }
+      ],
+      "codeReview": [
+        {
+          "id": "code-key-extension",
+          "questionIds": [
+            "keys",
+            "versions"
+          ],
+          "claim": "Kontrolowane przypisania 0/\"0\"/true/null/1.5 na PHP 8.2.4 dały końcowe klucze [0,1,\"\"] i E_DEPRECATED dla 1.5. Po unset klucza 10 dopisano 11. Ujemny klucz -5 przypisany pustej tablicy dał po [] klucz 0; dla 8.4–8.5 manual przewiduje -4, którego tutaj nie wykonano.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "definition"
+            },
+            {
+              "documentId": "migration81",
+              "excerptId": "float-keys"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$numbers[10] = 100; // Dodaje na pozycji 10"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Użyć próby jako sprawdzenia pułapek; nie podpisywać wyniku ujemnego dopisania jako wyniku PHP 8.4. To rozszerzenie przykładu, nie wykonanie całego SOURCE.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "keys"
+          ]
+        },
+        {
+          "id": "code-presence-matrix",
+          "questionIds": [
+            "presence"
+          ],
+          "claim": "Kontrolowana próba na 8.2.4 potwierdziła rozdział brak/null/zero/false/pusty string oraz E_WARNING przy bezpośrednim odczycie brakującego klucza. Wywołania ?? i empty nie dały ostrzeżenia o braku klucza.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "isset",
+              "excerptId": "presence"
+            },
+            {
+              "documentId": "key-exists",
+              "excerptId": "null"
+            },
+            {
+              "documentId": "coalesce",
+              "excerptId": "fallback"
+            },
+            {
+              "documentId": "empty",
+              "excerptId": "falsey"
+            },
+            {
+              "documentId": "migration80",
+              "excerptId": "warnings"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "echo $array[\"key\"] ?? \"domyślna wartość\";"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zachować tabelę wyników probes/presence; brakującą zmienną $array zastąpić zainicjalizowaną tablicą.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "presence"
+          ]
+        },
+        {
+          "id": "code-removal-sequence",
+          "questionIds": [
+            "operations"
+          ],
+          "claim": "Kontrolowane odtworzenie sekwencji z I na 8.2.4: pop zwraca 5, shift zwraca 1, stan po shift to [2,3,4], po unset(klucz1) {0:2,2:4}, po splice(offset1,length2) zostaje [2] i wycinek [4]. Splice nie operuje tu na numerze klucza.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "pop",
+              "excerptId": "last"
+            },
+            {
+              "documentId": "shift",
+              "excerptId": "numeric"
+            },
+            {
+              "documentId": "splice",
+              "excerptId": "numeric"
+            },
+            {
+              "documentId": "arrays",
+              "excerptId": "definition"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$last = array_pop($numbers);"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "unset($numbers[1]);"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "array_splice($numbers, 1, 2);"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zachować scenariusz, ale pokazać pośrednie stany. Dodawanie push/unshift przetestowano w skróconej reprodukcji, nie w identycznym pełnym bloku owoców.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "operations"
+          ]
+        },
+        {
+          "id": "code-foreach",
+          "questionIds": [
+            "iteration"
+          ],
+          "claim": "Kontrolowana próba na 8.2.4 zachowała pary ['x',1] i [4,2], a pętla referencyjna podwoiła wartości. unset($value) przerwał referencję przed dalszym przypisaniem. Oryginalne pętle po wartości oceniono dokumentacyjnie; nie wykonywano całego artykułu.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "foreach",
+              "excerptId": "reference"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "foreach ($data as $key => $value) {"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zachować zwykły foreach; referencyjną reprodukcję traktować tylko jako materiał ostrzegawczy.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "iteration"
+          ]
+        },
+        {
+          "id": "code-merge-and-sort",
+          "questionIds": [
+            "merge",
+            "sorting"
+          ],
+          "claim": "Kontrolowane próby na 8.2.4 potwierdziły kontrasty merge/union/replace oraz mutację, klucze i return=true sześciu sortowań. Dla zachowanej asocjacji kolejność jest zapisana osobno w keyOrder: sortowanie kluczy obiektu w stableJson nie jest kolejnością iteracji PHP.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "merge",
+              "excerptId": "numeric"
+            },
+            {
+              "documentId": "union",
+              "excerptId": "left"
+            },
+            {
+              "documentId": "replace",
+              "excerptId": "right"
+            },
+            {
+              "documentId": "sorting",
+              "excerptId": "mutates"
+            },
+            {
+              "documentId": "sort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "rsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "asort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "arsort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "ksort",
+              "excerptId": "return"
+            },
+            {
+              "documentId": "krsort",
+              "excerptId": "return"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "sort($owoce);"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$wszystko = array_merge($owoce, $warzywa);"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Dodać porównania oparte na kontrolowanych danych; kopiować wejście przed każdym sortowaniem. Nie wyciągać kolejności z uporządkowanego alfabetycznie obiektu JSON.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "merge",
+            "sorting"
+          ]
+        },
+        {
+          "id": "code-functional",
+          "questionIds": [
+            "functional",
+            "snippets"
+          ],
+          "claim": "Kontrolowane odtworzenie rachunku na 8.2.4 potwierdziło map=[2,4,6,8,10], filter={1:2,3:4}, reduce=15 i częstości owoców 2/2/1. Zastosowano równoważne stałe dane i callbacki w wydzielonej próbie; nie wykonano Markdownu jako PHP.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "map",
+              "excerptId": "keys"
+            },
+            {
+              "documentId": "filter",
+              "excerptId": "keys"
+            },
+            {
+              "documentId": "reduce",
+              "excerptId": "result"
+            },
+            {
+              "documentId": "count-values",
+              "excerptId": "types"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$podwojone = array_map(function($n) {"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$parzyste = array_filter($liczby, function($n) {"
+            },
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "$suma = array_reduce($liczby, function($carry, $item) {"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Zachować wyniki, inicjalizować $liczby w każdym samodzielnym przykładzie; przenieść sumę pod poprawny nagłówek.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "functional"
+          ]
+        },
+        {
+          "id": "code-extract-overwrite",
+          "questionIds": [
+            "extract"
+          ],
+          "claim": "Kontrolowana próba na 8.2.4 nadpisała lokalną zmienną name przez extract na specjalnie przygotowanej tablicy. To demonstracja ryzyka domyślnego flagowania, nie przykład do zalecanego przetwarzania HTTP.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "extract",
+              "excerptId": "untrusted"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1356",
+              "sourcePath": "1356-post-62-php-tablice-czesc-ii.md",
+              "field": "body",
+              "value": "extract($user);"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Ewentualne extract wyłącznie w ramce advanced/caution na zaufanych danych; domyślnie preferować dostęp po kluczu.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "extract"
+          ]
+        },
+        {
+          "id": "code-menu-missing-active",
+          "questionIds": [
+            "snippets",
+            "forms",
+            "presence"
+          ],
+          "claim": "Dane submenu nie mają klucza active, a generateMenu czyta go bez zabezpieczenia. Kontrolowana reprodukcja dostępu na 8.2.4 zgłosiła Undefined array key \"active\". SOURCE jedynie definiuje funkcję, więc ostrzeżenie dotyczy jej przyszłego wywołania na tym submenu, nie samej definicji.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "evidence": [
+            {
+              "documentId": "arrays",
+              "excerptId": "missing"
+            },
+            {
+              "documentId": "coalesce",
+              "excerptId": "fallback"
+            }
+          ],
+          "articleEvidence": [
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "$class = $item[\"active\"] ? \"active\" : \"\";"
+            },
+            {
+              "sourceId": "1324",
+              "sourcePath": "1324-post-61-tablice-w-php-czesc-1.md",
+              "field": "body",
+              "value": "[\"title\" => \"Tworzenie stron\", \"url\" => \"/services/web-design\"]"
+            }
+          ],
+          "confidence": 0.99,
+          "recommendation": "Ustalić jednolity kontrakt menu lub użyć $item[\"active\"] ?? false. Nie przedstawiać definicji funkcji jako faktycznie wywołanej.",
+          "verification": "executed-probe",
+          "probeIds": [
+            "forms-menu"
+          ]
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "r-version",
+          "action": "CORRECT",
+          "instruction": "Dodać zakres PHP 8.4–8.5 i rozdzielić aktualną dokumentację od lokalnych prób na 8.2.4.",
+          "findingIds": [
+            "php-lifecycle",
+            "negative-append-version",
+            "key-exists-null-argument"
+          ]
+        },
+        {
+          "id": "r-model",
+          "action": "CORRECT",
+          "instruction": "Poprawić definicje klucza, listy i jednej wartości na klucz; zachować nested/mixed przykłady.",
+          "findingIds": [
+            "array-model",
+            "correct-multiple-values",
+            "correct-zero-index"
+          ]
+        },
+        {
+          "id": "r-presence",
+          "action": "CORRECT",
+          "instruction": "Poprawić Notice na E_WARNING; dodać tabelę isset/key_exists/??/empty z brak/null/0.",
+          "findingIds": [
+            "correct-warning",
+            "presence-comparison",
+            "empty-is-not-existence"
+          ]
+        },
+        {
+          "id": "r-operations",
+          "action": "KEEP",
+          "instruction": "Zachować operacje dodawania/usuwania i foreach, objaśniając mutację, return i pośrednie stany.",
+          "findingIds": [
+            "mutating-operations",
+            "removal-operations",
+            "foreach-contract",
+            "code-removal-sequence"
+          ]
+        },
+        {
+          "id": "r-merge-sort",
+          "action": "ADD_CAUTION",
+          "instruction": "Dodać tabelę merge/+ /replace i sześciu sortowań; jawnie inicjalizować dane.",
+          "findingIds": [
+            "merge-comparison",
+            "sorting-contract",
+            "hidden-state",
+            "code-merge-and-sort"
+          ]
+        },
+        {
+          "id": "r-functional",
+          "action": "CORRECT",
+          "instruction": "Przenieść kod sumy pod reduce; zachować klucze wyniku filter i osobny count_values.",
+          "findingIds": [
+            "correct-reduce-placement",
+            "filter-contract",
+            "count-values-contract",
+            "code-functional"
+          ]
+        },
+        {
+          "id": "r-extract",
+          "action": "REMOVE_EXAMPLE",
+          "instruction": "Usunąć formularz extract($_POST); najwyżej krótka ramka advanced na zaufanych danych.",
+          "findingIds": [
+            "unsafe-extract-post",
+            "extract-contract",
+            "code-extract-overwrite"
+          ]
+        },
+        {
+          "id": "r-forms",
+          "action": "ADD_CAUTION",
+          "instruction": "Dodać sprawdzanie stringów, walidację email i osobny HTML escaping; nie budować pełnego handlera.",
+          "findingIds": [
+            "post-type-boundary",
+            "post-and-validation",
+            "html-output-boundary",
+            "form-skeleton"
+          ]
+        },
+        {
+          "id": "r-menu",
+          "action": "CORRECT",
+          "instruction": "Zabezpieczyć brak active; wyraźnie ograniczyć renderer do zaufanych statycznych danych.",
+          "findingIds": [
+            "code-menu-missing-active",
+            "menu-dynamic-output"
+          ]
+        },
+        {
+          "id": "r-execution",
+          "action": "NEEDS_REVIEW",
+          "instruction": "Po redakcji wydzielić samodzielne bloki PHP i wykonać je na aktualnych wydaniach 8.4 i 8.5; w tym milestone niczego nie pisać ani nie instalować.",
+          "findingIds": [
+            "mixed-markdown-php",
+            "form-skeleton",
+            "negative-append-version"
+          ]
+        }
+      ],
+      "questionAnswers": [
+        {
+          "questionId": "versions",
+          "status": "resolved",
+          "findingIds": [
+            "php-lifecycle",
+            "array-syntax",
+            "float-key-deprecation",
+            "negative-append-version",
+            "missing-warning",
+            "key-exists-null-argument",
+            "sorting-version-caution",
+            "correct-warning",
+            "dated-version-framing",
+            "code-key-extension"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "arrays",
+          "status": "resolved",
+          "findingIds": [
+            "array-model",
+            "array-syntax",
+            "correct-multiple-values"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "keys",
+          "status": "resolved",
+          "findingIds": [
+            "key-casts",
+            "float-key-deprecation",
+            "append-key-history",
+            "negative-append-version",
+            "key-exists-null-argument",
+            "correct-zero-index",
+            "code-key-extension"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "presence",
+          "status": "resolved",
+          "findingIds": [
+            "missing-warning",
+            "presence-comparison",
+            "empty-is-not-existence",
+            "key-exists-null-argument",
+            "membership-types",
+            "correct-warning",
+            "code-presence-matrix",
+            "code-menu-missing-active"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "operations",
+          "status": "resolved",
+          "findingIds": [
+            "append-key-history",
+            "mutating-operations",
+            "removal-operations",
+            "code-removal-sequence"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "iteration",
+          "status": "resolved",
+          "findingIds": [
+            "foreach-contract",
+            "code-foreach"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "merge",
+          "status": "resolved",
+          "findingIds": [
+            "merge-comparison",
+            "hidden-state",
+            "code-merge-and-sort"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "sorting",
+          "status": "resolved",
+          "findingIds": [
+            "sorting-contract",
+            "sorting-version-caution",
+            "hidden-state",
+            "code-merge-and-sort"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "functional",
+          "status": "resolved",
+          "findingIds": [
+            "map-contract",
+            "filter-contract",
+            "reduce-contract",
+            "count-values-contract",
+            "correct-reduce-placement",
+            "code-functional"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "extract",
+          "status": "resolved",
+          "findingIds": [
+            "extract-contract",
+            "html-output-boundary",
+            "unsafe-extract-post",
+            "code-extract-overwrite"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "forms",
+          "status": "resolved",
+          "findingIds": [
+            "post-and-validation",
+            "html-output-boundary",
+            "unsafe-extract-post",
+            "post-type-boundary",
+            "menu-dynamic-output",
+            "code-menu-missing-active"
+          ],
+          "note": "Podstawowe zachowanie potwierdzone wskazaną oficjalną dokumentacją; wykonanie oznaczone osobno w codeReview."
+        },
+        {
+          "questionId": "snippets",
+          "status": "needs-review",
+          "findingIds": [
+            "correct-reduce-placement",
+            "hidden-state",
+            "menu-dynamic-output",
+            "code-functional",
+            "code-menu-missing-active"
+          ],
+          "note": "Dokumentacyjne review i kontrolowane reprodukcje wykonane. Finalnych bloków oraz kompletnego formularza nie ma; nie nadano im statusu executed."
+        },
+        {
+          "questionId": "target-runtime",
+          "status": "needs-review",
+          "findingIds": [],
+          "note": "Dostępny był tylko PHP 8.2.4. Docelowych gałęzi nie wykonano."
+        }
+      ],
+      "unresolvedQuestions": [
+        {
+          "questionId": "target-runtime",
+          "status": "needs-review",
+          "reason": "Nie ma wykonania na PHP 8.4 i 8.5; szczególnie różnicy append po ujemnym przypisaniu i deprecated null argumentu array_key_exists w 8.5 nie zweryfikowano lokalnie. Nie instalowano runtime."
+        },
+        {
+          "questionId": "snippets",
+          "status": "needs-review",
+          "reason": "Finalne samodzielne fenced bloki jeszcze nie istnieją, processFormData nie jest zaimplementowane. Pełny handler i finalne testy wymagają osobnego zakresu/akceptacji."
+        }
+      ],
+      "writerHandoff": {
+        "keep": [
+          {
+            "instruction": "Zachować model ordered map, osoby/macierze/zagnieżdżone dane i zwykły foreach. Zachować [] oraz array() jako poprawne składnie; preferować spójny styl [].",
+            "findingIds": [
+              "array-model",
+              "array-syntax",
+              "foreach-contract"
+            ]
+          },
+          {
+            "instruction": "Zachować rachunkowo poprawne wyniki map/filter/reduce/count_values oraz sekwencję usuwania z wyjaśnionymi stanami.",
+            "findingIds": [
+              "code-functional",
+              "code-removal-sequence"
+            ]
+          }
+        ],
+        "correct": [
+          {
+            "instruction": "Poprawić wiele wartości pod kluczem, automatyczne 0 i słowo pozycja; dodać int/string, kolizje, klucze a liczba elementów.",
+            "findingIds": [
+              "correct-multiple-values",
+              "correct-zero-index",
+              "key-casts",
+              "append-key-history"
+            ]
+          },
+          {
+            "instruction": "Poprawić FAQ Notice i rozdzielić brak/null/falsey; ustawić zmienną przed demonstracją brakującego klucza.",
+            "findingIds": [
+              "correct-warning",
+              "presence-comparison",
+              "empty-is-not-existence"
+            ]
+          },
+          {
+            "instruction": "Umieścić sumę we właściwej sekcji reduce, inicjalizować każdy samodzielny blok oraz poprawić kontrakt submenu active.",
+            "findingIds": [
+              "correct-reduce-placement",
+              "hidden-state",
+              "code-menu-missing-active"
+            ]
+          }
+        ],
+        "avoid": [
+          {
+            "instruction": "Nie powielać extract($_POST) ani interpolowanego wyjścia jako zalecanej obsługi formularza. Nie sugerować, że ogólne filtrowanie naprawia kolizje zmiennych.",
+            "findingIds": [
+              "unsafe-extract-post"
+            ]
+          },
+          {
+            "instruction": "Nie przedstawiać Markdownu jako skryptu PHP, szkicu processFormData jako gotowej aplikacji lub prób 8.2.4 jako wykonanych na 8.4/8.5.",
+            "findingIds": [
+              "mixed-markdown-php",
+              "form-skeleton",
+              "negative-append-version"
+            ]
+          }
+        ],
+        "caution": [
+          {
+            "instruction": "Wersja redakcyjna 8.4–8.5: oznaczyć float key deprecated od 8.1, ujemny append od 8.3 i null key argument array_key_exists od 8.5.",
+            "findingIds": [
+              "php-lifecycle",
+              "float-key-deprecation",
+              "negative-append-version",
+              "key-exists-null-argument"
+            ]
+          },
+          {
+            "instruction": "Extract najwyżej advanced/caution; foreach by reference tylko z objaśnieniem unset. Dla danych formularza osobno typ, walidacja i escaping; nie rozwijać pełnej aplikacji.",
+            "findingIds": [
+              "extract-contract",
+              "foreach-contract",
+              "post-type-boundary",
+              "html-output-boundary"
+            ]
+          },
+          {
+            "instruction": "Sortowanie mutuje i nie zwraca tablicy; asocjacyjne JSON nie zachowuje samo w sobie kolejności PHP, odczytywać keyOrder. Locale i mieszane typy poza główną ścieżką.",
+            "findingIds": [
+              "sorting-contract",
+              "sorting-version-caution",
+              "code-merge-and-sort"
+            ]
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "code-key-extension",
+          "code-presence-matrix",
+          "code-removal-sequence",
+          "code-foreach",
+          "code-merge-and-sort",
+          "code-functional",
+          "code-extract-overwrite",
+          "code-menu-missing-active"
+        ]
+      },
+      "limitations": [
+        "Pakiet jest research handoff, nie finalnym artykułem i nie akceptacją publikacji. Decyzja MERGE zatwierdza zakres researchu, nie wszystkie rekomendacje.",
+        "Analiza modelu została wykonana w tej sesji Codex i jawnie importowana; CLI odtwarza zapis związany z requestHash, bez zewnętrznej inferencji.",
+        "Źródłem faktów są 34 pobrane oficjalne strony PHP. Krótkie dosłowne kotwice, URL, data i hash są zapisane oddzielnie od interpretacji. Nie archiwizowano pełnych stron ani user-contributed notes.",
+        "Walidacja sprawdza kształt, referencje i zgodność cytatów z wejściem; nie dowodzi automatycznie prawdziwości każdej interpretacji ani aktualności źródła w późniejszym terminie.",
+        "9 kontrolowanych prób używa stałych, własnych danych i nie wykonuje SOURCE. PHP 8.2.4 nie jest docelową ani zalecaną aktualną wersją poprawkową. Brak testów runtime PHP 8.4/8.5.",
+        "Obiekty JSON są serializowane ze stabilnie sortowanymi kluczami. Kolejność tablic PHP przechowywać w jawnych parach lub keyOrder; sortowanie kluczy JSON nie dowodzi kolejności PHP.",
+        "Nie uruchomiono całego eksportu Markdown jako PHP, nie przetestowano gotowego formularza/serwera ani finalnej redakcji kodu. Część przykładów oceniona przez dokumentację i równoważne małe reprodukcje.",
+        "Zakres bezpieczeństwa ogranicza się do ryzyk extract, kształtu $_POST i HTML escaping. Nie jest to audyt aplikacji, CSRF, mailera, SQL ani dynamicznej polityki URL.",
+        "Nie użyto Search Console, performance ani innych artykułów korpusu. SOURCE, CONTENT, decyzja human-approved i Cartographer pozostają tylko do odczytu.",
+        "Odnośnik do Post #60 w II i formatowanie są istniejącymi ustaleniami redakcyjnymi Cartographera; nie potwierdzają żadnego technicznego faktu o PHP."
+      ]
+    }
+  }
+}

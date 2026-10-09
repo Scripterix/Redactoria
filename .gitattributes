@@ -1,0 +1,5 @@
+# LAB decisions/provenance use byte-level hashes. Keep checkout bytes stable.
+/lab/**/*.json text eol=lf
+/lab/**/*.md text eol=lf
+# Probe code hashes include line endings captured by PHP ReflectionFunction.
+/scripts/research/*.php text eol=lf

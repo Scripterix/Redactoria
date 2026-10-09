@@ -88,7 +88,10 @@ engine/agents/<agent-name>/
 
 Cartographer 0.1 is implemented as the first module, invoked manually. Its contract
 and boundaries are described in `docs/architecture/cartographer.md` and ADR 0003.
-Other runtime agents, Dispatcher, scheduling, and the full Engine remain future work.
+Researcher 0.1 is the second independent module, documented in
+`docs/architecture/researcher.md`. It reads a human-approved scope and produces a
+cited Research Packet in LAB. Other runtime agents, Dispatcher, scheduling, and
+the full Engine remain future work.
 
 Each directory represents one independent agent-module, not a category of helper
 functions. An agent-module must define:

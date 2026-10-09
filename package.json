@@ -14,7 +14,8 @@
     "test:watch": "vitest",
     "check": "astro check",
     "inventory": "node --experimental-strip-types scripts/legacy/scan.ts",
-    "cartographer": "node --experimental-strip-types scripts/cartographer.ts"
+    "cartographer": "node --experimental-strip-types scripts/cartographer.ts",
+    "researcher": "node --experimental-strip-types scripts/researcher.ts"
   },
   "dependencies": {
     "astro": "^7.3.8"

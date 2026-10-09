@@ -1,0 +1,1209 @@
+{
+  "asOfDate": "2026-10-09",
+  "probes": [
+    {
+      "code": "    'keys' => function () {\n        $a = [];\n        $a[0] = 'int'; $a['0'] = 'string'; $a[true] = 'bool';\n        $a[null] = 'null'; $a[1.5] = 'float';\n        $b = [10 => 'ten']; unset($b[10]); $b[] = 'next';\n        $negative = []; $negative[-5] = 'negative'; $negative[] = 'next';\n        return ['castKeys' => $a, 'castKeyOrder' => array_keys($a), 'appendAfterUnset' => $b, 'negativeAppend' => $negative];\n    },\n",
+      "codeHash": "36b31b97e8e548b90228ab8a338d6340c0950326b2ab5bd1e6bf476d46bcf8d0",
+      "description": "Controlled PHP array probe: keys",
+      "diagnostics": [
+        {
+          "level": 8192,
+          "message": "Implicit conversion from float 1.5 to int loses precision"
+        }
+      ],
+      "id": "keys",
+      "phpVersion": "8.2.4",
+      "result": {
+        "appendAfterUnset": {
+          "11": "next"
+        },
+        "castKeyOrder": [
+          0,
+          1,
+          ""
+        ],
+        "castKeys": {
+          "0": "string",
+          "1": "float",
+          "": "null"
+        },
+        "negativeAppend": {
+          "0": "next",
+          "-5": "negative"
+        }
+      }
+    },
+    {
+      "code": "    'presence' => function () {\n        $a = ['null' => null, 'zero' => 0, 'text-zero' => '0', 'false' => false, 'empty' => ''];\n        $rows = [];\n        foreach (['missing', 'null', 'zero', 'text-zero', 'false', 'empty'] as $key) {\n            $rows[$key] = ['isset' => isset($a[$key]), 'keyExists' => array_key_exists($key, $a),\n                'coalesce' => $a[$key] ?? 'fallback', 'empty' => empty($a[$key])];\n        }\n        $missing = $a['missing'];\n        return ['checks' => $rows, 'directMissing' => $missing];\n    },\n",
+      "codeHash": "b8bad8edb6ef8322b6d445742cbcfec2b5b0ec6c84d654efbc7bc8c6d11754f7",
+      "description": "Controlled PHP array probe: presence",
+      "diagnostics": [
+        {
+          "level": 2,
+          "message": "Undefined array key \"missing\""
+        }
+      ],
+      "id": "presence",
+      "phpVersion": "8.2.4",
+      "result": {
+        "checks": {
+          "empty": {
+            "coalesce": "",
+            "empty": true,
+            "isset": true,
+            "keyExists": true
+          },
+          "false": {
+            "coalesce": false,
+            "empty": true,
+            "isset": true,
+            "keyExists": true
+          },
+          "missing": {
+            "coalesce": "fallback",
+            "empty": true,
+            "isset": false,
+            "keyExists": false
+          },
+          "null": {
+            "coalesce": "fallback",
+            "empty": true,
+            "isset": false,
+            "keyExists": true
+          },
+          "text-zero": {
+            "coalesce": "0",
+            "empty": true,
+            "isset": true,
+            "keyExists": true
+          },
+          "zero": {
+            "coalesce": 0,
+            "empty": true,
+            "isset": true,
+            "keyExists": true
+          }
+        },
+        "directMissing": null
+      }
+    },
+    {
+      "code": "    'operations' => function () {\n        $numbers = [1, 2, 3, 4, 5]; $last = array_pop($numbers); $first = array_shift($numbers);\n        $afterShift = $numbers; unset($numbers[1]); $afterUnset = $numbers;\n        $removed = array_splice($numbers, 1, 2);\n        $fruits = ['apple', 'pear']; $fruits[] = 'plum';\n        $pushSize = array_push($fruits, 'cherry'); $unshiftSize = array_unshift($fruits, 'peach');\n        return compact('last', 'first', 'afterShift', 'afterUnset', 'removed', 'numbers', 'fruits', 'pushSize', 'unshiftSize');\n    },\n",
+      "codeHash": "0f8a38add8b3ebb8dd3c453fe6e9e8c4f5175ef85ee4c68312ef657155af45b1",
+      "description": "Controlled PHP array probe: operations",
+      "diagnostics": [],
+      "id": "operations",
+      "phpVersion": "8.2.4",
+      "result": {
+        "afterShift": [
+          2,
+          3,
+          4
+        ],
+        "afterUnset": {
+          "0": 2,
+          "2": 4
+        },
+        "first": 1,
+        "fruits": [
+          "peach",
+          "apple",
+          "pear",
+          "plum",
+          "cherry"
+        ],
+        "last": 5,
+        "numbers": [
+          2
+        ],
+        "pushSize": 4,
+        "removed": [
+          4
+        ],
+        "unshiftSize": 5
+      }
+    },
+    {
+      "code": "    'iteration' => function () {\n        $a = ['x' => 1, 4 => 2]; $pairs = [];\n        foreach ($a as $key => $value) $pairs[] = [$key, $value];\n        foreach ($a as &$value) $value *= 2;\n        unset($value); $value = 99;\n        return ['pairs' => $pairs, 'afterReferenceLoop' => $a];\n    },\n",
+      "codeHash": "c15c3481fd6c1a688cdc4178b691f3e8ac0817edca5bb9120c92a22c0d99de74",
+      "description": "Controlled PHP array probe: iteration",
+      "diagnostics": [],
+      "id": "iteration",
+      "phpVersion": "8.2.4",
+      "result": {
+        "afterReferenceLoop": {
+          "4": 4,
+          "x": 2
+        },
+        "pairs": [
+          [
+            "x",
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "code": "    'merge' => function () {\n        $a = [2 => 'left-number', 'x' => 'left']; $b = [2 => 'right-number', 'x' => 'right', 7 => 'seven'];\n        return ['merge' => array_merge($a, $b), 'union' => $a + $b, 'replace' => array_replace($a, $b), 'leftUnchanged' => $a];\n    },\n",
+      "codeHash": "9274bda74a7bbc0b5406378b34c0c8c837ede455e06d38cdfe0e04899ab3009c",
+      "description": "Controlled PHP array probe: merge",
+      "diagnostics": [],
+      "id": "merge",
+      "phpVersion": "8.2.4",
+      "result": {
+        "leftUnchanged": {
+          "2": "left-number",
+          "x": "left"
+        },
+        "merge": {
+          "0": "left-number",
+          "1": "right-number",
+          "2": "seven",
+          "x": "right"
+        },
+        "replace": {
+          "2": "right-number",
+          "7": "seven",
+          "x": "right"
+        },
+        "union": {
+          "2": "left-number",
+          "7": "seven",
+          "x": "left"
+        }
+      }
+    },
+    {
+      "code": "    'sorting' => function () {\n        $initial = ['b' => 2, 'a' => 3, 'c' => 1]; $rows = [];\n        foreach (['sort', 'rsort', 'asort', 'arsort', 'ksort', 'krsort'] as $function) {\n            $a = $initial; $returned = $function($a); $rows[$function] = ['array' => $a, 'keyOrder' => array_keys($a), 'return' => $returned];\n        }\n        return $rows;\n    },\n",
+      "codeHash": "5a599cf4a0f358b79450dc4edc9e8e4e2273e97da9d5e3d1f73b542626dc606d",
+      "description": "Controlled PHP array probe: sorting",
+      "diagnostics": [],
+      "id": "sorting",
+      "phpVersion": "8.2.4",
+      "result": {
+        "arsort": {
+          "array": {
+            "a": 3,
+            "b": 2,
+            "c": 1
+          },
+          "keyOrder": [
+            "a",
+            "b",
+            "c"
+          ],
+          "return": true
+        },
+        "asort": {
+          "array": {
+            "a": 3,
+            "b": 2,
+            "c": 1
+          },
+          "keyOrder": [
+            "c",
+            "b",
+            "a"
+          ],
+          "return": true
+        },
+        "krsort": {
+          "array": {
+            "a": 3,
+            "b": 2,
+            "c": 1
+          },
+          "keyOrder": [
+            "c",
+            "b",
+            "a"
+          ],
+          "return": true
+        },
+        "ksort": {
+          "array": {
+            "a": 3,
+            "b": 2,
+            "c": 1
+          },
+          "keyOrder": [
+            "a",
+            "b",
+            "c"
+          ],
+          "return": true
+        },
+        "rsort": {
+          "array": [
+            3,
+            2,
+            1
+          ],
+          "keyOrder": [
+            0,
+            1,
+            2
+          ],
+          "return": true
+        },
+        "sort": {
+          "array": [
+            1,
+            2,
+            3
+          ],
+          "keyOrder": [
+            0,
+            1,
+            2
+          ],
+          "return": true
+        }
+      }
+    },
+    {
+      "code": "    'functional' => function () {\n        $numbers = [1, 2, 3, 4, 5];\n        $map = array_map(fn($n) => $n * 2, $numbers);\n        $filter = array_filter($numbers, fn($n) => $n % 2 === 0);\n        $reduce = array_reduce($numbers, fn($carry, $n) => $carry + $n, 0);\n        $counts = array_count_values(['apple', 'pear', 'apple', 'cherry', 'pear']);\n        return compact('numbers', 'map', 'filter', 'reduce', 'counts');\n    },\n",
+      "codeHash": "22667b7414863a7e5378ed7db68d2ce901f0c1e77e2bd69305443f40302b2723",
+      "description": "Controlled PHP array probe: functional",
+      "diagnostics": [],
+      "id": "functional",
+      "phpVersion": "8.2.4",
+      "result": {
+        "counts": {
+          "apple": 2,
+          "cherry": 1,
+          "pear": 2
+        },
+        "filter": {
+          "1": 2,
+          "3": 4
+        },
+        "map": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "numbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "reduce": 15
+      }
+    },
+    {
+      "code": "    'extract' => function () {\n        $name = 'trusted'; $untrusted = ['name' => 'overwritten'];\n        $count = extract($untrusted);\n        return ['name' => $name, 'createdVariables' => $count];\n    },\n",
+      "codeHash": "045b9b2997a8859348a814aaad6db2115bbbf71df7caee4e12ae8759fe2a2ce9",
+      "description": "Controlled PHP array probe: extract",
+      "diagnostics": [],
+      "id": "extract",
+      "phpVersion": "8.2.4",
+      "result": {
+        "createdVariables": 1,
+        "name": "overwritten"
+      }
+    },
+    {
+      "code": "    'forms-menu' => function () {\n        $request = ['email' => ['unexpected-array'], 'name' => '<b>name</b>'];\n        $email = $request['email'] ?? '';\n        $escaped = htmlspecialchars($request['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');\n        $submenuItem = ['title' => 'Child', 'url' => '/child']; $active = $submenuItem['active'];\n        return ['emailIsString' => is_string($email), 'validEmail' => filter_var('user@example.com', FILTER_VALIDATE_EMAIL),\n            'invalidEmail' => filter_var('invalid', FILTER_VALIDATE_EMAIL), 'escaped' => $escaped, 'active' => $active];\n    },\n",
+      "codeHash": "f32d2c2f3f8bbb6ab6315c98facba92e7be8400f3367e62c43c477959de025a9",
+      "description": "Controlled PHP array probe: forms-menu",
+      "diagnostics": [
+        {
+          "level": 2,
+          "message": "Undefined array key \"active\""
+        }
+      ],
+      "id": "forms-menu",
+      "phpVersion": "8.2.4",
+      "result": {
+        "active": null,
+        "emailIsString": false,
+        "escaped": "&lt;b&gt;name&lt;/b&gt;",
+        "invalidEmail": false,
+        "validEmail": "user@example.com"
+      }
+    }
+  ],
+  "provenance": "Primary PHP documentation captured by explicit HTTPS GET. Only short exact anchors and hashes retained; user notes excluded. Interpretation is a separate current Codex session import. Local probes are controlled reproductions, not execution of SOURCE.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-php-baseline"
+      ],
+      "id": "versions",
+      "question": "Jakie wersje są wspierane na 2026-10-09 i jaki zakres przyjąć? Jakie różnice wersji dotyczą przykładów?",
+      "section": "PHP VERSION TARGET"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-key-behavior"
+      ],
+      "id": "arrays",
+      "question": "Czy indeksowane, asocjacyjne, mieszane i zagnieżdżone tablice mają wspólny model danych?",
+      "section": "ARRAY OPERATIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-key-behavior"
+      ],
+      "id": "keys",
+      "question": "Co oznaczają klucze 0, \"0\", true, null i 1.5? Jak powstaje klucz przy dopisywaniu?",
+      "section": "ARRAY KEY BEHAVIOR"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-presence-checks"
+      ],
+      "id": "presence",
+      "question": "Czym różnią się isset, array_key_exists, ?? i empty oraz odczyt nieistniejącego klucza?",
+      "section": "NULL / MISSING KEY BEHAVIOR"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-key-behavior"
+      ],
+      "id": "operations",
+      "question": "Jak []/push/unshift/unset/pop/shift/splice zmieniają tablicę, klucze i co zwracają?",
+      "section": "ARRAY OPERATIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-runnable-snippets"
+      ],
+      "id": "iteration",
+      "question": "Jak foreach udostępnia klucz i wartość; co wymaga ostrożności przy referencji?",
+      "section": "ARRAY OPERATIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-key-behavior"
+      ],
+      "id": "merge",
+      "question": "Jak różnią się array_merge, + oraz array_replace dla kolizji kluczy?",
+      "section": "ARRAY OPERATIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-key-behavior"
+      ],
+      "id": "sorting",
+      "question": "Jak sześć funkcji sortujących wpływa na klucze, tablicę wejściową i return value?",
+      "section": "SORTING"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-runnable-snippets"
+      ],
+      "id": "functional",
+      "question": "Jak działają map/filter/reduce/count_values; czy przykład reduce jest błędnie umieszczony?",
+      "section": "MAP / FILTER / REDUCE"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-safety-and-completeness"
+      ],
+      "id": "extract",
+      "question": "Czy extract jest bezpiecznym wzorcem dla początkujących i formularzy?",
+      "section": "EXTRACT SAFETY"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-safety-and-completeness"
+      ],
+      "id": "forms",
+      "question": "Jak pokazać POST, sprawdzenie typu, walidację i HTML escaping bez pełnego tutorialu bezpieczeństwa?",
+      "section": "FORM EXAMPLES"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-runnable-snippets"
+      ],
+      "id": "snippets",
+      "question": "Które przykłady są spójne, które mają ukryte zależności lub są niekompletne?",
+      "section": "CODE ISSUES"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-php-baseline"
+      ],
+      "id": "target-runtime",
+      "question": "Czy przykłady zostały wykonane na obu docelowych gałęziach PHP 8.4 i 8.5?",
+      "section": "UNRESOLVED QUESTIONS"
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "documentHash": "2c0f3710ee9c6288c9017022ce4518cab1add1e2a64757a8809597b82fab2648",
+      "excerpts": [
+        {
+          "id": "branches",
+          "locator": "Supported Versions table (8.2–8.5 rows)",
+          "text": "8.4"
+        }
+      ],
+      "id": "php-support",
+      "kind": "support-lifecycle",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/supported-versions.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.697Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Supported Versions",
+      "url": "https://www.php.net/supported-versions.php"
+    },
+    {
+      "documentHash": "7ee76947c093d34b1967e3f06dbe63fac72d61715c964810adb7966d14797f48",
+      "excerpts": [
+        {
+          "id": "definition",
+          "locator": "Arrays / definition",
+          "text": "ordered map"
+        },
+        {
+          "id": "keys",
+          "locator": "Syntax / key casts and duplicate keys",
+          "text": "valid decimal"
+        },
+        {
+          "id": "append",
+          "locator": "Creating/modifying / negative key append, PHP 8.3",
+          "text": "negative"
+        },
+        {
+          "id": "missing",
+          "locator": "Accessing array elements / undefined keys",
+          "text": "E_WARNING"
+        }
+      ],
+      "id": "arrays",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.types.array.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.732Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Arrays - Manual",
+      "url": "https://www.php.net/manual/en/language.types.array.php"
+    },
+    {
+      "documentHash": "32915fbebfbc2a2e4f21f57b1e1c34c0bf5bb14a633d5dd92895384825d959a1",
+      "excerpts": [
+        {
+          "id": "warnings",
+          "locator": "Other incompatible changes / warnings",
+          "text": "undefined array key"
+        }
+      ],
+      "id": "migration80",
+      "kind": "migration",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/migration80.incompatible.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.753Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Backward Incompatible Changes - Manual",
+      "url": "https://www.php.net/manual/en/migration80.incompatible.php"
+    },
+    {
+      "documentHash": "fcb474b92adf284b33797da2e874614e5ff0e4f9870431f8c5ea4bb2f3138137",
+      "excerpts": [
+        {
+          "id": "float-keys",
+          "locator": "Implicit float to int conversion",
+          "text": "precision"
+        }
+      ],
+      "id": "migration81",
+      "kind": "migration",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/migration81.deprecated.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.769Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Deprecated Features - Manual",
+      "url": "https://www.php.net/manual/en/migration81.deprecated.php"
+    },
+    {
+      "documentHash": "d7e9fcbbf594c079bbd419a0db97f02e9126cf78c5535ca7a21a4885b4eb4e5a",
+      "excerpts": [
+        {
+          "id": "presence",
+          "locator": "Description and examples",
+          "text": "NULL"
+        }
+      ],
+      "id": "isset",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.isset.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.789Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: isset - Manual",
+      "url": "https://www.php.net/manual/en/function.isset.php"
+    },
+    {
+      "documentHash": "3172a236c59215e8dfd64cf1eb5fe01cca6f23424ccf2510bad0f34643960ed3",
+      "excerpts": [
+        {
+          "id": "null",
+          "locator": "Changelog / null key parameter; notes / null values",
+          "text": "8.5.0"
+        }
+      ],
+      "id": "key-exists",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-key-exists.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.806Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_key_exists - Manual",
+      "url": "https://www.php.net/manual/en/function.array-key-exists.php"
+    },
+    {
+      "documentHash": "5198eaa5eabc8d347a2a450365e8eb5757c3650685a18e69108e1855321e54f8",
+      "excerpts": [
+        {
+          "id": "fallback",
+          "locator": "Null Coalescing Operator",
+          "text": "Null Coalescing Operator"
+        }
+      ],
+      "id": "coalesce",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.comparison.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.823Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Comparison - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.comparison.php"
+    },
+    {
+      "documentHash": "4c0fc12ca13cf0eccd1e644056e8097283222626102ce5cc4b96b92f80a039f5",
+      "excerpts": [
+        {
+          "id": "falsey",
+          "locator": "Description / falsey and missing values",
+          "text": "falsey"
+        }
+      ],
+      "id": "empty",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.empty.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.843Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: empty - Manual",
+      "url": "https://www.php.net/manual/en/function.empty.php"
+    },
+    {
+      "documentHash": "db7b666a17de95540f1d445f690af46d3c030e1cb56d09bdae53e952f04439fa",
+      "excerpts": [
+        {
+          "id": "last",
+          "locator": "Description and return values",
+          "text": "last element"
+        }
+      ],
+      "id": "pop",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-pop.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.860Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_pop - Manual",
+      "url": "https://www.php.net/manual/en/function.array-pop.php"
+    },
+    {
+      "documentHash": "1066596690e5b3381fd22ef6637bf62b0763f2c390c2006dd20954178f4d141c",
+      "excerpts": [
+        {
+          "id": "numeric",
+          "locator": "Description / reindexing",
+          "text": "numerical array keys"
+        }
+      ],
+      "id": "shift",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-shift.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.879Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_shift - Manual",
+      "url": "https://www.php.net/manual/en/function.array-shift.php"
+    },
+    {
+      "documentHash": "bee4a793e2893b509c51476e0343c99e2136da8fc5cd18fddea2db17d4b24ec5",
+      "excerpts": [
+        {
+          "id": "reference",
+          "locator": "Foreach and references; value/key forms",
+          "text": "last array element"
+        }
+      ],
+      "id": "foreach",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.foreach.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.897Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: foreach - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.foreach.php"
+    },
+    {
+      "documentHash": "f90b0a9bf0539f66ff99bd4015e983234214645da9093eacaa4d8eab60681707",
+      "excerpts": [
+        {
+          "id": "numeric",
+          "locator": "Description and return values",
+          "text": "renumbered"
+        }
+      ],
+      "id": "merge",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-merge.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.910Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_merge - Manual",
+      "url": "https://www.php.net/manual/en/function.array-merge.php"
+    },
+    {
+      "documentHash": "902e29af87ebda846380b7a27576500d78157e12efa31112e97cc4a3a43ba740",
+      "excerpts": [
+        {
+          "id": "left",
+          "locator": "Union operator +",
+          "text": "left-hand array"
+        }
+      ],
+      "id": "union",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.array.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.927Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Array - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.array.php"
+    },
+    {
+      "documentHash": "6a4f448757c21cc9380b68cb16df1bf043635f0556a822ec27d290b4ec3c0fd1",
+      "excerpts": [
+        {
+          "id": "right",
+          "locator": "Description / key replacement",
+          "text": "right-most"
+        }
+      ],
+      "id": "replace",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-replace.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.943Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_replace - Manual",
+      "url": "https://www.php.net/manual/en/function.array-replace.php"
+    },
+    {
+      "documentHash": "2d7a2689bde34ff306296ef18ff65df1a0f69d97ca3b66ff66df875983f76900",
+      "excerpts": [
+        {
+          "id": "numeric",
+          "locator": "Description / numeric keys",
+          "text": "not preserved"
+        }
+      ],
+      "id": "splice",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-splice.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.962Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_splice - Manual",
+      "url": "https://www.php.net/manual/en/function.array-splice.php"
+    },
+    {
+      "documentHash": "e2d9d47165bcfc544f6cd62f60208818dbae4763efc7ef6079c9d3b16107249f",
+      "excerpts": [
+        {
+          "id": "mutates",
+          "locator": "Sorting table / all functions mutate input",
+          "text": "array variable itself"
+        }
+      ],
+      "id": "sorting",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/array.sorting.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.979Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Sorting Arrays - Manual",
+      "url": "https://www.php.net/manual/en/array.sorting.php"
+    },
+    {
+      "documentHash": "692acb9fa820f2f291d8ba4df1f024b75c50fe0ecd3c197d9e1bdb077524c529",
+      "excerpts": [
+        {
+          "id": "return",
+          "locator": "Description / keys and Return Values",
+          "text": "Always returns true"
+        }
+      ],
+      "id": "sort",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.sort.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:01.998Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: sort - Manual",
+      "url": "https://www.php.net/manual/en/function.sort.php"
+    },
+    {
+      "documentHash": "e3d384b4a1ce318fa39d2fae5fd513ad8a079cada3447e0923542d8b789af671",
+      "excerpts": [
+        {
+          "id": "return",
+          "locator": "Description / keys and Return Values",
+          "text": "Always returns true"
+        }
+      ],
+      "id": "rsort",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.rsort.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.017Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: rsort - Manual",
+      "url": "https://www.php.net/manual/en/function.rsort.php"
+    },
+    {
+      "documentHash": "d6a4577ca09ff92b965cdd976107126a69d886541b4aeb4b693d0f19ae86bc44",
+      "excerpts": [
+        {
+          "id": "return",
+          "locator": "Description / keys and Return Values",
+          "text": "Always returns true"
+        }
+      ],
+      "id": "asort",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.asort.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.037Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: asort - Manual",
+      "url": "https://www.php.net/manual/en/function.asort.php"
+    },
+    {
+      "documentHash": "6a2c93de297dc8210dc3d4996497cfa09af541259684f13e1bd84b3067fca507",
+      "excerpts": [
+        {
+          "id": "return",
+          "locator": "Description / keys and Return Values",
+          "text": "Always returns true"
+        }
+      ],
+      "id": "arsort",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.arsort.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.050Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: arsort - Manual",
+      "url": "https://www.php.net/manual/en/function.arsort.php"
+    },
+    {
+      "documentHash": "b022088128a711897ccb41c239e591cb7624c717616b1f2bf05b837fb854b65a",
+      "excerpts": [
+        {
+          "id": "return",
+          "locator": "Description / keys and Return Values",
+          "text": "Always returns true"
+        }
+      ],
+      "id": "ksort",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.ksort.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.067Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: ksort - Manual",
+      "url": "https://www.php.net/manual/en/function.ksort.php"
+    },
+    {
+      "documentHash": "0127c19621d5ae8b2682a83e82f0f0725ea5686d7f8fd6021ef991ce071cf36c",
+      "excerpts": [
+        {
+          "id": "return",
+          "locator": "Description / keys and Return Values",
+          "text": "Always returns true"
+        }
+      ],
+      "id": "krsort",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.krsort.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.080Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: krsort - Manual",
+      "url": "https://www.php.net/manual/en/function.krsort.php"
+    },
+    {
+      "documentHash": "b0e41ec4793fe4e3d2d50ce801b62bd153015ed473cd184241947e076578a5da",
+      "excerpts": [
+        {
+          "id": "keys",
+          "locator": "Return Values / key preservation",
+          "text": "exactly one array"
+        }
+      ],
+      "id": "map",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-map.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.096Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_map - Manual",
+      "url": "https://www.php.net/manual/en/function.array-map.php"
+    },
+    {
+      "documentHash": "2d1513892c9167fec83f5e29337c3da78885a6ba6270b17f1aad619a009376b1",
+      "excerpts": [
+        {
+          "id": "keys",
+          "locator": "Description / preserved keys; null callback",
+          "text": "Array keys are preserved"
+        }
+      ],
+      "id": "filter",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-filter.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.110Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_filter - Manual",
+      "url": "https://www.php.net/manual/en/function.array-filter.php"
+    },
+    {
+      "documentHash": "8c8f144b9f3094ead5dc9b87501a5e6d2d229f0854fde60d75fb6bf43823e492",
+      "excerpts": [
+        {
+          "id": "result",
+          "locator": "Description / initial and result",
+          "text": "single value"
+        }
+      ],
+      "id": "reduce",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-reduce.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.127Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_reduce - Manual",
+      "url": "https://www.php.net/manual/en/function.array-reduce.php"
+    },
+    {
+      "documentHash": "5f15a4a6e18626bcb6cf211116d817500db5fc8339c09b4d1bf30e121ee574f3",
+      "excerpts": [
+        {
+          "id": "types",
+          "locator": "Description / int|string; errors",
+          "text": "E_WARNING"
+        }
+      ],
+      "id": "count-values",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-count-values.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.141Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_count_values - Manual",
+      "url": "https://www.php.net/manual/en/function.array-count-values.php"
+    },
+    {
+      "documentHash": "d678d39a4e75ee0441906ecd7c9ffdef79d58843ec4bf038ae63b3143ac3189e",
+      "excerpts": [
+        {
+          "id": "untrusted",
+          "locator": "Warning / untrusted input; EXTR_OVERWRITE",
+          "text": "untrusted data"
+        }
+      ],
+      "id": "extract",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.extract.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.160Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: extract - Manual",
+      "url": "https://www.php.net/manual/en/function.extract.php"
+    },
+    {
+      "documentHash": "0333d9e8d66f0eff023cfc408dadea10f66e7e6e161821a8ec29da5978b91872",
+      "excerpts": [
+        {
+          "id": "forms",
+          "locator": "Description / accepted POST content types",
+          "text": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "post",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/reserved.variables.post.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.174Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: $_POST - Manual",
+      "url": "https://www.php.net/manual/en/reserved.variables.post.php"
+    },
+    {
+      "documentHash": "4205f46bb44a8d0549d1bda0c7fd969caa23764e1d79bd1b56337cc8ff1a72dc",
+      "excerpts": [
+        {
+          "id": "array-input",
+          "locator": "HTML Forms / nested array input",
+          "text": "arrays in the context"
+        }
+      ],
+      "id": "external",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.variables.external.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.188Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Variables From External Sources - Manual",
+      "url": "https://www.php.net/manual/en/language.variables.external.php"
+    },
+    {
+      "documentHash": "ab8c0251d92d8e58ea68ca16ca68f08bcfe293550f14a3045693bee0a56bdcd6",
+      "excerpts": [
+        {
+          "id": "validation",
+          "locator": "FILTER_DEFAULT / Return Values / email example",
+          "text": "no filtering"
+        }
+      ],
+      "id": "filter-var",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.filter-var.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.202Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: filter_var - Manual",
+      "url": "https://www.php.net/manual/en/function.filter-var.php"
+    },
+    {
+      "documentHash": "89a5ad3e069edcce0011c20475cc0dcd5f20181f35c4645f5477ddb6b9188bd6",
+      "excerpts": [
+        {
+          "id": "html",
+          "locator": "Description / performed translations and flags",
+          "text": "special significance in HTML"
+        }
+      ],
+      "id": "escape",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.htmlspecialchars.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.220Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: htmlspecialchars - Manual",
+      "url": "https://www.php.net/manual/en/function.htmlspecialchars.php"
+    },
+    {
+      "documentHash": "43252be470143d4af66c72fafdf840a40fe5bd8e1f5088f0750733be61f69f1e",
+      "excerpts": [
+        {
+          "id": "size",
+          "locator": "Description / Return Values",
+          "text": "new number of elements"
+        }
+      ],
+      "id": "push",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-push.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.233Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_push - Manual",
+      "url": "https://www.php.net/manual/en/function.array-push.php"
+    },
+    {
+      "documentHash": "0616352308ce51cd369f5ef397147242796768df5fd36ac9ae8841686ab60dbb",
+      "excerpts": [
+        {
+          "id": "numeric",
+          "locator": "Description / Return Values",
+          "text": "numerical array keys"
+        }
+      ],
+      "id": "unshift",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.array-unshift.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.249Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: array_unshift - Manual",
+      "url": "https://www.php.net/manual/en/function.array-unshift.php"
+    },
+    {
+      "documentHash": "c6d888481f4e6e93a97583f43fa7d41667c216da9dee24944a18545afb6f6f1c",
+      "excerpts": [
+        {
+          "id": "strict",
+          "locator": "Description / strict parameter",
+          "text": "loose comparison"
+        }
+      ],
+      "id": "in-array",
+      "kind": "manual",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.in-array.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-09T07:31:02.263Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: in_array - Manual",
+      "url": "https://www.php.net/manual/en/function.in-array.php"
+    }
+  ],
+  "topicSlug": "php-arrays"
+}

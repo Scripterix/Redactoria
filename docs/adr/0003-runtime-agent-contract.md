@@ -42,3 +42,18 @@ analizy sesji przed uruchomieniem; replay nie jest nową inferencją. Ostateczne
 pozostają po stronie człowieka.
 
 Szczegóły kontraktu i uruchomienia: [Cartographer 0.1](../architecture/cartographer.md).
+
+## Doprecyzowanie evidence — Researcher, 2026-10-09
+
+Researcher stosuje tę samą granicę runtime; nie wymaga odrębnego ADR. Zweryfikowany
+snapshot dokumentów jest wejściem niezależnym od interpretacji modelu. Model nie
+jest źródłem faktów. Każdy finding factual/verified ma odwołanie do dostarczonego
+dokumentu i evidence ID; source register jest wyprowadzany z użytych referencji.
+Nierozstrzygnięte kwestie pozostają needs-review. Review dokumentacji i rzeczywiste
+wykonanie kodu są rozdzielone, z zapisem faktycznej wersji runtime dla prób.
+
+Researcher nie otrzymuje możliwości wykonania shell ani zapisu plików. Manual CLI
+ma zawężony writer do LAB/research; snapshot i recorded response są związane pełnym
+request hashem. Walidacja nie zastępuje oceny semantycznej człowieka ani nie dowodzi
+autentyczności ręcznie podmienionego snapshotu. Szczegóły:
+[Researcher 0.1](../architecture/researcher.md).

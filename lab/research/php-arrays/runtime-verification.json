@@ -1,0 +1,2701 @@
+{
+  "errata": [
+    {
+      "affectedFindingIds": [
+        "key-casts",
+        "key-exists-null-argument",
+        "code-key-extension"
+      ],
+      "claim": "PHP 8.5 also deprecates null as an array offset, not only the key parameter of array_key_exists. It still casts to the empty-string key; use an explicit empty string instead. Null values remain valid.",
+      "evidenceId": "null-offset",
+      "id": "php85-null-offset",
+      "probeIds": [
+        "keys",
+        "key-types",
+        "null-key-argument"
+      ],
+      "recommendation": "Writer must include this version caution and must not recommend null keys. These probes demonstrate diagnostics, not recommended tutorial code.",
+      "source": "lab/research/php-arrays/runtime-source-supplement.json"
+    }
+  ],
+  "initialRunRef": "lab/research/php-arrays/runtime-verification-initial.json",
+  "limitations": [
+    "Fixed controlled probes, not execution of SOURCE Markdown or final Writer output.",
+    "Tested exact Windows x64 NTS builds, not every patch/OS/SAPI or a web application security audit.",
+    "Expected warnings/deprecations are captured and asserted, not suppressed as success. Original research artifacts remain unchanged."
+  ],
+  "packetHash": "3437fb991ebd1707c0ca04092a2143ade10704dd1168749eff694d3b4d0a3a42",
+  "packetRef": "lab/research/php-arrays/research.json",
+  "remainingBoundary": "snippets: final Writer-authored standalone examples and a complete form handler do not exist yet; not claimed tested.",
+  "requestHash": "9fe6e26a5da722bccc0a74afc43ead40525932cb1342330deb19fde1f844fa64",
+  "resolvedQuestionIds": [
+    "target-runtime"
+  ],
+  "runs": [
+    {
+      "archiveSha256": "da68394f9193b7f6b89d0c76861a4034ae10efee7fd55a7255d8118c2acf70d7",
+      "archiveUrl": "https://downloads.php.net/~windows/releases/archives/php-8.4.26-nts-Win32-vs17-x64.zip",
+      "checks": [
+        {
+          "actual": {
+            "0": "string",
+            "1": "float",
+            "": "null"
+          },
+          "expected": {
+            "0": "string",
+            "1": "float",
+            "": "null"
+          },
+          "id": "keys/castKeys",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            0,
+            1,
+            ""
+          ],
+          "expected": [
+            0,
+            1,
+            ""
+          ],
+          "id": "keys/castKeyOrder",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "11": "next"
+          },
+          "expected": {
+            "11": "next"
+          },
+          "id": "keys/appendAfterUnset",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "-4": "next",
+            "-5": "negative"
+          },
+          "expected": {
+            "-4": "next",
+            "-5": "negative"
+          },
+          "id": "keys/negativeAppend",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            8192
+          ],
+          "expected": [
+            8192
+          ],
+          "id": "keys/diagnostic-levels",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "empty": {
+              "coalesce": "",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "false": {
+              "coalesce": false,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "missing": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": false
+            },
+            "null": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": true
+            },
+            "text-zero": {
+              "coalesce": "0",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "zero": {
+              "coalesce": 0,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            }
+          },
+          "expected": {
+            "empty": {
+              "coalesce": "",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "false": {
+              "coalesce": false,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "missing": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": false
+            },
+            "null": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": true
+            },
+            "text-zero": {
+              "coalesce": "0",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "zero": {
+              "coalesce": 0,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            }
+          },
+          "id": "presence/checks",
+          "probeId": "presence",
+          "status": "PASS"
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "presence/directMissing",
+          "probeId": "presence",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2
+          ],
+          "expected": [
+            2
+          ],
+          "id": "presence/diagnostic-levels",
+          "probeId": "presence",
+          "status": "PASS"
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "id": "operations/last",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "operations/first",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            3,
+            4
+          ],
+          "expected": [
+            2,
+            3,
+            4
+          ],
+          "id": "operations/afterShift",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "0": 2,
+            "2": 4
+          },
+          "expected": {
+            "0": 2,
+            "2": 4
+          },
+          "id": "operations/afterUnset",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            4
+          ],
+          "expected": [
+            4
+          ],
+          "id": "operations/removed",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2
+          ],
+          "expected": [
+            2
+          ],
+          "id": "operations/numbers",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            "peach",
+            "apple",
+            "pear",
+            "plum",
+            "cherry"
+          ],
+          "expected": [
+            "peach",
+            "apple",
+            "pear",
+            "plum",
+            "cherry"
+          ],
+          "id": "operations/fruits",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "id": "operations/pushSize",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "id": "operations/unshiftSize",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "operations/diagnostic-levels",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            [
+              "x",
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "expected": [
+            [
+              "x",
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "id": "iteration/pairs",
+          "probeId": "iteration",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "4": 4,
+            "x": 2
+          },
+          "expected": {
+            "4": 4,
+            "x": 2
+          },
+          "id": "iteration/afterReferenceLoop",
+          "probeId": "iteration",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "iteration/diagnostic-levels",
+          "probeId": "iteration",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "0": "left-number",
+            "1": "right-number",
+            "2": "seven",
+            "x": "right"
+          },
+          "expected": {
+            "0": "left-number",
+            "1": "right-number",
+            "2": "seven",
+            "x": "right"
+          },
+          "id": "merge/merge",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "2": "left-number",
+            "7": "seven",
+            "x": "left"
+          },
+          "expected": {
+            "2": "left-number",
+            "7": "seven",
+            "x": "left"
+          },
+          "id": "merge/union",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "2": "right-number",
+            "7": "seven",
+            "x": "right"
+          },
+          "expected": {
+            "2": "right-number",
+            "7": "seven",
+            "x": "right"
+          },
+          "id": "merge/replace",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "2": "left-number",
+            "x": "left"
+          },
+          "expected": {
+            "2": "left-number",
+            "x": "left"
+          },
+          "id": "merge/leftUnchanged",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "merge/diagnostic-levels",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": [
+              1,
+              2,
+              3
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": [
+              1,
+              2,
+              3
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "id": "sorting/sort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": [
+              3,
+              2,
+              1
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": [
+              3,
+              2,
+              1
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "id": "sorting/rsort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "id": "sorting/asort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "id": "sorting/arsort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "id": "sorting/ksort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "id": "sorting/krsort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "sorting/diagnostic-levels",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "id": "functional/numbers",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "expected": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "id": "functional/map",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "1": 2,
+            "3": 4
+          },
+          "expected": {
+            "1": 2,
+            "3": 4
+          },
+          "id": "functional/filter",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": 15,
+          "expected": 15,
+          "id": "functional/reduce",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "apple": 2,
+            "cherry": 1,
+            "pear": 2
+          },
+          "expected": {
+            "apple": 2,
+            "cherry": 1,
+            "pear": 2
+          },
+          "id": "functional/counts",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "functional/diagnostic-levels",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": "overwritten",
+          "expected": "overwritten",
+          "id": "extract/name",
+          "probeId": "extract",
+          "status": "PASS"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "extract/createdVariables",
+          "probeId": "extract",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "extract/diagnostic-levels",
+          "probeId": "extract",
+          "status": "PASS"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "id": "forms-menu/emailIsString",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": "user@example.com",
+          "expected": "user@example.com",
+          "id": "forms-menu/validEmail",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "id": "forms-menu/invalidEmail",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": "&lt;b&gt;name&lt;/b&gt;",
+          "expected": "&lt;b&gt;name&lt;/b&gt;",
+          "id": "forms-menu/escaped",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "forms-menu/active",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2
+          ],
+          "expected": [
+            2
+          ],
+          "id": "forms-menu/diagnostic-levels",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "null-key-argument/nullArgument",
+          "probeId": "null-key-argument",
+          "status": "PASS"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "null-key-argument/emptyStringArgument",
+          "probeId": "null-key-argument",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "null-key-argument/diagnostic-levels",
+          "probeId": "null-key-argument",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            {
+              "key": 0,
+              "type": "integer",
+              "value": "zero"
+            },
+            {
+              "key": "08",
+              "type": "string",
+              "value": "padded"
+            },
+            {
+              "key": 1,
+              "type": "integer",
+              "value": "boolean"
+            },
+            {
+              "key": "",
+              "type": "string",
+              "value": "null"
+            }
+          ],
+          "expected": [
+            {
+              "key": 0,
+              "type": "integer",
+              "value": "zero"
+            },
+            {
+              "key": "08",
+              "type": "string",
+              "value": "padded"
+            },
+            {
+              "key": 1,
+              "type": "integer",
+              "value": "boolean"
+            },
+            {
+              "key": "",
+              "type": "string",
+              "value": "null"
+            }
+          ],
+          "id": "key-types/exact-types",
+          "probeId": "key-types",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "key-types/diagnostic-levels",
+          "probeId": "key-types",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "x": 2,
+            "y": 4
+          },
+          "expected": {
+            "x": 2,
+            "y": 4
+          },
+          "id": "functional-edge-cases/singleMap",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            4
+          ],
+          "expected": [
+            2,
+            4
+          ],
+          "id": "functional-edge-cases/multipleMap",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "id": "functional-edge-cases/emptyReduce",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "functional-edge-cases/withoutInitial",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "1": 1,
+            "one": 1
+          },
+          "expected": {
+            "1": 1,
+            "one": 1
+          },
+          "id": "functional-edge-cases/invalidCounts",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "5": "keep"
+          },
+          "expected": {
+            "5": "keep"
+          },
+          "id": "functional-edge-cases/filtered",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            2
+          ],
+          "expected": [
+            2,
+            2
+          ],
+          "id": "functional-edge-cases/diagnostic-levels",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        }
+      ],
+      "checksumSource": "https://www.php.net/downloads.php?os=windows&version=8.4",
+      "executableHash": "9c9c7cdb2ec112cf39498dd1a77b56eacac482487182066920f1bcd209091898",
+      "execution": "actual-local-cli",
+      "family": "8.4",
+      "finishedAt": "2026-10-09T08:38:56.200Z",
+      "invocations": [
+        {
+          "arguments": [
+            "-n",
+            "scripts/research/php-arrays-probes.php"
+          ],
+          "exitCode": 0,
+          "script": "scripts/research/php-arrays-probes.php",
+          "scriptHash": "f17d47a3c869fb023fc7d9f52d64be84725437fd1313fc879144683e47fb2d08"
+        },
+        {
+          "arguments": [
+            "-n",
+            "scripts/research/php-arrays-version-probes.php"
+          ],
+          "exitCode": 0,
+          "script": "scripts/research/php-arrays-version-probes.php",
+          "scriptHash": "39c9cb5ea838e72b321ce18cadb22801cb96627e1ea6d58d55d18481e16cc38e"
+        }
+      ],
+      "records": [
+        {
+          "code": "    'keys' => function () {\n        $a = [];\n        $a[0] = 'int'; $a['0'] = 'string'; $a[true] = 'bool';\n        $a[null] = 'null'; $a[1.5] = 'float';\n        $b = [10 => 'ten']; unset($b[10]); $b[] = 'next';\n        $negative = []; $negative[-5] = 'negative'; $negative[] = 'next';\n        return ['castKeys' => $a, 'castKeyOrder' => array_keys($a), 'appendAfterUnset' => $b, 'negativeAppend' => $negative];\n    },\n",
+          "codeHash": "36b31b97e8e548b90228ab8a338d6340c0950326b2ab5bd1e6bf476d46bcf8d0",
+          "description": "Controlled PHP array probe: keys",
+          "diagnostics": [
+            {
+              "level": 8192,
+              "message": "Implicit conversion from float 1.5 to int loses precision"
+            }
+          ],
+          "id": "keys",
+          "phpVersion": "8.4.26",
+          "result": {
+            "appendAfterUnset": {
+              "11": "next"
+            },
+            "castKeyOrder": [
+              0,
+              1,
+              ""
+            ],
+            "castKeys": {
+              "0": "string",
+              "1": "float",
+              "": "null"
+            },
+            "negativeAppend": {
+              "-4": "next",
+              "-5": "negative"
+            }
+          }
+        },
+        {
+          "code": "    'presence' => function () {\n        $a = ['null' => null, 'zero' => 0, 'text-zero' => '0', 'false' => false, 'empty' => ''];\n        $rows = [];\n        foreach (['missing', 'null', 'zero', 'text-zero', 'false', 'empty'] as $key) {\n            $rows[$key] = ['isset' => isset($a[$key]), 'keyExists' => array_key_exists($key, $a),\n                'coalesce' => $a[$key] ?? 'fallback', 'empty' => empty($a[$key])];\n        }\n        $missing = $a['missing'];\n        return ['checks' => $rows, 'directMissing' => $missing];\n    },\n",
+          "codeHash": "b8bad8edb6ef8322b6d445742cbcfec2b5b0ec6c84d654efbc7bc8c6d11754f7",
+          "description": "Controlled PHP array probe: presence",
+          "diagnostics": [
+            {
+              "level": 2,
+              "message": "Undefined array key \"missing\""
+            }
+          ],
+          "id": "presence",
+          "phpVersion": "8.4.26",
+          "result": {
+            "checks": {
+              "empty": {
+                "coalesce": "",
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              },
+              "false": {
+                "coalesce": false,
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              },
+              "missing": {
+                "coalesce": "fallback",
+                "empty": true,
+                "isset": false,
+                "keyExists": false
+              },
+              "null": {
+                "coalesce": "fallback",
+                "empty": true,
+                "isset": false,
+                "keyExists": true
+              },
+              "text-zero": {
+                "coalesce": "0",
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              },
+              "zero": {
+                "coalesce": 0,
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              }
+            },
+            "directMissing": null
+          }
+        },
+        {
+          "code": "    'operations' => function () {\n        $numbers = [1, 2, 3, 4, 5]; $last = array_pop($numbers); $first = array_shift($numbers);\n        $afterShift = $numbers; unset($numbers[1]); $afterUnset = $numbers;\n        $removed = array_splice($numbers, 1, 2);\n        $fruits = ['apple', 'pear']; $fruits[] = 'plum';\n        $pushSize = array_push($fruits, 'cherry'); $unshiftSize = array_unshift($fruits, 'peach');\n        return compact('last', 'first', 'afterShift', 'afterUnset', 'removed', 'numbers', 'fruits', 'pushSize', 'unshiftSize');\n    },\n",
+          "codeHash": "0f8a38add8b3ebb8dd3c453fe6e9e8c4f5175ef85ee4c68312ef657155af45b1",
+          "description": "Controlled PHP array probe: operations",
+          "diagnostics": [],
+          "id": "operations",
+          "phpVersion": "8.4.26",
+          "result": {
+            "afterShift": [
+              2,
+              3,
+              4
+            ],
+            "afterUnset": {
+              "0": 2,
+              "2": 4
+            },
+            "first": 1,
+            "fruits": [
+              "peach",
+              "apple",
+              "pear",
+              "plum",
+              "cherry"
+            ],
+            "last": 5,
+            "numbers": [
+              2
+            ],
+            "pushSize": 4,
+            "removed": [
+              4
+            ],
+            "unshiftSize": 5
+          }
+        },
+        {
+          "code": "    'iteration' => function () {\n        $a = ['x' => 1, 4 => 2]; $pairs = [];\n        foreach ($a as $key => $value) $pairs[] = [$key, $value];\n        foreach ($a as &$value) $value *= 2;\n        unset($value); $value = 99;\n        return ['pairs' => $pairs, 'afterReferenceLoop' => $a];\n    },\n",
+          "codeHash": "c15c3481fd6c1a688cdc4178b691f3e8ac0817edca5bb9120c92a22c0d99de74",
+          "description": "Controlled PHP array probe: iteration",
+          "diagnostics": [],
+          "id": "iteration",
+          "phpVersion": "8.4.26",
+          "result": {
+            "afterReferenceLoop": {
+              "4": 4,
+              "x": 2
+            },
+            "pairs": [
+              [
+                "x",
+                1
+              ],
+              [
+                4,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "code": "    'merge' => function () {\n        $a = [2 => 'left-number', 'x' => 'left']; $b = [2 => 'right-number', 'x' => 'right', 7 => 'seven'];\n        return ['merge' => array_merge($a, $b), 'union' => $a + $b, 'replace' => array_replace($a, $b), 'leftUnchanged' => $a];\n    },\n",
+          "codeHash": "9274bda74a7bbc0b5406378b34c0c8c837ede455e06d38cdfe0e04899ab3009c",
+          "description": "Controlled PHP array probe: merge",
+          "diagnostics": [],
+          "id": "merge",
+          "phpVersion": "8.4.26",
+          "result": {
+            "leftUnchanged": {
+              "2": "left-number",
+              "x": "left"
+            },
+            "merge": {
+              "0": "left-number",
+              "1": "right-number",
+              "2": "seven",
+              "x": "right"
+            },
+            "replace": {
+              "2": "right-number",
+              "7": "seven",
+              "x": "right"
+            },
+            "union": {
+              "2": "left-number",
+              "7": "seven",
+              "x": "left"
+            }
+          }
+        },
+        {
+          "code": "    'sorting' => function () {\n        $initial = ['b' => 2, 'a' => 3, 'c' => 1]; $rows = [];\n        foreach (['sort', 'rsort', 'asort', 'arsort', 'ksort', 'krsort'] as $function) {\n            $a = $initial; $returned = $function($a); $rows[$function] = ['array' => $a, 'keyOrder' => array_keys($a), 'return' => $returned];\n        }\n        return $rows;\n    },\n",
+          "codeHash": "5a599cf4a0f358b79450dc4edc9e8e4e2273e97da9d5e3d1f73b542626dc606d",
+          "description": "Controlled PHP array probe: sorting",
+          "diagnostics": [],
+          "id": "sorting",
+          "phpVersion": "8.4.26",
+          "result": {
+            "arsort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "a",
+                "b",
+                "c"
+              ],
+              "return": true
+            },
+            "asort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "c",
+                "b",
+                "a"
+              ],
+              "return": true
+            },
+            "krsort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "c",
+                "b",
+                "a"
+              ],
+              "return": true
+            },
+            "ksort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "a",
+                "b",
+                "c"
+              ],
+              "return": true
+            },
+            "rsort": {
+              "array": [
+                3,
+                2,
+                1
+              ],
+              "keyOrder": [
+                0,
+                1,
+                2
+              ],
+              "return": true
+            },
+            "sort": {
+              "array": [
+                1,
+                2,
+                3
+              ],
+              "keyOrder": [
+                0,
+                1,
+                2
+              ],
+              "return": true
+            }
+          }
+        },
+        {
+          "code": "    'functional' => function () {\n        $numbers = [1, 2, 3, 4, 5];\n        $map = array_map(fn($n) => $n * 2, $numbers);\n        $filter = array_filter($numbers, fn($n) => $n % 2 === 0);\n        $reduce = array_reduce($numbers, fn($carry, $n) => $carry + $n, 0);\n        $counts = array_count_values(['apple', 'pear', 'apple', 'cherry', 'pear']);\n        return compact('numbers', 'map', 'filter', 'reduce', 'counts');\n    },\n",
+          "codeHash": "22667b7414863a7e5378ed7db68d2ce901f0c1e77e2bd69305443f40302b2723",
+          "description": "Controlled PHP array probe: functional",
+          "diagnostics": [],
+          "id": "functional",
+          "phpVersion": "8.4.26",
+          "result": {
+            "counts": {
+              "apple": 2,
+              "cherry": 1,
+              "pear": 2
+            },
+            "filter": {
+              "1": 2,
+              "3": 4
+            },
+            "map": [
+              2,
+              4,
+              6,
+              8,
+              10
+            ],
+            "numbers": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "reduce": 15
+          }
+        },
+        {
+          "code": "    'extract' => function () {\n        $name = 'trusted'; $untrusted = ['name' => 'overwritten'];\n        $count = extract($untrusted);\n        return ['name' => $name, 'createdVariables' => $count];\n    },\n",
+          "codeHash": "045b9b2997a8859348a814aaad6db2115bbbf71df7caee4e12ae8759fe2a2ce9",
+          "description": "Controlled PHP array probe: extract",
+          "diagnostics": [],
+          "id": "extract",
+          "phpVersion": "8.4.26",
+          "result": {
+            "createdVariables": 1,
+            "name": "overwritten"
+          }
+        },
+        {
+          "code": "    'forms-menu' => function () {\n        $request = ['email' => ['unexpected-array'], 'name' => '<b>name</b>'];\n        $email = $request['email'] ?? '';\n        $escaped = htmlspecialchars($request['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');\n        $submenuItem = ['title' => 'Child', 'url' => '/child']; $active = $submenuItem['active'];\n        return ['emailIsString' => is_string($email), 'validEmail' => filter_var('user@example.com', FILTER_VALIDATE_EMAIL),\n            'invalidEmail' => filter_var('invalid', FILTER_VALIDATE_EMAIL), 'escaped' => $escaped, 'active' => $active];\n    },\n",
+          "codeHash": "f32d2c2f3f8bbb6ab6315c98facba92e7be8400f3367e62c43c477959de025a9",
+          "description": "Controlled PHP array probe: forms-menu",
+          "diagnostics": [
+            {
+              "level": 2,
+              "message": "Undefined array key \"active\""
+            }
+          ],
+          "id": "forms-menu",
+          "phpVersion": "8.4.26",
+          "result": {
+            "active": null,
+            "emailIsString": false,
+            "escaped": "&lt;b&gt;name&lt;/b&gt;",
+            "invalidEmail": false,
+            "validEmail": "user@example.com"
+          }
+        },
+        {
+          "code": "    'null-key-argument' => function () {\n        $a = ['' => null];\n        return ['nullArgument' => array_key_exists(null, $a), 'emptyStringArgument' => array_key_exists('', $a)];\n    },\n",
+          "codeHash": "555d8599ea8f090f87e32e40795df7c8316812d36611aab4b199b57e2eb963f4",
+          "description": "Controlled version-sensitive PHP array probe: null-key-argument",
+          "diagnostics": [],
+          "id": "null-key-argument",
+          "phpVersion": "8.4.26",
+          "result": {
+            "emptyStringArgument": true,
+            "nullArgument": true
+          }
+        },
+        {
+          "code": "    'key-types' => function () {\n        $a = [0 => 'zero', '08' => 'padded', true => 'boolean', null => 'null'];\n        $keys = [];\n        foreach ($a as $key => $value) $keys[] = ['key' => $key, 'type' => gettype($key), 'value' => $value];\n        return $keys;\n    },\n",
+          "codeHash": "0fbcde48bac8b9269b793249675f4ea85b7caaac0165d50aead69894738862cc",
+          "description": "Controlled version-sensitive PHP array probe: key-types",
+          "diagnostics": [],
+          "id": "key-types",
+          "phpVersion": "8.4.26",
+          "result": [
+            {
+              "key": 0,
+              "type": "integer",
+              "value": "zero"
+            },
+            {
+              "key": "08",
+              "type": "string",
+              "value": "padded"
+            },
+            {
+              "key": 1,
+              "type": "integer",
+              "value": "boolean"
+            },
+            {
+              "key": "",
+              "type": "string",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "code": "    'functional-edge-cases' => function () {\n        $a = ['x' => 1, 'y' => 2];\n        $singleMap = array_map(fn($n) => $n * 2, $a);\n        $multipleMap = array_map(fn($x, $y) => $x + $y, $a, $a);\n        $emptyReduce = array_reduce([], fn($carry, $n) => $carry + $n, 0);\n        $withoutInitial = array_reduce([], fn($carry, $n) => $carry + $n);\n        $invalidCounts = array_count_values([1, 'one', false, 1.5]);\n        $filtered = array_filter([0, '0', false, null, '', 'keep']);\n        return compact('singleMap', 'multipleMap', 'emptyReduce', 'withoutInitial', 'invalidCounts', 'filtered');\n    },\n",
+          "codeHash": "5cfb9a5a3881cd83780d930ec79c2f91273903a480374e2656abb4ef6e207650",
+          "description": "Controlled version-sensitive PHP array probe: functional-edge-cases",
+          "diagnostics": [
+            {
+              "level": 2,
+              "message": "array_count_values(): Can only count string and integer values, entry skipped"
+            },
+            {
+              "level": 2,
+              "message": "array_count_values(): Can only count string and integer values, entry skipped"
+            }
+          ],
+          "id": "functional-edge-cases",
+          "phpVersion": "8.4.26",
+          "result": {
+            "emptyReduce": 0,
+            "filtered": {
+              "5": "keep"
+            },
+            "invalidCounts": {
+              "1": 1,
+              "one": 1
+            },
+            "multipleMap": [
+              2,
+              4
+            ],
+            "singleMap": {
+              "x": 2,
+              "y": 4
+            },
+            "withoutInitial": null
+          }
+        }
+      ],
+      "startedAt": "2026-10-09T08:38:55.832Z",
+      "status": "PASS",
+      "version": "8.4.26",
+      "versionBanner": "PHP 8.4.26 (cli) (built: Sep 22 2026 15:11:32) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.4.26, Copyright (c) Zend Technologies"
+    },
+    {
+      "archiveSha256": "0ea96e0d2b9b737a6036f05cf4e95c49313faa6d0f27bd97edb2742503f0c043",
+      "archiveUrl": "https://downloads.php.net/~windows/releases/archives/php-8.5.11-nts-Win32-vs17-x64.zip",
+      "checks": [
+        {
+          "actual": {
+            "0": "string",
+            "1": "float",
+            "": "null"
+          },
+          "expected": {
+            "0": "string",
+            "1": "float",
+            "": "null"
+          },
+          "id": "keys/castKeys",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            0,
+            1,
+            ""
+          ],
+          "expected": [
+            0,
+            1,
+            ""
+          ],
+          "id": "keys/castKeyOrder",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "11": "next"
+          },
+          "expected": {
+            "11": "next"
+          },
+          "id": "keys/appendAfterUnset",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "-4": "next",
+            "-5": "negative"
+          },
+          "expected": {
+            "-4": "next",
+            "-5": "negative"
+          },
+          "id": "keys/negativeAppend",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            8192,
+            8192
+          ],
+          "expected": [
+            8192,
+            8192
+          ],
+          "id": "keys/diagnostic-levels",
+          "probeId": "keys",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "empty": {
+              "coalesce": "",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "false": {
+              "coalesce": false,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "missing": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": false
+            },
+            "null": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": true
+            },
+            "text-zero": {
+              "coalesce": "0",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "zero": {
+              "coalesce": 0,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            }
+          },
+          "expected": {
+            "empty": {
+              "coalesce": "",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "false": {
+              "coalesce": false,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "missing": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": false
+            },
+            "null": {
+              "coalesce": "fallback",
+              "empty": true,
+              "isset": false,
+              "keyExists": true
+            },
+            "text-zero": {
+              "coalesce": "0",
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            },
+            "zero": {
+              "coalesce": 0,
+              "empty": true,
+              "isset": true,
+              "keyExists": true
+            }
+          },
+          "id": "presence/checks",
+          "probeId": "presence",
+          "status": "PASS"
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "presence/directMissing",
+          "probeId": "presence",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2
+          ],
+          "expected": [
+            2
+          ],
+          "id": "presence/diagnostic-levels",
+          "probeId": "presence",
+          "status": "PASS"
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "id": "operations/last",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "operations/first",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            3,
+            4
+          ],
+          "expected": [
+            2,
+            3,
+            4
+          ],
+          "id": "operations/afterShift",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "0": 2,
+            "2": 4
+          },
+          "expected": {
+            "0": 2,
+            "2": 4
+          },
+          "id": "operations/afterUnset",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            4
+          ],
+          "expected": [
+            4
+          ],
+          "id": "operations/removed",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2
+          ],
+          "expected": [
+            2
+          ],
+          "id": "operations/numbers",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            "peach",
+            "apple",
+            "pear",
+            "plum",
+            "cherry"
+          ],
+          "expected": [
+            "peach",
+            "apple",
+            "pear",
+            "plum",
+            "cherry"
+          ],
+          "id": "operations/fruits",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "id": "operations/pushSize",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": 5,
+          "expected": 5,
+          "id": "operations/unshiftSize",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "operations/diagnostic-levels",
+          "probeId": "operations",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            [
+              "x",
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "expected": [
+            [
+              "x",
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "id": "iteration/pairs",
+          "probeId": "iteration",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "4": 4,
+            "x": 2
+          },
+          "expected": {
+            "4": 4,
+            "x": 2
+          },
+          "id": "iteration/afterReferenceLoop",
+          "probeId": "iteration",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "iteration/diagnostic-levels",
+          "probeId": "iteration",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "0": "left-number",
+            "1": "right-number",
+            "2": "seven",
+            "x": "right"
+          },
+          "expected": {
+            "0": "left-number",
+            "1": "right-number",
+            "2": "seven",
+            "x": "right"
+          },
+          "id": "merge/merge",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "2": "left-number",
+            "7": "seven",
+            "x": "left"
+          },
+          "expected": {
+            "2": "left-number",
+            "7": "seven",
+            "x": "left"
+          },
+          "id": "merge/union",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "2": "right-number",
+            "7": "seven",
+            "x": "right"
+          },
+          "expected": {
+            "2": "right-number",
+            "7": "seven",
+            "x": "right"
+          },
+          "id": "merge/replace",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "2": "left-number",
+            "x": "left"
+          },
+          "expected": {
+            "2": "left-number",
+            "x": "left"
+          },
+          "id": "merge/leftUnchanged",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "merge/diagnostic-levels",
+          "probeId": "merge",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": [
+              1,
+              2,
+              3
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": [
+              1,
+              2,
+              3
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "id": "sorting/sort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": [
+              3,
+              2,
+              1
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": [
+              3,
+              2,
+              1
+            ],
+            "keyOrder": [
+              0,
+              1,
+              2
+            ],
+            "return": true
+          },
+          "id": "sorting/rsort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "id": "sorting/asort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "id": "sorting/arsort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "a",
+              "b",
+              "c"
+            ],
+            "return": true
+          },
+          "id": "sorting/ksort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "expected": {
+            "array": {
+              "a": 3,
+              "b": 2,
+              "c": 1
+            },
+            "keyOrder": [
+              "c",
+              "b",
+              "a"
+            ],
+            "return": true
+          },
+          "id": "sorting/krsort",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "sorting/diagnostic-levels",
+          "probeId": "sorting",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "id": "functional/numbers",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "expected": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "id": "functional/map",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "1": 2,
+            "3": 4
+          },
+          "expected": {
+            "1": 2,
+            "3": 4
+          },
+          "id": "functional/filter",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": 15,
+          "expected": 15,
+          "id": "functional/reduce",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "apple": 2,
+            "cherry": 1,
+            "pear": 2
+          },
+          "expected": {
+            "apple": 2,
+            "cherry": 1,
+            "pear": 2
+          },
+          "id": "functional/counts",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "functional/diagnostic-levels",
+          "probeId": "functional",
+          "status": "PASS"
+        },
+        {
+          "actual": "overwritten",
+          "expected": "overwritten",
+          "id": "extract/name",
+          "probeId": "extract",
+          "status": "PASS"
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "extract/createdVariables",
+          "probeId": "extract",
+          "status": "PASS"
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "extract/diagnostic-levels",
+          "probeId": "extract",
+          "status": "PASS"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "id": "forms-menu/emailIsString",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": "user@example.com",
+          "expected": "user@example.com",
+          "id": "forms-menu/validEmail",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "id": "forms-menu/invalidEmail",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": "&lt;b&gt;name&lt;/b&gt;",
+          "expected": "&lt;b&gt;name&lt;/b&gt;",
+          "id": "forms-menu/escaped",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "forms-menu/active",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2
+          ],
+          "expected": [
+            2
+          ],
+          "id": "forms-menu/diagnostic-levels",
+          "probeId": "forms-menu",
+          "status": "PASS"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "null-key-argument/nullArgument",
+          "probeId": "null-key-argument",
+          "status": "PASS"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "null-key-argument/emptyStringArgument",
+          "probeId": "null-key-argument",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            8192
+          ],
+          "expected": [
+            8192
+          ],
+          "id": "null-key-argument/diagnostic-levels",
+          "probeId": "null-key-argument",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            {
+              "key": 0,
+              "type": "integer",
+              "value": "zero"
+            },
+            {
+              "key": "08",
+              "type": "string",
+              "value": "padded"
+            },
+            {
+              "key": 1,
+              "type": "integer",
+              "value": "boolean"
+            },
+            {
+              "key": "",
+              "type": "string",
+              "value": "null"
+            }
+          ],
+          "expected": [
+            {
+              "key": 0,
+              "type": "integer",
+              "value": "zero"
+            },
+            {
+              "key": "08",
+              "type": "string",
+              "value": "padded"
+            },
+            {
+              "key": 1,
+              "type": "integer",
+              "value": "boolean"
+            },
+            {
+              "key": "",
+              "type": "string",
+              "value": "null"
+            }
+          ],
+          "id": "key-types/exact-types",
+          "probeId": "key-types",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            8192
+          ],
+          "expected": [
+            8192
+          ],
+          "id": "key-types/diagnostic-levels",
+          "probeId": "key-types",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "x": 2,
+            "y": 4
+          },
+          "expected": {
+            "x": 2,
+            "y": 4
+          },
+          "id": "functional-edge-cases/singleMap",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            4
+          ],
+          "expected": [
+            2,
+            4
+          ],
+          "id": "functional-edge-cases/multipleMap",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "id": "functional-edge-cases/emptyReduce",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "functional-edge-cases/withoutInitial",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "1": 1,
+            "one": 1
+          },
+          "expected": {
+            "1": 1,
+            "one": 1
+          },
+          "id": "functional-edge-cases/invalidCounts",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": {
+            "5": "keep"
+          },
+          "expected": {
+            "5": "keep"
+          },
+          "id": "functional-edge-cases/filtered",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        },
+        {
+          "actual": [
+            2,
+            2
+          ],
+          "expected": [
+            2,
+            2
+          ],
+          "id": "functional-edge-cases/diagnostic-levels",
+          "probeId": "functional-edge-cases",
+          "status": "PASS"
+        }
+      ],
+      "checksumSource": "https://www.php.net/downloads.php?os=windows&version=8.5",
+      "executableHash": "d256e5d6bfd86905f336bf39b2f4a68d3fde0faabbce3080330de9600cd8e6c4",
+      "execution": "actual-local-cli",
+      "family": "8.5",
+      "finishedAt": "2026-10-09T08:38:56.714Z",
+      "invocations": [
+        {
+          "arguments": [
+            "-n",
+            "scripts/research/php-arrays-probes.php"
+          ],
+          "exitCode": 0,
+          "script": "scripts/research/php-arrays-probes.php",
+          "scriptHash": "f17d47a3c869fb023fc7d9f52d64be84725437fd1313fc879144683e47fb2d08"
+        },
+        {
+          "arguments": [
+            "-n",
+            "scripts/research/php-arrays-version-probes.php"
+          ],
+          "exitCode": 0,
+          "script": "scripts/research/php-arrays-version-probes.php",
+          "scriptHash": "39c9cb5ea838e72b321ce18cadb22801cb96627e1ea6d58d55d18481e16cc38e"
+        }
+      ],
+      "records": [
+        {
+          "code": "    'keys' => function () {\n        $a = [];\n        $a[0] = 'int'; $a['0'] = 'string'; $a[true] = 'bool';\n        $a[null] = 'null'; $a[1.5] = 'float';\n        $b = [10 => 'ten']; unset($b[10]); $b[] = 'next';\n        $negative = []; $negative[-5] = 'negative'; $negative[] = 'next';\n        return ['castKeys' => $a, 'castKeyOrder' => array_keys($a), 'appendAfterUnset' => $b, 'negativeAppend' => $negative];\n    },\n",
+          "codeHash": "36b31b97e8e548b90228ab8a338d6340c0950326b2ab5bd1e6bf476d46bcf8d0",
+          "description": "Controlled PHP array probe: keys",
+          "diagnostics": [
+            {
+              "level": 8192,
+              "message": "Using null as an array offset is deprecated, use an empty string instead"
+            },
+            {
+              "level": 8192,
+              "message": "Implicit conversion from float 1.5 to int loses precision"
+            }
+          ],
+          "id": "keys",
+          "phpVersion": "8.5.11",
+          "result": {
+            "appendAfterUnset": {
+              "11": "next"
+            },
+            "castKeyOrder": [
+              0,
+              1,
+              ""
+            ],
+            "castKeys": {
+              "0": "string",
+              "1": "float",
+              "": "null"
+            },
+            "negativeAppend": {
+              "-4": "next",
+              "-5": "negative"
+            }
+          }
+        },
+        {
+          "code": "    'presence' => function () {\n        $a = ['null' => null, 'zero' => 0, 'text-zero' => '0', 'false' => false, 'empty' => ''];\n        $rows = [];\n        foreach (['missing', 'null', 'zero', 'text-zero', 'false', 'empty'] as $key) {\n            $rows[$key] = ['isset' => isset($a[$key]), 'keyExists' => array_key_exists($key, $a),\n                'coalesce' => $a[$key] ?? 'fallback', 'empty' => empty($a[$key])];\n        }\n        $missing = $a['missing'];\n        return ['checks' => $rows, 'directMissing' => $missing];\n    },\n",
+          "codeHash": "b8bad8edb6ef8322b6d445742cbcfec2b5b0ec6c84d654efbc7bc8c6d11754f7",
+          "description": "Controlled PHP array probe: presence",
+          "diagnostics": [
+            {
+              "level": 2,
+              "message": "Undefined array key \"missing\""
+            }
+          ],
+          "id": "presence",
+          "phpVersion": "8.5.11",
+          "result": {
+            "checks": {
+              "empty": {
+                "coalesce": "",
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              },
+              "false": {
+                "coalesce": false,
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              },
+              "missing": {
+                "coalesce": "fallback",
+                "empty": true,
+                "isset": false,
+                "keyExists": false
+              },
+              "null": {
+                "coalesce": "fallback",
+                "empty": true,
+                "isset": false,
+                "keyExists": true
+              },
+              "text-zero": {
+                "coalesce": "0",
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              },
+              "zero": {
+                "coalesce": 0,
+                "empty": true,
+                "isset": true,
+                "keyExists": true
+              }
+            },
+            "directMissing": null
+          }
+        },
+        {
+          "code": "    'operations' => function () {\n        $numbers = [1, 2, 3, 4, 5]; $last = array_pop($numbers); $first = array_shift($numbers);\n        $afterShift = $numbers; unset($numbers[1]); $afterUnset = $numbers;\n        $removed = array_splice($numbers, 1, 2);\n        $fruits = ['apple', 'pear']; $fruits[] = 'plum';\n        $pushSize = array_push($fruits, 'cherry'); $unshiftSize = array_unshift($fruits, 'peach');\n        return compact('last', 'first', 'afterShift', 'afterUnset', 'removed', 'numbers', 'fruits', 'pushSize', 'unshiftSize');\n    },\n",
+          "codeHash": "0f8a38add8b3ebb8dd3c453fe6e9e8c4f5175ef85ee4c68312ef657155af45b1",
+          "description": "Controlled PHP array probe: operations",
+          "diagnostics": [],
+          "id": "operations",
+          "phpVersion": "8.5.11",
+          "result": {
+            "afterShift": [
+              2,
+              3,
+              4
+            ],
+            "afterUnset": {
+              "0": 2,
+              "2": 4
+            },
+            "first": 1,
+            "fruits": [
+              "peach",
+              "apple",
+              "pear",
+              "plum",
+              "cherry"
+            ],
+            "last": 5,
+            "numbers": [
+              2
+            ],
+            "pushSize": 4,
+            "removed": [
+              4
+            ],
+            "unshiftSize": 5
+          }
+        },
+        {
+          "code": "    'iteration' => function () {\n        $a = ['x' => 1, 4 => 2]; $pairs = [];\n        foreach ($a as $key => $value) $pairs[] = [$key, $value];\n        foreach ($a as &$value) $value *= 2;\n        unset($value); $value = 99;\n        return ['pairs' => $pairs, 'afterReferenceLoop' => $a];\n    },\n",
+          "codeHash": "c15c3481fd6c1a688cdc4178b691f3e8ac0817edca5bb9120c92a22c0d99de74",
+          "description": "Controlled PHP array probe: iteration",
+          "diagnostics": [],
+          "id": "iteration",
+          "phpVersion": "8.5.11",
+          "result": {
+            "afterReferenceLoop": {
+              "4": 4,
+              "x": 2
+            },
+            "pairs": [
+              [
+                "x",
+                1
+              ],
+              [
+                4,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "code": "    'merge' => function () {\n        $a = [2 => 'left-number', 'x' => 'left']; $b = [2 => 'right-number', 'x' => 'right', 7 => 'seven'];\n        return ['merge' => array_merge($a, $b), 'union' => $a + $b, 'replace' => array_replace($a, $b), 'leftUnchanged' => $a];\n    },\n",
+          "codeHash": "9274bda74a7bbc0b5406378b34c0c8c837ede455e06d38cdfe0e04899ab3009c",
+          "description": "Controlled PHP array probe: merge",
+          "diagnostics": [],
+          "id": "merge",
+          "phpVersion": "8.5.11",
+          "result": {
+            "leftUnchanged": {
+              "2": "left-number",
+              "x": "left"
+            },
+            "merge": {
+              "0": "left-number",
+              "1": "right-number",
+              "2": "seven",
+              "x": "right"
+            },
+            "replace": {
+              "2": "right-number",
+              "7": "seven",
+              "x": "right"
+            },
+            "union": {
+              "2": "left-number",
+              "7": "seven",
+              "x": "left"
+            }
+          }
+        },
+        {
+          "code": "    'sorting' => function () {\n        $initial = ['b' => 2, 'a' => 3, 'c' => 1]; $rows = [];\n        foreach (['sort', 'rsort', 'asort', 'arsort', 'ksort', 'krsort'] as $function) {\n            $a = $initial; $returned = $function($a); $rows[$function] = ['array' => $a, 'keyOrder' => array_keys($a), 'return' => $returned];\n        }\n        return $rows;\n    },\n",
+          "codeHash": "5a599cf4a0f358b79450dc4edc9e8e4e2273e97da9d5e3d1f73b542626dc606d",
+          "description": "Controlled PHP array probe: sorting",
+          "diagnostics": [],
+          "id": "sorting",
+          "phpVersion": "8.5.11",
+          "result": {
+            "arsort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "a",
+                "b",
+                "c"
+              ],
+              "return": true
+            },
+            "asort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "c",
+                "b",
+                "a"
+              ],
+              "return": true
+            },
+            "krsort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "c",
+                "b",
+                "a"
+              ],
+              "return": true
+            },
+            "ksort": {
+              "array": {
+                "a": 3,
+                "b": 2,
+                "c": 1
+              },
+              "keyOrder": [
+                "a",
+                "b",
+                "c"
+              ],
+              "return": true
+            },
+            "rsort": {
+              "array": [
+                3,
+                2,
+                1
+              ],
+              "keyOrder": [
+                0,
+                1,
+                2
+              ],
+              "return": true
+            },
+            "sort": {
+              "array": [
+                1,
+                2,
+                3
+              ],
+              "keyOrder": [
+                0,
+                1,
+                2
+              ],
+              "return": true
+            }
+          }
+        },
+        {
+          "code": "    'functional' => function () {\n        $numbers = [1, 2, 3, 4, 5];\n        $map = array_map(fn($n) => $n * 2, $numbers);\n        $filter = array_filter($numbers, fn($n) => $n % 2 === 0);\n        $reduce = array_reduce($numbers, fn($carry, $n) => $carry + $n, 0);\n        $counts = array_count_values(['apple', 'pear', 'apple', 'cherry', 'pear']);\n        return compact('numbers', 'map', 'filter', 'reduce', 'counts');\n    },\n",
+          "codeHash": "22667b7414863a7e5378ed7db68d2ce901f0c1e77e2bd69305443f40302b2723",
+          "description": "Controlled PHP array probe: functional",
+          "diagnostics": [],
+          "id": "functional",
+          "phpVersion": "8.5.11",
+          "result": {
+            "counts": {
+              "apple": 2,
+              "cherry": 1,
+              "pear": 2
+            },
+            "filter": {
+              "1": 2,
+              "3": 4
+            },
+            "map": [
+              2,
+              4,
+              6,
+              8,
+              10
+            ],
+            "numbers": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "reduce": 15
+          }
+        },
+        {
+          "code": "    'extract' => function () {\n        $name = 'trusted'; $untrusted = ['name' => 'overwritten'];\n        $count = extract($untrusted);\n        return ['name' => $name, 'createdVariables' => $count];\n    },\n",
+          "codeHash": "045b9b2997a8859348a814aaad6db2115bbbf71df7caee4e12ae8759fe2a2ce9",
+          "description": "Controlled PHP array probe: extract",
+          "diagnostics": [],
+          "id": "extract",
+          "phpVersion": "8.5.11",
+          "result": {
+            "createdVariables": 1,
+            "name": "overwritten"
+          }
+        },
+        {
+          "code": "    'forms-menu' => function () {\n        $request = ['email' => ['unexpected-array'], 'name' => '<b>name</b>'];\n        $email = $request['email'] ?? '';\n        $escaped = htmlspecialchars($request['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');\n        $submenuItem = ['title' => 'Child', 'url' => '/child']; $active = $submenuItem['active'];\n        return ['emailIsString' => is_string($email), 'validEmail' => filter_var('user@example.com', FILTER_VALIDATE_EMAIL),\n            'invalidEmail' => filter_var('invalid', FILTER_VALIDATE_EMAIL), 'escaped' => $escaped, 'active' => $active];\n    },\n",
+          "codeHash": "f32d2c2f3f8bbb6ab6315c98facba92e7be8400f3367e62c43c477959de025a9",
+          "description": "Controlled PHP array probe: forms-menu",
+          "diagnostics": [
+            {
+              "level": 2,
+              "message": "Undefined array key \"active\""
+            }
+          ],
+          "id": "forms-menu",
+          "phpVersion": "8.5.11",
+          "result": {
+            "active": null,
+            "emailIsString": false,
+            "escaped": "&lt;b&gt;name&lt;/b&gt;",
+            "invalidEmail": false,
+            "validEmail": "user@example.com"
+          }
+        },
+        {
+          "code": "    'null-key-argument' => function () {\n        $a = ['' => null];\n        return ['nullArgument' => array_key_exists(null, $a), 'emptyStringArgument' => array_key_exists('', $a)];\n    },\n",
+          "codeHash": "555d8599ea8f090f87e32e40795df7c8316812d36611aab4b199b57e2eb963f4",
+          "description": "Controlled version-sensitive PHP array probe: null-key-argument",
+          "diagnostics": [
+            {
+              "level": 8192,
+              "message": "Using null as the key parameter for array_key_exists() is deprecated, use an empty string instead"
+            }
+          ],
+          "id": "null-key-argument",
+          "phpVersion": "8.5.11",
+          "result": {
+            "emptyStringArgument": true,
+            "nullArgument": true
+          }
+        },
+        {
+          "code": "    'key-types' => function () {\n        $a = [0 => 'zero', '08' => 'padded', true => 'boolean', null => 'null'];\n        $keys = [];\n        foreach ($a as $key => $value) $keys[] = ['key' => $key, 'type' => gettype($key), 'value' => $value];\n        return $keys;\n    },\n",
+          "codeHash": "0fbcde48bac8b9269b793249675f4ea85b7caaac0165d50aead69894738862cc",
+          "description": "Controlled version-sensitive PHP array probe: key-types",
+          "diagnostics": [
+            {
+              "level": 8192,
+              "message": "Using null as an array offset is deprecated, use an empty string instead"
+            }
+          ],
+          "id": "key-types",
+          "phpVersion": "8.5.11",
+          "result": [
+            {
+              "key": 0,
+              "type": "integer",
+              "value": "zero"
+            },
+            {
+              "key": "08",
+              "type": "string",
+              "value": "padded"
+            },
+            {
+              "key": 1,
+              "type": "integer",
+              "value": "boolean"
+            },
+            {
+              "key": "",
+              "type": "string",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "code": "    'functional-edge-cases' => function () {\n        $a = ['x' => 1, 'y' => 2];\n        $singleMap = array_map(fn($n) => $n * 2, $a);\n        $multipleMap = array_map(fn($x, $y) => $x + $y, $a, $a);\n        $emptyReduce = array_reduce([], fn($carry, $n) => $carry + $n, 0);\n        $withoutInitial = array_reduce([], fn($carry, $n) => $carry + $n);\n        $invalidCounts = array_count_values([1, 'one', false, 1.5]);\n        $filtered = array_filter([0, '0', false, null, '', 'keep']);\n        return compact('singleMap', 'multipleMap', 'emptyReduce', 'withoutInitial', 'invalidCounts', 'filtered');\n    },\n",
+          "codeHash": "5cfb9a5a3881cd83780d930ec79c2f91273903a480374e2656abb4ef6e207650",
+          "description": "Controlled version-sensitive PHP array probe: functional-edge-cases",
+          "diagnostics": [
+            {
+              "level": 2,
+              "message": "array_count_values(): Can only count string and integer values, entry skipped"
+            },
+            {
+              "level": 2,
+              "message": "array_count_values(): Can only count string and integer values, entry skipped"
+            }
+          ],
+          "id": "functional-edge-cases",
+          "phpVersion": "8.5.11",
+          "result": {
+            "emptyReduce": 0,
+            "filtered": {
+              "5": "keep"
+            },
+            "invalidCounts": {
+              "1": 1,
+              "one": 1
+            },
+            "multipleMap": [
+              2,
+              4
+            ],
+            "singleMap": {
+              "x": 2,
+              "y": 4
+            },
+            "withoutInitial": null
+          }
+        }
+      ],
+      "startedAt": "2026-10-09T08:38:56.387Z",
+      "status": "PASS",
+      "version": "8.5.11",
+      "versionBanner": "PHP 8.5.11 (cli) (built: Sep 22 2026 13:51:38) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.11, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.11, Copyright (c), by Zend Technologies"
+    }
+  ],
+  "schemaVersion": 1,
+  "status": "PASS",
+  "topic": "PHP arrays runtime approval gate"
+}

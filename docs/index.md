@@ -12,6 +12,14 @@ which ideas are still exploratory.
   contract, determinism, and source preservation.
 - [Cartographer 0.1](architecture/cartographer.md) — runtime agent contract, model
   import, two passes, focused two-article MERGE plans, evidence, budgets, and manual CLI.
+- [Researcher 0.1](architecture/researcher.md) — approved scope, official documentation
+  evidence, code review, Research Packet, recorded replay and manual research-only CLI.
+- [PHP Research Packet](../lab/research/php-arrays/research.md) — approved first pilot
+  with historical limitations and future Writer instructions; not publication approval.
+- [PHP runtime verification](../lab/research/php-arrays/runtime-verification.md) —
+  actual PHP 8.4.26 / 8.5.11 PASS, provenance and mandatory null-offset addendum.
+- [Research approval](../lab/decisions/php-arrays-research-approval.json) — human
+  decision bound to original packet/evidence and new runtime supplement; Writer NEXT.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and

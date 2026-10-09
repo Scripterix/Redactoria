@@ -1,0 +1,21 @@
+{
+  "id": "migration85-null-offset",
+  "url": "https://www.php.net/manual/en/migration85.deprecated.php",
+  "title": "PHP 8.5 migration ? Deprecated Features",
+  "sourceType": "official-documentation",
+  "retrievedAt": "2026-10-09T08:38:07.895Z",
+  "documentHash": "39fb56d78c13a8a16557eb77152214067010eee428f02971d3c0f670362d8972",
+  "retrieval": {
+    "method": "https-get",
+    "httpStatus": 200,
+    "finalUrl": "https://www.php.net/manual/en/migration85.deprecated.php",
+    "selection": "official-content-excluding-user-notes"
+  },
+  "excerpts": [
+    {
+      "id": "null-offset",
+      "text": "Using null as an array offset",
+      "locator": "PHP Core / Using null as an array offset"
+    }
+  ]
+}

@@ -1,8 +1,7 @@
 # Redactoria — STATUS
 
-Szybki stan projektu po zamknięciu sesji 2026-10-08. Szczegóły techniczne:
-[Project Brain](index.md), [architektura](architecture/overview.md) i
-[Roadmap](roadmap/ROADMAP.md). Brak aktywnej implementacji następnego milestone.
+Stan po Milestone 3 i Research Packet Approval Gate, 2026-10-09. Szczegóły: [Project Brain](index.md),
+[architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
 
@@ -14,107 +13,121 @@ Szybki stan projektu po zamknięciu sesji 2026-10-08. Szczegóły techniczne:
 | Milestone 2 | Cartographer 0.1 | DONE |
 | Focused PHP Run | PHP Arrays I + II | DONE |
 | PHP MERGE decision | Decyzja człowieka | APPROVED |
-| Milestone 3 | Researcher 0.1 | NEXT — nie rozpoczęty |
+| Milestone 3 | Researcher 0.1 + Research Packet | DONE |
+| Research Packet | Decyzja człowieka | APPROVED |
+| PHP 8.4 verification | PHP 8.4.26, 12 prób / 60 asercji | PASS |
+| PHP 8.5 verification | PHP 8.5.11, 12 prób / 60 asercji | PASS |
+| Milestone 4 | Writer / Critic | NEXT — NOT STARTED |
+| Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Important Result
 
 ```text
 PHP Arrays I + II
-→ MERGE approved by human
-→ confidence 0.96
-→ research required before writing
+→ MERGE approved by human, confidence 0.96, nextStep: research
+→ Researcher: two full articles + official documentation + controlled probes
+→ validated Research Packet
+→ actual PHP 8.4.26 / 8.5.11 verification: PASS
+→ Research Packet approved by human, nextStep: writer
+→ STOP: Milestone 4 not started
 ```
 
-Dotyczy `1324-post-61-tablice-w-php-czesc-1.md` oraz
-`1356-post-62-php-tablice-czesc-ii.md`. Zachowano oba targety, evidence, confidence,
-hashe źródeł i powiązanie z analizą. Confidence nie jest prawdopodobieństwem.
+Targety: `1324-post-61-tablice-w-php-czesc-1.md` i
+`1356-post-62-php-tablice-czesc-ii.md`. Nie analizowano ponownie całego korpusu.
+Akceptacja MERGE jest zgodą na research, nie na wykonanie merge ani publikację.
 
-- [lab/cartography/php-arrays-merge.json](../lab/cartography/php-arrays-merge.json)
-  — porównanie dwóch pełnych tekstów i szkielet 15 sekcji.
-- [lab/reports/php-arrays-merge.md](../lab/reports/php-arrays-merge.md)
-  — raport Cartographera; historyczna propozycja, nie gotowy artykuł.
-- [lab/decisions/php-arrays-merge-proposal.json](../lab/decisions/php-arrays-merge-proposal.json)
-  — aktualna decyzja: `approved`, `approvedBy: human`, `nextStep: research`.
+- [Research Packet JSON](../lab/research/php-arrays/research.json) — formalny kontrakt.
+- [Research report / Writer handoff](../lab/research/php-arrays/research.md) — instrukcje, nie artykuł.
+- [Audit guide](../lab/research/php-arrays/README.md) — źródła, probes, request i recorded response.
+- [Research approval](../lab/decisions/php-arrays-research-approval.json) — approved / human / writer,
+  evidence, provenance i hashe niezmienionego pakietu oraz uzupełnień.
+- [Runtime verification](../lab/research/php-arrays/runtime-verification.md) i
+  [JSON](../lab/research/php-arrays/runtime-verification.json) — rzeczywiste wykonania i asercje.
+- [Approved MERGE decision](../lab/decisions/php-arrays-merge-proposal.json) — niezmieniona.
+- [Focused Cartographer map](../lab/cartography/php-arrays-merge.json) i
+  [report](../lab/reports/php-arrays-merge.md) — niezmienione.
 
-Akceptacja MERGE oznacza gotowość do researchu, nie automatyczne wykonanie decyzji,
-pisanie czy publikację. SOURCE i CONTENT pozostają niezmienione. Researcher, Writer
-i Critic nie zostali uruchomieni. Zapis Cartographera nie może nadpisać zatwierdzonej
-decyzji nową propozycją; weryfikacja zatwierdzonego przebiegu musi być read-only.
+Research: 34 oficjalne dokumenty PHP, 13 pytań, 25 verified facts, 4 corrections,
+1 outdated framing note, 3 ambiguities, 3 security notes i 8 code findings.
+Evidence jest oddzielone od interpretacji sesji. Confidence nie jest prawdopodobieństwem.
+
+## PHP scope and runtime verification
+
+Zaakceptowany zakres redakcyjny to PHP 8.4–8.5. Historyczny pakiet i jego dziewięć
+prób na PHP 8.2.4 pozostają byte-identical. Approval gate wykonał 12 kontrolowanych
+prób na każdej rzeczywistej wersji PHP 8.4.26 i 8.5.11: po 60/60 asercji PASS.
+Oficjalne portable Windows x64 NTS ZIP-y sprawdzono względem opublikowanych SHA-256;
+wykonano CLI `-n`, bez php.ini i bez uruchamiania SOURCE.
+
+Uzupełnienie obowiązkowe dla przyszłego Writera: PHP 8.5 zgłasza E_DEPRECATED także
+dla `null` jako offsetu tablicy, nie tylko argumentu `array_key_exists()`.
+Oczekiwane ostrzeżenia są rejestrowane i weryfikowane. Pierwszy wynik 8.5 FAIL
+(58/60) zachowano w `runtime-verification-initial.json`; oczekiwania poprawiono
+dopiero po sprawdzeniu oficjalnego przewodnika migracji, utrwalonego osobno w
+`runtime-source-supplement.json`. Nie przepisano pakietu ani pierwotnych obserwacji.
+
+Pierwotne `target-runtime` jest rozwiązane przez nowe evidence. Przyszłe samodzielne
+bloki kodu Writera i kompletny handler formularza jeszcze nie istnieją; ich kontrola
+pozostaje granicą przyszłego outputu, nie udajemy wykonania finalnego artykułu.
+
+Portable runtime'y są wyłącznie w osobnym katalogu tymczasowym, poza Git.
+Nie zmieniono XAMPP/PATH ani nie skonfigurowano produkcyjnego LLM API lub systemu CI.
 
 ## DONE
 
-- Astro: 6 statycznych stron, wspólne layouty i walidowane Content Collections.
-- Project Brain, AGENTS.md, ADR 0001–0003 i testy deterministycznych granic.
-- Scanner: read-only inventory 83 artykułów oraz podsumowanie korpusu w LAB.
-- Cartographer 0.1: jawne kontrakty, polityki, adapter modelu i walidacja evidence.
-- Pierwsza mapa: 8 selektywnych odczytów, 20 domen, 23 klastry, 6 luk i 16 propozycji.
-- Focused PHP: dokładnie 2 pełne odczyty, plan MERGE, raport i akceptacja człowieka.
-- Analizy sesji są jawnie importowane i powiązane hashem z requestami; nie ma
-  produkcyjnego API LLM ani automatycznej publikacji.
+- Astro: 6 statycznych stron, layouty i walidowane Content Collections.
+- Project Brain, AGENTS.md, ADR 0001–0003 oraz deterministyczne testy.
+- Scanner: read-only inventory 83 tekstów w LAB.
+- Cartographer 0.1: pierwszy runtime agent; mapa korpusu i focused MERGE.
+- Researcher 0.1: drugi niezależny runtime agent; approved-only input, evidence,
+  ścisły Research Packet, manual CLI i zapis tylko LAB/research.
+- Jawny import analizy tej sesji i deterministyczny replay związany request hashem.
+- ADR 0003 doprecyzowano dla evidence dokumentacyjnego; nie tworzono nowego ADR.
+- Research Packet zaakceptowany przez człowieka po rzeczywistej weryfikacji PHP 8.4/8.5.
 
 ## NEXT
 
-**Milestone 3 — Researcher 0.1**. Pilot: approved PHP Arrays I + II MERGE → Research Packet.
-Cel następnej sesji: zweryfikować oba teksty względem aktualnej dokumentacji PHP,
-zamknąć pytania o wersję, klucze/null, funkcje, bezpieczeństwo i przykłady kodu.
-Nie utworzono jeszcze modułu ani planu Researchera.
-
-Poniżej docelowy pipeline, a nie działająca automatyzacja. Każdy kolejny etap wymaga
-osobnego zakresu prac i odpowiedniej akceptacji:
-
-```text
-approved PHP MERGE
-      ↓
-Researcher 0.1
-      ↓
-Research Packet
-      ↓
-human review
-      ↓
-Writer
-      ↓
-Critic
-      ↓
-human approval
-      ↓
-CONTENT
-      ↓
-Astro publication
-```
+Milestone 4 — Writer/Critic, wyłącznie po osobnym poleceniu rozpoczęcia. Handoff:
+zaakceptowany Research Packet wraz z obowiązkowym runtime addendum, korektami
+i extract/form caution. W approval gate nie rozpoczęto żadnego kolejnego agenta.
 
 ## LATER
 
-Dispatcher, Single-Step Loop, Scheduled Redactoria, Publisher Agent, multi-site,
+Publisher, Dispatcher, Scheduled Redactoria, multi-site,
 production LLM API i PostgreSQL. Żaden z tych elementów nie jest rozpoczęty.
 
-## Quality at Closeout
+## Quality gate
 
-- Tests: PASS — 84 testy w 8 plikach, bez zewnętrznego LLM API.
-- Check: PASS — 46 plików, 0 błędów, ostrzeżeń i hints.
+- Tests: PASS — 123 testy w 10 plikach; 31 testów Researchera i 8 testów runtime evidence, bez live API.
+- Check: PASS — 61 plików; 0 błędów, ostrzeżeń i hints.
 - Build: PASS — 6 statycznych stron.
-- Focused verification: PASS, read-only — 2 pełne teksty, zgodna analiza/raport,
-  zatwierdzona decyzja i zachowane evidence/provenance.
-- SOURCE, CONTENT, ADRs i dotychczasowa analiza/raport niezmienione; zmieniono
-  wyłącznie zatwierdzany plik decyzji spośród kontrolowanych artefaktów.
+- Researcher pilot: PASS — walidacja structured output, dokładnie dwa pełne odczyty.
+- Replay: identyczne bajty JSON i Markdown bez nowych fetch/inference/PHP calls.
+- Runtime verification: PASS — PHP 8.4.26 i 8.5.11, łącznie 24 próby / 120 asercji.
+- SHA-256: wszystkie 107 chronionych plików niezmienione; SOURCE nadal 83 pliki,
+  CONTENT nadal 2 pliki, approved MERGE, Cartographer i pierwotne wyniki Researchera zachowane.
+- Nie utworzono finalnego artykułu ani nie opublikowano materiału.
+- Milestone 3 i approval gate przeznaczone do jednego zleconego commit/push;
+  identyfikator i zdalne potwierdzenie znajdują się w historii Git i raporcie zamknięcia.
 
 ## Important File Map
 
-- [AGENTS.md](../AGENTS.md) — zasady pracy agentów kodujących i granice systemu.
-- [docs/index.md](index.md) — główny indeks trwałej dokumentacji Project Brain.
-- [docs/STATUS.md](STATUS.md) — szybki stan projektu i punkt startowy kolejnej sesji.
-- [docs/architecture/](architecture/) — aktualna architektura, kontrakty i procedury CLI.
-- [docs/adr/](adr/) — zaakceptowane decyzje architektoniczne; akceptacja MERGE nie tworzy ADR.
-- [docs/roadmap/](roadmap/) — ukończony zakres i rozdzielone NEXT/LATER.
-- [docs/futureboard/](futureboard/) — pomysły, nie automatycznie przyjęte wymagania.
-- [docs/changelog/](changelog/) — historia istotnych zmian projektu.
-- [docs/plans/](plans/) — zapisy wykonania; plan 004 pozostaje w completed, active jest puste poza indeksem.
-- [content/](../content/) — zaakceptowane treści strony; nie zawiera nowego artykułu PHP.
-- [lab/](../lab/) — niepubliczny warsztat, oddzielony od Content Collections.
-- [lab/inventory/](../lab/inventory/) — deterministyczne metadane 83 tekstów źródłowych.
-- [lab/cartography/](../lab/cartography/) — walidowane mapy, plan MERGE oraz audyt requestów i odpowiedzi.
-- [lab/research/](../lab/research/) — miejsce na przyszły Research Packet; obecnie bez wyników researchu.
-- [lab/decisions/](../lab/decisions/) — propozycje i formalne decyzje człowieka z evidence/provenance.
-- [lab/reports/](../lab/reports/) — czytelne podsumowania inventory i Cartographera.
-- [scripts/legacy/](../scripts/legacy/) — deterministyczny scanner; zewnętrzne temp-ogwo jest tylko do odczytu.
-- [engine/agents/cartographer/](../engine/agents/cartographer/) — jedyny obecny runtime agent-module.
-- [tests/](../tests/) — testy treści i migracji; testy agenta są również w jego `__tests__/`.
+- [AGENTS.md](../AGENTS.md) — zasady kodujących agentów.
+- [docs/index.md](index.md) — główny indeks Project Brain.
+- [docs/architecture/](architecture/) — kontrakty i procedury inventory/Cartographer/Researcher.
+- [docs/adr/](adr/) — trwałe decyzje architektoniczne.
+- [docs/roadmap/](roadmap/) — DONE / NOW / NEXT / LATER.
+- [docs/futureboard/](futureboard/) — pomysły, nie wyniki researchu.
+- [docs/changelog/](changelog/) — historia zmian.
+- [docs/plans/](plans/) — plany 005 i 006 completed; Milestone 4 nie rozpoczęty.
+- [content/](../content/) — niezmienione treści strony, bez nowego artykułu PHP.
+- [lab/inventory/](../lab/inventory/) — metadane 83 źródeł.
+- [lab/cartography/](../lab/cartography/) — mapy i audyt Cartographera.
+- [lab/research/php-arrays/](../lab/research/php-arrays/) — pakiet, dokumenty, probes i import sesji.
+- [lab/decisions/](../lab/decisions/) — niezmieniona human-approved PHP MERGE i nowa Research approval.
+- [lab/reports/](../lab/reports/) — historyczne raporty inventory i Cartographera.
+- [engine/agents/cartographer/](../engine/agents/cartographer/) — pierwszy runtime agent.
+- [engine/agents/researcher/](../engine/agents/researcher/) — drugi runtime agent.
+- [scripts/researcher.ts](../scripts/researcher.ts) — manual CLI bez live API.
+- [scripts/research/](../scripts/research/) — jawne narzędzia przygotowania evidence pilota.
+- [tests/](../tests/) i agentowe `__tests__/` — deterministyczne granice.

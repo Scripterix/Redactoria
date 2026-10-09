@@ -11,9 +11,9 @@ export const RecordedResponsesSchema = z.union([z.strictObject({
 	...common,
 	inventory: response,
 	'deep-read': response.nullable(),
-}), z.strictObject({ ...common, 'focused-merge': response })]);
+}), z.strictObject({ ...common, 'focused-merge': response }), z.strictObject({ ...common, research: response })]);
 
-/** An explicit import, not live inference. Bind both answers to exact requests. */
+/** An explicit import, not live inference. Bind every answer to its exact request. */
 export class RecordedLanguageModel implements LanguageModel {
 	readonly identity;
 	private readonly responses;
@@ -22,9 +22,11 @@ export class RecordedLanguageModel implements LanguageModel {
 		this.identity = { adapter: 'recorded-json', model: this.responses.provenance.model, mode: this.responses.provenance.mode };
 	}
 	async generateStructured(request: StructuredRequest): Promise<unknown> {
-		const entry = request.phase === 'focused-merge'
-			? ('focused-merge' in this.responses ? this.responses['focused-merge'] : null)
-			: ('inventory' in this.responses ? this.responses[request.phase] : null);
+		const entry = request.phase === 'research'
+			? ('research' in this.responses ? this.responses.research : null)
+			: request.phase === 'focused-merge'
+				? ('focused-merge' in this.responses ? this.responses['focused-merge'] : null)
+				: ('inventory' in this.responses ? this.responses[request.phase] : null);
 		if (!entry) throw new Error(`Missing recorded ${request.phase} analysis; prepare and analyze that request first.`);
 		if (entry.requestHash !== hashJson(request)) throw new Error(`Recorded ${request.phase} request hash mismatch; analysis must match current inputs, prompt and limits.`);
 		return structuredClone(entry.response);

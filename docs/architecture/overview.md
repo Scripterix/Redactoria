@@ -34,7 +34,7 @@ SOURCE != LAB != ENGINE != CONTENT != WEBSITE
   the read-only scanner in `scripts/legacy/`.
 - **LAB** — experimental workspace for inventory, candidates, research, drafts,
   decisions, and reports. LAB files are not public content.
-- **ENGINE** — first manual runtime agent-module (Cartographer) and minimal shared
+- **ENGINE** — manual runtime agent-modules (Cartographer and Researcher) and minimal shared
   contracts/validation/I/O. Full automation and orchestration remain future work.
 - **CONTENT** — reviewed material accepted for publication and validated through
   Astro Content Collections.
@@ -56,10 +56,11 @@ automatically moves a LAB draft into CONTENT or publishes it.
 | Inventory Scanner | IMPLEMENTED | Versioned metadata, stable identities, SHA-256, and error records |
 | Corpus summary | IMPLEMENTED | Deterministic metadata statistics and exact duplicates |
 | Cartographer | IMPLEMENTED | Two-pass corpus map or focused two-article MERGE plan, grounded evidence, explicit session import, LAB-only output |
+| Researcher | IMPLEMENTED | Approved two-article scope, official evidence snapshot, cited Research Packet, hash-bound session replay, research-only LAB output |
 | Engine foundation | IMPLEMENTED | Minimal model port, source reader, validation, stable serialization, safe LAB writer |
 | Full Engine | FUTURE | Independent automation and orchestration |
 | Dispatcher | FUTURE | Single-step orchestration |
-| Runtime agents | PARTIAL | Cartographer exists under `engine/agents/`; other agents remain future |
+| Runtime agents | PARTIAL | Cartographer and Researcher exist under `engine/agents/`; other agents remain future |
 | Multi-site support | FUTURE | Shared Engine serving multiple sites |
 
 ## Publication model
@@ -84,3 +85,9 @@ The focused branch is `two selected inventory records → two full source reads
 It reuses the same agent and model port, never repeats full-corpus analysis, and
 never sets a decision to approved or starts research/writing. ADR 0003 already
 covers this branch; no new architectural decision or runtime agent is introduced.
+
+The separately authorized [Researcher branch](researcher.md) is `human-approved
+MERGE + unchanged focused map + two full reads + official evidence snapshot → one
+Researcher request → validation → LAB Research Packet → STOP`. It does not call
+Cartographer or start Writer. Documentation capture and controlled code probes are
+explicit preparation steps, separate from model interpretation and offline replay.
