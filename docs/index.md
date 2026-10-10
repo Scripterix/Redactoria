@@ -19,7 +19,25 @@ which ideas are still exploratory.
 - [PHP runtime verification](../lab/research/php-arrays/runtime-verification.md) —
   actual PHP 8.4.26 / 8.5.11 PASS, provenance and mandatory null-offset addendum.
 - [Research approval](../lab/decisions/php-arrays-research-approval.json) — human
-  decision bound to original packet/evidence and new runtime supplement; Writer NEXT.
+  decision bound to original packet/evidence and new runtime supplement.
+- [Writer / Critic 0.1](architecture/writer-critic.md) — separate runtime contracts,
+  manual CLI, hash-bound draft/review, evidence and no automatic revision/publication.
+- [PHP arrays draft](../lab/drafts/php-arrays/article.md) and
+  [Critic review](../lab/reviews/php-arrays/critic-review.md) — human-authorized targeted
+  correction, full second-pass PASS; original generation/REVISE preserved for audit.
+- [First publication candidate](../lab/candidates/php-arrays/article.md) and
+  [metadata/audit](../lab/candidates/php-arrays/README.md) — exact reviewed copy,
+  2559 prose words, PHP 8.4–8.5; preserved historical M5 state, no regeneration.
+- [Promotion Gate](../engine/promotion/README.md),
+  [local human approval](../lab/decisions/php-arrays-publication.json) and
+  [execution record](../lab/reports/tablice-w-php-promotion.json) — exact candidate
+  → CONTENT for the original local-only gate; historical artifacts preserved.
+- [Local website review](plans/completed/008-local-promotion-website-review.md) —
+  URLs, responsive review, quality results and the next human gate.
+- [Website utilities](plans/completed/009-reading-time-and-website-utilities.md) —
+  reading time, official sitemap XML, HTML map, back-to-top and progressive code copy.
+- [Search/public checkpoint](plans/active/010-pagefind-search-public-checkpoint.md) —
+  Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and

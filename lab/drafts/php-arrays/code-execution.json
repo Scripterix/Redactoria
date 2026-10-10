@@ -1,0 +1,296 @@
+{
+  "articleHash": "713d31d87e8bdfb1b41b237299ce30d397dafcec56f220eaa13bad5d003b3068",
+  "executedAt": "2026-10-09T12:00:55.774Z",
+  "runs": [
+    {
+      "examples": [
+        {
+          "codeHash": "60611f80fc5829fe93ff6e6374634c4d4038c23746186fb001d3316deb7697d4",
+          "exitCode": 0,
+          "id": "create",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "apple\nJan\n"
+        },
+        {
+          "codeHash": "ee09625419cd352aef4f74c5ec1d43f4607aa28cde4d7f5546c309729a6789a3",
+          "exitCode": 0,
+          "id": "key-collision",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "0=replacement\n08=padded\n8=integer\n"
+        },
+        {
+          "codeHash": "a6df2cc887f7c208e7b0fdae18652dad0db94a6aeae4ec6151de4418177163d4",
+          "exitCode": 0,
+          "id": "access",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "25\n4\n0=10\n1=25\n2=30\n10=100\n"
+        },
+        {
+          "codeHash": "9c63a1aa903bf368b3706523b92b8d22dfc563706c1f5548ecbc68ce6e9eff6b",
+          "exitCode": 0,
+          "id": "presence",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "false\ntrue\nfallback\nfallback\n0\n"
+        },
+        {
+          "codeHash": "9362500b15e2c2c1cc9836bd17e34d53d916c2d9b3bf5e9e47d3b8858d0676cc",
+          "exitCode": 0,
+          "id": "nested",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Jan\nPython\n6\n"
+        },
+        {
+          "codeHash": "9ded9a774009cfa5bd608c42a84d07c6b00b791b5c1dc8ceb366432e1bf62448",
+          "exitCode": 0,
+          "id": "add",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "4/5\n0=peach\n1=apple\n2=pear\n3=plum\n4=cherry\n"
+        },
+        {
+          "codeHash": "65e3b6251a0a989edc43bca91c7452ff235bb54038af1e639e72f3fa56332e77",
+          "exitCode": 0,
+          "id": "remove",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "5\n1\nArray\n(\n    [0] => 2\n    [1] => 3\n    [2] => 4\n)\nArray\n(\n    [0] => 2\n    [2] => 4\n)\nArray\n(\n    [0] => 4\n)\nArray\n(\n    [0] => 2\n)\n"
+        },
+        {
+          "codeHash": "3b6f6c4d00db1ea118e17faab8b7cd3064147d3a99b391160a4477b658607205",
+          "exitCode": 0,
+          "id": "foreach",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "x: 1\n4: 2\n1\n2\n"
+        },
+        {
+          "codeHash": "b5ab1276989e3fbad6d650a19d380c6d858476cc8414c8dc8e72b1972e775260",
+          "exitCode": 0,
+          "id": "merge",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [0] => left-number\n    [x] => right\n    [1] => right-number\n    [2] => seven\n)\nArray\n(\n    [2] => left-number\n    [x] => left\n    [7] => seven\n)\nArray\n(\n    [2] => right-number\n    [x] => right\n    [7] => seven\n)\n"
+        },
+        {
+          "codeHash": "b1eb33cc56c0d17c3f39d4463834ef0f2d650ecc5a400b274d00ded837546826",
+          "exitCode": 0,
+          "id": "sorting",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [0] => 1\n    [1] => 2\n    [2] => 3\n)\nc=1\nb=2\na=3\n"
+        },
+        {
+          "codeHash": "46cf84c22e344bd04ff017994d65afa165ca66457f00c3971041b10858b7699d",
+          "exitCode": 0,
+          "id": "map",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [0] => 2\n    [1] => 4\n    [2] => 6\n    [3] => 8\n    [4] => 10\n)\n1\n"
+        },
+        {
+          "codeHash": "f669d9862b75df7dd2eed6bc9eaf689f5997644435798bae12bfc7dec8c42bd9",
+          "exitCode": 0,
+          "id": "filter",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [1] => 2\n    [3] => 4\n)\n"
+        },
+        {
+          "codeHash": "4104582a81bd9ea4c17cd187c7f4cf0d8d3da21e9c18568a7025ed9bd84622ef",
+          "exitCode": 0,
+          "id": "reduce",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "15\n0\n"
+        },
+        {
+          "codeHash": "88c8ea01deffae867cb2c0b1d7e82e7c94fea46a44b2ae6902581b9f42a73c44",
+          "exitCode": 0,
+          "id": "counts",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [apple] => 2\n    [pear] => 2\n    [cherry] => 1\n)\n"
+        },
+        {
+          "codeHash": "fc090197334d7b35ee82a87eb8c35d256ef9e112496afd58f1966764a70e251a",
+          "exitCode": 0,
+          "id": "config-menu",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "3600\nStart: active\nDocs: inactive\n"
+        },
+        {
+          "codeHash": "2c80e7fd94d403a8dee1e8c3097bd3d7c608ecd874aa168e3afd0169930861e5",
+          "exitCode": 0,
+          "id": "input-shape",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Odrzucono nieoczekiwany typ\n"
+        },
+        {
+          "codeHash": "d523867cb76db395cb007e9afddd871747aa754715b7bc943dd3b8f9f3a2339b",
+          "exitCode": 0,
+          "id": "extract",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "overwritten\n1\n"
+        }
+      ],
+      "executableHash": "9c9c7cdb2ec112cf39498dd1a77b56eacac482487182066920f1bcd209091898",
+      "execution": "actual-local-cli",
+      "family": "8.4",
+      "version": "8.4.26"
+    },
+    {
+      "examples": [
+        {
+          "codeHash": "60611f80fc5829fe93ff6e6374634c4d4038c23746186fb001d3316deb7697d4",
+          "exitCode": 0,
+          "id": "create",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "apple\nJan\n"
+        },
+        {
+          "codeHash": "ee09625419cd352aef4f74c5ec1d43f4607aa28cde4d7f5546c309729a6789a3",
+          "exitCode": 0,
+          "id": "key-collision",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "0=replacement\n08=padded\n8=integer\n"
+        },
+        {
+          "codeHash": "a6df2cc887f7c208e7b0fdae18652dad0db94a6aeae4ec6151de4418177163d4",
+          "exitCode": 0,
+          "id": "access",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "25\n4\n0=10\n1=25\n2=30\n10=100\n"
+        },
+        {
+          "codeHash": "9c63a1aa903bf368b3706523b92b8d22dfc563706c1f5548ecbc68ce6e9eff6b",
+          "exitCode": 0,
+          "id": "presence",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "false\ntrue\nfallback\nfallback\n0\n"
+        },
+        {
+          "codeHash": "9362500b15e2c2c1cc9836bd17e34d53d916c2d9b3bf5e9e47d3b8858d0676cc",
+          "exitCode": 0,
+          "id": "nested",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Jan\nPython\n6\n"
+        },
+        {
+          "codeHash": "9ded9a774009cfa5bd608c42a84d07c6b00b791b5c1dc8ceb366432e1bf62448",
+          "exitCode": 0,
+          "id": "add",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "4/5\n0=peach\n1=apple\n2=pear\n3=plum\n4=cherry\n"
+        },
+        {
+          "codeHash": "65e3b6251a0a989edc43bca91c7452ff235bb54038af1e639e72f3fa56332e77",
+          "exitCode": 0,
+          "id": "remove",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "5\n1\nArray\n(\n    [0] => 2\n    [1] => 3\n    [2] => 4\n)\nArray\n(\n    [0] => 2\n    [2] => 4\n)\nArray\n(\n    [0] => 4\n)\nArray\n(\n    [0] => 2\n)\n"
+        },
+        {
+          "codeHash": "3b6f6c4d00db1ea118e17faab8b7cd3064147d3a99b391160a4477b658607205",
+          "exitCode": 0,
+          "id": "foreach",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "x: 1\n4: 2\n1\n2\n"
+        },
+        {
+          "codeHash": "b5ab1276989e3fbad6d650a19d380c6d858476cc8414c8dc8e72b1972e775260",
+          "exitCode": 0,
+          "id": "merge",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [0] => left-number\n    [x] => right\n    [1] => right-number\n    [2] => seven\n)\nArray\n(\n    [2] => left-number\n    [x] => left\n    [7] => seven\n)\nArray\n(\n    [2] => right-number\n    [x] => right\n    [7] => seven\n)\n"
+        },
+        {
+          "codeHash": "b1eb33cc56c0d17c3f39d4463834ef0f2d650ecc5a400b274d00ded837546826",
+          "exitCode": 0,
+          "id": "sorting",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [0] => 1\n    [1] => 2\n    [2] => 3\n)\nc=1\nb=2\na=3\n"
+        },
+        {
+          "codeHash": "46cf84c22e344bd04ff017994d65afa165ca66457f00c3971041b10858b7699d",
+          "exitCode": 0,
+          "id": "map",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [0] => 2\n    [1] => 4\n    [2] => 6\n    [3] => 8\n    [4] => 10\n)\n1\n"
+        },
+        {
+          "codeHash": "f669d9862b75df7dd2eed6bc9eaf689f5997644435798bae12bfc7dec8c42bd9",
+          "exitCode": 0,
+          "id": "filter",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [1] => 2\n    [3] => 4\n)\n"
+        },
+        {
+          "codeHash": "4104582a81bd9ea4c17cd187c7f4cf0d8d3da21e9c18568a7025ed9bd84622ef",
+          "exitCode": 0,
+          "id": "reduce",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "15\n0\n"
+        },
+        {
+          "codeHash": "88c8ea01deffae867cb2c0b1d7e82e7c94fea46a44b2ae6902581b9f42a73c44",
+          "exitCode": 0,
+          "id": "counts",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Array\n(\n    [apple] => 2\n    [pear] => 2\n    [cherry] => 1\n)\n"
+        },
+        {
+          "codeHash": "fc090197334d7b35ee82a87eb8c35d256ef9e112496afd58f1966764a70e251a",
+          "exitCode": 0,
+          "id": "config-menu",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "3600\nStart: active\nDocs: inactive\n"
+        },
+        {
+          "codeHash": "2c80e7fd94d403a8dee1e8c3097bd3d7c608ecd874aa168e3afd0169930861e5",
+          "exitCode": 0,
+          "id": "input-shape",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Odrzucono nieoczekiwany typ\n"
+        },
+        {
+          "codeHash": "d523867cb76db395cb007e9afddd871747aa754715b7bc943dd3b8f9f3a2339b",
+          "exitCode": 0,
+          "id": "extract",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "overwritten\n1\n"
+        }
+      ],
+      "executableHash": "d256e5d6bfd86905f336bf39b2f4a68d3fde0faabbce3080330de9600cd8e6c4",
+      "execution": "actual-local-cli",
+      "family": "8.5",
+      "version": "8.5.11"
+    }
+  ],
+  "schemaVersion": 1,
+  "status": "PASS"
+}

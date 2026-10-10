@@ -14,7 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<p class="eyebrow">Wiedza, która rozwija się razem z technologią</p>
 			<h1>Witamy w<br /><em>Redactoria</em></h1>
 			<p class="intro">
-				Budujemy czytelną bazę wiedzy o programowaniu, web developmencie<br class="desktop" />
+				Budujemy czytelną bazę wiedzy o programowaniu, web developmencie<br class="desktop" />{' '}
 				i sztucznej inteligencji.
 			</p>
 			<div class="actions">
@@ -22,6 +22,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<a href="/o-projekcie/">Poznaj projekt</a>
 			</div>
 			<div class="line" aria-hidden="true"><span></span></div>
+			<section class="discovery" aria-label="Odkryj Redactorię — test układu trzech kolumn">
+				<article>
+					<span class="discovery__number">01 / Czytaj</span>
+					<h2>Dummies</h2>
+					<p>Miejsce na krótkie wprowadzenie do materiałów. Na razie poznaj pierwsze artykuły pilota.</p>
+					<a href="/artykuly/">Artykuły <span aria-hidden="true">↗</span></a>
+				</article>
+				<article>
+					<span class="discovery__number">02 / Odkrywaj</span>
+					<h2>Lorem</h2>
+					<p>Próbna kolumna dla obszarów wiedzy. Zobacz, jak treści łączą się w dostępne tematy.</p>
+					<a href="/tematy/">Tematy <span aria-hidden="true">↗</span></a>
+				</article>
+				<article>
+					<span class="discovery__number">03 / Poznaj</span>
+					<h2>Ipsum</h2>
+					<p>Krótka zapowiedź miejsca dla idei projektu. Dowiedz się, skąd bierze się Redactoria EDU.</p>
+					<a href="/o-projekcie/">O projekcie <span aria-hidden="true">↗</span></a>
+				</article>
+			</section>
+			<p class="discovery__note">Test układu · robocze nagłówki i opisy</p>
 		</section>
 	</div>
 </BaseLayout>
@@ -154,6 +175,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		background: var(--color-accent);
 	}
 
+	.discovery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 4rem; text-align: left; border-top: 1px solid var(--color-line); }
+	.discovery article { display: flex; flex-direction: column; min-width: 0; padding: 2rem; border-right: 1px solid var(--color-line); }
+	.discovery article:first-child { padding-left: 0; }
+	.discovery article:last-child { padding-right: 0; border-right: 0; }
+	.discovery__number { color: var(--color-subtle); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+	.discovery h2 { margin: 1rem 0; font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; letter-spacing: -0.045em; }
+	.discovery p { margin: 0 0 1.5rem; color: var(--color-muted); font-size: 0.9rem; line-height: 1.75; }
+	.discovery a { margin-top: auto; color: var(--color-accent); font-size: 0.75rem; font-weight: 700; text-decoration: none; }
+	.discovery a span { display: inline-block; margin-left: 0.5rem; transition: transform 150ms ease; }
+	.discovery a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+	.discovery a:hover span { transform: translate(2px, -2px); }
+	.discovery__note { margin: 1rem 0 0; color: var(--color-subtle); font-size: 0.65rem; letter-spacing: 0.05em; text-align: left; }
+
 	@media (max-width: 600px) {
 		.desktop {
 			display: none;
@@ -171,7 +205,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		.intro {
 			max-width: 20rem;
 		}
+		.discovery { grid-template-columns: 1fr; margin-top: 3rem; }
+		.discovery article, .discovery article:first-child, .discovery article:last-child { padding: 1.75rem 0; border-right: 0; border-bottom: 1px solid var(--color-line); }
 	}
+	@media (prefers-reduced-motion: reduce) { .discovery a span { transition: none; } }
 
 	@media (prefers-reduced-motion: no-preference) {
 		.eyebrow,

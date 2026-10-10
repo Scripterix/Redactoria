@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "Codex current session — Critic 0.1",
+    "description": "Separate single review of the saved exact Writer draft, approved research/addendum and actual snippet executions. Same session/model context, not a separate provider; no rewriting."
+  },
+  "critic": {
+    "requestHash": "3984c198a337ddd5ae126c95f54439c41aaa46d203934424cc8d8c187f954c87",
+    "response": {
+      "action": "REVIEW",
+      "verdict": "REVISE",
+      "summary": "Draft jest spójny, pokrywa wymagany zakres i zawiera 17 przykładów, które rzeczywiście przeszły na obu runtime’ach. Potrzebna jest jedna precyzująca zmiana zdania w sekcji reduce przed human review; nie ma awarii kodu ani nowego problemu bezpieczeństwa. Dwie poprawki czytelności są opcjonalne. Writer nie został uruchomiony ponownie.",
+      "checks": [
+        {
+          "criterion": "FACTUAL_ACCURACY",
+          "result": "ISSUES",
+          "note": "Jedno zdanie o wyniku reduce wymaga zawężenia do pokazanego sumowania; inne podstawowe reguły zgadzają się z pakietem i uzupełnieniem."
+        },
+        {
+          "criterion": "SOURCE_ALIGNMENT",
+          "result": "PASS",
+          "note": "Dwie zaakceptowane części zostały połączone bez oprawy I/II, promocji i starej numeracji. Evidence sekcji pochodzi z zatwierdzonych findingów/addendum."
+        },
+        {
+          "criterion": "CODE_CORRECTNESS",
+          "result": "PASS",
+          "note": "17 samodzielnych bloków wykonano na rzeczywistych 8.4.26 i 8.5.11: 34/34 PASS, oczekiwane stdout, exitCode 0, brak stderr. Nie jest to pełne pokrycie gałęzi ani test gotowej aplikacji."
+        },
+        {
+          "criterion": "RESEARCH_COVERAGE",
+          "result": "PASS",
+          "note": "Obecne wszystkie 22 wymagane obszary; null-offset addendum jest jawnie użyte. Form handler, locale i mieszane sortowanie nie są przedstawiane jako ukończone."
+        },
+        {
+          "criterion": "STRUCTURE",
+          "result": "PASS",
+          "note": "Logiczny ciąg model → klucze → obecność/null → mutacje/foreach → merge/sort → map/filter/agregacja → praktyka/caution → ćwiczenia. Zbędne FAQ pominięto."
+        },
+        {
+          "criterion": "CLARITY",
+          "result": "ISSUES",
+          "note": "Dwie opcjonalne poprawki ułatwią lekturę początkującemu: objaśnienie fn i podpisanie pośrednich wyników usuwania."
+        },
+        {
+          "criterion": "DUPLICATION",
+          "result": "PASS",
+          "note": "Nie stwierdzono powtarzania dawnych definicji ani dwóch podsumowań. Lista błędów syntetyzuje wcześniejsze tematy, nie duplikuje ich całych sekcji."
+        },
+        {
+          "criterion": "SECURITY",
+          "result": "PASS",
+          "note": "Extract wyłącznie jako demonstracja nadpisania na zaufanych danych, bez pozytywnego wzorca $_POST. Typ, walidacja i HTML escaping rozdzielone; brak twierdzenia o pełnym bezpieczeństwie aplikacji."
+        },
+        {
+          "criterion": "VERSION_CLAIMS",
+          "result": "PASS",
+          "note": "Zakres 8.4–8.5 jest jawny. Ostrzeżenia float od 8.1, append od 8.3 oraz null offset/key argument od 8.5 odpowiadają zaakceptowanym źródłom."
+        },
+        {
+          "criterion": "UNSUPPORTED_CLAIMS",
+          "result": "PASS",
+          "note": "Nie stwierdzono dodatkowych nowych reguł poza pakietem/addendum; nadmierne uogólnienie reduce odnotowano jako factual precision issue, bez wymyślania nowych faktów."
+        }
+      ],
+      "issues": [
+        {
+          "id": "reduce-result-scope",
+          "category": "FACTUAL_ACCURACY",
+          "severity": "required",
+          "status": "confirmed",
+          "location": {
+            "sectionId": "aggregation",
+            "quote": "Wynik to jedna wartość, a nie tablica."
+          },
+          "description": "Zdanie może zostać odczytane jako ogólny kontrakt array_reduce wykluczający tablicę jako wynik. Zatwierdzony research mówi o jednym akumulatorze oraz o liczbie 15 w tym przykładzie sumowania, nie o ogólnym zakazie tablicowego wyniku. Problem dotyczy zakresu twierdzenia, nie poprawności działającego przykładu.",
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "reduce-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "code-functional"
+            }
+          ],
+          "change": "Zawęź zdanie do pokazanego przypadku, np. „W tym przykładzie wynikiem jest liczba 15, a nie tablica liczb”. Nie dodawaj nowych niezweryfikowanych wariantów redukcji.",
+          "confidence": 0.94
+        },
+        {
+          "id": "explain-arrow-callback",
+          "category": "CLARITY",
+          "severity": "optional",
+          "status": "confirmed",
+          "location": {
+            "sectionId": "map",
+            "quote": "Callback, czyli przekazana funkcja, dostaje wartość wejściową i zwraca jej przekształcenie."
+          },
+          "description": "Termin callback został wyjaśniony, ale pierwszy zapis fn($number) => ... nie ma krótkiego objaśnienia czytania składni. To utrudnienie dla początkującego, nie błąd kodu.",
+          "evidence": [],
+          "change": "Dodaj jedno krótkie objaśnienie zastosowanej skróconej funkcji przy pierwszym przykładzie, bez rozszerzania lekcji o cały temat funkcji anonimowych.",
+          "confidence": 0.87
+        },
+        {
+          "id": "label-removal-states",
+          "category": "CLARITY",
+          "severity": "optional",
+          "status": "confirmed",
+          "location": {
+            "sectionId": "mutations",
+            "quote": "Pokazanie pośrednich stanów jest ważniejsze niż długa lista nazw funkcji."
+          },
+          "description": "Pośrednie stany zostały poprawnie wykonane i wypisane, ale kilka kolejnych bloków Array w wyniku nie ma podpisów; czytelnik musi odtworzyć, który odpowiada shift, unset, removed i końcowi.",
+          "evidence": [],
+          "change": "Rozważ podpisanie etapów w objaśnieniu pod wynikiem. Jeśli zmienisz sam kod/oczekiwane stdout, wykonaj zmieniony przykład ponownie w osobno zatwierdzonej korekcie.",
+          "confidence": 0.9
+        }
+      ],
+      "limitations": [
+        "Review jest osobnym etapem/modułem w tej samej sesji Codex, nie analizą drugiego niezależnego providera/modelu. Walidacja referencji nie zastępuje oceny człowieka.",
+        "Ocena faktów jest ograniczona do zatwierdzonego Research Packet i obowiązkowego addendum; nie wykonano nowego researchu.",
+        "Rzeczywiste wykonania obejmują 17 zapisanych bloków ze stałymi danymi, nie wszystkie gałęzie formularza, rozwiązania ćwiczeń, wszystkie patche/OS/SAPI ani bezpieczeństwo gotowej aplikacji.",
+        "REVISE: jedna wymagana poprawka pozostaje niewykonana. Brak automatycznej pętli Writer ↔ Critic, CONTENT i publikacji."
+      ]
+    }
+  }
+}
+

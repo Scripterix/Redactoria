@@ -1,0 +1,5 @@
+name: PHP
+slug: php
+description: Podstawy PHP, świadoma praca z danymi i praktyczne przykłady kodu.
+order: 1
+status: published

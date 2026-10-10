@@ -1,0 +1,193 @@
+{
+  "changes": [
+    {
+      "evidence": [
+        {
+          "id": "reduce-contract",
+          "kind": "finding"
+        },
+        {
+          "id": "code-functional",
+          "kind": "finding"
+        }
+      ],
+      "from": "Wynik to jedna wartość, a nie tablica.",
+      "issueId": "reduce-result-scope",
+      "kind": "required",
+      "reason": "Human-accepted Critic correction: scope result claim to the existing sum example.",
+      "sectionId": "aggregation",
+      "to": "W tym przykładzie wynikiem jest liczba 15, a nie tablica liczb."
+    },
+    {
+      "evidence": [],
+      "from": "W tym przykładzie mnoży liczbę przez dwa.",
+      "issueId": "explain-arrow-callback",
+      "kind": "optional",
+      "reason": "Explain already present code/output only; no new technical rule or research.",
+      "sectionId": "map",
+      "to": "W tym przykładzie mnoży liczbę przez dwa. Zapis `fn($number) => $number * 2` czytaj jako: „weź `$number` i zwróć `$number * 2`”."
+    },
+    {
+      "evidence": [],
+      "from": "Pokazanie pośrednich stanów jest ważniejsze niż długa lista nazw funkcji.",
+      "issueId": "label-removal-states",
+      "kind": "optional",
+      "reason": "Explain already present code/output only; no new technical rule or research.",
+      "sectionId": "mutations",
+      "to": "Pokazanie pośrednich stanów jest ważniejsze niż długa lista nazw funkcji.\n\nW wyniku drugiego przykładu pierwsze dwie linie to wartości zwrócone przez `array_pop()` i `array_shift()`. Cztery bloki `Array` pokazują kolejno: stan po `array_shift()`, stan po `unset()`, usunięty wycinek w `$removed` i końcowy stan `$numbers`."
+    }
+  ],
+  "codeChanged": false,
+  "criticSecondPass": {
+    "criticExecution": {
+      "inputHash": "b06c7d81dcbd9f8e98afa60b5f0d3c2e0b65c485ed3adda9a58c7f390da912b4",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "Codex current session — Critic 0.1"
+      },
+      "modelCalls": 1,
+      "requestHash": "13daadc9d6fe9f2cbb3339b463bfb3360992a059183398190f290b728626138e"
+    },
+    "newModelCalls": 1,
+    "requiredChanges": 0,
+    "reviewHash": "65364a4ec6a5f1a113b033afde2d77b2a221ab15e73b989f02a228a9f58d7d79",
+    "reviewRef": "lab/reviews/php-arrays/critic-review.json",
+    "verdict": "PASS"
+  },
+  "expectedDiagnosticsChanged": false,
+  "expectedOutputChanged": false,
+  "humanAuthorization": {
+    "approvedForPublication": false,
+    "quotation": "Akceptuję wymaganą poprawkę Critica.",
+    "scope": "Required reduce precision correction, optional prose-only readability fixes, one new full Critic review; candidate only after PASS; no publication."
+  },
+  "mergeDecision": "lab/decisions/php-arrays-merge-proposal.json",
+  "parentArticleHash": "f154a1208ff6b9f5022da5cb97b17382ac75e7803b0f41e58e7bffcef874d616",
+  "parentArticleRef": "lab/drafts/php-arrays/article-001.md",
+  "parentDraftHash": "ea1fc1e040eaab33ffbdd0b9545ea8ef67aa25cb650f0f3986c016990616bfea",
+  "parentDraftRef": "lab/drafts/php-arrays/article-001.json",
+  "researchApproval": "lab/decisions/php-arrays-research-approval.json",
+  "researchPacket": "lab/research/php-arrays/research.json",
+  "reviewedAgainst": "lab/reviews/php-arrays/critic-review-001.json",
+  "revisedArticleHash": "713d31d87e8bdfb1b41b237299ce30d397dafcec56f220eaa13bad5d003b3068",
+  "revisedArticleRef": "lab/drafts/php-arrays/article.md",
+  "revisedAt": "2026-10-09T13:11:39.764Z",
+  "revisedDraftHash": "5279e66b7a91b265bd194f0b3e22704e3813f4a67a65d608265b9a106fc5f398",
+  "revisedDraftRef": "lab/drafts/php-arrays/article.json",
+  "runtimeEvidenceReuse": {
+    "changedFields": [
+      "articleHash"
+    ],
+    "currentProjectionRef": "lab/drafts/php-arrays/code-execution.json",
+    "currentProjectionSha256": "a5f74e896a8cc0be63a61f2eb03a845153f6f9f01c71d90cd0ee4022d86b8d94",
+    "examples": [
+      {
+        "codeHash": "60611f80fc5829fe93ff6e6374634c4d4038c23746186fb001d3316deb7697d4",
+        "id": "create"
+      },
+      {
+        "codeHash": "ee09625419cd352aef4f74c5ec1d43f4607aa28cde4d7f5546c309729a6789a3",
+        "id": "key-collision"
+      },
+      {
+        "codeHash": "a6df2cc887f7c208e7b0fdae18652dad0db94a6aeae4ec6151de4418177163d4",
+        "id": "access"
+      },
+      {
+        "codeHash": "9c63a1aa903bf368b3706523b92b8d22dfc563706c1f5548ecbc68ce6e9eff6b",
+        "id": "presence"
+      },
+      {
+        "codeHash": "9362500b15e2c2c1cc9836bd17e34d53d916c2d9b3bf5e9e47d3b8858d0676cc",
+        "id": "nested"
+      },
+      {
+        "codeHash": "9ded9a774009cfa5bd608c42a84d07c6b00b791b5c1dc8ceb366432e1bf62448",
+        "id": "add"
+      },
+      {
+        "codeHash": "65e3b6251a0a989edc43bca91c7452ff235bb54038af1e639e72f3fa56332e77",
+        "id": "remove"
+      },
+      {
+        "codeHash": "3b6f6c4d00db1ea118e17faab8b7cd3064147d3a99b391160a4477b658607205",
+        "id": "foreach"
+      },
+      {
+        "codeHash": "b5ab1276989e3fbad6d650a19d380c6d858476cc8414c8dc8e72b1972e775260",
+        "id": "merge"
+      },
+      {
+        "codeHash": "b1eb33cc56c0d17c3f39d4463834ef0f2d650ecc5a400b274d00ded837546826",
+        "id": "sorting"
+      },
+      {
+        "codeHash": "46cf84c22e344bd04ff017994d65afa165ca66457f00c3971041b10858b7699d",
+        "id": "map"
+      },
+      {
+        "codeHash": "f669d9862b75df7dd2eed6bc9eaf689f5997644435798bae12bfc7dec8c42bd9",
+        "id": "filter"
+      },
+      {
+        "codeHash": "4104582a81bd9ea4c17cd187c7f4cf0d8d3da21e9c18568a7025ed9bd84622ef",
+        "id": "reduce"
+      },
+      {
+        "codeHash": "88c8ea01deffae867cb2c0b1d7e82e7c94fea46a44b2ae6902581b9f42a73c44",
+        "id": "counts"
+      },
+      {
+        "codeHash": "fc090197334d7b35ee82a87eb8c35d256ef9e112496afd58f1966764a70e251a",
+        "id": "config-menu"
+      },
+      {
+        "codeHash": "2c80e7fd94d403a8dee1e8c3097bd3d7c608ecd874aa168e3afd0169930861e5",
+        "id": "input-shape"
+      },
+      {
+        "codeHash": "d523867cb76db395cb007e9afddd871747aa754715b7bc943dd3b8f9f3a2339b",
+        "id": "extract"
+      }
+    ],
+    "newRuntimeCalls": 0,
+    "originalArticleHash": "f154a1208ff6b9f5022da5cb97b17382ac75e7803b0f41e58e7bffcef874d616",
+    "originalExecutedAt": "2026-10-09T12:00:55.774Z",
+    "originalRef": "lab/drafts/php-arrays/code-execution-001.json",
+    "originalSha256": "616fdf67b401bd3f84756fd355cdb59305745be576bbce4028ec236a240ba7cd",
+    "reason": "Only prose changed. All 17 complete example objects, code SHA-256, expected stdout/diagnostics, run records, versions and executable hashes are identical. Rebind the capture projection to the revised prose hash without claiming a new execution.",
+    "runs": [
+      {
+        "executableHash": "9c9c7cdb2ec112cf39498dd1a77b56eacac482487182066920f1bcd209091898",
+        "family": "8.4",
+        "passed": 17,
+        "total": 17,
+        "version": "8.4.26"
+      },
+      {
+        "executableHash": "d256e5d6bfd86905f336bf39b2f4a68d3fde0faabbce3080330de9600cd8e6c4",
+        "family": "8.5",
+        "passed": 17,
+        "total": 17,
+        "version": "8.5.11"
+      }
+    ]
+  },
+  "runtimeVerification": "lab/research/php-arrays/runtime-verification.json",
+  "schemaVersion": 1,
+  "status": "applied-reviewed",
+  "topic": "php-arrays",
+  "type": "targeted-prose-revision",
+  "writerExecution": {
+    "inputHash": "621ac055f919ef6151647c8d5b05cabf4d15d6601aa4efd647a068b6fb9b5318",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "Codex current session — Writer 0.1"
+    },
+    "modelCalls": 1,
+    "requestHash": "c6dd70d5bf4de93690360654df4861bd9a4067db489fe809136748b05de1f6c3"
+  },
+  "writerGenerationCalls": 0
+}

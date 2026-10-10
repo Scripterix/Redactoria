@@ -47,19 +47,48 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   60 assertions each. Official portable archives verified by published SHA-256.
 - Required PHP 8.5 null-offset deprecation addendum; initial 58/60 result and official
   migration evidence preserved separately. Target-runtime question resolved.
+- Milestone 4 — Writer 0.1 / Critic 0.1: separate runtime modules, strict approvals,
+  exact draft/evidence/provenance validation, manual CLIs and narrow LAB writers.
+- One PHP arrays draft: 16 sections, 2506 prose words, all 22 required areas.
+- All 17 new standalone examples executed on PHP 8.4.26 and 8.5.11: 34/34 PASS.
+- One Critic review: REVISE, one required precision change and two optional clarity
+  improvements saved without rewriting or starting another agent.
+- Human-authorized targeted correction: reduce wording scoped to the shown sum 15,
+  fn explanation and removal-state labels applied as prose only; original provenance retained.
+- One new full Critic second pass: PASS, no required changes. All 17 examples and
+  their actual PHP captures unchanged; no new Writer generation or PHP cases.
+- Milestone 5 — First Publication Candidate: exact PASS-reviewed Markdown and strict
+  hash-bound metadata/schema in LAB. The historical artifact remains unchanged.
+- Human-approved local publication through a deterministic Promotion Gate CLI:
+  candidate/review hashes, MERGE/Research approval, shared schema, safe writes and audit.
+- Website refinement: expanded Start/About, five-column responsive footer, homepage
+  three-column placeholder section, contextual links, long-article TOC/code/tables.
+- Local build: 10 static pages, 2 articles and 2 topics; 40 responsive route checks.
+- Website micro-increment: deterministic build-time article reading estimate with
+  tested prose/code treatment; current CONTENT bylines corrected to `Scripterix`.
+- Plan 009 append: official `@astrojs/sitemap` XML for all public routes, static HTML
+  map, no-JS back-to-top and per-block progressive `Copy code` with no framework.
+- Search 0.1: official pinned Pagefind CLI after Astro build, nine public indexed
+  pages, lightweight lazy UI; approved public article note cleanup.
 
 ## NOW
 
-- Milestone 3 — Researcher 0.1 DONE; Research Packet APPROVED; PHP 8.4/8.5 PASS.
-- PHP MERGE remains approved; no source merge, final article or publication performed.
-- Approval gate closed; no further runtime agent started.
+- Milestone 4 Writer/Critic DONE; final Critic verdict PASS after an authorized correction.
+- Milestone 5 Publication Candidate DONE; original artifact in LAB is preserved.
+- Separate human approval: local-publication-test; exact PHP Arrays promoted to CONTENT.
+- PUBLIC CHECKPOINT AUTHORIZED — current local quality/production-preview gate PASS;
+  commit/push and Cloudflare verification are in scope, without another YES.
+- Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
+- PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
+- One original Writer run + two separately authorized Critic passes. No automatic loop.
+- Plan 009 website utilities DONE; icons and educational media remain exploratory Futureboard items.
 
 ## NEXT
 
-- Milestone 4 — Writer/Critic, not started; wait for an explicit start instruction.
-- Use the approved packet plus mandatory runtime addendum, including PHP 8.5 null
-  offset caution. Validate future final standalone examples and form skeleton when
-  they exist; runtime gate tests controlled examples, not a yet-unwritten article.
+- Finish the authorized public checkpoint and STOP after Cloudflare verification.
+- Separate B1: select/rank ten candidates using the new educational/testability/cost
+  criteria. Historical Cartographer TOP 10 is not this ranking; no article generation.
+- Separate B2: rank #1 only, then assess the pipeline before subsequent batches.
 
 ## LATER
 

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "Codex current session — Critic 0.1",
+    "description": "Explicit new Codex-session full Critic second-pass analysis after human-authorized targeted revision; not a replay of the first verdict and not an external API. Entire revised article compared to approved research/addendum, original Writer provenance and identical examples/runtime captures. Exactly one new Critic execution; no automatic rewrite or publication."
+  },
+  "critic": {
+    "requestHash": "13daadc9d6fe9f2cbb3339b463bfb3360992a059183398190f290b728626138e",
+    "response": {
+      "action": "REVIEW",
+      "verdict": "PASS",
+      "summary": "Cały poprawiony draft jest zgodny z zatwierdzonym Research Packet i obowiązkowym addendum PHP 8.5. Zdanie o reduce dotyczy teraz wyłącznie wyniku 15 w pokazanym sumowaniu, a nie ogólnego typu wyniku. Obie opcjonalne poprawki czytelności są zastosowane bez zmiany kodu. Nie stwierdzono wymaganych zmian, nowych nieudokumentowanych reguł ani problemów kodu lub bezpieczeństwa w zadeklarowanym zakresie. PASS oznacza gotowość do decyzji człowieka, nie zgodę na publikację.",
+      "checks": [
+        {
+          "criterion": "FACTUAL_ACCURACY",
+          "result": "PASS",
+          "note": "Sprawdzono wszystkie 16 sekcji względem zatwierdzonych findingów i null-offset addendum. Model ordered map, klucze/kolizje, brak/null/falsey, mutacje, merge, sześć sortowań i map/filter/reduce/count_values pozostają zgodne. Zdanie „W tym przykładzie wynikiem jest liczba 15, a nie tablica liczb.” zamyka reduce-result-scope bez ogólnego twierdzenia, że reduce zawsze zwraca liczbę."
+        },
+        {
+          "criterion": "SOURCE_ALIGNMENT",
+          "result": "PASS",
+          "note": "Zachowane targety 1324/1356, approved MERGE, Research approval, oryginalne Writer execution i evidence. Usunięta wcześniej oprawa części I/II nie wróciła. Korekta to trzy zmiany prozy, nie nowe generowanie ani interpretacja historycznych źródeł ponad zaakceptowany research."
+        },
+        {
+          "criterion": "CODE_CORRECTNESS",
+          "result": "PASS",
+          "note": "Wszystkie 17 pełnych obiektów przykładów, code SHA-256, expected stdout i diagnostyki są byte-identical względem article-001.json. Zachowano 34 rzeczywiste wyniki PASS na PHP 8.4.26/8.5.11, wersje, executable hashes i pierwotny executedAt. Zmieniono tylko powiązanie articleHash po korekcie prozy; nie twierdzimy, że przeprowadzono nowe wykonania ani test całej aplikacji."
+        },
+        {
+          "criterion": "RESEARCH_COVERAGE",
+          "result": "PASS",
+          "note": "Obecne wszystkie 22 wymagane obszary w 16 logicznych sekcjach; required addendum php85-null-offset jest nadal jawnie wykorzystane. Historyczne ograniczenia pakietu są rozdzielone od późniejszych zatwierdzonych runtime evidence i wykonanych przykładów."
+        },
+        {
+          "criterion": "STRUCTURE",
+          "result": "PASS",
+          "note": "Cały draft zachowuje ciąg model → tworzenie/klucze → odczyt/null → mutacje/foreach → merge/sort → map/filter/agregacja → praktyka/caution → ćwiczenia. Wprowadzenie i scenariusze są samodzielne; nie dodano nowych sekcji ani większego rewrite."
+        },
+        {
+          "criterion": "CLARITY",
+          "result": "PASS",
+          "note": "Pierwsze fn($number) => $number * 2 ma krótkie odczytanie tej konkretnej składni. Opis drugiego przykładu usuwania nazywa dwie zwrócone wartości oraz cztery bloki Array w poprawnej kolejności, bez modyfikowania stdout. Obie wcześniejsze opcjonalne uwagi są rozwiązane."
+        },
+        {
+          "criterion": "DUPLICATION",
+          "result": "PASS",
+          "note": "Brak przywróconego podziału I/II, powtarzających się definicji czy zbędnego FAQ. Lista typowych błędów i ćwiczenia pełnią odrębne funkcje; nowe objaśnienia są lokalne i krótkie."
+        },
+        {
+          "criterion": "SECURITY",
+          "result": "PASS",
+          "note": "Extract pozostaje wyłącznie demonstracją nadpisania na zaufanych stałych, nie wzorcem extract($_POST). Fallback, is_string, walidacja i osobny HTML escaping nie są utożsamione z pełnym bezpieczeństwem. Dane menu są stałe i CLI-only; brak twierdzenia o audycie aplikacji."
+        },
+        {
+          "criterion": "VERSION_CLAIMS",
+          "result": "PASS",
+          "note": "Cel PHP 8.4–8.5 i przechowane wykonania dokładnych 8.4.26/8.5.11 są odróżnione od historycznych prób 8.2.4. Wzmianki o float od 8.1, negative append od 8.3 i null offset/key argument od 8.5 odpowiadają zatwierdzonemu researchowi/addendum. Nie rozszerzono deklaracji testów na inne wersje."
+        },
+        {
+          "criterion": "UNSUPPORTED_CLAIMS",
+          "result": "PASS",
+          "note": "Nie stwierdzono nowych faktów wymagających researchu. Objaśnienie fn odczytuje już obecny przykład map; podpisy stanów opisują zachowany kod i rzeczywiste wyniki. Nie dodano twierdzenia o ogólnym liczbowym wyniku array_reduce ani nowych funkcji."
+        }
+      ],
+      "issues": [],
+      "limitations": [
+        "To jeden nowy pełny Critic second pass w tej sesji/modelu, jawnie importowany przez RecordedLanguageModel. Oddzielny moduł/rola nie oznacza niezależnego providera; walidacja nie zastępuje decyzji człowieka.",
+        "Ocena ograniczona do zatwierdzonego Research Packet, jego mandatory addendum i zachowanego evidence; nie wykonano nowego researchu.",
+        "17 przykładów ma zachowane rzeczywiste wykonania po obu target runtime’ach. Korekta zmienia tylko prose hash; ponowne użycie wyników opiera się na identycznych kodzie, expected output i diagnostykach, nie na symulowanych nowych wykonaniach.",
+        "Nie deklarujemy pełnego pokrycia gałęzi, rozwiązań ćwiczeń, handlera formularza, bezpieczeństwa aplikacji ani innych patchy/OS/SAPI.",
+        "PASS zamyka wymagane zmiany techniczne i dopuszcza przygotowanie dokładnej kopii jako publication candidate w LAB. Nie nadaje approved-for-publication, nie przenosi do CONTENT ani nie uruchamia deploymentu."
+      ]
+    }
+  }
+}

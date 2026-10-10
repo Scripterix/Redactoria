@@ -1,11 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { estimateReadingTime } from '../../lib/reading-time';
 
 interface Props {
 	article: CollectionEntry<'articles'>;
 }
 
 const { article } = Astro.props;
+const topic = await getEntry(article.data.topic);
+const readingTime = estimateReadingTime(article.body ?? '');
 const dateFormatter = new Intl.DateTimeFormat('pl-PL', {
 	year: 'numeric',
 	month: 'long',
@@ -23,8 +26,12 @@ const dateFormatter = new Intl.DateTimeFormat('pl-PL', {
 		<dd>{article.data.author.name}</dd>
 	</div>
 	<div>
+		<dt>Czas czytania</dt>
+		<dd>{readingTime.minutes} min czytania</dd>
+	</div>
+	<div>
 		<dt>Temat</dt>
-		<dd><a href={`/tematy/${article.data.topic.id}/`}>{article.data.topic.id.replaceAll('-', ' ')}</a></dd>
+		<dd><a href={`/tematy/${topic?.data.slug ?? article.data.topic.id}/`}>{topic?.data.name ?? article.data.topic.id.replaceAll('-', ' ')}</a></dd>
 	</div>
 </dl>
 

@@ -90,8 +90,10 @@ Cartographer 0.1 is implemented as the first module, invoked manually. Its contr
 and boundaries are described in `docs/architecture/cartographer.md` and ADR 0003.
 Researcher 0.1 is the second independent module, documented in
 `docs/architecture/researcher.md`. It reads a human-approved scope and produces a
-cited Research Packet in LAB. Other runtime agents, Dispatcher, scheduling, and
-the full Engine remain future work.
+cited Research Packet in LAB. Writer 0.1 and Critic 0.1 are separate manual modules
+documented in `docs/architecture/writer-critic.md`: one draft and one review, no
+automatic revision loop. Publisher, Dispatcher, scheduling and the full Engine
+remain future work.
 
 Each directory represents one independent agent-module, not a category of helper
 functions. An agent-module must define:

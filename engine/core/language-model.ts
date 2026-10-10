@@ -5,7 +5,7 @@ export interface ModelIdentity {
 }
 
 export interface StructuredRequest {
-	phase: 'inventory' | 'deep-read' | 'focused-merge' | 'research';
+	phase: 'inventory' | 'deep-read' | 'focused-merge' | 'research' | 'writer' | 'critic';
 	instructions: string;
 	context: unknown;
 	jsonSchema: Record<string, unknown>;

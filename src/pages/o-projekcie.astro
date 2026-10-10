@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
 	title="O projekcie"
-	description="Redactoria EDU to lokalny pilot statycznej, rozwijanej redakcyjnie bazy wiedzy technicznej."
+	description="Redactoria EDU — odzyskiwanie i rozwijanie wiedzy technicznej, z evidence, odrębnym warsztatem LAB i decyzją człowieka."
 >
 	<article class="about container">
 		<header>
@@ -16,20 +16,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			</div>
 		</header>
 
-		<section>
-			<h2>Najpierw jakość</h2>
-			<p>
-				Nie mierzymy sukcesu liczbą wygenerowanych tekstów. Każda propozycja przechodzi
-				przez LAB, weryfikację źródeł i review, zanim stanie się publicznym artykułem.
-			</p>
+		<section id="idea">
+			<h2>Nie tylko blog</h2>
+			<div class="section-copy">
+				<p>Redactoria to eksperymentalny system rozwijania wiedzy: rozpoznawania tematów, relacji i braków, sprawdzania źródeł oraz przygotowywania materiałów do nauki. Strona jest czytelną warstwą tego procesu, nie jego jedynym celem.</p>
+				<p>Redactoria EDU jest pierwszym pilotem. Obejmuje programowanie, web development, software engineering i AI, także pracę wspomaganą narzędziami AI. Zaczynamy od niewielkiej liczby tekstów, nie od masowej produkcji treści.</p>
+				<p><a href="/artykuly/start-redactoria-edu/">Start Redactoria EDU</a> przedstawia pierwszy eksperyment krok po kroku.</p>
+			</div>
 		</section>
-
-		<section>
-			<h2>Strona działa niezależnie</h2>
-			<p>
-				Astro generuje statyczny serwis, który pozostaje dostępny niezależnie od przyszłego
-				Engine. Automatyzacja wspiera redakcję, ale nie obsługuje każdej odsłony strony.
-			</p>
+		<section id="zrodla">
+			<h2>Zachować dorobek</h2>
+			<div class="section-copy">
+				<p>Punktem wyjścia są 83 artykuły ze starszego bloga, zachowane jako eksport WordPressa. Korpus zawiera wiedzę, przykłady i historię pracy, ale także powtórzenia i reguły wymagające aktualizacji.</p>
+				<p>Nie nadpisujemy oryginałów. Praca odbywa się w prywatnym LAB: tam zostają analizy, research, drafty, oceny i decyzje. W WEBSITE dostępne są tylko treści z osobno zatwierdzonego CONTENT, a nie pliki robocze.</p>
+				<p>Pierwszy materiał łączy dwie historyczne części w <a href="/artykuly/tablice-w-php/">lekcję o tablicach PHP</a>. Jego obecny etap to lokalny test publikacji.</p>
+			</div>
+		</section>
+		<section id="proces">
+			<h2>Role, nie autopilot</h2>
+			<div class="section-copy">
+				<p>Cztery obecne moduły uruchamiamy ręcznie. Każdy ma wejście, wyjście, polityki i walidację. Żaden nie zleca samodzielnie pracy innemu agentowi.</p>
+				<dl class="roles">
+					<div><dt>Cartographer</dt><dd>Mapuje istniejącą wiedzę, relacje, luki i możliwości dalszej pracy.</dd></div>
+					<div><dt>Researcher</dt><dd>Sprawdza zatwierdzone pytania i przygotowuje pakiet dowodów z pochodzeniem źródeł.</dd></div>
+					<div><dt>Writer</dt><dd>Tworzy draft na podstawie zaakceptowanego researchu, nie publikuje.</dd></div>
+					<div><dt>Critic</dt><dd>Ocenia draft: PASS, REVISE lub BLOCK. Nie pisze za Writera.</dd></div>
+				</dl>
+				<p>Człowiek akceptuje zakres, research i publikację. PASS oznacza wynik oceny, nie zgodę na wdrożenie. Deterministyczny Promotion Gate wykonuje jawną decyzję i sprawdza hashe — nie jest Publisher Agentem.</p>
+			</div>
+		</section>
+		<section id="jakosc">
+			<h2>Najpierw jakość</h2>
+			<div class="section-copy">
+				<p>Nie mierzymy sukcesu liczbą wygenerowanych tekstów. Ważniejsze są wartość edukacyjna, poprawność, czytelność i możliwość wskazania dowodu. Hipoteza nie staje się faktem przez wysoki confidence.</p>
+				<p>Research opiera się na jawnych źródłach; przykłady wymagają rzeczywistego wykonania w docelowym runtime. Kontrakty i granice są testowane bez LLM API. Przed publikacją potrzebne są walidacja treści, testy, check, build oraz review człowieka.</p>
+			</div>
+		</section>
+		<section id="technologia">
+			<h2>Static-first</h2>
+			<div class="section-copy">
+				<p>Astro generuje statyczny serwis. ENGINE wspiera redakcję, ale nie obsługuje każdej odsłony; strona działa niezależnie od wykonywania agentów. SOURCE, LAB, ENGINE, CONTENT i WEBSITE pozostają osobnymi warstwami.</p>
+				<p>Kod i historia zmian są w <a href="https://github.com/Scripterix/Redactoria">repozytorium GitHub</a>. Cloudflare Pages obsługuje <a href="https://redactoria.pages.dev/">publiczne środowisko testowe</a>. Lokalne testy nowych treści nie uruchamiają deployu. Dopiero osobna zgoda na commit/push otwiera aktualizację tego środowiska.</p>
+			</div>
+		</section>
+		<section id="kierunek">
+			<h2>Kierunek rozwoju</h2>
+			<div class="section-copy">
+				<p><span class="state">Działa</span> Inwentaryzacja, mapa korpusu, cztery moduły, research, draft i Critic PASS, bramka lokalnej promocji oraz serwis Astro z <a href="/artykuly/">artykułami</a> i <a href="/tematy/">tematami</a>.</p>
+				<p><span class="state">Planowane</span> Ocena pierwszej publikacji, stopniowy pilot modernizacji około dziesięciu artykułów i lepsza nawigacja edukacyjna. Każdy kolejny etap wymaga osobnej decyzji.</p>
+				<p><span class="state">Eksperymentalne</span> Interaktywne lekcje, wielojęzyczność, Knowledge Navigator, Ask/LM i multi-site. To obszary do zbadania, nie dostępne obecnie funkcje. Publisher i Dispatcher nie zostały rozpoczęte.</p>
+			</div>
 		</section>
 	</article>
 </BaseLayout>
@@ -96,6 +132,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		color: var(--color-muted);
 		line-height: 1.75;
 	}
+	.section-copy { min-width: 0; }
+	.section-copy > p + p { margin-top: 1.15rem; }
+	section { scroll-margin-top: 2rem; }
+	a { text-decoration-color: var(--color-accent); text-underline-offset: 0.2em; }
+	a:hover { color: var(--color-accent); }
+	.roles { margin-block: 1.5rem; }
+	.roles div { padding-block: 0.9rem; border-bottom: 1px solid var(--color-line); }
+	.roles dt { margin-bottom: 0.3rem; color: var(--color-ink); font-size: 0.78rem; font-weight: 700; }
+	.roles dd { margin: 0; color: var(--color-muted); font-size: 0.9rem; line-height: 1.7; }
+	.state { display: block; margin-bottom: 0.25rem; color: var(--color-accent); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 
 	@media (max-width: 42rem) {
 		section {

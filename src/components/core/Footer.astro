@@ -1,31 +1,70 @@
 <footer class="site-footer">
 	<div class="container site-footer__inner">
-		<span>Studio wiedzy</span>
-		<span>© {new Date().getFullYear()} Redactoria</span>
+		<div class="site-footer__brand">
+			<a class="brand" href="/">Redactoria<span aria-hidden="true">.</span></a>
+			<p>Wiedza z historią.<br />Przestrzeń do dalszej nauki.</p>
+			<small>© {new Date().getFullYear()} Redactoria</small>
+		</div>
+		<nav aria-label="Stopka — wiedza">
+			<h2>Wiedza</h2>
+			<ul>
+				<li><a href="/artykuly/">Artykuły</a></li>
+				<li><a href="/tematy/">Tematy</a></li>
+				<li><a href="/artykuly/tablice-w-php/">Tablice w PHP</a></li>
+			</ul>
+		</nav>
+		<nav aria-label="Stopka — projekt">
+			<h2>Projekt</h2>
+			<ul>
+				<li><a href="/o-projekcie/">O projekcie</a></li>
+				<li><a href="/mapa-strony/">Mapa strony</a></li>
+				<li><a href="/artykuly/start-redactoria-edu/">Start Redactoria EDU</a></li>
+				<li><a href="/o-projekcie/#proces">Jak pracujemy</a></li>
+			</ul>
+		</nav>
+		<nav aria-label="Stopka — odkrywaj">
+			<h2>Odkrywaj</h2>
+			<ul>
+				<li><a href="/tematy/php/">PHP</a></li>
+				<li><a href="/tematy/redactoria/">Redactoria</a></li>
+				<li><a href="/o-projekcie/#kierunek">Kierunek rozwoju</a></li>
+			</ul>
+		</nav>
+		<div class="site-footer__edu">
+			<h2>Redactoria EDU</h2>
+			<p>Pilot bazy wiedzy o programowaniu, web developmencie i AI.</p>
+			<a href="/artykuly/start-redactoria-edu/">Poznaj ideę <span aria-hidden="true">↗</span></a>
+		</div>
 	</div>
 </footer>
 
 <style>
 	.site-footer {
-		padding-block: 1.5rem 2rem;
-		color: var(--color-subtle);
-		font-size: 0.68rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
+		padding-block: clamp(3rem, 6vw, 5rem) 2.5rem;
+		border-top: 1px solid var(--color-line);
+		background: var(--color-surface);
+		color: var(--color-muted);
+		font-size: 0.82rem;
+		line-height: 1.7;
 	}
 
 	.site-footer__inner {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
+		display: grid;
+		grid-template-columns: 1.35fr repeat(3, 1fr) 1.25fr;
+		gap: 2rem;
 	}
-
-	@media (max-width: 35rem) {
-		.site-footer__inner {
-			align-items: flex-start;
-			flex-direction: column;
-		}
-	}
+	.site-footer__inner > * { min-width: 0; }
+	.brand { color: var(--color-ink); font-family: var(--font-serif); font-size: 1.9rem; letter-spacing: -0.06em; line-height: 1; text-decoration: none; }
+	.brand span { color: var(--color-accent); }
+	p { margin: 1rem 0; }
+	small { color: var(--color-subtle); font-size: 0.72rem; }
+	h2 { margin: 0 0 1rem; color: var(--color-ink); font-size: 0.66rem; font-weight: 750; letter-spacing: 0.13em; text-transform: uppercase; }
+	ul { margin: 0; padding: 0; list-style: none; }
+	li + li { margin-top: 0.55rem; }
+	a { text-decoration: none; text-underline-offset: 0.25em; }
+	a:hover { color: var(--color-accent); text-decoration: underline; }
+	.site-footer__edu p { margin-top: 0; }
+	.site-footer__edu > a { color: var(--color-accent); }
+	@media (max-width: 64rem) { .site-footer__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; } }
+	@media (max-width: 36rem) { .site-footer__inner { grid-template-columns: 1fr; gap: 2rem; } }
 </style>

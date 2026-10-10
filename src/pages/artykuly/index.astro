@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getPublishedArticles } from '../../lib/content';
 
 const articles = await getPublishedArticles();
+const countLabel = articles.length === 1 ? 'materiał' : new Intl.PluralRules('pl-PL').select(articles.length) === 'few' ? 'materiały' : 'materiałów';
 ---
 
 <BaseLayout
@@ -14,7 +15,7 @@ const articles = await getPublishedArticles();
 		<header class="listing__header">
 			<p>Biblioteka wiedzy</p>
 			<h1>Artykuły</h1>
-			<span>{articles.length} {articles.length === 1 ? 'materiał' : 'materiałów'}</span>
+			<span>{articles.length} {countLabel}</span>
 		</header>
 
 		<div class="listing__grid">
@@ -31,12 +32,13 @@ const articles = await getPublishedArticles();
 	.listing__header {
 		display: grid;
 		margin-bottom: clamp(3rem, 6vw, 5rem);
-		grid-template-columns: 1fr auto;
+		grid-template-columns: minmax(0, 1fr) auto;
 		align-items: end;
 		gap: 0.5rem 2rem;
 	}
 
 	.listing__header p {
+		grid-column: 1 / -1;
 		margin: 0;
 		color: var(--color-accent);
 		font-size: 0.7rem;
@@ -67,4 +69,5 @@ const articles = await getPublishedArticles();
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 		gap: 1.25rem;
 	}
+	@media (max-width: 36rem) { .listing__header { grid-template-columns: 1fr; gap: 1rem; } }
 </style>

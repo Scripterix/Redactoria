@@ -8,6 +8,7 @@
 			<a href="/artykuly/">Artykuły</a>
 			<a href="/tematy/">Tematy</a>
 			<a href="/o-projekcie/">O projekcie</a>
+			<a href="/szukaj/">Szukaj <span aria-hidden="true">↗</span></a>
 		</nav>
 		<span class="pilot"><span class="pilot__dot" aria-hidden="true"></span> EDU · Pilot</span>
 	</div>
@@ -89,6 +90,8 @@
 	}
 
 	@media (max-width: 35rem) {
+		nav { gap: 0.6rem; }
+		nav a { font-size: 0.62rem; letter-spacing: 0.05em; white-space: nowrap; }
 		.brand__name,
 		.pilot {
 			display: none;

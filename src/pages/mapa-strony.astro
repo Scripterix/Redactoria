@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedArticles, getPublishedTopics } from '../lib/content';
+import { STATIC_SITE_PAGES } from '../lib/site-map';
+
+const [articles, topics] = await Promise.all([getPublishedArticles(), getPublishedTopics()]);
+---
+
+<BaseLayout
+	title="Mapa strony"
+	description="Publiczne strony, tematy i artykuły dostępne w Redactoria EDU."
+>
+	<section class="site-map container">
+		<header class="site-map__header">
+			<p>Nawigacja</p>
+			<h1>Mapa strony</h1>
+			<span>{STATIC_SITE_PAGES.length + topics.length + articles.length} publicznych tras</span>
+		</header>
+
+		<section class="site-map__section" aria-labelledby="pages-heading">
+			<h2 id="pages-heading">Strony</h2>
+			<div class="site-map__list">
+				{STATIC_SITE_PAGES.map(page => (
+					<a class="site-map__link" href={page.href}>
+						<span><strong>{page.title}</strong><small>{page.description}</small></span>
+						<span class="site-map__arrow" aria-hidden="true">↗</span>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<section class="site-map__section" aria-labelledby="topics-heading">
+			<h2 id="topics-heading">Tematy</h2>
+			<div class="site-map__list">
+				{topics.map(topic => (
+					<a class="site-map__link" href={`/tematy/${topic.data.slug}/`}>
+						<span><strong>{topic.data.name}</strong><small>{topic.data.description}</small></span>
+						<span class="site-map__arrow" aria-hidden="true">↗</span>
+					</a>
+				))}
+			</div>
+		</section>
+
+		<section class="site-map__section" aria-labelledby="articles-heading">
+			<h2 id="articles-heading">Artykuły</h2>
+			<div class="site-map__list">
+				{articles.map(article => (
+					<a class="site-map__link" href={`/artykuly/${article.data.slug}/`}>
+						<span><strong>{article.data.title}</strong><small>{article.data.description}</small></span>
+						<span class="site-map__arrow" aria-hidden="true">↗</span>
+					</a>
+				))}
+			</div>
+		</section>
+	</section>
+</BaseLayout>
+
+<style>
+	.site-map { padding-block: clamp(4rem, 9vw, 8rem); }
+	.site-map__header { display: grid; margin-bottom: clamp(3rem, 7vw, 6rem); grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 0.6rem 2rem; }
+	.site-map__header p { grid-column: 1 / -1; margin: 0; color: var(--color-accent); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.15em; text-transform: uppercase; }
+	.site-map__header h1 { margin: 0; font-family: var(--font-serif); font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 400; letter-spacing: -0.055em; line-height: 0.9; }
+	.site-map__header > span { color: var(--color-subtle); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+	.site-map__section + .site-map__section { margin-top: clamp(3.5rem, 7vw, 6rem); }
+	.site-map__section h2 { margin: 0 0 1rem; color: var(--color-subtle); font-size: 0.68rem; font-weight: 750; letter-spacing: 0.13em; text-transform: uppercase; }
+	.site-map__list { border-top: 1px solid var(--color-line); }
+	.site-map__link { display: grid; padding-block: clamp(1.25rem, 3vw, 2rem); border-bottom: 1px solid var(--color-line); grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; text-decoration: none; }
+	.site-map__link strong, .site-map__link small { display: block; }
+	.site-map__link strong { font-family: var(--font-serif); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; line-height: 1.2; }
+	.site-map__link small { max-width: 48rem; margin-top: 0.4rem; color: var(--color-muted); font-size: 0.85rem; line-height: 1.6; }
+	.site-map__arrow { color: var(--color-accent); font-size: 1.6rem; transition: transform 160ms ease; }
+	.site-map__link:hover strong { color: var(--color-accent); }
+	.site-map__link:hover .site-map__arrow { transform: translate(0.2rem, -0.2rem); }
+	@media (max-width: 36rem) { .site-map__header { grid-template-columns: 1fr; gap: 1rem; } }
+	@media (prefers-reduced-motion: reduce) { .site-map__arrow { transition: none; } }
+</style>

@@ -10,9 +10,10 @@ interface Props {
 	canonical?: string | URL;
 	image?: string;
 	type?: 'website' | 'article';
+	searchable?: boolean;
 }
 
-const { title, description, canonical, image, type = 'website' } = Astro.props;
+const { title, description, canonical, image, type = 'website', searchable = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,13 +23,15 @@ const { title, description, canonical, image, type = 'website' } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
 		<SeoHead {title} {description} {canonical} {image} {type} />
+		{searchable && <meta data-pagefind-meta="title[content]" content={title} />}
 	</head>
-	<body>
+	<body id="top">
 		<a class="skip-link" href="#main-content">Przejdź do treści</a>
 		<Header />
-		<main id="main-content">
+		<main id="main-content" data-pagefind-body={searchable ? true : undefined}>
 			<slot />
 		</main>
 		<Footer />

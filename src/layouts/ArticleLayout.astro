@@ -1,14 +1,18 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import ArticleMeta from '../components/content/ArticleMeta.astro';
+import CodeCopy from '../components/content/CodeCopy.astro';
 import SourceList from '../components/content/SourceList.astro';
 import BaseLayout from './BaseLayout.astro';
 
 interface Props {
 	article: CollectionEntry<'articles'>;
+	headings?: { depth: number; slug: string; text: string }[];
 }
 
-const { article } = Astro.props;
+const { article, headings = [] } = Astro.props;
+const sections = headings.filter(heading => heading.depth === 2);
+const hasCodeBlocks = /(^|\n) {0,3}(?:```|~~~)/.test(article.body ?? '');
 ---
 
 <BaseLayout title={article.data.title} description={article.data.description} type="article">
@@ -21,11 +25,26 @@ const { article } = Astro.props;
 		</header>
 
 		<div class="article__body">
+			{sections.length > 4 && <details class="article__toc">
+				<summary>W tym artykule <span>{sections.length} sekcji</span></summary>
+				<nav aria-label="Spis treści artykułu"><ol>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ol></nav>
+			</details>}
+			<div class="article__content">
 			<slot />
+			</div>
 			<SourceList sources={article.data.sources} />
+			<nav class="article__continue" aria-label="Dalsza lektura">
+				<span>Dalej w Redactorii</span>
+				<a href="/artykuly/">Wszystkie artykuły →</a>
+				<a href="/artykuly/start-redactoria-edu/">Start Redactoria EDU →</a>
+				<a href="/o-projekcie/">Jak powstają materiały →</a>
+			</nav>
+			<a class="back-to-top" href="#top"><span aria-hidden="true">↑</span> Wróć na górę</a>
 		</div>
 	</article>
 </BaseLayout>
+
+{hasCodeBlocks && <CodeCopy />}
 
 <style>
 	.article {
@@ -72,14 +91,47 @@ const { article } = Astro.props;
 		font-family: var(--font-serif);
 		font-size: clamp(1.05rem, 1.5vw, 1.16rem);
 		line-height: 1.8;
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
+	/* The immutable candidate already has its title; the layout supplies the visible H1. */
+	.article__content > :global(h1:first-child) { display: none; }
+	.article__toc { margin-bottom: 3rem; padding: 1rem 1.25rem; border: 1px solid var(--color-line); border-radius: var(--radius-small); font-family: var(--font-sans); font-size: 0.85rem; }
+	.article__toc summary { cursor: pointer; font-weight: 600; }
+	.article__toc summary span { margin-left: 0.6rem; color: var(--color-muted); font-size: 0.7rem; font-weight: 400; }
+	.article__toc ol { margin-bottom: 0.5rem; }
 
 	.article__body :global(h2) {
 		margin: 2.5em 0 0.7em;
 		font-size: clamp(1.75rem, 4vw, 2.35rem);
 		font-weight: 400;
 		line-height: 1.15;
+		scroll-margin-top: 2rem;
 	}
+	.article__body :global(h3) { margin: 2em 0 0.75em; font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+	.article__body :global(li) { margin-block: 0.5rem; padding-left: 0.3rem; }
+	.article__body :global(ul), .article__body :global(ol) { padding-left: 1.4rem; }
+	.article__body :global(li::marker) { color: var(--color-accent); }
+	.article__body :global(blockquote) { margin: 2rem 0; padding: 0.25rem 1.5rem; border-left: 2px solid var(--color-accent); }
+	.article__body :global(hr) { margin-block: 3rem; border: 0; border-top: 1px solid var(--color-line); }
+	.article__body :global(code) { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.83em; }
+	.article__body :global(:not(pre) > code) { padding: 0.15em 0.3em; border-radius: 0.2rem; background: var(--color-accent-soft); box-decoration-break: clone; }
+	.article__body :global(pre) { max-width: 100%; margin: 1.5rem 0 2rem; padding: 1.4rem 1.5rem; overflow-x: auto; border: 1px solid var(--color-line); border-radius: var(--radius-small); font-size: 0.95rem; line-height: 1.65; tab-size: 4; overflow-wrap: normal; }
+	.article__body :global(pre code) { padding: 0; background: none; }
+	.article__content :global(.code-block) { max-width: 100%; margin: 1.5rem 0 2rem; }
+	.article__content :global(.code-block pre) { margin: 0; }
+	.article__content :global(.code-copy) { display: block; margin: 0 0 0.45rem auto; padding: 0.35rem 0.7rem; border: 1px solid var(--color-line); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-muted); cursor: pointer; font-family: var(--font-sans); font-size: 0.68rem; font-weight: 750; letter-spacing: 0.08em; line-height: 1.4; text-transform: uppercase; }
+	.article__content :global(.code-copy:hover) { border-color: var(--color-accent); color: var(--color-accent); }
+	.article__body :global(table) { display: block; width: max-content; max-width: 100%; margin: 2rem 0; overflow-x: auto; overflow-wrap: normal; border-collapse: collapse; font-family: var(--font-sans); font-size: 0.8rem; line-height: 1.5; }
+	.article__body :global(th), .article__body :global(td) { min-width: 6rem; padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--color-line); text-align: left; }
+	.article__body :global(th) { background: var(--color-secondary-soft); font-weight: 700; white-space: nowrap; }
+	.article__body :global(tbody tr:nth-child(even)) { background: var(--color-surface); }
+	.article__continue { display: flex; flex-direction: column; align-items: flex-start; gap: 0.7rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); font-family: var(--font-sans); font-size: 0.85rem; }
+	.article__continue span { margin-bottom: 0.3rem; color: var(--color-subtle); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+	.back-to-top { display: inline-flex; margin-top: 2.5rem; align-items: center; gap: 0.55rem; color: var(--color-muted); font-family: var(--font-sans); font-size: 0.75rem; font-weight: 750; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
+	.back-to-top span { color: var(--color-accent); font-size: 1.1rem; }
+	.back-to-top:hover { color: var(--color-accent); }
+	@media (max-width: 36rem) { .article__body :global(pre) { padding: 1rem; font-size: 0.85rem; } h1 { font-size: clamp(2.6rem, 10vw, 3.5rem); line-height: 1.04; } }
 
 	.article__body :global(p) {
 		color: #46423a;

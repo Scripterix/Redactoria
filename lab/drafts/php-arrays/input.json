@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "topic": "php-arrays",
+  "sourceDecision": "lab/decisions/php-arrays-merge-proposal.json",
+  "researchApproval": "lab/decisions/php-arrays-research-approval.json",
+  "researchPacket": "lab/research/php-arrays/research.json",
+  "runtimeVerification": "lab/research/php-arrays/runtime-verification.json",
+  "targetPhpVersions": [
+    "8.4",
+    "8.5"
+  ],
+  "audience": "beginner → early intermediate PHP developer",
+  "requiredCoverage": [
+    "array-model",
+    "creation",
+    "numeric-and-string-keys",
+    "key-conversion",
+    "read-write",
+    "missing-and-null",
+    "isset",
+    "array-key-exists",
+    "coalesce",
+    "nested-arrays",
+    "adding-removing",
+    "foreach",
+    "merging",
+    "sorting",
+    "array-map",
+    "array-filter",
+    "array-reduce",
+    "array-count-values",
+    "practical-examples",
+    "common-mistakes",
+    "extract-caution",
+    "exercises"
+  ]
+}
+

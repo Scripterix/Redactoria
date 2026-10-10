@@ -35,6 +35,8 @@ const publishedDate = article.data.created.toLocaleDateString('pl-PL', {
 		border-radius: var(--radius-medium);
 		background: rgba(252, 250, 244, 0.7);
 		flex-direction: column;
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.card__meta {
@@ -46,6 +48,7 @@ const publishedDate = article.data.created.toLocaleDateString('pl-PL', {
 		font-weight: 700;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
+		flex-wrap: wrap;
 	}
 
 	h2 {

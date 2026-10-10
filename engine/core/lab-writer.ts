@@ -23,7 +23,7 @@ export async function writeLabArtifacts(projectDirectory: string, sourceDirector
 	const lab = join(project, 'lab');
 	const targets: { path: string; contents: string }[] = [];
 	for (const [path, contents] of Object.entries(artifacts)) {
-		if (!/^(cartography|reports|decisions|research)\/[a-zA-Z0-9/_-]+\.(json|md)$/.test(path) || path.split('/').includes('..')) throw new Error('Invalid LAB artifact path.');
+		if (!/^(cartography|reports|decisions|research|drafts|reviews)\/[a-zA-Z0-9/_-]+\.(json|md)$/.test(path) || path.split('/').includes('..')) throw new Error('Invalid LAB artifact path.');
 		const target = await canonicalTarget(resolve(lab, path));
 		if (!isWithin(lab, target) || isWithin(source, target)) throw new Error('Output must remain inside LAB and outside SOURCE/CONTENT.');
 		if (path.startsWith('decisions/') && path.endsWith('.json')) {

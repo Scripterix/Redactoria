@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 
+# local visual-review captures (not website content)
+.playwright-mcp/
+
 # dependencies
 node_modules/
 

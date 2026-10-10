@@ -10,9 +10,11 @@ SOURCE (read-only) → LAB (work in progress) → human review → content/ (pub
 ## Katalogi
 
 - `inventory/` — deterministyczny katalog źródłowego korpusu.
-- `candidates/` — kandydaci wskazani do dalszej analizy.
+- `candidates/` — kandydaci do analizy oraz technicznie sprawdzone publication candidates;
+  nie są zaakceptowaną publikacją ani publicznym CONTENT.
 - `research/` — źródła, ustalenia i sprawdzenie aktualności technicznej.
 - `drafts/` — robocze wersje nowych lub modernizowanych materiałów.
+- `reviews/` — oceny Critica dotyczące dokładnego draftu; PASS nie jest akceptacją publikacji.
 - `decisions/` — propozycje decyzji redakcyjnych i wyniki review; `proposed` nie
   oznacza akceptacji ani zgody na publikację.
 - `cartography/` — walidowana mapa wiedzy, propozycje redakcyjne i audytowe wejścia
@@ -69,3 +71,20 @@ na artykuł ani publikację. Kolejny approval gate zapisał
 [weryfikacji PHP 8.4.26 / 8.5.11](research/php-arrays/runtime-verification.md).
 Pierwotny pakiet i evidence nie zostały przepisane; runtime addendum jest obowiązkowe
 dla Writera. `nextStep: writer` oznacza kolejny etap, nie jego automatyczne rozpoczęcie.
+
+## Writer / Critic
+
+Osobno zlecony Milestone 4 utworzył [draft PHP arrays](drafts/php-arrays/article.md)
+i [review Critica](reviews/php-arrays/critic-review.md). Pierwszy pilot wykonał jeden
+przebieg każdego modułu; structured JSON pozostaje kontraktem, Markdown jego projekcją. Weryfikacja
+17 nowych bloków na obu docelowych runtime’ach jest oddzielnym evidence, nie zmianą
+Research Packet. Pierwszy REVISE został zachowany. Osobna decyzja człowieka zezwoliła
+na trzy małe poprawki prozy i jeden nowy pełny review: PASS. Kod i wcześniejsze wyniki
+PHP nie zmieniły się; nie wykonano nowego generowania ani automatycznej pętli.
+
+## First publication candidate
+
+Milestone 5 utworzył [kandydata PHP arrays](candidates/php-arrays/article.md), dokładną
+kopię wersji ocenionej jako PASS, z walidowanymi metadanymi i hashami w LAB.
+`publication-candidate` oznacza **AWAIT HUMAN PUBLICATION DECISION**, nie
+`approved-for-publication` ani `published`. Brak przeniesienia do CONTENT lub deployu.

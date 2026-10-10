@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "local-publication-test",
+  "approvedAt": "2026-10-09T18:31:32Z",
+  "authorization": "Explicit human request: execute the PHP Arrays local publication test through the formal Promotion Gate CLI, then STOP for localhost visual review. No commit, push or Cloudflare deployment authorized.",
+  "candidateRef": "lab/candidates/php-arrays/article.json",
+  "candidateHash": "b2c91233ed119451850ba018802fb10b6d0ecc9a747788ff8e30b2f2421f62e2",
+  "articleHash": "713d31d87e8bdfb1b41b237299ce30d397dafcec56f220eaa13bad5d003b3068",
+  "criticReviewRef": "lab/reviews/php-arrays/critic-review.json",
+  "criticReviewHash": "65364a4ec6a5f1a113b033afde2d77b2a221ab15e73b989f02a228a9f58d7d79",
+  "destination": "content/articles/tablice-w-php.md",
+  "metadata": {
+    "title": "Tablice w PHP — od podstaw do sortowania i mapowania",
+    "description": "Przewodnik po tablicach w PHP 8.4–8.5: klucze, odczyt i zmiana danych, iterowanie, łączenie, sortowanie oraz mapowanie i filtrowanie. Z przykładami i ćwiczeniami.",
+    "slug": "tablice-w-php",
+    "status": "published",
+    "created": "2026-10-09",
+    "updated": "2026-10-09",
+    "domain": "programming",
+    "topic": "php",
+    "author": { "type": "ai-assisted", "name": "Redactoria" },
+    "sources": [
+      { "title": "PHP Manual — Arrays", "url": "https://www.php.net/manual/en/language.types.array.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — array_key_exists", "url": "https://www.php.net/manual/en/function.array-key-exists.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — Sorting Arrays", "url": "https://www.php.net/manual/en/array.sorting.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — array_map", "url": "https://www.php.net/manual/en/function.array-map.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — extract", "url": "https://www.php.net/manual/en/function.extract.php", "publisher": "PHP Documentation" },
+      { "title": "PHP 8.5 — Deprecated Features", "url": "https://www.php.net/manual/en/migration85.deprecated.php", "publisher": "PHP Documentation" }
+    ],
+    "origin": { "type": "wordpress-export", "source_id": "1324", "original_url": null, "original_date": null, "original_author": null },
+    "review": { "status": "approved", "reviewer": "human — local publication test", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-09", "update_priority": "normal" },
+    "redactoria": { "decision": "merge", "modernization": "major" }
+  },
+  "remotePublicationApproved": false
+}

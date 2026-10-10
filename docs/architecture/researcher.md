@@ -134,9 +134,13 @@ and SOURCE/CONTENT write protection. No external calls in tests.
 The PHP packet contains 25 verified facts, 4 corrections, 1 dated framing note,
 3 ambiguities, 3 security notes and 8 code findings. Its historical unresolved items
 are not rewritten: the separate supplement resolves target-runtime execution;
-future final standalone Writer snippets/form handler do not yet exist and require
-later validation. Research Packet is approved by human with `nextStep: writer`,
-including the required runtime addendum. Milestone 4 is NEXT, not started; neither
-this decision nor MERGE approval authorizes publication.
+standalone Writer snippets did not yet exist at research closeout. The later Writer
+pilot executed all 17 examples on both target runtimes; a full form handler remains
+outside scope. Research Packet is approved by human with `nextStep: writer`,
+including the required runtime addendum. A separately authorized Milestone 4 then
+ran Writer/Critic once each; its pilot initially stopped at REVISE. A later
+human-authorized prose correction and one full second Critic pass returned PASS;
+an exact publication candidate is now in LAB. Neither the research/MERGE decision
+nor Critic review authorizes publication. See [Writer/Critic](writer-critic.md).
 ADR 0003 covers the agent contract; its evidence section is clarified, not duplicated
 in a new milestone-specific ADR.

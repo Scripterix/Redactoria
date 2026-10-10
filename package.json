@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
@@ -15,14 +15,19 @@
     "check": "astro check",
     "inventory": "node --experimental-strip-types scripts/legacy/scan.ts",
     "cartographer": "node --experimental-strip-types scripts/cartographer.ts",
-    "researcher": "node --experimental-strip-types scripts/researcher.ts"
+    "researcher": "node --experimental-strip-types scripts/researcher.ts",
+    "writer": "node --experimental-strip-types scripts/writer.ts",
+    "critic": "node --experimental-strip-types scripts/critic.ts",
+    "promote": "node --experimental-strip-types scripts/promote.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.3.8"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/node": "^22.20.5",
+    "pagefind": "1.5.2",
     "typescript": "^6.0.3",
     "vitest": "^5.0.3",
     "yaml": "^2.9.1",

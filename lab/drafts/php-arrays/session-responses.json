@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "Codex current session — Writer 0.1",
+    "description": "Explicit single draft composition in this session using approved research, mandatory runtime addendum and both sources. Recorded import, not an external API."
+  },
+  "writer": {
+    "requestHash": "c6dd70d5bf4de93690360654df4861bd9a4067db489fe809136748b05de1f6c3",
+    "response": {
+      "action": "DRAFT",
+      "title": "Tablice w PHP — od podstaw do sortowania i mapowania",
+      "targetPhpVersions": [
+        "8.4",
+        "8.5"
+      ],
+      "sections": [
+        {
+          "id": "model",
+          "heading": "Tablica to mapa kluczy i wartości",
+          "body": "Tablica w PHP jest uporządkowaną mapą: każda wartość ma klucz, a elementy mają kolejność, w której można po nich przejść. Klucz wskazuje jedną wartość. Ponowne przypisanie pod ten sam klucz zastępuje tę wartość, nie dokłada drugiej obok niej. Wartością może być również inna tablica.\n\n„Tablica indeksowana” i „tablica asocjacyjna” opisują sposoby użycia tego samego typu `array`. W pierwszym przypadku zwykle pracujemy z kluczami całkowitymi, w drugim z nazwami, np. `name`. Jedna tablica może łączyć oba rodzaje kluczy i wartości różnych typów.\n\nW tej lekcji przejdziemy od tworzenia i odczytu danych przez operacje zmieniające tablicę do sortowania, mapowania, filtrowania i agregacji. Ważne będą trzy pytania: czy operacja zmienia wejście, co zwraca oraz co robi z kluczami. To pomaga wybrać właściwe narzędzie bez zapamiętywania samych nazw funkcji.\n\nKażdy blok PHP uruchamiaj osobno jako plik, np. `php example.php`. Każdy sam inicjalizuje dane; nie wymaga wykonania poprzedniego bloku.",
+          "coverage": [
+            "array-model"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "array-model"
+            },
+            {
+              "kind": "finding",
+              "id": "correct-multiple-values"
+            },
+            {
+              "kind": "finding",
+              "id": "hidden-state"
+            }
+          ],
+          "examples": []
+        },
+        {
+          "id": "creation",
+          "heading": "Tworzenie tablic: lista i nazwane pola",
+          "body": "Zapis `[]` jest krótką składnią tworzenia tablicy. Zapis `array(...)` również jest poprawny; w tej lekcji stosujemy spójnie krótszą postać. Pusta tablica to `[]`.\n\nW prostej liście utworzonej bez jawnych kluczy kolejne elementy dostają klucze `0`, `1`, `2`. Nie jest to reguła dla każdej tablicy z kluczami liczbowymi: klucze można nadawać samodzielnie, zaczynać od innej liczby i pozostawiać luki.\n\nW zapisie `klucz => wartość` lewa strona identyfikuje element, prawa jest jego zawartością. Nazwane klucze ułatwiają opis danych osoby czy konfiguracji. Dostęp `$person['name']` oznacza odczyt konkretnego pola, a nie elementu o pozycji nazwanej „name”.",
+          "coverage": [
+            "creation",
+            "numeric-and-string-keys"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "array-syntax"
+            },
+            {
+              "kind": "finding",
+              "id": "array-model"
+            },
+            {
+              "kind": "finding",
+              "id": "correct-zero-index"
+            }
+          ],
+          "examples": [
+            {
+              "id": "create",
+              "purpose": "Lista owoców i dane osoby",
+              "code": "<?php\n$fruits = ['apple', 'pear', 'plum'];\n$person = ['name' => 'Jan', 'age' => 30];\necho $fruits[0], \"\\n\";\necho $person['name'], \"\\n\";",
+              "expectedOutput": "apple\nJan\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "keys",
+          "heading": "Konwersja kluczy i kolizje",
+          "body": "Klucze tablic PHP są typu `int` lub `string`. Niektóre wartości użyte jako klucze są konwertowane. String `\"0\"` oznacza ten sam klucz co liczba `0`. String `\"8\"` zostaje kluczem całkowitym `8`, ale `\"08\"` pozostaje stringiem. Wartość `true` staje się kluczem `1`, a `false` kluczem `0`.\n\nPoniżej drugie przypisanie zastępuje wartość pierwszego. Jeśli klucz jest identyfikatorem, zastanów się, czy jego zapis ma znaczenie: `\"08\"` i `8` nie wskazują tu tego samego elementu.\n\nNie stosuj ułamków jako praktycznych kluczy. Niejawna konwersja np. `1.5` do `1` z utratą precyzji jest deprecated od PHP 8.1. Również `null` jest konwertowany do klucza pustego stringa `\"\"`, ale w PHP 8.5 użycie `null` jako offsetu tablicy emituje `E_DEPRECATED`. Od tej wersji deprecated jest też `null` jako argument klucza w `array_key_exists()`. Jeżeli naprawdę potrzebujesz pustego klucza, podaj jawnie `\"\"`. **Wartość `null` pod zwykłym kluczem pozostaje dozwolona** — to inna sytuacja.\n\nDopisywanie przez `[]` zależy od historii kluczy całkowitych, nie od liczby elementów. Po przypisaniu klucza `10` i usunięciu go przez `unset()` kolejne dopisanie otrzyma klucz `11`. Szczególny przypadek: po nadaniu pustej tablicy klucza `-5` dopisanie otrzyma `-4` w docelowych 8.4–8.5. Nie przenoś tutaj starego wyniku `0` z PHP 8.2.",
+          "coverage": [
+            "key-conversion"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "key-casts"
+            },
+            {
+              "kind": "finding",
+              "id": "float-key-deprecation"
+            },
+            {
+              "kind": "finding",
+              "id": "append-key-history"
+            },
+            {
+              "kind": "finding",
+              "id": "negative-append-version"
+            },
+            {
+              "kind": "finding",
+              "id": "key-exists-null-argument"
+            },
+            {
+              "kind": "addendum",
+              "id": "php85-null-offset"
+            }
+          ],
+          "examples": [
+            {
+              "id": "key-collision",
+              "purpose": "Ten sam klucz zapisany jako int i string",
+              "code": "<?php\n$data = [0 => 'first'];\n$data['0'] = 'replacement';\n$data['08'] = 'padded';\n$data[8] = 'integer';\nforeach ($data as $key => $value) {\n    echo $key, '=', $value, \"\\n\";\n}",
+              "expectedOutput": "0=replacement\n08=padded\n8=integer\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "read-write",
+          "heading": "Odczyt, zapis i dopisywanie",
+          "body": "Odczyt korzysta z nawiasów kwadratowych z konkretnym kluczem. Przypisanie pod istniejący klucz zmienia jego wartość, a przypisanie pod nowy dodaje element. Zapis bez klucza, `$numbers[] = 60`, dopisuje wartość pod automatycznie dobranym kluczem całkowitym.\n\nKlucz `10` nie oznacza dziesiątego elementu. Poniższa tablica ma tylko cztery elementy, choć jednym z kluczy jest `10`. Funkcja `count()` zwraca liczbę elementów, a nie największy klucz ani następny wolny indeks. Nie wyznaczaj następnego klucza za pomocą `count($numbers)`; do zwykłego dopisywania użyj `[]`.\n\nTakie rozróżnienie przyda się po usuwaniu i filtrowaniu, kiedy numeracja może mieć luki. Klucz jest identyfikatorem elementu; pozycja jest jego miejscem w aktualnej kolejności.",
+          "coverage": [
+            "read-write"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "array-model"
+            },
+            {
+              "kind": "finding",
+              "id": "append-key-history"
+            },
+            {
+              "kind": "finding",
+              "id": "correct-zero-index"
+            }
+          ],
+          "examples": [
+            {
+              "id": "access",
+              "purpose": "Zmiana wartości i jawny klucz",
+              "code": "<?php\n$numbers = [10, 20];\n$numbers[1] = 25;\n$numbers[] = 30;\n$numbers[10] = 100;\necho $numbers[1], \"\\n\";\necho count($numbers), \"\\n\";\nforeach ($numbers as $key => $value) {\n    echo $key, '=', $value, \"\\n\";\n}",
+              "expectedOutput": "25\n4\n0=10\n1=25\n2=30\n10=100\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "presence",
+          "heading": "Brak klucza, null i wartość domyślna",
+          "body": "Bezpośredni odczyt brakującego klucza w PHP 8 zgłasza `E_WARNING` i daje `null`. Stare określenie „Notice: Undefined index” nie opisuje docelowego zakresu. Zwykle najpierw określ, czego chcesz się dowiedzieć:\n\n- `array_key_exists('name', $data)`: czy klucz istnieje, nawet gdy jego wartością jest `null`;\n- `isset($data['name'])`: czy element istnieje i ma wartość różną od `null`;\n- `$data['name'] ?? 'fallback'`: wartość, jeśli jest ustawiona i nie jest `null`; w przeciwnym razie fallback, bez ostrzeżenia o braku klucza.\n\nTe narzędzia nie są zamienne. Jeżeli `null` ma znaczyć „pole jest obecne, ale nie ma wartości”, test samego `isset()` nie odróżni go od braku pola.\n\n| Stan elementu | isset | array_key_exists | Wynik ?? 'fallback' | empty |\n| --- | --- | --- | --- | --- |\n| brak klucza | false | false | 'fallback' | true |\n| null | false | true | 'fallback' | true |\n| 0 | true | true | 0 | true |\n| \"0\" | true | true | \"0\" | true |\n| false | true | true | false | true |\n| \"\" | true | true | \"\" | true |\n\n`empty()` sprawdza brak lub wartość falsey, nie samo istnienie klucza. Może więc odrzucić string `\"0\"`, który w twoim formularzu jest prawidłową wartością. Operator `??` zachowuje `0`, `false` i pusty string — nie zastępuje ich fallbackiem.\n\nSzukanie wartości jest jeszcze innym pytaniem. Jeśli używasz `in_array()` do danych mieszanych, parametr `true` włącza porównanie także typów; nie myl szukania wartości ze sprawdzaniem klucza.",
+          "coverage": [
+            "missing-and-null",
+            "isset",
+            "array-key-exists",
+            "coalesce"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "presence-comparison"
+            },
+            {
+              "kind": "finding",
+              "id": "empty-is-not-existence"
+            },
+            {
+              "kind": "finding",
+              "id": "missing-warning"
+            },
+            {
+              "kind": "finding",
+              "id": "membership-types"
+            }
+          ],
+          "examples": [
+            {
+              "id": "presence",
+              "purpose": "Istniejący null a brak pola",
+              "code": "<?php\n$data = ['name' => null, 'count' => 0];\necho isset($data['name']) ? 'true' : 'false', \"\\n\";\necho array_key_exists('name', $data) ? 'true' : 'false', \"\\n\";\necho $data['name'] ?? 'fallback', \"\\n\";\necho $data['missing'] ?? 'fallback', \"\\n\";\necho $data['count'] ?? 99, \"\\n\";",
+              "expectedOutput": "false\ntrue\nfallback\nfallback\n0\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "nested",
+          "heading": "Tablice zagnieżdżone i różne typy danych",
+          "body": "Wartość elementu może być kolejną tablicą. Nie powstaje wtedy drugi rodzaj typu: przechodzisz przez następne poziomy tej samej struktury. Najpierw wybierasz użytkownika, potem pole, następnie element listy umiejętności.\n\nDane można mieszać: osoba może mieć nazwę jako string, wiek jako int, znacznik aktywności jako bool oraz umiejętności jako tablicę. Czytelne klucze pomagają pokazać, co reprezentują wartości. Mała macierz liczb działa analogicznie: `$matrix[1][2]` odczytuje element drugiego wiersza pod kluczem `2`.\n\nW poniższym przykładzie strukturę znamy, więc bezpośredni odczyt jest uzasadniony. Przy danych z zewnątrz samo założenie, że istnieją wszystkie poziomy i mają oczekiwane typy, nie wystarcza.",
+          "coverage": [
+            "nested-arrays"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "array-model"
+            },
+            {
+              "kind": "finding",
+              "id": "post-type-boundary"
+            }
+          ],
+          "examples": [
+            {
+              "id": "nested",
+              "purpose": "Odczyt z listy użytkowników",
+              "code": "<?php\n$users = [\n    ['name' => 'Jan', 'skills' => ['PHP', 'JavaScript']],\n    ['name' => 'Anna', 'skills' => ['Python']],\n];\n$matrix = [[1, 2, 3], [4, 5, 6]];\necho $users[0]['name'], \"\\n\";\necho $users[1]['skills'][0], \"\\n\";\necho $matrix[1][2], \"\\n\";",
+              "expectedOutput": "Jan\nPython\n6\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "mutations",
+          "heading": "Dodawanie i usuwanie: obserwuj stan po operacji",
+          "body": "Operacje mutujące zmieniają przekazaną tablicę. Ich wynik zwracany nie musi być nową tablicą:\n\n- `[]` dopisuje element;\n- `array_push()` dopisuje wartości na końcu;\n- `array_unshift()` dodaje na początku i reindeksuje klucze liczbowe od zera, zachowując klucze nazwane;\n- `array_pop()` usuwa ostatnią wartość i ją zwraca;\n- `array_shift()` usuwa pierwszą wartość i ją zwraca; reindeksuje klucze liczbowe;\n- `unset($a[$key])` usuwa wskazany klucz bez automatycznego reindeksowania pozostałych;\n- `array_splice()` operuje na pozycji w kolejności tablicy, zwraca usunięty wycinek i reindeksuje klucze liczbowe.\n\n`array_push()` oraz `array_unshift()` zwracają liczbę elementów po operacji, nie tablicę. Dla pustej tablicy `array_pop()` i `array_shift()` zwracają `null`.\n\nW drugim przykładzie po `shift()` mamy `[2, 3, 4]`. Usunięcie klucza `1` zostawia pary `0 => 2`, `2 => 4`. Następnie `splice(..., 1, 2)` zaczyna od drugiej pozycji, nie od klucza `1`: usuwa dostępny element `4`. Pokazanie pośrednich stanów jest ważniejsze niż długa lista nazw funkcji.",
+          "coverage": [
+            "adding-removing"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "mutating-operations"
+            },
+            {
+              "kind": "finding",
+              "id": "removal-operations"
+            },
+            {
+              "kind": "finding",
+              "id": "code-removal-sequence"
+            }
+          ],
+          "examples": [
+            {
+              "id": "add",
+              "purpose": "Dodawanie na koniec i początek",
+              "code": "<?php\n$fruits = ['apple', 'pear'];\n$fruits[] = 'plum';\n$afterPush = array_push($fruits, 'cherry');\n$afterUnshift = array_unshift($fruits, 'peach');\necho $afterPush, '/', $afterUnshift, \"\\n\";\nforeach ($fruits as $key => $value) {\n    echo $key, '=', $value, \"\\n\";\n}",
+              "expectedOutput": "4/5\n0=peach\n1=apple\n2=pear\n3=plum\n4=cherry\n",
+              "expectedDiagnostics": []
+            },
+            {
+              "id": "remove",
+              "purpose": "Klucz w unset a pozycja w splice",
+              "code": "<?php\n$numbers = [1, 2, 3, 4, 5];\necho array_pop($numbers), \"\\n\";\necho array_shift($numbers), \"\\n\";\nprint_r($numbers);\nunset($numbers[1]);\nprint_r($numbers);\n$removed = array_splice($numbers, 1, 2);\nprint_r($removed);\nprint_r($numbers);",
+              "expectedOutput": "5\n1\nArray\n(\n    [0] => 2\n    [1] => 3\n    [2] => 4\n)\nArray\n(\n    [0] => 2\n    [2] => 4\n)\nArray\n(\n    [0] => 4\n)\nArray\n(\n    [0] => 2\n)\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "iteration",
+          "heading": "foreach: wartości albo pary klucz–wartość",
+          "body": "Pętla `foreach ($data as $value)` udostępnia kolejne wartości. Wariant `foreach ($data as $key => $value)` udostępnia również rzeczywisty klucz każdego elementu w kolejności iteracji. Nie potrzebujesz ciągłych indeksów.\n\nZwykła pętla jest dobrym pierwszym wyborem, gdy chcesz wypisać dane lub wykonać kilka różnych operacji dla każdego elementu. Gdy potrzebujesz tablicy przekształconych wartości, później pokażemy `array_map()`; gdy wybierasz część elementów — `array_filter()`.\n\nUwaga na wariant z referencją `&$value`: może zmieniać wartości wejścia, a po zakończeniu pętli zmienna nadal może odnosić się do ostatniego elementu. Trzeba świadomie przerwać tę referencję przez `unset($value)`. W przykładach podstawowych pozostajemy przy pętli po wartości.",
+          "coverage": [
+            "foreach"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "foreach-contract"
+            }
+          ],
+          "examples": [
+            {
+              "id": "foreach",
+              "purpose": "Iteracja bez ciągłej numeracji",
+              "code": "<?php\n$data = ['x' => 1, 4 => 2];\nforeach ($data as $key => $value) {\n    echo $key, ': ', $value, \"\\n\";\n}\nforeach ($data as $value) {\n    echo $value, \"\\n\";\n}",
+              "expectedOutput": "x: 1\n4: 2\n1\n2\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "merge",
+          "heading": "Łączenie: merge, suma tablic i replace",
+          "body": "Wybór funkcji zależy od tego, czy potrzebujesz zebrać wszystkie wartości, zachować lewy element przy kolizji czy zastąpić go prawym. Wszystkie poniższe operacje tworzą wynik bez zmiany tablicy `$left`.\n\n| Operacja | Kolidujący klucz tekstowy | Kolidujący klucz całkowity | Klucze całkowite w wyniku |\n| --- | --- | --- | --- |\n| array_merge | prawa wartość wygrywa | obie wartości dopisywane | reindeksowane od 0 |\n| + | lewa wartość zostaje | lewa wartość zostaje | zachowane |\n| array_replace | prawa wartość wygrywa | prawa wartość wygrywa | zachowane |\n\nOperator `+` jest sumą tablic, nie dopisaniem wszystkich ich wartości. Dla kluczy już obecnych po lewej pomija prawy element. `array_replace()` zastępuje wartości pod kolidującymi kluczami i nie jest operacją rekurencyjną: zagnieżdżonego łączenia nie omawiamy tutaj.\n\nW `array_merge()` nie przenoś na klucze liczbowe reguły „prawa wartość nadpisuje lewą”. Odróżnienie liczb od nazw jest najważniejszą częścią tego kontrastu.",
+          "coverage": [
+            "merging"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "merge-comparison"
+            },
+            {
+              "kind": "finding",
+              "id": "code-merge-and-sort"
+            }
+          ],
+          "examples": [
+            {
+              "id": "merge",
+              "purpose": "Trzy operacje na tej samej parze danych",
+              "code": "<?php\n$left = [2 => 'left-number', 'x' => 'left'];\n$right = [2 => 'right-number', 'x' => 'right', 7 => 'seven'];\nprint_r(array_merge($left, $right));\nprint_r($left + $right);\nprint_r(array_replace($left, $right));",
+              "expectedOutput": "Array\n(\n    [0] => left-number\n    [x] => right\n    [1] => right-number\n    [2] => seven\n)\nArray\n(\n    [2] => left-number\n    [x] => left\n    [7] => seven\n)\nArray\n(\n    [2] => right-number\n    [x] => right\n    [7] => seven\n)\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "sorting",
+          "heading": "Sortowanie: po czym, w którą stronę i z jakimi kluczami",
+          "body": "Sześć podstawowych funkcji sortowania zmienia wejściową tablicę. Zwracają `true`, a nie posortowaną tablicę. Po wywołaniu odczytaj zmienioną zmienną; przypisanie `$sorted = sort($data)` nie zapisze w `$sorted` tablicy.\n\n| Funkcja | Porządek | Kierunek | Powiązanie klucz–wartość | Mutuje | Zwraca |\n| --- | --- | --- | --- | --- | --- |\n| sort | wartości | rosnąco | nie; nowe klucze 0..n-1 | tak | true |\n| rsort | wartości | malejąco | nie; nowe klucze 0..n-1 | tak | true |\n| asort | wartości | rosnąco | zachowane | tak | true |\n| arsort | wartości | malejąco | zachowane | tak | true |\n| ksort | klucze | rosnąco | zachowane | tak | true |\n| krsort | klucze | malejąco | zachowane | tak | true |\n\nJeżeli nazwa identyfikuje obiekt, np. produkt, `asort()` może być właściwsze niż `sort()`, bo zachowuje to powiązanie. W przykładzie kopiujemy dane przed każdą operacją, aby wynik jednego sortowania nie stał się ukrytym wejściem następnego.\n\nUżywamy jednorodnych liczb. Ten przykład nie jest gwarancją polskiego porządku alfabetycznego ani instrukcją porównywania mieszanych typów. Takie przypadki wymagają świadomego doboru zasad porównania; nie rozszerzamy tu zakresu lekcji.",
+          "coverage": [
+            "sorting"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "sorting-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "sorting-version-caution"
+            },
+            {
+              "kind": "finding",
+              "id": "hidden-state"
+            }
+          ],
+          "examples": [
+            {
+              "id": "sorting",
+              "purpose": "sort zmienia klucze, asort je zachowuje",
+              "code": "<?php\n$scores = ['a' => 3, 'b' => 2, 'c' => 1];\n$values = $scores;\nsort($values);\nprint_r($values);\n$associated = $scores;\nasort($associated);\nforeach ($associated as $key => $value) {\n    echo $key, '=', $value, \"\\n\";\n}",
+              "expectedOutput": "Array\n(\n    [0] => 1\n    [1] => 2\n    [2] => 3\n)\nc=1\nb=2\na=3\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "map",
+          "heading": "array_map: przekształć każdą wartość",
+          "body": "Gdy dla każdego elementu chcesz obliczyć nową wartość, użyj `array_map()`. Callback, czyli przekazana funkcja, dostaje wartość wejściową i zwraca jej przekształcenie. W tym przykładzie mnoży liczbę przez dwa.\n\nFunkcja zwraca tablicę wyników, nie zmienia `$numbers`. Przy dokładnie jednej tablicy wejściowej zachowuje klucze — także tekstowe. Przy wielu tablicach wejściowych wynik otrzymuje kolejne klucze całkowite. To nie jest ta sama reguła w obu wariantach.\n\nMapowanie nie służy do usuwania elementów na podstawie warunku. Zwrócenie `false` z callbacku da wartość `false` w wynikowej tablicy; do wyboru podzbioru służy filtr.",
+          "coverage": [
+            "array-map"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "map-contract"
+            }
+          ],
+          "examples": [
+            {
+              "id": "map",
+              "purpose": "Podwojenie liczb",
+              "code": "<?php\n$numbers = [1, 2, 3, 4, 5];\n$doubled = array_map(fn($number) => $number * 2, $numbers);\nprint_r($doubled);\necho $numbers[0], \"\\n\";",
+              "expectedOutput": "Array\n(\n    [0] => 2\n    [1] => 4\n    [2] => 6\n    [3] => 8\n    [4] => 10\n)\n1\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "filter",
+          "heading": "array_filter: wybierz część danych",
+          "body": "Callback filtra odpowiada na pytanie, czy element ma zostać. Poniżej zostają liczby parzyste, ponieważ reszta z dzielenia przez dwa jest równa zeru. Funkcja zwraca nową tablicę wybranych elementów i zachowuje ich klucze.\n\nDlatego wynik zawiera klucze `1` i `3`, a nie `0` i `1`. To prawidłowe zachowanie, nie błąd eksportu lub drukowania. Jeżeli potrzebujesz potem listy o ciągłej numeracji, można użyć `array_values()`; nie zakładaj jednak, że filtr wykona to automatycznie.\n\nBez callbacku `array_filter()` usuwa wartości uznawane za puste/falsey, w tym `0` i `\"0\"`. Jeżeli takie dane są wartościowe, przekaż własny warunek. Filtrowanie „pustych” i sprawdzanie obecności klucza rozwiązują różne problemy.",
+          "coverage": [
+            "array-filter"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "filter-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "empty-is-not-existence"
+            }
+          ],
+          "examples": [
+            {
+              "id": "filter",
+              "purpose": "Parzyste liczby z zachowaniem kluczy",
+              "code": "<?php\n$numbers = [1, 2, 3, 4, 5];\n$even = array_filter($numbers, fn($number) => $number % 2 === 0);\nprint_r($even);",
+              "expectedOutput": "Array\n(\n    [1] => 2\n    [3] => 4\n)\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "aggregation",
+          "heading": "Redukcja i zliczanie to różne operacje",
+          "body": "W `array_reduce()` callback otrzymuje akumulator i bieżący element. Zwrócona wartość staje się akumulatorem następnego kroku. Przy sumowaniu startujemy od `0`, następnie dodajemy każdą liczbę. Wynik to jedna wartość, a nie tablica.\n\nWartość początkowa ma znaczenie także dla pustej tablicy: z początkowym `0` redukcja zwróci `0`; bez podanego initial zwróci `null`. Dobierz ją do operacji, którą wykonujesz.\n\n`array_count_values()` rozwiązuje inne zadanie: zlicza wystąpienia wartości i zwraca mapę `wartość => liczność`. Przyjmuje do zliczania wartości `int` i `string`. Elementy innych typów powodują `E_WARNING` i nie są zliczane. Nie używaj tej funkcji jako ogólnego licznika dowolnych obiektów, tablic czy booli.\n\nSuma `15` poniżej jest wynikiem redukcji. Częstości owoców `2/2/1` są wynikiem zliczania; każdy przykład ma własne dane i cel.",
+          "coverage": [
+            "array-reduce",
+            "array-count-values"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "reduce-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "count-values-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "correct-reduce-placement"
+            }
+          ],
+          "examples": [
+            {
+              "id": "reduce",
+              "purpose": "Sumowanie z początkowym akumulatorem",
+              "code": "<?php\n$numbers = [1, 2, 3, 4, 5];\n$total = array_reduce($numbers, fn($carry, $number) => $carry + $number, 0);\necho $total, \"\\n\";\necho array_reduce([], fn($carry, $number) => $carry + $number, 0), \"\\n\";",
+              "expectedOutput": "15\n0\n",
+              "expectedDiagnostics": []
+            },
+            {
+              "id": "counts",
+              "purpose": "Liczenie powtarzających się owoców",
+              "code": "<?php\n$products = ['apple', 'pear', 'apple', 'cherry', 'pear'];\nprint_r(array_count_values($products));",
+              "expectedOutput": "Array\n(\n    [apple] => 2\n    [pear] => 2\n    [cherry] => 1\n)\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "practice",
+          "heading": "Praktyka: konfiguracja, menu i dane podobne do formularza",
+          "body": "Zagnieżdżona konfiguracja przechowuje grupy opcji pod nazwami. Dane menu można reprezentować jako listę elementów, a ich podmenu jako kolejną listę. Nie trzeba od razu budować rekurencyjnego generatora HTML, aby przećwiczyć odczyt.\n\nOpcjonalny klucz `active` odczytujemy przez `?? false`. Odróżnia to brak tego pola od bezwarunkowego założenia, że każdy element je ma. Poniższe dane są lokalnymi stałymi; przykład wypisuje tekst do CLI, nie renderuje HTML.\n\nPrzy formularzu jest dodatkowa granica: `$_POST['email'] ?? ''` zapewnia fallback, ale nie gwarantuje stringa. Wejście formularza może mieć kształt tablicy. Zanim walidujesz email przez `filter_var(..., FILTER_VALIDATE_EMAIL)`, sprawdź typ przez `is_string()`.\n\nDrugi przykład używa lokalnego wejścia o kształcie pola formularza, nie obsługuje HTTP i niczego nie wysyła. Walidacja email to nie autoryzacja ani uniwersalne „oczyszczanie”. Przy wyświetlaniu dynamicznego tekstu w HTML stosuje się osobny escaping, np. `htmlspecialchars(..., ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`; nie jest on ochroną dowolnego URL, SQL lub JavaScript. Pełny handler formularza pozostaje poza tą lekcją.",
+          "coverage": [
+            "practical-examples"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "array-model"
+            },
+            {
+              "kind": "finding",
+              "id": "code-menu-missing-active"
+            },
+            {
+              "kind": "finding",
+              "id": "post-and-validation"
+            },
+            {
+              "kind": "finding",
+              "id": "post-type-boundary"
+            },
+            {
+              "kind": "finding",
+              "id": "html-output-boundary"
+            },
+            {
+              "kind": "finding",
+              "id": "form-skeleton"
+            }
+          ],
+          "examples": [
+            {
+              "id": "config-menu",
+              "purpose": "Zagnieżdżona opcja i opcjonalny stan menu",
+              "code": "<?php\n$config = ['cache' => ['enabled' => true, 'ttl' => 3600]];\n$menu = [\n    ['title' => 'Start', 'active' => true],\n    ['title' => 'Docs'],\n];\necho $config['cache']['ttl'], \"\\n\";\nforeach ($menu as $item) {\n    $active = $item['active'] ?? false;\n    echo $item['title'], ': ', $active ? 'active' : 'inactive', \"\\n\";\n}",
+              "expectedOutput": "3600\nStart: active\nDocs: inactive\n",
+              "expectedDiagnostics": []
+            },
+            {
+              "id": "input-shape",
+              "purpose": "Najpierw sprawdź typ, potem waliduj",
+              "code": "<?php\n$input = ['email' => ['unexpected']];\n$email = $input['email'] ?? '';\nif (!is_string($email)) {\n    echo \"Odrzucono nieoczekiwany typ\\n\";\n} elseif (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {\n    echo \"Nieprawidlowy email\\n\";\n} else {\n    echo \"Email przeszedl walidacje\\n\";\n}",
+              "expectedOutput": "Odrzucono nieoczekiwany typ\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "mistakes",
+          "heading": "Typowe błędy i ostrożność przy extract",
+          "body": "Przy pracy z tablicami najczęściej gubimy kontrakt operacji, a nie jej składnię:\n\n- nie traktuj klucza jako pozycji ani `count()` jako następnego indeksu;\n- nie myl brakującego pola z polem o wartości `null`;\n- nie sprawdzaj istnienia klucza przez `empty()`, jeśli `0` lub `\"0\"` mają znaczenie;\n- nie przypisuj wyniku `sort()` jako rzekomej posortowanej tablicy;\n- po `array_filter()` nie zakładaj ciągłych kluczy;\n- po `array_merge()` nie zakładaj zachowania numerycznych identyfikatorów;\n- nie przenoś stanu zmiennych między przykładami, które mają działać samodzielnie.\n\n`extract()` tworzy zmienne na podstawie kluczy tablicy w bieżącym zakresie. Domyślny tryb `EXTR_OVERWRITE` może nadpisać zmienne już obecne. Poniższa demonstracja używa wyłącznie zaufanych stałych danych i pokazuje ryzyko, **nie wzorzec zalecanej architektury**. Zwykły dostęp przez `$data['name']` wyraźniej pokazuje pochodzenie wartości.\n\nNie stosuj `extract()` do nieufnych danych, w szczególności pól formularza. Filtrowanie wartości nie usuwa problemu importowania dowolnych nazw zmiennych ani potrzeby osobnego zabezpieczenia wyjścia.",
+          "coverage": [
+            "common-mistakes",
+            "extract-caution"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "extract-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "unsafe-extract-post"
+            },
+            {
+              "kind": "finding",
+              "id": "code-extract-overwrite"
+            },
+            {
+              "kind": "finding",
+              "id": "sorting-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "filter-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "merge-comparison"
+            }
+          ],
+          "examples": [
+            {
+              "id": "extract",
+              "purpose": "Demonstracja nadpisania, nie wzorzec dla formularza",
+              "code": "<?php\n$name = 'original';\n$trusted = ['name' => 'overwritten'];\n$count = extract($trusted);\necho $name, \"\\n\";\necho $count, \"\\n\";",
+              "expectedOutput": "overwritten\n1\n",
+              "expectedDiagnostics": []
+            }
+          ]
+        },
+        {
+          "id": "exercises",
+          "heading": "Ćwiczenia i dalsza nauka",
+          "body": "1. Utwórz listę trzech owoców. Usuń środkowy klucz przez `unset()` i wypisz pary przez `foreach`. Wyjaśnij, dlaczego pozostałe klucze nie tworzą teraz ciągłej numeracji.\n2. Przygotuj tablicę z nazwanym kluczem o wartości `null` oraz drugą bez tego klucza. Porównaj `isset()`, `array_key_exists()` i `??`. Który test odróżnia te dwa przypadki?\n3. Powtórz porównanie `array_merge()`, `+` i `array_replace()` na danych z kluczem liczbowym oraz tekstowym. Zanim uruchomisz kod, zapisz przewidywane klucze i wartości.\n4. Posortuj tę samą kopię nazwanych ocen przez `sort()` i `asort()`. W którym wyniku pozostaje informacja, do kogo należała ocena?\n5. Z listy liczb wybierz parzyste, podwój je i oblicz sumę z początkowym `0`. Osobno zlicz owoce. Opisz, dlaczego redukcja i zliczanie zwracają różne rodzaje wyniku.\n6. Rozszerz przykład typu pola email o zwykły string oraz nieprawidłowy adres. Sprawdź wszystkie trzy ścieżki, bez dodawania obsługi serwera.\n\nRozwiązania ćwiczeń nie zostały wykonane jako część przykładów tej lekcji — są zadaniem do samodzielnego sprawdzenia. Jako dalszą naukę wybierz świadome kontrakty danych: oczekiwane klucze, typy wartości, reguły ich walidacji i znaczenie kolejności.\n\nDokumentacyjne źródła użytych reguł: [model tablic](https://www.php.net/manual/en/language.types.array.php), [sprawdzanie obecności](https://www.php.net/manual/en/function.array-key-exists.php), [sortowanie](https://www.php.net/manual/en/array.sorting.php), [funkcje tablicowe](https://www.php.net/manual/en/function.array-map.php), [ostrożność przy extract](https://www.php.net/manual/en/function.extract.php) oraz [deprecacje PHP 8.5](https://www.php.net/manual/en/migration85.deprecated.php).",
+          "coverage": [
+            "exercises"
+          ],
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "array-model"
+            },
+            {
+              "kind": "finding",
+              "id": "removal-operations"
+            },
+            {
+              "kind": "finding",
+              "id": "presence-comparison"
+            },
+            {
+              "kind": "finding",
+              "id": "merge-comparison"
+            },
+            {
+              "kind": "finding",
+              "id": "sorting-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "map-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "filter-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "reduce-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "count-values-contract"
+            },
+            {
+              "kind": "finding",
+              "id": "post-type-boundary"
+            }
+          ],
+          "examples": []
+        }
+      ],
+      "limitations": [
+        "Zakres dotyczy PHP 8.4–8.5; wcześniejsze wersje wspomniano tylko przy różnicach uzasadnionych zatwierdzonym researchem.",
+        "To draft, nie zatwierdzona publikacja. Deklarowane wyniki nowych bloków wymagają osobnej rzeczywistej weryfikacji; jej zapis, jeśli powstanie, znajduje się w code-execution.json.",
+        "Przykłady lokalnych danych nie są pełnym handlerem formularza ani audytem bezpieczeństwa aplikacji; zaawansowane sortowanie mieszanych typów i locale pozostaje poza zakresem."
+      ]
+    }
+  }
+}
+

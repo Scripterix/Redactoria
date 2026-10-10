@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Szukaj" description="Wyszukaj artykuły, tematy i strony Redactorii EDU." searchable={false}>
+	<section class="container search-page" aria-labelledby="search-heading">
+		<header class="search-page__header">
+			<p>Odkrywaj wiedzę</p>
+			<h1 id="search-heading">Szukaj</h1>
+		</header>
+		<form data-search-form role="search" class="search-form">
+			<label for="search-query">Czego chcesz się dowiedzieć?</label>
+			<div class="search-form__controls">
+				<input id="search-query" name="q" type="search" placeholder="Na przykład: tablice PHP" maxlength="200" aria-describedby="search-status" disabled />
+				<button type="submit" disabled>Szukaj <span aria-hidden="true">↗</span></button>
+			</div>
+		</form>
+		<p id="search-status" data-search-status role="status" aria-live="polite">Wpisz hasło, aby przeszukać Redactorię.</p>
+		<noscript><p>Wyszukiwanie wymaga JavaScriptu. Materiały znajdziesz także w <a href="/mapa-strony/">mapie strony</a>.</p></noscript>
+		<ul data-search-results class="search-results" aria-label="Wyniki wyszukiwania" aria-busy="false"></ul>
+	</section>
+</BaseLayout>
+
+<script src="../scripts/search.ts"></script>
+
+<style>
+	.search-page { max-width: 58rem; padding-block: clamp(3.5rem, 8vw, 7rem); }
+	.search-page__header { margin-bottom: 3rem; }
+	.search-page__header p { color: var(--color-accent); font-size: 0.7rem; font-weight: 750; letter-spacing: 0.15em; text-transform: uppercase; }
+	.search-page__header h1 { margin: 0; font-family: var(--font-serif); font-size: clamp(3.5rem, 9vw, 7rem); font-weight: 400; letter-spacing: -0.055em; line-height: 1; }
+	.search-form label { display: block; margin-bottom: 0.8rem; font-size: 0.85rem; font-weight: 650; }
+	.search-form__controls { display: flex; gap: 0.75rem; }
+	.search-form input { min-width: 0; width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--color-line); border-radius: 0; background: var(--color-surface); color: var(--color-ink); }
+	.search-form input::placeholder { color: var(--color-muted); }
+	.search-form button { display: inline-flex; padding: 0.9rem 1.2rem; border: 1px solid var(--color-ink); align-items: center; gap: 0.75rem; background: var(--color-ink); color: var(--color-canvas); cursor: pointer; }
+	.search-form button span { color: var(--color-accent); }
+	.search-form button:disabled { cursor: default; opacity: 0.6; }
+	#search-status { margin-block: 1.25rem 2rem; color: var(--color-muted); font-size: 0.85rem; }
+	.search-results { margin: 0; padding: 0; list-style: none; }
+	.search-results :global(li) { padding-block: 1.5rem; border-top: 1px solid var(--color-line); overflow-wrap: anywhere; }
+	.search-results :global(h2) { margin: 0; font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; line-height: 1.25; }
+	.search-results :global(a) { text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+	.search-results :global(a:hover) { color: var(--color-accent); }
+	.search-results :global(p) { margin-block: 0.75rem; color: var(--color-muted); line-height: 1.7; }
+	.search-results :global(small) { color: var(--color-subtle); font-size: 0.75rem; }
+	@media (max-width: 36rem) { .search-form__controls { flex-direction: column; } .search-form button { justify-content: space-between; } }
+</style>
