@@ -36,7 +36,7 @@ which ideas are still exploratory.
   URLs, responsive review, quality results and the next human gate.
 - [Website utilities](plans/completed/009-reading-time-and-website-utilities.md) —
   reading time, official sitemap XML, HTML map, back-to-top and progressive code copy.
-- [Search/public checkpoint](plans/active/010-pagefind-search-public-checkpoint.md) —
+- [Search/public checkpoint](plans/completed/010-pagefind-search-public-checkpoint.md) —
   Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.

@@ -70,14 +70,16 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   map, no-JS back-to-top and per-block progressive `Copy code` with no framework.
 - Search 0.1: official pinned Pagefind CLI after Astro build, nine public indexed
   pages, lightweight lazy UI; approved public article note cleanup.
+- Public checkpoint `56cc7a7`: full current gate, push master, Cloudflare success
+  and direct public search/route/article-utility verification.
 
 ## NOW
 
 - Milestone 4 Writer/Critic DONE; final Critic verdict PASS after an authorized correction.
 - Milestone 5 Publication Candidate DONE; original artifact in LAB is preserved.
 - Separate human approval: local-publication-test; exact PHP Arrays promoted to CONTENT.
-- PUBLIC CHECKPOINT AUTHORIZED — current local quality/production-preview gate PASS;
-  commit/push and Cloudflare verification are in scope, without another YES.
+- PUBLIC CHECKPOINT VERIFIED — local gate/preview PASS, commit/push and Cloudflare
+  public verification complete. Plan 010 completed; STOP before B1.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
@@ -85,7 +87,6 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- Finish the authorized public checkpoint and STOP after Cloudflare verification.
 - Separate B1: select/rank ten candidates using the new educational/testability/cost
   criteria. Historical Cartographer TOP 10 is not this ranking; no article generation.
 - Separate B2: rank #1 only, then assess the pipeline before subsequent batches.

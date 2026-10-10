@@ -1,8 +1,8 @@
 # Active plans
 
-[010: Pagefind Search 0.1 / public checkpoint](010-pagefind-search-public-checkpoint.md)
-is active: local implementation/gates pass; authorized commit/push and Cloudflare
-verification are next. STOP before the separate B1 selection.
+No active implementation plan. [010: Pagefind Search 0.1 / public checkpoint](../completed/010-pagefind-search-public-checkpoint.md)
+is completed: current quality gate, production preview, commit/push and public
+Cloudflare verification pass. STOP before the separate B1 selection.
 
 [009: Reading time and website utilities](../completed/009-reading-time-and-website-utilities.md)
 is completed after its explicit append: reading time, official Astro sitemap XML,

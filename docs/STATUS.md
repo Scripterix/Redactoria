@@ -9,7 +9,7 @@ Stan po Milestone 4/5, formalnej promocji, planie 009 i Search 0.1,
 | Etap | Zakres | Status |
 | --- | --- | --- |
 | Milestone 0 | Astro foundation | DONE |
-| Cloudflare Pages | Publiczne środowisko testowe, 6 stron Astro | DEPLOYMENT SUCCESS |
+| Cloudflare Pages | Publiczny pilot, 10 stron Astro / 9 stron indeksu | DEPLOYMENT SUCCESS |
 | Milestone 0.5 | Project Brain + Tests | DONE |
 | Milestone 1 | Inventory Scanner | DONE |
 | Milestone 2 | Cartographer 0.1 | DONE |
@@ -30,13 +30,15 @@ Stan po Milestone 4/5, formalnej promocji, planie 009 i Search 0.1,
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
-| Current Cloudflare checkpoint | Push and public deployment verification | PENDING |
+| Current Cloudflare checkpoint | `56cc7a7`, push master, public route/search checks | VERIFIED — SUCCESS |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
 
-Stan przekazany przez człowieka: deployment **SUCCESS**, obecne 6 statycznych stron
-Astro dostępne pod [redactoria.pages.dev](https://redactoria.pages.dev/).
+Aktualny checkpoint potwierdzony bezpośrednio: Cloudflare Pages check dla commita
+`56cc7a7` ma **completed / success** (`2026-10-10T17:03:15Z`). Dziesięć statycznych
+stron Astro i polski indeks Pagefind dziewięciu stron działają pod
+[redactoria.pages.dev](https://redactoria.pages.dev/).
 Provider: Cloudflare Pages; repository: `Scripterix/Redactoria`; production branch:
 `master`; build: `npm run build`; output directory: `dist`.
 
@@ -52,8 +54,8 @@ deployu. Pierwszy artykuł wymaga: Writer → Critic → human review → human 
 ma Critic PASS. Nowa jawna zgoda człowieka pozwoliła na test lokalny przez Promotion
 Gate i zapis dokładnej wersji do CONTENT. Kolejna jawna decyzja z 2026-10-10
 autoryzuje commit/push i wynikający z niego deploy po aktualnych test/check/build,
-działającym Pagefind i production preview. Nowy build ma 10 stron; do czasu
-sprawdzenia deploymentu nie deklarujemy aktualizacji publicznego środowiska.
+działającym Pagefind i production preview. Gate przeszedł, commit został pushnięty,
+a nowy publiczny build i jego działanie sprawdzono w przeglądarce.
 
 Według przekazanych logów pierwszy build zakończył się sukcesem na Node `22.16.0`,
 ale `undici@8.11.2` zgłosiło wymaganie Node `>=22.19.0`. Przy kolejnej konfiguracji
@@ -80,7 +82,7 @@ PHP Arrays I + II
 → plan 009: article utilities + official sitemap XML/HTML
 → Search 0.1 + human-authorized public note cleanup
 → 10-page production preview / 9-page Pagefind index
-→ current full gate → authorized Git checkpoint → Cloudflare verification
+→ current full gate PASS → Git checkpoint 56cc7a7 pushed → Cloudflare success verified
 → STOP before separate B1 selection
 ```
 
@@ -217,7 +219,7 @@ publicznym buildem i commit/push po pełnej bieżącej weryfikacji; nie wymaga k
 [Site map](http://localhost:4321/mapa-strony/).
 Production-like preview gotowego buildu: [HOME](http://127.0.0.1:4322/),
 [Search](http://127.0.0.1:4322/szukaj/); zwykły dev nie generuje indeksu Pagefind.
-Po Git checkpointcie sprawdzić Cloudflare i STOP. Dopiero następny osobny etap
+Git checkpoint i Cloudflare zweryfikowane — STOP. Dopiero następny osobny etap
 B1 wybierze/rankuje 10 kandydatów według nowych kryteriów, bez generowania tekstów.
 Wcześniejsze TOP 10 Cartographera nie zastępuje B1. Publisher i Dispatcher pozostają nierozpoczęte.
 
@@ -247,7 +249,10 @@ Search 0.1 gate, 2026-10-10:
 - Publiczny body PHP po usunięciu dwóch not: SHA-256
   `56f1478d4d581f8483f45bf00dbfffce91079f12c242a18d82ac9fd0db66dc9f`.
   Unit test sprawdza dokładną różnicę względem historycznego Critic-PASS kandydata.
-- Git/Cloudflare: oczekują na zamknięcie bieżącego gate; zgoda człowieka już udzielona.
+- Git/Cloudflare: `56cc7a7` push origin/master PASS; Cloudflare Pages check success.
+  Publiczne kontrole 20/20 route/viewport, 45 linków/kotwic bez błędów; search,
+  reading time, Copy/Copied/reset, back-to-top i sitemap XML/HTML potwierdzone.
+  Pełny wynik: [completed plan 010](plans/completed/010-pagefind-search-public-checkpoint.md).
 
 Previous plan 009 local publication / website gate, 2026-10-10 (historical):
 

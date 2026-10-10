@@ -1,6 +1,6 @@
 # 010 — Pagefind Search 0.1 and public checkpoint
 
-Status: ACTIVE — LOCAL GATE PASS, REMOTE CHECKPOINT NEXT · 2026-10-10
+Status: COMPLETED — PUBLIC CHECKPOINT VERIFIED · 2026-10-10
 
 ## Authorized scope
 
@@ -66,6 +66,23 @@ styling and testing guides.
   or E2E framework was added to the repository.
 - SOURCE/LAB protection: 141/141 files unchanged, with no added/removed protected
   paths. Existing runtime work is preserved and was not extended in this increment.
-- Commit/push and Cloudflare verification pending; explicitly authorized without
-  another YES. Checkpoint includes the existing M4/M5, promotion and 009 work
-  needed to reproduce this current tree, without modifying those runtime artifacts.
+- Commit `56cc7a782ae882a8e4675468640b3c9c89c3db35`:
+  `feat: add static search and finalize public article UX`; push to origin/master
+  succeeded. Checkpoint includes existing M4/M5, promotion and 009 work needed
+  to reproduce the current tree, without extending those runtime artifacts.
+- GitHub Cloudflare Pages check for this exact commit: completed / success,
+  completed at `2026-10-10T17:03:15Z`, deployment
+  `4eada4d0-79dd-48e0-883e-a5383a6d7e43`.
+- Public verification: `https://redactoria.pages.dev/`, PHP Arrays, Start,
+  About, articles/topics, HTML map and `/szukaj/`: 20/20 route/viewport checks
+  (320/1440 px), 45 valid internal targets, no stale publication notes or page
+  overflow. Reading time Start 3 min / PHP 31 min; Copy 34/34 and correct
+  clipboard text/Copied/reset; mouse/keyboard back-to-top y=0.
+- Production Pagefind API returns exactly the nine public indexed routes;
+  `array_key_exists` finds PHP, `Redactoria` finds seven project/topic pages,
+  absent test query returns zero. Real title/excerpt/URL UI verified remotely.
+  Official XML sitemap has ten public URLs, including search; no internal paths.
+- Local visual captures (ignored): `.playwright-mcp/search-production-mobile.png`
+  and `.playwright-mcp/search-cloudflare-desktop.png`.
+- STOP: no B1 run, new article generation, Humanizer, Publisher or Dispatcher.
+  The next separately authorized milestone is B1 selection/ranking only.

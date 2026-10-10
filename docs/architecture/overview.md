@@ -52,7 +52,7 @@ editorial decisions or publish LAB artifacts as articles.
 | --- | --- | --- |
 | Astro Website | IMPLEMENTED | Ten static routes; HTML/XML sitemap, reading time, copy code, long-form code/tables |
 | Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; nine public main-content pages, lazy search API on `/szukaj/` |
-| Cloudflare Pages deployment | LIVE TEST ENVIRONMENT | Human-reported SUCCESS; master → npm run build → dist → redactoria.pages.dev |
+| Cloudflare Pages deployment | VERIFIED PUBLIC PILOT | Exact checkpoint check SUCCESS; ten public pages, Pagefind nine pages; master → npm run build → dist |
 | LAB | IMPLEMENTED | Separated workspace with publication rules |
 | Content Collections | IMPLEMENTED | `articles` and `topics` |
 | Project Brain | IMPLEMENTED | Documentation map and durable project memory |
@@ -84,9 +84,9 @@ specific interactive need.
 The public test environment is [redactoria.pages.dev](https://redactoria.pages.dev/).
 The human-reported successful deployment uses `Scripterix/Redactoria`, production
 branch `master`, Astro, build command `npm run build` and output directory `dist`.
-The last human-reported deployment served six static pages; the new ten-page
-build has passed its local production gate and is authorized for commit/push,
-with current deployment verification pending. Cloudflare is WEBSITE infrastructure, not
+The previous human-reported deployment served six static pages. The new ten-page
+build passed its local production gate, was committed/pushed as `56cc7a7`, and
+has a successful Cloudflare check and direct public verification. Cloudflare is WEBSITE infrastructure, not
 an agent runtime, LAB service or part of the Engine.
 
 Content publication remains human-controlled:
