@@ -8,6 +8,7 @@ import { parsePromotionArguments, PublicationDecisionSchema } from '../../engine
 import { hashBytes } from '../../engine/core/editorial-context.ts';
 import { stableJson } from '../../engine/core/serialization.ts';
 import { inputFixture, textFile, jsonFile } from '../fixtures/editorial.ts';
+import { loadEditorialInput } from '../../scripts/editorial-input.ts';
 
 const candidateRef = 'lab/candidates/php-arrays/article.json';
 const decisionRef = 'lab/decisions/php-arrays-publication.json';
@@ -131,6 +132,36 @@ describe('Promotion Gate — offline, human-approved and local only', () => {
   const metadata = jsonFile(decisionRef).metadata, body = textFile(candidateRef.replace('.json', '.md'));
   expect(renderPromotedArticle(metadata, body)).toBe(renderPromotedArticle(metadata, body));
   expect(PublicationDecisionSchema.parse(jsonFile(decisionRef)).scope).toBe('local-publication-test');
+ });
+});
+
+describe('Promotion Gate — schema 2 public-production', () => {
+ it('promotes the exact B2 candidate and removes only its explicitly approved LAB note', async () => {
+  const project = await mkdtemp(join(tmpdir(), 'redactoria-public-promotion-')); temporary.push(project);
+  const candidate = JSON.parse(await readFile(join(process.cwd(), 'lab/candidates/php-control-flow/article.json'), 'utf8'));
+  const editorial = await loadEditorialInput('php-control-flow');
+  const candidatePath = 'lab/candidates/php-control-flow/article.json';
+  const decisionPath = 'lab/decisions/php-control-flow-publication.json';
+  const paths = new Set([
+   ...editorial.artifacts.map(item => item.path), candidatePath, candidatePath.replace('.json', '.md'),
+   decisionPath, candidate.draftRef, candidate.draftMetadataRef, candidate.criticReviewRef,
+   candidate.revisionRef, 'lab/drafts/php-control-flow/code-execution.json', 'content/topics/php.yaml',
+  ]);
+  for (const path of paths) {
+   await mkdir(dirname(join(project, path)), { recursive: true });
+   await writeFile(join(project, path), await readFile(join(process.cwd(), path)));
+  }
+  await mkdir(join(project, 'content/articles'), { recursive: true });
+  await mkdir(join(project, 'lab/reports'), { recursive: true });
+  const record = await promote({ project, candidate: candidatePath, decision: decisionPath, loadEditorial: async () => editorial });
+  const content = await readFile(join(project, 'content/articles/instrukcje-sterujace-php.md'), 'utf8');
+  const body = content.replace(/^---\r?\n[^]*?\r?\n---\r?\n/, '');
+  const source = await readFile(join(process.cwd(), candidatePath.replace('.json', '.md')), 'utf8');
+  const note = 'Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie zgody B2 oraz rzeczywiste wykonania PHP 8.4 i 8.5. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n';
+  expect(body).toBe(source.replace(note, ''));
+  expect(record).toMatchObject({ schemaVersion: 2, result: 'PROMOTED_PUBLIC', scope: 'public-production',
+   remotePublicationApproved: true, sourceDecisionRef: 'lab/decisions/php-control-flow-rewrite.json' });
+  expect(record.transforms).toEqual(['Content Collection YAML front matter', 'Removed exact human-approved technical LAB/draft note']);
  });
 });
 

@@ -1,4 +1,4 @@
-# Promotion Gate — manual, deterministic, local only
+# Promotion Gate — manual and deterministic
 
 This is an Engine tool, **not** Publisher or a runtime agent. It has no model port,
 network calls, git commands, scheduling or agent invocation. Website rendering does
@@ -8,10 +8,12 @@ not import LAB or Engine.
 npm run promote -- --candidate lab/candidates/<topic>/article.json --decision lab/decisions/<approval>.json
 ```
 
-The separate human decision must explicitly approve `local-publication-test`, bind
+The separate human decision must bind
 the candidate JSON bytes, exact Markdown body and Critic review by SHA-256, and
-specify schema-valid CONTENT metadata/destination. `remotePublicationApproved`
-must be false. The immutable M5 candidate remains pending as a historical artifact;
+specify schema-valid CONTENT metadata/destination. Schema 1 preserves the historical
+`local-publication-test` contract with `remotePublicationApproved: false`. Schema 2
+requires an explicit `public-production` decision with `remotePublicationApproved:
+true`. The immutable candidate remains pending as a historical artifact;
 the new decision is the authority, not a rewrite of that artifact.
 
 Before any write, the gate revalidates the candidate contract, exact current
@@ -21,9 +23,10 @@ the shared Content Collection schema, existing published topic, safe destination
 and slug collision across all existing article statuses. Missing/changed evidence,
 invalid flags, symlinks/junctions and existing destinations/audits stop the run.
 
-The only transformation is YAML front matter. The Markdown body is byte-identical,
-including historical draft notes. A presentation notice explains those notes in
-the local preview; promotion never edits prose or regenerates examples.
+The normal transformation is YAML front matter. A schema-2 human decision may also
+name one exact technical `draft w LAB, nie publikacja` note for deterministic
+removal. The gate rejects a missing, duplicated, or differently worded note and
+never edits other prose or regenerates examples.
 
 Writes are exclusive: one `content/articles/<slug>.md` plus JSON/Markdown audit
 under `lab/reports/<slug>-promotion`. All validation completes first. Write failure
@@ -33,8 +36,9 @@ source identities, research/draft/review/revision provenance, approval reference
 and hashes. The unchanged Content Collection's singular `origin.source_id` records
 the primary source; the complete two-source lineage remains in the LAB audit.
 
-`status: published` in CONTENT means visible to the local Astro collection; it does
-not authorize commit/push or public deployment. Stop for human visual review.
+`status: published` in CONTENT means visible to the Astro collection. Only a
+schema-2 public-production decision authorizes the separately controlled
+commit/push/deploy checkpoint; the gate itself never invokes Git or the network.
 
 Offline tests: `tests/integration/promotion.test.ts`. Run `npm run test`,
 `npm run check`, `npm run build`; then `npm run dev -- --background`.

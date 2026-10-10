@@ -1,0 +1,83 @@
+{
+  "action": "REVIEW",
+  "articleHash": "2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Warunki, porównania skalarne, truthiness, operatory, switch/match i pętle są zgodne z zaakceptowanymi findings; poprawione objaśnienie jawnie ogranicza ścisły guard do dzielnika typu int.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Zachowano edukacyjny rdzeń źródła 1308, usunięto niepoparte analogie i popularność, a ticks oraz include/require pozostają jawnie poza zakresem.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "Wszystkie 16 samodzielnych przykładów mają zgodny hash kodu, stdout, pusty stderr i exit 0 na PHP 8.4.26 oraz 8.5.11; korekta dotyczyła wyłącznie prozy.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Draft pokrywa cały zaakceptowany zakres B2 i wszystkie wymagane obszary; pominięte konstrukcje są opisane jako osobny temat, nie jako przestarzałe.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "Trzynaście sekcji prowadzi od pojedynczej decyzji przez wybór i pętle do break/continue, return i ćwiczenia; match pozostaje krótkim kontrastem.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Poprzedni problem integer-zero-boundary został rozwiązany dokładnym wskazaniem typu int, zachowania 0.0 !== 0 i konieczności dobrania testu do typu danych.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "PHP Arrays pełni rolę prerequisite i dalszego kroku; artykuł nie powiela API tablic, a powtórzone linki mają odrębny kontekst dydaktyczny.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Przykłady używają wyłącznie stałych danych, bez requestów, HTML, eval, shell i plików; warunek dostępu jest jawnie opisany jako demonstracja, nie system autoryzacji.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "Zakres i rzeczywiste wykonania są przypisane do PHP 8.4.26 i 8.5.11, match poprawnie datowany od 8.0, a różnice poza prostymi danymi są jawnie wyłączone.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak marketingu, benchmarków, twierdzeń o popularności pętli i analogii PHP/Python; nie ma nowych twierdzeń wykraczających poza zatwierdzone evidence.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "1b5ac3962c969e7f8e29cca9e4267de8ea4adcae73e200e57b46c50ee144889c",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "current-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "8834345c51e9fdc4812ad010df272f62f70d20828050bef4296764a3d5ee50d1"
+  },
+  "draftMetadataHash": "b0d79a043abbf8ff3dffa0ee93ff0d4ec6d7995c37840d9d9bb23f792a4173cd",
+  "draftRef": "lab/drafts/php-control-flow/article.md",
+  "issues": [],
+  "limitations": [
+    "Funkcjonalny drugi Critic działa w tej samej sesji/modelu co wcześniejsze role; nie jest niezależnym providerem ani blind review.",
+    "Walidacja kontraktu i hashy nie jest dowodem prawdziwości każdego zdania poza dostarczonym evidence i wykonaniami.",
+    "Wykonania obejmują 16 samodzielnych przykładów na dwóch dokładnych runtime, nie wszystkie dane, wersje PHP, SAPI ani warianty ćwiczeń.",
+    "PASS oznacza gotowość do human review i utworzenia kandydata w LAB w granicach B2; nie zatwierdza CONTENT, promocji ani publikacji."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/php-control-flow-research-acceptance.json",
+  "researchPacket": "lab/research/php-control-flow/research.json",
+  "schemaVersion": 1,
+  "summary": "Pełny drugi review poprawionego draftu zakończył się PASS. Wymagane doprecyzowanie granicy int 0 kontra float 0.0 jest obecne i nie zmienia poprawnego przykładu ani jego wyniku. Wszystkie pozostałe twierdzenia pozostają zgodne z zaakceptowanym researchem, a 16 samodzielnych programów ma kompletne wykonania PASS na PHP 8.4.26 i 8.5.11. Tekst jest gotowy do human review, ale nie uzyskuje zgody na CONTENT ani publikację.",
+  "topic": "php-control-flow",
+  "verdict": "PASS"
+}

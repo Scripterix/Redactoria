@@ -2,13 +2,13 @@ import { z } from 'zod';
 import type { LanguageModel, StructuredRequest } from '../../core/language-model.ts';
 import { hashJson } from '../../core/serialization.ts';
 import { hashBytes, modelContext } from '../../core/editorial-context.ts';
-import { DraftSchema, WriterAnalysisSchema } from './contract.ts';
+import { DraftSchema, WriterAnalysisSchema, SingleWriterAnalysisSchema } from './contract.ts';
 import { validateWriterInput, validateWriterAnalysis, validateDraft } from './validation.ts';
 import { renderArticle, wordCount } from './report.ts';
 export function prepareWriterRequest(raw: unknown, prompt: string) {
  const basis = validateWriterInput(raw);
  const request: StructuredRequest = { phase: 'writer', instructions: prompt,
-  context: modelContext(basis), jsonSchema: z.toJSONSchema(WriterAnalysisSchema) };
+  context: modelContext(basis), jsonSchema: z.toJSONSchema(basis.decision.action === 'MERGE' ? WriterAnalysisSchema : SingleWriterAnalysisSchema) };
  return { basis, request };
 }
 export async function runWriter(raw: unknown, prompt: string, model: LanguageModel) {

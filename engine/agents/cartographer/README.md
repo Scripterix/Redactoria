@@ -9,6 +9,12 @@ editorial opportunities; it does not write articles or execute its proposals.
 - Focused branch: exactly two complete articles, MERGE-only analysis and grounded
   outline (`focused-merge.ts`), with JSON-derived report and proposed-only decision
   (`focused-merge-report.ts`). No repeated full-corpus analysis or article writing.
+- B1 branch: bounded full shortlist, eight pilot-specific ordinal criteria, exact
+  evidence, deterministic ten-place ranking and report (`pilot-selection.ts`).
+  Separate hash-bound session import; no research, article writing or publication.
+- B2 focused-article branch: exactly one B1-selected full source, grounded
+  KEEP/UPDATE/REWRITE assessment and outline (`focused-article.ts`). It cannot emit
+  MERGE, read another rank or authorize research/publication.
 - Policies: read inventory/selected SOURCE; analysis and LAB output only (`policies.ts`).
 - Prompt: stable role and evidence instructions (`prompt.md`); context supplied by code.
 - Tools: one injected `LanguageModel` and bounded `SourceReader`; no publication,

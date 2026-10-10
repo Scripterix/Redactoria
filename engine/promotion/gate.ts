@@ -6,7 +6,7 @@ import { editorialBasis, hashBytes, type EditorialInput } from '../core/editoria
 import { hashJson, stableJson } from '../core/serialization.ts';
 import { validateCriticReview } from '../agents/critic/validation.ts';
 import { topicSchema } from '../../src/lib/content-schema.ts';
-import { CandidateRef, ContentMetadataSchema, DecisionRef, PublicationCandidateSchema, PublicationDecisionSchema } from './contract.ts';
+import { AnyPublicationCandidateSchema, AnyPublicationDecisionSchema, CandidateRef, ContentMetadataSchema, DecisionRef } from './contract.ts';
 
 /** No model, agents, git or deploy. Every read and write is narrowly scoped. */
 export async function promote(options: {
@@ -36,9 +36,10 @@ export async function promote(options: {
   return readFile(file, 'utf8');
  }
  const candidateText = await text(options.candidate);
- const candidate = PublicationCandidateSchema.parse(JSON.parse(candidateText));
+ const candidate = AnyPublicationCandidateSchema.parse(JSON.parse(candidateText));
  const decisionText = await text(options.decision);
- const decision = PublicationDecisionSchema.parse(JSON.parse(decisionText));
+ const decision = AnyPublicationDecisionSchema.parse(JSON.parse(decisionText));
+ if (candidate.schemaVersion !== decision.schemaVersion) throw new Error('Candidate and publication decision schema versions do not match.');
  if (decision.candidateRef !== options.candidate || decision.candidateHash !== hashBytes(candidateText)
   || decision.articleHash !== candidate.articleHash || decision.criticReviewRef !== candidate.criticReviewRef
   || decision.criticReviewHash !== candidate.criticReviewHash) throw new Error('Human approval does not bind this exact candidate/review.');
@@ -64,13 +65,20 @@ export async function promote(options: {
  if (validatedReview.verdict !== 'PASS' || validatedReview.requiredChanges.length
   || candidate.title !== draft.title || candidate.topic !== draft.topic || candidate.wordCount !== draft.wordCount
   || stableJson(candidate.targetPhpVersions) !== stableJson(draft.targetPhpVersions)
-  || candidate.mergeDecision !== editorial.config.sourceDecision || candidate.mergeDecision !== draft.sourceDecision
+  || (candidate.schemaVersion === 1 ? candidate.mergeDecision : candidate.sourceDecision) !== editorial.config.sourceDecision
+  || (candidate.schemaVersion === 1 ? candidate.mergeDecision : candidate.sourceDecision) !== draft.sourceDecision
   || candidate.researchApproval !== editorial.config.researchApproval || candidate.researchApproval !== draft.researchApproval
   || candidate.researchPacket !== editorial.config.researchPacket || candidate.researchPacket !== draft.researchPacket
   || candidate.runtimeVerification !== editorial.config.runtimeVerification || candidate.runtimeVerification !== draft.runtimeVerification) throw new Error('Candidate provenance/approval/PASS mismatch.');
- const revision = z.object({ status: z.literal('applied-reviewed'), revisedArticleHash: z.string(),
-  criticSecondPass: z.object({ verdict: z.literal('PASS'), reviewHash: z.string() }) }).parse(JSON.parse(revisionText));
- if (revision.revisedArticleHash !== candidate.articleHash || revision.criticSecondPass.reviewHash !== candidate.criticReviewHash) throw new Error('Revision is not the reviewed version.');
+ if (candidate.schemaVersion === 1) {
+  const revision = z.object({ status: z.literal('applied-reviewed'), revisedArticleHash: z.string(),
+   criticSecondPass: z.object({ verdict: z.literal('PASS'), reviewHash: z.string() }) }).parse(JSON.parse(revisionText));
+  if (revision.revisedArticleHash !== candidate.articleHash || revision.criticSecondPass.reviewHash !== candidate.criticReviewHash) throw new Error('Revision is not the reviewed version.');
+ } else {
+  const revision = z.object({ afterArticleHash: z.string(), afterDraftHash: z.string(),
+   additionalWriterGenerations: z.literal(0), changedExamples: z.literal(0) }).parse(JSON.parse(revisionText));
+  if (revision.afterArticleHash !== candidate.articleHash || revision.afterDraftHash !== candidate.draftMetadataHash) throw new Error('Revision is not the reviewed version.');
+ }
 
  const metadata = ContentMetadataSchema.parse(decision.metadata);
  if (decision.destination !== 'content/articles/' + metadata.slug + '.md' || metadata.title !== candidate.title
@@ -107,23 +115,35 @@ export async function promote(options: {
   try { await lstat(target); } catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return target; throw error; }
   throw new Error('Promotion refuses to overwrite ' + path);
  }));
- const content = renderPromotedArticle(metadata, article);
- const record = { schemaVersion: 1, result: 'PROMOTED_LOCAL', scope: decision.scope,
+ let publicArticle = article;
+ const transforms = ['Content Collection YAML front matter'];
+ if (decision.schemaVersion === 2 && decision.presentationCleanup) {
+  for (const exact of decision.presentationCleanup.removeExact) {
+   if (publicArticle.split(exact).length !== 2) throw new Error('Approved presentation note is missing or not unique.');
+   publicArticle = publicArticle.replace(exact, '');
+   transforms.push('Removed exact human-approved technical LAB/draft note');
+  }
+ }
+ const content = renderPromotedArticle(metadata, publicArticle);
+ const sourceDecisionRef = candidate.schemaVersion === 1 ? candidate.mergeDecision : candidate.sourceDecision;
+ const record = { schemaVersion: decision.schemaVersion, result: decision.schemaVersion === 1 ? 'PROMOTED_LOCAL' : 'PROMOTED_PUBLIC', scope: decision.scope,
   candidateRef: options.candidate, candidateHash: hashBytes(candidateText), articleHash: hashBytes(article),
   decisionRef: options.decision, decisionHash: hashBytes(decisionText), approvedBy: decision.approvedBy,
   criticReviewRef: candidate.criticReviewRef, criticReviewHash: candidate.criticReviewHash,
-  mergeApprovalRef: candidate.mergeDecision, mergeApprovalHash: hashJson(basis.decision),
+  ...(candidate.schemaVersion === 1
+   ? { mergeApprovalRef: sourceDecisionRef, mergeApprovalHash: hashJson(basis.decision) }
+   : { sourceDecisionRef, sourceDecisionHash: hashJson(basis.decision) }),
   researchApprovalRef: candidate.researchApproval, researchApprovalHash: hashBytes(basis.artifact(candidate.researchApproval)),
   researchPacketRef: candidate.researchPacket, researchPacketHash: basis.approval.packetHash,
   destination: decision.destination, contentHash: hashBytes(content),
   provenance: { sources: draft.sources, approvedArtifacts: draft.approvedArtifacts, writerExecution: draft.writerExecution,
    criticExecution: validatedReview.criticExecution, revisionRef: candidate.revisionRef, revisionHash: candidate.revisionHash },
-  localPath: '/artykuly/' + metadata.slug + '/', remotePublicationApproved: false,
-  transforms: ['Content Collection YAML front matter only; Markdown body byte-identical'],
+  localPath: '/artykuly/' + metadata.slug + '/', remotePublicationApproved: decision.remotePublicationApproved,
+  transforms,
  };
- const report = '# Local promotion audit\n\n' + Object.entries(record).filter(([key]) => !['provenance'].includes(key))
+ const report = '# Promotion audit\n\n' + Object.entries(record).filter(([key]) => !['provenance'].includes(key))
   .map(([key, value]) => '- ' + key + ': ' + (typeof value === 'object' ? JSON.stringify(value) : String(value))).join('\n')
-  + '\n\nNo LLM, article regeneration, Git commit/push or deployment. Historical draft notes remain unchanged in the approved body.\n';
+  + '\n\nNo LLM or article regeneration. Git commit, push and deployment remain outside this deterministic gate.\n';
  const outputs = [content, stableJson(record), report], created: string[] = [];
  try {
   for (const [index, target] of targets.entries()) {

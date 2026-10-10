@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { LabRef, PhpVersions, Sha, Slug, Text } from '../core/editorial-context.ts';
 import { DraftSchema } from '../agents/writer/contract.ts';
+import { PublicationCandidateV2Schema } from '../candidates/contract.ts';
 import { createArticleSchema } from '../../src/lib/content-schema.ts';
 
 export const CandidateRef = z.string().regex(/^lab\/candidates\/[a-z0-9]+(?:-[a-z0-9]+)*\/article\.json$/);
@@ -19,6 +20,11 @@ export const PublicationCandidateSchema = z.strictObject({
  approvedForPublication: z.literal(false), published: z.literal(false), reviewedDraft: DraftSchema,
 });
 
+export const AnyPublicationCandidateSchema = z.discriminatedUnion('schemaVersion', [
+	PublicationCandidateSchema,
+	PublicationCandidateV2Schema,
+]);
+
 export const PublicationDecisionSchema = z.strictObject({
  schemaVersion: z.literal(1), status: z.literal('approved'), approvedBy: z.literal('human'),
  scope: z.literal('local-publication-test'), approvedAt: z.iso.datetime(), authorization: Text,
@@ -29,6 +35,28 @@ export const PublicationDecisionSchema = z.strictObject({
  remotePublicationApproved: z.literal(false),
 });
 export type PublicationDecision = z.infer<typeof PublicationDecisionSchema>;
+
+const PublicDraftNote = z.string().regex(
+	/^Nota redakcyjna: draft w LAB, nie publikacja\.[^\r\n]*\r?\n\r?\n$/,
+	'Only one exact technical LAB/draft note may be removed',
+);
+
+export const PublicationDecisionV2Schema = z.strictObject({
+	schemaVersion: z.literal(2), status: z.literal('approved'), approvedBy: z.literal('human'),
+	scope: z.literal('public-production'), approvedAt: z.iso.datetime(), authorization: Text,
+	candidateRef: CandidateRef, candidateHash: Sha, articleHash: Sha,
+	criticReviewRef: LabRef, criticReviewHash: Sha,
+	destination: z.string().regex(/^content\/articles\/[a-z0-9]+(?:-[a-z0-9]+)*\.md$/),
+	metadata: ContentMetadataSchema,
+	presentationCleanup: z.strictObject({ removeExact: z.array(PublicDraftNote).max(1) }).optional(),
+	remotePublicationApproved: z.literal(true),
+});
+export type PublicationDecisionV2 = z.infer<typeof PublicationDecisionV2Schema>;
+
+export const AnyPublicationDecisionSchema = z.discriminatedUnion('schemaVersion', [
+	PublicationDecisionSchema,
+	PublicationDecisionV2Schema,
+]);
 
 export function parsePromotionArguments(args: string[]) {
  let candidate: string | undefined, decision: string | undefined;

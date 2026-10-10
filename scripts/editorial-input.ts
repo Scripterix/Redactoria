@@ -38,7 +38,7 @@ export async function loadEditorialInput(topic: string) {
  const approval = ResearchApprovalSchema.parse(JSON.parse(approvalText));
  const paths = new Set([config.sourceDecision, config.researchApproval, config.researchPacket, config.runtimeVerification,
   config.runtimeVerification.replace(/\.json$/, '.md'), ...approval.evidence.artifacts.map(item => item.path),
-  ...approval.requiredAddenda.map(item => item.ref)]);
+  ...approval.requiredAddenda.map(item => item.ref), ...(approval.schemaVersion === 2 ? [approval.authorizationRef] : [])]);
  const artifacts = await Promise.all([...paths].map(async path => ({ path, contents: path === config.researchApproval ? approvalText : await readLab(path) })));
  const inventory = InventoryInputSchema.parse(JSON.parse(await readLab('lab/inventory/inventory.json')));
  const reader = createSourceReader(sourceRoot);

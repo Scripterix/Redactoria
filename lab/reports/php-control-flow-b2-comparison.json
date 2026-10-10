@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "status": "comparison-only",
+  "comparedAt": "2026-10-10",
+  "scope": "B2 php-control-flow publication candidate compared with the completed PHP Arrays pilot; LAB evidence only.",
+  "artifacts": {
+    "phpArraysCandidate": "lab/candidates/php-arrays/article.json",
+    "phpControlFlowCandidate": "lab/candidates/php-control-flow/article.json"
+  },
+  "researchEffort": {
+    "phpArrays": {
+      "legacySourceArticles": 2,
+      "officialDocuments": 34,
+      "researchQuestions": 13,
+      "verifiedFacts": 25,
+      "incorrectClaims": 4,
+      "ambiguousClaims": 3,
+      "securityNotes": 3,
+      "codeFindings": 8,
+      "packetUnresolvedQuestions": 2,
+      "resolvedBeforeWriterByApprovedSupplement": true,
+      "elapsedMinutes": null,
+      "modelTokens": null,
+      "monetaryCost": null
+    },
+    "phpControlFlow": {
+      "legacySourceArticles": 1,
+      "officialDocuments": 18,
+      "researchQuestions": 11,
+      "verifiedFacts": 18,
+      "incorrectClaims": 1,
+      "ambiguousClaims": 2,
+      "securityNotes": 0,
+      "codeFindings": 8,
+      "packetUnresolvedQuestions": 0,
+      "resolvedBeforeWriterByApprovedSupplement": false,
+      "elapsedMinutes": null,
+      "modelTokens": null,
+      "monetaryCost": null
+    }
+  },
+  "articleAndExecution": {
+    "phpArrays": {
+      "proseWords": 2559,
+      "sections": 16,
+      "executableExamples": 17,
+      "runtimeVerification": [
+        {
+          "family": "8.4",
+          "version": "8.4.26",
+          "researchProbes": 12,
+          "researchAssertions": 60,
+          "draftExamples": 17,
+          "draftExamplesPass": 17
+        },
+        {
+          "family": "8.5",
+          "version": "8.5.11",
+          "researchProbes": 12,
+          "researchAssertions": 60,
+          "draftExamples": 17,
+          "draftExamplesPass": 17
+        }
+      ]
+    },
+    "phpControlFlow": {
+      "proseWords": 1663,
+      "sections": 13,
+      "executableExamples": 16,
+      "runtimeVerification": [
+        {
+          "family": "8.4",
+          "version": "8.4.26",
+          "researchProbes": 8,
+          "researchAssertions": 24,
+          "draftExamples": 16,
+          "draftExamplesPass": 16
+        },
+        {
+          "family": "8.5",
+          "version": "8.5.11",
+          "researchProbes": 8,
+          "researchAssertions": 24,
+          "draftExamples": 16,
+          "draftExamplesPass": 16
+        }
+      ]
+    }
+  },
+  "writerAndCritic": {
+    "phpArrays": {
+      "writerGenerations": 1,
+      "additionalWriterGenerations": 0,
+      "targetedRevisionChanges": 3,
+      "requiredRevisionChanges": 1,
+      "optionalRevisionChanges": 2,
+      "changedExamples": 0,
+      "newPhpExecutionsAfterRevision": 0,
+      "criticIterations": 2,
+      "criticVerdicts": [
+        "REVISE",
+        "PASS"
+      ],
+      "firstCriticIssues": 3,
+      "secondCriticIssues": 0
+    },
+    "phpControlFlow": {
+      "writerGenerations": 1,
+      "additionalWriterGenerations": 0,
+      "targetedRevisionChanges": 1,
+      "requiredRevisionChanges": 1,
+      "optionalRevisionChanges": 0,
+      "changedExamples": 0,
+      "newPhpExecutionsAfterRevision": 0,
+      "criticIterations": 2,
+      "criticVerdicts": [
+        "REVISE",
+        "PASS"
+      ],
+      "firstCriticIssues": 1,
+      "secondCriticIssues": 0
+    }
+  },
+  "interactionMetadata": {
+    "phpArraysOpportunities": null,
+    "phpControlFlowOpportunities": 4,
+    "implemented": 0,
+    "note": "PHP Arrays predates the interaction-opportunity contract, so absence is not measured zero. B2 records four metadata-only opportunities and implements no UI."
+  },
+  "recurringProblems": [
+    "Passing code does not guarantee that explanatory prose is scoped precisely enough.",
+    "Both first reviews found an overbroad sentence around a correct example: result type in PHP Arrays and the int/float zero boundary in PHP control flow.",
+    "Type, input-shape and return-contract boundaries need explicit wording even in beginner material.",
+    "A small hash-bound prose correction followed by a new full Critic pass avoided unnecessary Writer regeneration and PHP reruns."
+  ],
+  "futureLayerConclusions": {
+    "humanizer": {
+      "status": "recommendation-only",
+      "conclusions": [
+        "Treat Humanizer as a constrained editorial pass, never as a source of technical facts or an autonomous rewrite loop.",
+        "It must preserve evidence-qualified boundaries such as this example, this input type and these runtimes instead of smoothing them into universal claims.",
+        "Measure its value by human readability findings; neither pilot recorded readability time or user-comprehension data."
+      ]
+    },
+    "interactionLayer": {
+      "status": "metadata-only",
+      "conclusions": [
+        "B2 shows that 2-4 opportunities can be attached to section IDs without coupling editorial production to UI implementation.",
+        "Future interactions should bind prompts and expected concepts to the reviewed article hash and must not imply that unexecuted learner variants passed runtime verification.",
+        "No implementation decision follows until user value, accessibility and maintenance cost are measured."
+      ]
+    },
+    "knowledgeGaps": {
+      "status": "recommendation-only",
+      "conclusions": [
+        "Separate unsupported corpus claims from genuine technical unknowns; popularity and cross-language analogies were removable noise, not research gaps.",
+        "Record excluded contexts explicitly: object comparison, foreach references, nested break/continue, return at file scope and security-sensitive input handling.",
+        "Promote a gap to shared knowledge only after repeated evidence across articles; two pilots are enough to observe a pattern, not to define an autonomous Knowledge Gap module."
+      ]
+    }
+  },
+  "limitations": [
+    "Elapsed time, model-token usage, monetary cost, human reading time and learning outcomes were not measured and remain null.",
+    "Document, fact and assertion counts describe scope, not semantic difficulty or quality by themselves.",
+    "The pilots used different source counts and topic breadth, so the comparison is descriptive, not a benchmark."
+  ],
+  "publicationApproved": false,
+  "contentChanged": false
+}

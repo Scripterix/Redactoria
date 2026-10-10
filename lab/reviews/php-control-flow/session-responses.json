@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "current-codex-session",
+    "description": "Full second Critic role in the same session: reviewed the exact revised article, approved Research Packet, revision audit and 32 actual draft executions. Not an independent provider or live API."
+  },
+  "critic": {
+    "requestHash": "8834345c51e9fdc4812ad010df272f62f70d20828050bef4296764a3d5ee50d1",
+    "response": {
+      "action": "REVIEW",
+      "verdict": "PASS",
+      "summary": "Pełny drugi review poprawionego draftu zakończył się PASS. Wymagane doprecyzowanie granicy int 0 kontra float 0.0 jest obecne i nie zmienia poprawnego przykładu ani jego wyniku. Wszystkie pozostałe twierdzenia pozostają zgodne z zaakceptowanym researchem, a 16 samodzielnych programów ma kompletne wykonania PASS na PHP 8.4.26 i 8.5.11. Tekst jest gotowy do human review, ale nie uzyskuje zgody na CONTENT ani publikację.",
+      "checks": [
+        {
+          "criterion": "FACTUAL_ACCURACY",
+          "result": "PASS",
+          "note": "Warunki, porównania skalarne, truthiness, operatory, switch/match i pętle są zgodne z zaakceptowanymi findings; poprawione objaśnienie jawnie ogranicza ścisły guard do dzielnika typu int."
+        },
+        {
+          "criterion": "SOURCE_ALIGNMENT",
+          "result": "PASS",
+          "note": "Zachowano edukacyjny rdzeń źródła 1308, usunięto niepoparte analogie i popularność, a ticks oraz include/require pozostają jawnie poza zakresem."
+        },
+        {
+          "criterion": "CODE_CORRECTNESS",
+          "result": "PASS",
+          "note": "Wszystkie 16 samodzielnych przykładów mają zgodny hash kodu, stdout, pusty stderr i exit 0 na PHP 8.4.26 oraz 8.5.11; korekta dotyczyła wyłącznie prozy."
+        },
+        {
+          "criterion": "RESEARCH_COVERAGE",
+          "result": "PASS",
+          "note": "Draft pokrywa cały zaakceptowany zakres B2 i wszystkie wymagane obszary; pominięte konstrukcje są opisane jako osobny temat, nie jako przestarzałe."
+        },
+        {
+          "criterion": "STRUCTURE",
+          "result": "PASS",
+          "note": "Trzynaście sekcji prowadzi od pojedynczej decyzji przez wybór i pętle do break/continue, return i ćwiczenia; match pozostaje krótkim kontrastem."
+        },
+        {
+          "criterion": "CLARITY",
+          "result": "PASS",
+          "note": "Poprzedni problem integer-zero-boundary został rozwiązany dokładnym wskazaniem typu int, zachowania 0.0 !== 0 i konieczności dobrania testu do typu danych."
+        },
+        {
+          "criterion": "DUPLICATION",
+          "result": "PASS",
+          "note": "PHP Arrays pełni rolę prerequisite i dalszego kroku; artykuł nie powiela API tablic, a powtórzone linki mają odrębny kontekst dydaktyczny."
+        },
+        {
+          "criterion": "SECURITY",
+          "result": "PASS",
+          "note": "Przykłady używają wyłącznie stałych danych, bez requestów, HTML, eval, shell i plików; warunek dostępu jest jawnie opisany jako demonstracja, nie system autoryzacji."
+        },
+        {
+          "criterion": "VERSION_CLAIMS",
+          "result": "PASS",
+          "note": "Zakres i rzeczywiste wykonania są przypisane do PHP 8.4.26 i 8.5.11, match poprawnie datowany od 8.0, a różnice poza prostymi danymi są jawnie wyłączone."
+        },
+        {
+          "criterion": "UNSUPPORTED_CLAIMS",
+          "result": "PASS",
+          "note": "Brak marketingu, benchmarków, twierdzeń o popularności pętli i analogii PHP/Python; nie ma nowych twierdzeń wykraczających poza zatwierdzone evidence."
+        }
+      ],
+      "issues": [],
+      "limitations": [
+        "Funkcjonalny drugi Critic działa w tej samej sesji/modelu co wcześniejsze role; nie jest niezależnym providerem ani blind review.",
+        "Walidacja kontraktu i hashy nie jest dowodem prawdziwości każdego zdania poza dostarczonym evidence i wykonaniami.",
+        "Wykonania obejmują 16 samodzielnych przykładów na dwóch dokładnych runtime, nie wszystkie dane, wersje PHP, SAPI ani warianty ćwiczeń.",
+        "PASS oznacza gotowość do human review i utworzenia kandydata w LAB w granicach B2; nie zatwierdza CONTENT, promocji ani publikacji."
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "approvedBy": "human",
+  "articleHash": "2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b",
+  "candidateHash": "1d1500fb7c023b07d320d78aa7ee46faf8240ae32c3e6938b176ce3e5511a396",
+  "candidateRef": "lab/candidates/php-control-flow/article.json",
+  "contentHash": "695a76d153fd9390a146859b288e8e5ab23bed7377e7a011104f35e3d8f3c578",
+  "criticReviewHash": "78c542a74f5cb32f627e96fce73991a26a45afcb856532528c236209f2924834",
+  "criticReviewRef": "lab/reviews/php-control-flow/critic-review.json",
+  "decisionHash": "a8bd010d03829985ce9d99853803e83a93d0400746f1029f25e8901ea92ef917",
+  "decisionRef": "lab/decisions/php-control-flow-publication.json",
+  "destination": "content/articles/instrukcje-sterujace-php.md",
+  "localPath": "/artykuly/instrukcje-sterujace-php/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/php-control-flow-b2-authorization.json",
+        "sha256": "04a017962d902a97751a9c180274bac811706fd3f16f8df364f4bf2f7f4481f2"
+      },
+      {
+        "path": "lab/decisions/php-control-flow-rewrite.json",
+        "sha256": "25198cd4159f2975e98d1b68711441a4207393b9be67f9eb5e73fc267763b67f"
+      },
+      {
+        "path": "lab/cartography/php-control-flow-single.json",
+        "sha256": "5495096718b52a7327d4c835acea78f15ac637823947cbc270051f1a174c8789"
+      },
+      {
+        "path": "lab/research/php-control-flow/sources.json",
+        "sha256": "d0353e790369bb0636d33094743162e79c5acbf39a951cf4447ee1419ab4b0fb"
+      },
+      {
+        "path": "lab/research/php-control-flow/probes.json",
+        "sha256": "723da47aa079f2790a42d839650f24c5f2e4dca36a2d856de593868990edbdf3"
+      },
+      {
+        "path": "lab/research/php-control-flow/probe-execution.json",
+        "sha256": "cdedf3333b43ff46a99f927b99656babea57b85fdadad71a40558056d2df6c0b"
+      },
+      {
+        "path": "lab/research/php-control-flow/research.json",
+        "sha256": "0ae1e82db249435d339ae09ddb2cc1ebdfedaf568e59d2d25325565991cadbb7"
+      },
+      {
+        "path": "lab/research/php-control-flow/runtime-verification.json",
+        "sha256": "d917344e47a2fe8aab38525a2876b304e182132306a882d86a77991d65d49e2f"
+      },
+      {
+        "path": "lab/research/php-control-flow/runtime-verification.md",
+        "sha256": "78e5e49d2a2e4a332923230fb912b78fee8e8b448833ded628924c5145bba481"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "1b5ac3962c969e7f8e29cca9e4267de8ea4adcae73e200e57b46c50ee144889c",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "current-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "8834345c51e9fdc4812ad010df272f62f70d20828050bef4296764a3d5ee50d1"
+    },
+    "revisionHash": "ae164fa3ee7d3340d9aae827ab5baabe8e6e923455d1d0dcc1fa4d584576ad1b",
+    "revisionRef": "lab/drafts/php-control-flow/revision.json",
+    "sources": [
+      {
+        "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+        "providedCharacters": 3976,
+        "sourceId": "1308",
+        "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+        "title": "Post #60 Instrukcje sterujące PHP",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "bc579dad480d893ab2c0bb5568e5c8eeb716cac7d0f783eb1e24847f72040dd0",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "current-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "78d74bbdc173d26a8076ec1c9914ec06354eea7cd81e1166b7b48a948220bd24"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "65ed2fb8fcd641f0f1a27ae9732b5a0f4ebd7804470b2ab64fa45f725b17370c",
+  "researchApprovalRef": "lab/decisions/php-control-flow-research-acceptance.json",
+  "researchPacketHash": "0ae1e82db249435d339ae09ddb2cc1ebdfedaf568e59d2d25325565991cadbb7",
+  "researchPacketRef": "lab/research/php-control-flow/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 2,
+  "scope": "public-production",
+  "sourceDecisionHash": "b0188d061712c862514299f1078ae4f30c30df0d7246ea2cdeee892f169a8dba",
+  "sourceDecisionRef": "lab/decisions/php-control-flow-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

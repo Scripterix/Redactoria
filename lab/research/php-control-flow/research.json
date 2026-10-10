@@ -1,0 +1,1533 @@
+{
+  "action": "RESEARCH_PACKET",
+  "ambiguousClaims": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Najczęściej używana pętla w PHP:"
+        }
+      ],
+      "claim": "Nie mamy pomiaru potwierdzającego, że for jest najczęstszą pętlą. Manual opisuje zachowanie, nie częstość użycia.",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "documentId": "for",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "unmeasured-popularity",
+      "questionIds": [
+        "source-boundary"
+      ],
+      "recommendation": "Usuń superlatyw.",
+      "sourceType": "official-documentation",
+      "status": "needs-review"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "**for i do while** mają prawie taką samą konstrukcję w PHP, JavaScript, Pythonie czy C++"
+        }
+      ],
+      "claim": "Przejrzana dokumentacja PHP nie potwierdza prawie identycznej składni w kilku innych językach; porównanie nie jest potrzebne do tego celu.",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "documentId": "for",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "do-while",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "unsupported-language-similarity",
+      "questionIds": [
+        "source-boundary"
+      ],
+      "recommendation": "Nie badaj języków poza PHP dla tej dygresji; pomiń ją.",
+      "sourceType": "official-documentation",
+      "status": "needs-review"
+    }
+  ],
+  "analysisContext": {
+    "cartographyHash": "5495096718b52a7327d4c835acea78f15ac637823947cbc270051f1a174c8789",
+    "decisionHash": "b0188d061712c862514299f1078ae4f30c30df0d7246ea2cdeee892f169a8dba",
+    "fullReadCount": 1,
+    "inputHash": "907568331a7ce12b4d8869b202447d104f2ca35e1f07184a08731aa468a9f5a9",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "current-codex-session"
+    },
+    "probes": [
+      {
+        "codeHash": "8e846dc7646f531007fee2bfee565c18c34453637582a8e4de6afc8e34057377",
+        "description": "elseif order, equality and assignment",
+        "diagnostics": [],
+        "id": "conditions-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "assigned": 5,
+          "assignmentCondition": true,
+          "branch": "pass",
+          "different": true,
+          "loose": true,
+          "strict": false
+        }
+      },
+      {
+        "codeHash": "8949c6d76d8a8845b0f60885334c5bcfde780173ed8dbaf89dd9a308b4f326c2",
+        "description": "Scalar false values, empty array, true nonempty strings",
+        "diagnostics": [],
+        "id": "truthiness-84",
+        "phpVersion": "8.4.26",
+        "result": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "codeHash": "b9ec5fe5716f28258e9cab427f47798dd981410678cafbe0829b00802c9b1cd7",
+        "description": "Short-circuit and and/or precedence relative to assignment",
+        "diagnostics": [],
+        "id": "logic-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "andSymbol": false,
+          "andWord": true,
+          "calls": 0,
+          "falseAnd": false,
+          "not": true,
+          "orSymbol": true,
+          "orWord": false,
+          "trueOr": true
+        }
+      },
+      {
+        "codeHash": "e398de7ad6aab6249e2515501fb247bbdbecd1cf579562e6bcc461b37ec36991",
+        "description": "Switch loose match/fallthrough, match strict/default/unhandled, ternary",
+        "diagnostics": [],
+        "id": "choices-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "fallthrough": "AB",
+          "match": "other",
+          "switch": "number",
+          "ternary": "yes",
+          "unhandled": true
+        }
+      },
+      {
+        "codeHash": "492d6059475db7c36aea49bf15235a40c57ee81063eb50735a228964b2772ce1",
+        "description": "While/do-while minimum, for bounds, sum with explicit increment",
+        "diagnostics": [],
+        "id": "loops-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "do": 1,
+          "for": [
+            0,
+            1,
+            2
+          ],
+          "sum": 55,
+          "while": 0
+        }
+      },
+      {
+        "codeHash": "346c979d4a3d747d13f6a7322e3dfb093f48c026fb6e49563b305dfc7c150cf2",
+        "description": "Value/key iteration, empty array, no reference mutation",
+        "diagnostics": [],
+        "id": "foreach-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "empty": 0,
+          "pairs": [
+            [
+              "first",
+              "Anna"
+            ],
+            [
+              "second",
+              "Tomek"
+            ]
+          ],
+          "unchanged": {
+            "first": "Anna",
+            "second": "Tomek"
+          }
+        }
+      },
+      {
+        "codeHash": "bd48022551d4fc07a7b34b9b4d56eacf6edb28f3b70b2097ec0b28bfe0a407c9",
+        "description": "Continue vs break; return ends function but not caller",
+        "diagnostics": [],
+        "id": "flow-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "callerContinues": true,
+          "passed": "pass",
+          "retry": "retry",
+          "visited": [
+            1,
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "codeHash": "36e1d2412421d52d96f4027fe04b156b4ee4d1a89e4a987ba0f1c8c33bfab38d",
+        "description": "Accidental semicolon empty if statement and reversed threshold order",
+        "diagnostics": [],
+        "id": "beginner-pitfalls-84",
+        "phpVersion": "8.4.26",
+        "result": {
+          "emptyIfStillRunsFollowingBlock": true,
+          "wrongOrder": "pass"
+        }
+      },
+      {
+        "codeHash": "8e846dc7646f531007fee2bfee565c18c34453637582a8e4de6afc8e34057377",
+        "description": "elseif order, equality and assignment",
+        "diagnostics": [],
+        "id": "conditions-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "assigned": 5,
+          "assignmentCondition": true,
+          "branch": "pass",
+          "different": true,
+          "loose": true,
+          "strict": false
+        }
+      },
+      {
+        "codeHash": "8949c6d76d8a8845b0f60885334c5bcfde780173ed8dbaf89dd9a308b4f326c2",
+        "description": "Scalar false values, empty array, true nonempty strings",
+        "diagnostics": [],
+        "id": "truthiness-85",
+        "phpVersion": "8.5.11",
+        "result": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "codeHash": "b9ec5fe5716f28258e9cab427f47798dd981410678cafbe0829b00802c9b1cd7",
+        "description": "Short-circuit and and/or precedence relative to assignment",
+        "diagnostics": [],
+        "id": "logic-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "andSymbol": false,
+          "andWord": true,
+          "calls": 0,
+          "falseAnd": false,
+          "not": true,
+          "orSymbol": true,
+          "orWord": false,
+          "trueOr": true
+        }
+      },
+      {
+        "codeHash": "e398de7ad6aab6249e2515501fb247bbdbecd1cf579562e6bcc461b37ec36991",
+        "description": "Switch loose match/fallthrough, match strict/default/unhandled, ternary",
+        "diagnostics": [],
+        "id": "choices-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "fallthrough": "AB",
+          "match": "other",
+          "switch": "number",
+          "ternary": "yes",
+          "unhandled": true
+        }
+      },
+      {
+        "codeHash": "492d6059475db7c36aea49bf15235a40c57ee81063eb50735a228964b2772ce1",
+        "description": "While/do-while minimum, for bounds, sum with explicit increment",
+        "diagnostics": [],
+        "id": "loops-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "do": 1,
+          "for": [
+            0,
+            1,
+            2
+          ],
+          "sum": 55,
+          "while": 0
+        }
+      },
+      {
+        "codeHash": "346c979d4a3d747d13f6a7322e3dfb093f48c026fb6e49563b305dfc7c150cf2",
+        "description": "Value/key iteration, empty array, no reference mutation",
+        "diagnostics": [],
+        "id": "foreach-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "empty": 0,
+          "pairs": [
+            [
+              "first",
+              "Anna"
+            ],
+            [
+              "second",
+              "Tomek"
+            ]
+          ],
+          "unchanged": {
+            "first": "Anna",
+            "second": "Tomek"
+          }
+        }
+      },
+      {
+        "codeHash": "bd48022551d4fc07a7b34b9b4d56eacf6edb28f3b70b2097ec0b28bfe0a407c9",
+        "description": "Continue vs break; return ends function but not caller",
+        "diagnostics": [],
+        "id": "flow-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "callerContinues": true,
+          "passed": "pass",
+          "retry": "retry",
+          "visited": [
+            1,
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "codeHash": "36e1d2412421d52d96f4027fe04b156b4ee4d1a89e4a987ba0f1c8c33bfab38d",
+        "description": "Accidental semicolon empty if statement and reversed threshold order",
+        "diagnostics": [],
+        "id": "beginner-pitfalls-85",
+        "phpVersion": "8.5.11",
+        "result": {
+          "emptyIfStillRunsFollowingBlock": true,
+          "wrongOrder": "pass"
+        }
+      }
+    ],
+    "requestHash": "5aba4e164866b4cd060b6ad6d15d88329a0db136935a8aad2dd72ebe5efaed88",
+    "researchBundleHash": "d0353e790369bb0636d33094743162e79c5acbf39a951cf4447ee1419ab4b0fb",
+    "topicSlug": "php-control-flow"
+  },
+  "codeReview": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "if ($user_validated)"
+        }
+      ],
+      "claim": "Legacy if zależy od niezdefiniowanej tu zmiennej; nowy kontrolowany probe definiuje dane i sprawdza kolejność gałęzi.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "if",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-if",
+      "probeIds": [
+        "conditions-84",
+        "conditions-85"
+      ],
+      "questionIds": [
+        "conditions"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "echo ($active) ? 'Tak' : 'Nie';"
+        }
+      ],
+      "claim": "Legacy ternary wymaga $active; kontrolowany probe wybiera jawne true.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "comparison",
+          "excerptId": "ternary"
+        }
+      ],
+      "id": "code-ternary",
+      "probeIds": [
+        "choices-84",
+        "choices-85"
+      ],
+      "questionIds": [
+        "ternary"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "switch ($name) {"
+        }
+      ],
+      "claim": "Legacy switch jest niesamodzielny; probe używa jawnego napisu i sprawdza loose kontra strict.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "switch",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-switch",
+      "probeIds": [
+        "choices-84",
+        "choices-85"
+      ],
+      "questionIds": [
+        "choice"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "while ($i <= 10) {"
+        }
+      ],
+      "claim": "Kontrolowany równoważny wzorzec sumowania kończy się wynikiem 55 na obu runtime.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "while",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-while",
+      "probeIds": [
+        "loops-84",
+        "loops-85"
+      ],
+      "questionIds": [
+        "loops"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "} while (false);"
+        }
+      ],
+      "claim": "Próba odtwarza minimum jedno wykonanie bez zewnętrznych zależności.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "do-while",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-do",
+      "probeIds": [
+        "loops-84",
+        "loops-85"
+      ],
+      "questionIds": [
+        "loops"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "for ($i = 0; $i < 10; $i++) {"
+        }
+      ],
+      "claim": "Kontrolowane krótsze granice 0..2, jawny wynik; nie używamy nieskończonej pętli.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "for",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-for",
+      "probeIds": [
+        "loops-84",
+        "loops-85"
+      ],
+      "questionIds": [
+        "loops"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "foreach ($users as $user) {"
+        }
+      ],
+      "claim": "Kontrolowany probe iteruje własną tablicę po kluczach/wartościach i sprawdza pustość.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "foreach",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-foreach",
+      "probeIds": [
+        "foreach-84",
+        "foreach-85"
+      ],
+      "questionIds": [
+        "foreach"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "return zwraca wartość z funkcji i kończy jej wykonywanie."
+        }
+      ],
+      "claim": "Probe ma własną zdefiniowaną funkcję i potwierdza kontynuację wywołującego.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "return",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "code-return",
+      "probeIds": [
+        "flow-84",
+        "flow-85"
+      ],
+      "questionIds": [
+        "flow"
+      ],
+      "recommendation": "Nowy Writer przykład musi dostać własny execution evidence; controlled probe nie oznacza uruchomienia legacy.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    }
+  ],
+  "environment": {
+    "asOfDate": "2026-10-10",
+    "evidence": [
+      {
+        "documentId": "migration84",
+        "excerptId": "anchor"
+      },
+      {
+        "documentId": "migration85",
+        "excerptId": "anchor"
+      }
+    ],
+    "phpVersionScope": "PHP 8.4–8.5; rzeczywiste controlled probes: 8.4.26 i 8.5.11. Zakres skalarów i prostych tablic, nie wszystkie przypadki PHP."
+  },
+  "incorrectClaims": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "**PHP i Python to języki, które działają po stronie serwera (server-side).**"
+        }
+      ],
+      "claim": "Legacy etykieta wyłącznie server-side pomija udokumentowany CLI. W nowym materiale wystarczy opisać realny sposób uruchomienia.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "cli",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "incorrect-server-only",
+      "questionIds": [
+        "source-boundary"
+      ],
+      "recommendation": "Usuń dygresję PHP/Python i nie zastępuj jej porównaniem języków.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "Role Researcher, Writer i Critic będą rozdzielone funkcjonalnie w tej samej sesji, nie niezależni dostawcy/modelle.",
+    "18 oficjalnych stron, krótkie anchors i hashe bajtów; user notes wyłączone. Manual może być aktualizowany po dacie snapshotu.",
+    "Źródła PHP nie dowodzą międzyjęzykowych analogii ani popularności for; Writer ma usunąć te zbędne twierdzenia, a nie oznaczać ich jako zweryfikowane.",
+    "Legacy code nie wykonano: if/ternary/switch mają brakujące inputs; ticks wymaga callbacku, include/require plików. Uruchomiono wyłącznie osiem własnych controlled probes na każdym runtime.",
+    "Pominięte ticks/include/require nie są nazwane przestarzałymi. Inne konteksty return, foreach z referencjami, zagnieżdżone poziomy break/continue i obiekty poza zakresem."
+  ],
+  "outdatedClaims": [],
+  "questionAnswers": [
+    {
+      "findingIds": [
+        "if-branches",
+        "pitfalls"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "conditions",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "comparisons",
+        "assignment"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "comparison",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "truthiness"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "truthiness",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "logic",
+        "precedence"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "logic",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "ternary"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "ternary",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "switch",
+        "match"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "choice",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "while",
+        "do-while",
+        "for"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "loops",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "foreach"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "foreach",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "break-continue",
+        "return"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "flow",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "runtime-scope"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "versions",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "cli-context"
+      ],
+      "note": "Odpowiedź ograniczona do zakresu artykułu i cytowanej dokumentacji; wykonania controlled probes uzupełniają dowody. Nie badamy niepotrzebnej popularności ani innych języków.",
+      "questionId": "source-boundary",
+      "status": "resolved"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "KEEP",
+      "findingIds": [
+        "if-branches",
+        "while",
+        "foreach"
+      ],
+      "id": "keep-core",
+      "instruction": "Zachowaj warunki i pętle jako główny zakres; nowa proza i samodzielny kod."
+    },
+    {
+      "action": "CORRECT",
+      "findingIds": [
+        "comparisons",
+        "truthiness",
+        "precedence",
+        "pitfalls"
+      ],
+      "id": "correct-scalar",
+      "instruction": "Dodaj ===, truthiness '0', logikę/precedence i kolejność progów."
+    },
+    {
+      "action": "ADD_CAUTION",
+      "findingIds": [
+        "switch",
+        "match"
+      ],
+      "id": "bounded-match",
+      "instruction": "Dodaj krótki kontrast switch/match z default, bez pełnego kursu match."
+    },
+    {
+      "action": "REMOVE_EXAMPLE",
+      "findingIds": [
+        "cli-context",
+        "unmeasured-popularity",
+        "unsupported-language-similarity"
+      ],
+      "id": "drop-legacy-noise",
+      "instruction": "Omiń ticks, include/require, niejawne inputs, marketing i porównania międzyjęzykowe. Nie określaj pominiętych konstrukcji jako przestarzałych."
+    },
+    {
+      "action": "ADD_CAUTION",
+      "findingIds": [
+        "runtime-scope"
+      ],
+      "id": "version-boundary",
+      "instruction": "Wyniki dotyczą dokładnych runtime/przykładów. Typy obiektowe, exit i ticks poza zakresem."
+    }
+  ],
+  "schemaVersion": 1,
+  "securityNotes": [],
+  "sourceRegister": [
+    {
+      "documentHash": "f2cb6c7ad6371f427b0d316bb967681e9f8f412cef8f904c4de8867261b65d7b",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "if",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.if.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.615Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: if - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.if.php"
+    },
+    {
+      "documentHash": "b7ffe88b172dd337fe74dbaf6085a9e06fc452a7c3ed00bca7bc52ecf02328ad",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "elseif",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.elseif.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.626Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: elseif/else if - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.elseif.php"
+    },
+    {
+      "documentHash": "5198eaa5eabc8d347a2a450365e8eb5757c3650685a18e69108e1855321e54f8",
+      "evidenceIds": [
+        "anchor",
+        "ternary"
+      ],
+      "id": "comparison",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.comparison.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.647Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Comparison - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.comparison.php"
+    },
+    {
+      "documentHash": "851ab73917025740ca85f4bed118b0b033b58dd05b24e689aa45d78e70f33527",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "boolean",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.types.boolean.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.634Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Booleans - Manual",
+      "url": "https://www.php.net/manual/en/language.types.boolean.php"
+    },
+    {
+      "documentHash": "d77cf7af4914cf37669215d2d5f173abfc92e9dcee75f3d6e7011889ed918399",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "logical",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.logical.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.640Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Logic - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.logical.php"
+    },
+    {
+      "documentHash": "89d4d2710eb38f1b73e885ea06042981b92c2736559a36801d9b507116429a8f",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "precedence",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.precedence.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.630Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Operator Precedence - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.precedence.php"
+    },
+    {
+      "documentHash": "0f4652f69679768dff3b3ebc91b4a117b08497e5e6c336f15e5f2b72ec4c45a2",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "switch",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.switch.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.641Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: switch - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.switch.php"
+    },
+    {
+      "documentHash": "7e1696699976ad00a36aa017568f7f774c06c14b5ebc35fc0d46843ad0e67fca",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "match",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.match.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.650Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: match - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.match.php"
+    },
+    {
+      "documentHash": "98c9a0ad2b38c7a25664e1e5d408260baa2e74e5a86cd12a1ab60f5264c39250",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "while",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.while.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.617Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: while - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.while.php"
+    },
+    {
+      "documentHash": "789812de39b6b7f77535cefa5ea69be01572b07c79ec080b4b220c57264c074c",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "do-while",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.do.while.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.618Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: do-while - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.do.while.php"
+    },
+    {
+      "documentHash": "764042749e4d86e45908361806f62dfd561c3efe43d02b2dd85c9a8a7a887499",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "for",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.for.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.631Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: for - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.for.php"
+    },
+    {
+      "documentHash": "6942bf0591808260289101fab8e6260a77e383628a32ef01c56f89e7fb8b7991",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "foreach",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.foreach.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.643Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: foreach - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.foreach.php"
+    },
+    {
+      "documentHash": "c2f74b0bfe50a164b8ee8969f4e1fc493410ccb9ee3c6d953c6b2f1324f586d2",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "break",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.break.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.602Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: break - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.break.php"
+    },
+    {
+      "documentHash": "98fe0fa2f8816a15e7d0bf1715b589660c9cc5ed093c1dfc4a6dc784296f7a11",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "continue",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.continue.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.636Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: continue - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.continue.php"
+    },
+    {
+      "documentHash": "617b757c075d58acade259239b2817d7ab200dc8e3b169437d968ef76b2105f5",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "return",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.return.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.621Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: return - Manual",
+      "url": "https://www.php.net/manual/en/function.return.php"
+    },
+    {
+      "documentHash": "2bd2a2e1975aaf47bb350b07c310a67bdd1abfcf713332faec765ac5475c9545",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "cli",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/features.commandline.usage.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.622Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Usage - Manual",
+      "url": "https://www.php.net/manual/en/features.commandline.usage.php"
+    },
+    {
+      "documentHash": "880d93dd31fc752a99a8641fed0540c08d3a5dc5321fc48a7d657567ab39e8e2",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "migration84",
+      "kind": "migration",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/migration84.incompatible.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.644Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Backward Incompatible Changes - Manual",
+      "url": "https://www.php.net/manual/en/migration84.incompatible.php"
+    },
+    {
+      "documentHash": "f97f3a95c03a9e2793914de131ec4da0861969d91ddd284e670911e95012aed7",
+      "evidenceIds": [
+        "anchor"
+      ],
+      "id": "migration85",
+      "kind": "migration",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/migration85.incompatible.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.639Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Backward Incompatible Changes - Manual",
+      "url": "https://www.php.net/manual/en/migration85.incompatible.php"
+    }
+  ],
+  "targets": [
+    {
+      "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+      "providedCharacters": 3976,
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "title": "Post #60 Instrukcje sterujące PHP",
+      "truncated": false
+    }
+  ],
+  "topic": "Instrukcje sterujące PHP: warunki i pętle",
+  "unresolvedQuestions": [],
+  "verifiedFacts": [
+    {
+      "articleEvidence": [],
+      "claim": "if interpretuje warunek jako bool; elseif testuje kolejne warunki tylko po niepasujących wcześniejszych gałęziach. W łańcuchu wykona się pierwsza pasująca gałąź, a else jest fallback.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "if",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "elseif",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "if-branches",
+      "questionIds": [
+        "conditions"
+      ],
+      "recommendation": "Pokaż progi od najbardziej szczegółowego do ogólnego, z klamrami.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "== porównuje z dopuszczeniem konwersji typów; === wymaga tej samej wartości i typu. != jest luźnym zaprzeczeniem równości, !== ścisłym. <, <=, >, >= nadają się tu do porównywania progów liczbowych.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "comparison",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "comparisons",
+      "questionIds": [
+        "comparison"
+      ],
+      "recommendation": "Preferuj ===/!== dla sprawdzania znanego typu; nie przedstawiaj == jako zakazanego.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "= przypisuje wartość, a == i === porównują. Wartość przypisania może stać się warunkiem, więc przypadkowe = może zmienić zmienną i wybrać inną gałąź.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "comparison",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "logical",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "assignment",
+      "questionIds": [
+        "comparison"
+      ],
+      "recommendation": "Wyjaśnij pułapkę w prozie; efekt potwierdza owned probe conditions.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "false, 0, 0.0/-0.0, pusty napis, napis \"0\", pusta tablica i null konwertują do false. \"00\", \"false\" i ujemna liczba niezerowa konwertują do true.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "boolean",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "truthiness",
+      "questionIds": [
+        "truthiness"
+      ],
+      "recommendation": "Pokaż \"0\" kontra test pustego napisu; nie utożsamiaj truthiness z walidacją danych.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "&& wymaga dwóch prawdziwych warunków, || co najmniej jednego, ! neguje bool. &&/|| oraz and/or mają short-circuit.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "logical",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "logic",
+      "questionIds": [
+        "logic"
+      ],
+      "recommendation": "Krótkie zdefiniowane dane, przykład ochrony przed dzieleniem przez zero.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "&& ma wyższe pierwszeństwo od =, a and niższe. Analogiczny kontrast dotyczy || i or. Nawiasy pomagają pokazać grupowanie, ale nie gwarantują kolejności ewaluacji dowolnych wyrażeń.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "logical",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "precedence",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "precedence",
+      "questionIds": [
+        "logic"
+      ],
+      "recommendation": "Pokaż kontrast przypisanych bool; nie wprowadzaj xor.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "Prosty operator warunkowy condition ? a : b wybiera jedną wartość. Nie jest zamiennikiem czytelnej gałęzi z wieloma instrukcjami.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "comparison",
+          "excerptId": "ternary"
+        }
+      ],
+      "id": "ternary",
+      "questionIds": [
+        "ternary"
+      ],
+      "recommendation": "Jedna krótka linia, bez zagnieżdżonych ternary.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "switch dopasowuje case luźno. Po pasującym case wykonuje dalsze instrukcje aż do break lub końca switch; brak break może dać fallthrough.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "switch",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "switch",
+      "questionIds": [
+        "choice"
+      ],
+      "recommendation": "Pokaż napis '1' pasujący do liczby 1, jawne break i default.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "match jest dostępny od PHP 8.0, porównuje przez ===, daje wartość, nie ma fallthrough i wymaga dopasowania. Brak pasującego ramienia i default powoduje UnhandledMatchError.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "match",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "match",
+      "questionIds": [
+        "choice"
+      ],
+      "recommendation": "Krótki kontrast tego samego '1' z case 1; użyj default. Nie przedstawiaj jako nowości 8.4/8.5.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "while sprawdza warunek przed każdym obiegiem; body może nie wykonać się ani razu. Zmiana warunku w body nie przerywa go natychmiast bez dodatkowego przepływu.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "while",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "while",
+      "questionIds": [
+        "loops"
+      ],
+      "recommendation": "Sumowanie 1..10 i jawny przyrost; ostrzeżenie o braku postępu.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "do-while testuje warunek po body, więc body wykona się co najmniej raz. Po while(condition) wymaga końcowego średnika.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "do-while",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "do-while",
+      "questionIds": [
+        "loops"
+      ],
+      "recommendation": "Przykład z false pokazuje minimum jedno wykonanie.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "for ma inicjalizację raz, test przed iteracją i krok po body; granice < i <= mogą zmienić liczbę obiegów.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "for",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "for",
+      "questionIds": [
+        "loops"
+      ],
+      "recommendation": "Krótki licznik 0..2 i opis trzech części; brak twierdzeń o popularności.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "foreach po tablicy ma formę wartościową lub klucz=>wartość; pusta tablica daje zero obiegów. Przykłady nie używają referencji ani modyfikacji iterowanej kolekcji.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "foreach",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "foreach",
+      "questionIds": [
+        "foreach"
+      ],
+      "recommendation": "Link do publicznego PHP Arrays; pokaż nazwy zmiennych wskazujące klucz i wartość.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "break bez poziomu kończy bieżącą pętlę lub switch, continue w pętli pomija resztę bieżącego obiegu. W for krok licznika nadal wykona się po continue. Nested levels i continue w switch mają osobne zasady poza zakresem.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "break",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "continue",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "for",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "break-continue",
+      "questionIds": [
+        "flow"
+      ],
+      "recommendation": "Dwa małe przykłady pętli, bez continue w switch.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "Wewnątrz funkcji return kończy tę funkcję i zwraca wartość; wywołujący kontynuuje pracę. return na poziomie pliku ma inne zastosowanie, którego tu nie nauczamy.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "return",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "return",
+      "questionIds": [
+        "flow"
+      ],
+      "recommendation": "Named function z prostym typem parametru/zwrotu i jawne echo po wywołaniu.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "Migracja 8.4 zmienia exit i rekurencyjne porównania; 8.5 zmienia niektóre luźne porównania obiektów oraz moment dezaktywacji tick handlers. To nie są użyte tu proste skalarne warunki. Nie wolno stwierdzić, że wszystkie porównania lub wszystkie instrukcje są identyczne w tych wersjach.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "migration84",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "migration85",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "runtime-scope",
+      "questionIds": [
+        "versions"
+      ],
+      "recommendation": "Wykonaj owned probes i każdy nowy przykład na obu dokładnych runtime; ogranicz wniosek do użytego kodu.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "PHP ma tryb CLI do uruchamiania plików poza serwerem WWW; tutorial może używać stałych danych bez formularzy/HTML/zależności.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "cli",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "cli-context",
+      "questionIds": [
+        "source-boundary"
+      ],
+      "recommendation": "Użyj php przyklad.php w inline text; każdy fenced PHP przykład osobno.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [],
+      "claim": "Pusta instrukcja kończąca if średnikiem nie obejmie następującego bloku. Przy elseif kolejność progów wpływa na wybór pierwszej prawdziwej gałęzi.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "if",
+          "excerptId": "anchor"
+        },
+        {
+          "documentId": "elseif",
+          "excerptId": "anchor"
+        }
+      ],
+      "id": "pitfalls",
+      "questionIds": [
+        "conditions"
+      ],
+      "recommendation": "Wyjaśnij w prozie, bez osobnego błędnego kodu publikacyjnego; owned probe beginner-pitfalls utrwala dowód.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    }
+  ],
+  "writerHandoff": {
+    "avoid": [
+      {
+        "findingIds": [
+          "unmeasured-popularity",
+          "unsupported-language-similarity",
+          "runtime-scope"
+        ],
+        "instruction": "Marketing, twierdzenia o najczęstszej pętli, analogie do Pythona i zaawansowane dygresje."
+      }
+    ],
+    "caution": [
+      {
+        "findingIds": [
+          "truthiness",
+          "cli-context",
+          "runtime-scope"
+        ],
+        "instruction": "Truthiness nie sprawdza poprawności danych; używamy własnych stałych bez danych z żądań. No promises about all versions or objects."
+      }
+    ],
+    "correct": [
+      {
+        "findingIds": [
+          "comparisons",
+          "truthiness",
+          "switch",
+          "match"
+        ],
+        "instruction": "Każdy przykład samodzielny, wynik jawny, zwięzłe kontrasty ===/==, truthiness i switch/match."
+      }
+    ],
+    "keep": [
+      {
+        "findingIds": [
+          "if-branches",
+          "while",
+          "do-while",
+          "for",
+          "foreach",
+          "break-continue",
+          "return"
+        ],
+        "instruction": "Warunki, cztery pętle i proste sterowanie przepływem."
+      }
+    ],
+    "verifiedCodeFindingIds": [
+      "code-if",
+      "code-ternary",
+      "code-switch",
+      "code-while",
+      "code-do",
+      "code-for",
+      "code-foreach",
+      "code-return"
+    ]
+  }
+}

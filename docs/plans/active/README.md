@@ -1,8 +1,21 @@
 # Active plans
 
-No active implementation plan. [010: Pagefind Search 0.1 / public checkpoint](../completed/010-pagefind-search-public-checkpoint.md)
+[013: PHP Control Flow publication checkpoint](013-php-control-flow-publication.md)
+is active. The exact B2 candidate passed the schema-v2 Promotion Gate and the full
+local quality/browser gate. Git push and direct Cloudflare production verification
+remain before closeout. STOP before B3 and later experimental layers.
+
+[012: B2 PHP control flow](../completed/012-php-control-flow-b2.md) is completed
+with a full second Critic PASS, exact LAB candidate and comparison with PHP Arrays.
+Its original stop boundary was crossed only by the separate plan 013 human approval.
+
+[011: B1 pilot selection](../completed/011-cartographer-pilot-selection.md)
+is completed: fresh ranking only and full gate PASS. Its original stop boundary was
+later crossed for rank #1 only through the separate authorization and plan 012.
+
+[010: Pagefind Search 0.1 / public checkpoint](../completed/010-pagefind-search-public-checkpoint.md)
 is completed: current quality gate, production preview, commit/push and public
-Cloudflare verification pass. STOP before the separate B1 selection.
+Cloudflare verification pass. Its STOP was followed by separate human B1 authorization.
 
 [009: Reading time and website utilities](../completed/009-reading-time-and-website-utilities.md)
 is completed after its explicit append: reading time, official Astro sitemap XML,

@@ -38,6 +38,18 @@ which ideas are still exploratory.
   reading time, official sitemap XML, HTML map, back-to-top and progressive code copy.
 - [Search/public checkpoint](plans/completed/010-pagefind-search-public-checkpoint.md) —
   Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
+- [B1 pilot selection](../lab/reports/pilot-selection-b1.md) and
+  [structured ranking](../lab/cartography/pilot-selection/ranking.json) — fresh ten
+  candidates, eight criteria and full shortlist reads; its selection-only boundary
+  was followed later by separately authorized B2 rank #1.
+- [B2 PHP control flow candidate](../lab/candidates/php-control-flow/article.md),
+  [final Critic PASS](../lab/reviews/php-control-flow/critic-review.md) and
+  [pilot comparison](../lab/reports/php-control-flow-b2-comparison.md) — rank #1
+  completed in LAB; the immutable candidate state remains pending/false.
+- [B2 public-production decision](../lab/decisions/php-control-flow-publication.json)
+  and [promotion audit](../lab/reports/instrukcje-sterujace-php-promotion.json) —
+  separate human approval and deterministic exact promotion to CONTENT; plan 013
+  tracks Git/Cloudflare closeout. STOP before rank #2.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and

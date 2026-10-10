@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": null,
+  "recordedAt": "2026-10-10T17:45:44Z",
+  "scope": "B2 rank #1 only, complete manual pipeline to publication candidate in LAB",
+  "source": {
+    "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+    "originalUrl": "https://opengateweb.com/posts/post-60-instrukcje-sterujace-php/",
+    "sourceId": "1308",
+    "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+    "title": "Post #60 Instrukcje sterujące PHP"
+  },
+  "b1RankingRef": "lab/cartography/pilot-selection/ranking.json",
+  "authorization": "User: Akceptuję ranking B1. Teraz wykonaj wyłącznie pozycję #1: Instrukcje sterujące PHP. Research Packet, Draft, Critic review, Publication candidate, B2 comparison report. Nie publikuj do CONTENT. Nie uruchamiaj Promotion Gate.",
+  "researchAcceptance": {
+    "mode": "validation-under-human-task-authorization",
+    "humanReviewedPacket": false,
+    "writerAfterValidatedPacket": true,
+    "clarification": "Tak — cały B2 do kandydata, z walidacją pakietu"
+  },
+  "allowedStages": [
+    "focused-cartographer",
+    "research",
+    "code-verification",
+    "writer",
+    "critic",
+    "required-targeted-revision-if-REVISE",
+    "publication-candidate",
+    "comparison-report"
+  ],
+  "publicationApproved": false,
+  "gitApproved": false,
+  "otherRanksApproved": false
+}

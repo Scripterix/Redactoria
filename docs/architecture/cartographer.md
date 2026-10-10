@@ -207,6 +207,60 @@ The current human state is summarized in [STATUS](../STATUS.md).
 
 ## Artifacts and publication
 
+### B1 — ten-candidate pilot selection
+
+The separate human-authorized B1 branch uses the same module, model port, full
+SOURCE reader, citation checks and LAB writer, not another runtime agent. It does
+not reuse the historical TOP 10 or alter the existing corpus/PHP artifacts.
+
+```sh
+npm run select:pilot -- --prepare
+# Analyze lab/cartography/pilot-selection/request.json in the current session,
+# import its exact requestHash and pilot-selection response in session-responses.json.
+npm run select:pilot
+npm run select:pilot -- --verify
+```
+
+The dedicated CLI defaults to all 83 inventory records, 19 full bodies (30,000
+characters each maximum), and `pilot-selection/screening.json`. Screening covers
+every source exactly once; exclusions are metadata-based, not full technical review.
+Both PHP arrays originals are excluded because their modernization already exists.
+The 19-read scope is explicit and within the existing 25-read ceiling. Truncation,
+changed original-byte hashes, malformed references and unsupported output fail closed.
+
+Every full-read source has exactly one assessment: selected or deferred, eight
+integer 1–5 ratings, bounded scope, reason, exact own-source body evidence, known
+internal-link IDs and future research needs. Exactly ten distinct selections are
+required. Benefits: educational value, code testability, scope clarity, internal
+linking, beginner usefulness. Costs/risks: research, obsolescence, security. Weights
+are recorded in the request/result; favorable rating is `6 - rating` for risks.
+The weighted mean × 20 sorts descending, breaking ties by source path. Ordinal
+interpretations are subjective; the ordering calculation alone is deterministic.
+
+Artifacts are isolated under `lab/cartography/pilot-selection/` (screening, full
+request, imported response and ranking) and `lab/reports/pilot-selection-b1.md`.
+`--verify` re-reads original sources and checks byte-exact ranking/report replay
+without writes, model inference, network or source-code execution. Tests can replay
+the captured request offline without requiring the external SOURCE checkout.
+Metrics not measured are null. Links to sources need the separate `temp-ogwo` checkout.
+Output status is `selection-only`, publication approval is false and the next gate
+is human review before B2. No Researcher/Writer/Critic invocation, draft, candidate,
+CONTENT change, Git operation or deployment occurs. ADR 0003 boundaries still apply.
+
+### B2 — focused single article
+
+After separate human authorization, the bounded focused-article branch reads exactly
+the rank #1 source selected by B1 in full. It accepts `SINGLE_ARTICLE` and may return
+KEEP, UPDATE or REWRITE; MERGE is structurally impossible with one source. Evidence,
+source hash, scope, keep/correct/drop findings, gaps, prerequisite relationship and
+ordered structure are validated before isolated LAB output.
+
+For source 1308 the result is REWRITE with confidence 0.97. The branch does not call
+Researcher, approve its own recommendation, read rank #2 or write a draft. A separate
+human B2 authorization binds the source/ranking and allowed stages through candidate
+and comparison only. Existing ADR 0003 boundaries cover this input variant; no new
+agent or orchestration decision is introduced.
+
 - `lab/cartography/knowledge-map.json`: full validated result.
 - `lab/cartography/editorial-candidates.json`: versioned candidate projection with
   inventory hash and model provenance.

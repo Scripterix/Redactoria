@@ -1,0 +1,1335 @@
+{
+  "corpusCount": 83,
+  "deepReads": [
+    {
+      "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+      "providedCharacters": 2700,
+      "sourceId": "48",
+      "sourcePath": "48-post-2-jezyk-markdown.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "providedCharacters": 3443,
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+      "providedCharacters": 6634,
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "392d05b7db1574b6523df0ea3519b334a672b8b076bb3b0c7e117b8ca8661870",
+      "providedCharacters": 4833,
+      "sourceId": "410",
+      "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "7322fab3f8e7136b773e944ef17ad0cdabf72efa7c91423783ce2548e63c4981",
+      "providedCharacters": 8285,
+      "sourceId": "514",
+      "sourcePath": "514-post-13-crud.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+      "providedCharacters": 1119,
+      "sourceId": "542",
+      "sourcePath": "542-post-17-przeglad-js-html-css.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "a99f5d391143e2ed1cae0ac52903d769a2262037709af72b7590525d1b8dd50d",
+      "providedCharacters": 5438,
+      "sourceId": "551",
+      "sourcePath": "551-post-18-front-end-jakie-sa-wymagania.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+      "providedCharacters": 4535,
+      "sourceId": "578",
+      "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+      "providedCharacters": 14180,
+      "sourceId": "940",
+      "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+      "providedCharacters": 5240,
+      "sourceId": "977",
+      "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "b64a9b0356808731ddd4d3edebcfcb4a203f8e46d42aa2492a2b212c6833e4ec",
+      "providedCharacters": 7521,
+      "sourceId": "1166",
+      "sourcePath": "1166-post-58-php-kodowanie-i-znaki-specjalne.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+      "providedCharacters": 3976,
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+      "providedCharacters": 9125,
+      "sourceId": "1336",
+      "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "92515775269ad4c74584ce313a5049f9978a624644c258f1df7c780db019a2d2",
+      "providedCharacters": 13842,
+      "sourceId": "1575",
+      "sourcePath": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "87ef95d54d040d71cb4d290b62a06f2c545e27839928471b7644b354444a930b",
+      "providedCharacters": 4986,
+      "sourceId": "1789",
+      "sourcePath": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "5b93cb6b0282293c687709f16fb1d0b35f12754679a8478c4412e07e28314f18",
+      "providedCharacters": 3190,
+      "sourceId": "2003",
+      "sourcePath": "2003-jak-zaczac-nauke-pythona-w-windows-i-visual-studio.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+      "providedCharacters": 5654,
+      "sourceId": "2048",
+      "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+      "truncated": false
+    },
+    {
+      "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+      "providedCharacters": 9062,
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "truncated": false
+    }
+  ],
+  "deferred": [
+    {
+      "disposition": "defer",
+      "domain": "Web/API",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "410",
+          "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+          "value": "## API - Advanced Programming Interface"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "578",
+        "1336"
+      ],
+      "proposedTitle": "API: definicje i metody HTTP",
+      "reason": "Silny overlap z 578, błąd w rozwinięciu skrótu API i dominacja opisu Express/JSON-Server. Osobny wybór dublowałby wprowadzenie; ewentualny MERGE wymaga nowego approval, nie jest wykonywany w B1.",
+      "recommendedScope": "Na później: tylko pomocniczy kontekst do 578; nie osobny drugi artykuł API w tej dziesiątce.",
+      "researchNeeds": [
+        "Sprawdzić rozwinięcie API i precyzję opisów metod HTTP.",
+        "Ocenić potrzebę osobnego zakresu po publikacji lekcji 578; nie łączyć źródeł automatycznie."
+      ],
+      "scores": {
+        "beginnerUsefulness": 3,
+        "codeTestability": 3,
+        "educationalValue": 4,
+        "internalLinking": 4,
+        "outdatedRisk": 3,
+        "researchCost": 3,
+        "scopeClarity": 2,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "392d05b7db1574b6523df0ea3519b334a672b8b076bb3b0c7e117b8ca8661870",
+        "originalUrl": "https://opengateweb.com/posts/11-post-api/",
+        "sourceId": "410",
+        "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+        "title": "Post #11 API Advanced Programming Interface"
+      },
+      "sourceId": "410",
+      "weightedScore": 64
+    },
+    {
+      "disposition": "defer",
+      "domain": "PHP",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1166",
+          "sourcePath": "1166-post-58-php-kodowanie-i-znaki-specjalne.md",
+          "value": "To ustawienie zagwarantuje ci pełną obsługę polskich znaków"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "1308",
+        "940"
+      ],
+      "proposedTitle": "Znaki, UTF-8 i escaping w PHP",
+      "reason": "Źródło łączy XSS, encje, charset, locale, MySQL i daty. Nawet ważny edukacyjnie temat wymaga większego researchu security i środowisk niż pierwszy prosty batch; nie oceniamy go jako uniwersalnie bezpiecznego.",
+      "recommendedScope": "Na później: osobno UTF-8 i kontekstowy escaping; bez bazy/locale jako jednego gwarantowanego rozwiązania.",
+      "researchNeeds": [
+        "Oddzielić kodowanie znaków od escaping i od locale; sprawdzić kontekst HTML/atrybutów.",
+        "Przejrzeć daty/locale/DB i flags encji; nie przenosić obietnic o pełnym zabezpieczeniu."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 4,
+        "educationalValue": 5,
+        "internalLinking": 5,
+        "outdatedRisk": 4,
+        "researchCost": 4,
+        "scopeClarity": 2,
+        "securityRisk": 4
+      },
+      "source": {
+        "contentHash": "b64a9b0356808731ddd4d3edebcfcb4a203f8e46d42aa2492a2b212c6833e4ec",
+        "originalUrl": "https://opengateweb.com/posts/post-58-php-kodowanie-i-znaki-specjalne/",
+        "sourceId": "1166",
+        "sourcePath": "1166-post-58-php-kodowanie-i-znaki-specjalne.md",
+        "title": "Post #58 PHP Kodowanie i znaki specjalne"
+      },
+      "sourceId": "1166",
+      "weightedScore": 72
+    },
+    {
+      "disposition": "defer",
+      "domain": "HTML/CSS",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "## Transition BarbaJS"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "940"
+      ],
+      "proposedTitle": "Przegląd ćwiczeń HTML/CSS/JS",
+      "reason": "Tytuł sugeruje podstawy, ale body nie dostarcza kodu HTML/CSS ani konkretnej lekcji. Wybranie go tylko dla pokrycia HTML/CSS wymagałoby nowej treści, nie modernizacji ograniczonego materiału.",
+      "recommendedScope": "Brak małej lekcji do modernizacji: portfolio i lista projektów.",
+      "researchNeeds": [
+        "Ewentualna nowa lekcja HTML/CSS wymaga osobnego scope/source lub decyzji NEW_CONTENT."
+      ],
+      "scores": {
+        "beginnerUsefulness": 2,
+        "codeTestability": 1,
+        "educationalValue": 2,
+        "internalLinking": 3,
+        "outdatedRisk": 3,
+        "researchCost": 4,
+        "scopeClarity": 1,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+        "originalUrl": "https://opengateweb.com/posts/17-post-js/",
+        "sourceId": "542",
+        "sourcePath": "542-post-17-przeglad-js-html-css.md",
+        "title": "Post #17 Przegląd JS Html CSS"
+      },
+      "sourceId": "542",
+      "weightedScore": 39
+    },
+    {
+      "disposition": "defer",
+      "domain": "HTML/CSS",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "551",
+          "sourcePath": "551-post-18-front-end-jakie-sa-wymagania.md",
+          "value": "## Znajomość Azure i AWS"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "940",
+        "2068"
+      ],
+      "proposedTitle": "Umiejętności front-end: mapa nauki",
+      "reason": "Szeroka lista frameworków, narzędzi, AWS/Azure i wymagań juniora jest niejasna i trudna do kodowego sprawdzenia. Odłożone zamiast przedstawiać zestaw opinii jako minimum dla początkujących.",
+      "recommendedScope": "Na później: mapa nauki, nie tutorial podstaw.",
+      "researchNeeds": [
+        "Oddzielić opinie o rynku pracy od fundamentów języków.",
+        "Każde wymaganie framework/chmura wymaga osobnego uzasadnienia, nie automatycznej aktualizacji."
+      ],
+      "scores": {
+        "beginnerUsefulness": 3,
+        "codeTestability": 1,
+        "educationalValue": 3,
+        "internalLinking": 4,
+        "outdatedRisk": 4,
+        "researchCost": 4,
+        "scopeClarity": 1,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "a99f5d391143e2ed1cae0ac52903d769a2262037709af72b7590525d1b8dd50d",
+        "originalUrl": "https://opengateweb.com/posts/18-post-front-end/",
+        "sourceId": "551",
+        "sourcePath": "551-post-18-front-end-jakie-sa-wymagania.md",
+        "title": "Post #18 Front-End Jakie są wymagania ?"
+      },
+      "sourceId": "551",
+      "weightedScore": 46
+    },
+    {
+      "disposition": "defer",
+      "domain": "Tooling",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1575",
+          "sourcePath": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+          "value": "## Pierwszy projekt w React z create-react-app"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "277",
+        "2003"
+      ],
+      "proposedTitle": "Warsztat Windows: edytor, Git i Node",
+      "reason": "Instrukcje instalatorów, Settings Sync, rozszerzenia i create-react-app zwiększają koszt aktualności oraz zależność od OS. Git 277 ma bardziej kontrolowalny lokalny zakres na pierwszy batch.",
+      "recommendedScope": "Na później: osobno instalacja Windows, bez React/AI i listy wszystkich narzędzi.",
+      "researchNeeds": [
+        "Sprawdzić każdy krok instalacji i opisy VS Code/Git/Node z oficjalną dokumentacją.",
+        "Oddzielić zmienny scaffolding React i synchronizację kont od podstaw warsztatu."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 3,
+        "educationalValue": 4,
+        "internalLinking": 4,
+        "outdatedRisk": 4,
+        "researchCost": 4,
+        "scopeClarity": 2,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "92515775269ad4c74584ce313a5049f9978a624644c258f1df7c780db019a2d2",
+        "originalUrl": "https://opengateweb.com/posts/post-66-jak-zbudowac-srodowisko-programistyczne-na-windows-visual-studio-code-git-node-js/",
+        "sourceId": "1575",
+        "sourcePath": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+        "title": "Post #66 – Jak zbudować środowisko programistyczne na Windows Visual Studio Code, Git, Node.js"
+      },
+      "sourceId": "1575",
+      "weightedScore": 64
+    },
+    {
+      "disposition": "defer",
+      "domain": "Web/API",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "514",
+          "sourcePath": "514-post-13-crud.md",
+          "value": "const newStudent = req.body;"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "578",
+        "410"
+      ],
+      "proposedTitle": "CRUD uczniów w Express i JSON",
+      "reason": "Trwałe zapisy, request.body i pełny CRUD wymagają walidacji, obsługi błędów, konkurencji i zależności. Wyższy koszt/security niż read-only JSON; nie wprowadzamy backendu do strony.",
+      "recommendedScope": "Na później: osobny bounded LAB backend demonstracyjny, nie część WEBSITE.",
+      "researchNeeds": [
+        "Sprawdzić walidację danych, trwałość zapisu i failure handling.",
+        "Oddzielić edukacyjny fixture backend od architektury publikacji; żaden automatyczny deploy."
+      ],
+      "scores": {
+        "beginnerUsefulness": 3,
+        "codeTestability": 4,
+        "educationalValue": 4,
+        "internalLinking": 5,
+        "outdatedRisk": 4,
+        "researchCost": 4,
+        "scopeClarity": 2,
+        "securityRisk": 4
+      },
+      "source": {
+        "contentHash": "7322fab3f8e7136b773e944ef17ad0cdabf72efa7c91423783ce2548e63c4981",
+        "originalUrl": "https://opengateweb.com/posts/13-post-crud-2/",
+        "sourceId": "514",
+        "sourcePath": "514-post-13-crud.md",
+        "title": "Post #13 CRUD"
+      },
+      "sourceId": "514",
+      "weightedScore": 65
+    },
+    {
+      "disposition": "defer",
+      "domain": "PHP",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "## Różnice miedzy PHP i Pythonem"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "1308",
+        "283",
+        "1324"
+      ],
+      "proposedTitle": "PHP i Python: porównanie podstaw",
+      "reason": "Szerokie porównanie języków, hostingu i frameworków zawiera powtórzenia i generalizacje. Małe lekcje 1308/283 oferują lepszą bazę testów i jaśniejszą wartość.",
+      "recommendedScope": "Na później: kilka konkretnych różnic składni, nie ranking ekosystemów/hostingu.",
+      "researchNeeds": [
+        "Zweryfikować opinie o hostingu/paradygmatach zamiast powielać stereotypy.",
+        "Wybrać oddzielne porównanie składni i dwa jawne runtime, jeśli człowiek zatwierdzi zakres."
+      ],
+      "scores": {
+        "beginnerUsefulness": 3,
+        "codeTestability": 3,
+        "educationalValue": 3,
+        "internalLinking": 4,
+        "outdatedRisk": 4,
+        "researchCost": 4,
+        "scopeClarity": 1,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+        "originalUrl": "https://opengateweb.com/posts/52-php-python/",
+        "sourceId": "977",
+        "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+        "title": "Post #52 Jakie są PHP i Python"
+      },
+      "sourceId": "977",
+      "weightedScore": 54
+    },
+    {
+      "disposition": "defer",
+      "domain": "Python",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2003",
+          "sourcePath": "2003-jak-zaczac-nauke-pythona-w-windows-i-visual-studio.md",
+          "value": "Tworzenie wirtualnego środowiska"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "283",
+        "1575"
+      ],
+      "proposedTitle": "Python w Windows i VS Code",
+      "reason": "Wartościowy onboarding, ale wersje instalatorów/PATH/rozszerzeń wymagają aktualnej weryfikacji OS; brakuje zapowiedzianej sekcji venv. Pierwszy Python pilot ograniczamy do języka, a nie instalacji.",
+      "recommendedScope": "Na później: osobny przewodnik setup Windows, nie druga lekcja Python.",
+      "researchNeeds": [
+        "Sprawdzić oficjalny aktualny flow instalacji Windows i launchera.",
+        "Potwierdzić rozszerzenia/debugger/venv i nie traktować 3.12 jako deklaracji najnowszej wersji."
+      ],
+      "scores": {
+        "beginnerUsefulness": 5,
+        "codeTestability": 3,
+        "educationalValue": 4,
+        "internalLinking": 3,
+        "outdatedRisk": 4,
+        "researchCost": 3,
+        "scopeClarity": 4,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "5b93cb6b0282293c687709f16fb1d0b35f12754679a8478c4412e07e28314f18",
+        "originalUrl": "https://opengateweb.com/posts/jak-zaczac-nauke-pythona-w-windows-i-visual-studio-code-post-70/",
+        "sourceId": "2003",
+        "sourcePath": "2003-jak-zaczac-nauke-pythona-w-windows-i-visual-studio.md",
+        "title": "Jak zacząć naukę Pythona w Windows i Visual Studio Code Post #70"
+      },
+      "sourceId": "2003",
+      "weightedScore": 74
+    },
+    {
+      "disposition": "defer",
+      "domain": "HTML/CSS",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1789",
+          "sourcePath": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+          "value": "## Biała przestrzeń"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "940",
+        "542"
+      ],
+      "proposedTitle": "Równowaga wizualna i czytelność stron",
+      "reason": "Tekst opisuje estetykę bez kodu i testowalnych ćwiczeń. Wprowadzenie HTML/CSS tylko dla różnorodności wymagałoby większej nowej pracy niż kandydaci z konkretnymi fragmentami.",
+      "recommendedScope": "Na później: kryteria czytelności oraz konkretne ćwiczenia CSS po przyjęciu osobnego zakresu.",
+      "researchNeeds": [
+        "Oddzielić subiektywną harmonię od sprawdzalnych wymagań czytelności i accessibility.",
+        "Zdefiniować realne ćwiczenie CSS oraz kryteria jego sprawdzenia przed nowym artykułem."
+      ],
+      "scores": {
+        "beginnerUsefulness": 3,
+        "codeTestability": 1,
+        "educationalValue": 3,
+        "internalLinking": 4,
+        "outdatedRisk": 3,
+        "researchCost": 4,
+        "scopeClarity": 2,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "87ef95d54d040d71cb4d290b62a06f2c545e27839928471b7644b354444a930b",
+        "originalUrl": "https://opengateweb.com/posts/zrownowazony-web-design/",
+        "sourceId": "1789",
+        "sourcePath": "1789-zrownowazony-web-design-jak-tworzyc-harmonijne-i-e.md",
+        "title": "Zrównoważony web design – jak tworzyć harmonijne i estetyczne strony internetowe Post #67"
+      },
+      "sourceId": "1789",
+      "weightedScore": 51
+    }
+  ],
+  "inventoryHash": "3a715b48a0feb57374790c8954ddcfceef102ab0cd135b40919c6686cd192039",
+  "limitations": [
+    "Pełne body odczytano tylko dla 19 shortlistowanych źródeł; pozostałe 64 odłożono na podstawie metadanych (w tym dwie już opracowane części PHP Arrays). Nie jest to ranking technicznej jakości wszystkich 83 tekstów.",
+    "Oceny 1–5 są szacunkami redakcyjnymi, nie pomiarami kosztu, czasu ani gotowości do publikacji. Dotyczą ograniczonego proponowanego zakresu; research może zmienić kolejność lub odrzucić temat.",
+    "Nie sprawdzano oficjalnej dokumentacji, zewnętrznych repozytoriów/Gist ani wykonywania kodu. Cytat świadczy o zawartości legacy, nie o prawdziwości twierdzenia. Techniczne kwestie są wyłącznie research needs.",
+    "Brak wystarczająco konkretnego małego tutorialu HTML/CSS w shortlistowanych tekstach. Nie wypełniano kwoty nową treścią; wybór obejmuje fundamenty PHP/JS, read-only API, Markdown, Git, curl i mały Python.",
+    "Możliwe linki to istniejące source IDs, nie obietnica publicznych tras. Dwie części PHP Arrays wskazują wspólny już opublikowany artykuł; nowy ranking ich nie liczy.",
+    "Każdy wybór wymaga osobnej decyzji człowieka przed pełnym pipeline i osobnej publication approval po Critic PASS. B1 nie uruchamia B2 ani agentów.",
+    "Tokeny, koszt modelu i godziny researchu nie były mierzone; structured metryki mają null. Historyczne LAB/SOURCE/CONTENT pozostają niezmienione."
+  ],
+  "measuredUsage": {
+    "modelCost": null,
+    "researchHours": null,
+    "tokens": null
+  },
+  "model": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "Codex current session (provider model ID unavailable)"
+  },
+  "nextStep": "human-review-before-B2",
+  "publicationApproved": false,
+  "ranking": [
+    {
+      "disposition": "select",
+      "domain": "PHP",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "1324",
+        "1356",
+        "2068"
+      ],
+      "proposedTitle": "Instrukcje sterujące w PHP: warunki i pętle",
+      "reason": "Najmniejszy kolejny pilot PHP: fundament potrzebny przy tablicach, łatwo wyznaczyć oczekiwany stdout i przypadki brzegowe. Zakres ograniczamy, bo legacy miesza sterowanie przepływem z dyrektywami i dołączaniem plików.",
+      "recommendedOrder": 1,
+      "recommendedScope": "if/elseif/else, switch, while/do-while/for/foreach, break/continue i return w małych skryptach CLI. Bez declare(ticks), dynamicznego include/require, logowania i ogólnych porównań języków.",
+      "researchNeeds": [
+        "Potwierdzić semantykę warunków, porównań switch i przerwania pętli dla jawnie wybranych wersji PHP.",
+        "Nadać przykładom kompletne wejścia; sprawdzić pętle o zerowej/jednej iteracji i zagnieżdżone break/continue. Bez declare i include w tej lekcji."
+      ],
+      "scores": {
+        "beginnerUsefulness": 5,
+        "codeTestability": 5,
+        "educationalValue": 5,
+        "internalLinking": 5,
+        "outdatedRisk": 2,
+        "researchCost": 2,
+        "scopeClarity": 5,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+        "originalUrl": "https://opengateweb.com/posts/post-60-instrukcje-sterujace-php/",
+        "sourceId": "1308",
+        "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+        "title": "Post #60 Instrukcje sterujące PHP"
+      },
+      "sourceId": "1308",
+      "weightedScore": 97
+    },
+    {
+      "disposition": "select",
+      "domain": "JavaScript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "function analyzeNumber(raw) {"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "1308",
+        "2048",
+        "940"
+      ],
+      "proposedTitle": "if i else w JavaScript: warunki i walidacja wejścia",
+      "reason": "Jasny temat z czystymi funkcjami i praktyką walidacji. Źródło już odróżnia pustą wartość od liczby, ale scenariusze prędkości i kosztów niepotrzebnie zwiększają zakres; trzeba kontrolować wartości niefinitywne i białe znaki.",
+      "recommendedOrder": 2,
+      "recommendedScope": "Warunki, truthy/falsy, ścisłe porównania i jedna czysta funkcja analizująca wejście liczbowe; najwyżej mały formularz HTML. Bez prawa drogowego, loginu, trzech aplikacji i szerokiego kalkulatora finansowego.",
+      "researchNeeds": [
+        "Zweryfikować konwersję Number dla pustych/białych znaków, NaN i wartości niefinitywnych; ustalić kontrakt wejścia.",
+        "Usunąć normatywne przykłady prędkości; testować gałęzie i granice, a UI osobno jako mały przykład."
+      ],
+      "scores": {
+        "beginnerUsefulness": 5,
+        "codeTestability": 5,
+        "educationalValue": 5,
+        "internalLinking": 5,
+        "outdatedRisk": 2,
+        "researchCost": 2,
+        "scopeClarity": 4,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+        "originalUrl": "https://opengateweb.com/posts/if-i-else-w-javascript-od-prostych-warunkow-do-praktycznych-aplikacji/",
+        "sourceId": "2068",
+        "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+        "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji"
+      },
+      "sourceId": "2068",
+      "weightedScore": 94
+    },
+    {
+      "disposition": "select",
+      "domain": "JavaScript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2048",
+          "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+          "value": "function avg(arr) {"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "1324",
+        "1356",
+        "2068",
+        "281"
+      ],
+      "proposedTitle": "Tablice JavaScript: map, filter, reduce i sort",
+      "reason": "Duża wartość edukacyjna i naturalny link do PHP Arrays. Stałe fixtures pozwalają dokładnie sprawdzić transformacje; źródłową narrację o niespójnym sortowaniu i precompute trzeba zweryfikować, nie powielać.",
+      "recommendedOrder": 3,
+      "recommendedScope": "Stała mała tablica liczb/obiektów, map/filter/reduce i sortowanie numeryczne; średnia oraz pusta tablica. Bez losowych ID, rozbudowanego UI i niesprawdzonych obietnic wydajności.",
+      "researchNeeds": [
+        "Sprawdzić mutację sort, comparator, stabilność oraz zachowanie reduce dla pustej tablicy.",
+        "Oddzielić zaokrąglanie od obliczenia średniej; ocenić twierdzenie o ponownym obliczaniu deterministycznej średniej. Zastąpić losowe ID stałymi fixtures."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 5,
+        "educationalValue": 5,
+        "internalLinking": 5,
+        "outdatedRisk": 2,
+        "researchCost": 2,
+        "scopeClarity": 4,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+        "originalUrl": "https://opengateweb.com/posts/tablice-javascript-js-arrays-sortowanie-filtrowanie-i-srednia-ocen-krok-po-kroku/",
+        "sourceId": "2048",
+        "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+        "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73"
+      },
+      "sourceId": "2048",
+      "weightedScore": 91
+    },
+    {
+      "disposition": "select",
+      "domain": "JavaScript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "940",
+          "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+          "value": "document.getElementById(\"myTitle\").textContent"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "2068",
+        "2048",
+        "578"
+      ],
+      "proposedTitle": "DOM w JavaScript: selektory, tekst i zdarzenia",
+      "reason": "Podstawy frontendu bez frameworka. Proste zachowania są obserwowalne, ale testy DOM wymagają rzeczywistej przeglądarki; źródło ma artefakty kopiowania, duplikaty i hover bez równoważnej obsługi klawiatury.",
+      "recommendedOrder": 4,
+      "recommendedScope": "Mały kompletny dokument: querySelector/querySelectorAll, brak elementu, textContent, classList, createElement i kliknięcie natywnego przycisku. Bez animacji/bibliotek i efektów zależnych tylko od hover.",
+      "researchNeeds": [
+        "Zweryfikować live collections vs statyczna lista, null i moment wykonania skryptu.",
+        "Zaplanować krótki browser check klawiatury i bezpiecznego textContent; nie stosować dowolnego HTML z wejścia."
+      ],
+      "scores": {
+        "beginnerUsefulness": 5,
+        "codeTestability": 4,
+        "educationalValue": 5,
+        "internalLinking": 5,
+        "outdatedRisk": 2,
+        "researchCost": 2,
+        "scopeClarity": 4,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+        "originalUrl": "https://opengateweb.com/posts/45-js-dom/",
+        "sourceId": "940",
+        "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+        "title": "Post #45 JavaScript DOM selections i proste funkcje"
+      },
+      "sourceId": "940",
+      "weightedScore": 89
+    },
+    {
+      "disposition": "select",
+      "domain": "Markdown",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "277",
+        "940"
+      ],
+      "proposedTitle": "Markdown: nagłówki, linki, listy i bloki kodu",
+      "reason": "Krótki, niski koszt i deterministyczne przykłady renderowania. Pomaga czytelnikom korzystać z code fences, jednak legacy miesza podstawy z przekreśleniem i rozszerzeniami bez nazwania dialektu.",
+      "recommendedOrder": 5,
+      "recommendedScope": "Podstawy CommonMark oraz jawnie oznaczone, potrzebne rozszerzenia GFM; minimalne wejścia i oczekiwany HTML. Bez porównania wszystkich CMS, eksportu PDF i frameworkowych atrybutów nagłówka.",
+      "researchNeeds": [
+        "Rozdzielić CommonMark od GFM i składni rozszerzeń atrybutów.",
+        "Zweryfikować code fences, zagnieżdżanie list, escaping i poprawny przykład HTML; dobór renderera testowego dopiero w B2 danego tematu."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 5,
+        "educationalValue": 4,
+        "internalLinking": 3,
+        "outdatedRisk": 2,
+        "researchCost": 1,
+        "scopeClarity": 5,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+        "originalUrl": "https://opengateweb.com/posts/2-jezyk-mark-down/",
+        "sourceId": "48",
+        "sourcePath": "48-post-2-jezyk-markdown.md",
+        "title": "Post #2 język Markdown"
+      },
+      "sourceId": "48",
+      "weightedScore": 88
+    },
+    {
+      "disposition": "select",
+      "domain": "JavaScript",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "2068",
+        "940",
+        "2048"
+      ],
+      "proposedTitle": "Funkcje i klasy JavaScript na przykładzie kalkulatora",
+      "reason": "Proste operacje i dwa sposoby organizacji kodu zapewniają konkretne testy. Legacy miesza proceduralne/funkcyjne, stan i UI; zawężenie daje dobrą lekcję po warunkach i DOM.",
+      "recommendedOrder": 6,
+      "recommendedScope": "Porównanie jednej czystej funkcji z niewielką klasą dla dodawania/odejmowania; jawne wejścia i zwrot błędu. Opcjonalnie mały formularz. Bez Person, trzech kalkulatorów i twierdzenia, że kod z funkcjami automatycznie jest funkcyjny.",
+      "researchNeeds": [
+        "Zweryfikować różnicę między funkcją, stylem proceduralnym i programowaniem funkcyjnym.",
+        "Ustalić obsługę pustego/niepoprawnego wejścia i liczby dziesiętnej; nie maskować błędów przez || 0, UI testować osobno."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 5,
+        "educationalValue": 4,
+        "internalLinking": 5,
+        "outdatedRisk": 2,
+        "researchCost": 2,
+        "scopeClarity": 4,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+        "originalUrl": "https://opengateweb.com/posts/9-post-calc/",
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "title": "Post #9 Calculator Math Func OOP"
+      },
+      "sourceId": "281",
+      "weightedScore": 87
+    },
+    {
+      "disposition": "select",
+      "domain": "Web/API",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "578",
+          "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+          "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "940",
+        "1336",
+        "2048",
+        "410"
+      ],
+      "proposedTitle": "API, HTTP i JSON: od żądania do odpowiedzi",
+      "reason": "Łączy frontend z małym sprawdzalnym przykładem JSON. Priorytet niższy od czystej logiki: potrzebne rozdzielenie błędu HTTP/sieci oraz kontrolowane fixtures. Nie przenosimy źródłowego serwera Express do architektury Redactorii.",
+      "recommendedOrder": 7,
+      "recommendedScope": "API vs HTTP API, odczyt stałego lokalnego JSON przez fetch, status HTTP, niepoprawny JSON i błąd sieci. Bez kont, kluczy, zewnętrznego darmowego API, CRUD, Express i budowy backendu strony.",
+      "researchNeeds": [
+        "Zweryfikować semantykę fetch, response.ok/json i podstawy metod HTTP z oficjalnych źródeł.",
+        "Przygotować kontrolowane odpowiedzi 200/404 i niepoprawny JSON; nie używać przykładowej domeny jako działającego API. Unikać obietnicy, że samo API zapewnia bezpieczeństwo."
+      ],
+      "scores": {
+        "beginnerUsefulness": 5,
+        "codeTestability": 4,
+        "educationalValue": 5,
+        "internalLinking": 5,
+        "outdatedRisk": 2,
+        "researchCost": 3,
+        "scopeClarity": 4,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+        "originalUrl": "https://opengateweb.com/posts/22-post-api/",
+        "sourceId": "578",
+        "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+        "title": "Post #22 Wprowadzenie do API."
+      },
+      "sourceId": "578",
+      "weightedScore": 87
+    },
+    {
+      "disposition": "select",
+      "domain": "Git",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "git rm --cashed index.html"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "48",
+        "281",
+        "283"
+      ],
+      "proposedTitle": "Git lokalnie: status, staging, commit i historia",
+      "reason": "Podstawowe narzędzie uczenia się przez małe kroki; komendy można testować w izolowanym katalogu. Źródło to głównie promocja Gist i luźna lista poleceń, więc trzeba napisać samodzielną lekcję i poprawić składnię, nie kopiować reklamy.",
+      "recommendedOrder": 8,
+      "recommendedScope": "Jednorazowe lokalne repo testowe: init, status, add, diff, commit i log. Bez pushu, kont GitHub, reklamowania gistów, reset --hard, czyszczenia katalogów i automatycznych merge.",
+      "researchNeeds": [
+        "Potwierdzić polecenia staging/diff i poprawny --cached; oddzielić Git od GitHub/Gist.",
+        "Testować na tymczasowym repo z lokalnym config, bez sieci i bez zmian globalnej konfiguracji; przyjąć jawną politykę bez destrukcyjnych operacji."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 5,
+        "educationalValue": 4,
+        "internalLinking": 4,
+        "outdatedRisk": 3,
+        "researchCost": 2,
+        "scopeClarity": 3,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+        "originalUrl": "https://opengateweb.com/posts/8-post-gist/",
+        "sourceId": "277",
+        "sourcePath": "277-post-8-moj-gist.md",
+        "title": "Post #8 Mój Gist"
+      },
+      "sourceId": "277",
+      "weightedScore": 80
+    },
+    {
+      "disposition": "select",
+      "domain": "Tooling",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1336",
+          "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+          "value": "curl -I https://example.com"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "578",
+        "410",
+        "277"
+      ],
+      "proposedTitle": "curl i HTTP: odpowiedź, nagłówki i lokalny JSON",
+      "reason": "Praktyczna kontynuacja API z lokalnymi oczekiwanymi odpowiedziami. Różnice quoting powłok i kontrola błędów podnoszą koszt; źródło ma zlane komendy, dlatego proponowany zakres jest znacznie mniejszy.",
+      "recommendedOrder": 9,
+      "recommendedScope": "GET, HEAD, status, nagłówki i jeden mały JSON względem kontrolowanego lokalnego endpointu. Jawne warianty Bash/PowerShell. Bez JWT, Basic Auth, cookies, proxy, cronów i porównania wszystkich protokołów curl/wget.",
+      "researchNeeds": [
+        "Sprawdzić opcje curl i exit status z oficjalnym manualem dla jawnego runtime.",
+        "Zbudować w LAB kontrolowane fixtures HTTP zamiast polegać na bit.ly/public API; zweryfikować składnię Bash i PowerShell. Wykluczyć sekrety i auth."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 4,
+        "educationalValue": 4,
+        "internalLinking": 5,
+        "outdatedRisk": 3,
+        "researchCost": 3,
+        "scopeClarity": 4,
+        "securityRisk": 2
+      },
+      "source": {
+        "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+        "originalUrl": "https://opengateweb.com/posts/post-64-curl-twoje-terminalowe-okno-na-swiat/",
+        "sourceId": "1336",
+        "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+        "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat"
+      },
+      "sourceId": "1336",
+      "weightedScore": 79
+    },
+    {
+      "disposition": "select",
+      "domain": "Python",
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "def greet(name):"
+        }
+      ],
+      "internalLinkSourceIds": [
+        "1308",
+        "2003",
+        "277"
+      ],
+      "proposedTitle": "Podstawy Pythona: wartości, warunki, pętle i funkcje",
+      "reason": "Fundamentalny temat poszerza pilot, ale jest poza preferowanym rdzeniem PHP/JS i wymaga osobnego runtime. Legacy ma luźne wklejki i wiele odgałęzień, więc ograniczony zakres jest konieczny.",
+      "recommendedOrder": 10,
+      "recommendedScope": "Małe skrypty czystego Python: typy, if, range i funkcja; stałe wejścia i stdout. Bez scrapingu, requests/BeautifulSoup, AI, CDN, losowej gry i porównania C jako osobnej lekcji.",
+      "researchNeeds": [
+        "Zweryfikować przykłady z oficjalnym tutorialem dla jawnie wybranej wersji Python.",
+        "Sprawdzić ukryte znaki/wcięcia i kompletność snippetów; bez pobierania repo kursu ani polegania na zewnętrznym filmie."
+      ],
+      "scores": {
+        "beginnerUsefulness": 4,
+        "codeTestability": 5,
+        "educationalValue": 4,
+        "internalLinking": 3,
+        "outdatedRisk": 2,
+        "researchCost": 3,
+        "scopeClarity": 3,
+        "securityRisk": 1
+      },
+      "source": {
+        "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+        "originalUrl": "https://opengateweb.com/posts/10-post-python/",
+        "sourceId": "283",
+        "sourcePath": "283-post-10-python-crash-course.md",
+        "title": "Post #10 Python Crash Course"
+      },
+      "sourceId": "283",
+      "weightedScore": 78
+    }
+  ],
+  "requestHash": "df9b31244a478aa3a1586f51f1b6e653977d93626bcd46b372e23038085f67bf",
+  "schemaVersion": 1,
+  "screening": {
+    "exclusions": [
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "100"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "1098"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "1135"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "1142"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "1197"
+      },
+      {
+        "reason": "Już opracowany PHP Arrays I+II: publiczny pilot istnieje; nie liczymy go ponownie w nowej dziesiątce.",
+        "sourceId": "1324"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "1329"
+      },
+      {
+        "reason": "Już opracowany PHP Arrays I+II: publiczny pilot istnieje; nie liczymy go ponownie w nowej dziesiątce.",
+        "sourceId": "1356"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "path:143-post-4-angular-podstawy-praktyka.md"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "145"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "147"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "1577"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "1584"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "1770"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "1779"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "1786"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "1799"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "1802"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "2022"
+      },
+      {
+        "reason": "Screening inventory: puste body (word_count=0); brak treści do modernizacji.",
+        "sourceId": "2070"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "230"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "269"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "273"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "363"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "46"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "507"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "519"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "522"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "534"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "553"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "556"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "576"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "670"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "672"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "675"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "736"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "738"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "741"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "746"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "748"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "753"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "755"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "761"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "763"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "765"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "767"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "769"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "771"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "818"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "822"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "824"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "826"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "831"
+      },
+      {
+        "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw.",
+        "sourceId": "834"
+      },
+      {
+        "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu.",
+        "sourceId": "859"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "865"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "936"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "942"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "944"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "966"
+      },
+      {
+        "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt.",
+        "sourceId": "968"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "970"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "974"
+      },
+      {
+        "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres.",
+        "sourceId": "981"
+      }
+    ],
+    "schemaVersion": 1,
+    "shortlist": [
+      {
+        "reason": "Markdown i code fences; krótki stabilny temat wspierający naukę.",
+        "sourceId": "48"
+      },
+      {
+        "reason": "Git/Bash w źródłach pomocniczych; możliwy ograniczony temat kontroli wersji.",
+        "sourceId": "277"
+      },
+      {
+        "reason": "Kalkulator JavaScript jako mały przykład funkcji i klas.",
+        "sourceId": "281"
+      },
+      {
+        "reason": "Podstawy Pythona; temat fundamentalny spoza preferowanego rdzenia PHP/JS.",
+        "sourceId": "283"
+      },
+      {
+        "reason": "Drugi tekst API; trzeba ocenić overlap, zakres Express i przydatność samodzielną.",
+        "sourceId": "410"
+      },
+      {
+        "reason": "API/JSON/CRUD; ocenić koszt security, backendu i zależności.",
+        "sourceId": "514"
+      },
+      {
+        "reason": "HTML/CSS/JS w metadanych; pełny odczyt ma odróżnić tutorial od przeglądu portfolio.",
+        "sourceId": "542"
+      },
+      {
+        "reason": "Front-end basics w tytule; sprawdzić, czy jest to nauka czy szeroka lista wymagań.",
+        "sourceId": "551"
+      },
+      {
+        "reason": "Wprowadzenie do API/HTTP/JSON; możliwe ograniczenie do odczytu danych.",
+        "sourceId": "578"
+      },
+      {
+        "reason": "Vanilla DOM i selektory bez frameworka; podstawowy temat frontendu.",
+        "sourceId": "940"
+      },
+      {
+        "reason": "PHP i Python; ocenić jasność zakresu oraz bazę małych przykładów.",
+        "sourceId": "977"
+      },
+      {
+        "reason": "PHP/HTML, polskie znaki i kodowanie; sprawdzić poziom security i researchu.",
+        "sourceId": "1166"
+      },
+      {
+        "reason": "Podstawy PHP z if/switch i pętlami; możliwy mały kontynuacyjny pilot po PHP Arrays.",
+        "sourceId": "1308"
+      },
+      {
+        "reason": "curl i HTTP/JSON; możliwe kontrolowane lokalne ćwiczenia.",
+        "sourceId": "1336"
+      },
+      {
+        "reason": "Środowisko Windows/Git/Node; ocenić zależność od instalatorów i frameworków.",
+        "sourceId": "1575"
+      },
+      {
+        "reason": "HTML/CSS-adjacent design; ocenić konkretność ćwiczeń i testowalność.",
+        "sourceId": "1789"
+      },
+      {
+        "reason": "Python Windows; porównać koszt konfiguracji z samymi podstawami języka.",
+        "sourceId": "2003"
+      },
+      {
+        "reason": "Metody tablic JavaScript; porównanie z publicznym PHP Arrays.",
+        "sourceId": "2048"
+      },
+      {
+        "reason": "Warunki JavaScript i logika wejścia; duży potencjał czystych testów.",
+        "sourceId": "2068"
+      }
+    ]
+  },
+  "stage": "B1",
+  "status": "selection-only",
+  "weights": {
+    "beginnerUsefulness": 15,
+    "codeTestability": 20,
+    "educationalValue": 20,
+    "internalLinking": 10,
+    "outdatedRisk": 5,
+    "researchCost": 10,
+    "scopeClarity": 15,
+    "securityRisk": 5
+  }
+}

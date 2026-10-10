@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "public-production",
+  "approvedAt": "2026-10-10T21:30:00Z",
+  "authorization": "Explicit human end-of-day authorization: accept the exact PHP Control Flow B2 candidate, promote it through the formal gate to CONTENT, run the complete quality sequence, commit and push master only after PASS, verify Cloudflare Pages production, then STOP without starting B3 or later layers.",
+  "candidateRef": "lab/candidates/php-control-flow/article.json",
+  "candidateHash": "1d1500fb7c023b07d320d78aa7ee46faf8240ae32c3e6938b176ce3e5511a396",
+  "articleHash": "2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b",
+  "criticReviewRef": "lab/reviews/php-control-flow/critic-review.json",
+  "criticReviewHash": "78c542a74f5cb32f627e96fce73991a26a45afcb856532528c236209f2924834",
+  "destination": "content/articles/instrukcje-sterujace-php.md",
+  "metadata": {
+    "title": "Instrukcje sterujące PHP: warunki i pętle",
+    "description": "Praktyczny przewodnik po warunkach, porównaniach, switch, match oraz pętlach w PHP 8.4–8.5, z 16 wykonanymi przykładami.",
+    "slug": "instrukcje-sterujace-php",
+    "status": "published",
+    "created": "2026-10-10",
+    "updated": "2026-10-10",
+    "domain": "programming",
+    "topic": "php",
+    "author": { "type": "ai-assisted", "name": "Scripterix" },
+    "sources": [
+      { "title": "PHP Manual — if", "url": "https://www.php.net/manual/en/control-structures.if.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — Booleans", "url": "https://www.php.net/manual/en/language.types.boolean.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — Comparison Operators", "url": "https://www.php.net/manual/en/language.operators.comparison.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — Logical Operators", "url": "https://www.php.net/manual/en/language.operators.logical.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — switch", "url": "https://www.php.net/manual/en/control-structures.switch.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — match", "url": "https://www.php.net/manual/en/control-structures.match.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — for", "url": "https://www.php.net/manual/en/control-structures.for.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — foreach", "url": "https://www.php.net/manual/en/control-structures.foreach.php", "publisher": "PHP Documentation" }
+    ],
+    "origin": {
+      "type": "wordpress-export",
+      "source_id": "1308",
+      "original_url": "https://opengateweb.com/posts/post-60-instrukcje-sterujace-php/",
+      "original_date": null,
+      "original_author": null
+    },
+    "review": { "status": "approved", "reviewer": "human — public production approval", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-10", "update_priority": "normal" },
+    "redactoria": { "decision": "rewrite", "modernization": "major" }
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie zgody B2 oraz rzeczywiste wykonania PHP 8.4 i 8.5. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true
+}

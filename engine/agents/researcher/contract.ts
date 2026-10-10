@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { EvidenceSchema, InventoryInputSchema } from '../cartographer/contract.ts';
 import { FocusedMergeResultSchema, MergeProposalSchema } from '../cartographer/focused-merge.ts';
+import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../cartographer/focused-article.ts';
 import { ResearchLimitsSchema } from './policies.ts';
 
 const text = z.string().min(1).refine(value => value.trim().length > 0, 'Nonblank text required');
@@ -31,7 +32,7 @@ export const ApprovedMergeDecisionSchema = MergeProposalSchema.extend({
 	status: z.literal('approved'), approvedBy: z.literal('human'), approvedAt: z.iso.datetime().optional(), nextStep: z.literal('research'),
 });
 export const ResearcherInputSchema = z.strictObject({
-	decision: ApprovedMergeDecisionSchema, cartography: FocusedMergeResultSchema,
+	decision: z.union([ApprovedMergeDecisionSchema, ApprovedArticleDecisionSchema]), cartography: z.union([FocusedMergeResultSchema, FocusedArticleResultSchema]),
 	inventory: InventoryInputSchema, research: ResearchBundleSchema, limits: ResearchLimitsSchema,
 });
 export type ResearcherInput = z.infer<typeof ResearcherInputSchema>;
@@ -62,11 +63,11 @@ export const ResearchAnalysisSchema = z.strictObject({
 export type ResearchAnalysis = z.infer<typeof ResearchAnalysisSchema>;
 export const RegisteredSourceSchema = DocumentSchema.omit({ excerpts: true }).extend({ evidenceIds: ids });
 export const ResearchPacketSchema = ResearchAnalysisSchema.extend({
-	schemaVersion: z.literal(1), targets: MergeProposalSchema.shape.targets,
+	schemaVersion: z.literal(1), targets: z.union([MergeProposalSchema.shape.targets, FocusedArticleResultSchema.shape.targets]),
 	sourceRegister: z.array(RegisteredSourceSchema).min(1),
 	analysisContext: z.strictObject({ inputHash: sha, requestHash: sha, decisionHash: sha, cartographyHash: sha, researchBundleHash: sha,
 		topicSlug: text, model: z.strictObject({ adapter: text, model: text, mode: z.enum(['imported-session-analysis', 'live', 'test']) }),
-		fullReadCount: z.literal(2), probes: z.array(ProbeSchema.omit({ code: true })) }),
+		fullReadCount: z.union([z.literal(2), z.literal(1)]), probes: z.array(ProbeSchema.omit({ code: true })) }),
 });
 export type ResearchPacket = z.infer<typeof ResearchPacketSchema>;
 export type Finding = ResearchAnalysis['verifiedFacts'][number] | ResearchAnalysis['ambiguousClaims'][number];

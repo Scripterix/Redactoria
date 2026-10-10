@@ -15,9 +15,11 @@
     "check": "astro check",
     "inventory": "node --experimental-strip-types scripts/legacy/scan.ts",
     "cartographer": "node --experimental-strip-types scripts/cartographer.ts",
+    "select:pilot": "node --experimental-strip-types scripts/select-pilot.ts",
     "researcher": "node --experimental-strip-types scripts/researcher.ts",
     "writer": "node --experimental-strip-types scripts/writer.ts",
     "critic": "node --experimental-strip-types scripts/critic.ts",
+    "candidate": "node --experimental-strip-types scripts/prepare-candidate.ts",
     "promote": "node --experimental-strip-types scripts/promote.ts"
   },
   "dependencies": {

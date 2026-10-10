@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "current-codex-session",
+    "description": "Full first Critic role in the same session: reviewed actual article, approved Research Packet and 32 actual draft executions; additional local zero-float comparison corroborates the documented type distinction. Not independent model or live API."
+  },
+  "critic": {
+    "requestHash": "3c0a2181d3bed988521fd47be0c86e7c4028ad238fdc5e756eda5ce1b39c1abf",
+    "response": {
+      "action": "REVIEW",
+      "verdict": "REVISE",
+      "summary": "Tekst i wszystkie podane programy są poprawne w zadanych danych, ale objaśnienie short-circuit wymaga jednego zawężenia: ścisły test !== 0 nie jest ogólnym sprawdzeniem numerycznego zera. To problem zakresu objaśnienia dla początkującego, nie niezaliczony runtime oryginalnego przykładu. Bez zmian w kodzie i bez przebudowy artykułu.",
+      "checks": [
+        {
+          "criterion": "FACTUAL_ACCURACY",
+          "result": "PASS",
+          "note": "Warunki, scalar truthiness, switch/match i pętle zgodne z ustaleniami; nie ma deklaracji o pełnej zgodności wszystkich porównań 8.4/8.5."
+        },
+        {
+          "criterion": "SOURCE_ALIGNMENT",
+          "result": "PASS",
+          "note": "Zachowany rdzeń legacy, nowa proza, brak CTA/ticks/include. Braki sources zastąpione jawnymi danymi."
+        },
+        {
+          "criterion": "CODE_CORRECTNESS",
+          "result": "PASS",
+          "note": "16/16 samodzielnych programów PASS na obu runtime; dokładne stdout/stderr/exit i code hashes. Guard short-circuit jest poprawny przy przypisanym int 0."
+        },
+        {
+          "criterion": "RESEARCH_COVERAGE",
+          "result": "PASS",
+          "note": "Wszystkie 16 obowiązkowych obszarów pokryte. Zbędne hipotezy o popularności/analogii języków usunięto, nie przedstawiono jako fakty."
+        },
+        {
+          "criterion": "STRUCTURE",
+          "result": "PASS",
+          "note": "13 sekcji: dane/pierwsza gałąź/operatory/wybór/pętle/przepływ/ćwiczenie. match jest krótkim kontrastem, nie dodatkowym kursem."
+        },
+        {
+          "criterion": "CLARITY",
+          "result": "ISSUES",
+          "note": "Wymagane doprecyzowanie: w ochronie przed dzieleniem przez zero !== 0 rozpoznaje tylko int 0; opis powinien jawnie podać to założenie."
+        },
+        {
+          "criterion": "DUPLICATION",
+          "result": "PASS",
+          "note": "Arrays to prerequisite/link, bez powielania API; wyniki bloków jawne. Powtórzone linki kontekstowe nie są duplikacją materiału."
+        },
+        {
+          "criterion": "SECURITY",
+          "result": "PASS",
+          "note": "Brak danych z requestów, HTML, eval/shell/plików w przykładach. Brak nieskończonych pętli; access example jawnie nie jest systemem autoryzacji."
+        },
+        {
+          "criterion": "VERSION_CLAIMS",
+          "result": "PASS",
+          "note": "match datowany od 8.0; scoped 8.4–8.5, exact actual runtimes i wyjątki migracyjne, bez twierdzeń o najnowszej wersji."
+        },
+        {
+          "criterion": "UNSUPPORTED_CLAIMS",
+          "result": "PASS",
+          "note": "Brak marketingu, nieudokumentowanej popularności for, porównań PHP/Python ani benchmarków. Syntaktyczne int/string objaśniono minimalnie dla użytej funkcji."
+        }
+      ],
+      "issues": [
+        {
+          "id": "integer-zero-boundary",
+          "category": "CLARITY",
+          "severity": "required",
+          "status": "confirmed",
+          "location": {
+            "sectionId": "logical-operators",
+            "quote": "Drugie ćwiczenie wykorzystuje to do pominięcia dzielenia przez zero."
+          },
+          "description": "Dzielnik w przykładzie jest int 0, więc program działa. Po zmianie na float 0.0 strict !== 0 daje true i nie osłania prawego wyrażenia. Ogólne objaśnienie nie ujawnia ograniczenia mimo że artykuł omawia też zero float. Potwierdzono dodatkowo actual PHP 8.4.26/8.5.11: 0.0 !== 0 true, 0.0 != 0 false.",
+          "evidence": [
+            {
+              "kind": "finding",
+              "id": "comparisons"
+            },
+            {
+              "kind": "finding",
+              "id": "logic"
+            }
+          ],
+          "change": "Zastąp tylko wskazane objaśnienie short-circuit precyzyjnym zdaniem o dzielniku int i kontraście float 0.0. Zachowaj kod, wynik oraz pozostałe sekcje bez zmian.",
+          "confidence": 0.99
+        }
+      ],
+      "limitations": [
+        "Funkcjonalny Critic w tej samej sesji/modelu co Writer; nie niezależny provider ani blind review.",
+        "Automatyczna walidacja sprawdza hash/referencje/shape, a nie dowodzi prawdy wszystkich zdań.",
+        "Próba zero float jest dodatkowym manualnym wykonaniem semantycznego kontrastu, nie jednym z 16 programów draftu.",
+        "REVISE nie daje zgody na publikację; poprawka tylko wymaganego miejsca w granicach zgody B2."
+      ]
+    }
+  }
+}

@@ -10,10 +10,15 @@ export const WriterAnalysisSchema = z.strictObject({
  limitations: z.array(Text).min(1),
 });
 export type WriterAnalysis = z.infer<typeof WriterAnalysisSchema>;
+export const InteractionOpportunitySchema = z.strictObject({ id: Slug, sectionId: Slug,
+ type: z.enum(['mini-quiz', 'show-output', 'hint', 'exercise', 'next-step']), purpose: Text, prompt: Text, expectedConcept: Text,
+ implemented: z.literal(false) });
+export const SingleWriterAnalysisSchema = WriterAnalysisSchema.extend({ interactionOpportunities: z.array(InteractionOpportunitySchema).min(2).max(4) });
 export const DraftSchema = WriterAnalysisSchema.extend({
  schemaVersion: z.literal(1), status: z.literal('draft'), topic: Slug, audience: Text,
  sourceDecision: LabRef, researchPacket: LabRef, researchApproval: LabRef, runtimeVerification: LabRef,
- sources: z.array(z.strictObject({ sourceId: Text, sourcePath: Text, contentHash: Sha, title: Text.nullable(), providedCharacters: z.number().int().positive(), truncated: z.literal(false) })).length(2),
+ sources: z.array(z.strictObject({ sourceId: Text, sourcePath: Text, contentHash: Sha, title: Text.nullable(), providedCharacters: z.number().int().positive(), truncated: z.literal(false) })).min(1).max(2),
+ interactionOpportunities: z.array(InteractionOpportunitySchema).min(2).max(4).optional(),
  approvedArtifacts: z.array(z.strictObject({ path: LabRef, sha256: Sha })).min(1),
  wordCount: z.number().int().positive(), articleHash: Sha,
  writerExecution: z.strictObject({ inputHash: Sha, requestHash: Sha, model: ModelIdentitySchema, modelCalls: z.literal(1) }),

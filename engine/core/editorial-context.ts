@@ -2,6 +2,8 @@ import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { DeepReadSchema } from '../agents/cartographer/contract.ts';
 import { FocusedMergeResultSchema } from '../agents/cartographer/focused-merge.ts';
+import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../agents/cartographer/focused-article.ts';
+import { validateB2Authorization } from './b2-authorization.ts';
 import { ApprovedMergeDecisionSchema, ResearchPacketSchema, ProbeSchema } from '../agents/researcher/contract.ts';
 import { findings } from '../agents/researcher/validation.ts';
 import { hashJson, stableJson } from './serialization.ts';
@@ -13,7 +15,7 @@ export const LabRef = z.string().regex(/^lab\/(decisions|cartography|research|dr
 export const PhpVersions = z.tuple([z.literal('8.4'), z.literal('8.5')]);
 export const ModelIdentitySchema = z.strictObject({ adapter: Text, model: Text, mode: z.enum(['imported-session-analysis', 'live', 'test']) });
 const target = ApprovedMergeDecisionSchema.shape.targets;
-export const ResearchApprovalSchema = z.strictObject({
+export const HumanResearchApprovalSchema = z.strictObject({
  schemaVersion: z.literal(1), status: z.literal('approved'), approvedBy: z.literal('human'),
  approvedAt: z.iso.datetime(), nextStep: z.literal('writer'), scope: Text, topic: Text,
  packetRef: LabRef, packetHash: Sha, targets: target, requestHash: Sha, inputHash: Sha,
@@ -24,6 +26,12 @@ export const ResearchApprovalSchema = z.strictObject({
  requiredAddenda: z.array(z.strictObject({ ref: LabRef, findingId: Text, instruction: Text })),
  resolvedQuestionIds: z.array(Text), remainingWriterBoundary: Text,
 });
+export const B2ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ schemaVersion: true, status: true, approvedBy: true, approvedAt: true, targets: true }).extend({
+ schemaVersion: z.literal(2), status: z.literal('validated'), approvedBy: z.literal('session-review-under-human-authorization'),
+ validatedAt: z.iso.datetime(), humanReviewedPacket: z.literal(false),
+ authorizationRef: LabRef, authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
+});
+export const ResearchApprovalSchema = z.union([HumanResearchApprovalSchema, B2ResearchAcceptanceSchema]);
 export const TopicConfigSchema = z.strictObject({
  schemaVersion: z.literal(1), topic: Slug, sourceDecision: LabRef, researchApproval: LabRef,
  researchPacket: LabRef, runtimeVerification: LabRef, targetPhpVersions: PhpVersions,
@@ -31,7 +39,7 @@ export const TopicConfigSchema = z.strictObject({
 });
 export const EditorialInputSchema = z.strictObject({
  config: TopicConfigSchema, artifacts: z.array(z.strictObject({ path: LabRef, contents: z.string().max(1500000) })).min(1).max(24),
- sources: z.array(DeepReadSchema).length(2),
+ sources: z.array(DeepReadSchema).min(1).max(2),
 });
 export type EditorialInput = z.infer<typeof EditorialInputSchema>;
 export const EvidenceRefSchema = z.strictObject({ kind: z.enum(['finding', 'addendum']), id: Text });
@@ -54,13 +62,23 @@ export function editorialBasis(raw: unknown) {
  for (const item of approval.evidence.artifacts) if (hashBytes(artifact(item.path)) !== item.sha256) {
   throw new Error('Approved artifact hash mismatch: ' + item.path);
  }
- const decision = ApprovedMergeDecisionSchema.parse(JSON.parse(artifact(input.config.sourceDecision)));
+ const decision = z.union([ApprovedMergeDecisionSchema, ApprovedArticleDecisionSchema]).parse(JSON.parse(artifact(input.config.sourceDecision)));
  const research = ResearchPacketSchema.parse(JSON.parse(artifact(input.config.researchPacket)));
- const cartography = FocusedMergeResultSchema.parse(JSON.parse(artifact(decision.analysisRef)));
+ const cartography = z.union([FocusedMergeResultSchema, FocusedArticleResultSchema]).parse(JSON.parse(artifact(decision.analysisRef)));
+ if (decision.action === 'MERGE') {
+  if (approval.schemaVersion !== 1 || input.sources.length !== 2 || cartography.task !== 'MERGE') throw new Error('MERGE requires human packet approval and two full sources.');
+ } else {
+  if (approval.schemaVersion !== 2 || input.config.topic !== 'php-control-flow' || input.sources.length !== 1
+   || cartography.task !== 'SINGLE_ARTICLE' || cartography.action !== decision.action
+   || approval.authorizationRef !== decision.authorizationRef || approval.authorizationHash !== decision.authorizationHash
+   || !approval.evidence.artifacts.some(item => item.path === approval.authorizationRef && item.sha256 === approval.authorizationHash)) throw new Error('Invalid bounded single-source acceptance.');
+  validateB2Authorization(artifact(approval.authorizationRef), approval.authorizationHash, decision.targets);
+  if (research.unresolvedQuestions.length || research.codeReview.some(item => item.verification === 'needs-review')) throw new Error('B2 research must be resolved before Writer.');
+ }
  if (approval.packetRef !== input.config.researchPacket || approval.packetHash !== hashBytes(artifact(approval.packetRef))
   || approval.requestHash !== research.analysisContext.requestHash || approval.inputHash !== research.analysisContext.inputHash
   || stableJson(approval.provenance) !== stableJson(research.analysisContext.model)
-  || research.analysisContext.topicSlug !== input.config.topic || cartography.artifactName !== input.config.topic + '-merge'
+  || research.analysisContext.topicSlug !== input.config.topic || cartography.artifactName !== input.config.topic + (decision.action === 'MERGE' ? '-merge' : '-single')
   || decision.analysisHash !== hashJson(cartography) || research.analysisContext.cartographyHash !== hashJson(cartography)
   || research.analysisContext.decisionHash !== hashJson(decision)) throw new Error('Approved research provenance mismatch.');
  for (const targets of [research.targets, approval.targets, cartography.targets]) {

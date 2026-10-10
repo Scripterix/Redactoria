@@ -82,9 +82,15 @@ Research Packet. Pierwszy REVISE został zachowany. Osobna decyzja człowieka ze
 na trzy małe poprawki prozy i jeden nowy pełny review: PASS. Kod i wcześniejsze wyniki
 PHP nie zmieniły się; nie wykonano nowego generowania ani automatycznej pętli.
 
-## First publication candidate
+## Publication candidates
 
 Milestone 5 utworzył [kandydata PHP arrays](candidates/php-arrays/article.md), dokładną
 kopię wersji ocenionej jako PASS, z walidowanymi metadanymi i hashami w LAB.
 `publication-candidate` oznacza **AWAIT HUMAN PUBLICATION DECISION**, nie
 `approved-for-publication` ani `published`. Brak przeniesienia do CONTENT lub deployu.
+
+Plan 012 utworzył osobny [kandydat PHP control flow](candidates/php-control-flow/article.md)
+po jednym Writerze, wymaganej korekcie prozy i pełnym drugim Critic PASS. Schema v2
+używa `sourceDecision`, ponieważ B2 jest pojedynczym REWRITE, a nie MERGE. Kandydat
+pozostaje `pending`, `approvedForPublication: false`, `published: false`; porównanie
+dwóch pilotów znajduje się w [raporcie B2](reports/php-control-flow-b2-comparison.md).

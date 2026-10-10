@@ -1,0 +1,785 @@
+{
+  "asOfDate": "2026-10-10",
+  "probes": [
+    {
+      "code": "<?php\n$score = 74;\n$branch = '';\nif ($score >= 90) { $branch = 'top'; }\nelseif ($score >= 60) { $branch = 'pass'; }\nelse { $branch = 'retry'; }\n$assigned = 0;\n$assignmentCondition = (bool)($assigned = 5);\n$result = ['branch' => $branch, 'loose' => 5 == '5', 'strict' => 5 === '5', 'assignmentCondition' => $assignmentCondition, 'assigned' => $assigned, 'different' => 5 !== '5'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "8e846dc7646f531007fee2bfee565c18c34453637582a8e4de6afc8e34057377",
+      "description": "elseif order, equality and assignment",
+      "diagnostics": [],
+      "id": "conditions-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "assigned": 5,
+        "assignmentCondition": true,
+        "branch": "pass",
+        "different": true,
+        "loose": true,
+        "strict": false
+      }
+    },
+    {
+      "code": "<?php\n$result = array_map(static fn($value) => (bool)$value, [false, 0, 0.0, '', '0', [], null, '00', 'false', -1]);\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "8949c6d76d8a8845b0f60885334c5bcfde780173ed8dbaf89dd9a308b4f326c2",
+      "description": "Scalar false values, empty array, true nonempty strings",
+      "diagnostics": [],
+      "id": "truthiness-84",
+      "phpVersion": "8.4.26",
+      "result": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "code": "<?php\n$calls = 0;\n$right = static function () use (&$calls) { $calls++; return true; };\n$falseAnd = false && $right();\n$trueOr = true || $right();\n$a = true && false;\n$b = true and false;\n$c = false || true;\n$d = false or true;\n$result = ['calls' => $calls, 'falseAnd' => $falseAnd, 'trueOr' => $trueOr, 'andSymbol' => $a, 'andWord' => $b, 'orSymbol' => $c, 'orWord' => $d, 'not' => !false];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "b9ec5fe5716f28258e9cab427f47798dd981410678cafbe0829b00802c9b1cd7",
+      "description": "Short-circuit and and/or precedence relative to assignment",
+      "diagnostics": [],
+      "id": "logic-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "andSymbol": false,
+        "andWord": true,
+        "calls": 0,
+        "falseAnd": false,
+        "not": true,
+        "orSymbol": true,
+        "orWord": false,
+        "trueOr": true
+      }
+    },
+    {
+      "code": "<?php\n$value = '1';\nswitch ($value) { case 1: $switch = 'number'; break; default: $switch = 'other'; }\n$match = match ($value) { 1 => 'number', default => 'other' };\n$fallthrough = '';\nswitch (1) { case 1: $fallthrough .= 'A'; case 2: $fallthrough .= 'B'; break; }\n$unhandled = false;\ntry { match ('missing') { 'known' => 1 }; } catch (UnhandledMatchError $error) { $unhandled = true; }\n$result = ['switch' => $switch, 'match' => $match, 'fallthrough' => $fallthrough, 'unhandled' => $unhandled, 'ternary' => true ? 'yes' : 'no'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "e398de7ad6aab6249e2515501fb247bbdbecd1cf579562e6bcc461b37ec36991",
+      "description": "Switch loose match/fallthrough, match strict/default/unhandled, ternary",
+      "diagnostics": [],
+      "id": "choices-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "fallthrough": "AB",
+        "match": "other",
+        "switch": "number",
+        "ternary": "yes",
+        "unhandled": true
+      }
+    },
+    {
+      "code": "<?php\n$while = 0; while (false) { $while++; }\n$do = 0; do { $do++; } while (false);\n$sequence = []; for ($i = 0; $i < 3; $i++) { $sequence[] = $i; }\n$i = 1; $sum = 0; while ($i <= 10) { $sum += $i; $i++; }\n$result = ['while' => $while, 'do' => $do, 'for' => $sequence, 'sum' => $sum];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "492d6059475db7c36aea49bf15235a40c57ee81063eb50735a228964b2772ce1",
+      "description": "While/do-while minimum, for bounds, sum with explicit increment",
+      "diagnostics": [],
+      "id": "loops-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "do": 1,
+        "for": [
+          0,
+          1,
+          2
+        ],
+        "sum": 55,
+        "while": 0
+      }
+    },
+    {
+      "code": "<?php\n$items = ['first' => 'Anna', 'second' => 'Tomek']; $pairs = [];\nforeach ($items as $key => $value) { $pairs[] = [$key, $value]; $value = 'changed'; }\n$empty = 0; foreach ([] as $value) { $empty++; }\n$result = ['pairs' => $pairs, 'unchanged' => $items, 'empty' => $empty];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "346c979d4a3d747d13f6a7322e3dfb093f48c026fb6e49563b305dfc7c150cf2",
+      "description": "Value/key iteration, empty array, no reference mutation",
+      "diagnostics": [],
+      "id": "foreach-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "empty": 0,
+        "pairs": [
+          [
+            "first",
+            "Anna"
+          ],
+          [
+            "second",
+            "Tomek"
+          ]
+        ],
+        "unchanged": {
+          "first": "Anna",
+          "second": "Tomek"
+        }
+      }
+    },
+    {
+      "code": "<?php\n$visited = [];\nfor ($i = 1; $i <= 6; $i++) { if ($i === 2) { continue; } if ($i === 5) { break; } $visited[] = $i; }\nfunction label(int $score): string { if ($score >= 60) { return 'pass'; } return 'retry'; }\n$result = ['visited' => $visited, 'passed' => label(70), 'retry' => label(40), 'callerContinues' => true];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "bd48022551d4fc07a7b34b9b4d56eacf6edb28f3b70b2097ec0b28bfe0a407c9",
+      "description": "Continue vs break; return ends function but not caller",
+      "diagnostics": [],
+      "id": "flow-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "callerContinues": true,
+        "passed": "pass",
+        "retry": "retry",
+        "visited": [
+          1,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "code": "<?php\n$ran = false;\nif (false); { $ran = true; }\n$score = 95;\nif ($score >= 60) { $branch = 'pass'; } elseif ($score >= 90) { $branch = 'top'; } else { $branch = 'retry'; }\n$result = ['emptyIfStillRunsFollowingBlock' => $ran, 'wrongOrder' => $branch];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "36e1d2412421d52d96f4027fe04b156b4ee4d1a89e4a987ba0f1c8c33bfab38d",
+      "description": "Accidental semicolon empty if statement and reversed threshold order",
+      "diagnostics": [],
+      "id": "beginner-pitfalls-84",
+      "phpVersion": "8.4.26",
+      "result": {
+        "emptyIfStillRunsFollowingBlock": true,
+        "wrongOrder": "pass"
+      }
+    },
+    {
+      "code": "<?php\n$score = 74;\n$branch = '';\nif ($score >= 90) { $branch = 'top'; }\nelseif ($score >= 60) { $branch = 'pass'; }\nelse { $branch = 'retry'; }\n$assigned = 0;\n$assignmentCondition = (bool)($assigned = 5);\n$result = ['branch' => $branch, 'loose' => 5 == '5', 'strict' => 5 === '5', 'assignmentCondition' => $assignmentCondition, 'assigned' => $assigned, 'different' => 5 !== '5'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "8e846dc7646f531007fee2bfee565c18c34453637582a8e4de6afc8e34057377",
+      "description": "elseif order, equality and assignment",
+      "diagnostics": [],
+      "id": "conditions-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "assigned": 5,
+        "assignmentCondition": true,
+        "branch": "pass",
+        "different": true,
+        "loose": true,
+        "strict": false
+      }
+    },
+    {
+      "code": "<?php\n$result = array_map(static fn($value) => (bool)$value, [false, 0, 0.0, '', '0', [], null, '00', 'false', -1]);\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "8949c6d76d8a8845b0f60885334c5bcfde780173ed8dbaf89dd9a308b4f326c2",
+      "description": "Scalar false values, empty array, true nonempty strings",
+      "diagnostics": [],
+      "id": "truthiness-85",
+      "phpVersion": "8.5.11",
+      "result": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "code": "<?php\n$calls = 0;\n$right = static function () use (&$calls) { $calls++; return true; };\n$falseAnd = false && $right();\n$trueOr = true || $right();\n$a = true && false;\n$b = true and false;\n$c = false || true;\n$d = false or true;\n$result = ['calls' => $calls, 'falseAnd' => $falseAnd, 'trueOr' => $trueOr, 'andSymbol' => $a, 'andWord' => $b, 'orSymbol' => $c, 'orWord' => $d, 'not' => !false];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "b9ec5fe5716f28258e9cab427f47798dd981410678cafbe0829b00802c9b1cd7",
+      "description": "Short-circuit and and/or precedence relative to assignment",
+      "diagnostics": [],
+      "id": "logic-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "andSymbol": false,
+        "andWord": true,
+        "calls": 0,
+        "falseAnd": false,
+        "not": true,
+        "orSymbol": true,
+        "orWord": false,
+        "trueOr": true
+      }
+    },
+    {
+      "code": "<?php\n$value = '1';\nswitch ($value) { case 1: $switch = 'number'; break; default: $switch = 'other'; }\n$match = match ($value) { 1 => 'number', default => 'other' };\n$fallthrough = '';\nswitch (1) { case 1: $fallthrough .= 'A'; case 2: $fallthrough .= 'B'; break; }\n$unhandled = false;\ntry { match ('missing') { 'known' => 1 }; } catch (UnhandledMatchError $error) { $unhandled = true; }\n$result = ['switch' => $switch, 'match' => $match, 'fallthrough' => $fallthrough, 'unhandled' => $unhandled, 'ternary' => true ? 'yes' : 'no'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "e398de7ad6aab6249e2515501fb247bbdbecd1cf579562e6bcc461b37ec36991",
+      "description": "Switch loose match/fallthrough, match strict/default/unhandled, ternary",
+      "diagnostics": [],
+      "id": "choices-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "fallthrough": "AB",
+        "match": "other",
+        "switch": "number",
+        "ternary": "yes",
+        "unhandled": true
+      }
+    },
+    {
+      "code": "<?php\n$while = 0; while (false) { $while++; }\n$do = 0; do { $do++; } while (false);\n$sequence = []; for ($i = 0; $i < 3; $i++) { $sequence[] = $i; }\n$i = 1; $sum = 0; while ($i <= 10) { $sum += $i; $i++; }\n$result = ['while' => $while, 'do' => $do, 'for' => $sequence, 'sum' => $sum];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "492d6059475db7c36aea49bf15235a40c57ee81063eb50735a228964b2772ce1",
+      "description": "While/do-while minimum, for bounds, sum with explicit increment",
+      "diagnostics": [],
+      "id": "loops-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "do": 1,
+        "for": [
+          0,
+          1,
+          2
+        ],
+        "sum": 55,
+        "while": 0
+      }
+    },
+    {
+      "code": "<?php\n$items = ['first' => 'Anna', 'second' => 'Tomek']; $pairs = [];\nforeach ($items as $key => $value) { $pairs[] = [$key, $value]; $value = 'changed'; }\n$empty = 0; foreach ([] as $value) { $empty++; }\n$result = ['pairs' => $pairs, 'unchanged' => $items, 'empty' => $empty];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "346c979d4a3d747d13f6a7322e3dfb093f48c026fb6e49563b305dfc7c150cf2",
+      "description": "Value/key iteration, empty array, no reference mutation",
+      "diagnostics": [],
+      "id": "foreach-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "empty": 0,
+        "pairs": [
+          [
+            "first",
+            "Anna"
+          ],
+          [
+            "second",
+            "Tomek"
+          ]
+        ],
+        "unchanged": {
+          "first": "Anna",
+          "second": "Tomek"
+        }
+      }
+    },
+    {
+      "code": "<?php\n$visited = [];\nfor ($i = 1; $i <= 6; $i++) { if ($i === 2) { continue; } if ($i === 5) { break; } $visited[] = $i; }\nfunction label(int $score): string { if ($score >= 60) { return 'pass'; } return 'retry'; }\n$result = ['visited' => $visited, 'passed' => label(70), 'retry' => label(40), 'callerContinues' => true];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "bd48022551d4fc07a7b34b9b4d56eacf6edb28f3b70b2097ec0b28bfe0a407c9",
+      "description": "Continue vs break; return ends function but not caller",
+      "diagnostics": [],
+      "id": "flow-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "callerContinues": true,
+        "passed": "pass",
+        "retry": "retry",
+        "visited": [
+          1,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "code": "<?php\n$ran = false;\nif (false); { $ran = true; }\n$score = 95;\nif ($score >= 60) { $branch = 'pass'; } elseif ($score >= 90) { $branch = 'top'; } else { $branch = 'retry'; }\n$result = ['emptyIfStillRunsFollowingBlock' => $ran, 'wrongOrder' => $branch];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+      "codeHash": "36e1d2412421d52d96f4027fe04b156b4ee4d1a89e4a987ba0f1c8c33bfab38d",
+      "description": "Accidental semicolon empty if statement and reversed threshold order",
+      "diagnostics": [],
+      "id": "beginner-pitfalls-85",
+      "phpVersion": "8.5.11",
+      "result": {
+        "emptyIfStillRunsFollowingBlock": true,
+        "wrongOrder": "pass"
+      }
+    }
+  ],
+  "provenance": "Actual HTTPS capture of official PHP manual only; user notes excluded. Short anchors and byte hashes retained. Semantic interpretation is a separate current-session role. Probes are owned controlled reproductions on verified PHP 8.4/8.5, never SOURCE execution.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-conditions"
+      ],
+      "id": "conditions",
+      "question": "Jak działają if/elseif/else i kolejność gałęzi?",
+      "section": "CONDITIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-conditions"
+      ],
+      "id": "comparison",
+      "question": "Czym różnią się =, ==, ===, !=, !== i relacje dla prostych liczb/napisów?",
+      "section": "CONDITIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-conditions"
+      ],
+      "id": "truthiness",
+      "question": "Które wartości oznaczają false, zwłaszcza \"0\", \"00\" i \"false\"?",
+      "section": "CONDITIONS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-logic"
+      ],
+      "id": "logic",
+      "question": "Jak działają &&, ||, !, short-circuit i and/or wobec przypisania?",
+      "section": "LOGIC"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-logic"
+      ],
+      "id": "ternary",
+      "question": "Kiedy prosty ternary wybiera wartość bez zastępowania dużej gałęzi?",
+      "section": "LOGIC"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-choice"
+      ],
+      "id": "choice",
+      "question": "Jak switch używa ==, break i fallthrough; jak match używa === i default?",
+      "section": "CHOICE"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-loops"
+      ],
+      "id": "loops",
+      "question": "Kiedy warunek sprawdzają while i do-while; co robią części for?",
+      "section": "LOOPS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-loops"
+      ],
+      "id": "foreach",
+      "question": "Jak iterować po wartościach i kluczach tablicy bez referencji?",
+      "section": "LOOPS"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-loops"
+      ],
+      "id": "flow",
+      "question": "Co kończą break, continue oraz return wewnątrz funkcji?",
+      "section": "FLOW"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-loops"
+      ],
+      "id": "versions",
+      "question": "Czy migracje 8.4 i 8.5 zmieniają użyte proste przykłady; czego nie wolno uogólniać?",
+      "section": "PHP VERSION TARGET"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-loops"
+      ],
+      "id": "source-boundary",
+      "question": "Jak usunąć niedookreślone legacy zależności, dygresje i nieuzasadnione twierdzenia?",
+      "section": "SOURCE AND SAFETY"
+    }
+  ],
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "documentHash": "f2cb6c7ad6371f427b0d316bb967681e9f8f412cef8f904c4de8867261b65d7b",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "if / boolean condition",
+          "text": "The if construct"
+        }
+      ],
+      "id": "if",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.if.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.615Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: if - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.if.php"
+    },
+    {
+      "documentHash": "b7ffe88b172dd337fe74dbaf6085a9e06fc452a7c3ed00bca7bc52ecf02328ad",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "elseif / first matching branch",
+          "text": "elseif"
+        }
+      ],
+      "id": "elseif",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.elseif.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.626Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: elseif/else if - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.elseif.php"
+    },
+    {
+      "documentHash": "5198eaa5eabc8d347a2a450365e8eb5757c3650685a18e69108e1855321e54f8",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "Comparison operators / == and ===",
+          "text": "type juggling"
+        },
+        {
+          "id": "ternary",
+          "locator": "Ternary operator / simple condition ? value : value",
+          "text": "Ternary Operator"
+        }
+      ],
+      "id": "comparison",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.comparison.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.647Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Comparison - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.comparison.php"
+    },
+    {
+      "documentHash": "851ab73917025740ca85f4bed118b0b033b58dd05b24e689aa45d78e70f33527",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "Converting to boolean / scalar false values",
+          "text": "the empty string"
+        }
+      ],
+      "id": "boolean",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.types.boolean.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.634Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Booleans - Manual",
+      "url": "https://www.php.net/manual/en/language.types.boolean.php"
+    },
+    {
+      "documentHash": "d77cf7af4914cf37669215d2d5f173abfc92e9dcee75f3d6e7011889ed918399",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "Logical operators / short-circuit and precedence",
+          "text": "short-circuit"
+        }
+      ],
+      "id": "logical",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.logical.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.640Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Logic - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.logical.php"
+    },
+    {
+      "documentHash": "89d4d2710eb38f1b73e885ea06042981b92c2736559a36801d9b507116429a8f",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "Operator precedence / assignment versus logical operators",
+          "text": "associativity"
+        }
+      ],
+      "id": "precedence",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.precedence.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.630Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Operator Precedence - Manual",
+      "url": "https://www.php.net/manual/en/language.operators.precedence.php"
+    },
+    {
+      "documentHash": "0f4652f69679768dff3b3ebc91b4a117b08497e5e6c336f15e5f2b72ec4c45a2",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "switch / matching and fallthrough",
+          "text": "loose comparison"
+        }
+      ],
+      "id": "switch",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.switch.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.641Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: switch - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.switch.php"
+    },
+    {
+      "documentHash": "7e1696699976ad00a36aa017568f7f774c06c14b5ebc35fc0d46843ad0e67fca",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "match / identity, no fallthrough, exhaustive arms",
+          "text": "UnhandledMatchError"
+        }
+      ],
+      "id": "match",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.match.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.650Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: match - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.match.php"
+    },
+    {
+      "documentHash": "98c9a0ad2b38c7a25664e1e5d408260baa2e74e5a86cd12a1ab60f5264c39250",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "while / zero or more iterations",
+          "text": "beginning of the loop"
+        }
+      ],
+      "id": "while",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.while.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.617Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: while - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.while.php"
+    },
+    {
+      "documentHash": "789812de39b6b7f77535cefa5ea69be01572b07c79ec080b4b220c57264c074c",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "do-while / body before condition",
+          "text": "end of each iteration"
+        }
+      ],
+      "id": "do-while",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.do.while.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.618Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: do-while - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.do.while.php"
+    },
+    {
+      "documentHash": "764042749e4d86e45908361806f62dfd561c3efe43d02b2dd85c9a8a7a887499",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "for / initialization, condition, increment",
+          "text": "expr3"
+        }
+      ],
+      "id": "for",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.for.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.631Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: for - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.for.php"
+    },
+    {
+      "documentHash": "6942bf0591808260289101fab8e6260a77e383628a32ef01c56f89e7fb8b7991",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "foreach / value and key-value syntax",
+          "text": "arrays"
+        }
+      ],
+      "id": "foreach",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.foreach.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.643Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: foreach - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.foreach.php"
+    },
+    {
+      "documentHash": "c2f74b0bfe50a164b8ee8969f4e1fc493410ccb9ee3c6d953c6b2f1324f586d2",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "break / current loop or switch",
+          "text": "ends execution"
+        }
+      ],
+      "id": "break",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.break.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.602Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: break - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.break.php"
+    },
+    {
+      "documentHash": "98fe0fa2f8816a15e7d0bf1715b589660c9cc5ed093c1dfc4a6dc784296f7a11",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "continue / skips current loop remainder",
+          "text": "next iteration"
+        }
+      ],
+      "id": "continue",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/control-structures.continue.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.636Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: continue - Manual",
+      "url": "https://www.php.net/manual/en/control-structures.continue.php"
+    },
+    {
+      "documentHash": "617b757c075d58acade259239b2817d7ab200dc8e3b169437d968ef76b2105f5",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "return / function context",
+          "text": "current function"
+        }
+      ],
+      "id": "return",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.return.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.621Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: return - Manual",
+      "url": "https://www.php.net/manual/en/function.return.php"
+    },
+    {
+      "documentHash": "2bd2a2e1975aaf47bb350b07c310a67bdd1abfcf713332faec765ac5475c9545",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "CLI / execute a script file",
+          "text": "php"
+        }
+      ],
+      "id": "cli",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/features.commandline.usage.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.622Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Usage - Manual",
+      "url": "https://www.php.net/manual/en/features.commandline.usage.php"
+    },
+    {
+      "documentHash": "880d93dd31fc752a99a8641fed0540c08d3a5dc5321fc48a7d657567ab39e8e2",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "Core / exit and recursive comparisons",
+          "text": "Recursion during comparison"
+        }
+      ],
+      "id": "migration84",
+      "kind": "migration",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/migration84.incompatible.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.644Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Backward Incompatible Changes - Manual",
+      "url": "https://www.php.net/manual/en/migration84.incompatible.php"
+    },
+    {
+      "documentHash": "f97f3a95c03a9e2793914de131ec4da0861969d91ddd284e670911e95012aed7",
+      "excerpts": [
+        {
+          "id": "anchor",
+          "locator": "Core / object comparisons and tick handlers",
+          "text": "Loosely comparing uncomparable objects"
+        }
+      ],
+      "id": "migration85",
+      "kind": "migration",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/migration85.incompatible.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-10T17:55:25.639Z",
+      "sourceType": "official-documentation",
+      "title": "PHP: Backward Incompatible Changes - Manual",
+      "url": "https://www.php.net/manual/en/migration85.incompatible.php"
+    }
+  ],
+  "topicSlug": "php-control-flow"
+}

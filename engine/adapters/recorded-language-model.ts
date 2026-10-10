@@ -12,7 +12,8 @@ export const RecordedResponsesSchema = z.union([z.strictObject({
 	inventory: response,
 	'deep-read': response.nullable(),
 }), z.strictObject({ ...common, 'focused-merge': response }), z.strictObject({ ...common, research: response }),
-	z.strictObject({ ...common, writer: response }), z.strictObject({ ...common, critic: response })]);
+	z.strictObject({ ...common, writer: response }), z.strictObject({ ...common, critic: response }),
+	z.strictObject({ ...common, 'pilot-selection': response }), z.strictObject({ ...common, 'focused-article': response })]);
 
 /** An explicit import, not live inference. Bind every answer to its exact request. */
 export class RecordedLanguageModel implements LanguageModel {
@@ -23,7 +24,9 @@ export class RecordedLanguageModel implements LanguageModel {
 		this.identity = { adapter: 'recorded-json', model: this.responses.provenance.model, mode: this.responses.provenance.mode };
 	}
 	async generateStructured(request: StructuredRequest): Promise<unknown> {
-		const entry = request.phase === 'writer' ? ('writer' in this.responses ? this.responses.writer : null)
+		const entry = request.phase === 'focused-article' ? ('focused-article' in this.responses ? this.responses['focused-article'] : null)
+			: request.phase === 'pilot-selection' ? ('pilot-selection' in this.responses ? this.responses['pilot-selection'] : null)
+			: request.phase === 'writer' ? ('writer' in this.responses ? this.responses.writer : null)
 			: request.phase === 'critic' ? ('critic' in this.responses ? this.responses.critic : null)
 			: request.phase === 'research'
 			? ('research' in this.responses ? this.responses.research : null)

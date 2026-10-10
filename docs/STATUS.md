@@ -1,7 +1,7 @@
 # Redactoria — STATUS
 
-Stan po Milestone 4/5, formalnej promocji, planie 009 i Search 0.1,
-2026-10-10. Szczegóły: [Project Brain](index.md),
+Stan po Milestone 4/5, Search 0.1, selekcji B1, pilocie B2 i jego formalnej
+promocji do CONTENT, 2026-10-11. Szczegóły: [Project Brain](index.md),
 [architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
@@ -9,7 +9,7 @@ Stan po Milestone 4/5, formalnej promocji, planie 009 i Search 0.1,
 | Etap | Zakres | Status |
 | --- | --- | --- |
 | Milestone 0 | Astro foundation | DONE |
-| Cloudflare Pages | Publiczny pilot, 10 stron Astro / 9 stron indeksu | DEPLOYMENT SUCCESS |
+| Cloudflare Pages | Ostatni potwierdzony publiczny pilot, 10 stron Astro / 9 stron indeksu | DEPLOYMENT SUCCESS — PRE-B2 |
 | Milestone 0.5 | Project Brain + Tests | DONE |
 | Milestone 1 | Inventory Scanner | DONE |
 | Milestone 2 | Cartographer 0.1 | DONE |
@@ -26,11 +26,13 @@ Stan po Milestone 4/5, formalnej promocji, planie 009 i Search 0.1,
 | Milestone 5 | First Publication Candidate, exact reviewed copy in LAB | DONE |
 | Human publication decision | Hash-bound local-publication-test only | APPROVED — HUMAN |
 | Promotion Gate | Deterministic CLI, exact candidate → CONTENT + LAB audit | PASS |
-| Local website | 10 static routes, HTML/XML sitemap, responsive footer and article | PRODUCTION PREVIEW |
+| Local website | 11 static routes, HTML/XML sitemap, trzy artykuły | PRODUCTION PREVIEW PASS |
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
 | Current Cloudflare checkpoint | `56cc7a7`, push master, public route/search checks | VERIFIED — SUCCESS |
+| B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
+| B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | CONTENT PROMOTED — DEPLOY PENDING |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
@@ -83,8 +85,64 @@ PHP Arrays I + II
 → Search 0.1 + human-authorized public note cleanup
 → 10-page production preview / 9-page Pagefind index
 → current full gate PASS → Git checkpoint 56cc7a7 pushed → Cloudflare success verified
-→ STOP before separate B1 selection
+→ separate human authorization: B1 selection only
+→ new eight-criterion ranking: 10 candidates in LAB, no draft/publication
+→ separate human authorization: B2 rank #1 / source 1308 only
+→ 18 official documents + 8 probes per PHP 8.4/8.5 runtime
+→ one Writer draft, 16 examples × two runtimes PASS
+→ first Critic REVISE → one required prose correction → full second Critic PASS
+→ exact publication candidate + B2/PHP Arrays comparison in LAB
+→ separate human public-production decision, exact candidate/review hashes bound
+→ schema-v2 Promotion Gate PASS → CONTENT + structured LAB audit
+→ local 11-page build / 10-page Pagefind index / browser verification PASS
+→ Git and Cloudflare verification pending; STOP before rank #2
 ```
+
+## B2 result — PHP control flow
+
+Source 1308 was processed as one bounded `REWRITE`, never a fake MERGE. The
+Research Packet uses 18 official PHP documents, 11 questions, 18 verified facts,
+one corrected source claim, two explicit ambiguous claims and eight code findings.
+Actual target-runtime verification passed on PHP 8.4.26 and 8.5.11: eight owned
+probes and 24 exact assertions per runtime.
+
+Writer produced one 1663-word / 13-section draft with four metadata-only interaction
+opportunities. All 16 standalone examples passed on both runtimes. The first full
+Critic returned REVISE for one overbroad explanation of `!== 0`; one authorized
+prose-only correction distinguished `int 0` from `float 0.0`. No code, expected
+output or Writer generation changed. The second full Critic returned PASS with zero
+issues and zero required changes.
+
+- [B2 candidate](../lab/candidates/php-control-flow/article.md) and
+  [metadata](../lab/candidates/php-control-flow/article.json) — exact reviewed copy,
+  immutable historical state remains `pending`, `approvedForPublication: false`,
+  `published: false`; approval is a separate human record.
+- [B2 comparison](../lab/reports/php-control-flow-b2-comparison.md) — PHP Arrays vs
+  control flow, measured effort proxies, runtime/example counts and recommendation-only
+  conclusions for Humanizer, Interaction Layer and Knowledge Gaps.
+- [Final Critic review](../lab/reviews/php-control-flow/critic-review.md) — PASS;
+  original REVISE and exact revision audit remain preserved.
+- [Human publication decision](../lab/decisions/php-control-flow-publication.json) and
+  [Promotion audit](../lab/reports/instrukcje-sterujace-php-promotion.json) —
+  schema-v2 `public-production`, candidate/review/hash/destination bound;
+  `PROMOTED_PUBLIC` to `content/articles/instrukcje-sterujace-php.md`.
+
+Current B2 publication gate, 2026-10-11:
+
+- Candidate Markdown SHA-256 remains
+  `2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b`;
+  final Critic JSON remains `78c542a74f5cb32f627e96fce73991a26a45afcb856532528c236209f2924834`.
+- Public body differs only by removal of the exact human-approved technical LAB
+  note. A unit test and the gate audit enforce this delta; prose and all 16 examples
+  are unchanged.
+- `npm run test`: PASS 285/285 in 21 files. `npm run check`: PASS for 116 files,
+  zero diagnostics. `npm run build`: PASS, 11 static pages; Pagefind 10 pages /
+  1586 words. Sitemap contains 11 URLs.
+- B1 read-only replay, SOURCE no-diff protection, protected B2 hashes and the
+  promotion audit trail: PASS.
+- Production preview: article metadata, 18-minute reading estimate, 13-section TOC,
+  Copy controls, back-to-top, PHP Arrays links, both Pagefind queries, HTML map and
+  XML sitemap verified. Git/Cloudflare state is recorded only after actual push/deploy.
 
 Targety: `1324-post-61-tablice-w-php-czesc-1.md` i
 `1356-post-62-php-tablice-czesc-ii.md`. Nie analizowano ponownie całego korpusu.
@@ -219,9 +277,15 @@ publicznym buildem i commit/push po pełnej bieżącej weryfikacji; nie wymaga k
 [Site map](http://localhost:4321/mapa-strony/).
 Production-like preview gotowego buildu: [HOME](http://127.0.0.1:4322/),
 [Search](http://127.0.0.1:4322/szukaj/); zwykły dev nie generuje indeksu Pagefind.
-Git checkpoint i Cloudflare zweryfikowane — STOP. Dopiero następny osobny etap
-B1 wybierze/rankuje 10 kandydatów według nowych kryteriów, bez generowania tekstów.
-Wcześniejsze TOP 10 Cartographera nie zastępuje B1. Publisher i Dispatcher pozostają nierozpoczęte.
+Git checkpoint i Cloudflare zweryfikowane. Kolejne polecenie człowieka uruchomiło
+wyłącznie B1: [nowy ranking 1–10](../lab/reports/pilot-selection-b1.md) i
+[JSON](../lab/cartography/pilot-selection/ranking.json), 19 pełnych odczytów.
+Wcześniejsze TOP 10 nie zostało użyte jako ranking B1. Rank #1 — instrukcje sterujące
+w PHP (source 1308) — zakończył osobny B2 dokładnym kandydatem w LAB i porównaniem
+z PHP Arrays. Następna granica to decyzja człowieka po ocenie B2. Rank #2 nie został
+uruchomiony. Nie wykonano promocji do CONTENT, commit/push ani deploymentu;
+wcześniejsza zgoda Git była tylko dla planu 010. Publisher i Dispatcher pozostają
+nierozpoczęte.
 
 ## LATER
 
@@ -230,7 +294,34 @@ production LLM API i PostgreSQL. Żaden z tych elementów nie jest rozpoczęty.
 
 ## Quality gate
 
-Search 0.1 gate, 2026-10-10:
+B2 final gate, 2026-10-10:
+
+- Tests: PASS — 283/283 w 21 plikach; nowy candidate v2 gate odrzuca REVISE,
+  podmieniony revision hash/draft, zmieniony Markdown i flagę publikacji.
+- Check: PASS — 116 plików; 0 errors / warnings / hints.
+- Build: PASS — bez zmian WEBSITE: 10 stron, Pagefind 9 stron / 1273 słowa.
+- Critic second pass: PASS, 0 issues / required changes; request hash
+  `8834345c51e9fdc4812ad010df272f62f70d20828050bef4296764a3d5ee50d1`.
+- Candidate: byte-identical draft, SHA-256
+  `2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b`;
+  pending/false in LAB only.
+- SOURCE/B1 replay and CONTENT boundary: PASS; no CONTENT diff, rank #2 not read,
+  no Promotion Gate, Git operation or deployment.
+
+B1 selection gate, 2026-10-10:
+
+- Tests: PASS — 281/281 w 20 plikach, w tym 27 nowych testów screening,
+  pełnych odczytów, evidence, scoring, liczby wyborów i hash-bound replay.
+- Check: PASS — 102 pliki; 0 errors / warnings / hints.
+- Build: PASS — nadal 10 publicznych stron, 9 stron Pagefind / 1273 słowa.
+- `npm run select:pilot -- --verify`: PASS, read-only replay dokładnego ranking/report.
+- Oceniono 19 pełnych tekstów, wybrano 10, odłożono 9; pozostałe 64 źródła
+  screened tylko z metadanych. Koszt/ryzyka są szacunkami, metryki użycia null.
+- WEBSITE i CONTENT nie zmieniły się; granica następnego kroku: B2 — rank #1 only.
+- SHA-256: wszystkie 145 wcześniejszych plików SOURCE/CONTENT/LAB bez zmian;
+  dodano wyłącznie pięć odrębnych artefaktów B1 w LAB.
+
+Previous Search 0.1 gate, 2026-10-10:
 
 - Tests: PASS — 254/254 w 19 plikach; nowe testy granic linków, pustych zapytań,
   błędów, konkurujących odpowiedzi i dokładnego zakresu usunięcia not PHP.
@@ -316,7 +407,7 @@ Previous plan 009 local publication / website gate, 2026-10-10 (historical):
   oraz zaakceptowany correction pass zakończone finalnym PASS.
 - [Completed candidate plan](plans/completed/007-first-publication-candidate.md) —
   dokładna historyczna kopia w LAB; późniejsza lokalna promocja i publiczny checkpoint osobno zatwierdzone.
-- [content/](../content/) — Start i promowany artykuł PHP oraz dwa publiczne tematy.
+- [content/](../content/) — Start, dwa promowane artykuły PHP oraz dwa publiczne tematy.
 - [lab/inventory/](../lab/inventory/) — metadane 83 źródeł.
 - [lab/cartography/](../lab/cartography/) — mapy i audyt Cartographera.
 - [lab/research/php-arrays/](../lab/research/php-arrays/) — pakiet, dokumenty, probes i import sesji.
@@ -326,6 +417,11 @@ Previous plan 009 local publication / website gate, 2026-10-10 (historical):
   pierwszy REVISE historyczny i drugi PASS aktualny.
 - [lab/candidates/php-arrays/](../lab/candidates/php-arrays/) — candidate metadata,
   dokładny historyczny tekst, JSON Schema i audyt; aktualne zgody są osobnymi decyzjami.
+- [lab/candidates/php-control-flow/](../lab/candidates/php-control-flow/) — exact
+  Critic-PASS B2 candidate; zachowany jako immutable LAB artifact, z odrębną zgodą
+  i audytem promocji.
+- [B2 comparison](../lab/reports/php-control-flow-b2-comparison.md) — opisowe
+  porównanie dwóch pilotów i granice przyszłych warstw.
 - [lab/reports/](../lab/reports/) — raporty inventory/Cartographera i pierwotny audit lokalnej promocji.
 - [engine/agents/cartographer/](../engine/agents/cartographer/) — pierwszy runtime agent.
 - [engine/agents/researcher/](../engine/agents/researcher/) — drugi runtime agent.

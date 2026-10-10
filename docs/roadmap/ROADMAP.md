@@ -72,6 +72,19 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   pages, lightweight lazy UI; approved public article note cleanup.
 - Public checkpoint `56cc7a7`: full current gate, push master, Cloudflare success
   and direct public search/route/article-utility verification.
+- B1 pilot selection: new eight-criterion ranking of ten candidates; all 83
+  metadata records screened, 19 full bodies assessed, existing PHP arrays excluded.
+- Hash-bound selection-only Cartographer import/replay and 27 deterministic tests;
+  historical cartography, SOURCE and CONTENT preserved. No article generation.
+- B2 rank #1 — PHP control flow: bounded single-source REWRITE, 18-document Research
+  Packet and actual PHP 8.4.26/8.5.11 verification.
+- One 1663-word Writer draft, 16 examples passing on both runtimes, one targeted
+  prose correction and full second Critic PASS.
+- Exact schema-v2 publication candidate and PHP Arrays comparison in LAB; four
+  interaction opportunities remain metadata only.
+- Separate human public-production decision and deterministic schema-v2 Promotion
+  Gate: PHP Control Flow promoted to CONTENT with one exact technical LAB-note
+  cleanup, complete audit, 285 tests and local 11-page build/browser gate PASS.
 
 ## NOW
 
@@ -79,7 +92,9 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Milestone 5 Publication Candidate DONE; original artifact in LAB is preserved.
 - Separate human approval: local-publication-test; exact PHP Arrays promoted to CONTENT.
 - PUBLIC CHECKPOINT VERIFIED — local gate/preview PASS, commit/push and Cloudflare
-  public verification complete. Plan 010 completed; STOP before B1.
+  public verification complete. Plan 010 completed; its Git scope is closed.
+- B1 selection complete in LAB; B2 rank #1 candidate preserved in LAB and promoted
+  to CONTENT through a separate human decision. Git/Cloudflare closeout is active.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
@@ -87,9 +102,9 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- Separate B1: select/rank ten candidates using the new educational/testability/cost
-  criteria. Historical Cartographer TOP 10 is not this ranking; no article generation.
-- Separate B2: rank #1 only, then assess the pipeline before subsequent batches.
+- Complete plan 013 Git/Cloudflare verification, then STOP.
+- On a later explicit resume, run B3 as three separate bounded jobs: rank #2
+  JavaScript if/else, rank #3 JavaScript Arrays, then rank #4 DOM.
 
 ## LATER
 

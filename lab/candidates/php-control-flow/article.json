@@ -1,0 +1,509 @@
+{
+  "approvedForPublication": false,
+  "articleHash": "2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b",
+  "criticReviewHash": "78c542a74f5cb32f627e96fce73991a26a45afcb856532528c236209f2924834",
+  "criticReviewRef": "lab/reviews/php-control-flow/critic-review.json",
+  "criticVerdict": "PASS",
+  "draftMetadataHash": "b0d79a043abbf8ff3dffa0ee93ff0d4ec6d7995c37840d9d9bb23f792a4173cd",
+  "draftMetadataRef": "lab/drafts/php-control-flow/article.json",
+  "draftRef": "lab/drafts/php-control-flow/article.md",
+  "humanPublicationDecision": "pending",
+  "preparedAt": "2026-10-10T20:58:00.240Z",
+  "published": false,
+  "readyForHumanPublicationDecision": true,
+  "researchApproval": "lab/decisions/php-control-flow-research-acceptance.json",
+  "researchPacket": "lab/research/php-control-flow/research.json",
+  "reviewedDraft": {
+    "action": "DRAFT",
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/php-control-flow-b2-authorization.json",
+        "sha256": "04a017962d902a97751a9c180274bac811706fd3f16f8df364f4bf2f7f4481f2"
+      },
+      {
+        "path": "lab/decisions/php-control-flow-rewrite.json",
+        "sha256": "25198cd4159f2975e98d1b68711441a4207393b9be67f9eb5e73fc267763b67f"
+      },
+      {
+        "path": "lab/cartography/php-control-flow-single.json",
+        "sha256": "5495096718b52a7327d4c835acea78f15ac637823947cbc270051f1a174c8789"
+      },
+      {
+        "path": "lab/research/php-control-flow/sources.json",
+        "sha256": "d0353e790369bb0636d33094743162e79c5acbf39a951cf4447ee1419ab4b0fb"
+      },
+      {
+        "path": "lab/research/php-control-flow/probes.json",
+        "sha256": "723da47aa079f2790a42d839650f24c5f2e4dca36a2d856de593868990edbdf3"
+      },
+      {
+        "path": "lab/research/php-control-flow/probe-execution.json",
+        "sha256": "cdedf3333b43ff46a99f927b99656babea57b85fdadad71a40558056d2df6c0b"
+      },
+      {
+        "path": "lab/research/php-control-flow/research.json",
+        "sha256": "0ae1e82db249435d339ae09ddb2cc1ebdfedaf568e59d2d25325565991cadbb7"
+      },
+      {
+        "path": "lab/research/php-control-flow/runtime-verification.json",
+        "sha256": "d917344e47a2fe8aab38525a2876b304e182132306a882d86a77991d65d49e2f"
+      },
+      {
+        "path": "lab/research/php-control-flow/runtime-verification.md",
+        "sha256": "78e5e49d2a2e4a332923230fb912b78fee8e8b448833ded628924c5145bba481"
+      }
+    ],
+    "articleHash": "2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b",
+    "audience": "beginner / early intermediate",
+    "interactionOpportunities": [
+      {
+        "expectedConcept": "Niepusty napis '0' konwertuje do false; !== '' daje true.",
+        "id": "quiz-zero",
+        "implemented": false,
+        "prompt": "Czy napis '0' jest pusty? Czy if potraktuje go jako prawdę?",
+        "purpose": "Oddzielić niepustość napisu od truthiness.",
+        "sectionId": "truthiness",
+        "type": "mini-quiz"
+      },
+      {
+        "expectedConcept": "switch dopasuje case 1, match wybierze default.",
+        "id": "output-switch-match",
+        "implemented": false,
+        "prompt": "Ukryj dwa wyniki. Co wybierze switch, a co match dla napisu '1' i liczby 1?",
+        "purpose": "Przewidzieć różnicę loose/strict.",
+        "sectionId": "switch-match",
+        "type": "show-output"
+      },
+      {
+        "expectedConcept": "0,1,2,3 oznaczają cztery obiegi.",
+        "id": "hint-for-boundary",
+        "implemented": false,
+        "prompt": "Ile obiegów otrzymasz przy <= 3? Podpowiedź: wypisz dozwolone wartości licznika.",
+        "purpose": "Rozpoznać błąd granicy bez rozbudowy UI.",
+        "sectionId": "for-loop",
+        "type": "hint"
+      },
+      {
+        "expectedConcept": "Następny krok po podstawach tablic: 60,89,90, ze świadomym progiem i bez referencji.",
+        "id": "exercise-results",
+        "implemented": false,
+        "prompt": "Dla własnej tablicy [59,60,89,90] wypisz przez foreach wyłącznie wyniki >= 60.",
+        "purpose": "Połączyć kolekcję i warunek z prerequisite PHP Arrays.",
+        "sectionId": "next-step",
+        "type": "exercise"
+      }
+    ],
+    "limitations": [
+      "Przykłady dotyczą prostych liczb, napisów i tablic. Nie omawiają porównań obiektów, referencji w foreach ani zagnieżdżonych poziomów break/continue.",
+      "Testy wykonano na PHP 8.4.26 i 8.5.11; nie jest to gwarancja zachowania wszystkich programów PHP.",
+      "Ticks, dołączanie plików i return na poziomie pliku wymagają osobnych materiałów."
+    ],
+    "researchApproval": "lab/decisions/php-control-flow-research-acceptance.json",
+    "researchPacket": "lab/research/php-control-flow/research.json",
+    "runtimeVerification": "lab/research/php-control-flow/runtime-verification.json",
+    "schemaVersion": 1,
+    "sections": [
+      {
+        "body": "Instrukcje sterujące rozstrzygają dwie rzeczy: który fragment programu uruchomić i ile razy go powtórzyć. Warunek wybiera drogę, a pętla powtarza czynność. W tym materiale przejdziesz od pojedynczej decyzji do przeglądania tablicy.\n\nPotrzebujesz podstaw zmiennych, liczb, napisów, wartości `true` i `false` oraz `echo`. Przed częścią o `foreach` warto znać [podstawy tablic w PHP](/artykuly/tablice-w-php/). Nie musisz znać całego API tablic.\n\nKażdy blok PHP jest osobnym, kompletnym przykładem. Zapisz go w pliku `przyklad.php` i uruchom `php przyklad.php` w terminalu. PHP działa również w CLI: do tych prób nie potrzebujesz serwera WWW. Nie sklejaj wszystkich bloków w jeden plik, bo niektóre używają tych samych nazw.\n\nPrzykłady sprawdzono na PHP 8.4.26 i 8.5.11. Ten zakres nie oznacza, że wszystkie porównania w obu wersjach są identyczne: migracje zmieniają m.in. szczególne przypadki obiektów. Tutaj pracujemy na prostych danych.",
+        "coverage": [
+          "prerequisites",
+          "version-scope"
+        ],
+        "evidence": [
+          {
+            "id": "cli-context",
+            "kind": "finding"
+          },
+          {
+            "id": "runtime-scope",
+            "kind": "finding"
+          }
+        ],
+        "examples": [],
+        "heading": "Zanim zaczniesz",
+        "id": "before-start"
+      },
+      {
+        "body": "`if` sprawdza warunek. Gdy warunek jest prawdziwy, wykonuje blok w klamrach. `elseif` daje kolejną możliwość, a `else` obsługuje sytuację, w której żaden wcześniejszy warunek nie pasował.\n\nW jednym łańcuchu wybierana jest pierwsza pasująca gałąź. Dla wyniku 74 program pomija próg 90, wybiera próg 60 i nie wykonuje `else`.\n\nKolejność ma znaczenie. Gdyby próg 60 znalazł się przed progiem 90, również wynik 95 trafiłby do zwykłego zaliczenia. Najpierw sprawdzaj bardziej szczegółowy przypadek. Jeśli chcesz wykonać kilka niezależnych sprawdzeń, użyj osobnych instrukcji `if`, a nie jednego łańcucha `elseif`.\n\nStosuj klamry także dla jednej instrukcji. Dzięki temu łatwiej zobaczyć, gdzie kończy się gałąź, i bezpiecznie dopisać następną linię.",
+        "coverage": [
+          "conditions",
+          "pitfalls"
+        ],
+        "evidence": [
+          {
+            "id": "if-branches",
+            "kind": "finding"
+          },
+          {
+            "id": "pitfalls",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$score = 74;\n\nif ($score >= 90) {\n    echo \"Bardzo dobry wynik\\n\";\n} elseif ($score >= 60) {\n    echo \"Zaliczone\\n\";\n} else {\n    echo \"Sprobuj ponownie\\n\";\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Zaliczone\n",
+            "id": "score-branches",
+            "purpose": "Wybór komunikatu z wyniku"
+          }
+        ],
+        "heading": "if, elseif i else: pierwsza pasująca gałąź",
+        "id": "if-elseif-else"
+      },
+      {
+        "body": "`=` zapisuje wartość w zmiennej. `==` sprawdza równość z możliwą konwersją typów. `===` sprawdza zarówno wartość, jak i typ. To różnica między liczbą `5` a napisem `'5'`: luźno są równe, ale nie są identyczne.\n\nDla sprawdzania znanego typu zwykle czytelne są `===` i `!==`. `!==` oznacza brak ścisłej zgodności, a `!=` jest zaprzeczeniem luźnej równości. Nie chodzi o zakaz używania `==`, tylko o świadome wybranie zasad porównania.\n\nPrzy progach liczbowych używaj `<`, `<=`, `>` i `>=`. W poprzednim przykładzie `>= 60` obejmuje także dokładnie 60.\n\nUważaj na przypadkowe `=` w warunku. Zapis `if ($score = 60)` nie pyta o wynik: zmienia `$score` na 60, a przypisana wartość zostaje potraktowana jako warunek. Gdy szukasz błędu w decyzji programu, policz znaki równości.",
+        "coverage": [
+          "comparison"
+        ],
+        "evidence": [
+          {
+            "id": "comparisons",
+            "kind": "finding"
+          },
+          {
+            "id": "assignment",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$number = 5;\n$text = '5';\n\nvar_dump($number == $text);\nvar_dump($number === $text);\nvar_dump($number !== $text);",
+            "expectedDiagnostics": [],
+            "expectedOutput": "bool(true)\nbool(false)\nbool(true)\n",
+            "id": "strict-comparison",
+            "purpose": "Ta sama reprezentacja, inny typ"
+          }
+        ],
+        "heading": "Porównanie to nie przypisanie",
+        "id": "comparison"
+      },
+      {
+        "body": "Warunek nie musi już być wartością `bool`. PHP może potraktować inną wartość jako prawdę lub fałsz — to konwersja do `bool`, często nazywana truthiness.\n\nDo wartości fałszywych należą `false`, liczba `0`, `0.0` i `-0.0`, pusty napis `''`, napis `'0'`, pusta tablica `[]` oraz `null`. Zwróć uwagę na napis zawierający jedno zero: nie jest pusty, a mimo to oznacza fałsz. Napisy `'00'` i `'false'` oznaczają prawdę, podobnie jak liczba `-1`.\n\nDlatego pytanie „czy tekst nie jest pusty?” nie zawsze powinno mieć postać `if ($text)`. Jeśli znasz typ i chcesz dopuścić również napis `'0'`, porównaj tekst z pustym napisem przez `$text !== ''`.\n\nTruthiness nie sprawdza poprawności danych. Nie potwierdza, że napis zawiera sensowną liczbę ani że użytkownik ma uprawnienia. Najpierw ustal, o jaką właściwość danych naprawdę pytasz.",
+        "coverage": [
+          "truthiness"
+        ],
+        "evidence": [
+          {
+            "id": "truthiness",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$text = '0';\n\nvar_dump((bool) $text);\nvar_dump($text !== '');",
+            "expectedDiagnostics": [],
+            "expectedOutput": "bool(false)\nbool(true)\n",
+            "id": "zero-string",
+            "purpose": "Fałsz nie musi oznaczać pustego napisu"
+          }
+        ],
+        "heading": "Co PHP uznaje za prawdziwy warunek?",
+        "id": "truthiness"
+      },
+      {
+        "body": "`&&` oznacza „i”: oba warunki muszą być prawdziwe. `||` oznacza „lub”: wystarczy jeden. `!` odwraca prawdę i fałsz. W przykładzie dostęp zależy jednocześnie od wieku, potwierdzenia i braku blokady. To demonstracja warunku na własnych danych, nie gotowy system autoryzacji.\n\n`&&` i `||` stosują krótkie spięcie, czyli short-circuit. Jeśli lewa strona `&&` jest fałszywa, prawa nie jest obliczana. Jeśli lewa strona `||` jest prawdziwa, prawa również nie jest potrzebna. Drugie ćwiczenie wykorzystuje to do pominięcia dzielenia przez zero przy dzielniku typu `int`. Ścisły test `$denominator !== 0` rozpoznaje tutaj całkowite zero; nie jest ogólnym testem zera numerycznego. Na przykład `0.0 !== 0` daje `true`, ponieważ typy się różnią. Jeśli zmieniasz typ danych w swoim wariancie, musisz też dobrać odpowiedni test wartości.\n\nSłowa `and` i `or` też są operatorami logicznymi, ale mają inne pierwszeństwo. W trzecim przykładzie `&&` wiąże mocniej niż przypisanie, a `and` słabiej. W pierwszej linii przypisujesz wynik całej koniunkcji; w drugiej przypisujesz `true`, a dopiero potem następuje `and false`. Stąd dwa różne wyniki.\n\nNa początek używaj `&&`, `||` i jawnych nawiasów przy mieszaniu warunków. Na przykład `($isVerified || $isGuest) && !$isBlocked` wyraźnie pokazuje, że blokada dotyczy obu możliwości. Nawiasy pokazują grupowanie; nie traktuj ich jako obietnicy kolejności wykonania dowolnych wyrażeń.",
+        "coverage": [
+          "logic",
+          "precedence"
+        ],
+        "evidence": [
+          {
+            "id": "logic",
+            "kind": "finding"
+          },
+          {
+            "id": "precedence",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$age = 20;\n$isVerified = true;\n$isBlocked = false;\n\nif ($age >= 18 && $isVerified && !$isBlocked) {\n    echo \"Dostep\\n\";\n} else {\n    echo \"Brak dostepu\\n\";\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Dostep\n",
+            "id": "combined-access",
+            "purpose": "Kilka warunków jednocześnie"
+          },
+          {
+            "code": "<?php\n$denominator = 0;\n\nif ($denominator !== 0 && 10 / $denominator > 1) {\n    echo \"Wynik wiekszy od 1\\n\";\n} else {\n    echo \"Warunek niespelniony; bez dzielenia przez zero\\n\";\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Warunek niespelniony; bez dzielenia przez zero\n",
+            "id": "short-circuit",
+            "purpose": "Najpierw sprawdź dzielnik"
+          },
+          {
+            "code": "<?php\n$withSymbols = true && false;\n$withWords = true and false;\n\nvar_dump($withSymbols);\nvar_dump($withWords);",
+            "expectedDiagnostics": [],
+            "expectedOutput": "bool(false)\nbool(true)\n",
+            "id": "and-precedence",
+            "purpose": "&& i and przy przypisaniu"
+          }
+        ],
+        "heading": "Łączenie warunków i rola nawiasów",
+        "id": "logical-operators"
+      },
+      {
+        "body": "Operator warunkowy `warunek ? wartośćA : wartośćB` przydaje się, gdy decyzja ma dać jedną krótką wartość. Tutaj wybiera etykietę.\n\nJeżeli gałąź ma wykonać kilka czynności albo wymaga długiego wyjaśnienia, zostań przy `if/else`. Nie zagnieżdżaj kolejnych operatorów warunkowych tylko po to, by zmieścić kod w jednej linii.",
+        "coverage": [
+          "ternary"
+        ],
+        "evidence": [
+          {
+            "id": "ternary",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$active = true;\n$label = $active ? 'Aktywny' : 'Nieaktywny';\necho $label, \"\\n\";",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Aktywny\n",
+            "id": "active-label",
+            "purpose": "Etykieta zależna od bool"
+          }
+        ],
+        "heading": "Krótki wybór jednej wartości",
+        "id": "ternary"
+      },
+      {
+        "body": "`switch` sprawdza jedną wartość względem kolejnych `case`. Używa luźnego porównania, podobnego do `==`. Dlatego napis `'1'` pasuje do liczby `1`.\n\nPo dopasowaniu `switch` wykonuje kolejne instrukcje aż do `break` albo końca bloku. Jeśli pominiesz `break`, program może wejść również do następnego `case` — to fallthrough. Czasem jest zamierzone, ale na początku zapisuj zakończenie gałęzi jawnie. `default` obsługuje brak dopasowania.\n\n`match` jest wyrażeniem: wybiera i daje wartość, którą możesz przypisać. Porównuje ściśle przez `===`, nie przechodzi do następnych ramion i nie potrzebuje `break`. W drugim przykładzie ten sam napis `'1'` nie pasuje do liczby `1`, więc wybierane jest `default`.\n\n`match` istnieje od PHP 8.0, nie jest nowością 8.4 ani 8.5. Musi obsłużyć daną wartość. Gdy żadne ramię nie pasuje i nie ma `default`, rzuca `UnhandledMatchError`. Przy prostym wyborze etykiety `match` może być wygodny; przy zakresach liczbowych i kilku czynnościach w gałęzi nadal użyteczny jest `if/elseif`.",
+        "coverage": [
+          "switch-match"
+        ],
+        "evidence": [
+          {
+            "id": "switch",
+            "kind": "finding"
+          },
+          {
+            "id": "match",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$value = '1';\n\nswitch ($value) {\n    case 1:\n        echo \"Luzne dopasowanie\\n\";\n        break;\n    default:\n        echo \"Brak dopasowania\\n\";\n        break;\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Luzne dopasowanie\n",
+            "id": "switch-loose",
+            "purpose": "switch dopasowuje napis do liczby"
+          },
+          {
+            "code": "<?php\n$value = '1';\n\n$label = match ($value) {\n    1 => 'Liczba jeden',\n    default => 'Inna wartosc lub typ',\n};\n\necho $label, \"\\n\";",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Inna wartosc lub typ\n",
+            "id": "match-strict",
+            "purpose": "match odróżnia typy"
+          }
+        ],
+        "heading": "switch i match: podobny wybór, inne porównanie",
+        "id": "switch-match"
+      },
+      {
+        "body": "`while` sprawdza warunek przed obiegiem. Jeśli jest on fałszywy od początku, blok nie wykona się ani razu. W sumowaniu zaczynamy od 1, dodajemy bieżącą liczbę i przesuwamy licznik o jeden.\n\nPostęp jest ważny: bez `$i++` licznik pozostałby równy 1, a warunek nadal byłby prawdziwy. Taka pętla nie doszłaby do swojego zakończenia. Zanim uruchomisz własny wariant, sprawdź, co zmienia warunek i czy da się osiągnąć jego fałsz.\n\n`do...while` najpierw wykonuje blok, a dopiero potem sprawdza warunek. Drugi przykład wykonuje się raz mimo `false`. Nie zapomnij o średniku po końcowym `while (false);`.\n\nWybieraj `while`, kiedy przed pierwszą próbą może już nie być nic do zrobienia. `do...while` pasuje do czynności, którą chcesz wykonać przynajmniej raz.",
+        "coverage": [
+          "while-do"
+        ],
+        "evidence": [
+          {
+            "id": "while",
+            "kind": "finding"
+          },
+          {
+            "id": "do-while",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$i = 1;\n$sum = 0;\n\nwhile ($i <= 10) {\n    $sum += $i;\n    $i++;\n}\n\necho $sum, \"\\n\";",
+            "expectedDiagnostics": [],
+            "expectedOutput": "55\n",
+            "id": "while-sum",
+            "purpose": "Sumowanie od 1 do 10"
+          },
+          {
+            "code": "<?php\ndo {\n    echo \"Pierwsza proba\\n\";\n} while (false);",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Pierwsza proba\n",
+            "id": "do-once",
+            "purpose": "Jedno wykonanie przy fałszywym warunku"
+          }
+        ],
+        "heading": "while i do...while: kiedy sprawdzany jest warunek?",
+        "id": "while-do"
+      },
+      {
+        "body": "`for` zbiera trzy części pętli w nagłówku. Inicjalizacja wykonuje się raz. Warunek jest sprawdzany przed każdym obiegiem. Krok wykonuje się po obiegu.\n\nW tym przykładzie `$i = 0` ustawia początek, `$i < 3` ogranicza zakres, a `$i++` przesuwa licznik. Wynik to 0, 1 i 2, czyli trzy obiegi. Zmiana `< 3` na `<= 3` dołączyłaby także 3.\n\nNie wybieraj pętli na podstawie tego, która rzekomo jest najpopularniejsza. `for` jest czytelny, gdy licznik, granicę i krok warto widzieć obok siebie. Przy kolekcji zwykle prostszy będzie `foreach`.",
+        "coverage": [
+          "for",
+          "pitfalls"
+        ],
+        "evidence": [
+          {
+            "id": "for",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\nfor ($i = 0; $i < 3; $i++) {\n    echo $i, \"\\n\";\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "0\n1\n2\n",
+            "id": "for-three",
+            "purpose": "Trzy wartości licznika"
+          }
+        ],
+        "heading": "for: licznik w jednym miejscu",
+        "id": "for-loop"
+      },
+      {
+        "body": "`foreach` przechodzi po elementach tablicy bez ręcznego licznika. W formie `as $value` otrzymujesz wartość. W formie `as $key => $value` otrzymujesz także klucz.\n\nTablica poniżej ma nazwane klucze, więc `$role` dostaje klucz, a `$name` odpowiadającą mu wartość. Dla pustej tablicy nie byłoby żadnego obiegu.\n\nNie używamy tutaj `&` ani nie zmieniamy kolekcji podczas przechodzenia po niej. To pozwala skupić się na samym przepływie. O indeksach, kluczach i operacjach na tablicach przeczytasz więcej w [artykule o tablicach w PHP](/artykuly/tablice-w-php/).",
+        "coverage": [
+          "foreach"
+        ],
+        "evidence": [
+          {
+            "id": "foreach",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\n$team = ['editor' => 'Anna', 'reviewer' => 'Tomek'];\n\nforeach ($team as $role => $name) {\n    echo $role, ': ', $name, \"\\n\";\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "editor: Anna\nreviewer: Tomek\n",
+            "id": "foreach-pairs",
+            "purpose": "Klucz i wartość w jednym obiegu"
+          }
+        ],
+        "heading": "foreach: kolejne elementy tablicy",
+        "id": "foreach-loop"
+      },
+      {
+        "body": "`break` kończy bieżącą pętlę. W pierwszym przykładzie nie drukujemy 4: gdy licznik do niej dochodzi, wykonuje się `break`. Program przechodzi do instrukcji po pętli.\n\n`continue` nie kończy całej pętli. Pomija resztę bieżącego obiegu i przechodzi do następnego. Drugi przykład pomija tylko 2, a potem drukuje 3 i 4. W pętli `for` krok `$i++` nadal wykonuje się po `continue`.\n\nTo ważny kontrast: gdy chcesz zatrzymać szukanie po znalezieniu wyniku, potrzebujesz `break`; gdy chcesz pominąć niepasujący element, może wystarczyć `continue`. Tutaj używamy jednej pętli naraz. Zagnieżdżone poziomy i zachowanie `continue` wewnątrz `switch` to osobny temat.",
+        "coverage": [
+          "break-continue"
+        ],
+        "evidence": [
+          {
+            "id": "break-continue",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\nfor ($i = 1; $i <= 5; $i++) {\n    if ($i === 4) {\n        break;\n    }\n    echo $i, \"\\n\";\n}\necho \"Po petli\\n\";",
+            "expectedDiagnostics": [],
+            "expectedOutput": "1\n2\n3\nPo petli\n",
+            "id": "break-stop",
+            "purpose": "Zakończenie przed wartością 4"
+          },
+          {
+            "code": "<?php\nfor ($i = 1; $i <= 4; $i++) {\n    if ($i === 2) {\n        continue;\n    }\n    echo $i, \"\\n\";\n}",
+            "expectedDiagnostics": [],
+            "expectedOutput": "1\n3\n4\n",
+            "id": "continue-skip",
+            "purpose": "Pominięcie tylko wartości 2"
+          }
+        ],
+        "heading": "break kończy pętlę, continue pomija jej fragment",
+        "id": "break-continue"
+      },
+      {
+        "body": "Wewnątrz funkcji `return` kończy jej wykonanie i zwraca wynik do miejsca wywołania. Nie zastępuje `break`: kończy funkcję, a nie tylko pętlę wewnątrz niej.\n\nFunkcja poniżej przyjmuje wynik punktowy. `int` opisuje typ parametru, a `string` typ zwracanej wartości. Gdy próg jest spełniony, pierwszy `return` kończy funkcję; drugi nie zostaje już wykonany. Dla niższego wyniku funkcja dochodzi do drugiego `return`.\n\nPo wywołaniu program nadal wykonuje następne instrukcje. Dlatego widzisz także komunikat `Program trwa dalej`. W tym materiale używamy `return` wyłącznie wewnątrz funkcji; na poziomie pliku ma inne zastosowanie.",
+        "coverage": [
+          "return"
+        ],
+        "evidence": [
+          {
+            "id": "return",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<?php\nfunction resultLabel(int $score): string\n{\n    if ($score >= 60) {\n        return 'Zaliczone';\n    }\n    return 'Powtorka';\n}\n\necho resultLabel(74), \"\\n\";\necho resultLabel(40), \"\\n\";\necho \"Program trwa dalej\\n\";",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Zaliczone\nPowtorka\nProgram trwa dalej\n",
+            "id": "function-return",
+            "purpose": "Dwa wyniki i dalsza praca programu"
+          }
+        ],
+        "heading": "return: zakończ funkcję i oddaj wynik",
+        "id": "return-function"
+      },
+      {
+        "body": "Sprawdź najpierw pięć rzeczy: czy warunek porównuje zamiast przypisywać, czy typy są takie, jak zakładasz, czy próg szczegółowy jest przed ogólnym, czy licznik ma prawidłową granicę i czy pętla robi postęp.\n\nNie stawiaj średnika bezpośrednio po `if (...)`. Taki średnik tworzy pustą instrukcję, a następujący po nim blok nie jest już objęty tym warunkiem. To inna sytuacja niż wymagany średnik na końcu `do...while`.\n\nNa ćwiczenie zmień `$score` w pierwszym przykładzie kolejno na 59, 60, 89 i 90. Przewidź komunikat przed uruchomieniem. Potem zmień granicę pętli `for` z `< 3` na `<= 3` i policz obiegi. Nie usuwaj kroku licznika podczas prób.\n\nNastępny krok to połączenie `foreach` i `if`: przejdź po własnej tablicy wyników i wybierz te, które spełniają próg. Potrzebne podstawy kolekcji znajdziesz w [Tablicach w PHP](/artykuly/tablice-w-php/). Nie potrzebujesz do tego ticks ani dołączania innych plików.",
+        "coverage": [
+          "pitfalls",
+          "next-step"
+        ],
+        "evidence": [
+          {
+            "id": "pitfalls",
+            "kind": "finding"
+          },
+          {
+            "id": "for",
+            "kind": "finding"
+          },
+          {
+            "id": "foreach",
+            "kind": "finding"
+          },
+          {
+            "id": "if-branches",
+            "kind": "finding"
+          }
+        ],
+        "examples": [],
+        "heading": "Gdy wynik zaskakuje — i co przećwiczyć dalej",
+        "id": "next-step"
+      }
+    ],
+    "sourceDecision": "lab/decisions/php-control-flow-rewrite.json",
+    "sources": [
+      {
+        "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+        "providedCharacters": 3976,
+        "sourceId": "1308",
+        "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+        "title": "Post #60 Instrukcje sterujące PHP",
+        "truncated": false
+      }
+    ],
+    "status": "draft",
+    "targetPhpVersions": [
+      "8.4",
+      "8.5"
+    ],
+    "title": "Instrukcje sterujące PHP: warunki i pętle",
+    "topic": "php-control-flow",
+    "wordCount": 1663,
+    "writerExecution": {
+      "inputHash": "bc579dad480d893ab2c0bb5568e5c8eeb716cac7d0f783eb1e24847f72040dd0",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "current-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "78d74bbdc173d26a8076ec1c9914ec06354eea7cd81e1166b7b48a948220bd24"
+    }
+  },
+  "revisionHash": "ae164fa3ee7d3340d9aae827ab5baabe8e6e923455d1d0dcc1fa4d584576ad1b",
+  "revisionRef": "lab/drafts/php-control-flow/revision.json",
+  "runtimeVerification": "lab/research/php-control-flow/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/php-control-flow-rewrite.json",
+  "status": "publication-candidate",
+  "targetPhpVersions": [
+    "8.4",
+    "8.5"
+  ],
+  "title": "Instrukcje sterujące PHP: warunki i pętle",
+  "topic": "php-control-flow",
+  "wordCount": 1663
+}

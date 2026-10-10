@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "shortlist": [
+    {
+      "sourceId": "48",
+      "reason": "Markdown i code fences; krótki stabilny temat wspierający naukę."
+    },
+    {
+      "sourceId": "277",
+      "reason": "Git/Bash w źródłach pomocniczych; możliwy ograniczony temat kontroli wersji."
+    },
+    {
+      "sourceId": "281",
+      "reason": "Kalkulator JavaScript jako mały przykład funkcji i klas."
+    },
+    {
+      "sourceId": "283",
+      "reason": "Podstawy Pythona; temat fundamentalny spoza preferowanego rdzenia PHP/JS."
+    },
+    {
+      "sourceId": "410",
+      "reason": "Drugi tekst API; trzeba ocenić overlap, zakres Express i przydatność samodzielną."
+    },
+    {
+      "sourceId": "514",
+      "reason": "API/JSON/CRUD; ocenić koszt security, backendu i zależności."
+    },
+    {
+      "sourceId": "542",
+      "reason": "HTML/CSS/JS w metadanych; pełny odczyt ma odróżnić tutorial od przeglądu portfolio."
+    },
+    {
+      "sourceId": "551",
+      "reason": "Front-end basics w tytule; sprawdzić, czy jest to nauka czy szeroka lista wymagań."
+    },
+    {
+      "sourceId": "578",
+      "reason": "Wprowadzenie do API/HTTP/JSON; możliwe ograniczenie do odczytu danych."
+    },
+    {
+      "sourceId": "940",
+      "reason": "Vanilla DOM i selektory bez frameworka; podstawowy temat frontendu."
+    },
+    {
+      "sourceId": "977",
+      "reason": "PHP i Python; ocenić jasność zakresu oraz bazę małych przykładów."
+    },
+    {
+      "sourceId": "1166",
+      "reason": "PHP/HTML, polskie znaki i kodowanie; sprawdzić poziom security i researchu."
+    },
+    {
+      "sourceId": "1308",
+      "reason": "Podstawy PHP z if/switch i pętlami; możliwy mały kontynuacyjny pilot po PHP Arrays."
+    },
+    {
+      "sourceId": "1336",
+      "reason": "curl i HTTP/JSON; możliwe kontrolowane lokalne ćwiczenia."
+    },
+    {
+      "sourceId": "1575",
+      "reason": "Środowisko Windows/Git/Node; ocenić zależność od instalatorów i frameworków."
+    },
+    {
+      "sourceId": "1789",
+      "reason": "HTML/CSS-adjacent design; ocenić konkretność ćwiczeń i testowalność."
+    },
+    {
+      "sourceId": "2003",
+      "reason": "Python Windows; porównać koszt konfiguracji z samymi podstawami języka."
+    },
+    {
+      "sourceId": "2048",
+      "reason": "Metody tablic JavaScript; porównanie z publicznym PHP Arrays."
+    },
+    {
+      "sourceId": "2068",
+      "reason": "Warunki JavaScript i logika wejścia; duży potencjał czystych testów."
+    }
+  ],
+  "exclusions": [
+    {
+      "sourceId": "100",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "1098",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "1135",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "1142",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "1197",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "1324",
+      "reason": "Już opracowany PHP Arrays I+II: publiczny pilot istnieje; nie liczymy go ponownie w nowej dziesiątce."
+    },
+    {
+      "sourceId": "1329",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "1356",
+      "reason": "Już opracowany PHP Arrays I+II: publiczny pilot istnieje; nie liczymy go ponownie w nowej dziesiątce."
+    },
+    {
+      "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "145",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "147",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "1577",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "1584",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "1770",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "1779",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "1786",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "1799",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "1802",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "2022",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "2070",
+      "reason": "Screening inventory: puste body (word_count=0); brak treści do modernizacji."
+    },
+    {
+      "sourceId": "230",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "269",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "273",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "363",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "46",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "507",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "519",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "522",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "534",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "553",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "556",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "576",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "670",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "672",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "675",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "736",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "738",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "741",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "746",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "748",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "753",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "755",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "761",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "763",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "765",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "767",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "769",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "771",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "818",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "822",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "824",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "826",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "831",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "834",
+      "reason": "Screening metadanych: news/trendy/przegląd rynku lub ekosystemu; poza stabilnym, małym pilotem podstaw."
+    },
+    {
+      "sourceId": "859",
+      "reason": "Screening metadanych: AI/model/product/SEO albo marketing; poza preferowanymi fundamentami pilota, bez twierdzenia o poprawności tekstu."
+    },
+    {
+      "sourceId": "865",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "936",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "942",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "944",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "966",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "968",
+      "reason": "Screening metadanych: wpis osobisty, portfolio, podsumowanie lub słabszy bezpośredni sygnał małej lekcji podstaw niż shortlista. Body nie odczytano; nie jest to techniczny werdykt."
+    },
+    {
+      "sourceId": "970",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "974",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    },
+    {
+      "sourceId": "981",
+      "reason": "Screening metadanych: framework/biblioteka/platforma/DB lub rozbudowane środowisko; odłożone na późniejszy, osobno ograniczony zakres."
+    }
+  ]
+}

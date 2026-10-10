@@ -10,7 +10,7 @@ import { loadEditorialInput, parseEditorialArguments, project, readLab, sourceRo
 export async function main() {
  const args = parseEditorialArguments(process.argv.slice(2), '--topic');
  const input = await loadEditorialInput(args.selected);
- const prompt = await readFile(new URL('../engine/agents/writer/prompt.md', import.meta.url), 'utf8');
+ const prompt = await readFile(new URL(input.sources.length === 1 ? '../engine/agents/writer/prompt-single.md' : '../engine/agents/writer/prompt.md', import.meta.url), 'utf8');
  if (args.prepare) {
   const { request } = prepareWriterRequest(input, prompt);
   await writeEditorialArtifacts(project, sourceRoot, 'writer', { ['drafts/' + input.config.topic + '/request.json']:

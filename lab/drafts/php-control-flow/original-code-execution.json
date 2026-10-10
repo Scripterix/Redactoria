@@ -1,0 +1,280 @@
+{
+  "articleHash": "1de9f8004dbcc36e47810c337c695ccc63039aa25eb9b5ec558841aa0600c783",
+  "executedAt": "2026-10-10T18:00:57.319Z",
+  "runs": [
+    {
+      "examples": [
+        {
+          "codeHash": "9b041a365f20f2115122923a331d9c4deea66e3fd9377fa248dcc9196ae314dd",
+          "exitCode": 0,
+          "id": "score-branches",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Zaliczone\n"
+        },
+        {
+          "codeHash": "c39fcc8efb8b3b35fac32a0499859763d9f070e6a0ebdb50158a7f79f86fce3d",
+          "exitCode": 0,
+          "id": "strict-comparison",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bool(true)\nbool(false)\nbool(true)\n"
+        },
+        {
+          "codeHash": "5c6ecea2af7ad6daee61808a6cfbbc59ca627421a57438d4fd631b85a706332f",
+          "exitCode": 0,
+          "id": "zero-string",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bool(false)\nbool(true)\n"
+        },
+        {
+          "codeHash": "1097d0227d8c53ba78c1c4ddfa48c9c9706acc5d7842425a2d43536b30c5314e",
+          "exitCode": 0,
+          "id": "combined-access",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Dostep\n"
+        },
+        {
+          "codeHash": "221f2f65310e2d605cacfac651955772d8d63dcae1c917a7be6d9910473872aa",
+          "exitCode": 0,
+          "id": "short-circuit",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Warunek niespelniony; bez dzielenia przez zero\n"
+        },
+        {
+          "codeHash": "44c31a3f13aaeafc70ca572b353ddf39e4a84be85702739f8ae873bb51e69151",
+          "exitCode": 0,
+          "id": "and-precedence",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bool(false)\nbool(true)\n"
+        },
+        {
+          "codeHash": "72778d28d56e9541d11331df113df9b1d6957c4862ab18e037ec98c9116010ba",
+          "exitCode": 0,
+          "id": "active-label",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Aktywny\n"
+        },
+        {
+          "codeHash": "3654d0f96607e289e74b21f06300dbccf4addf183a5029398f5cdfd360df5fa7",
+          "exitCode": 0,
+          "id": "switch-loose",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Luzne dopasowanie\n"
+        },
+        {
+          "codeHash": "810c78976d794b73b7001cb20b88e237d64e1dcfcc6d70a7c3521fe6b9b799a5",
+          "exitCode": 0,
+          "id": "match-strict",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Inna wartosc lub typ\n"
+        },
+        {
+          "codeHash": "afdff2e995952ff202a9f71a10977548f8b322c7d1b72aac9e0dec8589529dc2",
+          "exitCode": 0,
+          "id": "while-sum",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "55\n"
+        },
+        {
+          "codeHash": "512d1866689a9c59997871473bb655517ff4e2e6fc9496cd4fb7dcf920012bc9",
+          "exitCode": 0,
+          "id": "do-once",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Pierwsza proba\n"
+        },
+        {
+          "codeHash": "af4ad536e14cc72fabb90bfc638940ded27d4f0c71d64447a698acd7c1aefe34",
+          "exitCode": 0,
+          "id": "for-three",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "0\n1\n2\n"
+        },
+        {
+          "codeHash": "39a63e4aa3e25624cef4f2cb54da7f6d9efe0f65a07a3736684284f8b53b683a",
+          "exitCode": 0,
+          "id": "foreach-pairs",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "editor: Anna\nreviewer: Tomek\n"
+        },
+        {
+          "codeHash": "718491f36b64957c615a43cee476396013ff29032818dcaa8b4bbbf008697787",
+          "exitCode": 0,
+          "id": "break-stop",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "1\n2\n3\nPo petli\n"
+        },
+        {
+          "codeHash": "92d996c768acb3a7f2b133af4d481868487187e58320522497aefecfa4c1be37",
+          "exitCode": 0,
+          "id": "continue-skip",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "1\n3\n4\n"
+        },
+        {
+          "codeHash": "9a9206e464cfd66ac9f9368b7e50fa2a2d0a86472853550b3b045b863f36d9ab",
+          "exitCode": 0,
+          "id": "function-return",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Zaliczone\nPowtorka\nProgram trwa dalej\n"
+        }
+      ],
+      "executableHash": "9c9c7cdb2ec112cf39498dd1a77b56eacac482487182066920f1bcd209091898",
+      "execution": "actual-local-cli",
+      "family": "8.4",
+      "version": "8.4.26"
+    },
+    {
+      "examples": [
+        {
+          "codeHash": "9b041a365f20f2115122923a331d9c4deea66e3fd9377fa248dcc9196ae314dd",
+          "exitCode": 0,
+          "id": "score-branches",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Zaliczone\n"
+        },
+        {
+          "codeHash": "c39fcc8efb8b3b35fac32a0499859763d9f070e6a0ebdb50158a7f79f86fce3d",
+          "exitCode": 0,
+          "id": "strict-comparison",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bool(true)\nbool(false)\nbool(true)\n"
+        },
+        {
+          "codeHash": "5c6ecea2af7ad6daee61808a6cfbbc59ca627421a57438d4fd631b85a706332f",
+          "exitCode": 0,
+          "id": "zero-string",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bool(false)\nbool(true)\n"
+        },
+        {
+          "codeHash": "1097d0227d8c53ba78c1c4ddfa48c9c9706acc5d7842425a2d43536b30c5314e",
+          "exitCode": 0,
+          "id": "combined-access",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Dostep\n"
+        },
+        {
+          "codeHash": "221f2f65310e2d605cacfac651955772d8d63dcae1c917a7be6d9910473872aa",
+          "exitCode": 0,
+          "id": "short-circuit",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Warunek niespelniony; bez dzielenia przez zero\n"
+        },
+        {
+          "codeHash": "44c31a3f13aaeafc70ca572b353ddf39e4a84be85702739f8ae873bb51e69151",
+          "exitCode": 0,
+          "id": "and-precedence",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bool(false)\nbool(true)\n"
+        },
+        {
+          "codeHash": "72778d28d56e9541d11331df113df9b1d6957c4862ab18e037ec98c9116010ba",
+          "exitCode": 0,
+          "id": "active-label",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Aktywny\n"
+        },
+        {
+          "codeHash": "3654d0f96607e289e74b21f06300dbccf4addf183a5029398f5cdfd360df5fa7",
+          "exitCode": 0,
+          "id": "switch-loose",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Luzne dopasowanie\n"
+        },
+        {
+          "codeHash": "810c78976d794b73b7001cb20b88e237d64e1dcfcc6d70a7c3521fe6b9b799a5",
+          "exitCode": 0,
+          "id": "match-strict",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Inna wartosc lub typ\n"
+        },
+        {
+          "codeHash": "afdff2e995952ff202a9f71a10977548f8b322c7d1b72aac9e0dec8589529dc2",
+          "exitCode": 0,
+          "id": "while-sum",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "55\n"
+        },
+        {
+          "codeHash": "512d1866689a9c59997871473bb655517ff4e2e6fc9496cd4fb7dcf920012bc9",
+          "exitCode": 0,
+          "id": "do-once",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Pierwsza proba\n"
+        },
+        {
+          "codeHash": "af4ad536e14cc72fabb90bfc638940ded27d4f0c71d64447a698acd7c1aefe34",
+          "exitCode": 0,
+          "id": "for-three",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "0\n1\n2\n"
+        },
+        {
+          "codeHash": "39a63e4aa3e25624cef4f2cb54da7f6d9efe0f65a07a3736684284f8b53b683a",
+          "exitCode": 0,
+          "id": "foreach-pairs",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "editor: Anna\nreviewer: Tomek\n"
+        },
+        {
+          "codeHash": "718491f36b64957c615a43cee476396013ff29032818dcaa8b4bbbf008697787",
+          "exitCode": 0,
+          "id": "break-stop",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "1\n2\n3\nPo petli\n"
+        },
+        {
+          "codeHash": "92d996c768acb3a7f2b133af4d481868487187e58320522497aefecfa4c1be37",
+          "exitCode": 0,
+          "id": "continue-skip",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "1\n3\n4\n"
+        },
+        {
+          "codeHash": "9a9206e464cfd66ac9f9368b7e50fa2a2d0a86472853550b3b045b863f36d9ab",
+          "exitCode": 0,
+          "id": "function-return",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Zaliczone\nPowtorka\nProgram trwa dalej\n"
+        }
+      ],
+      "executableHash": "d256e5d6bfd86905f336bf39b2f4a68d3fde0faabbce3080330de9600cd8e6c4",
+      "execution": "actual-local-cli",
+      "family": "8.5",
+      "version": "8.5.11"
+    }
+  ],
+  "schemaVersion": 1,
+  "status": "PASS"
+}

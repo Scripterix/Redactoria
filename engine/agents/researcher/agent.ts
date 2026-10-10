@@ -31,7 +31,7 @@ export async function runResearcher(raw: ResearcherInput, prompt: string, model:
 		sourceRegister: sourceRegister(input, analysis), analysisContext: {
 			inputHash: hashJson(input), requestHash: hashJson(request), decisionHash: hashJson(input.decision),
 			cartographyHash: hashJson(input.cartography), researchBundleHash: hashJson(input.research),
-			topicSlug: input.research.topicSlug, model: model.identity, fullReadCount: 2,
+			topicSlug: input.research.topicSlug, model: model.identity, fullReadCount: reads.length,
 			probes: input.research.probes.map(({ code: _code, ...probe }) => probe),
 		} }, input, reads, hashJson(request));
 }

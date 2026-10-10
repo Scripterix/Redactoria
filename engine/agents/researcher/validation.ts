@@ -10,7 +10,7 @@ function unique(values: string[], label: string) {
 	if (new Set(values).size !== values.length) throw new Error(`Duplicate ${label}.`);
 }
 export function articleContext(input: ResearcherInput) {
-	return validateInput({ inventory: input.inventory, limits: { maxDeepReads: 2,
+	return validateInput({ inventory: input.inventory, limits: { maxDeepReads: input.decision.targets.length,
 		maxBodyCharacters: input.limits.maxBodyCharacters, maxSourceBytes: input.limits.maxSourceBytes } });
 }
 export function validateResearchInput(raw: unknown): ResearcherInput {
@@ -18,10 +18,13 @@ export function validateResearchInput(raw: unknown): ResearcherInput {
 	articleContext(input);
 	const { decision, cartography, inventory, research, limits } = input;
 	unique(decision.targets.map(target => target.sourceId), 'approved targets');
-	if (inventory.articles.length !== 2 || !cartography.recommended
+	const count = decision.action === 'MERGE' ? 2 : 1;
+	if (inventory.articles.length !== count || decision.targets.length !== count || cartography.targets.length !== count
+		|| (decision.action === 'MERGE' ? cartography.task !== 'MERGE' : cartography.task !== 'SINGLE_ARTICLE' || decision.action !== cartography.action)
+		|| !cartography.recommended
 		|| stableJson(decision.targets) !== stableJson(cartography.targets)
 		|| decision.analysisHash !== hashJson(cartography)
-		|| cartography.analysisContext.selectedInventoryHash !== hashJson(inventory)) throw new Error('Exactly two approved targets must match the unchanged Cartographer analysis.');
+		|| cartography.analysisContext.selectedInventoryHash !== hashJson(inventory)) throw new Error('Approved targets must match the unchanged Cartographer action and analysis.');
 	for (const target of decision.targets) {
 		const article = inventory.articles.find(item => item.source_id === target.sourceId);
 		if (!article || article.source_path !== target.sourcePath || article.content_hash !== target.contentHash
@@ -125,6 +128,7 @@ export function validateResearchPacket(raw: unknown, input: ResearcherInput, rea
 	if (stableJson(packet.targets) !== stableJson(input.decision.targets)) throw new Error('Unknown packet target.');
 	if (stableJson(packet.sourceRegister) !== stableJson(sourceRegister(input, analysis))) throw new Error('Source register contains orphan, missing or forged references.');
 	const context = packet.analysisContext;
+	if (context.fullReadCount !== reads.length || reads.length !== input.decision.targets.length) throw new Error('Full read count mismatch.');
 	if (expectedRequestHash !== undefined && context.requestHash !== expectedRequestHash) throw new Error('Packet request hash mismatch.');
 	if (context.inputHash !== hashJson(input) || context.decisionHash !== hashJson(input.decision)
 		|| context.cartographyHash !== hashJson(input.cartography) || context.researchBundleHash !== hashJson(input.research)

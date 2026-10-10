@@ -6,12 +6,12 @@ import { findings } from './validation.ts';
 export function researchReport(packet: ResearchPacket, questions: ResearchBundle['questions']) {
 	const all = findings(packet);
 	const lines = [`# Researcher 0.1 — ${packet.topic}`, '', '## RESEARCH SCOPE', '',
-		'Research Packet, nie artykuł ani zatwierdzenie publikacji. Dokładnie dwa pełne materiały SOURCE.', '',
+		(packet.targets.length === 2 ? 'Research Packet, nie artykuł ani zatwierdzenie publikacji. Dokładnie dwa pełne materiały SOURCE.' : 'Research Packet, nie artykuł ani zatwierdzenie publikacji. Jeden pełny materiał SOURCE.'), '',
 		...packet.targets.map(target => `- ${target.sourcePath} (${target.sourceId})`), '',
 		`Tryb: ${packet.analysisContext.model.mode}; model: ${packet.analysisContext.model.model}.`,
 		`Request SHA-256: ${packet.analysisContext.requestHash}`, '',
 		'## PHP VERSION TARGET', '', packet.environment.phpVersionScope, '', `Stan dokumentacji: ${packet.environment.asOfDate}.`, '',
-		...packet.analysisContext.probes.slice(0, 1).map(probe => `Próby wykonano lokalnie na PHP ${probe.phpVersion}; nie oznacza to uruchomienia na docelowych wersjach.`), ''];
+		...(packet.targets.length === 2 ? packet.analysisContext.probes.slice(0, 1).map(probe => `Próby wykonano lokalnie na PHP ${probe.phpVersion}; nie oznacza to uruchomienia na docelowych wersjach.`) : [`Wykonane runtime: ${[...new Set(packet.analysisContext.probes.map(probe => probe.phpVersion))].join(', ')}; szczegóły w osobnym execution evidence.`]), ''];
 	function render(items: readonly Finding[]) {
 		if (!items.length) { lines.push('Brak.', ''); return; }
 		for (const item of items) {
@@ -33,7 +33,7 @@ export function researchReport(packet: ResearchPacket, questions: ResearchBundle
 		['OUTDATED / QUESTIONABLE MATERIAL', [...packet.outdatedClaims, ...packet.ambiguousClaims]],
 		['CODE ISSUES', packet.codeReview],
 	] as const) { lines.push(`## ${heading}`, ''); render(items); }
-	for (const section of ['ARRAY KEY BEHAVIOR', 'NULL / MISSING KEY BEHAVIOR', 'ARRAY OPERATIONS', 'SORTING', 'MAP / FILTER / REDUCE', 'EXTRACT SAFETY', 'FORM EXAMPLES']) {
+	for (const section of packet.targets.length === 2 ? ['ARRAY KEY BEHAVIOR', 'NULL / MISSING KEY BEHAVIOR', 'ARRAY OPERATIONS', 'SORTING', 'MAP / FILTER / REDUCE', 'EXTRACT SAFETY', 'FORM EXAMPLES'] : [...new Set(questions.map(question => question.section))]) {
 		lines.push(`## ${section}`, '');
 		const ids = new Set(questions.filter(question => question.section === section).map(question => question.id));
 		// Cross-reference rather than duplicating the full claim and source quotes.

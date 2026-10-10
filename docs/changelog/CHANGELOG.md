@@ -4,6 +4,31 @@
 
 ### Added
 
+- Human-approved PHP Control Flow publication decision and schema-v2
+  public-production Promotion Gate path, preserving the historical PHP Arrays
+  local-only schema-v1 behavior.
+- Exact B2 promotion to `/artykuly/instrukcje-sterujace-php/` with structured audit;
+  the only body transform removes one explicitly approved technical LAB/draft note.
+- Post-promotion gate: 285 tests, zero Astro diagnostics, 11 generated pages,
+  Pagefind 10 pages / 1586 words, plus local article/search/sitemap verification.
+
+- B2 rank #1 PHP control-flow pilot: bounded single-source Cartographer REWRITE,
+  18-document Research Packet and actual PHP 8.4.26/8.5.11 probe evidence.
+- One 1663-word Writer draft with 16 standalone examples passing on both runtimes;
+  four future interaction opportunities stored as unimplemented metadata only.
+- Full Critic REVISE → one required prose-only correction → full second Critic PASS;
+  original draft/review/runtime evidence retained, no Writer regeneration or code change.
+- Deterministic schema-v2 candidate gate and exact pending LAB candidate; two tests
+  cover PASS and tampering/REVISE/publication-state rejection.
+- Structured and human-readable B2/PHP Arrays comparison with unmeasured effort
+  values as null and recommendation-only Humanizer/Interaction/Knowledge Gap findings.
+
+- B1 fresh pilot selection: 83 metadata screens, 19 complete source reads, ten
+  ranked candidates plus nine deferred assessments, eight explicit ordinal criteria.
+- Bounded Cartographer selection branch and `select:pilot` CLI; exact source body
+  evidence, recorded request hash, stable weighted ordering and read-only replay.
+- 27 offline deterministic B1 tests; no new research/draft, CONTENT, Git or deployment.
+
 - Pagefind Search 0.1: pinned official CLI after Astro build; public main-content
   index and `/szukaj/` form using the official API, loaded only on demand.
 - 23 deterministic search tests for public links, request ordering, empty queries

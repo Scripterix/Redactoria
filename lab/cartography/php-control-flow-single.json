@@ -1,0 +1,499 @@
+{
+  "action": "REWRITE",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "current-codex-session"
+    },
+    "requestHash": "8bde0a1d21d896bfddb84b8f09273f7afd743589ed4f2926e23a6c23e73bb2c1",
+    "selectedInventoryHash": "33647076d2d8f444027048572a88c5ce0c51bcd3c9207f20eef57d7ef7e91e7f"
+  },
+  "artifactName": "php-control-flow-single",
+  "confidence": 0.97,
+  "correct": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "if ($user_validated)"
+        }
+      ],
+      "id": "correct-inputs",
+      "interpretation": "Każdy nowy przykład ma definiować dane wejściowe i podawać stdout; legacy if/switch/ternary zależą od zmiennych spoza fragmentu."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "**for i do while** mają prawie taką samą konstrukcję w PHP, JavaScript, Pythonie czy C++"
+        }
+      ],
+      "id": "correct-language",
+      "interpretation": "Usunąć sugestię prawie identycznej konstrukcji for/do-while w Pythonie. W nowym tekście nie porównywać języków."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Najczęściej używana pętla w PHP:"
+        }
+      ],
+      "id": "correct-popularity",
+      "interpretation": "Nie przedstawiać for jako najczęstszej pętli bez pomiaru. Dobierać pętlę do zadania."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "value": "W PHP najważniejsze instrukcje sterujące to:"
+    },
+    {
+      "field": "body",
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "value": "$i = 1;\n$total = 0;"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "id": "keep-core",
+      "interpretation": "Zachować decyzje i powtarzanie jako oś materiału, napisać nową prozę."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "while ($i <= 10)"
+        }
+      ],
+      "id": "keep-sum",
+      "interpretation": "Zachować wartość zadania sumowania i jawnego postępu licznika, nie kopiować prose."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "$users = ['Anna', 'Tomek', 'Kasia'];"
+        }
+      ],
+      "id": "keep-foreach",
+      "interpretation": "Połączyć iterowanie z istniejącym materiałem PHP Arrays."
+    }
+  ],
+  "limitations": [
+    "Jeden pełny materiał źródłowy; brak ponownej analizy 83 artykułów.",
+    "Braki to ocena tego źródła, nie twierdzenie o braku tematów w całej bazie.",
+    "To decyzja zakresu i hipotezy do Researchera, nie weryfikacja semantyki PHP ani zgoda na publikację."
+  ],
+  "missing": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek i wykonuje kod, jeśli jest on prawdziwy."
+        }
+      ],
+      "id": "missing-branching",
+      "interpretation": "Brakuje elseif, kolejności gałęzi, === vs ==, = vs ==, truthiness i logiki."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "break, continue, exit, return, include, require."
+        }
+      ],
+      "id": "missing-flow",
+      "interpretation": "Brakuje rzeczywistych przykładów break i continue oraz granic pętli."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "id": "research-conditions",
+      "interpretation": "Zweryfikować if/elseif/else, konwersję bool i porównania skalarne."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Operator ten skraca zapis if/else:"
+        }
+      ],
+      "id": "research-logic",
+      "interpretation": "Zweryfikować &&/||/!, short-circuit i pierwszeństwo and/or vs przypisanie."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "switch ($name) {"
+        }
+      ],
+      "id": "research-choice",
+      "interpretation": "Zweryfikować loose switch/fallthrough oraz krótki strict match/default/UnhandledMatchError."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "id": "research-loops",
+      "interpretation": "Zweryfikować while/do/for/foreach, break/continue i return; ocenić migracje 8.4/8.5 tylko w tym zakresie."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "**PHP i Python to języki, które działają po stronie serwera (server-side).**"
+        }
+      ],
+      "id": "uncertain-web",
+      "interpretation": "PHP może działać także w CLI; absolutna etykieta server-side to uproszczenie kontekstu webowego, nie nieaktualna składnia."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "**include** – w przypadku błędu wyświetla ostrzeżenie i kontynuuje."
+        }
+      ],
+      "id": "uncertain-file",
+      "interpretation": "Uogólnienie każdego błędu include/require wymaga zawężenia do nieudanego dołączenia; temat odłożyć zamiast poszerzać artykuł."
+    }
+  ],
+  "prerequisites": [
+    "Zmienne, liczby/napisy/bool oraz echo.",
+    "Uruchomienie pliku PHP w CLI; przykłady nie wymagają serwera WWW.",
+    "Podstawowa tablica i pary klucz–wartość przed foreach; prerequisite istniejący PHP Arrays."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Wymagane podstawy i sposób uruchomienia",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "Przed uruchomieniem przykładów"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Pierwsza pasująca gałąź",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "if, elseif i else"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Kontrast operatorów",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "Porównanie a przypisanie"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Pułapka napisu zero",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "Co oznacza prawdziwy warunek"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 5,
+      "purpose": "Logika i nawiasy",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "Łączenie warunków"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 6,
+      "purpose": "Ternary bez zagnieżdżania",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "Krótki wybór wartości"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "Instrukcja if sprawdza warunek"
+        }
+      ],
+      "needsResearch": true,
+      "order": 7,
+      "purpose": "Loose kontra strict, bez kursu match",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "switch i match"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "needsResearch": true,
+      "order": 8,
+      "purpose": "Moment testu warunku",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "while i do...while"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "needsResearch": true,
+      "order": 9,
+      "purpose": "Postęp i granice",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "for i granice licznika"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "needsResearch": true,
+      "order": 10,
+      "purpose": "Link do Arrays i iteracja po wartościach",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "foreach i tablice"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "needsResearch": true,
+      "order": 11,
+      "purpose": "Zakończenie kontra pominięcie",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "break i continue"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "pętle while, do...while, for, foreach"
+        }
+      ],
+      "needsResearch": true,
+      "order": 12,
+      "purpose": "Zakończenie funkcji, ćwiczenie",
+      "sourceIds": [
+        "1308"
+      ],
+      "title": "return i co dalej"
+    }
+  ],
+  "proposedTitle": "Instrukcje sterujące PHP: warunki i pętle",
+  "reason": "Użyteczny szkic warunków i pętli, ale nie samodzielny materiał edukacyjny: nieinicjalizowane zmienne, brak elseif/porównań/logiki, szerokie dygresje i niezweryfikowane uproszczenia. Jeden spójny rewrite zamiast MERGE/SPLIT.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/tablice-w-php/",
+      "reason": "Istniejący publiczny artykuł Tablice w PHP: podstawy kolekcji przed foreach; nie powtarzać sortowania ani całego API tablic."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "register_tick_function('some_function');"
+        }
+      ],
+      "id": "remove-ticks",
+      "interpretation": "Ticks nie są tu potrzebne i wymagają dodatkowej funkcji; nie oznacza to deprecjacji declare."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "include 'footer.inc';"
+        }
+      ],
+      "id": "remove-files",
+      "interpretation": "Dołączanie plików należy do osobnego materiału. Nie wykonywać legacy zależności."
+    },
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1308",
+          "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+          "value": "PHP PROSZE"
+        }
+      ],
+      "id": "remove-cta",
+      "interpretation": "Usunąć marketingowe CTA i PDF."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Warunki i pętle w PHP 8.4–8.5: if/elseif/else, porównania skalarne, truthiness, logiczne operatory, krótki switch/match, while/do/for/foreach, break/continue i return w funkcji. Bez ticks i dołączania plików.",
+  "targets": [
+    {
+      "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+      "providedCharacters": 3976,
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "title": "Post #60 Instrukcje sterujące PHP",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

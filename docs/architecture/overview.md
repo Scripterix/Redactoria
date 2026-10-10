@@ -65,6 +65,7 @@ editorial decisions or publish LAB artifacts as articles.
 | Writer | IMPLEMENTED | Approved research/addenda to one structured LAB draft; no research/publication |
 | Critic | IMPLEMENTED | Separate grounded review of exact draft; PASS/REVISE/BLOCK, no rewrite or loop |
 | First publication candidate | PRESERVED IN LAB | Exact second-pass PASS copy; separate human local-only publication approval recorded |
+| Second publication candidate | PRESERVED IN LAB | B2 single-source PHP control-flow exact PASS copy; publication pending/false |
 | Promotion Gate | IMPLEMENTED | Manual deterministic CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
 | Engine foundation | IMPLEMENTED | Minimal model port, source reader, validation, stable serialization, safe LAB writer |
 | Full Engine | FUTURE | Independent automation and orchestration |
@@ -165,3 +166,27 @@ The human also approved removing two obsolete LAB/draft notes from the public PH
 body and its local-test banner. The original PASS candidate and promotion audit
 retain their exact historical bytes; an exact-diff regression test records this
 presentation cleanup. This does not authorize new editorial generation or B1.
+
+A subsequent human instruction separately authorized B1 selection. The bounded
+Cartographer branch screens 83 metadata records, reads 19 full shortlisted bodies
+and saves ten new pilot-ranked candidates in a separate LAB subtree. Existing PHP
+arrays sources are excluded. Eight ordinal estimates and recorded weights drive
+deterministic ordering; citation/request validation does not certify technical
+correctness. No research, writing, candidate, CONTENT, Git or deployment follows.
+The B1 operation itself stopped before B2: one ranked source could proceed only after
+separate human review. That later authorization is recorded below. The original
+corpus cartography and PHP lineage remain unchanged; ADR 0003 still covers the branch.
+
+The separately authorized B2 branch processes only rank #1 / source 1308. A focused
+single-article Cartographer result may recommend KEEP/UPDATE/REWRITE, but cannot fake
+MERGE or approve publication. Researcher, Writer and Critic remain separately invoked
+manual modules. One required prose correction is preserved as an audit; the second
+full Critic pass binds the corrected hash and returned PASS.
+
+Candidate preparation is an explicit deterministic LAB operation outside runtime
+agents. Schema v2 uses the generic `sourceDecision` field so the single-source
+REWRITE is not mislabeled as MERGE. It validates the exact draft, actual example
+evidence, Critic PASS, revision audit and hashes before byte-copying Markdown to
+`lab/candidates/php-control-flow/`. This is not Publisher or Promotion Gate and does
+not write CONTENT. The B2 comparison records measured counts and `null` for unmeasured
+cost/time data; future-layer conclusions remain recommendations, not architecture.

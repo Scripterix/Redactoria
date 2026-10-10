@@ -1,0 +1,286 @@
+[
+  {
+    "code": "<?php\n$score = 74;\n$branch = '';\nif ($score >= 90) { $branch = 'top'; }\nelseif ($score >= 60) { $branch = 'pass'; }\nelse { $branch = 'retry'; }\n$assigned = 0;\n$assignmentCondition = (bool)($assigned = 5);\n$result = ['branch' => $branch, 'loose' => 5 == '5', 'strict' => 5 === '5', 'assignmentCondition' => $assignmentCondition, 'assigned' => $assigned, 'different' => 5 !== '5'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "8e846dc7646f531007fee2bfee565c18c34453637582a8e4de6afc8e34057377",
+    "description": "elseif order, equality and assignment",
+    "diagnostics": [],
+    "id": "conditions-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "assigned": 5,
+      "assignmentCondition": true,
+      "branch": "pass",
+      "different": true,
+      "loose": true,
+      "strict": false
+    }
+  },
+  {
+    "code": "<?php\n$result = array_map(static fn($value) => (bool)$value, [false, 0, 0.0, '', '0', [], null, '00', 'false', -1]);\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "8949c6d76d8a8845b0f60885334c5bcfde780173ed8dbaf89dd9a308b4f326c2",
+    "description": "Scalar false values, empty array, true nonempty strings",
+    "diagnostics": [],
+    "id": "truthiness-84",
+    "phpVersion": "8.4.26",
+    "result": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "code": "<?php\n$calls = 0;\n$right = static function () use (&$calls) { $calls++; return true; };\n$falseAnd = false && $right();\n$trueOr = true || $right();\n$a = true && false;\n$b = true and false;\n$c = false || true;\n$d = false or true;\n$result = ['calls' => $calls, 'falseAnd' => $falseAnd, 'trueOr' => $trueOr, 'andSymbol' => $a, 'andWord' => $b, 'orSymbol' => $c, 'orWord' => $d, 'not' => !false];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "b9ec5fe5716f28258e9cab427f47798dd981410678cafbe0829b00802c9b1cd7",
+    "description": "Short-circuit and and/or precedence relative to assignment",
+    "diagnostics": [],
+    "id": "logic-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "andSymbol": false,
+      "andWord": true,
+      "calls": 0,
+      "falseAnd": false,
+      "not": true,
+      "orSymbol": true,
+      "orWord": false,
+      "trueOr": true
+    }
+  },
+  {
+    "code": "<?php\n$value = '1';\nswitch ($value) { case 1: $switch = 'number'; break; default: $switch = 'other'; }\n$match = match ($value) { 1 => 'number', default => 'other' };\n$fallthrough = '';\nswitch (1) { case 1: $fallthrough .= 'A'; case 2: $fallthrough .= 'B'; break; }\n$unhandled = false;\ntry { match ('missing') { 'known' => 1 }; } catch (UnhandledMatchError $error) { $unhandled = true; }\n$result = ['switch' => $switch, 'match' => $match, 'fallthrough' => $fallthrough, 'unhandled' => $unhandled, 'ternary' => true ? 'yes' : 'no'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "e398de7ad6aab6249e2515501fb247bbdbecd1cf579562e6bcc461b37ec36991",
+    "description": "Switch loose match/fallthrough, match strict/default/unhandled, ternary",
+    "diagnostics": [],
+    "id": "choices-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "fallthrough": "AB",
+      "match": "other",
+      "switch": "number",
+      "ternary": "yes",
+      "unhandled": true
+    }
+  },
+  {
+    "code": "<?php\n$while = 0; while (false) { $while++; }\n$do = 0; do { $do++; } while (false);\n$sequence = []; for ($i = 0; $i < 3; $i++) { $sequence[] = $i; }\n$i = 1; $sum = 0; while ($i <= 10) { $sum += $i; $i++; }\n$result = ['while' => $while, 'do' => $do, 'for' => $sequence, 'sum' => $sum];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "492d6059475db7c36aea49bf15235a40c57ee81063eb50735a228964b2772ce1",
+    "description": "While/do-while minimum, for bounds, sum with explicit increment",
+    "diagnostics": [],
+    "id": "loops-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "do": 1,
+      "for": [
+        0,
+        1,
+        2
+      ],
+      "sum": 55,
+      "while": 0
+    }
+  },
+  {
+    "code": "<?php\n$items = ['first' => 'Anna', 'second' => 'Tomek']; $pairs = [];\nforeach ($items as $key => $value) { $pairs[] = [$key, $value]; $value = 'changed'; }\n$empty = 0; foreach ([] as $value) { $empty++; }\n$result = ['pairs' => $pairs, 'unchanged' => $items, 'empty' => $empty];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "346c979d4a3d747d13f6a7322e3dfb093f48c026fb6e49563b305dfc7c150cf2",
+    "description": "Value/key iteration, empty array, no reference mutation",
+    "diagnostics": [],
+    "id": "foreach-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "empty": 0,
+      "pairs": [
+        [
+          "first",
+          "Anna"
+        ],
+        [
+          "second",
+          "Tomek"
+        ]
+      ],
+      "unchanged": {
+        "first": "Anna",
+        "second": "Tomek"
+      }
+    }
+  },
+  {
+    "code": "<?php\n$visited = [];\nfor ($i = 1; $i <= 6; $i++) { if ($i === 2) { continue; } if ($i === 5) { break; } $visited[] = $i; }\nfunction label(int $score): string { if ($score >= 60) { return 'pass'; } return 'retry'; }\n$result = ['visited' => $visited, 'passed' => label(70), 'retry' => label(40), 'callerContinues' => true];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "bd48022551d4fc07a7b34b9b4d56eacf6edb28f3b70b2097ec0b28bfe0a407c9",
+    "description": "Continue vs break; return ends function but not caller",
+    "diagnostics": [],
+    "id": "flow-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "callerContinues": true,
+      "passed": "pass",
+      "retry": "retry",
+      "visited": [
+        1,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "code": "<?php\n$ran = false;\nif (false); { $ran = true; }\n$score = 95;\nif ($score >= 60) { $branch = 'pass'; } elseif ($score >= 90) { $branch = 'top'; } else { $branch = 'retry'; }\n$result = ['emptyIfStillRunsFollowingBlock' => $ran, 'wrongOrder' => $branch];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "36e1d2412421d52d96f4027fe04b156b4ee4d1a89e4a987ba0f1c8c33bfab38d",
+    "description": "Accidental semicolon empty if statement and reversed threshold order",
+    "diagnostics": [],
+    "id": "beginner-pitfalls-84",
+    "phpVersion": "8.4.26",
+    "result": {
+      "emptyIfStillRunsFollowingBlock": true,
+      "wrongOrder": "pass"
+    }
+  },
+  {
+    "code": "<?php\n$score = 74;\n$branch = '';\nif ($score >= 90) { $branch = 'top'; }\nelseif ($score >= 60) { $branch = 'pass'; }\nelse { $branch = 'retry'; }\n$assigned = 0;\n$assignmentCondition = (bool)($assigned = 5);\n$result = ['branch' => $branch, 'loose' => 5 == '5', 'strict' => 5 === '5', 'assignmentCondition' => $assignmentCondition, 'assigned' => $assigned, 'different' => 5 !== '5'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "8e846dc7646f531007fee2bfee565c18c34453637582a8e4de6afc8e34057377",
+    "description": "elseif order, equality and assignment",
+    "diagnostics": [],
+    "id": "conditions-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "assigned": 5,
+      "assignmentCondition": true,
+      "branch": "pass",
+      "different": true,
+      "loose": true,
+      "strict": false
+    }
+  },
+  {
+    "code": "<?php\n$result = array_map(static fn($value) => (bool)$value, [false, 0, 0.0, '', '0', [], null, '00', 'false', -1]);\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "8949c6d76d8a8845b0f60885334c5bcfde780173ed8dbaf89dd9a308b4f326c2",
+    "description": "Scalar false values, empty array, true nonempty strings",
+    "diagnostics": [],
+    "id": "truthiness-85",
+    "phpVersion": "8.5.11",
+    "result": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "code": "<?php\n$calls = 0;\n$right = static function () use (&$calls) { $calls++; return true; };\n$falseAnd = false && $right();\n$trueOr = true || $right();\n$a = true && false;\n$b = true and false;\n$c = false || true;\n$d = false or true;\n$result = ['calls' => $calls, 'falseAnd' => $falseAnd, 'trueOr' => $trueOr, 'andSymbol' => $a, 'andWord' => $b, 'orSymbol' => $c, 'orWord' => $d, 'not' => !false];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "b9ec5fe5716f28258e9cab427f47798dd981410678cafbe0829b00802c9b1cd7",
+    "description": "Short-circuit and and/or precedence relative to assignment",
+    "diagnostics": [],
+    "id": "logic-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "andSymbol": false,
+      "andWord": true,
+      "calls": 0,
+      "falseAnd": false,
+      "not": true,
+      "orSymbol": true,
+      "orWord": false,
+      "trueOr": true
+    }
+  },
+  {
+    "code": "<?php\n$value = '1';\nswitch ($value) { case 1: $switch = 'number'; break; default: $switch = 'other'; }\n$match = match ($value) { 1 => 'number', default => 'other' };\n$fallthrough = '';\nswitch (1) { case 1: $fallthrough .= 'A'; case 2: $fallthrough .= 'B'; break; }\n$unhandled = false;\ntry { match ('missing') { 'known' => 1 }; } catch (UnhandledMatchError $error) { $unhandled = true; }\n$result = ['switch' => $switch, 'match' => $match, 'fallthrough' => $fallthrough, 'unhandled' => $unhandled, 'ternary' => true ? 'yes' : 'no'];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "e398de7ad6aab6249e2515501fb247bbdbecd1cf579562e6bcc461b37ec36991",
+    "description": "Switch loose match/fallthrough, match strict/default/unhandled, ternary",
+    "diagnostics": [],
+    "id": "choices-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "fallthrough": "AB",
+      "match": "other",
+      "switch": "number",
+      "ternary": "yes",
+      "unhandled": true
+    }
+  },
+  {
+    "code": "<?php\n$while = 0; while (false) { $while++; }\n$do = 0; do { $do++; } while (false);\n$sequence = []; for ($i = 0; $i < 3; $i++) { $sequence[] = $i; }\n$i = 1; $sum = 0; while ($i <= 10) { $sum += $i; $i++; }\n$result = ['while' => $while, 'do' => $do, 'for' => $sequence, 'sum' => $sum];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "492d6059475db7c36aea49bf15235a40c57ee81063eb50735a228964b2772ce1",
+    "description": "While/do-while minimum, for bounds, sum with explicit increment",
+    "diagnostics": [],
+    "id": "loops-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "do": 1,
+      "for": [
+        0,
+        1,
+        2
+      ],
+      "sum": 55,
+      "while": 0
+    }
+  },
+  {
+    "code": "<?php\n$items = ['first' => 'Anna', 'second' => 'Tomek']; $pairs = [];\nforeach ($items as $key => $value) { $pairs[] = [$key, $value]; $value = 'changed'; }\n$empty = 0; foreach ([] as $value) { $empty++; }\n$result = ['pairs' => $pairs, 'unchanged' => $items, 'empty' => $empty];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "346c979d4a3d747d13f6a7322e3dfb093f48c026fb6e49563b305dfc7c150cf2",
+    "description": "Value/key iteration, empty array, no reference mutation",
+    "diagnostics": [],
+    "id": "foreach-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "empty": 0,
+      "pairs": [
+        [
+          "first",
+          "Anna"
+        ],
+        [
+          "second",
+          "Tomek"
+        ]
+      ],
+      "unchanged": {
+        "first": "Anna",
+        "second": "Tomek"
+      }
+    }
+  },
+  {
+    "code": "<?php\n$visited = [];\nfor ($i = 1; $i <= 6; $i++) { if ($i === 2) { continue; } if ($i === 5) { break; } $visited[] = $i; }\nfunction label(int $score): string { if ($score >= 60) { return 'pass'; } return 'retry'; }\n$result = ['visited' => $visited, 'passed' => label(70), 'retry' => label(40), 'callerContinues' => true];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "bd48022551d4fc07a7b34b9b4d56eacf6edb28f3b70b2097ec0b28bfe0a407c9",
+    "description": "Continue vs break; return ends function but not caller",
+    "diagnostics": [],
+    "id": "flow-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "callerContinues": true,
+      "passed": "pass",
+      "retry": "retry",
+      "visited": [
+        1,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "code": "<?php\n$ran = false;\nif (false); { $ran = true; }\n$score = 95;\nif ($score >= 60) { $branch = 'pass'; } elseif ($score >= 90) { $branch = 'top'; } else { $branch = 'retry'; }\n$result = ['emptyIfStillRunsFollowingBlock' => $ran, 'wrongOrder' => $branch];\necho json_encode($result, JSON_THROW_ON_ERROR), \"\\n\";\n",
+    "codeHash": "36e1d2412421d52d96f4027fe04b156b4ee4d1a89e4a987ba0f1c8c33bfab38d",
+    "description": "Accidental semicolon empty if statement and reversed threshold order",
+    "diagnostics": [],
+    "id": "beginner-pitfalls-85",
+    "phpVersion": "8.5.11",
+    "result": {
+      "emptyIfStillRunsFollowingBlock": true,
+      "wrongOrder": "pass"
+    }
+  }
+]

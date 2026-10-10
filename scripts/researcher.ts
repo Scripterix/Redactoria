@@ -13,6 +13,9 @@ import { hashJson, stableJson } from '../engine/core/serialization.ts';
 import { createSourceReader } from '../engine/core/source-reader.ts';
 import { InventoryInputSchema } from '../engine/agents/cartographer/contract.ts';
 import { FocusedMergeResultSchema } from '../engine/agents/cartographer/focused-merge.ts';
+import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../engine/agents/cartographer/focused-article.ts';
+import { z } from 'zod';
+import { validateB2Authorization } from '../engine/core/b2-authorization.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 export function parseResearcherArguments(args: string[]) {
@@ -35,12 +38,13 @@ async function main() {
 	}
 	const { options, prepare } = parseResearcherArguments(process.argv.slice(2));
 	const json = async (path: string) => JSON.parse(await readFile(path, 'utf8')) as unknown;
-	const decision = ApprovedMergeDecisionSchema.parse(await json(resolve(options.get('--decision')!)));
+	const decision = z.union([ApprovedMergeDecisionSchema, ApprovedArticleDecisionSchema]).parse(await json(resolve(options.get('--decision')!)));
+	if (decision.action !== 'MERGE') validateB2Authorization(await readFile(resolve(project, decision.authorizationRef), 'utf8'), decision.authorizationHash, decision.targets);
 	if (!/^lab\/cartography\/[a-z0-9-]+\.json$/.test(decision.analysisRef)) throw new Error('Invalid Cartographer analysis reference.');
 	const analysisPath = await realpath(resolve(project, decision.analysisRef));
 	if (!isWithin(await realpath(resolve(project, 'lab/cartography')), analysisPath)) throw new Error('Analysis escapes LAB cartography.');
-	const cartography = FocusedMergeResultSchema.parse(await json(analysisPath));
-	const slug = cartography.artifactName.replace(/-merge$/, '');
+	const cartography = z.union([FocusedMergeResultSchema, FocusedArticleResultSchema]).parse(await json(analysisPath));
+	const slug = cartography.artifactName.replace(/-(merge|single)$/, '');
 	const source = resolve(options.get('--source') ?? resolve(project, '../temp-ogwo/posts'));
 	const inventory = InventoryInputSchema.parse(await json(resolve(options.get('--inventory') ?? resolve(project, 'lab/inventory/inventory.json'))));
 	const research = ResearchBundleSchema.parse(await json(resolve(options.get('--sources') ?? resolve(project, `lab/research/${slug}/sources.json`))));
@@ -55,7 +59,7 @@ async function main() {
 	if (prepare) {
 		const { request } = await prepareResearchRequest(input, prompt, reader);
 		await writeResearchArtifacts(project, source, { [`research/${slug}/request.json`]: stableJson({ schemaVersion: 1, inputHash: hashJson(input), requestHash: hashJson(request), request }) });
-		console.log(`Prepared Researcher: two full bodies, ${research.sources.length} captured official documents; request ${hashJson(request)}.`); return;
+		console.log(`Prepared Researcher: ${selected.length} full bodies, ${research.sources.length} captured official documents; request ${hashJson(request)}.`); return;
 	}
 	const model = new RecordedLanguageModel(await json(resolve(options.get('--responses') ?? resolve(project, `lab/research/${slug}/session-responses.json`))));
 	const packet = await runResearcher(input, prompt, model, reader);

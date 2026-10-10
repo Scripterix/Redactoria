@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "topic": "php-control-flow",
+  "sourceDecision": "lab/decisions/php-control-flow-rewrite.json",
+  "researchApproval": "lab/decisions/php-control-flow-research-acceptance.json",
+  "researchPacket": "lab/research/php-control-flow/research.json",
+  "runtimeVerification": "lab/research/php-control-flow/runtime-verification.json",
+  "targetPhpVersions": ["8.4", "8.5"],
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": ["prerequisites", "conditions", "comparison", "truthiness", "logic", "precedence", "ternary", "switch-match", "while-do", "for", "foreach", "break-continue", "return", "pitfalls", "version-scope", "next-step"]
+}

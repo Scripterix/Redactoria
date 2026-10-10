@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "status": "approved",
+  "approvedBy": "human",
+  "action": "REWRITE",
+  "nextStep": "research",
+  "targets": [
+    {
+      "contentHash": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4",
+      "providedCharacters": 3976,
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "title": "Post #60 Instrukcje sterujące PHP",
+      "truncated": false
+    }
+  ],
+  "confidence": 0.97,
+  "reason": "Bounded REWRITE under the user's explicit B2 task authorization; not a claim of separate human review of Cartographer output. Użyteczny szkic warunków i pętli, ale nie samodzielny materiał edukacyjny: nieinicjalizowane zmienne, brak elseif/porównań/logiki, szerokie dygresje i niezweryfikowane uproszczenia. Jeden spójny rewrite zamiast MERGE/SPLIT.",
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "value": "W PHP najważniejsze instrukcje sterujące to:"
+    },
+    {
+      "field": "body",
+      "sourceId": "1308",
+      "sourcePath": "1308-post-60-instrukcje-sterujace-php.md",
+      "value": "$i = 1;\n$total = 0;"
+    }
+  ],
+  "analysisHash": "5495096718b52a7327d4c835acea78f15ac637823947cbc270051f1a174c8789",
+  "analysisRef": "lab/cartography/php-control-flow-single.json",
+  "authorizationRef": "lab/decisions/php-control-flow-b2-authorization.json",
+  "authorizationHash": "04a017962d902a97751a9c180274bac811706fd3f16f8df364f4bf2f7f4481f2"
+}

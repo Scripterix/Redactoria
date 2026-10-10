@@ -12,4 +12,13 @@ describe('Human-authorized PHP public presentation cleanup', () => {
 		expect(expected).not.toBe(candidate);
 		expect(body).toBe(expected);
 	});
+
+	it('removes only the authorized LAB/draft note from PHP Control Flow', async () => {
+		const candidate = await readFile(new URL('../../lab/candidates/php-control-flow/article.md', import.meta.url), 'utf8');
+		const content = await readFile(new URL('../../content/articles/instrukcje-sterujace-php.md', import.meta.url), 'utf8');
+		const body = content.replace(/^---\r?\n[^]*?\r?\n---\r?\n/, '');
+		const note = 'Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie zgody B2 oraz rzeczywiste wykonania PHP 8.4 i 8.5. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n';
+		expect(candidate.split(note)).toHaveLength(2);
+		expect(body).toBe(candidate.replace(note, ''));
+	});
 });

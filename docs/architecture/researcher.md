@@ -144,3 +144,17 @@ an exact publication candidate is now in LAB. Neither the research/MERGE decisio
 nor Critic review authorizes publication. See [Writer/Critic](writer-critic.md).
 ADR 0003 covers the agent contract; its evidence section is clarified, not duplicated
 in a new milestone-specific ADR.
+
+## B2 single-source result
+
+The B2 variant accepts exactly one authorized Cartographer target and its unchanged
+REWRITE decision. Research acceptance is recorded as validation under the human's
+explicit end-to-end B2 task authorization; it does not pretend that the human read a
+packet that did not yet exist and it grants no publication authority.
+
+For PHP control flow the packet contains 18 official PHP documents, 11 research
+questions, 18 verified facts, one incorrect source claim, two ambiguous source claims,
+eight code findings and zero unresolved questions. Eight owned probes per exact PHP
+8.4.26/8.5.11 runtime passed 24 assertions per runtime. The module still produces
+only a Research Packet in LAB and stops before Writer; later stages were separately
+invoked within the already authorized B2 scope.

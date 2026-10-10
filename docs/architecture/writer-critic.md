@@ -159,3 +159,24 @@ need the external corpus checkout; captured request data supplies fixture bodies
 ADR 0003 already covers these runtime contracts and tool/model boundaries; no new
 durable architecture decision or ADR. Publisher/Dispatcher remain unstarted.
 
+## B2 — single-source PHP control flow
+
+The separately authorized B2 pilot reused the same Writer/Critic contracts with one
+approved source and the bounded research-acceptance contract. Writer produced one
+1663-word, 13-section draft and four unimplemented interaction opportunities. All
+16 standalone examples passed on PHP 8.4.26 and 8.5.11.
+
+The first full Critic returned REVISE for one clarity boundary: `!== 0` in the shown
+guard is exact for the assigned `int 0`, not every numeric zero such as `float 0.0`.
+One required prose replacement was applied without code changes, new Writer calls or
+new PHP executions. The original draft, execution and review artifacts are archived.
+The full second Critic request is bound to revised article hash
+`2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b`
+and returned PASS with no issues.
+
+`npm run candidate -- --topic php-control-flow` is a deterministic, fail-closed LAB
+candidate gate outside `engine/agents/`. It validates the exact draft, Critic PASS,
+runtime evidence and revision hashes and refuses to overwrite an existing candidate.
+Schema v2 records `sourceDecision`, not a false MERGE label. The exact Markdown and
+metadata remain pending/false in LAB; no promotion or publication capability is added.
+

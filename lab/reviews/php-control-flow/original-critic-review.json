@@ -1,0 +1,112 @@
+{
+  "action": "REVIEW",
+  "articleHash": "1de9f8004dbcc36e47810c337c695ccc63039aa25eb9b5ec558841aa0600c783",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Warunki, scalar truthiness, switch/match i pętle zgodne z ustaleniami; nie ma deklaracji o pełnej zgodności wszystkich porównań 8.4/8.5.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Zachowany rdzeń legacy, nowa proza, brak CTA/ticks/include. Braki sources zastąpione jawnymi danymi.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "16/16 samodzielnych programów PASS na obu runtime; dokładne stdout/stderr/exit i code hashes. Guard short-circuit jest poprawny przy przypisanym int 0.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Wszystkie 16 obowiązkowych obszarów pokryte. Zbędne hipotezy o popularności/analogii języków usunięto, nie przedstawiono jako fakty.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "13 sekcji: dane/pierwsza gałąź/operatory/wybór/pętle/przepływ/ćwiczenie. match jest krótkim kontrastem, nie dodatkowym kursem.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Wymagane doprecyzowanie: w ochronie przed dzieleniem przez zero !== 0 rozpoznaje tylko int 0; opis powinien jawnie podać to założenie.",
+      "result": "ISSUES"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "Arrays to prerequisite/link, bez powielania API; wyniki bloków jawne. Powtórzone linki kontekstowe nie są duplikacją materiału.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Brak danych z requestów, HTML, eval/shell/plików w przykładach. Brak nieskończonych pętli; access example jawnie nie jest systemem autoryzacji.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "match datowany od 8.0; scoped 8.4–8.5, exact actual runtimes i wyjątki migracyjne, bez twierdzeń o najnowszej wersji.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak marketingu, nieudokumentowanej popularności for, porównań PHP/Python ani benchmarków. Syntaktyczne int/string objaśniono minimalnie dla użytej funkcji.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "c41c9a795439184d94e485673c560213c41642075939382433821fb8a590c776",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "current-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "3c0a2181d3bed988521fd47be0c86e7c4028ad238fdc5e756eda5ce1b39c1abf"
+  },
+  "draftMetadataHash": "f4e7a9777d7ff77896062e2334cebe577cc4ef84177ca9e1c637763da81bc705",
+  "draftRef": "lab/drafts/php-control-flow/article.md",
+  "issues": [
+    {
+      "category": "CLARITY",
+      "change": "Zastąp tylko wskazane objaśnienie short-circuit precyzyjnym zdaniem o dzielniku int i kontraście float 0.0. Zachowaj kod, wynik oraz pozostałe sekcje bez zmian.",
+      "confidence": 0.99,
+      "description": "Dzielnik w przykładzie jest int 0, więc program działa. Po zmianie na float 0.0 strict !== 0 daje true i nie osłania prawego wyrażenia. Ogólne objaśnienie nie ujawnia ograniczenia mimo że artykuł omawia też zero float. Potwierdzono dodatkowo actual PHP 8.4.26/8.5.11: 0.0 !== 0 true, 0.0 != 0 false.",
+      "evidence": [
+        {
+          "id": "comparisons",
+          "kind": "finding"
+        },
+        {
+          "id": "logic",
+          "kind": "finding"
+        }
+      ],
+      "id": "integer-zero-boundary",
+      "location": {
+        "quote": "Drugie ćwiczenie wykorzystuje to do pominięcia dzielenia przez zero.",
+        "sectionId": "logical-operators"
+      },
+      "severity": "required",
+      "status": "confirmed"
+    }
+  ],
+  "limitations": [
+    "Funkcjonalny Critic w tej samej sesji/modelu co Writer; nie niezależny provider ani blind review.",
+    "Automatyczna walidacja sprawdza hash/referencje/shape, a nie dowodzi prawdy wszystkich zdań.",
+    "Próba zero float jest dodatkowym manualnym wykonaniem semantycznego kontrastu, nie jednym z 16 programów draftu.",
+    "REVISE nie daje zgody na publikację; poprawka tylko wymaganego miejsca w granicach zgody B2."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [
+    {
+      "instruction": "Zastąp tylko wskazane objaśnienie short-circuit precyzyjnym zdaniem o dzielniku int i kontraście float 0.0. Zachowaj kod, wynik oraz pozostałe sekcje bez zmian.",
+      "issueId": "integer-zero-boundary"
+    }
+  ],
+  "researchApproval": "lab/decisions/php-control-flow-research-acceptance.json",
+  "researchPacket": "lab/research/php-control-flow/research.json",
+  "schemaVersion": 1,
+  "summary": "Tekst i wszystkie podane programy są poprawne w zadanych danych, ale objaśnienie short-circuit wymaga jednego zawężenia: ścisły test !== 0 nie jest ogólnym sprawdzeniem numerycznego zera. To problem zakresu objaśnienia dla początkującego, nie niezaliczony runtime oryginalnego przykładu. Bez zmian w kodzie i bez przebudowy artykułu.",
+  "topic": "php-control-flow",
+  "verdict": "REVISE"
+}

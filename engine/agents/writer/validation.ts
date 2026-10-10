@@ -1,11 +1,16 @@
 import { editorialBasis, hashBytes, unique } from '../../core/editorial-context.ts';
 import type { EditorialInput, EditorialBasis } from '../../core/editorial-context.ts';
 import { hashJson, stableJson } from '../../core/serialization.ts';
-import { DraftSchema, WriterAnalysisSchema } from './contract.ts';
+import { DraftSchema, WriterAnalysisSchema, SingleWriterAnalysisSchema } from './contract.ts';
 import { renderArticle, wordCount } from './report.ts';
 export function validateWriterInput(raw: unknown) { return editorialBasis(raw); }
 export function validateWriterAnalysis(raw: unknown, basis: EditorialBasis) {
- const analysis = WriterAnalysisSchema.parse(raw);
+ const analysis = (basis.decision.action === 'MERGE' ? WriterAnalysisSchema : SingleWriterAnalysisSchema).parse(raw);
+ if (basis.decision.action !== 'MERGE') {
+  const interactions = SingleWriterAnalysisSchema.parse(raw).interactionOpportunities;
+  unique(interactions.map(item => item.id), 'interaction IDs');
+  if (interactions.some(item => !analysis.sections.some(section => section.id === item.sectionId))) throw new Error('Unknown interaction section.');
+ }
  if (stableJson(analysis.targetPhpVersions) !== stableJson(basis.input.config.targetPhpVersions)) throw new Error('Unsupported PHP scope.');
  unique(analysis.sections.map(section => section.id), 'section IDs');
  unique(analysis.sections.flatMap(section => section.examples.map(example => example.id)), 'example IDs');
@@ -22,7 +27,8 @@ export function validateWriterAnalysis(raw: unknown, basis: EditorialBasis) {
 }
 export function validateDraft(raw: unknown, input: EditorialInput, article?: string) {
  const basis = editorialBasis(input), draft = DraftSchema.parse(raw);
- validateWriterAnalysis({ action: draft.action, title: draft.title, targetPhpVersions: draft.targetPhpVersions, sections: draft.sections, limitations: draft.limitations }, basis);
+ validateWriterAnalysis({ action: draft.action, title: draft.title, targetPhpVersions: draft.targetPhpVersions, sections: draft.sections, limitations: draft.limitations,
+  ...(draft.interactionOpportunities ? { interactionOpportunities: draft.interactionOpportunities } : {}) }, basis);
  const rendered = renderArticle(draft);
  if (draft.topic !== input.config.topic || draft.audience !== input.config.audience
   || draft.sourceDecision !== input.config.sourceDecision || draft.researchPacket !== input.config.researchPacket
