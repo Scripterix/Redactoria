@@ -11,6 +11,9 @@
   the only body transform removes one explicitly approved technical LAB/draft note.
 - Post-promotion gate: 285 tests, zero Astro diagnostics, 11 generated pages,
   Pagefind 10 pages / 1586 words, plus local article/search/sitemap verification.
+- Publication commit `ee3f1fd` pushed to master; Cloudflare Pages completed
+  successfully and direct production checks passed for homepage, listing, both PHP
+  articles, Pagefind search and the 11-URL sitemap.
 
 - B2 rank #1 PHP control-flow pilot: bounded single-source Cartographer REWRITE,
   18-document Research Packet and actual PHP 8.4.26/8.5.11 probe evidence.

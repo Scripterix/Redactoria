@@ -1,9 +1,9 @@
 # Active plans
 
-[013: PHP Control Flow publication checkpoint](013-php-control-flow-publication.md)
-is active. The exact B2 candidate passed the schema-v2 Promotion Gate and the full
-local quality/browser gate. Git push and direct Cloudflare production verification
-remain before closeout. STOP before B3 and later experimental layers.
+No active implementation plan. [013: PHP Control Flow publication
+checkpoint](../completed/013-php-control-flow-publication.md) is completed: formal
+promotion, full quality gate, push and direct Cloudflare production verification
+all passed. STOP before B3 and later experimental layers.
 
 [012: B2 PHP control flow](../completed/012-php-control-flow-b2.md) is completed
 with a full second Critic PASS, exact LAB candidate and comparison with PHP Arrays.

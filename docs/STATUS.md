@@ -9,7 +9,7 @@ promocji do CONTENT, 2026-10-11. Szczegóły: [Project Brain](index.md),
 | Etap | Zakres | Status |
 | --- | --- | --- |
 | Milestone 0 | Astro foundation | DONE |
-| Cloudflare Pages | Ostatni potwierdzony publiczny pilot, 10 stron Astro / 9 stron indeksu | DEPLOYMENT SUCCESS — PRE-B2 |
+| Cloudflare Pages | Publiczny pilot, 11 stron Astro / 10 stron indeksu | DEPLOYMENT SUCCESS — B2 VERIFIED |
 | Milestone 0.5 | Project Brain + Tests | DONE |
 | Milestone 1 | Inventory Scanner | DONE |
 | Milestone 2 | Cartographer 0.1 | DONE |
@@ -24,22 +24,23 @@ promocji do CONTENT, 2026-10-11. Szczegóły: [Project Brain](index.md),
 | Critic final verdict | One new full review after targeted revision | PASS |
 | Draft code verification | 17 examples on each PHP 8.4.26 / 8.5.11 | PASS |
 | Milestone 5 | First Publication Candidate, exact reviewed copy in LAB | DONE |
-| Human publication decision | Hash-bound local-publication-test only | APPROVED — HUMAN |
+| Human publication decisions | PHP Arrays local-only; B2 public-production | APPROVED — HUMAN, SCOPED |
 | Promotion Gate | Deterministic CLI, exact candidate → CONTENT + LAB audit | PASS |
 | Local website | 11 static routes, HTML/XML sitemap, trzy artykuły | PRODUCTION PREVIEW PASS |
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
-| Current Cloudflare checkpoint | `56cc7a7`, push master, public route/search checks | VERIFIED — SUCCESS |
+| Current Cloudflare checkpoint | `ee3f1fd`, push master, public route/search checks | VERIFIED — SUCCESS |
 | B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
-| B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | CONTENT PROMOTED — DEPLOY PENDING |
+| B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | PUBLISHED — VERIFIED |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
 
 Aktualny checkpoint potwierdzony bezpośrednio: Cloudflare Pages check dla commita
-`56cc7a7` ma **completed / success** (`2026-10-10T17:03:15Z`). Dziesięć statycznych
-stron Astro i polski indeks Pagefind dziewięciu stron działają pod
+`ee3f1fd932e6be674b99b9d3fe302265613a9ead` ma **completed / success**
+(`2026-10-10T22:03:16Z`). Jedenaście statycznych stron Astro i polski indeks
+Pagefind dziesięciu stron działają pod
 [redactoria.pages.dev](https://redactoria.pages.dev/).
 Provider: Cloudflare Pages; repository: `Scripterix/Redactoria`; production branch:
 `master`; build: `npm run build`; output directory: `dist`.
@@ -127,7 +128,7 @@ issues and zero required changes.
   schema-v2 `public-production`, candidate/review/hash/destination bound;
   `PROMOTED_PUBLIC` to `content/articles/instrukcje-sterujace-php.md`.
 
-Current B2 publication gate, 2026-10-11:
+Current B2 publication checkpoint, 2026-10-11:
 
 - Candidate Markdown SHA-256 remains
   `2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b`;
@@ -142,7 +143,11 @@ Current B2 publication gate, 2026-10-11:
   promotion audit trail: PASS.
 - Production preview: article metadata, 18-minute reading estimate, 13-section TOC,
   Copy controls, back-to-top, PHP Arrays links, both Pagefind queries, HTML map and
-  XML sitemap verified. Git/Cloudflare state is recorded only after actual push/deploy.
+  XML sitemap verified.
+- Publication commit `ee3f1fd932e6be674b99b9d3fe302265613a9ead` pushed to
+  `origin/master`; Cloudflare Pages check `completed / success` at
+  `2026-10-10T22:03:16Z`. Direct production routes, both Pagefind queries and the
+  11-URL sitemap were verified under `https://redactoria.pages.dev/`.
 
 Targety: `1324-post-61-tablice-w-php-czesc-1.md` i
 `1356-post-62-php-tablice-czesc-ii.md`. Nie analizowano ponownie całego korpusu.

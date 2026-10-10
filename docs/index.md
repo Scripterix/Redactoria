@@ -48,8 +48,10 @@ which ideas are still exploratory.
   completed in LAB; the immutable candidate state remains pending/false.
 - [B2 public-production decision](../lab/decisions/php-control-flow-publication.json)
   and [promotion audit](../lab/reports/instrukcje-sterujace-php-promotion.json) —
-  separate human approval and deterministic exact promotion to CONTENT; plan 013
-  tracks Git/Cloudflare closeout. STOP before rank #2.
+  separate human approval and deterministic exact promotion to CONTENT.
+- [B2 publication checkpoint](plans/completed/013-php-control-flow-publication.md) —
+  full gate, Git push and direct Cloudflare production verification complete. STOP
+  before rank #2.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and

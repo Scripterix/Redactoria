@@ -85,6 +85,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Separate human public-production decision and deterministic schema-v2 Promotion
   Gate: PHP Control Flow promoted to CONTENT with one exact technical LAB-note
   cleanup, complete audit, 285 tests and local 11-page build/browser gate PASS.
+- Public checkpoint `ee3f1fd`: push master, Cloudflare Pages success and direct
+  production verification for routes, both PHP articles, search and sitemap.
 
 ## NOW
 
@@ -93,8 +95,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Separate human approval: local-publication-test; exact PHP Arrays promoted to CONTENT.
 - PUBLIC CHECKPOINT VERIFIED — local gate/preview PASS, commit/push and Cloudflare
   public verification complete. Plan 010 completed; its Git scope is closed.
-- B1 selection complete in LAB; B2 rank #1 candidate preserved in LAB and promoted
-  to CONTENT through a separate human decision. Git/Cloudflare closeout is active.
+- B1 selection complete in LAB; B2 rank #1 candidate preserved in LAB, promoted
+  through a separate human decision and verified in production. Plan 013 DONE.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
@@ -102,8 +104,7 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- Complete plan 013 Git/Cloudflare verification, then STOP.
-- On a later explicit resume, run B3 as three separate bounded jobs: rank #2
+- STOP. On a later explicit resume, run B3 as three separate bounded jobs: rank #2
   JavaScript if/else, rank #3 JavaScript Arrays, then rank #4 DOM.
 
 ## LATER
