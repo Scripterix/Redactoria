@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8",
+  "analysisRef": "lab/cartography/javascript-if-else-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "confidence": 0.97,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+      "providedCharacters": 9062,
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-if-else"
+}

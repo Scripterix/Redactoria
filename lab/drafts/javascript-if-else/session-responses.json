@@ -1,0 +1,116 @@
+{
+  "provenance": {
+    "description": "B3 Writer response authored from the validated packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "c9e4a2f9f08f59f674a25ae60c94c802e775de8f168c61c126a80da8a781b84c",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Kolejność operacji i brak ukrytej mutacji lub konwersji.",
+          "id": "predict-result",
+          "implemented": false,
+          "prompt": "Przewidź wynik przykładu i uzasadnij każdą część.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "branches",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i uruchom przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "numeric-input",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI."
+      ],
+      "sections": [
+        {
+          "body": "`if` wykonuje blok, gdy warunek po konwersji do wartości logicznej jest prawdziwy. Kolejne `else if` są sprawdzane od góry, a po pierwszym dopasowaniu reszta łańcucha jest pomijana. Dlatego bardziej szczegółowy próg umieszczaj przed ogólniejszym. `else` obsługuje wszystkie pozostałe przypadki.\n\nWarto rozdzielić truthiness od porównania. Pusty napis jest falsy, lecz napis `\"0\"` jest truthy. Operator `===` nie konwertuje typów: liczba `0` i napis `\"0\"` nie są ściśle równe. Do sprawdzania danych wejściowych używaj jawnych warunków zamiast liczyć na przypadkową konwersję.",
+          "coverage": [
+            "conditions",
+            "branch-order",
+            "truthiness",
+            "strict-equality"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "const score = 92;\nlet label;\nif (score >= 90) label = 'bardzo dobry';\nelse if (score >= 60) label = 'zaliczony';\nelse label = 'do poprawy';\nconsole.log(label);\nconsole.log(0 === '0');",
+              "expectedDiagnostics": [],
+              "expectedOutput": "bardzo dobry\nfalse\n",
+              "id": "ordered-branches",
+              "language": "js",
+              "purpose": "Kolejność progów i ścisłe porównanie"
+            }
+          ],
+          "heading": "Pierwsza pasująca gałąź",
+          "id": "branches"
+        },
+        {
+          "body": "Wartość z pola formularza jest tekstem. Sama funkcja `Number` nie wystarcza do walidacji: pusty napis i same białe znaki stają się zerem, a napis `\"Infinity\"` daje liczbę nieskończoną. Najpierw odrzuć `null`, `undefined` i tekst pusty po `trim()`. Potem wykonaj konwersję i zaakceptuj wynik tylko wtedy, gdy `Number.isFinite` zwraca `true`.\n\nCzysta funkcja poniżej ma jawny kontrakt i zwraca etykietę zamiast zmieniać DOM. Dzięki temu każdą gałąź można wykonać w Node. Zwróć uwagę na zero: nie jest dodatnie ani ujemne, więc potrzebuje własnej gałęzi.",
+          "coverage": [
+            "input-validation",
+            "finite-number",
+            "edge-cases"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "function analyzeNumber(raw) {\n  if (raw == null || String(raw).trim() === '') return 'brak';\n  const value = Number(raw);\n  if (!Number.isFinite(value)) return 'niepoprawna';\n  if (value > 0) return 'dodatnia';\n  if (value < 0) return 'ujemna';\n  return 'zero';\n}\nconsole.log([' ', '12', 'Infinity', 'abc', '0', '-2'].map(analyzeNumber).join('|'));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "brak|dodatnia|niepoprawna|niepoprawna|zero|ujemna\n",
+              "id": "analyze-number",
+              "language": "js",
+              "purpose": "Walidacja białych znaków, NaN i Infinity"
+            }
+          ],
+          "heading": "Od tekstu do skończonej liczby",
+          "id": "numeric-input"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "node",
+          "kind": "node",
+          "version": "v24.16.0"
+        }
+      ],
+      "title": "Warunki w JavaScript: if, else i bezpieczna walidacja liczby"
+    }
+  }
+}

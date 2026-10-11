@@ -1,0 +1,86 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-arrays-rewrite.json",
+        "sha256": "c6263e9b002048b80e4e68111023812d02e4e16ae0965593ec6df2c86334db78"
+      },
+      {
+        "path": "lab/cartography/javascript-arrays-single.json",
+        "sha256": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c"
+      },
+      {
+        "path": "lab/research/javascript-arrays/sources.json",
+        "sha256": "b242ceabbb5201c77207581a24da9b7a98a19856129e5630f8a63b4352a97cb8"
+      },
+      {
+        "path": "lab/research/javascript-arrays/probes.json",
+        "sha256": "7706bfe4c67ae34ddde231b290a808bcfa5478b615769a3a1c13a19d3b4c438c"
+      },
+      {
+        "path": "lab/research/javascript-arrays/research.json",
+        "sha256": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d"
+      },
+      {
+        "path": "lab/research/javascript-arrays/runtime-verification.json",
+        "sha256": "d7565cfabc4b3799c0d74a8d0544bf772d6b00e25ca62d80f125c95e79e15454"
+      },
+      {
+        "path": "lab/research/javascript-arrays/runtime-verification.md",
+        "sha256": "0aa211721f16066fd0fcd579c59314433e7befebcb43130908c75204f8961b8f"
+      }
+    ],
+    "humanApproval": "The human authorized all three B3 jobs through candidates; this packet was validated in-session and was not separately reviewed by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/javascript-arrays/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "node",
+          "status": "PASS",
+          "version": "v24.16.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "798f8f41f33a7e0187eb3618f5e21de4bfe2fbb6e07d07f06b56c6751a9caec4",
+  "nextStep": "writer",
+  "packetHash": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d",
+  "packetRef": "lab/research/javascript-arrays/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts; execute every final draft example independently; keep interactions as metadata only.",
+  "requestHash": "fabbf42d8b843b15e7109bb0831808e82fe078610e7df19512744852ac8e296c",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "core"
+  ],
+  "schemaVersion": 3,
+  "scope": "B3 javascript-arrays: validated packet and runtime evidence to LAB candidate only; no publication.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+      "providedCharacters": 5654,
+      "sourceId": "2048",
+      "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+      "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-arrays",
+  "validatedAt": "2026-10-11T14:48:56.038Z"
+}

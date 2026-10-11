@@ -2,12 +2,21 @@ import { z } from 'zod';
 import { EditorialInputSchema, EvidenceRefSchema, LabRef, ModelIdentitySchema, Sha, Slug, Text } from '../../core/editorial-context.ts';
 import { DraftSchema } from '../writer/contract.ts';
 export const CRITERIA = ['FACTUAL_ACCURACY', 'SOURCE_ALIGNMENT', 'CODE_CORRECTNESS', 'RESEARCH_COVERAGE', 'STRUCTURE', 'CLARITY', 'DUPLICATION', 'SECURITY', 'VERSION_CLAIMS', 'UNSUPPORTED_CLAIMS'] as const;
-export const CodeExecutionSchema = z.strictObject({
+export const CodeExecutionV1Schema = z.strictObject({
  schemaVersion: z.literal(1), status: z.enum(['PASS', 'FAIL']), articleHash: Sha, executedAt: z.iso.datetime(),
  runs: z.array(z.strictObject({ family: z.enum(['8.4', '8.5']), version: Text, executableHash: Sha, execution: z.literal('actual-local-cli'),
   examples: z.array(z.strictObject({ id: Slug, codeHash: Sha, stdout: z.string(), stderr: z.string(), exitCode: z.number().int(),
    status: z.enum(['PASS', 'FAIL']) })) })).length(2),
 });
+export const CodeExecutionV2Schema = z.strictObject({
+ schemaVersion: z.literal(2), status: z.enum(['PASS', 'FAIL']), articleHash: Sha, executedAt: z.iso.datetime(),
+ runs: z.array(z.strictObject({ runtimeId: Slug, kind: z.enum(['node', 'browser']), version: Text,
+  executableHash: Sha.nullable(), execution: z.enum(['actual-local-cli', 'controlled-browser']),
+  examples: z.array(z.strictObject({ id: Slug, codeHash: Sha, stdout: z.string(), stderr: z.string(), exitCode: z.number().int().nullable(),
+   assertions: z.number().int().positive(), automated: z.boolean(), limitation: Text.nullable(), status: z.enum(['PASS', 'FAIL']) })) })).min(1).max(2),
+ limitations: z.array(Text),
+});
+export const CodeExecutionSchema = z.union([CodeExecutionV1Schema, CodeExecutionV2Schema]);
 export const CriticInputSchema = z.strictObject({
  editorial: EditorialInputSchema, draft: DraftSchema, draftRef: LabRef, article: z.string().min(1),
  codeExecution: CodeExecutionSchema.nullable(),

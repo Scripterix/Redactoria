@@ -85,8 +85,15 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Separate human public-production decision and deterministic schema-v2 Promotion
   Gate: PHP Control Flow promoted to CONTENT with one exact technical LAB-note
   cleanup, complete audit, 285 tests and local 11-page build/browser gate PASS.
+- B3 ranks #2–#4: three bounded single-source JavaScript REWRITEs, official MDN
+  evidence, Node/Chromium verification, first-pass Critic PASS and exact schema-v3
+  candidates in LAB. Five-sample comparison separates Quality Gaps from Knowledge
+  Gaps; publication remains pending/false.
 - Public checkpoint `ee3f1fd`: push master, Cloudflare Pages success and direct
   production verification for routes, both PHP articles, search and sitemap.
+- Read-only `verify:article` Operator CLI: one deterministic command composes the
+  article and CONTENT-lineage contracts for five known lifecycles, supports
+  human/JSON output and stable exit codes without invoking agents or writing data.
 
 ## NOW
 
@@ -97,15 +104,19 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   public verification complete. Plan 010 completed; its Git scope is closed.
 - B1 selection complete in LAB; B2 rank #1 candidate preserved in LAB, promoted
   through a separate human decision and verified in production. Plan 013 DONE.
+- B3 complete in LAB: JavaScript if/else, Arrays and DOM candidates plus metrics
+  and five-sample report. No Promotion Gate, CONTENT, Git or deployment action.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
 - Plan 009 website utilities DONE; icons and educational media remain exploratory Futureboard items.
+- `verify:article` 0.1 IMPLEMENTED / ESTABLISHED; Article Manifest remains a
+  separate NEXT hypothesis and Precision Gate/Humanizer remain later/too early.
 
 ## NEXT
 
-- STOP. On a later explicit resume, run B3 as three separate bounded jobs: rank #2
-  JavaScript if/else, rank #3 JavaScript Arrays, then rank #4 DOM.
+- STOP. Any publication of a B3 candidate, work on ranks #5–#10 or a Futureboard
+  layer requires a new explicit human decision and, where needed, an ADR/milestone.
 
 ## LATER
 

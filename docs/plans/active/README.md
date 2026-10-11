@@ -1,6 +1,38 @@
 # Active plans
 
-No active implementation plan. [013: PHP Control Flow publication
+Active: [019: Checkpoint + Knowledge Gap
+0.1](019-checkpoint-knowledge-gap-01.md). Phase A may checkpoint and push the
+completed verified Engine; Phase B is a LAB-only knowledge-map diagnosis that must
+remain uncommitted for human review. It cannot generate or publish an article.
+
+Previous plan: [018: implement verify:article CLI
+0.1](../completed/018-verify-article-cli-01.md) is completed: all five known
+lifecycle fixtures PASS through the read-only human/JSON Operator Mode with stable
+exit codes. No pipeline artifact, publication, Git or deployment action occurred.
+
+Previous plan: [017: CONTENT lineage contract spike
+0.1](../completed/017-content-lineage-contract-spike.md) is completed: deterministic
+replay validates the real PHP Arrays post-promotion history through a separate
+append-only backfill. No CONTENT/historical evidence, operator CLI, repair or
+publication behavior was changed.
+
+Previous plan: [016: verify:article contract spike
+0.1](../completed/016-verify-article-contract-spike.md) is completed: the read-only
+contract passed four fixtures and exposed one real PHP Arrays post-promotion
+CONTENT-lineage mismatch. No operator CLI, repair, publication, Git or deployment
+action was performed.
+
+Previous plan: [015: Pipeline Review
+0.1](../completed/015-pipeline-review-01.md) is completed: five frozen samples were
+reviewed in LAB, Futureboard received evidence/status updates only, and no idea,
+content, agent, publication, Git or deployment action was implemented.
+
+Previous plan: [014: B3 three JavaScript pipeline
+samples](../completed/014-b3-three-js-pipeline-samples.md) is completed: ranks
+#2–#4 reached three exact LAB-only candidates plus a five-sample report. No
+promotion, CONTENT, Git or deployment action was performed.
+
+Previous plan: [013: PHP Control Flow publication
 checkpoint](../completed/013-php-control-flow-publication.md) is completed: formal
 promotion, full quality gate, push and direct Cloudflare production verification
 all passed. STOP before B3 and later experimental layers.

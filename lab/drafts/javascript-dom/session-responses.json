@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "description": "B3 Writer response authored from the validated packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "96ac907769a611fccc9d461efee1bf94160e35397b9c9df9da6e4f93a7f32119",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Kolejność operacji i brak ukrytej mutacji lub konwersji.",
+          "id": "predict-result",
+          "implemented": false,
+          "prompt": "Przewidź wynik przykładu i uzasadnij każdą część.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "selection",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i uruchom przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "click-example",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI."
+      ],
+      "sections": [
+        {
+          "body": "DOM to Document Object Model: obiektowa reprezentacja dokumentu. `querySelector` zwraca pierwszy pasujący element albo `null`, więc przed użyciem wyniku trzeba sprawdzić jego obecność. `querySelectorAll` zwraca statyczny `NodeList`: lista nie dopisze automatycznie elementu utworzonego później.\n\nUmieść skrypt po elementach w `body` albo użyj modułu ładowanego z odpowiednim momentem wykonania. W kompletnym przykładzie wszystkie wymagane elementy istnieją przed uruchomieniem skryptu.",
+          "coverage": [
+            "query-selector",
+            "query-selector-all",
+            "null",
+            "static-node-list"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [],
+          "heading": "Selektory i brak dopasowania",
+          "id": "selection"
+        },
+        {
+          "body": "`textContent` zapisuje tekst, nie interpretuje go jako HTML. Jest właściwym wyborem, gdy treść może pochodzić z formularza. `classList.add` dodaje pojedynczy token klasy, a `createElement` tworzy nowy element, który można uzupełnić i dołączyć do dokumentu.\n\nPo kliknięciu napis przypominający znacznik pozostaje widocznym tekstem. Odczyt `innerHTML` pokaże encje, co potwierdza brak utworzonego elementu `strong`.",
+          "coverage": [
+            "text-content",
+            "class-list",
+            "create-element"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [],
+          "heading": "Tekst, klasy i nowy element",
+          "id": "safe-update"
+        },
+        {
+          "body": "Natywny element `button` można aktywować wskaźnikiem i klawiaturą. Rejestrujemy jedno zdarzenie `click`, zamiast budować zachowanie dostępne tylko po najechaniu. Przykład jest samodzielnym dokumentem do zapisania jako plik HTML i otwarcia w przeglądarce.\n\nPo aktywacji tytuł dostaje klasę, tekst jest zapisany bez parsowania HTML, a lista ma dwa elementy. Wcześniej zachowany statyczny `NodeList` nadal ma długość jeden.",
+          "coverage": [
+            "click"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "<!doctype html>\n<html lang=\"pl\"><meta charset=\"utf-8\"><title>DOM</title>\n<body>\n<h1 id=\"title\">Start</h1>\n<button id=\"add\" type=\"button\">Dodaj element</button>\n<ul id=\"list\"><li>A</li></ul>\n<script>\nconst title = document.querySelector('#title');\nconst initial = document.querySelectorAll('#list li');\ndocument.querySelector('#add').addEventListener('click', () => {\n  title.textContent = '<strong>Bezpieczny tekst</strong>';\n  title.classList.add('updated');\n  const item = document.createElement('li');\n  item.textContent = 'B';\n  document.querySelector('#list').appendChild(item);\n  console.log(initial.length, document.querySelectorAll('#list li').length);\n});\n</script>\n</body></html>",
+              "expectedDiagnostics": [],
+              "expectedOutput": "Po kliknięciu: widoczny tekst <strong>Bezpieczny tekst</strong>; klasa updated; elementy listy A i B; konsola: 1 2.\n",
+              "id": "dom-click",
+              "language": "html",
+              "purpose": "Bezpieczna zmiana DOM po kliknięciu"
+            }
+          ],
+          "heading": "Kompletny przykład z natywnym przyciskiem",
+          "id": "click-example"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "chrome",
+          "kind": "browser",
+          "version": "154.0.0.0"
+        }
+      ],
+      "title": "DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia"
+    }
+  }
+}

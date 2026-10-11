@@ -1,0 +1,129 @@
+{
+  "asOfDate": "2026-10-11",
+  "probes": [],
+  "provenance": "Official MDN HTTPS snapshots plus locally executed Node probe where applicable.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-dom"
+      ],
+      "id": "core",
+      "question": "Jak bezpiecznie wybierać elementy, obsłużyć null, zmieniać tekst/klasy, tworzyć węzły i reagować na click?",
+      "section": "bounded-scope"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "documentHash": "93debb151e535836077d1477584d292d40a1464373793794de770d34f376425d",
+      "excerpts": [
+        {
+          "id": "query-null",
+          "locator": "Return value",
+          "text": "querySelector returns the first matching Element or null when there is no match."
+        }
+      ],
+      "id": "mdn-query-selector",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Document.querySelector",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+    },
+    {
+      "documentHash": "eb8109d835034e8cc7f64f28470b0ebe8ba9c1bd43911f5995892c42209d20ab",
+      "excerpts": [
+        {
+          "id": "static-nodelist",
+          "locator": "Return value",
+          "text": "querySelectorAll returns a static, non-live NodeList."
+        }
+      ],
+      "id": "mdn-query-selector-all",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Document.querySelectorAll",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
+    },
+    {
+      "documentHash": "9454872f1d851a3e1fdd0595ee1937668a84273ab97fa4a4fa1933d8fcf8cc2d",
+      "excerpts": [
+        {
+          "id": "text-not-html",
+          "locator": "Differences from innerHTML",
+          "text": "textContent represents text content and does not parse a string as HTML."
+        }
+      ],
+      "id": "mdn-text-content",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Node.textContent",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
+    },
+    {
+      "documentHash": "d5aff83d96818e1c447be57c6afde2b6fe3ffe7776aff1a39d5d70859ab40127",
+      "excerpts": [
+        {
+          "id": "class-token",
+          "locator": "Examples",
+          "text": "classList exposes a token list with add, remove, replace and toggle operations."
+        }
+      ],
+      "id": "mdn-class-list",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Element.classList",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"
+    },
+    {
+      "documentHash": "cc5dc22c859605e993428bc8f5762f1b8619cf446b1fd860f82f1c6d69188cbc",
+      "excerpts": [
+        {
+          "id": "create-element",
+          "locator": "Return value",
+          "text": "createElement creates an element for the given local name."
+        }
+      ],
+      "id": "mdn-create-element",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Document.createElement",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+    }
+  ],
+  "topicSlug": "javascript-dom"
+}

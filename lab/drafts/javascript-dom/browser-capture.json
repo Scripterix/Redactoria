@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "executedAt": "2026-10-11T14:38:44.556Z",
+  "runtimeId": "chrome",
+  "version": "154.0.0.0",
+  "execution": "controlled-browser",
+  "action": "native-button-click",
+  "codeHash": "1c2d3846a210acf8cd0de7f7e62e89a2d0406d98e9fc299b83d057838a283aec",
+  "observed": {
+    "titleText": "<strong>Bezpieczny tekst</strong>",
+    "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+    "classAdded": true,
+    "items": ["A", "B"],
+    "staticLength": 1,
+    "currentLength": 2
+  },
+  "console": {
+    "messages": ["1 2"],
+    "errors": 0,
+    "warnings": 0
+  },
+  "assertions": [
+    {"id": "literal-text", "status": "PASS"},
+    {"id": "escaped-html", "status": "PASS"},
+    {"id": "class-added", "status": "PASS"},
+    {"id": "created-item", "status": "PASS"},
+    {"id": "static-nodelist", "status": "PASS"},
+    {"id": "current-list", "status": "PASS"},
+    {"id": "console-clean", "status": "PASS"}
+  ],
+  "limitation": "Single controlled Chromium data-URL harness; no cross-browser or visual claim."
+}

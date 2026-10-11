@@ -1,0 +1,1002 @@
+{
+  "inputHash": "00b889ed9c902cce64a7c46c419eacdf6404dbdeb5f5c0207396d7fd006404c2",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+        "authorizationRef": "lab/decisions/b3-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b3-authorization.json",
+              "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+            },
+            {
+              "path": "lab/decisions/javascript-if-else-rewrite.json",
+              "sha256": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4"
+            },
+            {
+              "path": "lab/cartography/javascript-if-else-single.json",
+              "sha256": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8"
+            },
+            {
+              "path": "lab/research/javascript-if-else/sources.json",
+              "sha256": "b338c2cd062128e86f77a14bcbc55e4bbb0431892a66626cf53cb554b0bc8051"
+            },
+            {
+              "path": "lab/research/javascript-if-else/probes.json",
+              "sha256": "561f7e0403acd3036781b2092a31b45c351b8dc2e32875f29629f4214f169671"
+            },
+            {
+              "path": "lab/research/javascript-if-else/research.json",
+              "sha256": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19"
+            },
+            {
+              "path": "lab/research/javascript-if-else/runtime-verification.json",
+              "sha256": "8207344be0efc718bd246f1639b6e7edca7896b3970b8ab087ec76412b24d854"
+            },
+            {
+              "path": "lab/research/javascript-if-else/runtime-verification.md",
+              "sha256": "52c49c2f6520b89ccaad53c1f8a7f3e384f948d918a2e3e723333477afd02dcb"
+            }
+          ],
+          "humanApproval": "The human authorized all three B3 jobs through candidates; this packet was validated in-session and was not separately reviewed by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/javascript-if-else/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "node",
+                "status": "PASS",
+                "version": "v24.16.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "06f268b5080b109adf2f528ad3ef284860e083b255b42b6d544bb5c96745434c",
+        "nextStep": "writer",
+        "packetHash": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19",
+        "packetRef": "lab/research/javascript-if-else/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts; execute every final draft example independently; keep interactions as metadata only.",
+        "requestHash": "5e364554ab6723f17b81a11f8696c5a8c9a22a618d0d67ad6c610b8ba44b80cb",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "core"
+        ],
+        "schemaVersion": 3,
+        "scope": "B3 javascript-if-else: validated packet and runtime evidence to LAB candidate only; no publication.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+            "providedCharacters": 9062,
+            "sourceId": "2068",
+            "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+            "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-if-else",
+        "validatedAt": "2026-10-11T14:48:55.558Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2068",
+              "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+              "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: decyzja i kolejność gałęzi.",
+          "sourceIds": [
+            "2068"
+          ],
+          "title": "Decyzja i kolejność gałęzi"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2068",
+              "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+              "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: walidacja tekstowego wejścia.",
+          "sourceIds": [
+            "2068"
+          ],
+          "title": "Walidacja tekstowego wejścia"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2068",
+              "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+              "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: granice, przypadki testowe i ćwiczenie.",
+          "sourceIds": [
+            "2068"
+          ],
+          "title": "Granice, przypadki testowe i ćwiczenie"
+        }
+      ],
+      "config": {
+        "audience": "beginner / early intermediate",
+        "requiredCoverage": [
+          "conditions",
+          "branch-order",
+          "truthiness",
+          "strict-equality",
+          "input-validation",
+          "finite-number",
+          "edge-cases"
+        ],
+        "researchApproval": "lab/decisions/javascript-if-else-research-acceptance.json",
+        "researchPacket": "lab/research/javascript-if-else/research.json",
+        "runtimeVerification": "lab/research/javascript-if-else/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/javascript-if-else-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "node",
+            "kind": "node",
+            "version": "v24.16.0"
+          }
+        ],
+        "topic": "javascript-if-else"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8",
+        "analysisRef": "lab/cartography/javascript-if-else-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+        "authorizationRef": "lab/decisions/b3-authorization.json",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "2068",
+            "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+            "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+            "providedCharacters": 9062,
+            "sourceId": "2068",
+            "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+            "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-if-else"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8",
+          "decisionHash": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4",
+          "fullReadCount": 1,
+          "inputHash": "06f268b5080b109adf2f528ad3ef284860e083b255b42b6d544bb5c96745434c",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "56ff3048a15269d797d4d44bbb78797e7738d01371de42ff30819e5d108847d7",
+              "description": "Whitespace, finite numbers, Infinity, NaN and ordered branches",
+              "diagnostics": [],
+              "id": "node-if-boundaries",
+              "result": [
+                "empty",
+                "positive",
+                "invalid",
+                "invalid",
+                "zero",
+                "negative"
+              ],
+              "runtimeId": "node",
+              "runtimeVersion": "v24.16.0"
+            }
+          ],
+          "requestHash": "5e364554ab6723f17b81a11f8696c5a8c9a22a618d0d67ad6c610b8ba44b80cb",
+          "researchBundleHash": "b338c2cd062128e86f77a14bcbc55e4bbb0431892a66626cf53cb554b0bc8051",
+          "topicSlug": "javascript-if-else"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "2068",
+                "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+                "value": "if (Number.isNaN(n)) {"
+              }
+            ],
+            "claim": "Kontrolowana próba Node potwierdza oczekiwane wyniki dla przypadków granicznych.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-if-else",
+                "excerptId": "if-order"
+              },
+              {
+                "documentId": "mdn-boolean",
+                "excerptId": "falsy-values"
+              },
+              {
+                "documentId": "mdn-number",
+                "excerptId": "finite"
+              }
+            ],
+            "id": "code-boundary",
+            "probeIds": [
+              "node-if-boundaries"
+            ],
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Pisać przykłady zgodne z wykonanym probe i ponownie wykonać kod finalnego draftu.",
+            "sourceType": "official-documentation",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-11",
+          "evidence": [
+            {
+              "documentId": "mdn-if-else",
+              "excerptId": "if-order"
+            },
+            {
+              "documentId": "mdn-boolean",
+              "excerptId": "falsy-values"
+            },
+            {
+              "documentId": "mdn-number",
+              "excerptId": "finite"
+            }
+          ],
+          "runtimeScope": "Node v24.16.0"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "2068",
+                "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+                "value": "if (Number.isNaN(n)) {"
+              }
+            ],
+            "claim": "Sprawdzenie wyłącznie Number.isNaN nie odrzuca Infinity, a sprawdzenie raw === \"\" nie obejmuje samych białych znaków.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-if-else",
+                "excerptId": "if-order"
+              }
+            ],
+            "id": "correct-legacy",
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Nie przenosić błędu źródłowego do nowej wersji.",
+            "sourceType": "official-documentation",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Badanie jest ograniczone do jednego autoryzowanego źródła legacy i wskazanych oficjalnych stron; nie stanowi zgody na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "verified-core",
+              "correct-legacy",
+              "code-boundary"
+            ],
+            "note": "Zakres rozstrzygnięty przez oficjalną dokumentację i właściwą dla runtime weryfikację.",
+            "questionId": "core",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "verified-core",
+              "correct-legacy",
+              "code-boundary"
+            ],
+            "id": "rewrite-bounded",
+            "instruction": "Napisać zwarty materiał od nowa, zachować pochodzenie i użyć tylko zweryfikowanych twierdzeń."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "documentHash": "0aa3a3fc7144ebbc41a5217f38dc35123556292fba0bf9b0128ed513fea1e834",
+            "evidenceIds": [
+              "if-order"
+            ],
+            "id": "mdn-if-else",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: if...else",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"
+          },
+          {
+            "documentHash": "0b9412969a846d386b59717b0d25133c761233c9fb21fbd2a7a547633b4517a7",
+            "evidenceIds": [
+              "falsy-values"
+            ],
+            "id": "mdn-boolean",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Boolean",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"
+          },
+          {
+            "documentHash": "e6624f1b0c5edc91f9d5eb7323e348797336a761ce3b821ed119e6f17b3e4a80",
+            "evidenceIds": [
+              "finite"
+            ],
+            "id": "mdn-number",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Number",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+            "providedCharacters": 9062,
+            "sourceId": "2068",
+            "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+            "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-if-else",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "2068",
+                "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+                "value": "if (Number.isNaN(n)) {"
+              }
+            ],
+            "claim": "Gałęzie if/else są sprawdzane po kolei; przed Number należy odrzucić brak lub same białe znaki, a po konwersji wymagać Number.isFinite.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-if-else",
+                "excerptId": "if-order"
+              },
+              {
+                "documentId": "mdn-boolean",
+                "excerptId": "falsy-values"
+              },
+              {
+                "documentId": "mdn-number",
+                "excerptId": "finite"
+              }
+            ],
+            "id": "verified-core",
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Użyć tej semantyki jako granicy treści i przykładów.",
+            "sourceType": "official-documentation",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "code-boundary"
+              ],
+              "instruction": "Wyniki draftu wykonać ponownie, niezależnie od probe badawczego."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "correct-legacy"
+              ],
+              "instruction": "Sprawdzenie wyłącznie Number.isNaN nie odrzuca Infinity, a sprawdzenie raw === \"\" nie obejmuje samych białych znaków."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "verified-core"
+              ],
+              "instruction": "Zachować dydaktyczny rdzeń źródła, ale przepisać prozę."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "code-boundary"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Weryfikacja dotyczy lokalnego Node v24.16.0 i jawnych przypadków, nie wszystkich silników JavaScript."
+        ],
+        "packetHash": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": [
+                  "empty",
+                  "positive",
+                  "invalid",
+                  "invalid",
+                  "zero",
+                  "negative"
+                ],
+                "expected": [
+                  "empty",
+                  "positive",
+                  "invalid",
+                  "invalid",
+                  "zero",
+                  "negative"
+                ],
+                "id": "observed-result",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+            "execution": "actual-local-cli",
+            "kind": "node",
+            "records": [
+              {
+                "code": "const analyze = raw => { if (raw === null || raw === undefined || String(raw).trim() === '') return 'empty'; const n = Number(raw); if (!Number.isFinite(n)) return 'invalid'; if (n > 0) return 'positive'; if (n < 0) return 'negative'; return 'zero'; }; console.log(JSON.stringify([' ', '12', 'Infinity', 'abc', '0', '-2'].map(analyze)));",
+                "codeHash": "56ff3048a15269d797d4d44bbb78797e7738d01371de42ff30819e5d108847d7",
+                "description": "Whitespace, finite numbers, Infinity, NaN and ordered branches",
+                "diagnostics": [],
+                "id": "node-if-boundaries",
+                "result": [
+                  "empty",
+                  "positive",
+                  "invalid",
+                  "invalid",
+                  "zero",
+                  "negative"
+                ],
+                "runtimeId": "node",
+                "runtimeVersion": "v24.16.0"
+              }
+            ],
+            "runtimeId": "node",
+            "status": "PASS",
+            "version": "v24.16.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — javascript-if-else\n\nStatus: **PASS**\n\n- runtime: node v24.16.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nWeryfikacja dotyczy lokalnego Node v24.16.0 i jawnych przypadków, nie wszystkich silników JavaScript.\n",
+      "sources": [
+        {
+          "body": "\n## **If i Else w JavaScript Post #74** **dowiedz się o instrukcjach warunkowych. **\n\n## Spis treści\n\n- [Dlaczego instrukcje warunkowe są potrzebne](#Dlaczego-instrukcje-warunkowe-są-potrzebne)\n\n- [Pierwszy krok – najprostszy if w konsoli](#Pierwszy-krok-najprostszy-if-w-konsoli)\n\n- [Jak działają typy i dlaczego to ważne](#Jak-działają-typy-i-dlaczego-to-ważne)\n\n- [Od konsoli do UI – podpinanie warunku do interfejsu](#Od-konsoli-do-UI-podpinanie-warunku-do-interfejsu)\n\n- [Przykład 1 – walidator liczby (index.html)](#Przykład-1-walidator-liczby)\n\n- [Przykład 2 – kalkulator kosztu przejazdu (fuel.html)](#Przykład-2-kalkulator-kosztu-przejazdu)\n\n- [Przykład 3 – kontrola prędkości (speed.html)](#Przykład-3-kontrola-prędkości)\n\n- [Najczęstsze błędy i dobre praktyki](#najcz%C4%99stsze-b%C5%82%C4%99dy-i-dobre-praktyki)\n\n- [Q&A – szybkie odpowiedzi](#qa--szybkie-odpowiedzi)\n\n- [Jak uruchomić przykłady](#jak-uruchomić-przykłady-if)\n\n- [Podsumowanie](#Podsumowanie-If)\n\n## Dlaczego instrukcje warunkowe są potrzebne\n\nKażdy program potrzebuje podejmować decyzje. Jeśli użytkownik poda liczbę, sprawdź, czy jest większa od 100. Jeśli prędkość przekracza 120 km/h, ostrzeż o ryzyku, podano prawidłowe hasło i login **access = granted**. Instrukcja if to sposób na powiedzenie komputerowi: „zrób coś tylko wtedy, gdy warunek jest spełniony”.\n\n***A co, jeśli warunek nie jest spełniony?***Wtedy wchodzi else – alternatywna ścieżka.\n\n## Pierwszy krok – najprostszy if w konsoli\n\nPierwszy przykład można uruchomić w konsoli przeglądarki (F12 → Console). Utwórz dowolny plik html lub js w VSC i zapoznaj się ze składnią.\n\nconst isLoggedIn = true;\n\nif (isLoggedIn) {\n  console.log(\"Witaj ponownie!\");\n} else {\n  console.log(\"Zaloguj się!\");\n}\n\n***Dlaczego to działa tak prosto?***Bo isLoggedIn to zmienna logiczna (true albo false). if sprawdza jej wartość i wybiera odpowiednią gałąź.\n\n## Jak działają typy i dlaczego to ważne\n\nCzęsto dane z formularza przychodzą jako tekst. Nawet liczba „120” wpisana w polu <input> to string.  Funkcja wbudowana Number(...) próbuje przekonwertować wartość wejściową na **typ number** (liczbę w JS). Jest kilka innych sposobów ale skupienie na **IF**\n\nconst raw = \"120\";\nconst n = Number(raw); // konwersja na liczbę\n\n***A co, jeśli ktoś wpisze literki?***Wtedy Number(\"abc\") zwróci NaN. Dlatego potrzebna jest walidacja. Choć zazwyczaj ustawia się **input** na typ **number**. Zobaczysz to w późniejszym przykładzie.\n\nif (Number.isNaN(n)) {\n  console.log(\"To nie jest liczba.\");\n}\n\n## Od konsoli do UI – podpinanie warunku do interfejsu\n\nWarunki są najbardziej praktyczne, gdy podpinamy je do elementów strony: pól formularza, przycisków, komunikatów.  Ustawienie type=\"number\" powoduje że formularz przyjmuje liczby i ma skalę do powiększania/zmniejszania wartości myszą.\n\n<input id=\"value\" type=\"number\" placeholder=\"Podaj liczbę\">\n<button id=\"run\">Sprawdź</button>\n<p id=\"out\"></p>\n\n<script>\n  const input = document.getElementById(\"value\");\n  const out   = document.getElementById(\"out\");\n  document.getElementById(\"run\").addEventListener(\"click\", () => {\n    const n = Number(input.value);\n    if (Number.isNaN(n)) {\n      out.textContent = \"To nie jest liczba.\";\n    } else if (n > 100) {\n      out.textContent = \"Większa niż 100.\";\n    } else {\n      out.textContent = \"Mniejsza lub równa 100.\";\n    }\n  });\n</script>\n\n***A czy muszę zawsze używać przycisku?***Nie. Możesz reagować na naciśnięcie Enter lub nawet na każdą zmianę pola, ale przycisk jest najprostszy na start.\n\n## Przykład 1 – walidator liczby (walidator.html)\n\nPlik **walidator.html** sprawdza, czy podana wartość to liczba, czy jest parzysta, i porównuje ją do 100.\n\nKluczowa funkcja:\n\nfunction analyzeNumber(raw) {\n  if (raw === '' || raw === null || raw === undefined) {\n    return { cls: 'err', lines: ['Wpisz jakąś wartość.'] };\n  }\n  const n = Number(raw);\n  if (Number.isNaN(n)) {\n    return { cls: 'err', lines: ['To nie jest poprawna liczba.'] };\n  }\n\n  const parity = (Number.isInteger(n) && n % 2 === 0) ? 'parzysta'\n                : (Number.isInteger(n) ? 'nieparzysta' : 'niecałkowita');\n  const gt100  = n > 100 ? 'większa niż 100' : (n === 100 ? 'równa 100' : 'nie większa niż 100');\n\n  return {\n    cls: n > 100 ? 'ok' : 'warn',\n    lines: [\n      `Wprowadzono: ${raw}`,\n      Number.isInteger(n) ? `Parzystość: ${parity}` : `Typ: ${parity}`,\n      `Porównanie do 100: ${gt100}`\n    ]\n  };\n}\n\n***Dlaczego najpierw sprawdzamy pustą wartość, a potem liczbę?***Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd. Walidacja musi być krok po kroku.\n\n## Przykład 2 – kalkulator kosztu przejazdu (fuel.html)\n\nPlik **fuel.html** liczy koszt przejazdu z uwzględnieniem dystansu, spalania i ceny paliwa.\n\nfunction analyzeTrip(d, c, p) {\n  if (!d || !c || !p) {\n    return { cls: 'err', lines: ['Wpisz wszystkie dane'] };\n  }\n  const liters = (d * c) / 100;\n  const cost = liters * p;\n\n  let msg, cls;\n  if (cost < 50) {\n    msg = 'Tani przejazd';\n    cls = 'ok';\n  } else if (cost < 150) {\n    msg = 'Średni koszt';\n    cls = 'warn';\n  } else {\n    msg = 'Drogo';\n    cls = 'err';\n  }\n\n  return {\n    cls,\n    lines: [\n      `Dystans: ${d} km`,\n      `Zużycie paliwa: ${liters.toFixed(1)} l`,\n      `Koszt: ${cost.toFixed(2)} zł`,\n      msg\n    ]\n  };\n}\n\n***A co, jeśli chcę też policzyć czas przejazdu?***Dodaj pole na prędkość średnią i oblicz czas jako dystans / prędkość. Wtedy możesz dodać kolejny warunek i ostrzeżenie.\n\n## Przykład 3 – kontrola prędkości (speed.html)\n\nPlik **speed.html** pokazuje pełną ścieżkę warunków: dokładne wartości (===) i zakresy (>, <, >=, <=).\n\nFragment:\n\nif (speed === 50) {\n  message = \"Idealnie 50 km/h – wzorowo w mieście.\";\n  cls = \"ok\";\n} else if (speed > 50 && speed < 90) {\n  message = \"Od 51 do 89 km/h – poza miastem.\";\n  cls = \"warn\";\n} else if (speed >= 90 && speed < 140) {\n  message = \"Od 90 do 139 km/h – droga ekspresowa.\";\n  cls = \"warn\";\n} else if (speed >= 140 && speed <= 200) {\n  message = \"Od 140 do 200 km/h – autostrada, bardzo ryzykownie.\";\n  cls = \"err\";\n} else if (speed > 240 && speed <= 300) {\n  message = \"Od 240 do 300 km/h – ekstremalna prędkość.\";\n  cls = \"err\";\n} else {\n  message = `${speed} km/h – poza naszymi regułami.`;\n  cls = \"warn\";\n}\n\n***Dlaczego sprawdzamy dokładne wartości przed zakresami?***Bo inaczej warunek zakresu złapałby je wcześniej i blok dokładny nigdy by się nie wykonał.\n\n## Najczęstsze błędy i dobre praktyki\n\n- Zaczynaj od walidacji wejścia.\n\n- Stosuj === i !==, aby unikać pułapek związanych z typami.\n\n- Układaj warunki w logicznej kolejności – od szczegółowych do ogólnych albo odwrotnie, ale spójnie.\n\n- Rozdzielaj logikę (analiza) od prezentacji (renderowanie w UI).\n\n- Nie komplikuj na starcie – wystarczy kilka operatorów porównania.\n\n## Q&A – szybkie odpowiedzi\n\n**Czy if to jedyna możliwość?**Nie. Istnieje też switch i operator warunkowy ? :, ale if jest najprostszy na początek.\n\n**Czy muszę znać wszystkie operatory?**Nie. Wystarczą >, <, >=, <=, ===, !== i czasem &&, ||.\n\n**Co się stanie, jeśli źle ustawię kolejność warunków?**Niektóre bloki nigdy się nie wykonają. Dlatego ważne jest myślenie krokami i testowanie różnych danych.\n\n**Dlaczego używamy === zamiast ==?**=== porównuje wartość i typ, == tylko wartość i może powodować niespodzianki.\n\n**Czy można używać if bez else?**Tak. Jeśli interesuje nas tylko reakcja na spełniony warunek, wystarczy sam if. else jest opcjonalne i stosuje się je, gdy potrzebujemy alternatywnej ścieżki.\n\n**Czy if działa tylko z liczbami?**Nie. if działa z każdą wartością, którą JavaScript potrafi sprowadzić do true/false. To mogą być liczby, stringi, obiekty, a nawet same booleany. Warto jednak wiedzieć, że np. pusty string \"\", liczba 0 czy null traktowane są jako fałsz.\n\n**Jaka jest różnica między == a === w warunkach?**== porównuje tylko wartości i automatycznie konwertuje typy (np. \"5\" == 5 da true). === jest bardziej rygorystyczny – sprawdza zarówno wartość, jak i typ. Dlatego w praktyce bezpieczniej używać ===.\n\n**Czy można zagnieżdżać if-y?**Tak. Możesz w jednym if umieścić kolejny, ale gdy logika robi się zbyt skomplikowana, lepiej użyć else if lub osobnej funkcji, aby kod pozostał czytelny.\n\n**Kiedy lepiej użyć switch zamiast wielu if-ów?**switch sprawdza wiele możliwych wartości jednej zmiennej i pozwala uniknąć długiego łańcucha else if. Jest czytelny, gdy porównujemy jeden element do kilku konkretnych opcji, np. dni tygodnia.\n\n## Jak uruchomić przykłady z If?\n\n- Zapisz pliki if-else.html, **walidator.html**, fuel.html, speed.html w jednym folderze. Możesz też zrobić git clone repozytorium z GitHub [https://github.com/Scripterix/if-else-javascript](https://github.com/Scripterix/if-else-javascript)\n\n- Otwórz w przeglądarce.\n\n- Możesz też robić dowolne eksperymenty z przykładami.\n\n## Podsumowanie\n\nInstrukcje warunkowe to fundament programowania. Od prostego if w konsoli, przez walidację danych w formularzu, aż po rozbudowane przykłady jak kalkulator paliwa czy kontrola prędkości – wszystkie opierają się na jednej zasadzie: *sprawdź warunek i podejmij decyzję*.\n",
+          "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded B2 single-source REWRITE. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under explicit B2 human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All PHP blocks are structured,\nstandalone examples with initialized variables, exact expected stdout and diagnostics. No code fences hidden in prose.\nExplain if/elseif/else, strict comparisons, scalar truthiness including \"0\", logical operators/precedence,\nswitch vs short justified match contrast, four loop forms, break/continue and return in a named function.\nNo ticks, include/require tutorial, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "c9e4a2f9f08f59f674a25ae60c94c802e775de8f168c61c126a80da8a781b84c",
+  "schemaVersion": 1
+}

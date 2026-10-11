@@ -1,7 +1,8 @@
 # Redactoria — STATUS
 
-Stan po Milestone 4/5, Search 0.1, selekcji B1, pilocie B2 i jego formalnej
-promocji do CONTENT, 2026-10-11. Szczegóły: [Project Brain](index.md),
+Stan po Milestone 4/5, Search 0.1, selekcji B1, pilocie B2, jego formalnej
+promocji do CONTENT, trzech próbkach B3, Pipeline Review 0.1 oraz read-only
+verify:article i CONTENT Lineage Contract Spikes 0.1, 2026-10-11. Szczegóły: [Project Brain](index.md),
 [architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
@@ -33,6 +34,11 @@ promocji do CONTENT, 2026-10-11. Szczegóły: [Project Brain](index.md),
 | Current Cloudflare checkpoint | `ee3f1fd`, push master, public route/search checks | VERIFIED — SUCCESS |
 | B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
 | B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | PUBLISHED — VERIFIED |
+| B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy exact schema-v3 candidates | LAB ONLY — PASS |
+| Pipeline Review 0.1 | Pięć frozen samples, osiem racjonalizacji, bez implementacji | COMPLETE — LAB ONLY |
+| verify:article Contract Spike 0.1 | 27 common + 4 conditional checks; bez operator CLI | 4 PASS / 1 CONTENT-LINEAGE FAIL |
+| CONTENT Lineage Contract Spike 0.1 | Replay PHP Arrays + 6 positive / 9 negative scenarios | PASS — READ-ONLY PROTOTYPE |
+| verify:article Operator CLI 0.1 | 32 checks, human/JSON, exit 0/1/2, pięć lifecycle’ów | IMPLEMENTED — 5/5 PASS |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
@@ -96,8 +102,89 @@ PHP Arrays I + II
 → separate human public-production decision, exact candidate/review hashes bound
 → schema-v2 Promotion Gate PASS → CONTENT + structured LAB audit
 → local 11-page build / 10-page Pagefind index / browser verification PASS
-→ Git and Cloudflare verification pending; STOP before rank #2
+→ Git checkpoint ee3f1fd i Cloudflare success verified
+→ B3 ranks #2–#4: trzy exact LAB candidates, zero publikacji
+→ Pipeline Review 0.1: evidence/status only; zero implementacji i Knowledge Gap run
 ```
+
+## Pipeline Review 0.1 result
+
+Pięć zamrożonych przebiegów potwierdziło stabilny wspólny rdzeń od hash-bound
+SOURCE do exact, pending candidate. Najsilniejsze racjonalizacje to read-only
+`verify:article` (`NOW` jako rekomendacja, nie autoryzacja), minimalny Article
+Manifest (`NEXT`) oraz rozszerzenie rubricy Critica o claim scope (`NEXT`; osobny
+gate dopiero `LATER`). Humanizer jest `TOO EARLY`, a Dream Cycle / szerszy
+Agentic Circus pozostają `FROZEN / CONCEPT`, nie `REJECTED`.
+
+[Raport](../lab/reports/pipeline-review-0.1.md) i
+[JSON](../lab/reports/pipeline-review-0.1.json) rozdzielają Quality Gap od Knowledge
+Gap, klasyfikują metryki jako AVAILABLE / UNKNOWN / NOT MEASURABLE RELIABLY i
+rekomendują mały contract spike dla `verify:article`. Knowledge Gap 0.1 nie został
+uruchomiony. Nie zmieniono SOURCE, CONTENT, pięciu kandydatów ani historycznych
+decyzji; nie uruchomiono Promotion Gate, Git ani deploymentu.
+
+## verify:article Contract Spike 0.1 result
+
+Read-only prototyp sprawdził SOURCE, cartography, research, runtime, draft, Critic,
+candidate i warunkową publikację jednym 31-check kontraktem. PHP Control Flow oraz
+trzy pending candidates JavaScript dały OVERALL PASS. PHP Arrays dał OVERALL FAIL
+wyłącznie na `publication.contentIntegrity`: pierwotny promotion audit ma hash
+`3b2435…`, a obecny CONTENT po późniejszym autoryzowanym cleanupie `c4111b…`.
+
+To nie jest zmiana kandydata ani niewyjaśniona mutacja treści — istniejący test
+regresyjny potwierdza dokładne usunięcie dwóch nieaktualnych not. Brakuje jednak
+strukturalnego, hash-bound auditu łączącego post-promotion change z obecną wersją.
+Siedem negatywnych fixtures wykrywa wszystkie wymagane klasy awarii. Rekomendacja
+dla finalnego CLI jest warunkowa: najpierw osobny kontrakt lineage dla późniejszych
+zmian CONTENT. Nie dodano komendy operatorskiej ani wyjątków hardcodujących PASS.
+
+## CONTENT Lineage Contract Spike 0.1 result
+
+Ścisły kontrakt rozdziela lineage kandydata, pierwszej promocji i późniejszych
+zmian CONTENT. Walidator odtwarza jawne operacje, zamiast ufać samym deklaracjom.
+Realny PHP Arrays tworzy poprawny łańcuch `3b2435…` → `117d4b…` → `c4111b…`:
+`METADATA_ONLY` (data i byline) oraz `TECHNICAL_CLEANUP` (dokładnie dwie noty).
+Oba kroki mają hash-bound istniejącej autoryzacji człowieka; Critic PASS pozostaje
+ważny, bo nie zmieniło się żadne twierdzenie, przykład, cytowanie ani evidence.
+
+Oddzielny backfill jest append-only i nie zmienia historycznego promotion auditu.
+Sześć pozytywnych przypadków przechodzi, a dziewięć wymaganych negatywnych klas
+zostaje wykrytych, w tym fałszywe metadata-only i podmieniony etap pośredni.
+Przyszła polityka zapisu nadal wymaga osobnej decyzji. Integracja CLI została
+później osobno autoryzowana i jest opisana poniżej; Dream Cycle i Agentic Circus
+pozostają `FROZEN / CONCEPT`.
+
+## verify:article Operator CLI 0.1
+
+Właściwa komenda `npm run verify:article -- --topic <topic>` jest wdrożona jako
+read-only Operator Mode. Komponuje istniejący 27-check wspólny rdzeń z pięcioma
+warunkowymi kontrolami publikacji, w tym deterministycznym CONTENT lineage.
+Wszystkie pięć znanych lifecycle’ów daje `OVERALL PASS`: oba opublikowane PHP oraz
+trzy pending candidates JavaScript. PHP Arrays przechodzi dzięki istniejącemu
+backfillowi; pending publication pozostaje w całości `NOT_APPLICABLE`.
+
+Domyślny output jest krótki i czytelny, `--json` zwraca dokładny verification
+result contract, a exit codes to 0 PASS, 1 zweryfikowany FAIL i 2 błąd
+input/configuration. Test niezmienności potwierdza identyczne bajty snapshotu przed
+i po uruchomieniu. CLI nie uruchamia agentów, niczego nie zatwierdza, nie naprawia
+i nie publikuje. Article Manifest pozostaje NEXT; Precision Gate i Humanizer nie
+zostały wdrożone; Dream/Agentic pozostają `FROZEN / CONCEPT`.
+
+## B3 result — three JavaScript samples
+
+B1 ranks #2–#4 were processed sequentially as isolated single-source jobs:
+JavaScript if/else, JavaScript Arrays and DOM. Each has a focused Cartographer
+result, captured official MDN evidence, validated Research Packet, one Writer draft,
+actual final-example execution and a full Critic PASS. Pure JavaScript ran on Node
+24.16.0; DOM ran in a controlled Chromium 154 harness. No correction was required.
+
+All three exact schema-v3 candidates remain under `lab/candidates/` with
+`humanPublicationDecision: pending`, `approvedForPublication: false` and
+`published: false`. Promotion Gate deliberately rejects schema v3. The
+[five-sample report](../lab/reports/b3-five-sample-comparison.md) records per-job
+metrics and separates Quality Gaps from Knowledge Gaps. Final gate: 287 tests in
+22 files, zero Astro diagnostics, 11 static pages and a 10-page Pagefind index.
+SOURCE, CONTENT, B1 ranking and historical PHP candidate/review hashes are unchanged.
 
 ## B2 result — PHP control flow
 
@@ -298,6 +385,31 @@ Publisher, Dispatcher, Scheduled Redactoria, multi-site,
 production LLM API i PostgreSQL. Żaden z tych elementów nie jest rozpoczęty.
 
 ## Quality gate
+
+verify:article Contract Spike 0.1 final gate, 2026-10-11:
+
+- Tests: PASS — 301/301 w 23 plikach; 14 nowych testów kontraktu, pięciu frozen
+  fixtures i siedmiu klas negatywnych mutacji.
+- Check: PASS — 131 plików, 0 errors / warnings / hints.
+- Build: PASS — 11 stron; Pagefind 10 stron / 1586 słów.
+- Contract: 27 wspólnych + 4 warunkowe checks; 4 fixtures OVERALL PASS, PHP Arrays
+  OVERALL FAIL na rzeczywistym `publication.contentIntegrity` mismatch.
+- Boundary: read-only, offline, bez agentów, modeli, sieci, publikacji i operator CLI.
+- Integrity: SOURCE, CONTENT, pięć candidates, pięć final reviews i dwa historyczne
+  promotion audits nie zostały zmienione przez spike.
+
+Pipeline Review 0.1 final gate, 2026-10-11:
+
+- Tests: PASS — 287/287 w 22 plikach.
+- Check: PASS — 128 plików, 0 errors / warnings / hints.
+- Build: PASS — 11 stron; Pagefind 10 stron / 1586 słów.
+- Raport JSON: PASS — 5 samples, 8 rationalizations, wyłącznie dozwolone
+  rekomendacje `NOW` / `NEXT` / `LATER` / `REJECT`; flagi implementacji i
+  Knowledge Gap pozostają `false`.
+- Integrity: PASS — sześć SOURCE hashy, pięć CONTENT hashy i dziesięć plików
+  article/metadata pięciu kandydatów zgodnych z zamrożonym snapshotem.
+- Scope: tylko raport LAB, Futureboard evidence/status i Project Brain; bez
+  Promotion Gate, CONTENT, nowych agentów, commit/push lub deploymentu.
 
 B2 final gate, 2026-10-10:
 

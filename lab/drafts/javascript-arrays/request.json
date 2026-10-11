@@ -1,0 +1,1062 @@
+{
+  "inputHash": "234cd76502a997f69949967bdc08e8bf575471b89d70c934f005b6f0e3987a30",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+        "authorizationRef": "lab/decisions/b3-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b3-authorization.json",
+              "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+            },
+            {
+              "path": "lab/decisions/javascript-arrays-rewrite.json",
+              "sha256": "c6263e9b002048b80e4e68111023812d02e4e16ae0965593ec6df2c86334db78"
+            },
+            {
+              "path": "lab/cartography/javascript-arrays-single.json",
+              "sha256": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c"
+            },
+            {
+              "path": "lab/research/javascript-arrays/sources.json",
+              "sha256": "b242ceabbb5201c77207581a24da9b7a98a19856129e5630f8a63b4352a97cb8"
+            },
+            {
+              "path": "lab/research/javascript-arrays/probes.json",
+              "sha256": "7706bfe4c67ae34ddde231b290a808bcfa5478b615769a3a1c13a19d3b4c438c"
+            },
+            {
+              "path": "lab/research/javascript-arrays/research.json",
+              "sha256": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d"
+            },
+            {
+              "path": "lab/research/javascript-arrays/runtime-verification.json",
+              "sha256": "d7565cfabc4b3799c0d74a8d0544bf772d6b00e25ca62d80f125c95e79e15454"
+            },
+            {
+              "path": "lab/research/javascript-arrays/runtime-verification.md",
+              "sha256": "0aa211721f16066fd0fcd579c59314433e7befebcb43130908c75204f8961b8f"
+            }
+          ],
+          "humanApproval": "The human authorized all three B3 jobs through candidates; this packet was validated in-session and was not separately reviewed by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/javascript-arrays/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "node",
+                "status": "PASS",
+                "version": "v24.16.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "798f8f41f33a7e0187eb3618f5e21de4bfe2fbb6e07d07f06b56c6751a9caec4",
+        "nextStep": "writer",
+        "packetHash": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d",
+        "packetRef": "lab/research/javascript-arrays/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts; execute every final draft example independently; keep interactions as metadata only.",
+        "requestHash": "fabbf42d8b843b15e7109bb0831808e82fe078610e7df19512744852ac8e296c",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "core"
+        ],
+        "schemaVersion": 3,
+        "scope": "B3 javascript-arrays: validated packet and runtime evidence to LAB candidate only; no publication.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+            "providedCharacters": 5654,
+            "sourceId": "2048",
+            "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+            "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-arrays",
+        "validatedAt": "2026-10-11T14:48:56.038Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: transformowanie i filtrowanie.",
+          "sourceIds": [
+            "2048"
+          ],
+          "title": "Transformowanie i filtrowanie"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: redukcja i bezpieczna średnia.",
+          "sourceIds": [
+            "2048"
+          ],
+          "title": "Redukcja i bezpieczna średnia"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: sortowanie liczb i obiektów bez zmiany wejścia.",
+          "sourceIds": [
+            "2048"
+          ],
+          "title": "Sortowanie liczb i obiektów bez zmiany wejścia"
+        }
+      ],
+      "config": {
+        "audience": "beginner / early intermediate",
+        "requiredCoverage": [
+          "map",
+          "filter",
+          "reduce",
+          "empty-array",
+          "numeric-sort",
+          "sort-mutation",
+          "stable-fixtures"
+        ],
+        "researchApproval": "lab/decisions/javascript-arrays-research-acceptance.json",
+        "researchPacket": "lab/research/javascript-arrays/research.json",
+        "runtimeVerification": "lab/research/javascript-arrays/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/javascript-arrays-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "node",
+            "kind": "node",
+            "version": "v24.16.0"
+          }
+        ],
+        "topic": "javascript-arrays"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c",
+        "analysisRef": "lab/cartography/javascript-arrays-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+        "authorizationRef": "lab/decisions/b3-authorization.json",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "2048",
+            "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+            "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+            "providedCharacters": 5654,
+            "sourceId": "2048",
+            "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+            "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-arrays"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c",
+          "decisionHash": "c6263e9b002048b80e4e68111023812d02e4e16ae0965593ec6df2c86334db78",
+          "fullReadCount": 1,
+          "inputHash": "798f8f41f33a7e0187eb3618f5e21de4bfe2fbb6e07d07f06b56c6751a9caec4",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "6d30f78cc80a964c87c5b733bdd0a430c42d785ff4b389f229e35f4a5b5917c0",
+              "description": "map/filter/reduce, empty average and non-mutating numeric sort",
+              "diagnostics": [],
+              "id": "node-array-behavior",
+              "result": {
+                "emptyAverage": null,
+                "filtered": [
+                  10,
+                  30
+                ],
+                "mapped": [
+                  20,
+                  4,
+                  60
+                ],
+                "original": [
+                  10,
+                  2,
+                  30
+                ],
+                "sorted": [
+                  2,
+                  10,
+                  30
+                ],
+                "sum": 42
+              },
+              "runtimeId": "node",
+              "runtimeVersion": "v24.16.0"
+            }
+          ],
+          "requestHash": "fabbf42d8b843b15e7109bb0831808e82fe078610e7df19512744852ac8e296c",
+          "researchBundleHash": "b242ceabbb5201c77207581a24da9b7a98a19856129e5630f8a63b4352a97cb8",
+          "topicSlug": "javascript-arrays"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "2048",
+                "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+                "value": "Pierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej."
+              }
+            ],
+            "claim": "Kontrolowana próba Node potwierdza oczekiwane wyniki dla przypadków granicznych.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-array-map",
+                "excerptId": "map-new-array"
+              },
+              {
+                "documentId": "mdn-array-reduce",
+                "excerptId": "reduce-empty"
+              },
+              {
+                "documentId": "mdn-array-sort",
+                "excerptId": "sort-mutates"
+              }
+            ],
+            "id": "code-boundary",
+            "probeIds": [
+              "node-array-behavior"
+            ],
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Pisać przykłady zgodne z wykonanym probe i ponownie wykonać kod finalnego draftu.",
+            "sourceType": "official-documentation",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-11",
+          "evidence": [
+            {
+              "documentId": "mdn-array-map",
+              "excerptId": "map-new-array"
+            },
+            {
+              "documentId": "mdn-array-reduce",
+              "excerptId": "reduce-empty"
+            },
+            {
+              "documentId": "mdn-array-sort",
+              "excerptId": "sort-mutates"
+            }
+          ],
+          "runtimeScope": "Node v24.16.0"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "2048",
+                "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+                "value": "Pierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej."
+              }
+            ],
+            "claim": "Wielokrotne wywołanie czystej funkcji avg może zwiększyć koszt, lecz nie powoduje samo w sobie różnych wyników sortowania.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-array-map",
+                "excerptId": "map-new-array"
+              }
+            ],
+            "id": "correct-legacy",
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Nie przenosić błędu źródłowego do nowej wersji.",
+            "sourceType": "official-documentation",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Badanie jest ograniczone do jednego autoryzowanego źródła legacy i wskazanych oficjalnych stron; nie stanowi zgody na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "verified-core",
+              "correct-legacy",
+              "code-boundary"
+            ],
+            "note": "Zakres rozstrzygnięty przez oficjalną dokumentację i właściwą dla runtime weryfikację.",
+            "questionId": "core",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "verified-core",
+              "correct-legacy",
+              "code-boundary"
+            ],
+            "id": "rewrite-bounded",
+            "instruction": "Napisać zwarty materiał od nowa, zachować pochodzenie i użyć tylko zweryfikowanych twierdzeń."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "documentHash": "27cddd1fb9a13fd00e7127a55122054a514f26c475b29bd14dc3acec2b6430c2",
+            "evidenceIds": [
+              "map-new-array"
+            ],
+            "id": "mdn-array-map",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Array.prototype.map",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+          },
+          {
+            "documentHash": "777e14f10417568a468fbee1bdaedb604bf8106c4062c7020ccd78df71f1702c",
+            "evidenceIds": [
+              "reduce-empty"
+            ],
+            "id": "mdn-array-reduce",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Array.prototype.reduce",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+          },
+          {
+            "documentHash": "a13c97ec1c7e4e8ee986aabafc22790bf45d9c88aeadb1e239bbd91d4d7b7d28",
+            "evidenceIds": [
+              "sort-mutates"
+            ],
+            "id": "mdn-array-sort",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Array.prototype.sort",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+            "providedCharacters": 5654,
+            "sourceId": "2048",
+            "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+            "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-arrays",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "2048",
+                "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+                "value": "Pierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej."
+              }
+            ],
+            "claim": "map i filter zwracają nowe tablice, reduce z wartością początkową obsługuje pustą tablicę, a sort mutuje odbiorcę i potrzebuje komparatora numerycznego.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-array-map",
+                "excerptId": "map-new-array"
+              },
+              {
+                "documentId": "mdn-array-reduce",
+                "excerptId": "reduce-empty"
+              },
+              {
+                "documentId": "mdn-array-sort",
+                "excerptId": "sort-mutates"
+              }
+            ],
+            "id": "verified-core",
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Użyć tej semantyki jako granicy treści i przykładów.",
+            "sourceType": "official-documentation",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "code-boundary"
+              ],
+              "instruction": "Wyniki draftu wykonać ponownie, niezależnie od probe badawczego."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "correct-legacy"
+              ],
+              "instruction": "Wielokrotne wywołanie czystej funkcji avg może zwiększyć koszt, lecz nie powoduje samo w sobie różnych wyników sortowania."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "verified-core"
+              ],
+              "instruction": "Zachować dydaktyczny rdzeń źródła, ale przepisać prozę."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "code-boundary"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Weryfikacja dotyczy lokalnego Node v24.16.0 i jawnych przypadków, nie wszystkich silników JavaScript."
+        ],
+        "packetHash": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "emptyAverage": null,
+                  "filtered": [
+                    10,
+                    30
+                  ],
+                  "mapped": [
+                    20,
+                    4,
+                    60
+                  ],
+                  "original": [
+                    10,
+                    2,
+                    30
+                  ],
+                  "sorted": [
+                    2,
+                    10,
+                    30
+                  ],
+                  "sum": 42
+                },
+                "expected": {
+                  "emptyAverage": null,
+                  "filtered": [
+                    10,
+                    30
+                  ],
+                  "mapped": [
+                    20,
+                    4,
+                    60
+                  ],
+                  "original": [
+                    10,
+                    2,
+                    30
+                  ],
+                  "sorted": [
+                    2,
+                    10,
+                    30
+                  ],
+                  "sum": 42
+                },
+                "id": "observed-result",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+            "execution": "actual-local-cli",
+            "kind": "node",
+            "records": [
+              {
+                "code": "const values = [10, 2, 30]; const mapped = values.map(x => x * 2); const filtered = values.filter(x => x >= 10); const sum = values.reduce((a, x) => a + x, 0); const average = xs => xs.length ? xs.reduce((a, x) => a + x, 0) / xs.length : null; const sorted = [...values].sort((a, b) => a - b); console.log(JSON.stringify({mapped, filtered, sum, emptyAverage: average([]), sorted, original: values}));",
+                "codeHash": "6d30f78cc80a964c87c5b733bdd0a430c42d785ff4b389f229e35f4a5b5917c0",
+                "description": "map/filter/reduce, empty average and non-mutating numeric sort",
+                "diagnostics": [],
+                "id": "node-array-behavior",
+                "result": {
+                  "emptyAverage": null,
+                  "filtered": [
+                    10,
+                    30
+                  ],
+                  "mapped": [
+                    20,
+                    4,
+                    60
+                  ],
+                  "original": [
+                    10,
+                    2,
+                    30
+                  ],
+                  "sorted": [
+                    2,
+                    10,
+                    30
+                  ],
+                  "sum": 42
+                },
+                "runtimeId": "node",
+                "runtimeVersion": "v24.16.0"
+              }
+            ],
+            "runtimeId": "node",
+            "status": "PASS",
+            "version": "v24.16.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — javascript-arrays\n\nStatus: **PASS**\n\n- runtime: node v24.16.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nWeryfikacja dotyczy lokalnego Node v24.16.0 i jawnych przypadków, nie wszystkich silników JavaScript.\n",
+      "sources": [
+        {
+          "body": "\n## Jak sortować tablice w JavaScript. Średnia ocen w tablicy JS.\n\n## Spis treści\n\n- Wprowadzenie – dlaczego akurat tablice w JavaScript\n\n- Demo użytkowników – jak działa nasz przykład\n\n- Błąd w sortowaniu – co poszło nie tak\n\n- Refaktoryzacja – jedno obliczenie, wiele użyć\n\n- Wyniki i testy – co się zmieniło\n\n- Kolejne kroki – co można dodać jeszcze\n\n- QA – najczęściej zadawane pytania\n\n## Wprowadzenie – dlaczego akurat tablice w JavaScript\n\nTablice to serce pracy z danymi w JS. Gdy masz listę ocen studentów, zamówień w sklepie czy po prostu kolekcję liczb, to właśnie tablica pozwala je przefiltrować, posortować i podsumować.\n\nW tym przykładzie zbudowaliśmy mini-aplikację, która prezentuje **listę sześciu użytkowników** z losowymi identyfikatorami i ocenami. To nasz poligon do nauki metod map, filter, reduce i sort.\n\n## Demo użytkowników – jak działa nasz przykład\n\nNa stronie array.html pojawia się tabela z użytkownikami. Mamy tam:\n\n- imię i nazwisko,\n\n- 16-cyfrowy identyfikator (badgeId),\n\n- listę ocen,\n\n- oraz średnią.\n\nPoniżej funkcja generująca BadgeID oraz tablica. W tej funkcji znajduje się więcej dlatego nie ma domknięcia. Całość przykładu w repozytorium [GitHub JS Arrays](https://github.com/Scripterix/Array-JS)\n\n// Helper: generate 16-digit numeric string\n    function generateBadgeId() {\n      return Array.from({ length: 16 }, () => Math.floor(Math.random() * 10)).join('');\n    }\n\n    // Helper: average of number array\n    function avg(arr) {\n      return arr.length ? Math.round(arr.reduce((s, v) => s + v, 0) / arr.length) : 0;\n    }\n\n    // Prepare 6 users (deterministic names, badgeId random, marks random)\n    const users = [\n      { userFirstName: 'Alice', userSecondName: 'Johnson', badgeId: generateBadgeId(), marks: [78, 85, 91, 69, 72] },\n      { userFirstName: 'Ben', userSecondName: 'Martinez', badgeId: generateBadgeId(), marks: [55, 62, 58, 70, 60] },\n      { userFirstName: 'Carla', userSecondName: 'Nguyen', badgeId: generateBadgeId(), marks: [92, 88, 95, 90, 93] },\n      { userFirstName: 'Daniel', userSecondName: 'Smith', badgeId: generateBadgeId(), marks: [40, 52, 47, 35, 50] },\n      { userFirstName: 'Eva', userSecondName: 'Khan', badgeId: generateBadgeId(), marks: [81, 79, 85, 77, 83] },\n      { userFirstName: 'Felix', userSecondName: 'Brown', badgeId: generateBadgeId(), marks: [66, 70, 64, 68, 72] }\n    ];\n\nDo tego dochodzą przyciski:\n\n- **Render Users** – wyświetla tabelę,\n\n- **Run Examples** – pokazuje w konsoli użycie metod tablicowych,\n\n- **Filter** – wybiera np. dobrych uczniów (avg ≥ 75),\n\n- **Sort** – alfabetycznie po imieniu lub po średniej ocen.\n\n## Błąd w sortowaniu – co poszło nie tak\n\nPierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej.\n\nPrzykład:\n\nconst sorted = currentList.slice().sort((a, b) => avg(a.marks) - avg(b.marks));\n\nTaki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen.\n\n## Refaktoryzacja – jedno obliczenie, wiele użyć\n\nRozwiązanie? **Precompute** – policzyć raz, a potem korzystać wiele razy.\n\nDodaliśmy więc właściwość avgMark:\n\nusers.forEach(u => { \n  u.avgMark = avg(u.marks); \n});\n\nOd tego momentu:\n\n- filtrowanie (good vs help),\n\n- sortowanie (rosnąco/malejąco),\n\n- podsumowanie średnich,\n\n- logi w konsoli (runExamples)\n\nkorzystają zawsze z tej jednej wartości. Dzięki temu sortowanie jest spójne i szybsze.\n\n## Wyniki i testy – co się zmieniło\n\nPrzyciski działają stabilnie:\n\n- **Sort by First Name** układa listę poprawnie od A do Z,\n\n- **Sort by Average** zawsze pokazuje kolejność od najlepszego studenta w dół,\n\n- **Filter** nie gubi logiki i używa tych samych danych co reszta,\n\n- **Summary** wyświetla najlepszą osobę i średnią całej grupy, a jeśli klikniemy kogoś na stronie głównej (index.html), to podświetli się na zielono.\n\nTesty w DevTools (F12 → Console) pokazują też przykłady metod map, reduce i find.\n\n## Kolejne kroki – co można dodać jeszcze\n\n- **Przełącznik kierunku sortowania** (A→Z / Z→A).\n\n- **Ikony strzałek** przy nagłówkach tabeli.\n\n- **Mini testy jednostkowe** sprawdzające, czy wyniki są zawsze zgodne z oczekiwaniami.\n\n- **Pokazanie mediany** obok średniej dla ciekawszego porównania.\n\n## QA – najczęściej zadawane pytania\n\n**Czy trzeba zawsze dodawać nową właściwość (avgMark) do obiektu?**Nie, można też tworzyć nowe obiekty (immutability). Tutaj uprościliśmy zapis dla czytelności i wydajności.\n\n**Czy sortowanie w JS jest stabilne?**Od ES2019 tak – czyli jeśli dwie osoby mają identyczną średnią, zachowają kolejność wejściową.\n\n**Dlaczego reduce jest używany tak często w przykładach?**Bo pozwala z listy ocen zrobić jedną liczbę – sumę albo średnią – w bardzo elegancki sposób.\n\nPrzykład omawiany powyżej możesz pobrać i modyfikować z repozytorium **[Scripterix na GitHub JS Arrays](https://github.com/Scripterix/Array-JS).** To naprawdę mały projekt, ale idealny do nauki. Jeśli chcesz wynieść z niego coś więcej niż tylko kliknięcie w przyciski, spróbuj:\n\n- **Modyfikować dane wejściowe** – dodaj nowych użytkowników albo zmień oceny i zobacz, jak zmienia się wynik sortowania i filtrowania.\n\n- **Dopisać nowe metody tablicowe** – np. some, every, slice.\n\n- **Refaktorować kod** – spróbuj inaczej policzyć średnią albo dodać medianę.\n\n- **Budować na małych krokach** – każdy commit w repo to mały eksperyment, który przybliża Cię do zrozumienia JavaScript.\n\nTakie mikroprojekty najlepiej sprawdzają się, gdy regularnie je rozwijasz i **wrzucasz na GitHub** – dzięki temu tworzysz portfolio i ślad swojej nauki, a nie tylko „pamięć w głowie”.\n",
+          "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+          "sourceId": "2048",
+          "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded B2 single-source REWRITE. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under explicit B2 human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All PHP blocks are structured,\nstandalone examples with initialized variables, exact expected stdout and diagnostics. No code fences hidden in prose.\nExplain if/elseif/else, strict comparisons, scalar truthiness including \"0\", logical operators/precedence,\nswitch vs short justified match contrast, four loop forms, break/continue and return in a named function.\nNo ticks, include/require tutorial, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "3490688f4a8fdf414874788ffc17a62497c82180326d510fc6c5325f99c617b4",
+  "schemaVersion": 1
+}

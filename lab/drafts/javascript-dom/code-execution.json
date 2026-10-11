@@ -1,0 +1,31 @@
+{
+  "articleHash": "7774e12d71a8622eb5df093c1f124a5970853bddb74885cd501ae2119c901bed",
+  "executedAt": "2026-10-11T14:49:16.158Z",
+  "limitations": [
+    "One controlled Chromium version; no cross-browser matrix or visual regression claim."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 7,
+          "automated": true,
+          "codeHash": "1c2d3846a210acf8cd0de7f7e62e89a2d0406d98e9fc299b83d057838a283aec",
+          "exitCode": null,
+          "id": "dom-click",
+          "limitation": "Controlled Chromium data-URL harness; observed DOM state and console were compared after an actual native-button click.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Po kliknięciu: widoczny tekst <strong>Bezpieczny tekst</strong>; klasa updated; elementy listy A i B; konsola: 1 2.\n"
+        }
+      ],
+      "executableHash": null,
+      "execution": "controlled-browser",
+      "kind": "browser",
+      "runtimeId": "chrome",
+      "version": "154.0.0.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

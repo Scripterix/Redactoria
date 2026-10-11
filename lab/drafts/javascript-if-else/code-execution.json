@@ -1,0 +1,42 @@
+{
+  "articleHash": "016fca1b663c48fdf8db76530be43d37f71769905c6a057647098f3755e06835",
+  "executedAt": "2026-10-11T14:49:15.795Z",
+  "limitations": [
+    "One local Node version; no cross-engine compatibility claim."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "c6d8499d3f91873fe35b0889c979b03b5da16a0b4448618d1e52e55e685fdae5",
+          "exitCode": 0,
+          "id": "ordered-branches",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "bardzo dobry\nfalse\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "c4c4d4c6a91fc44ec8fd38b3c8e1a28e7a1d1e0c5b514d2f558ab347bc14ec55",
+          "exitCode": 0,
+          "id": "analyze-number",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "brak|dodatnia|niepoprawna|niepoprawna|zero|ujemna\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

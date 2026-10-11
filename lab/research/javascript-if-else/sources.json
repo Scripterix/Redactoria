@@ -1,0 +1,103 @@
+{
+  "asOfDate": "2026-10-11",
+  "probes": [
+    {
+      "code": "const analyze = raw => { if (raw === null || raw === undefined || String(raw).trim() === '') return 'empty'; const n = Number(raw); if (!Number.isFinite(n)) return 'invalid'; if (n > 0) return 'positive'; if (n < 0) return 'negative'; return 'zero'; }; console.log(JSON.stringify([' ', '12', 'Infinity', 'abc', '0', '-2'].map(analyze)));",
+      "codeHash": "56ff3048a15269d797d4d44bbb78797e7738d01371de42ff30819e5d108847d7",
+      "description": "Whitespace, finite numbers, Infinity, NaN and ordered branches",
+      "diagnostics": [],
+      "id": "node-if-boundaries",
+      "result": [
+        "empty",
+        "positive",
+        "invalid",
+        "invalid",
+        "zero",
+        "negative"
+      ],
+      "runtimeId": "node",
+      "runtimeVersion": "v24.16.0"
+    }
+  ],
+  "provenance": "Official MDN HTTPS snapshots plus locally executed Node probe where applicable.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-conversion"
+      ],
+      "id": "core",
+      "question": "Jak poprawnie opisać kolejność gałęzi, truthiness, ścisłe porównanie i walidację tekstu jako skończonej liczby?",
+      "section": "bounded-scope"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "documentHash": "0aa3a3fc7144ebbc41a5217f38dc35123556292fba0bf9b0128ed513fea1e834",
+      "excerpts": [
+        {
+          "id": "if-order",
+          "locator": "Description",
+          "text": "The first truthy condition selects its statement; later branches are not evaluated."
+        }
+      ],
+      "id": "mdn-if-else",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: if...else",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"
+    },
+    {
+      "documentHash": "0b9412969a846d386b59717b0d25133c761233c9fb21fbd2a7a547633b4517a7",
+      "excerpts": [
+        {
+          "id": "falsy-values",
+          "locator": "Description",
+          "text": "Boolean conversion has a defined set of falsy values; other values convert to true."
+        }
+      ],
+      "id": "mdn-boolean",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Boolean",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"
+    },
+    {
+      "documentHash": "e6624f1b0c5edc91f9d5eb7323e348797336a761ce3b821ed119e6f17b3e4a80",
+      "excerpts": [
+        {
+          "id": "finite",
+          "locator": "Static methods",
+          "text": "Number.isFinite tests whether a value is a finite number without coercing it."
+        }
+      ],
+      "id": "mdn-number",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Number",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+    }
+  ],
+  "topicSlug": "javascript-if-else"
+}

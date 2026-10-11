@@ -6,7 +6,7 @@ import { validateDraft } from '../agents/writer/validation.ts';
 import type { EditorialInput } from '../core/editorial-context.ts';
 import { hashBytes } from '../core/editorial-context.ts';
 import { hashJson, stableJson } from '../core/serialization.ts';
-import { PublicationCandidateV2Schema, type PublicationCandidateV2 } from './contract.ts';
+import { PublicationCandidateAnySchema, PublicationCandidateV2Schema, PublicationCandidateV3Schema, type PublicationCandidateAny } from './contract.ts';
 
 export type CandidateInput = {
 	editorial: EditorialInput;
@@ -21,7 +21,7 @@ export type CandidateInput = {
 	preparedAt: string;
 };
 
-export function createPublicationCandidate(input: CandidateInput): PublicationCandidateV2 {
+export function createPublicationCandidate(input: CandidateInput): PublicationCandidateAny {
 	const draft = DraftSchema.parse(JSON.parse(input.draftText));
 	validateDraft(draft, input.editorial, input.article);
 	const criticInput: CriticInput = {
@@ -46,12 +46,12 @@ export function createPublicationCandidate(input: CandidateInput): PublicationCa
 		|| input.criticReviewRef !== `lab/reviews/${draft.topic}/critic-review.json`
 		|| input.revisionRef !== `lab/drafts/${draft.topic}/revision.json`) throw new Error('Unexpected candidate provenance paths.');
 	const candidate = {
-		schemaVersion: 2 as const,
+		schemaVersion: draft.schemaVersion === 1 ? 2 as const : 3 as const,
 		status: 'publication-candidate' as const,
 		topic: draft.topic,
 		title: draft.title,
 		criticVerdict: 'PASS' as const,
-		targetPhpVersions: draft.targetPhpVersions,
+		...(draft.schemaVersion === 1 ? { targetPhpVersions: draft.targetPhpVersions } : { targetRuntimes: draft.targetRuntimes }),
 		sourceDecision: draft.sourceDecision,
 		researchPacket: draft.researchPacket,
 		researchApproval: draft.researchApproval,
@@ -76,11 +76,11 @@ export function createPublicationCandidate(input: CandidateInput): PublicationCa
 		|| candidate.researchPacket !== input.editorial.config.researchPacket
 		|| candidate.researchApproval !== input.editorial.config.researchApproval
 		|| candidate.runtimeVerification !== input.editorial.config.runtimeVerification) throw new Error('Candidate does not match approved editorial input.');
-	return PublicationCandidateV2Schema.parse(candidate);
+	return PublicationCandidateAnySchema.parse(candidate);
 }
 
-export function candidateArtifacts(candidate: PublicationCandidateV2, article: string) {
-	const schema = z.toJSONSchema(PublicationCandidateV2Schema);
+export function candidateArtifacts(candidate: PublicationCandidateAny, article: string) {
+	const schema = z.toJSONSchema(candidate.schemaVersion === 2 ? PublicationCandidateV2Schema : PublicationCandidateV3Schema);
 	const readme = `# ${candidate.title} — publication candidate\n\n`
 		+ `State: **AWAIT HUMAN PUBLICATION DECISION**. LAB only; no CONTENT, promotion, commit, push or deploy.\n\n`
 		+ `\`article.md\` is byte-identical to the Critic-PASS Writer draft. SHA-256: \`${candidate.articleHash}\`.\n`

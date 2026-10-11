@@ -1,0 +1,87 @@
+{
+  "errata": [],
+  "limitations": [
+    "Kontrolowany harness data URL sprawdza wyłącznie jawny przykład DOM w Chromium 154."
+  ],
+  "packetHash": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "after": {
+              "classAdded": true,
+              "currentCount": 2,
+              "itemText": "B",
+              "staticLength": 1,
+              "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+              "titleText": "<strong>Bezpieczny tekst</strong>"
+            },
+            "before": {
+              "count": 1,
+              "missing": true,
+              "staticLength": 1,
+              "title": "Start"
+            },
+            "consoleErrors": 0
+          },
+          "expected": {
+            "after": {
+              "classAdded": true,
+              "currentCount": 2,
+              "itemText": "B",
+              "staticLength": 1,
+              "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+              "titleText": "<strong>Bezpieczny tekst</strong>"
+            },
+            "before": {
+              "count": 1,
+              "missing": true,
+              "staticLength": 1,
+              "title": "Start"
+            },
+            "consoleErrors": 0
+          },
+          "id": "observed-result",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": null,
+      "execution": "controlled-browser",
+      "kind": "browser",
+      "records": [
+        {
+          "code": "const title = document.querySelector('#title'); const initial = document.querySelectorAll('#list li'); const before = { missing: document.querySelector('#missing') === null, staticLength: initial.length, title: title.textContent, count: document.querySelectorAll('#list li').length }; document.querySelector('#add').addEventListener('click', () => { title.textContent = '<strong>Bezpieczny tekst</strong>'; title.classList.add('updated'); const item = document.createElement('li'); item.textContent = 'B'; document.querySelector('#list').appendChild(item); }); document.querySelector('#add').click(); const after = { titleText: title.textContent, titleHtml: title.innerHTML, classAdded: title.classList.contains('updated'), currentCount: document.querySelectorAll('#list li').length, staticLength: initial.length, itemText: document.querySelector('#list li:last-child').textContent }; ({ before, after, consoleErrors: 0 });",
+          "codeHash": "542b65fb24a63d941c87d6879ac4a53fd2f812b028b346db002ee95632b8fe41",
+          "description": "Controlled Chromium DOM harness: null, static NodeList, textContent, classList, createElement and native button click",
+          "diagnostics": [],
+          "id": "browser-dom-harness",
+          "result": {
+            "after": {
+              "classAdded": true,
+              "currentCount": 2,
+              "itemText": "B",
+              "staticLength": 1,
+              "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+              "titleText": "<strong>Bezpieczny tekst</strong>"
+            },
+            "before": {
+              "count": 1,
+              "missing": true,
+              "staticLength": 1,
+              "title": "Start"
+            },
+            "consoleErrors": 0
+          },
+          "runtimeId": "chrome",
+          "runtimeVersion": "154.0.0.0"
+        }
+      ],
+      "runtimeId": "chrome",
+      "status": "PASS",
+      "version": "154.0.0.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

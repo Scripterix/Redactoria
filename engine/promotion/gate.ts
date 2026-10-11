@@ -115,16 +115,7 @@ export async function promote(options: {
   try { await lstat(target); } catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return target; throw error; }
   throw new Error('Promotion refuses to overwrite ' + path);
  }));
- let publicArticle = article;
- const transforms = ['Content Collection YAML front matter'];
- if (decision.schemaVersion === 2 && decision.presentationCleanup) {
-  for (const exact of decision.presentationCleanup.removeExact) {
-   if (publicArticle.split(exact).length !== 2) throw new Error('Approved presentation note is missing or not unique.');
-   publicArticle = publicArticle.replace(exact, '');
-   transforms.push('Removed exact human-approved technical LAB/draft note');
-  }
- }
- const content = renderPromotedArticle(metadata, publicArticle);
+ const { content, transforms } = renderApprovedPublicationContent(decision, article);
  const sourceDecisionRef = candidate.schemaVersion === 1 ? candidate.mergeDecision : candidate.sourceDecision;
  const record = { schemaVersion: decision.schemaVersion, result: decision.schemaVersion === 1 ? 'PROMOTED_LOCAL' : 'PROMOTED_PUBLIC', scope: decision.scope,
   candidateRef: options.candidate, candidateHash: hashBytes(candidateText), articleHash: hashBytes(article),
@@ -161,4 +152,19 @@ export async function promote(options: {
 export function renderPromotedArticle(metadata: unknown, article: string) {
  const parsed = ContentMetadataSchema.parse(metadata);
  return '---\n' + stringify(JSON.parse(JSON.stringify(parsed)), { lineWidth: 0 }) + '---\n' + article;
+}
+
+/** Pure replay of the exact transform used by Promotion Gate; no reads or writes. */
+export function renderApprovedPublicationContent(decision: unknown, article: string) {
+ const parsed = AnyPublicationDecisionSchema.parse(decision);
+ let publicArticle = article;
+ const transforms = ['Content Collection YAML front matter'];
+ if (parsed.schemaVersion === 2 && parsed.presentationCleanup) {
+  for (const exact of parsed.presentationCleanup.removeExact) {
+   if (publicArticle.split(exact).length !== 2) throw new Error('Approved presentation note is missing or not unique.');
+   publicArticle = publicArticle.replace(exact, '');
+   transforms.push('Removed exact human-approved technical LAB/draft note');
+  }
+ }
+ return { content: renderPromotedArticle(parsed.metadata, publicArticle), transforms };
 }

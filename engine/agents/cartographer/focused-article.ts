@@ -26,13 +26,22 @@ export const FocusedArticleResultSchema = FocusedArticleAnalysisSchema.extend({
 	schemaVersion: z.literal(1), targets: z.array(FocusedMergeResultSchema.shape.targets.element).length(1),
 	analysisContext: FocusedMergeResultSchema.shape.analysisContext,
 });
-export const ApprovedArticleDecisionSchema = z.strictObject({
+export const ApprovedArticleDecisionV2Schema = z.strictObject({
 	schemaVersion: z.literal(2), status: z.literal('approved'), approvedBy: z.literal('human'),
 	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE']), nextStep: z.literal('research'),
 	targets: FocusedArticleResultSchema.shape.targets, confidence, reason: text, evidence: z.array(EvidenceSchema).min(1),
 	analysisHash: sha, analysisRef: z.string().regex(/^lab\/cartography\/[a-z0-9-]+-single\.json$/),
 	authorizationRef: z.string().regex(/^lab\/decisions\/[a-z0-9-]+-b2-authorization\.json$/), authorizationHash: sha,
 });
+export const ApprovedArticleDecisionV3Schema = z.strictObject({
+	schemaVersion: z.literal(3), status: z.literal('approved'), approvedBy: z.literal('human'),
+	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE']), nextStep: z.literal('research'),
+	targets: FocusedArticleResultSchema.shape.targets, confidence, reason: text, evidence: z.array(EvidenceSchema).min(1),
+	analysisHash: sha, analysisRef: z.string().regex(/^lab\/cartography\/[a-z0-9-]+-single\.json$/),
+	authorizationRef: z.literal('lab/decisions/b3-authorization.json'), authorizationHash: sha,
+	topic: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+});
+export const ApprovedArticleDecisionSchema = z.union([ApprovedArticleDecisionV2Schema, ApprovedArticleDecisionV3Schema]);
 
 export async function prepareFocusedArticle(raw: unknown, prompt: string, reader: SourceReader) {
 	const input = validateInput(raw);

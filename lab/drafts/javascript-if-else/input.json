@@ -1,0 +1,25 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "conditions",
+    "branch-order",
+    "truthiness",
+    "strict-equality",
+    "input-validation",
+    "finite-number",
+    "edge-cases"
+  ],
+  "researchApproval": "lab/decisions/javascript-if-else-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-if-else/research.json",
+  "runtimeVerification": "lab/research/javascript-if-else/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/javascript-if-else-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "javascript-if-else"
+}

@@ -1,0 +1,283 @@
+{
+  "action": "RESEARCH_PACKET",
+  "ambiguousClaims": [],
+  "analysisContext": {
+    "cartographyHash": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8",
+    "decisionHash": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4",
+    "fullReadCount": 1,
+    "inputHash": "06f268b5080b109adf2f528ad3ef284860e083b255b42b6d544bb5c96745434c",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "probes": [
+      {
+        "codeHash": "56ff3048a15269d797d4d44bbb78797e7738d01371de42ff30819e5d108847d7",
+        "description": "Whitespace, finite numbers, Infinity, NaN and ordered branches",
+        "diagnostics": [],
+        "id": "node-if-boundaries",
+        "result": [
+          "empty",
+          "positive",
+          "invalid",
+          "invalid",
+          "zero",
+          "negative"
+        ],
+        "runtimeId": "node",
+        "runtimeVersion": "v24.16.0"
+      }
+    ],
+    "requestHash": "5e364554ab6723f17b81a11f8696c5a8c9a22a618d0d67ad6c610b8ba44b80cb",
+    "researchBundleHash": "b338c2cd062128e86f77a14bcbc55e4bbb0431892a66626cf53cb554b0bc8051",
+    "topicSlug": "javascript-if-else"
+  },
+  "codeReview": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "if (Number.isNaN(n)) {"
+        }
+      ],
+      "claim": "Kontrolowana próba Node potwierdza oczekiwane wyniki dla przypadków granicznych.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "mdn-if-else",
+          "excerptId": "if-order"
+        },
+        {
+          "documentId": "mdn-boolean",
+          "excerptId": "falsy-values"
+        },
+        {
+          "documentId": "mdn-number",
+          "excerptId": "finite"
+        }
+      ],
+      "id": "code-boundary",
+      "probeIds": [
+        "node-if-boundaries"
+      ],
+      "questionIds": [
+        "core"
+      ],
+      "recommendation": "Pisać przykłady zgodne z wykonanym probe i ponownie wykonać kod finalnego draftu.",
+      "sourceType": "official-documentation",
+      "status": "verified",
+      "verification": "executed-probe"
+    }
+  ],
+  "environment": {
+    "asOfDate": "2026-10-11",
+    "evidence": [
+      {
+        "documentId": "mdn-if-else",
+        "excerptId": "if-order"
+      },
+      {
+        "documentId": "mdn-boolean",
+        "excerptId": "falsy-values"
+      },
+      {
+        "documentId": "mdn-number",
+        "excerptId": "finite"
+      }
+    ],
+    "runtimeScope": "Node v24.16.0"
+  },
+  "incorrectClaims": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "if (Number.isNaN(n)) {"
+        }
+      ],
+      "claim": "Sprawdzenie wyłącznie Number.isNaN nie odrzuca Infinity, a sprawdzenie raw === \"\" nie obejmuje samych białych znaków.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "mdn-if-else",
+          "excerptId": "if-order"
+        }
+      ],
+      "id": "correct-legacy",
+      "questionIds": [
+        "core"
+      ],
+      "recommendation": "Nie przenosić błędu źródłowego do nowej wersji.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "Badanie jest ograniczone do jednego autoryzowanego źródła legacy i wskazanych oficjalnych stron; nie stanowi zgody na publikację."
+  ],
+  "outdatedClaims": [],
+  "questionAnswers": [
+    {
+      "findingIds": [
+        "verified-core",
+        "correct-legacy",
+        "code-boundary"
+      ],
+      "note": "Zakres rozstrzygnięty przez oficjalną dokumentację i właściwą dla runtime weryfikację.",
+      "questionId": "core",
+      "status": "resolved"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "CORRECT",
+      "findingIds": [
+        "verified-core",
+        "correct-legacy",
+        "code-boundary"
+      ],
+      "id": "rewrite-bounded",
+      "instruction": "Napisać zwarty materiał od nowa, zachować pochodzenie i użyć tylko zweryfikowanych twierdzeń."
+    }
+  ],
+  "schemaVersion": 1,
+  "securityNotes": [],
+  "sourceRegister": [
+    {
+      "documentHash": "0aa3a3fc7144ebbc41a5217f38dc35123556292fba0bf9b0128ed513fea1e834",
+      "evidenceIds": [
+        "if-order"
+      ],
+      "id": "mdn-if-else",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: if...else",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"
+    },
+    {
+      "documentHash": "0b9412969a846d386b59717b0d25133c761233c9fb21fbd2a7a547633b4517a7",
+      "evidenceIds": [
+        "falsy-values"
+      ],
+      "id": "mdn-boolean",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Boolean",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"
+    },
+    {
+      "documentHash": "e6624f1b0c5edc91f9d5eb7323e348797336a761ce3b821ed119e6f17b3e4a80",
+      "evidenceIds": [
+        "finite"
+      ],
+      "id": "mdn-number",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Number",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+    }
+  ],
+  "targets": [
+    {
+      "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+      "providedCharacters": 9062,
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-if-else",
+  "unresolvedQuestions": [],
+  "verifiedFacts": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "if (Number.isNaN(n)) {"
+        }
+      ],
+      "claim": "Gałęzie if/else są sprawdzane po kolei; przed Number należy odrzucić brak lub same białe znaki, a po konwersji wymagać Number.isFinite.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "mdn-if-else",
+          "excerptId": "if-order"
+        },
+        {
+          "documentId": "mdn-boolean",
+          "excerptId": "falsy-values"
+        },
+        {
+          "documentId": "mdn-number",
+          "excerptId": "finite"
+        }
+      ],
+      "id": "verified-core",
+      "questionIds": [
+        "core"
+      ],
+      "recommendation": "Użyć tej semantyki jako granicy treści i przykładów.",
+      "sourceType": "official-documentation",
+      "status": "verified"
+    }
+  ],
+  "writerHandoff": {
+    "avoid": [],
+    "caution": [
+      {
+        "findingIds": [
+          "code-boundary"
+        ],
+        "instruction": "Wyniki draftu wykonać ponownie, niezależnie od probe badawczego."
+      }
+    ],
+    "correct": [
+      {
+        "findingIds": [
+          "correct-legacy"
+        ],
+        "instruction": "Sprawdzenie wyłącznie Number.isNaN nie odrzuca Infinity, a sprawdzenie raw === \"\" nie obejmuje samych białych znaków."
+      }
+    ],
+    "keep": [
+      {
+        "findingIds": [
+          "verified-core"
+        ],
+        "instruction": "Zachować dydaktyczny rdzeń źródła, ale przepisać prozę."
+      }
+    ],
+    "verifiedCodeFindingIds": [
+      "code-boundary"
+    ]
+  }
+}

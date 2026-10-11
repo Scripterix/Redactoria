@@ -16,6 +16,7 @@ import { FocusedMergeResultSchema } from '../engine/agents/cartographer/focused-
 import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../engine/agents/cartographer/focused-article.ts';
 import { z } from 'zod';
 import { validateB2Authorization } from '../engine/core/b2-authorization.ts';
+import { validateB3Authorization } from '../engine/core/b3-authorization.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 export function parseResearcherArguments(args: string[]) {
@@ -39,7 +40,11 @@ async function main() {
 	const { options, prepare } = parseResearcherArguments(process.argv.slice(2));
 	const json = async (path: string) => JSON.parse(await readFile(path, 'utf8')) as unknown;
 	const decision = z.union([ApprovedMergeDecisionSchema, ApprovedArticleDecisionSchema]).parse(await json(resolve(options.get('--decision')!)));
-	if (decision.action !== 'MERGE') validateB2Authorization(await readFile(resolve(project, decision.authorizationRef), 'utf8'), decision.authorizationHash, decision.targets);
+	if (decision.action !== 'MERGE') {
+		const authorization = await readFile(resolve(project, decision.authorizationRef), 'utf8');
+		if (decision.schemaVersion === 2) validateB2Authorization(authorization, decision.authorizationHash, decision.targets);
+		else validateB3Authorization(authorization, decision.authorizationHash, decision.topic, decision.targets);
+	}
 	if (!/^lab\/cartography\/[a-z0-9-]+\.json$/.test(decision.analysisRef)) throw new Error('Invalid Cartographer analysis reference.');
 	const analysisPath = await realpath(resolve(project, decision.analysisRef));
 	if (!isWithin(await realpath(resolve(project, 'lab/cartography')), analysisPath)) throw new Error('Analysis escapes LAB cartography.');

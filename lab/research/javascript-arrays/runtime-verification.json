@@ -1,0 +1,105 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja dotyczy lokalnego Node v24.16.0 i jawnych przypadków, nie wszystkich silników JavaScript."
+  ],
+  "packetHash": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "emptyAverage": null,
+            "filtered": [
+              10,
+              30
+            ],
+            "mapped": [
+              20,
+              4,
+              60
+            ],
+            "original": [
+              10,
+              2,
+              30
+            ],
+            "sorted": [
+              2,
+              10,
+              30
+            ],
+            "sum": 42
+          },
+          "expected": {
+            "emptyAverage": null,
+            "filtered": [
+              10,
+              30
+            ],
+            "mapped": [
+              20,
+              4,
+              60
+            ],
+            "original": [
+              10,
+              2,
+              30
+            ],
+            "sorted": [
+              2,
+              10,
+              30
+            ],
+            "sum": 42
+          },
+          "id": "observed-result",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "records": [
+        {
+          "code": "const values = [10, 2, 30]; const mapped = values.map(x => x * 2); const filtered = values.filter(x => x >= 10); const sum = values.reduce((a, x) => a + x, 0); const average = xs => xs.length ? xs.reduce((a, x) => a + x, 0) / xs.length : null; const sorted = [...values].sort((a, b) => a - b); console.log(JSON.stringify({mapped, filtered, sum, emptyAverage: average([]), sorted, original: values}));",
+          "codeHash": "6d30f78cc80a964c87c5b733bdd0a430c42d785ff4b389f229e35f4a5b5917c0",
+          "description": "map/filter/reduce, empty average and non-mutating numeric sort",
+          "diagnostics": [],
+          "id": "node-array-behavior",
+          "result": {
+            "emptyAverage": null,
+            "filtered": [
+              10,
+              30
+            ],
+            "mapped": [
+              20,
+              4,
+              60
+            ],
+            "original": [
+              10,
+              2,
+              30
+            ],
+            "sorted": [
+              2,
+              10,
+              30
+            ],
+            "sum": 42
+          },
+          "runtimeId": "node",
+          "runtimeVersion": "v24.16.0"
+        }
+      ],
+      "runtimeId": "node",
+      "status": "PASS",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

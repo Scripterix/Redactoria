@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "experiment": "CONTENT_LINEAGE_CONTRACT_SPIKE_0_1",
+  "date": "2026-10-11",
+  "result": "PASS",
+  "scope": "READ_ONLY",
+  "implemented": {
+    "contract": "engine/validation/content-lineage-contract.ts",
+    "validator": "engine/validation/content-lineage.ts",
+    "tests": "tests/unit/content-lineage.test.ts",
+    "historicalBackfill": "lab/reports/tablice-w-php-content-lineage.json",
+    "operatorCli": false,
+    "publicationBehavior": false
+  },
+  "closedChangeTypes": [
+    "TECHNICAL_CLEANUP",
+    "METADATA_ONLY",
+    "LINK_FIX",
+    "TYPO_FIX",
+    "PRESENTATION_ONLY",
+    "CONTENT_CHANGE"
+  ],
+  "closedReviewImpacts": [
+    "REVIEW_STILL_VALID",
+    "REVIEW_RECHECK_REQUIRED",
+    "REVIEW_INVALIDATED"
+  ],
+  "phpArrays": {
+    "classification": [
+      "METADATA_ONLY",
+      "TECHNICAL_CLEANUP"
+    ],
+    "candidateHash": "b2c91233ed119451850ba018802fb10b6d0ecc9a747788ff8e30b2f2421f62e2",
+    "candidateArticleHash": "713d31d87e8bdfb1b41b237299ce30d397dafcec56f220eaa13bad5d003b3068",
+    "promotedContentHash": "3b2435699eee3cad7f9ded0cbfd6bbef269717b0e28ad9cba7f2a19ff529d19e",
+    "intermediateContentHash": "117d4bb40a436354584cd9c91eb38ce98a6d2dd50f23cf4c1215548e2ab2617b",
+    "currentContentHash": "c4111bad6f943f9b19568f0b4474935f3fa510a02fa0f577c9a05031af742b38",
+    "criticPass": "REVIEW_STILL_VALID",
+    "reason": "Metadata leaves the body byte-identical; cleanup removes exactly two authorized workflow notes and changes no claim, example, source citation or evidence statement.",
+    "missingStructuredRecordConclusion": "BACKFILLED_AS_SEPARATE_APPEND_ONLY_EVIDENCE",
+    "replay": "PASS"
+  },
+  "fixtures": {
+    "positive": 6,
+    "negative": 9,
+    "negativeClasses": [
+      "missing-previous-hash",
+      "broken-chain",
+      "unknown-change-type",
+      "missing-authorization",
+      "body-change-falsely-metadata-only",
+      "content-change-without-rereview",
+      "wrong-candidate",
+      "current-hash-not-chain-end",
+      "tampered-intermediate"
+    ]
+  },
+  "policyRecommendation": {
+    "historical": "Backfill only from exact reconstructible bytes and existing hash-bound human authorization; otherwise use unknown or needs-review.",
+    "future": "Create an append-only lineage record with every authorized post-promotion CONTENT change; content changes invalidate the old review until a new hash-bound Critic PASS exists.",
+    "acceptedPolicy": false
+  },
+  "verifyArticle": {
+    "status": "CANDIDATE",
+    "lineagePrecondition": "PROTOTYPE_SATISFIED",
+    "integrationImplemented": false,
+    "operatorCliImplemented": false
+  },
+  "remainingUncertainty": [
+    "More real link-fix fixtures are needed to validate its three scopes.",
+    "Durable storage and atomic write policy require a future decision.",
+    "The logical PHP Arrays intermediate is deterministic but was not a separate historical commit."
+  ],
+  "quality": {
+    "tests": "317/317 PASS in 24 files",
+    "check": "134 files, 0 diagnostics",
+    "build": "11 static pages; Pagefind 10 pages / 1586 words",
+    "diffCheck": "PASS_WITH_EXISTING_WINDOWS_LINE_ENDING_NOTICES",
+    "jsonParse": "PASS",
+    "protectedTrackedDiff": "EMPTY"
+  },
+  "boundaries": {
+    "sourceChanged": false,
+    "contentChanged": false,
+    "historicalCandidateReviewAuditChanged": false,
+    "publicationRun": false,
+    "gitOrDeploymentRun": false,
+    "dreamOrAgenticStatus": "FROZEN / CONCEPT"
+  }
+}

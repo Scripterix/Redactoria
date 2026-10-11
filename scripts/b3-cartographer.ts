@@ -1,0 +1,67 @@
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { RecordedLanguageModel } from '../engine/adapters/recorded-language-model.ts';
+import { prepareFocusedArticle, runFocusedArticle } from '../engine/agents/cartographer/focused-article.ts';
+import { InventoryInputSchema } from '../engine/agents/cartographer/contract.ts';
+import { writeLabArtifacts } from '../engine/core/lab-writer.ts';
+import { hashBytes } from '../engine/core/editorial-context.ts';
+import { hashJson, stableJson } from '../engine/core/serialization.ts';
+import { createSourceReader } from '../engine/core/source-reader.ts';
+import { B3AuthorizationSchema, validateB3Authorization } from '../engine/core/b3-authorization.ts';
+
+const project = fileURLToPath(new URL('../', import.meta.url));
+const sourceRoot = resolve(project, '../temp-ogwo/posts');
+
+export function parseB3CartographerArguments(args: string[]) {
+	let topic: string | undefined;
+	let prepare = false;
+	for (let index = 0; index < args.length; index++) {
+		const flag = args[index]!;
+		if (flag === '--prepare' && !prepare) { prepare = true; continue; }
+		const value = args[++index];
+		if (flag !== '--topic' || topic || !value || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)) throw new Error('Usage: npm run b3:cartographer -- --topic <slug> [--prepare]');
+		topic = value;
+	}
+	if (!topic) throw new Error('--topic is required.');
+	return { topic, prepare };
+}
+
+async function main() {
+	const { topic, prepare } = parseB3CartographerArguments(process.argv.slice(2));
+	const authorizationRef = 'lab/decisions/b3-authorization.json';
+	const authorizationText = await readFile(resolve(project, authorizationRef), 'utf8');
+	const authorization = B3AuthorizationSchema.parse(JSON.parse(authorizationText));
+	const job = authorization.jobs.find((item) => item.topic === topic);
+	if (!job) throw new Error('Topic is outside the authorized B3 jobs.');
+	const rankingText = await readFile(resolve(project, authorization.b1RankingRef), 'utf8');
+	if (hashBytes(rankingText) !== authorization.b1RankingHash) throw new Error('B1 ranking hash changed.');
+	const ranking = JSON.parse(rankingText) as { ranking: { recommendedOrder: number; source: { sourceId: string; sourcePath: string; contentHash: string } }[] };
+	const ranked = ranking.ranking.find((item) => item.recommendedOrder === job.order + 1);
+	if (!ranked || ranked.source.sourceId !== job.source.sourceId || ranked.source.sourcePath !== job.source.sourcePath || ranked.source.contentHash !== job.source.contentHash) throw new Error('B3 job no longer matches its B1 rank.');
+	validateB3Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
+
+	const inventory = InventoryInputSchema.parse(JSON.parse(await readFile(resolve(project, 'lab/inventory/inventory.json'), 'utf8')));
+	const selected = inventory.articles.filter((item) => item.source_id === job.source.sourceId
+		&& item.source_path === job.source.sourcePath && item.content_hash === job.source.contentHash);
+	if (selected.length !== 1) throw new Error('Authorized B3 source is absent or changed in inventory.');
+	const input = { inventory: { schema_version: 1, articles: selected }, limits: { maxDeepReads: 1, maxBodyCharacters: 40000, maxSourceBytes: 1048576 } };
+	const prompt = await readFile(resolve(project, 'engine/agents/cartographer/focused-article-prompt.md'), 'utf8');
+	const reader = createSourceReader(sourceRoot);
+	if (prepare) {
+		const { request } = await prepareFocusedArticle(input, prompt, reader);
+		await writeLabArtifacts(project, sourceRoot, { [`cartography/requests/${topic}-single.json`]: stableJson({ schemaVersion: 1, requestHash: hashJson(request), request }) });
+		console.log(`Prepared B3 focused request: ${topic}; ${hashJson(request)}; STOP.`);
+		return;
+	}
+	const responses = JSON.parse(await readFile(resolve(project, `lab/cartography/${topic}-session-responses.json`), 'utf8'));
+	const model = new RecordedLanguageModel(responses);
+	const result = await runFocusedArticle(input, prompt, model, reader);
+	if (result.artifactName !== `${topic}-single`) throw new Error('Recorded response belongs to another B3 topic.');
+	await writeLabArtifacts(project, sourceRoot, { [`cartography/${topic}-single.json`]: stableJson(result) });
+	console.log(`B3 Cartographer: ${topic}; ${result.action}; one full source; STOP.`);
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+	main().catch((error: unknown) => { console.error(error); process.exitCode = 1; });
+}

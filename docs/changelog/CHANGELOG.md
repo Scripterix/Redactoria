@@ -4,6 +4,54 @@
 
 ### Added
 
+- Production read-only `npm run verify:article -- --topic <topic>` Operator Mode,
+  with concise human output, schema-valid deterministic `--json` and stable exit
+  codes: 0 PASS, 1 verification FAIL, 2 input/configuration error.
+- Composition of the article-verification and CONTENT-lineage contracts. All five
+  known lifecycles PASS; PHP Arrays replays its two-record backfill while pending
+  JavaScript candidates keep all publication checks `NOT_APPLICABLE`.
+- Integration coverage for five real fixtures, invalid topic, broken in-memory
+  fixture, deterministic JSON, pending/published semantics and filesystem
+  read-only behavior.
+
+- CONTENT Lineage Contract Spike 0.1: closed change/review enums, strict hash-bound
+  records and pure deterministic replay across post-promotion CONTENT versions.
+- Separate append-only PHP Arrays backfill proving `3b2435…` → `117d4b…` →
+  `c4111b…` as metadata-only plus exact technical cleanup; original CONTENT,
+  candidate, Critic review and promotion audit remain unchanged.
+- Six positive lineage scenarios and nine negative classes covering broken/tampered
+  chains, false classifications, missing authority and invalidated review. The
+  operator `verify:article` CLI and durable publication policy remain unimplemented.
+
+- `verify:article` Contract Spike 0.1: strict tri-state result schema, scoped
+  read-only loader and pure 31-check verifier across candidate schema v1/v2/v3,
+  PHP/Node/browser evidence and pending/published states; no operator CLI.
+- Five repository-backed frozen fixtures plus seven in-memory negative mutation
+  classes. Four fixtures pass; PHP Arrays correctly fails current CONTENT integrity
+  because its later authorized cleanup lacks a new structured post-promotion audit.
+- Human-readable and JSON spike reports with a conditional CLI recommendation:
+  define hash-bound post-promotion CONTENT lineage before productionizing the CLI.
+
+- Pipeline Review 0.1 over five frozen PHP/JavaScript samples: normalized Markdown
+  and JSON evidence, recurring pipeline/quality/interaction patterns, explicit
+  Quality Gap versus Knowledge Gap and metric reliability classes.
+- Eight ranked rationalizations: read-only `verify:article` first, minimal Article
+  Manifest next and Critic precision rubric next; Humanizer remains too early.
+  Dream Cycle / Agentic Circus are `FROZEN / CONCEPT`, not rejected merely for
+  insufficient priority or evidence. No idea was promoted to Roadmap.
+- Futureboard evidence/status refresh based only on the review; SOURCE, CONTENT,
+  candidates, publication state, agents and website remain unchanged.
+
+- B3: three sequential bounded JavaScript Golden Path jobs for if/else, Arrays and
+  DOM, each with one-source Cartographer provenance, official MDN evidence,
+  validated research acceptance, Writer draft and full Critic PASS.
+- Backward-compatible Node/browser runtime contracts, actual Node 24.16.0 example
+  execution and controlled Chromium 154 DOM verification; historical PHP schemas
+  and artifacts remain valid.
+- Three exact schema-v3 LAB publication candidates, per-job metrics and a
+  five-sample comparison. Promotion Gate intentionally rejects schema v3; no
+  CONTENT, publication, commit, push or deployment was performed.
+
 - Human-approved PHP Control Flow publication decision and schema-v2
   public-production Promotion Gate path, preserving the historical PHP Arrays
   local-only schema-v1 behavior.

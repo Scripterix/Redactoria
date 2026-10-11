@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c",
+  "analysisRef": "lab/cartography/javascript-arrays-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "confidence": 0.97,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "2048",
+      "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+      "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+      "providedCharacters": 5654,
+      "sourceId": "2048",
+      "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+      "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-arrays"
+}

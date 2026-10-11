@@ -92,6 +92,7 @@ describe('Researcher deterministic boundaries', () => {
 			articleEvidence: [{ sourceId: 'excluded', sourcePath: 'excluded.md', field: 'body', value: 'not supplied' }],
 			verification: 'documentation-reviewed', probeIds: [] }];
 		expect(() => validateResearchAnalysis(analysis, input, reads)).toThrow('Evidence source');
+		if (input.research.schemaVersion !== 1) throw new Error('Expected historical PHP fixture.');
 		input.research.probes.push({ id: 'fake-probe', description: 'Incorrect hash', phpVersion: '8.2.4', code: 'return [];', codeHash: '0'.repeat(64), result: [], diagnostics: [] });
 		expect(() => validateResearchInput(input)).toThrow('Probe code hash');
 	});

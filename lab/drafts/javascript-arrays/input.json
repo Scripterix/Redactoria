@@ -1,0 +1,25 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "map",
+    "filter",
+    "reduce",
+    "empty-array",
+    "numeric-sort",
+    "sort-mutation",
+    "stable-fixtures"
+  ],
+  "researchApproval": "lab/decisions/javascript-arrays-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-arrays/research.json",
+  "runtimeVerification": "lab/research/javascript-arrays/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/javascript-arrays-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "javascript-arrays"
+}

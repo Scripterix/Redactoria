@@ -31,7 +31,9 @@ describe('Writer contract and single-step boundaries', () => {
   expect(() => validateWriterInput(input)).toThrow('hash mismatch');
  });
  it('requires input and output PHP 8.4–8.5 scope', () => {
-  const input = inputFixture(); input.config.targetPhpVersions[0] = '8.2' as '8.4'; expect(() => validateWriterInput(input)).toThrow();
+  const input = inputFixture();
+  if (input.config.schemaVersion !== 1) throw new Error('Expected historical PHP fixture.');
+  input.config.targetPhpVersions[0] = '8.2' as '8.4'; expect(() => validateWriterInput(input)).toThrow();
   const response = writerAnalysis(); response.targetPhpVersions = ['8.2', '8.5'];
   expect(() => validateWriterAnalysis(response, validateWriterInput(inputFixture()))).toThrow();
  });

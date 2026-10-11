@@ -1,0 +1,123 @@
+{
+  "asOfDate": "2026-10-11",
+  "probes": [
+    {
+      "code": "const values = [10, 2, 30]; const mapped = values.map(x => x * 2); const filtered = values.filter(x => x >= 10); const sum = values.reduce((a, x) => a + x, 0); const average = xs => xs.length ? xs.reduce((a, x) => a + x, 0) / xs.length : null; const sorted = [...values].sort((a, b) => a - b); console.log(JSON.stringify({mapped, filtered, sum, emptyAverage: average([]), sorted, original: values}));",
+      "codeHash": "6d30f78cc80a964c87c5b733bdd0a430c42d785ff4b389f229e35f4a5b5917c0",
+      "description": "map/filter/reduce, empty average and non-mutating numeric sort",
+      "diagnostics": [],
+      "id": "node-array-behavior",
+      "result": {
+        "emptyAverage": null,
+        "filtered": [
+          10,
+          30
+        ],
+        "mapped": [
+          20,
+          4,
+          60
+        ],
+        "original": [
+          10,
+          2,
+          30
+        ],
+        "sorted": [
+          2,
+          10,
+          30
+        ],
+        "sum": 42
+      },
+      "runtimeId": "node",
+      "runtimeVersion": "v24.16.0"
+    }
+  ],
+  "provenance": "Official MDN HTTPS snapshots plus locally executed Node probe where applicable.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-arrays"
+      ],
+      "id": "core",
+      "question": "Jak map, filter, reduce i sort wpływają na dane, pustą tablicę, kolejność oraz mutację?",
+      "section": "bounded-scope"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "documentHash": "27cddd1fb9a13fd00e7127a55122054a514f26c475b29bd14dc3acec2b6430c2",
+      "excerpts": [
+        {
+          "id": "map-new-array",
+          "locator": "Description",
+          "text": "map creates a new array from callback results for elements in the receiver."
+        }
+      ],
+      "id": "mdn-array-map",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Array.prototype.map",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+    },
+    {
+      "documentHash": "777e14f10417568a468fbee1bdaedb604bf8106c4062c7020ccd78df71f1702c",
+      "excerpts": [
+        {
+          "id": "reduce-empty",
+          "locator": "Exceptions",
+          "text": "reduce without an initial value throws when called on an empty array."
+        }
+      ],
+      "id": "mdn-array-reduce",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Array.prototype.reduce",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+    },
+    {
+      "documentHash": "a13c97ec1c7e4e8ee986aabafc22790bf45d9c88aeadb1e239bbd91d4d7b7d28",
+      "excerpts": [
+        {
+          "id": "sort-mutates",
+          "locator": "Description",
+          "text": "sort operates in place; numeric ordering needs a comparator such as (a, b) => a - b."
+        },
+        {
+          "id": "sort-stable",
+          "locator": "Sort stability",
+          "text": "Array sorting is specified as stable in modern ECMAScript."
+        }
+      ],
+      "id": "mdn-array-sort",
+      "kind": "language-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "official-content-excluding-user-notes"
+      },
+      "retrievedAt": "2026-10-11T14:33:09.282Z",
+      "sourceType": "official-documentation",
+      "title": "MDN: Array.prototype.sort",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+    }
+  ],
+  "topicSlug": "javascript-arrays"
+}

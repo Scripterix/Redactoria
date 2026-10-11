@@ -1,0 +1,179 @@
+{
+  "focused-article": {
+    "requestHash": "e8e206e69af2ae73796cb0ee1e1eced58d625030911671d955c7e404de98642e",
+    "response": {
+      "action": "REWRITE",
+      "artifactName": "javascript-arrays-single",
+      "confidence": 0.97,
+      "correct": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "id": "correct-determinism",
+          "interpretation": "Powtórne liczenie deterministycznej średniej może kosztować czas, lecz samo nie powoduje różnych wyników sortowania."
+        }
+      ],
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2048",
+          "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+          "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+        }
+      ],
+      "keep": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "id": "keep-methods",
+          "interpretation": "Zachować mały przykład ocen jako wspólny kontekst dla metod tablicowych."
+        }
+      ],
+      "limitations": [
+        "Analiza obejmuje tylko jeden autoryzowany plik SOURCE; twierdzenia normatywne wymagają oficjalnych źródeł i wykonania przykładów."
+      ],
+      "missing": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "id": "missing-mutation",
+          "interpretation": "Jawnie pokazać, że sort mutuje odbiorcę, a toSorted lub kopia zachowuje wejście."
+        }
+      ],
+      "needsResearch": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "id": "research-arrays",
+          "interpretation": "Zweryfikować callbacki map/filter/reduce, pusty reduce, komparator, mutację i stabilność sortowania."
+        }
+      ],
+      "outdatedOrUncertain": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "id": "uncertain-performance",
+          "interpretation": "Nie nazywać precompute szybszym bez pomiaru i określonej wielkości danych."
+        }
+      ],
+      "prerequisites": [
+        "Podstawowa składnia JavaScript i uruchamianie małych przykładów."
+      ],
+      "proposedStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: transformowanie i filtrowanie.",
+          "sourceIds": [
+            "2048"
+          ],
+          "title": "Transformowanie i filtrowanie"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: redukcja i bezpieczna średnia.",
+          "sourceIds": [
+            "2048"
+          ],
+          "title": "Redukcja i bezpieczna średnia"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: sortowanie liczb i obiektów bez zmiany wejścia.",
+          "sourceIds": [
+            "2048"
+          ],
+          "title": "Sortowanie liczb i obiektów bez zmiany wejścia"
+        }
+      ],
+      "proposedTitle": "Tablice JavaScript: map, filter, reduce i sort bez mutowania danych",
+      "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+      "recommended": true,
+      "relationships": [],
+      "remove": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Taki zapis sprawia, że dla każdego porównania funkcja avg liczy od nowa całą tablicę ocen."
+            }
+          ],
+          "id": "remove-random",
+          "interpretation": "Usunąć losowe identyfikatory, aby przykłady miały powtarzalne wyniki."
+        }
+      ],
+      "scope": "Stałe fixtures, map/filter/reduce, średnia z pustej tablicy i numeryczne sortowanie kopii; bez losowych ID, UI i niezmierzonych obietnic wydajności.",
+      "task": "SINGLE_ARTICLE"
+    }
+  },
+  "provenance": {
+    "description": "B3 focused analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1
+}

@@ -1,0 +1,78 @@
+{
+  "boundaries": {
+    "contentModified": false,
+    "deployment": false,
+    "gitCommitOrPush": false,
+    "promotionGateExpandedForSchema3": false,
+    "publicationPerformed": false,
+    "sourceModified": false
+  },
+  "comparison": [
+    "Wszystkie pięć próbek kończy się recenzowanym artefaktem LAB; tylko wcześniejsze próbki PHP mają kontrakt Promotion Gate.",
+    "B3 uogólnia kontrakty runtime z PHP na Node i kontrolowaną przeglądarkę, bez zmiany zachowania historycznych artefaktów.",
+    "Trzy joby B3 przeszły pierwszy pełny Critic, więc ścieżka ograniczonej korekty pozostała niewykonana zgodnie z warunkiem."
+  ],
+  "generatedAt": "2026-10-11T14:50:27.917Z",
+  "knowledgeGaps": [],
+  "qualityGaps": [
+    "Drafty B3 są krótsze niż obie próbki PHP i przed publikacją mogą wymagać ludzkiej oceny tempa, przykładów oraz języka.",
+    "DOM sprawdzono w jednej wersji Chromium; nie ma macierzy cross-browser ani testów wizualnych.",
+    "Nie zmierzono czasu całego przebiegu ani tokenów, ponieważ licznik nie został uruchomiony przed startem; pola pozostają null."
+  ],
+  "samples": [
+    {
+      "candidateSchema": 1,
+      "language": "PHP",
+      "sample": "baseline",
+      "topic": "php-arrays",
+      "wordCount": 2559
+    },
+    {
+      "candidateSchema": 2,
+      "language": "PHP",
+      "sample": "B2",
+      "topic": "php-control-flow",
+      "wordCount": 1663
+    },
+    {
+      "candidateSchema": 3,
+      "corrections": 0,
+      "criticIterations": 1,
+      "exactCandidate": true,
+      "language": "JavaScript",
+      "sample": "B3",
+      "topic": "javascript-if-else",
+      "wordCount": 256
+    },
+    {
+      "candidateSchema": 3,
+      "corrections": 0,
+      "criticIterations": 1,
+      "exactCandidate": true,
+      "language": "JavaScript",
+      "sample": "B3",
+      "topic": "javascript-arrays",
+      "wordCount": 279
+    },
+    {
+      "candidateSchema": 3,
+      "corrections": 0,
+      "criticIterations": 1,
+      "exactCandidate": true,
+      "language": "JavaScript",
+      "sample": "B3",
+      "topic": "javascript-dom",
+      "wordCount": 260
+    }
+  ],
+  "schemaVersion": 1,
+  "status": "B3_COMPLETE_LAB_ONLY",
+  "totals": {
+    "b3Corrections": 0,
+    "b3CriticIterations": 3,
+    "b3Jobs": 3,
+    "b3ModelCalls": 12,
+    "samples": 5,
+    "uniqueHumanAuthorizationEvents": 1
+  }
+}

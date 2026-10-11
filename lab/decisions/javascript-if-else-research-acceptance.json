@@ -1,0 +1,86 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-if-else-rewrite.json",
+        "sha256": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4"
+      },
+      {
+        "path": "lab/cartography/javascript-if-else-single.json",
+        "sha256": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8"
+      },
+      {
+        "path": "lab/research/javascript-if-else/sources.json",
+        "sha256": "b338c2cd062128e86f77a14bcbc55e4bbb0431892a66626cf53cb554b0bc8051"
+      },
+      {
+        "path": "lab/research/javascript-if-else/probes.json",
+        "sha256": "561f7e0403acd3036781b2092a31b45c351b8dc2e32875f29629f4214f169671"
+      },
+      {
+        "path": "lab/research/javascript-if-else/research.json",
+        "sha256": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19"
+      },
+      {
+        "path": "lab/research/javascript-if-else/runtime-verification.json",
+        "sha256": "8207344be0efc718bd246f1639b6e7edca7896b3970b8ab087ec76412b24d854"
+      },
+      {
+        "path": "lab/research/javascript-if-else/runtime-verification.md",
+        "sha256": "52c49c2f6520b89ccaad53c1f8a7f3e384f948d918a2e3e723333477afd02dcb"
+      }
+    ],
+    "humanApproval": "The human authorized all three B3 jobs through candidates; this packet was validated in-session and was not separately reviewed by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/javascript-if-else/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "node",
+          "status": "PASS",
+          "version": "v24.16.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "06f268b5080b109adf2f528ad3ef284860e083b255b42b6d544bb5c96745434c",
+  "nextStep": "writer",
+  "packetHash": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19",
+  "packetRef": "lab/research/javascript-if-else/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts; execute every final draft example independently; keep interactions as metadata only.",
+  "requestHash": "5e364554ab6723f17b81a11f8696c5a8c9a22a618d0d67ad6c610b8ba44b80cb",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "core"
+  ],
+  "schemaVersion": 3,
+  "scope": "B3 javascript-if-else: validated packet and runtime evidence to LAB candidate only; no publication.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+      "providedCharacters": 9062,
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-if-else",
+  "validatedAt": "2026-10-11T14:48:55.558Z"
+}

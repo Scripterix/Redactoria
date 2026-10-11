@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "Każdy finalny przykład ma zgodny hash i przeszedł właściwe wykonanie Node lub kontrolowane Chromium.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "fcfe58785f86d299ca49a4b94c87aa8275284d291ff4a77be1b9cf5379ce39c0",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "a657916abf3c2e6f4c48b2f9788987554665b772ff160a87c75e86f8fc5624d8"
+  },
+  "draftMetadataHash": "d9ad043cac3cc5a23500939ce7d8552a41a2c606baeb8de10064aa5a78dc539b",
+  "draftRef": "lab/drafts/javascript-arrays/article.md",
+  "issues": [],
+  "limitations": [
+    "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; nie jest zgodą na publikację ani testem innych silników."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/javascript-arrays-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-arrays/research.json",
+  "schemaVersion": 1,
+  "summary": "Draft pozostaje w zatwierdzonym zakresie, koryguje wskazane problemy legacy, wiąże twierdzenia z pakietem i ma przechodzące wykonanie wszystkich przykładów.",
+  "topic": "javascript-arrays",
+  "verdict": "PASS"
+}

@@ -1,0 +1,60 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja dotyczy lokalnego Node v24.16.0 i jawnych przypadków, nie wszystkich silników JavaScript."
+  ],
+  "packetHash": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": [
+            "empty",
+            "positive",
+            "invalid",
+            "invalid",
+            "zero",
+            "negative"
+          ],
+          "expected": [
+            "empty",
+            "positive",
+            "invalid",
+            "invalid",
+            "zero",
+            "negative"
+          ],
+          "id": "observed-result",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "records": [
+        {
+          "code": "const analyze = raw => { if (raw === null || raw === undefined || String(raw).trim() === '') return 'empty'; const n = Number(raw); if (!Number.isFinite(n)) return 'invalid'; if (n > 0) return 'positive'; if (n < 0) return 'negative'; return 'zero'; }; console.log(JSON.stringify([' ', '12', 'Infinity', 'abc', '0', '-2'].map(analyze)));",
+          "codeHash": "56ff3048a15269d797d4d44bbb78797e7738d01371de42ff30819e5d108847d7",
+          "description": "Whitespace, finite numbers, Infinity, NaN and ordered branches",
+          "diagnostics": [],
+          "id": "node-if-boundaries",
+          "result": [
+            "empty",
+            "positive",
+            "invalid",
+            "invalid",
+            "zero",
+            "negative"
+          ],
+          "runtimeId": "node",
+          "runtimeVersion": "v24.16.0"
+        }
+      ],
+      "runtimeId": "node",
+      "status": "PASS",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

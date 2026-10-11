@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+  "afterDraftHash": "d9ad043cac3cc5a23500939ce7d8552a41a2c606baeb8de10064aa5a78dc539b",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "beforeArticleHash": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+  "beforeDraftHash": "d9ad043cac3cc5a23500939ce7d8552a41a2c606baeb8de10064aa5a78dc539b",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional limited-correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "javascript-arrays",
+  "writerGenerations": 1
+}

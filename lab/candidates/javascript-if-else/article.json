@@ -1,0 +1,201 @@
+{
+  "approvedForPublication": false,
+  "articleHash": "016fca1b663c48fdf8db76530be43d37f71769905c6a057647098f3755e06835",
+  "criticReviewHash": "b2ae5bf9effb327bc4367b364f175fd2951fa9815c4120961ec1f26f973ba0bf",
+  "criticReviewRef": "lab/reviews/javascript-if-else/critic-review.json",
+  "criticVerdict": "PASS",
+  "draftMetadataHash": "4f96a62f74b39622726b2b788cb8bc1370754dcf5f2b27ee1f538a1b7b6ef73b",
+  "draftMetadataRef": "lab/drafts/javascript-if-else/article.json",
+  "draftRef": "lab/drafts/javascript-if-else/article.md",
+  "humanPublicationDecision": "pending",
+  "preparedAt": "2026-10-11T14:50:22.525Z",
+  "published": false,
+  "readyForHumanPublicationDecision": true,
+  "researchApproval": "lab/decisions/javascript-if-else-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-if-else/research.json",
+  "reviewedDraft": {
+    "action": "DRAFT",
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-if-else-rewrite.json",
+        "sha256": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4"
+      },
+      {
+        "path": "lab/cartography/javascript-if-else-single.json",
+        "sha256": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8"
+      },
+      {
+        "path": "lab/research/javascript-if-else/sources.json",
+        "sha256": "b338c2cd062128e86f77a14bcbc55e4bbb0431892a66626cf53cb554b0bc8051"
+      },
+      {
+        "path": "lab/research/javascript-if-else/probes.json",
+        "sha256": "561f7e0403acd3036781b2092a31b45c351b8dc2e32875f29629f4214f169671"
+      },
+      {
+        "path": "lab/research/javascript-if-else/research.json",
+        "sha256": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19"
+      },
+      {
+        "path": "lab/research/javascript-if-else/runtime-verification.json",
+        "sha256": "8207344be0efc718bd246f1639b6e7edca7896b3970b8ab087ec76412b24d854"
+      },
+      {
+        "path": "lab/research/javascript-if-else/runtime-verification.md",
+        "sha256": "52c49c2f6520b89ccaad53c1f8a7f3e384f948d918a2e3e723333477afd02dcb"
+      }
+    ],
+    "articleHash": "016fca1b663c48fdf8db76530be43d37f71769905c6a057647098f3755e06835",
+    "audience": "beginner / early intermediate",
+    "interactionOpportunities": [
+      {
+        "expectedConcept": "Kolejność operacji i brak ukrytej mutacji lub konwersji.",
+        "id": "predict-result",
+        "implemented": false,
+        "prompt": "Przewidź wynik przykładu i uzasadnij każdą część.",
+        "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+        "sectionId": "branches",
+        "type": "predict-output"
+      },
+      {
+        "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+        "id": "change-boundary",
+        "implemented": false,
+        "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i uruchom przykład ponownie.",
+        "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+        "sectionId": "numeric-input",
+        "type": "exercise"
+      }
+    ],
+    "limitations": [
+      "Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI."
+    ],
+    "researchApproval": "lab/decisions/javascript-if-else-research-acceptance.json",
+    "researchPacket": "lab/research/javascript-if-else/research.json",
+    "runtimeVerification": "lab/research/javascript-if-else/runtime-verification.json",
+    "schemaVersion": 2,
+    "sections": [
+      {
+        "body": "`if` wykonuje blok, gdy warunek po konwersji do wartości logicznej jest prawdziwy. Kolejne `else if` są sprawdzane od góry, a po pierwszym dopasowaniu reszta łańcucha jest pomijana. Dlatego bardziej szczegółowy próg umieszczaj przed ogólniejszym. `else` obsługuje wszystkie pozostałe przypadki.\n\nWarto rozdzielić truthiness od porównania. Pusty napis jest falsy, lecz napis `\"0\"` jest truthy. Operator `===` nie konwertuje typów: liczba `0` i napis `\"0\"` nie są ściśle równe. Do sprawdzania danych wejściowych używaj jawnych warunków zamiast liczyć na przypadkową konwersję.",
+        "coverage": [
+          "conditions",
+          "branch-order",
+          "truthiness",
+          "strict-equality"
+        ],
+        "evidence": [
+          {
+            "id": "verified-core",
+            "kind": "finding"
+          },
+          {
+            "id": "correct-legacy",
+            "kind": "finding"
+          },
+          {
+            "id": "code-boundary",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "const score = 92;\nlet label;\nif (score >= 90) label = 'bardzo dobry';\nelse if (score >= 60) label = 'zaliczony';\nelse label = 'do poprawy';\nconsole.log(label);\nconsole.log(0 === '0');",
+            "expectedDiagnostics": [],
+            "expectedOutput": "bardzo dobry\nfalse\n",
+            "id": "ordered-branches",
+            "language": "js",
+            "purpose": "Kolejność progów i ścisłe porównanie"
+          }
+        ],
+        "heading": "Pierwsza pasująca gałąź",
+        "id": "branches"
+      },
+      {
+        "body": "Wartość z pola formularza jest tekstem. Sama funkcja `Number` nie wystarcza do walidacji: pusty napis i same białe znaki stają się zerem, a napis `\"Infinity\"` daje liczbę nieskończoną. Najpierw odrzuć `null`, `undefined` i tekst pusty po `trim()`. Potem wykonaj konwersję i zaakceptuj wynik tylko wtedy, gdy `Number.isFinite` zwraca `true`.\n\nCzysta funkcja poniżej ma jawny kontrakt i zwraca etykietę zamiast zmieniać DOM. Dzięki temu każdą gałąź można wykonać w Node. Zwróć uwagę na zero: nie jest dodatnie ani ujemne, więc potrzebuje własnej gałęzi.",
+        "coverage": [
+          "input-validation",
+          "finite-number",
+          "edge-cases"
+        ],
+        "evidence": [
+          {
+            "id": "verified-core",
+            "kind": "finding"
+          },
+          {
+            "id": "correct-legacy",
+            "kind": "finding"
+          },
+          {
+            "id": "code-boundary",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "function analyzeNumber(raw) {\n  if (raw == null || String(raw).trim() === '') return 'brak';\n  const value = Number(raw);\n  if (!Number.isFinite(value)) return 'niepoprawna';\n  if (value > 0) return 'dodatnia';\n  if (value < 0) return 'ujemna';\n  return 'zero';\n}\nconsole.log([' ', '12', 'Infinity', 'abc', '0', '-2'].map(analyzeNumber).join('|'));",
+            "expectedDiagnostics": [],
+            "expectedOutput": "brak|dodatnia|niepoprawna|niepoprawna|zero|ujemna\n",
+            "id": "analyze-number",
+            "language": "js",
+            "purpose": "Walidacja białych znaków, NaN i Infinity"
+          }
+        ],
+        "heading": "Od tekstu do skończonej liczby",
+        "id": "numeric-input"
+      }
+    ],
+    "sourceDecision": "lab/decisions/javascript-if-else-rewrite.json",
+    "sources": [
+      {
+        "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+        "providedCharacters": 9062,
+        "sourceId": "2068",
+        "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+        "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+        "truncated": false
+      }
+    ],
+    "status": "draft",
+    "targetRuntimes": [
+      {
+        "id": "node",
+        "kind": "node",
+        "version": "v24.16.0"
+      }
+    ],
+    "title": "Warunki w JavaScript: if, else i bezpieczna walidacja liczby",
+    "topic": "javascript-if-else",
+    "wordCount": 256,
+    "writerExecution": {
+      "inputHash": "00b889ed9c902cce64a7c46c419eacdf6404dbdeb5f5c0207396d7fd006404c2",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "c9e4a2f9f08f59f674a25ae60c94c802e775de8f168c61c126a80da8a781b84c"
+    }
+  },
+  "revisionHash": "78e34ac15e49c608d73a8f571f006f68a6984cb66db4a0e7dafc4f78889c328e",
+  "revisionRef": "lab/drafts/javascript-if-else/revision.json",
+  "runtimeVerification": "lab/research/javascript-if-else/runtime-verification.json",
+  "schemaVersion": 3,
+  "sourceDecision": "lab/decisions/javascript-if-else-rewrite.json",
+  "status": "publication-candidate",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "title": "Warunki w JavaScript: if, else i bezpieczna walidacja liczby",
+  "topic": "javascript-if-else",
+  "wordCount": 256
+}

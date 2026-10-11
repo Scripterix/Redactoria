@@ -1,0 +1,1071 @@
+{
+  "inputHash": "481fdfbfc479911ceb37680a2ef5fed7b3ae8b27664a0b1f49b76a3dd880c41a",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+        "authorizationRef": "lab/decisions/b3-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b3-authorization.json",
+              "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+            },
+            {
+              "path": "lab/decisions/javascript-dom-rewrite.json",
+              "sha256": "e3dda998fa5923d8f5c34bedd5c0046424b123149e555af93980da18f396a414"
+            },
+            {
+              "path": "lab/cartography/javascript-dom-single.json",
+              "sha256": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2"
+            },
+            {
+              "path": "lab/research/javascript-dom/sources.json",
+              "sha256": "a741ef2864671c40cf4a623d0c6ef9aa6836ec6dee0fc3ddcdb3bbad6c7141a1"
+            },
+            {
+              "path": "lab/research/javascript-dom/probes.json",
+              "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+            },
+            {
+              "path": "lab/research/javascript-dom/research.json",
+              "sha256": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf"
+            },
+            {
+              "path": "lab/research/javascript-dom/runtime-verification.json",
+              "sha256": "0abe09fc06b2df671b2c9fc490a875d14e46c5019477590ec90b923a27db0b5a"
+            },
+            {
+              "path": "lab/research/javascript-dom/runtime-verification.md",
+              "sha256": "de0e2a9e3206b47c880caccfbac7e70f4b23e2ab0569ff0828b38cfe7f3238c6"
+            }
+          ],
+          "humanApproval": "The human authorized all three B3 jobs through candidates; this packet was validated in-session and was not separately reviewed by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/javascript-dom/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "chrome",
+                "status": "PASS",
+                "version": "154.0.0.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "b997ed03605cc2e19aa28cd8735207777840e1294238385d0f2115a53ab5e1d5",
+        "nextStep": "writer",
+        "packetHash": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf",
+        "packetRef": "lab/research/javascript-dom/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts; execute every final draft example independently; keep interactions as metadata only.",
+        "requestHash": "6d7f68e8a81ee752dcfcc11676844b0a1fed38ea1017e5136019928ce4c64317",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "core"
+        ],
+        "schemaVersion": 3,
+        "scope": "B3 javascript-dom: validated packet and runtime evidence to LAB candidate only; no publication.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+            "providedCharacters": 14180,
+            "sourceId": "940",
+            "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+            "title": "Post #45 JavaScript DOM selections i proste funkcje",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-dom",
+        "validatedAt": "2026-10-11T14:48:56.065Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "940",
+              "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+              "value": "const allParagraphs = document.querySelectorAll('p');"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: selektory i możliwość braku elementu.",
+          "sourceIds": [
+            "940"
+          ],
+          "title": "Selektory i możliwość braku elementu"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "940",
+              "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+              "value": "const allParagraphs = document.querySelectorAll('p');"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: bezpieczna zmiana tekstu i klas.",
+          "sourceIds": [
+            "940"
+          ],
+          "title": "Bezpieczna zmiana tekstu i klas"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "940",
+              "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+              "value": "const allParagraphs = document.querySelectorAll('p');"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: tworzenie elementu i dostępne zdarzenie click.",
+          "sourceIds": [
+            "940"
+          ],
+          "title": "Tworzenie elementu i dostępne zdarzenie click"
+        }
+      ],
+      "config": {
+        "audience": "beginner / early intermediate",
+        "requiredCoverage": [
+          "query-selector",
+          "query-selector-all",
+          "null",
+          "text-content",
+          "class-list",
+          "create-element",
+          "click",
+          "static-node-list"
+        ],
+        "researchApproval": "lab/decisions/javascript-dom-research-acceptance.json",
+        "researchPacket": "lab/research/javascript-dom/research.json",
+        "runtimeVerification": "lab/research/javascript-dom/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/javascript-dom-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "chrome",
+            "kind": "browser",
+            "version": "154.0.0.0"
+          }
+        ],
+        "topic": "javascript-dom"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2",
+        "analysisRef": "lab/cartography/javascript-dom-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+        "authorizationRef": "lab/decisions/b3-authorization.json",
+        "confidence": 0.97,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "940",
+            "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+            "value": "const allParagraphs = document.querySelectorAll('p');"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+            "providedCharacters": 14180,
+            "sourceId": "940",
+            "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+            "title": "Post #45 JavaScript DOM selections i proste funkcje",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-dom"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2",
+          "decisionHash": "e3dda998fa5923d8f5c34bedd5c0046424b123149e555af93980da18f396a414",
+          "fullReadCount": 1,
+          "inputHash": "b997ed03605cc2e19aa28cd8735207777840e1294238385d0f2115a53ab5e1d5",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [],
+          "requestHash": "6d7f68e8a81ee752dcfcc11676844b0a1fed38ea1017e5136019928ce4c64317",
+          "researchBundleHash": "a741ef2864671c40cf4a623d0c6ef9aa6836ec6dee0fc3ddcdb3bbad6c7141a1",
+          "topicSlug": "javascript-dom"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "940",
+                "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+                "value": "DOM ( Data Object Model )"
+              }
+            ],
+            "claim": "Przykład DOM musi być sprawdzony później w kontrolowanej przeglądarce, nie emulowany w Node.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-query-selector",
+                "excerptId": "query-null"
+              },
+              {
+                "documentId": "mdn-query-selector-all",
+                "excerptId": "static-nodelist"
+              },
+              {
+                "documentId": "mdn-text-content",
+                "excerptId": "text-not-html"
+              },
+              {
+                "documentId": "mdn-class-list",
+                "excerptId": "class-token"
+              },
+              {
+                "documentId": "mdn-create-element",
+                "excerptId": "create-element"
+              }
+            ],
+            "id": "code-boundary",
+            "probeIds": [],
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Wykonać kompletny harness HTML w przeglądarce przed Critic.",
+            "sourceType": "official-documentation",
+            "status": "verified",
+            "verification": "documentation-reviewed"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-11",
+          "evidence": [
+            {
+              "documentId": "mdn-query-selector",
+              "excerptId": "query-null"
+            },
+            {
+              "documentId": "mdn-query-selector-all",
+              "excerptId": "static-nodelist"
+            },
+            {
+              "documentId": "mdn-text-content",
+              "excerptId": "text-not-html"
+            },
+            {
+              "documentId": "mdn-class-list",
+              "excerptId": "class-token"
+            },
+            {
+              "documentId": "mdn-create-element",
+              "excerptId": "create-element"
+            }
+          ],
+          "runtimeScope": "Współczesna przeglądarka z DOM"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "940",
+                "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+                "value": "DOM ( Data Object Model )"
+              }
+            ],
+            "claim": "Rozwinięcie skrótu DOM jako Data Object Model jest niepoprawne; poprawna nazwa to Document Object Model.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-query-selector",
+                "excerptId": "query-null"
+              }
+            ],
+            "id": "correct-legacy",
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Nie przenosić błędu źródłowego do nowej wersji.",
+            "sourceType": "official-documentation",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Badanie jest ograniczone do jednego autoryzowanego źródła legacy i wskazanych oficjalnych stron; nie stanowi zgody na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "verified-core",
+              "correct-legacy",
+              "code-boundary"
+            ],
+            "note": "Zakres rozstrzygnięty przez oficjalną dokumentację i właściwą dla runtime weryfikację.",
+            "questionId": "core",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "verified-core",
+              "correct-legacy",
+              "code-boundary"
+            ],
+            "id": "rewrite-bounded",
+            "instruction": "Napisać zwarty materiał od nowa, zachować pochodzenie i użyć tylko zweryfikowanych twierdzeń."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "documentHash": "93debb151e535836077d1477584d292d40a1464373793794de770d34f376425d",
+            "evidenceIds": [
+              "query-null"
+            ],
+            "id": "mdn-query-selector",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Document.querySelector",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+          },
+          {
+            "documentHash": "eb8109d835034e8cc7f64f28470b0ebe8ba9c1bd43911f5995892c42209d20ab",
+            "evidenceIds": [
+              "static-nodelist"
+            ],
+            "id": "mdn-query-selector-all",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Document.querySelectorAll",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
+          },
+          {
+            "documentHash": "9454872f1d851a3e1fdd0595ee1937668a84273ab97fa4a4fa1933d8fcf8cc2d",
+            "evidenceIds": [
+              "text-not-html"
+            ],
+            "id": "mdn-text-content",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Node.textContent",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
+          },
+          {
+            "documentHash": "d5aff83d96818e1c447be57c6afde2b6fe3ffe7776aff1a39d5d70859ab40127",
+            "evidenceIds": [
+              "class-token"
+            ],
+            "id": "mdn-class-list",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Element.classList",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"
+          },
+          {
+            "documentHash": "cc5dc22c859605e993428bc8f5762f1b8619cf446b1fd860f82f1c6d69188cbc",
+            "evidenceIds": [
+              "create-element"
+            ],
+            "id": "mdn-create-element",
+            "kind": "language-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "official-content-excluding-user-notes"
+            },
+            "retrievedAt": "2026-10-11T14:33:09.282Z",
+            "sourceType": "official-documentation",
+            "title": "MDN: Document.createElement",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+            "providedCharacters": 14180,
+            "sourceId": "940",
+            "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+            "title": "Post #45 JavaScript DOM selections i proste funkcje",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-dom",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "940",
+                "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+                "value": "DOM ( Data Object Model )"
+              }
+            ],
+            "claim": "querySelector może zwrócić null, querySelectorAll zwraca statyczny NodeList, a textContent wstawia tekst bez interpretowania go jako HTML.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-query-selector",
+                "excerptId": "query-null"
+              },
+              {
+                "documentId": "mdn-query-selector-all",
+                "excerptId": "static-nodelist"
+              },
+              {
+                "documentId": "mdn-text-content",
+                "excerptId": "text-not-html"
+              },
+              {
+                "documentId": "mdn-class-list",
+                "excerptId": "class-token"
+              },
+              {
+                "documentId": "mdn-create-element",
+                "excerptId": "create-element"
+              }
+            ],
+            "id": "verified-core",
+            "questionIds": [
+              "core"
+            ],
+            "recommendation": "Użyć tej semantyki jako granicy treści i przykładów.",
+            "sourceType": "official-documentation",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "code-boundary"
+              ],
+              "instruction": "Nie deklarować wykonania DOM przed browser check."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "correct-legacy"
+              ],
+              "instruction": "Rozwinięcie skrótu DOM jako Data Object Model jest niepoprawne; poprawna nazwa to Document Object Model."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "verified-core"
+              ],
+              "instruction": "Zachować dydaktyczny rdzeń źródła, ale przepisać prozę."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "code-boundary"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Kontrolowany harness data URL sprawdza wyłącznie jawny przykład DOM w Chromium 154."
+        ],
+        "packetHash": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "after": {
+                    "classAdded": true,
+                    "currentCount": 2,
+                    "itemText": "B",
+                    "staticLength": 1,
+                    "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+                    "titleText": "<strong>Bezpieczny tekst</strong>"
+                  },
+                  "before": {
+                    "count": 1,
+                    "missing": true,
+                    "staticLength": 1,
+                    "title": "Start"
+                  },
+                  "consoleErrors": 0
+                },
+                "expected": {
+                  "after": {
+                    "classAdded": true,
+                    "currentCount": 2,
+                    "itemText": "B",
+                    "staticLength": 1,
+                    "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+                    "titleText": "<strong>Bezpieczny tekst</strong>"
+                  },
+                  "before": {
+                    "count": 1,
+                    "missing": true,
+                    "staticLength": 1,
+                    "title": "Start"
+                  },
+                  "consoleErrors": 0
+                },
+                "id": "observed-result",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": null,
+            "execution": "controlled-browser",
+            "kind": "browser",
+            "records": [
+              {
+                "code": "const title = document.querySelector('#title'); const initial = document.querySelectorAll('#list li'); const before = { missing: document.querySelector('#missing') === null, staticLength: initial.length, title: title.textContent, count: document.querySelectorAll('#list li').length }; document.querySelector('#add').addEventListener('click', () => { title.textContent = '<strong>Bezpieczny tekst</strong>'; title.classList.add('updated'); const item = document.createElement('li'); item.textContent = 'B'; document.querySelector('#list').appendChild(item); }); document.querySelector('#add').click(); const after = { titleText: title.textContent, titleHtml: title.innerHTML, classAdded: title.classList.contains('updated'), currentCount: document.querySelectorAll('#list li').length, staticLength: initial.length, itemText: document.querySelector('#list li:last-child').textContent }; ({ before, after, consoleErrors: 0 });",
+                "codeHash": "542b65fb24a63d941c87d6879ac4a53fd2f812b028b346db002ee95632b8fe41",
+                "description": "Controlled Chromium DOM harness: null, static NodeList, textContent, classList, createElement and native button click",
+                "diagnostics": [],
+                "id": "browser-dom-harness",
+                "result": {
+                  "after": {
+                    "classAdded": true,
+                    "currentCount": 2,
+                    "itemText": "B",
+                    "staticLength": 1,
+                    "titleHtml": "&lt;strong&gt;Bezpieczny tekst&lt;/strong&gt;",
+                    "titleText": "<strong>Bezpieczny tekst</strong>"
+                  },
+                  "before": {
+                    "count": 1,
+                    "missing": true,
+                    "staticLength": 1,
+                    "title": "Start"
+                  },
+                  "consoleErrors": 0
+                },
+                "runtimeId": "chrome",
+                "runtimeVersion": "154.0.0.0"
+              }
+            ],
+            "runtimeId": "chrome",
+            "status": "PASS",
+            "version": "154.0.0.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — javascript-dom\n\nStatus: **PASS**\n\n- runtime: browser 154.0.0.0\n- execution: controlled-browser\n- probes: 1\n- assertions: 1\n\nKontrolowany harness data URL sprawdza wyłącznie jawny przykład DOM w Chromium 154.\n",
+      "sources": [
+        {
+          "body": "\n## Spis treści JS DOM Selections\n\n- Wprowadzenie do Document Object Model\n\n- Selekcja elementów\n\n- [Q&A JS DOM ](#10.-Najczęstsze-pytania-i-problemy-z-DOM-–-Q&A)\n\n## 1. Wprowadzenie – jak działa DOM w JavaScript i dlaczego to takie ważne?\n\nTen wpis to **praktyczny tutorial JavaScript DOM**, w którym zobaczysz, jak krok po kroku korzystać z selektorów i manipulować elementami na stronie. Jeśli zastanawiasz się, **jak działa DOM w JavaScript** i co możesz z nim zrobić, jesteś w dobrym miejscu.\n\nDOM – czyli **Document Object Model** – to struktura, w której przeglądarka „widzi” naszą stronę. To właśnie dzięki niej możemy przy pomocy kodu:\n\n- dynamicznie zmieniać treści (np. licznik w koszyku),\n\n- budować **animacje w JS** i efekty wizualne,\n\n- ukrywać, pokazywać i dodawać elementy na żywo (np. rozwijane menu),\n\n- reagować na kliknięcia użytkownika,\n\n- modyfikować style i klasy CSS bez przeładowania strony.\n\nTen **JavaScript DOM tutorial** pokaże Ci m.in.:\n\n- jak zaznaczać elementy przy użyciu querySelector, getElementById, getElementsByClassName i innych selektorów DOM,\n\n- jak tworzyć dynamiczne elementy (createElement, appendChild),\n\n- jak budować **interaktywne funkcje w JavaScript**,\n\n- jak podpiąć proste efekty i animacje JS do kliknięć i akcji użytkownika.\n\nTo nie jest tylko teoria – pokażę Ci **działające przykłady kodu JS**, które możesz od razu przetestować w swojej przeglądarce.\n\nPrzykład jak działa DOM i co możesz robić dzięki selektorom. Jak myśleć o DOM?  Prosty przykład, który całkowicie rozjaśnia temat\n\n**Wyobraź sobie, że masz prosty HTML**\n\nStrona zawiera elementy ( tagi )  html head body i w body tagi np H1 Jestem Tytułem i pod nim P jestem paragrafem i rozwijam w tym akapicie tytuł do DOM ( Data Object Model ) pozwoli zrobić taką akcję uchwyć za h1 i nadaj mu po najechaniu kolor z czarnego na niebieski\n\n<body>\n  <h1>Jestem tytułem</h1>\n  <p>Jestem paragrafem i rozwijam w tym akapicie tytuł</p>\n</body>\n\n**DOM (Document Object Model)** pozwala nam „złapać” te elementy za pomocą JavaScriptu i coś z nimi zrobić.\n\nNa przykład: chcesz, żeby tytuł h1 zmieniał kolor, gdy ktoś na niego najedzie kursorem.\n\nDzięki DOM możemy napisać prostą funkcję w JavaScript:\n\nconst header = document.querySelector(\"h1\");\n\nheader.addEventListener(\"mouseover\", () => {\n  header.style.color = \"blue\";\n});\n\nheader.addEventListener(\"mouseout\", () => {\n  header.style.color = \"black\";\n});\n\nI co się dzieje? Strona żyje! Kiedy użytkownik najedzie myszką na nagłówek, kolor zmienia się z czarnego na niebieski. DOM daje Ci **pełną kontrolę nad tym, jak strona reaguje na użytkownika**.\n\nTego właśnie dotyczy **manipulacja DOM JS** – łapanie elementów, zmienianie ich wyglądu, zawartości lub reakcji na kliknięcia. To fundament interaktywnych stron, gier, animacji JS i dynamicznych interfejsów.\n\n## 2. Selekcja elementów\n\nJavaScript oferuje kilka sposobów na wybieranie elementów z DOM:\n\n### 2.1. getElementById (Selekcja po ID)\n\n// Wybieranie elementu po jego ID\nconst element = document.getElementById('myElement');\nconsole.log(element);\n\n### 2.2. getElementsByClassName (Selekcja po klasie)\n\n// Wybieranie wszystkich elementów z daną klasą (zwraca kolekcję)\nconst elements = document.getElementsByClassName('myClass');\nconsole.log(elements);\n\n### 2.3. getElementsByTagName (Selekcja po tagu)\n\n// Wybieranie wszystkich elementów o danym tagu (np. wszystkie <p>)\nconst paragraphs = document.getElementsByTagName('p');\nconsole.log(paragraphs);\n\n### 2.4. querySelector (Pierwszy element pasujący do selektora CSS)\n\n// Wybieranie pierwszego elementu, który pasuje do selektora CSS\nconst firstParagraph = document.querySelector('p');\nconsole.log(firstParagraph);\n\n2.5 Można używać bardziej złożonych selektorów\n\nconst elementById = document.querySelector('#myElement');\nconst elementByClass = document.querySelector('.myClass');\nconsole.log(elementById, elementByClass);\n\n### 2.6 querySelectorAll (Wszystkie elementy pasujące do selektora CSS)\n\n// Wybieranie wszystkich elementów pasujących do selektora CSS\nconst allParagraphs = document.querySelectorAll('p');\nconsole.log(allParagraphs);\n\n// Selekcja bardziej złożona\nconst allDivsInContainer = document.querySelectorAll('#container div');\nconsole.log(allDivsInContainer);\n\n## 3. Manipulacja DOM w JavaScript – Tworzenie Dynamicznych Stron\n\n![ JavaScript coding ](https://opengateweb.com/wp-content/uploads/2025/04/ChatGPT-Image-2-kwi-2025-01_55_56-1118x745.png)\n\nJavaScript to język, który daje życie stronom internetowym! Dzięki niemu możemy nie tylko wyświetlać statyczne treści, ale także dynamicznie je zmieniać, reagować na interakcje użytkownika i budować nowoczesne aplikacje webowe.\n\nAby to osiągnąć, musimy zrozumieć **DOM (Document Object Model)** – czyli sposób, w jaki przeglądarka widzi strukturę HTML strony. DOM zamienia kod HTML w **drzewo obiektów**, dzięki czemu JavaScript może je modyfikować, usuwać lub dodawać nowe elementy w czasie rzeczywistym.\n\n**Przykłady zastosowania manipulacji DOM w JavaScript:**Aktualizacja treści w czasie rzeczywistym (np. liczba lajków na przycisku)Tworzenie efektów wizualnych i animacjiObsługa dynamicznych formularzy i interakcji użytkownika Tworzenie gier i aplikacji webowych\n\nTeraz zobaczmy, jak możemy manipulować DOM w JavaScript i jakie ciekawe rzeczy możemy zrobić! \n\n## **Lepsza praktyka – zamiast stylów w JavaScript, użyj klasy CSS**\n\nWe wprowadzeniu i pierwszym  przykładzie manipulowaliśmy style.color bezpośrednio w kodzie JS.  Jest to poprawne, ale **lepszym rozwiązaniem** jest przypisywanie klas CSS – oddzielamy wtedy logikę (JS) od wyglądu (CSS), co czyni kod bardziej przejrzystym i łatwiejszym w utrzymaniu.\n\n1. Definiujemy klasę CSS w <style> lub osobnym pliku .css\n\n.highlighted {\n  color: blue;\n}\n\n2. JavaScript – dodajemy/ usuwamy klasę przy najechaniu myszką\n\nconst header = document.querySelector(\"h1\");\n\nheader.addEventListener(\"mouseover\", () => {\n  header.classList.add(\"highlighted\");\n});\n\nheader.addEventListener(\"mouseout\", () => {\n  header.classList.remove(\"highlighted\");\n});\n\nTen sam efekt  zastosowania **JS DOM**– ale czyściej. Dlaczego to rozwiązanie jest lepsze?\n\n- Możesz szybko zmienić styl w CSS bez ruszania JS\n\n- Unikasz mieszania logiki z wyglądem\n\n- Łatwiej ponownie użyć klas w innych miejscach\n\nTakie podejście to podstawa profesjonalnego front-endu, nawet w prostych projektach. Przy okazji poznajesz dość często używaną konstrukcje **.addEventListener**\n\n## 4. **Co to jest DOM i jak JavaScript go wykorzystuje?**\n\nWyobraź sobie, że HTML to szkielety budynku, a CSS to jego kolor i styl. JavaScript to robot, który może zmieniać wygląd budynku, dodawać okna, drzwi, a nawet przesuwać ściany.\n\nKażdy element na stronie – nagłówek, paragraf, obrazek czy przycisk – jest w DOM reprezentowany jako **obiekt**, który możemy modyfikować przy pomocy JavaScriptu.\n\nDOM wygląda jak drzewo, gdzie głównym elementem jest <html>, a jego gałęziami są <head> i <body>. Każdy kolejny element, jak <p>, <h1>, <div>, to kolejne węzły drzewa.\n\n🎯 **Przykład wizualizacji drzewa DOM**:\n\nphp-templateKopiujEdytuj<html>\n ├── <head>\n │   ├── <title> Moja Strona </title>\n ├── <body>\n │   ├── <h1> Nagłówek </h1>\n │   ├── <p> Jakiś tekst </p>\n │   ├── <button> Kliknij mnie </button>\n\nDzięki JavaScript możemy manipulować tym drzewem – dodawać nowe elementy, zmieniać treści, a nawet usuwać elementy JS DOM! \n\n## 5. **Zmiana treści i atrybutów elementów**\n\nNajprostsza manipulacja DOM to zmiana tekstu lub atrybutów elementów.\n\n**Przykład – zmiana nagłówka i linku:**\n\ndocument.getElementById(\"myTitle\").textContent = \"Nowy, dynamiczny nagłówek!\";\ndocument.getElementById(\"myLink\").href = \"https://developer.mozilla.org\";\ndocument.getElementById(\"myImage\").src = \"new-image.jpg\";\n\n**HTML do testowania:**\n\n<h2 id=\"myTitle\">Stary tytuł</h2>\n<a id=\"myLink\" href=\"#\">Kliknij tutaj</a>\n<img id=\"myImage\" src=\"old-image.jpg\" alt=\"Obrazek\">\n\nJavaScript sprawia, że strona zmienia się **bez potrzeby przeładowania!**\n\n## 6. **Tworzenie nowych elementów w DOM**\n\nChcesz dodać nowy paragraf lub przycisk w locie? JavaScript to umożliwia!\n\n**Przykład – dynamiczne dodawanie elementu:**\n\nlet newParagraph = document.createElement(\"p\");\nnewParagraph.textContent = \"To jest dynamicznie dodany paragraf!\";\ndocument.body.appendChild(newParagraph);\n\nDzięki temu możemy budować dynamiczne listy, generować karty produktów czy dodawać nowe wiadomości w czacie użytkownika.\n\n## 7. **Zmiana stylów i klas CSS**\n\nMożemy nie tylko zmieniać treści, ale też **wygląd elementów** poprzez style CSS.\n\n**Przykład – zmiana koloru i rozmiaru tekstu:**\n\nlet newParagraph = document.createElement(\"p\");\nnewParagraph.textContent = \"To jest dynamicznie dodany paragraf!\";\ndocument.body.appendChild(newParagraph);\n\n**Lepszy sposób – dodawanie klas CSS:**\n\ndocument.getElementById(\"box\").classList.add(\"highlight\");\n\n**CSS:**\n\ncssKopiujEdytuj.highlight {\n    background-color: yellow;\n    border: 2px solid red;\n}\n\nZamiast manipulować stylami w JavaScript, lepiej dodawać/usunąć klasy – to bardziej wydajne i czytelne!\n\n## 8. **Obsługa zdarzeń użytkownika – interaktywne przyciski!**\n\nJavaScript pozwala reagować na działania użytkownika, np. kliknięcia myszką, najechanie kursorem czy naciśnięcie klawisza.\n\n**Przykład – reakcja na kliknięcie przycisku:**\n\ndocument.getElementById(\"myButton\").addEventListener(\"click\", function() {\n    alert(\"Kliknięto przycisk!\");\n});\n\n**HTML do testowania:**\n\n<button id=\"myButton\">Kliknij mnie!</button>\n\nMożemy dzięki temu tworzyć menu, interaktywne formularze czy nawet gry w JavaScript!\n\n## 9. **Usuwanie elementów z DOM**\n\nCzasem chcemy ukryć lub całkowicie usunąć element ze strony.\n\n**Przykład – usunięcie elementu:**\n\ndocument.getElementById(\"myParagraph\").remove();\n\n **HTML do testowania:**\n\n<p id=\"myParagraph\">To zostanie usunięte!</p>\n\nMożna to wykorzystać np. do usuwania zadań na liście „to-do” lub zamykania okienek pop-up.\n\n## 10. Najczęstsze pytania i problemy z DOM – Q&A\n\n### **Czym właściwie jest DOM** - **js dom.**\n\nDOM (Document Object Model) to reprezentacja strony internetowej w pamięci przeglądarki. Dzięki niej JavaScript może w czasie rzeczywistym:\n\n- zmieniać teksty i obrazy,\n\n- reagować na kliknięcia użytkownika,\n\n- dodawać lub usuwać elementy,\n\n- kontrolować strukturę całej strony.\n\nWyobraź sobie, że HTML to konstrukcja z klocków LEGO – DOM to mapa tych klocków, którą może modyfikować Twój kod.\n\n### **Jak zacząć naukę DOM w JavaScript** -** *javascript DOM tutorial***\n\nNajlepiej zacząć od prostych ćwiczeń – uchwycenia elementów za pomocą getElementById czy querySelector, a następnie zmiany ich treści lub stylu. DOM to struktura, która pozwala programiście „zobaczyć” elementy HTML jako obiekty. Dobry tutorial powinien pokazywać, jak:\n\n- selekcjonować elementy (różnymi metodami),\n\n- reagować na zdarzenia (np. kliknięcia),\n\n- modyfikować strukturę strony w czasie rzeczywistym (dodawać, usuwać, zmieniać treść i atrybuty).\n\nPraktyczne przykłady znajdziesz w Post #45 – JS DOM Selections i proste funkcje, gdzie pokazujemy manipulację nagłówkiem, tworzenie nowych paragrafów i przypisywanie klas.\n\n### Co to znaczy manipulować DOM w JavaScript - **manipulacja DOM JS**\n\nManipulacja DOM to każda akcja wykonywana w JavaScript, która zmienia stronę bez jej przeładowania. Może to być:\n\n- dynamiczne dodanie listy produktów po kliknięciu przycisku,\n\n- zmiana treści nagłówka po wpisaniu czegoś w formularz,\n\n- przypisanie nowej klasy CSS do zaznaczonego elementu.\n\nTo właśnie ta technika sprawia, że strony są „żywe”. W Post #45 pokazujemy manipulację z użyciem metod createElement, appendChild, textContent i classList. Dla tych, którzy chcą pójść dalej, polecamy [Post #46 – Anime.js i animacje DOM](https://opengateweb.com/posts/46-anime), gdzie te same elementy DOM służą jako podstawa do efektów wizualnych.\n\n### Jak działa DOM w JavaScript – czyli co widzi przeglądarka - **jak działa DOM w JavaScript**\n\nKiedy przeglądarka ładuje dokument HTML, tworzy z niego wewnętrzne drzewo obiektów – DOM. JavaScript może to drzewo czytać, modyfikować i rozszerzać. Każdy element HTML – h1, p, div – staje się osobnym obiektem, który można „złapać” i zmienić jego właściwości.\n\nTo jak cyfrowy model budynku – JavaScript to inżynier, który przestawia drzwi, dodaje okna i zmienia kolor ścian bez potrzeby budowania wszystkiego od nowa. Jeśli chcesz zobaczyć taki przykład w praktyce, zobacz fragment z h1, który zmienia kolor po najechaniu – dokładnie to opisaliśmy w Post #45.\n\n### Jakie są różnice między getElementById a querySelector?\n\nMetodaTyp selektoraZwracagetElementByIdtylko idjeden elementquerySelectordowolny selektorpierwszy pasujący elementquerySelectorAlldowolny selektorkolekcję wszystkich\n\nW praktyce querySelector jest bardziej uniwersalny – możesz go używać z klasami, tagami, a nawet złożonymi selektorami CSS (#header .logo p).\n\n### Dlaczego mój kod getElementById zwraca null?\n\nNajczęstsze przyczyny:\n\n- Element o tym ID nie istnieje w HTML w momencie wykonywania skryptu.\n\n- Skrypt jest umieszczony **przed** elementem w strukturze DOM – warto używać DOMContentLoaded.\n\n- Literówka w ID – JavaScript jest czuły na wielkość liter.\n\nPrzykład poprawnej struktury:\n\n## **Podsumowanie – Co dzięki temu zyskujemy?**\n\n Tworzymy **dynamiczne i interaktywne** strony internetowe Reagujemy na **akcje użytkownika**Zmieniamy treść i wygląd strony **bez przeładowania**Tworzymy **nowoczesne aplikacje webowe**\n\nJavaScript i manipulacja DOM to **klucz do nowoczesnego front-endu**! \n\nJeśli chcesz budować **interaktywne strony i aplikacje**, to musisz opanować manipulację DOM – a teraz masz solidne podstawy, by to robić! \n\n### Chcesz iść dalej? Zobacz, jak to robią biblioteki JavaScript\n\nTo, co właśnie poznałeś – selekcje i manipulacje DOM w czystym JavaScript – to podstawa. Ale warto wiedzieć, że wokół tego mechanizmu powstały całe **biblioteki animacyjne**, które robią jeszcze więcej, szybciej i efektowniej.\n\n📌 W artykule [**Post #46 – Biblioteki do animacji z elementami w JavaScript – Anime.js** ](https://opengateweb.com/posts/46-anime/)pokazujemy, **jak łączyć DOM z efektami wizualnymi**: płynne przejścia, sekwencje animacji, reakcje na kliknięcia i wiele więcej.\n",
+          "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+          "sourceId": "940",
+          "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded B2 single-source REWRITE. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under explicit B2 human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All PHP blocks are structured,\nstandalone examples with initialized variables, exact expected stdout and diagnostics. No code fences hidden in prose.\nExplain if/elseif/else, strict comparisons, scalar truthiness including \"0\", logical operators/precedence,\nswitch vs short justified match contrast, four loop forms, break/continue and return in a named function.\nNo ticks, include/require tutorial, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "96ac907769a611fccc9d461efee1bf94160e35397b9c9df9da6e4f93a7f32119",
+  "schemaVersion": 1
+}

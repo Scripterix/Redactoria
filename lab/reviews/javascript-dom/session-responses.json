@@ -1,0 +1,72 @@
+{
+  "critic": {
+    "requestHash": "a1e9c9578a75fce7e2dd5cf1cff75558967bc0f4f95ff71004d8c62136ca05b3",
+    "response": {
+      "action": "REVIEW",
+      "checks": [
+        {
+          "criterion": "FACTUAL_ACCURACY",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "SOURCE_ALIGNMENT",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "CODE_CORRECTNESS",
+          "note": "Każdy finalny przykład ma zgodny hash i przeszedł właściwe wykonanie Node lub kontrolowane Chromium.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "RESEARCH_COVERAGE",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "STRUCTURE",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "CLARITY",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "DUPLICATION",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "SECURITY",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "VERSION_CLAIMS",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "UNSUPPORTED_CLAIMS",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        }
+      ],
+      "issues": [],
+      "limitations": [
+        "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; nie jest zgodą na publikację ani testem innych silników."
+      ],
+      "summary": "Draft pozostaje w zatwierdzonym zakresie, koryguje wskazane problemy legacy, wiąże twierdzenia z pakietem i ma przechodzące wykonanie wszystkich przykładów.",
+      "verdict": "PASS"
+    }
+  },
+  "provenance": {
+    "description": "B3 full Critic pass recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1
+}

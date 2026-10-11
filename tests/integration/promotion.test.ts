@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { parse } from 'yaml';
 import { promote, renderPromotedArticle } from '../../engine/promotion/gate.ts';
-import { parsePromotionArguments, PublicationDecisionSchema } from '../../engine/promotion/contract.ts';
+import { AnyPublicationCandidateSchema, parsePromotionArguments, PublicationDecisionSchema } from '../../engine/promotion/contract.ts';
 import { hashBytes } from '../../engine/core/editorial-context.ts';
 import { stableJson } from '../../engine/core/serialization.ts';
 import { inputFixture, textFile, jsonFile } from '../fixtures/editorial.ts';
@@ -170,4 +170,12 @@ describe('Promotion CLI arguments', () => {
  it.each([[], ['--candidate', candidateRef], ['--candidate'], ['--candidate', '../source.md', '--decision', decisionRef],
   ['--candidate', candidateRef, '--decision', decisionRef, '--publish', 'yes'],
   ['--candidate', candidateRef, '--candidate', candidateRef, '--decision', decisionRef]].map(args => ({args})))('rejects missing, escaping, duplicate or expanded flags: $args', ({args}) => expect(() => parsePromotionArguments(args)).toThrow());
+});
+
+describe('B3 remains outside the Promotion Gate', () => {
+ it('rejects a schema 3 JavaScript candidate until a later milestone explicitly expands promotion', async () => {
+  const candidate = JSON.parse(await readFile(join(process.cwd(), 'lab/candidates/javascript-if-else/article.json'), 'utf8'));
+  expect(candidate).toMatchObject({ schemaVersion: 3, approvedForPublication: false, published: false });
+  expect(() => AnyPublicationCandidateSchema.parse(candidate)).toThrow();
+ });
 });

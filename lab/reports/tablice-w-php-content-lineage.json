@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "BACKFILLED",
+  "articleId": "tablice-w-php",
+  "candidateRef": "lab/candidates/php-arrays/article.json",
+  "sourceCandidateHash": "b2c91233ed119451850ba018802fb10b6d0ecc9a747788ff8e30b2f2421f62e2",
+  "promotionAuditRef": "lab/reports/tablice-w-php-promotion.json",
+  "promotedContentHash": "3b2435699eee3cad7f9ded0cbfd6bbef269717b0e28ad9cba7f2a19ff529d19e",
+  "currentContentRef": "content/articles/tablice-w-php.md",
+  "currentContentHash": "c4111bad6f943f9b19568f0b4474935f3fa510a02fa0f577c9a05031af742b38",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "recordType": "BACKFILLED_LINEAGE_RECORD",
+      "articleId": "tablice-w-php",
+      "previousContentHash": "3b2435699eee3cad7f9ded0cbfd6bbef269717b0e28ad9cba7f2a19ff529d19e",
+      "newContentHash": "117d4bb40a436354584cd9c91eb38ce98a6d2dd50f23cf4c1215548e2ab2617b",
+      "changeType": "METADATA_ONLY",
+      "reason": "Correct current CONTENT byline to Scripterix and record the website milestone update date.",
+      "authorizedBy": "human",
+      "authorizationRef": "docs/plans/completed/009-reading-time-and-website-utilities.md",
+      "authorizationHash": "76eecfd736b85269374a35f44069528f318e78ccb45d11c82219a75ac206ed74",
+      "timestamp": "2026-10-10T17:02:38Z",
+      "sourceCandidateHash": "b2c91233ed119451850ba018802fb10b6d0ecc9a747788ff8e30b2f2421f62e2",
+      "promotionAuditRef": "lab/reports/tablice-w-php-promotion.json",
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "replacementReview": null,
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "updated: 2026-10-09T00:00:00.000Z",
+            "to": "updated: 2026-10-10T00:00:00.000Z"
+          },
+          {
+            "from": "  name: Redactoria",
+            "to": "  name: Scripterix"
+          }
+        ]
+      },
+      "backfilled": true,
+      "notes": [
+        "The logical intermediate version is reconstructed deterministically because both authorized changes entered Git in one checkpoint commit."
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "recordType": "BACKFILLED_LINEAGE_RECORD",
+      "articleId": "tablice-w-php",
+      "previousContentHash": "117d4bb40a436354584cd9c91eb38ce98a6d2dd50f23cf4c1215548e2ab2617b",
+      "newContentHash": "c4111bad6f943f9b19568f0b4474935f3fa510a02fa0f577c9a05031af742b38",
+      "changeType": "TECHNICAL_CLEANUP",
+      "reason": "Remove exactly two obsolete reader-facing LAB/draft notes while preserving the Critic-PASS substance.",
+      "authorizedBy": "human",
+      "authorizationRef": "docs/plans/completed/010-pagefind-search-public-checkpoint.md",
+      "authorizationHash": "56c4d61800769544de3c13b68c90377ec8e23ad0acb16f5c6cc500ba61e72506",
+      "timestamp": "2026-10-10T17:02:38Z",
+      "sourceCandidateHash": "b2c91233ed119451850ba018802fb10b6d0ecc9a747788ff8e30b2f2421f62e2",
+      "promotionAuditRef": "lab/reports/tablice-w-php-promotion.json",
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "replacementReview": null,
+      "transformation": {
+        "kind": "remove-body-exact",
+        "removals": [
+          "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zaakceptowany Research Packet i obowiązkowe uzupełnienie runtime. Mapa evidence oraz provenance znajdują się w article.json.\n\n",
+          "- To draft, nie zatwierdzona publikacja. Deklarowane wyniki nowych bloków wymagają osobnej rzeczywistej weryfikacji; jej zapis, jeśli powstanie, znajduje się w code-execution.json.\n"
+        ]
+      },
+      "backfilled": true,
+      "notes": [
+        "Plan 010 and the existing public-article unit test identify the two exact removals; no semantic article statement or code example changed."
+      ]
+    }
+  ],
+  "notes": [
+    "This separate backfill does not replace or modify the original promotion audit.",
+    "The original promoted bytes are reproducible from the frozen candidate and publication decision and match the promotion audit hash.",
+    "Both logical records map to the same historical checkpoint commit timestamp; no unrecorded chronological claim is inferred."
+  ]
+}

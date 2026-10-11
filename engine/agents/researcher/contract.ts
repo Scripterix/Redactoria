@@ -22,12 +22,23 @@ export const ProbeSchema = z.strictObject({
 	id: text, description: text, phpVersion: text, code: text, codeHash: sha,
 	result: z.unknown(), diagnostics: z.array(z.strictObject({ level: z.number().int(), message: text })),
 });
-export const ResearchBundleSchema = z.strictObject({
+export const RuntimeProbeSchema = z.strictObject({
+	id: text, description: text, runtimeId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/), runtimeVersion: text,
+	code: text, codeHash: sha, result: z.unknown(), diagnostics: z.array(text),
+});
+export const ResearchBundleV1Schema = z.strictObject({
 	schemaVersion: z.literal(1), topicSlug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
 	asOfDate: z.iso.date(), provenance: text,
 	questions: z.array(z.strictObject({ id: text, section: text, question: text, cartographerFindingIds: z.array(text) })).min(1),
 	sources: z.array(DocumentSchema).min(1), probes: z.array(ProbeSchema),
 });
+export const ResearchBundleV2Schema = z.strictObject({
+	schemaVersion: z.literal(2), topicSlug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+	asOfDate: z.iso.date(), provenance: text,
+	questions: z.array(z.strictObject({ id: text, section: text, question: text, cartographerFindingIds: z.array(text) })).min(1),
+	sources: z.array(DocumentSchema).min(1), probes: z.array(RuntimeProbeSchema),
+});
+export const ResearchBundleSchema = z.union([ResearchBundleV1Schema, ResearchBundleV2Schema]);
 export const ApprovedMergeDecisionSchema = MergeProposalSchema.extend({
 	status: z.literal('approved'), approvedBy: z.literal('human'), approvedAt: z.iso.datetime().optional(), nextStep: z.literal('research'),
 });
@@ -46,7 +57,10 @@ const finding = z.strictObject({
 const instruction = z.strictObject({ instruction: text, findingIds: ids });
 export const ResearchAnalysisSchema = z.strictObject({
 	action: z.literal('RESEARCH_PACKET'), topic: text,
-	environment: z.strictObject({ phpVersionScope: text, asOfDate: z.iso.date(), evidence: z.array(docEvidence).min(1) }),
+	environment: z.union([
+		z.strictObject({ phpVersionScope: text, asOfDate: z.iso.date(), evidence: z.array(docEvidence).min(1) }),
+		z.strictObject({ runtimeScope: text, asOfDate: z.iso.date(), evidence: z.array(docEvidence).min(1) }),
+	]),
 	verifiedFacts: z.array(finding.extend({ status: z.literal('verified'), evidence: z.array(docEvidence).min(1) })).min(1),
 	outdatedClaims: z.array(finding), incorrectClaims: z.array(finding), ambiguousClaims: z.array(finding), securityNotes: z.array(finding),
 	codeReview: z.array(finding.extend({
@@ -67,7 +81,7 @@ export const ResearchPacketSchema = ResearchAnalysisSchema.extend({
 	sourceRegister: z.array(RegisteredSourceSchema).min(1),
 	analysisContext: z.strictObject({ inputHash: sha, requestHash: sha, decisionHash: sha, cartographyHash: sha, researchBundleHash: sha,
 		topicSlug: text, model: z.strictObject({ adapter: text, model: text, mode: z.enum(['imported-session-analysis', 'live', 'test']) }),
-		fullReadCount: z.union([z.literal(2), z.literal(1)]), probes: z.array(ProbeSchema.omit({ code: true })) }),
+		fullReadCount: z.union([z.literal(2), z.literal(1)]), probes: z.array(z.union([ProbeSchema.omit({ code: true }), RuntimeProbeSchema.omit({ code: true })])) }),
 });
 export type ResearchPacket = z.infer<typeof ResearchPacketSchema>;
 export type Finding = ResearchAnalysis['verifiedFacts'][number] | ResearchAnalysis['ambiguousClaims'][number];

@@ -4,7 +4,8 @@ import { DeepReadSchema } from '../agents/cartographer/contract.ts';
 import { FocusedMergeResultSchema } from '../agents/cartographer/focused-merge.ts';
 import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../agents/cartographer/focused-article.ts';
 import { validateB2Authorization } from './b2-authorization.ts';
-import { ApprovedMergeDecisionSchema, ResearchPacketSchema, ProbeSchema } from '../agents/researcher/contract.ts';
+import { validateB3Authorization } from './b3-authorization.ts';
+import { ApprovedMergeDecisionSchema, ResearchPacketSchema, ProbeSchema, RuntimeProbeSchema } from '../agents/researcher/contract.ts';
 import { findings } from '../agents/researcher/validation.ts';
 import { hashJson, stableJson } from './serialization.ts';
 
@@ -13,6 +14,10 @@ export const Sha = z.string().regex(/^[a-f0-9]{64}$/);
 export const Slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 export const LabRef = z.string().regex(/^lab\/(decisions|cartography|research|drafts|reviews|inventory)\/[a-zA-Z0-9/_-]+\.(json|md)$/);
 export const PhpVersions = z.tuple([z.literal('8.4'), z.literal('8.5')]);
+export const RuntimeTargetSchema = z.strictObject({
+ id: Slug, kind: z.enum(['node', 'browser']), version: Text,
+});
+export const RuntimeTargetsSchema = z.array(RuntimeTargetSchema).min(1).max(2);
 export const ModelIdentitySchema = z.strictObject({ adapter: Text, model: Text, mode: z.enum(['imported-session-analysis', 'live', 'test']) });
 const target = ApprovedMergeDecisionSchema.shape.targets;
 export const HumanResearchApprovalSchema = z.strictObject({
@@ -22,7 +27,10 @@ export const HumanResearchApprovalSchema = z.strictObject({
  provenance: ModelIdentitySchema,
  evidence: z.strictObject({ humanApproval: Text, artifacts: z.array(z.strictObject({ path: LabRef, sha256: Sha })).min(1),
   runtimeVerification: z.strictObject({ ref: LabRef, status: z.literal('PASS'),
-   versions: z.array(z.strictObject({ version: Text, status: z.literal('PASS'), assertions: z.number().int().positive(), probes: z.number().int().positive() })).length(2) }) }),
+   versions: z.array(z.union([
+    z.strictObject({ version: Text, status: z.literal('PASS'), assertions: z.number().int().positive(), probes: z.number().int().positive() }),
+    z.strictObject({ runtimeId: Slug, version: Text, status: z.literal('PASS'), assertions: z.number().int().positive(), probes: z.number().int().positive() }),
+   ])).min(1).max(2) }) }),
  requiredAddenda: z.array(z.strictObject({ ref: LabRef, findingId: Text, instruction: Text })),
  resolvedQuestionIds: z.array(Text), remainingWriterBoundary: Text,
 });
@@ -31,12 +39,23 @@ export const B2ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ sch
  validatedAt: z.iso.datetime(), humanReviewedPacket: z.literal(false),
  authorizationRef: LabRef, authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
 });
-export const ResearchApprovalSchema = z.union([HumanResearchApprovalSchema, B2ResearchAcceptanceSchema]);
-export const TopicConfigSchema = z.strictObject({
+export const B3ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ schemaVersion: true, status: true, approvedBy: true, approvedAt: true, targets: true }).extend({
+ schemaVersion: z.literal(3), status: z.literal('validated'), approvedBy: z.literal('session-review-under-human-authorization'),
+ validatedAt: z.iso.datetime(), humanReviewedPacket: z.literal(false),
+ authorizationRef: z.literal('lab/decisions/b3-authorization.json'), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
+});
+export const ResearchApprovalSchema = z.union([HumanResearchApprovalSchema, B2ResearchAcceptanceSchema, B3ResearchAcceptanceSchema]);
+export const TopicConfigV1Schema = z.strictObject({
  schemaVersion: z.literal(1), topic: Slug, sourceDecision: LabRef, researchApproval: LabRef,
  researchPacket: LabRef, runtimeVerification: LabRef, targetPhpVersions: PhpVersions,
  audience: Text, requiredCoverage: z.array(Slug).min(1),
 });
+export const TopicConfigV2Schema = z.strictObject({
+ schemaVersion: z.literal(2), topic: Slug, sourceDecision: LabRef, researchApproval: LabRef,
+ researchPacket: LabRef, runtimeVerification: LabRef, targetRuntimes: RuntimeTargetsSchema,
+ audience: Text, requiredCoverage: z.array(Slug).min(1),
+});
+export const TopicConfigSchema = z.union([TopicConfigV1Schema, TopicConfigV2Schema]);
 export const EditorialInputSchema = z.strictObject({
  config: TopicConfigSchema, artifacts: z.array(z.strictObject({ path: LabRef, contents: z.string().max(1500000) })).min(1).max(24),
  sources: z.array(DeepReadSchema).min(1).max(2),
@@ -47,6 +66,11 @@ export type EvidenceRef = z.infer<typeof EvidenceRefSchema>;
 export function hashBytes(value: string | Uint8Array) { return createHash('sha256').update(value).digest('hex'); }
 export function unique(values: string[], label: string) {
  if (new Set(values).size !== values.length) throw new Error('Duplicate ' + label + '.');
+}
+export function runtimeTargets(config: z.infer<typeof TopicConfigSchema>) {
+ return config.schemaVersion === 1
+  ? config.targetPhpVersions.map(version => ({ id: 'php-' + version.replace('.', '-'), kind: 'node' as const, version }))
+  : config.targetRuntimes;
 }
 export function editorialBasis(raw: unknown) {
  const input = EditorialInputSchema.parse(raw);
@@ -68,12 +92,18 @@ export function editorialBasis(raw: unknown) {
  if (decision.action === 'MERGE') {
   if (approval.schemaVersion !== 1 || input.sources.length !== 2 || cartography.task !== 'MERGE') throw new Error('MERGE requires human packet approval and two full sources.');
  } else {
-  if (approval.schemaVersion !== 2 || input.config.topic !== 'php-control-flow' || input.sources.length !== 1
+  if (approval.schemaVersion === 1 || input.sources.length !== 1
    || cartography.task !== 'SINGLE_ARTICLE' || cartography.action !== decision.action
    || approval.authorizationRef !== decision.authorizationRef || approval.authorizationHash !== decision.authorizationHash
    || !approval.evidence.artifacts.some(item => item.path === approval.authorizationRef && item.sha256 === approval.authorizationHash)) throw new Error('Invalid bounded single-source acceptance.');
-  validateB2Authorization(artifact(approval.authorizationRef), approval.authorizationHash, decision.targets);
-  if (research.unresolvedQuestions.length || research.codeReview.some(item => item.verification === 'needs-review')) throw new Error('B2 research must be resolved before Writer.');
+  if (approval.schemaVersion === 2) {
+   if (decision.schemaVersion !== 2 || input.config.topic !== 'php-control-flow') throw new Error('Invalid B2 topic/decision.');
+   validateB2Authorization(artifact(approval.authorizationRef), approval.authorizationHash, decision.targets);
+  } else {
+   if (decision.schemaVersion !== 3 || decision.topic !== input.config.topic) throw new Error('Invalid B3 topic/decision.');
+   validateB3Authorization(artifact(approval.authorizationRef), approval.authorizationHash, input.config.topic, decision.targets);
+  }
+  if (research.unresolvedQuestions.length || research.codeReview.some(item => item.verification === 'needs-review')) throw new Error('Bounded research must be resolved before Writer.');
  }
  if (approval.packetRef !== input.config.researchPacket || approval.packetHash !== hashBytes(artifact(approval.packetRef))
   || approval.requestHash !== research.analysisContext.requestHash || approval.inputHash !== research.analysisContext.inputHash
@@ -92,20 +122,40 @@ export function editorialBasis(raw: unknown) {
    throw new Error('Unknown, changed or truncated source.');
   }
  }
- const runtime = z.object({
+ const phpRuntime = z.looseObject({
   schemaVersion: z.literal(1), status: z.literal('PASS'), packetHash: Sha,
-  runs: z.array(z.object({ family: z.enum(['8.4', '8.5']), version: Text, status: z.literal('PASS'),
+  runs: z.array(z.looseObject({ family: z.enum(['8.4', '8.5']), version: Text, status: z.literal('PASS'),
    execution: z.literal('actual-local-cli'), executableHash: Sha, records: z.array(ProbeSchema).min(1),
-   checks: z.array(z.object({ status: z.literal('PASS'), expected: z.unknown(), actual: z.unknown() })).min(1) })).length(2),
-  errata: z.array(z.object({ id: Text, claim: Text, source: LabRef, evidenceId: Text, recommendation: Text })),
- }).parse(JSON.parse(artifact(input.config.runtimeVerification)));
+   checks: z.array(z.looseObject({ status: z.literal('PASS'), expected: z.unknown(), actual: z.unknown() })).min(1) })).length(2),
+  errata: z.array(z.looseObject({ id: Text, claim: Text, source: LabRef, evidenceId: Text, recommendation: Text })),
+ });
+ const jsRuntime = z.strictObject({
+  schemaVersion: z.literal(2), status: z.literal('PASS'), packetHash: Sha,
+  runs: z.array(z.strictObject({ runtimeId: Slug, kind: z.enum(['node', 'browser']), version: Text, status: z.literal('PASS'),
+   execution: z.enum(['actual-local-cli', 'controlled-browser']), executableHash: Sha.nullable(), records: z.array(RuntimeProbeSchema).min(1),
+   checks: z.array(z.strictObject({ id: Text, status: z.literal('PASS'), expected: z.unknown(), actual: z.unknown() })).min(1) })).min(1).max(2),
+  errata: z.array(z.strictObject({ id: Text, claim: Text, source: LabRef, evidenceId: Text, recommendation: Text })),
+  limitations: z.array(Text).min(1),
+ });
+ const runtime = z.union([phpRuntime, jsRuntime]).parse(JSON.parse(artifact(input.config.runtimeVerification)));
  if (approval.evidence.runtimeVerification.ref !== input.config.runtimeVerification || runtime.packetHash !== approval.packetHash) throw new Error('Runtime does not match approved packet.');
- unique(runtime.runs.map(run => run.family), 'runtime families');
- for (const run of runtime.runs) {
-  const approved = approval.evidence.runtimeVerification.versions.find(item => item.version === run.version);
-  if (!run.version.startsWith(run.family + '.') || !approved || approved.assertions !== run.checks.length
-   || approved.probes !== run.records.length || run.checks.some(check => stableJson(check.actual) !== stableJson(check.expected))
-   || run.records.some(record => record.phpVersion !== run.version || hashBytes(record.code) !== record.codeHash)) throw new Error('Invalid runtime evidence.');
+ if (runtime.schemaVersion === 1) {
+  unique(runtime.runs.map(run => run.family), 'runtime families');
+  for (const run of runtime.runs) {
+   const approved = approval.evidence.runtimeVerification.versions.find(item => item.version === run.version && !('runtimeId' in item));
+   if (!run.version.startsWith(run.family + '.') || !approved || approved.assertions !== run.checks.length
+    || approved.probes !== run.records.length || run.checks.some(check => stableJson(check.actual) !== stableJson(check.expected))
+    || run.records.some(record => record.phpVersion !== run.version || hashBytes(record.code) !== record.codeHash)) throw new Error('Invalid runtime evidence.');
+  }
+ } else {
+  unique(runtime.runs.map(run => run.runtimeId), 'runtime families');
+  for (const run of runtime.runs) {
+   const approved = approval.evidence.runtimeVerification.versions.find(item => 'runtimeId' in item && item.runtimeId === run.runtimeId && item.version === run.version);
+   if (!runtimeTargets(input.config).some(target => target.id === run.runtimeId && target.kind === run.kind && target.version === run.version)
+    || !approved || approved.assertions !== run.checks.length || approved.probes !== run.records.length
+    || run.checks.some(check => stableJson(check.actual) !== stableJson(check.expected))
+    || run.records.some(record => record.runtimeId !== run.runtimeId || record.runtimeVersion !== run.version || hashBytes(record.code) !== record.codeHash)) throw new Error('Invalid runtime evidence.');
+  }
  }
  for (const item of approval.requiredAddenda) {
   artifact(item.ref);

@@ -1,0 +1,34 @@
+[
+  {
+    "code": "const values = [10, 2, 30]; const mapped = values.map(x => x * 2); const filtered = values.filter(x => x >= 10); const sum = values.reduce((a, x) => a + x, 0); const average = xs => xs.length ? xs.reduce((a, x) => a + x, 0) / xs.length : null; const sorted = [...values].sort((a, b) => a - b); console.log(JSON.stringify({mapped, filtered, sum, emptyAverage: average([]), sorted, original: values}));",
+    "codeHash": "6d30f78cc80a964c87c5b733bdd0a430c42d785ff4b389f229e35f4a5b5917c0",
+    "description": "map/filter/reduce, empty average and non-mutating numeric sort",
+    "diagnostics": [],
+    "id": "node-array-behavior",
+    "result": {
+      "emptyAverage": null,
+      "filtered": [
+        10,
+        30
+      ],
+      "mapped": [
+        20,
+        4,
+        60
+      ],
+      "original": [
+        10,
+        2,
+        30
+      ],
+      "sorted": [
+        2,
+        10,
+        30
+      ],
+      "sum": 42
+    },
+    "runtimeId": "node",
+    "runtimeVersion": "v24.16.0"
+  }
+]

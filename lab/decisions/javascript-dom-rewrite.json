@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2",
+  "analysisRef": "lab/cartography/javascript-dom-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "confidence": 0.97,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "940",
+      "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+      "value": "const allParagraphs = document.querySelectorAll('p');"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+      "providedCharacters": 14180,
+      "sourceId": "940",
+      "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+      "title": "Post #45 JavaScript DOM selections i proste funkcje",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-dom"
+}

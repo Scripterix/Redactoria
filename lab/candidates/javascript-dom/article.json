@@ -1,0 +1,215 @@
+{
+  "approvedForPublication": false,
+  "articleHash": "7774e12d71a8622eb5df093c1f124a5970853bddb74885cd501ae2119c901bed",
+  "criticReviewHash": "cac7389627f7dd5a7651306dbe410f3c7025b83dbd5163775d64606d164232ba",
+  "criticReviewRef": "lab/reviews/javascript-dom/critic-review.json",
+  "criticVerdict": "PASS",
+  "draftMetadataHash": "f960a70655bc9e5b8a2daa44b0465413e114e15ffdae6b32ca27e80879181a01",
+  "draftMetadataRef": "lab/drafts/javascript-dom/article.json",
+  "draftRef": "lab/drafts/javascript-dom/article.md",
+  "humanPublicationDecision": "pending",
+  "preparedAt": "2026-10-11T14:50:27.215Z",
+  "published": false,
+  "readyForHumanPublicationDecision": true,
+  "researchApproval": "lab/decisions/javascript-dom-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-dom/research.json",
+  "reviewedDraft": {
+    "action": "DRAFT",
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-dom-rewrite.json",
+        "sha256": "e3dda998fa5923d8f5c34bedd5c0046424b123149e555af93980da18f396a414"
+      },
+      {
+        "path": "lab/cartography/javascript-dom-single.json",
+        "sha256": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2"
+      },
+      {
+        "path": "lab/research/javascript-dom/sources.json",
+        "sha256": "a741ef2864671c40cf4a623d0c6ef9aa6836ec6dee0fc3ddcdb3bbad6c7141a1"
+      },
+      {
+        "path": "lab/research/javascript-dom/probes.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      {
+        "path": "lab/research/javascript-dom/research.json",
+        "sha256": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf"
+      },
+      {
+        "path": "lab/research/javascript-dom/runtime-verification.json",
+        "sha256": "0abe09fc06b2df671b2c9fc490a875d14e46c5019477590ec90b923a27db0b5a"
+      },
+      {
+        "path": "lab/research/javascript-dom/runtime-verification.md",
+        "sha256": "de0e2a9e3206b47c880caccfbac7e70f4b23e2ab0569ff0828b38cfe7f3238c6"
+      }
+    ],
+    "articleHash": "7774e12d71a8622eb5df093c1f124a5970853bddb74885cd501ae2119c901bed",
+    "audience": "beginner / early intermediate",
+    "interactionOpportunities": [
+      {
+        "expectedConcept": "Kolejność operacji i brak ukrytej mutacji lub konwersji.",
+        "id": "predict-result",
+        "implemented": false,
+        "prompt": "Przewidź wynik przykładu i uzasadnij każdą część.",
+        "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+        "sectionId": "selection",
+        "type": "predict-output"
+      },
+      {
+        "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+        "id": "change-boundary",
+        "implemented": false,
+        "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i uruchom przykład ponownie.",
+        "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+        "sectionId": "click-example",
+        "type": "exercise"
+      }
+    ],
+    "limitations": [
+      "Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI."
+    ],
+    "researchApproval": "lab/decisions/javascript-dom-research-acceptance.json",
+    "researchPacket": "lab/research/javascript-dom/research.json",
+    "runtimeVerification": "lab/research/javascript-dom/runtime-verification.json",
+    "schemaVersion": 2,
+    "sections": [
+      {
+        "body": "DOM to Document Object Model: obiektowa reprezentacja dokumentu. `querySelector` zwraca pierwszy pasujący element albo `null`, więc przed użyciem wyniku trzeba sprawdzić jego obecność. `querySelectorAll` zwraca statyczny `NodeList`: lista nie dopisze automatycznie elementu utworzonego później.\n\nUmieść skrypt po elementach w `body` albo użyj modułu ładowanego z odpowiednim momentem wykonania. W kompletnym przykładzie wszystkie wymagane elementy istnieją przed uruchomieniem skryptu.",
+        "coverage": [
+          "query-selector",
+          "query-selector-all",
+          "null",
+          "static-node-list"
+        ],
+        "evidence": [
+          {
+            "id": "verified-core",
+            "kind": "finding"
+          },
+          {
+            "id": "correct-legacy",
+            "kind": "finding"
+          },
+          {
+            "id": "code-boundary",
+            "kind": "finding"
+          }
+        ],
+        "examples": [],
+        "heading": "Selektory i brak dopasowania",
+        "id": "selection"
+      },
+      {
+        "body": "`textContent` zapisuje tekst, nie interpretuje go jako HTML. Jest właściwym wyborem, gdy treść może pochodzić z formularza. `classList.add` dodaje pojedynczy token klasy, a `createElement` tworzy nowy element, który można uzupełnić i dołączyć do dokumentu.\n\nPo kliknięciu napis przypominający znacznik pozostaje widocznym tekstem. Odczyt `innerHTML` pokaże encje, co potwierdza brak utworzonego elementu `strong`.",
+        "coverage": [
+          "text-content",
+          "class-list",
+          "create-element"
+        ],
+        "evidence": [
+          {
+            "id": "verified-core",
+            "kind": "finding"
+          },
+          {
+            "id": "correct-legacy",
+            "kind": "finding"
+          },
+          {
+            "id": "code-boundary",
+            "kind": "finding"
+          }
+        ],
+        "examples": [],
+        "heading": "Tekst, klasy i nowy element",
+        "id": "safe-update"
+      },
+      {
+        "body": "Natywny element `button` można aktywować wskaźnikiem i klawiaturą. Rejestrujemy jedno zdarzenie `click`, zamiast budować zachowanie dostępne tylko po najechaniu. Przykład jest samodzielnym dokumentem do zapisania jako plik HTML i otwarcia w przeglądarce.\n\nPo aktywacji tytuł dostaje klasę, tekst jest zapisany bez parsowania HTML, a lista ma dwa elementy. Wcześniej zachowany statyczny `NodeList` nadal ma długość jeden.",
+        "coverage": [
+          "click"
+        ],
+        "evidence": [
+          {
+            "id": "verified-core",
+            "kind": "finding"
+          },
+          {
+            "id": "correct-legacy",
+            "kind": "finding"
+          },
+          {
+            "id": "code-boundary",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "<!doctype html>\n<html lang=\"pl\"><meta charset=\"utf-8\"><title>DOM</title>\n<body>\n<h1 id=\"title\">Start</h1>\n<button id=\"add\" type=\"button\">Dodaj element</button>\n<ul id=\"list\"><li>A</li></ul>\n<script>\nconst title = document.querySelector('#title');\nconst initial = document.querySelectorAll('#list li');\ndocument.querySelector('#add').addEventListener('click', () => {\n  title.textContent = '<strong>Bezpieczny tekst</strong>';\n  title.classList.add('updated');\n  const item = document.createElement('li');\n  item.textContent = 'B';\n  document.querySelector('#list').appendChild(item);\n  console.log(initial.length, document.querySelectorAll('#list li').length);\n});\n</script>\n</body></html>",
+            "expectedDiagnostics": [],
+            "expectedOutput": "Po kliknięciu: widoczny tekst <strong>Bezpieczny tekst</strong>; klasa updated; elementy listy A i B; konsola: 1 2.\n",
+            "id": "dom-click",
+            "language": "html",
+            "purpose": "Bezpieczna zmiana DOM po kliknięciu"
+          }
+        ],
+        "heading": "Kompletny przykład z natywnym przyciskiem",
+        "id": "click-example"
+      }
+    ],
+    "sourceDecision": "lab/decisions/javascript-dom-rewrite.json",
+    "sources": [
+      {
+        "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+        "providedCharacters": 14180,
+        "sourceId": "940",
+        "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+        "title": "Post #45 JavaScript DOM selections i proste funkcje",
+        "truncated": false
+      }
+    ],
+    "status": "draft",
+    "targetRuntimes": [
+      {
+        "id": "chrome",
+        "kind": "browser",
+        "version": "154.0.0.0"
+      }
+    ],
+    "title": "DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia",
+    "topic": "javascript-dom",
+    "wordCount": 260,
+    "writerExecution": {
+      "inputHash": "481fdfbfc479911ceb37680a2ef5fed7b3ae8b27664a0b1f49b76a3dd880c41a",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "96ac907769a611fccc9d461efee1bf94160e35397b9c9df9da6e4f93a7f32119"
+    }
+  },
+  "revisionHash": "bd12d1d24b53d090f5b07dafccbeb1255be1f5df0cc4aecb83c3d8661ea4b203",
+  "revisionRef": "lab/drafts/javascript-dom/revision.json",
+  "runtimeVerification": "lab/research/javascript-dom/runtime-verification.json",
+  "schemaVersion": 3,
+  "sourceDecision": "lab/decisions/javascript-dom-rewrite.json",
+  "status": "publication-candidate",
+  "targetRuntimes": [
+    {
+      "id": "chrome",
+      "kind": "browser",
+      "version": "154.0.0.0"
+    }
+  ],
+  "title": "DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia",
+  "topic": "javascript-dom",
+  "wordCount": 260
+}

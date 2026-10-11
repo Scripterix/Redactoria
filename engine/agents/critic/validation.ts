@@ -1,4 +1,4 @@
-import { editorialBasis, hashBytes, unique } from '../../core/editorial-context.ts';
+import { editorialBasis, hashBytes, runtimeTargets, unique } from '../../core/editorial-context.ts';
 import { hashJson, stableJson } from '../../core/serialization.ts';
 import { validateDraft } from '../writer/validation.ts';
 import { CRITERIA, CriticAnalysisSchema, CriticInputSchema, CriticReviewSchema } from './contract.ts';
@@ -10,19 +10,42 @@ export function validateCriticInput(raw: unknown) {
  const execution = input.codeExecution;
  if (execution) {
   if (execution.articleHash !== input.draft.articleHash) throw new Error('Code execution is for an unknown draft.');
-  unique(execution.runs.map(run => run.family), 'execution families');
   const examples = input.draft.sections.flatMap(section => section.examples);
-  for (const run of execution.runs) {
-   const runtime = basis.runtime.runs.find(item => item.family === run.family);
-   if (!runtime || runtime.version !== run.version || runtime.executableHash !== run.executableHash) throw new Error('Unknown executed PHP runtime.');
-   unique(run.examples.map(item => item.id), 'executed examples');
-   if (run.examples.length !== examples.length) throw new Error('Missing executed draft examples.');
-   for (const example of examples) {
-    const record = run.examples.find(item => item.id === example.id);
-    if (!record || record.codeHash !== hashBytes(example.code)) throw new Error('Unknown executed code/hash.');
-    const matches = record.exitCode === 0 && record.stdout === example.expectedOutput
-     && (example.expectedDiagnostics.length ? example.expectedDiagnostics.join('\n') + '\n' : '') === record.stderr;
-    if ((record.status === 'PASS') !== matches) throw new Error('Incorrect code execution status.');
+  if (execution.schemaVersion === 1) {
+   unique(execution.runs.map(run => run.family), 'execution families');
+   for (const run of execution.runs) {
+    if (basis.runtime.schemaVersion !== 1) throw new Error('PHP execution requires PHP runtime evidence.');
+    const runtime = basis.runtime.runs.find(item => item.family === run.family);
+    if (!runtime || runtime.version !== run.version || runtime.executableHash !== run.executableHash) throw new Error('Unknown executed PHP runtime.');
+    unique(run.examples.map(item => item.id), 'executed examples');
+    if (run.examples.length !== examples.length) throw new Error('Missing executed draft examples.');
+    for (const example of examples) {
+     const record = run.examples.find(item => item.id === example.id);
+     if (!record || record.codeHash !== hashBytes(example.code)) throw new Error('Unknown executed code/hash.');
+     const matches = record.exitCode === 0 && record.stdout === example.expectedOutput
+      && (example.expectedDiagnostics.length ? example.expectedDiagnostics.join('\n') + '\n' : '') === record.stderr;
+     if ((record.status === 'PASS') !== matches) throw new Error('Incorrect code execution status.');
+    }
+   }
+  } else {
+   unique(execution.runs.map(run => run.runtimeId), 'execution runtimes');
+   const expectedRuntimes = runtimeTargets(basis.input.config);
+   if (execution.runs.length !== expectedRuntimes.length || basis.runtime.schemaVersion !== 2) throw new Error('Missing JavaScript execution runtime.');
+   for (const run of execution.runs) {
+    const target = expectedRuntimes.find(item => item.id === run.runtimeId);
+    const runtime = basis.runtime.runs.find(item => item.runtimeId === run.runtimeId);
+    if (!target || !runtime || target.kind !== run.kind || target.version !== run.version
+     || runtime.version !== run.version || runtime.executableHash !== run.executableHash) throw new Error('Unknown executed JavaScript runtime.');
+    unique(run.examples.map(item => item.id), 'executed examples');
+    if (run.examples.length !== examples.length) throw new Error('Missing executed draft examples.');
+    for (const example of examples) {
+     const record = run.examples.find(item => item.id === example.id);
+     if (!record || record.codeHash !== hashBytes(example.code)) throw new Error('Unknown executed code/hash.');
+     const matches = record.stdout === example.expectedOutput
+      && (example.expectedDiagnostics.length ? example.expectedDiagnostics.join('\n') + '\n' : '') === record.stderr
+      && (run.kind === 'browser' ? record.exitCode === null : record.exitCode === 0);
+     if ((record.status === 'PASS') !== matches) throw new Error('Incorrect JavaScript execution status.');
+    }
    }
   }
   if ((execution.status === 'PASS') !== execution.runs.every(run => run.examples.every(record => record.status === 'PASS'))) throw new Error('Incorrect aggregate execution status.');

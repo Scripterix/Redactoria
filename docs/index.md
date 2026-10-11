@@ -52,6 +52,27 @@ which ideas are still exploratory.
 - [B2 publication checkpoint](plans/completed/013-php-control-flow-publication.md) —
   full gate, Git push and direct Cloudflare production verification complete. STOP
   before rank #2.
+- [B3 five-sample comparison](../lab/reports/b3-five-sample-comparison.md) and
+  [completed plan](plans/completed/014-b3-three-js-pipeline-samples.md) — ranks
+  #2–#4 processed as three isolated JavaScript jobs to exact schema-v3 LAB
+  candidates. Node/Chromium evidence passed; publication remains pending/false.
+- [Pipeline Review 0.1](../lab/reports/pipeline-review-0.1.md) and
+  [structured evidence](../lab/reports/pipeline-review-0.1.json) — normalized
+  review of five frozen samples, eight ranked rationalizations and explicit metric
+  limits. Evidence/status only; no Knowledge Gap, implementation or publication.
+- [verify:article Contract Spike 0.1](../lab/reports/verify-article-contract-spike.md)
+  and [structured result](../lab/reports/verify-article-contract-spike.json) —
+  27 common and four conditional read-only checks, seven negative classes and one
+  detected PHP Arrays post-promotion CONTENT-lineage mismatch. No operator CLI.
+- [CONTENT Lineage Contract Spike 0.1](../lab/reports/content-lineage-contract-spike.md),
+  [structured result](../lab/reports/content-lineage-contract-spike.json) and
+  [PHP Arrays backfill](../lab/reports/tablice-w-php-content-lineage.json) — strict
+  deterministic replay closes the detected mismatch without changing CONTENT or
+  historical evidence. The later plan 018 separately authorized CLI integration;
+  durable lineage write policy remains a future decision.
+- [Operator command reference](../commands.md) — production read-only
+  `verify:article` usage, JSON mode and exit codes. The implemented verifier checks
+  all five known article lifecycles without invoking agents or writing artifacts.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and

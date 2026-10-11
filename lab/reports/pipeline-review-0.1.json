@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "status": "complete-analysis-only",
+  "asOfDate": "2026-10-11",
+  "scope": "Evidence-only review of five completed Golden Path samples; no pipeline, content, publication or agent changes.",
+  "boundaries": {
+    "goldenPathChanged": false,
+    "sourceModified": false,
+    "contentModified": false,
+    "promotionGateRun": false,
+    "newAgents": false,
+    "ideasImplemented": false,
+    "knowledgeGapRun": false,
+    "commitPushDeploy": false
+  },
+  "samples": [
+    {
+      "topic": "php-arrays",
+      "source": [
+        {"path": "1324-post-61-tablice-w-php-czesc-1.md", "sha256": "45a70e243361632e60992e1ef1ba91d7cdd073306b552b7bd4a148250b786d90"},
+        {"path": "1356-post-62-php-tablice-czesc-ii.md", "sha256": "845bd2e7b8d36e669688e4638c6e7c2f8ee7403aece887c423921d9282afcc5c"}
+      ],
+      "sourceQuality": {"rating": "fragmented-mixed", "basis": "Complementary parts with hidden state, duplicates, conflicts and version-sensitive claims; focused MERGE was recommended."},
+      "cartographer": {"decision": "MERGE", "confidence": 0.96, "ref": "lab/decisions/php-arrays-merge-proposal.json"},
+      "research": {"officialSources": 34, "verifiedFacts": 25, "incorrectClaims": 4, "ambiguousClaims": 3, "securityNotes": 3, "codeFindings": 8, "unresolvedInPacket": 2, "resolution": "resolved before Writer by approved supplement"},
+      "runtimeVerification": {"kind": "PHP CLI", "versions": ["8.4.26", "8.5.11"], "researchProbes": 24, "researchAssertions": 120, "status": "PASS"},
+      "executableExamples": {"uniqueExamples": 17, "executionRecords": 34, "status": "PASS"},
+      "writer": {"generations": 1, "additionalGenerations": 0},
+      "critic": {"iterations": 2, "verdicts": ["REVISE", "PASS"], "requiredRevisions": 1, "optionalRevisions": 2, "appliedProseChanges": 3, "changedExamples": 0},
+      "candidate": {"sha256": "713d31d87e8bdfb1b41b237299ce30d397dafcec56f220eaa13bad5d003b3068", "exactCopy": true, "candidateState": "pending/false", "separatePublicationOutcome": "PROMOTED_LOCAL"},
+      "humanInterventions": {"recordedEvents": 4, "toCandidate": 3, "postCandidatePublication": 1, "note": "MERGE approval, Research approval, Critic correction authorization and later local-publication approval."},
+      "interactionCandidates": {"count": "not recorded", "note": "This draft predates the interaction-opportunity contract; absence is not measured zero."},
+      "modelInfo": {"status": "recorded labels only", "labels": ["Codex session (model identifier not exposed)", "Codex current session — Researcher 0.1", "Codex current session — Writer 0.1", "Codex current session — Critic 0.1"], "recordedRoleCalls": 5},
+      "duration": "not recorded",
+      "tokenQuotaUsage": "not recorded"
+    },
+    {
+      "topic": "php-control-flow",
+      "source": [{"path": "1308-post-60-instrukcje-sterujace-php.md", "sha256": "b9709b37984d1cac4aeef2d14fb49e614d2eb3d406e399117ed818b6c39799c4"}],
+      "sourceQuality": {"rating": "broad-incomplete", "basis": "Useful control-flow sketch, but uninitialized inputs, missing comparison/logic coverage, digressions and unsupported simplifications required REWRITE."},
+      "cartographer": {"decision": "REWRITE", "confidence": 0.97, "ref": "lab/decisions/php-control-flow-rewrite.json"},
+      "research": {"officialSources": 18, "verifiedFacts": 18, "incorrectClaims": 1, "ambiguousClaims": 2, "securityNotes": 0, "codeFindings": 8, "unresolvedInPacket": 0, "resolution": "complete within bounded scope"},
+      "runtimeVerification": {"kind": "PHP CLI", "versions": ["8.4.26", "8.5.11"], "researchProbes": 16, "researchAssertions": 48, "status": "PASS"},
+      "executableExamples": {"uniqueExamples": 16, "executionRecords": 32, "status": "PASS"},
+      "writer": {"generations": 1, "additionalGenerations": 0},
+      "critic": {"iterations": 2, "verdicts": ["REVISE", "PASS"], "requiredRevisions": 1, "optionalRevisions": 0, "appliedProseChanges": 1, "changedExamples": 0},
+      "candidate": {"sha256": "2a44143b3a355375fead8fe24b2c08c40ed2f1f6df1a7fcb13aa942f3d2f8f8b", "exactCopy": true, "candidateState": "pending/false", "separatePublicationOutcome": "PROMOTED_PUBLIC"},
+      "humanInterventions": {"recordedEvents": 2, "toCandidate": 1, "postCandidatePublication": 1, "note": "One bounded B2 authorization covered validation/correction through candidate; publication was a later separate decision. Research acceptance explicitly was not a new human review."},
+      "interactionCandidates": {"count": 4, "types": ["quiz", "show-output", "hint", "exercise"], "implemented": 0},
+      "modelInfo": {"status": "generic session label", "labels": ["current-codex-session"], "recordedRoleCalls": 5},
+      "duration": "not recorded",
+      "tokenQuotaUsage": "not recorded"
+    },
+    {
+      "topic": "javascript-if-else",
+      "source": [{"path": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md", "sha256": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692"}],
+      "sourceQuality": {"rating": "useful-core-needs-boundaries", "basis": "Useful validation core, but whitespace, finite-number and equality boundaries plus unrelated application scopes required REWRITE."},
+      "cartographer": {"decision": "REWRITE", "confidence": 0.97, "ref": "lab/decisions/javascript-if-else-rewrite.json"},
+      "research": {"officialSources": 3, "verifiedFacts": 1, "incorrectClaims": 1, "ambiguousClaims": 0, "securityNotes": 0, "codeFindings": 1, "unresolvedInPacket": 0, "resolution": "complete within bounded scope"},
+      "runtimeVerification": {"kind": "Node CLI", "versions": ["v24.16.0"], "researchProbes": 1, "researchAssertions": 1, "status": "PASS"},
+      "executableExamples": {"uniqueExamples": 2, "executionRecords": 2, "status": "PASS"},
+      "writer": {"generations": 1, "additionalGenerations": 0},
+      "critic": {"iterations": 1, "verdicts": ["PASS"], "requiredRevisions": 0, "optionalRevisions": 0, "appliedProseChanges": 0, "changedExamples": 0},
+      "candidate": {"sha256": "016fca1b663c48fdf8db76530be43d37f71769905c6a057647098f3755e06835", "exactCopy": true, "candidateState": "pending/false", "separatePublicationOutcome": "none"},
+      "humanInterventions": {"recordedEventsAttributed": 1, "uniqueSharedB3AuthorizationEvents": 1, "postCandidatePublication": 0},
+      "interactionCandidates": {"count": 2, "types": ["predict-output", "exercise"], "implemented": 0},
+      "modelInfo": {"status": "unknown", "labels": ["unknown-codex-session"], "recordedRoleCalls": 4},
+      "duration": "not recorded",
+      "tokenQuotaUsage": "not recorded"
+    },
+    {
+      "topic": "javascript-arrays",
+      "source": [{"path": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md", "sha256": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe"}],
+      "sourceQuality": {"rating": "useful-core-misleading-claims", "basis": "Useful method examples, but random fixtures, sort mutation omissions and unsupported determinism/performance wording required REWRITE."},
+      "cartographer": {"decision": "REWRITE", "confidence": 0.97, "ref": "lab/decisions/javascript-arrays-rewrite.json"},
+      "research": {"officialSources": 3, "verifiedFacts": 1, "incorrectClaims": 1, "ambiguousClaims": 0, "securityNotes": 0, "codeFindings": 1, "unresolvedInPacket": 0, "resolution": "complete within bounded scope"},
+      "runtimeVerification": {"kind": "Node CLI", "versions": ["v24.16.0"], "researchProbes": 1, "researchAssertions": 1, "status": "PASS"},
+      "executableExamples": {"uniqueExamples": 3, "executionRecords": 3, "status": "PASS"},
+      "writer": {"generations": 1, "additionalGenerations": 0},
+      "critic": {"iterations": 1, "verdicts": ["PASS"], "requiredRevisions": 0, "optionalRevisions": 0, "appliedProseChanges": 0, "changedExamples": 0},
+      "candidate": {"sha256": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465", "exactCopy": true, "candidateState": "pending/false", "separatePublicationOutcome": "none"},
+      "humanInterventions": {"recordedEventsAttributed": 1, "uniqueSharedB3AuthorizationEvents": 1, "postCandidatePublication": 0},
+      "interactionCandidates": {"count": 2, "types": ["predict-output", "exercise"], "implemented": 0},
+      "modelInfo": {"status": "unknown", "labels": ["unknown-codex-session"], "recordedRoleCalls": 4},
+      "duration": "not recorded",
+      "tokenQuotaUsage": "not recorded"
+    },
+    {
+      "topic": "javascript-dom",
+      "source": [{"path": "940-post-45-javascript-dom-selections-i-proste-funkcje.md", "sha256": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a"}],
+      "sourceQuality": {"rating": "broad-duplicated-accessibility-gaps", "basis": "Terminology error, duplicate/incomplete snippets, collection ambiguity, missing null/timing handling and hover-only behavior required REWRITE."},
+      "cartographer": {"decision": "REWRITE", "confidence": 0.97, "ref": "lab/decisions/javascript-dom-rewrite.json"},
+      "research": {"officialSources": 5, "verifiedFacts": 1, "incorrectClaims": 1, "ambiguousClaims": 0, "securityNotes": 0, "codeFindings": 1, "unresolvedInPacket": 0, "resolution": "complete within bounded scope"},
+      "runtimeVerification": {"kind": "controlled browser", "versions": ["Chromium 154.0.0.0"], "researchProbes": 1, "researchAssertions": 1, "status": "PASS"},
+      "executableExamples": {"uniqueExamples": 1, "executionRecords": 1, "browserAssertions": 7, "status": "PASS"},
+      "writer": {"generations": 1, "additionalGenerations": 0},
+      "critic": {"iterations": 1, "verdicts": ["PASS"], "requiredRevisions": 0, "optionalRevisions": 0, "appliedProseChanges": 0, "changedExamples": 0},
+      "candidate": {"sha256": "7774e12d71a8622eb5df093c1f124a5970853bddb74885cd501ae2119c901bed", "exactCopy": true, "candidateState": "pending/false", "separatePublicationOutcome": "none"},
+      "humanInterventions": {"recordedEventsAttributed": 1, "uniqueSharedB3AuthorizationEvents": 1, "postCandidatePublication": 0},
+      "interactionCandidates": {"count": 2, "types": ["predict-output", "exercise"], "implemented": 0},
+      "modelInfo": {"status": "unknown", "labels": ["unknown-codex-session"], "recordedRoleCalls": 4},
+      "duration": "not recorded",
+      "tokenQuotaUsage": "not recorded"
+    }
+  ],
+  "recurringPatterns": {
+    "pipeline": [
+      {"pattern": "Source identity and SHA-256 binding", "runs": 5},
+      {"pattern": "Explicit Cartographer decision bound to the selected source(s)", "runs": 5},
+      {"pattern": "Official-source Research Packet plus approval or bounded acceptance", "runs": 5},
+      {"pattern": "Runtime evidence before Writer and separate final-example execution", "runs": 5},
+      {"pattern": "Structured Writer draft with evidence references and rendered article hash", "runs": 5},
+      {"pattern": "Full Critic review bound to the exact draft and execution", "runs": 5},
+      {"pattern": "Revision audit, including explicit no-op when no correction was needed", "runs": 5},
+      {"pattern": "Exact pending candidate with publication flags false", "runs": 5},
+      {"pattern": "Separate human publication decision and CONTENT audit", "runs": 2}
+    ],
+    "qualityProblems": [
+      {"pattern": "Explanatory claim broader than the demonstrated type/input/example", "confirmedRuns": 2, "additionalUpstreamOccurrences": 2},
+      {"pattern": "Missing or implicit type/runtime/input boundary", "confirmedRuns": 4},
+      {"pattern": "Source examples require deterministic fixtures or explicit inputs", "confirmedRuns": 5},
+      {"pattern": "Prerequisite or execution context must be stated", "confirmedRuns": 3},
+      {"pattern": "Exercise/output framing can be unclear even when code passes", "confirmedRuns": 1}
+    ],
+    "languageStyle": {
+      "confirmedRecurringPattern": false,
+      "observations": [
+        "PHP Arrays had two optional clarity issues: unexplained arrow-function reading and unlabeled output states.",
+        "PHP Control Flow had one clarity issue, but it was primarily a precision/type-boundary problem.",
+        "All three short JavaScript final reviews passed with no style issues; their repeated interaction wording is metadata, not evidence of learner-facing prose harm.",
+        "No reading-time, comprehension or human naturalness ratings were recorded."
+      ]
+    },
+    "interactions": {
+      "knownMetadataArticles": 4,
+      "unknownMetadataArticles": 1,
+      "implemented": 0,
+      "normalizedCounts": {"exercise": 4, "predict-output": 3, "quiz": 1, "show-output": 1, "hint": 1, "compare": 0, "next-step": 0, "explain-simpler": 0},
+      "topFormats": ["exercise", "predict-output", "third place tie: quiz/show-output/hint"]
+    }
+  },
+  "gaps": {
+    "qualityGapDefinition": "A defect or missing control in one material or pipeline run, such as missing evidence, an overbroad claim, absent runtime verification or unclear exercise framing.",
+    "knowledgeGapDefinition": "A missing prerequisite or topic in the whole knowledge map; it cannot be inferred from one article defect.",
+    "qualityGapObservations": ["claim-scope precision", "type/runtime boundary", "deterministic input fixture", "execution/prerequisite framing", "single-browser limitation"],
+    "knowledgeGapInputObservations": ["The existence of PHP/JavaScript arrays and control-flow articles does not prove complete beginner paths.", "Only PHP samples are published; publication coverage is not equivalent to knowledge-map completeness.", "No Knowledge Gap analysis was run, so no missing topic is asserted."],
+    "knowledgeGapRun": false
+  },
+  "claimPrecision": {
+    "occurredMoreThanOnce": true,
+    "findings": [
+      {"article": "php-arrays", "section": "aggregation", "overclaim": "A correct sum example was described as if array_reduce could not return an array.", "criticDetected": true, "runtimeCouldDetect": false, "deterministicRuleSuitability": "partial; lexical scope signals can escalate, but semantic judgment is required"},
+      {"article": "php-control-flow", "section": "logical-operators", "overclaim": "A strict int-zero guard was described like a general numeric-zero guard, omitting float 0.0.", "criticDetected": true, "runtimeCouldDetect": "only with an added float boundary case", "deterministicRuleSuitability": "partial; compare prose type scope with executed fixtures"},
+      {"article": "javascript-arrays", "section": "legacy sorting claim before Writer", "overclaim": "Repeated deterministic average calculation was said to produce different sort results and be faster after precomputation without measurement.", "criticDetected": "not in final draft; Cartographer/Researcher corrected it upstream", "runtimeCouldDetect": "determinism can be checked; performance claim needs a benchmark", "deterministicRuleSuitability": "partial; unmeasured performance claims can be flagged"},
+      {"article": "javascript-if-else", "section": "legacy numeric validation before Writer", "overclaim": "Number.isNaN-only validation implied adequate numeric validation while Infinity and whitespace remained accepted/misclassified.", "criticDetected": "not in final draft; Cartographer/Researcher corrected it upstream", "runtimeCouldDetect": true, "deterministicRuleSuitability": "good for declared input contract and fixed boundary fixtures"}
+    ],
+    "verdict": "POSSIBLE",
+    "note": "A Critic rubric extension is justified; a separate gate or autonomous rewrite is not yet justified. Runtime tests cannot establish the scope of prose by themselves."
+  },
+  "humanizer": {
+    "categories": {
+      "unnaturalPhrasing": "not systematically recorded",
+      "repetition": "no recurring Critic issue; not measured by readers",
+      "sentenceLength": "not reliably measured",
+      "artificialSymmetry": "weak observation only in repeated B3 metadata",
+      "genericCiTone": "not confirmed in article reviews",
+      "awkwardTransitions": "not recorded"
+    },
+    "verdict": "TOO EARLY",
+    "note": "A future checklist may be harmless, but existing evidence does not justify a Humanizer stage or separate agent."
+  },
+  "interactionLayer": {
+    "verdict": "candidate identified",
+    "firstComponentCandidate": "predict-output with optional answer reveal",
+    "reason": "Predict-output appears in three independent JS articles and binds naturally to already executed examples; exercise is more frequent but less uniform and harder to verify safely.",
+    "missingEvidence": ["learner usage", "accessibility validation", "maintenance cost", "PHP Arrays metadata"]
+  },
+  "verifyArticle": {
+    "evidenceStrength": "HIGH",
+    "repeatedChecks": [
+      {"check": "source path/hash", "runs": 5},
+      {"check": "decision/cartography binding", "runs": 5},
+      {"check": "research approval/acceptance and packet hash", "runs": 5},
+      {"check": "runtime evidence and final example execution", "runs": 5},
+      {"check": "Critic PASS bound to exact draft", "runs": 5},
+      {"check": "revision audit", "runs": 5},
+      {"check": "candidate hash and exact-copy", "runs": 5},
+      {"check": "pending/approval/publication state", "runs": 5},
+      {"check": "publication decision, CONTENT and audit", "runs": 2}
+    ],
+    "proposedCommand": "npm run verify:article -- --topic <topic>",
+    "proposedContract": {
+      "behavior": "read-only, deterministic, offline, no model calls",
+      "inputs": ["topic slug", "existing LAB artifacts", "SOURCE identity", "optional CONTENT/publication artifacts"],
+      "output": ["structured per-check PASS/FAIL/NOT_APPLICABLE", "human summary", "no writes"],
+      "exitCodes": {"0": "all applicable checks pass", "1": "integrity or policy failure", "2": "unsupported/incomplete artifact generation"},
+      "mustNot": ["invoke agents", "regenerate", "correct", "approve", "publish", "write files", "use network"]
+    },
+    "implemented": false
+  },
+  "articleManifest": {
+    "verdict": "strongly justified",
+    "evidenceStrength": "HIGH",
+    "dispersedArtifactGroupsPerRun": ["source", "cartography/decision", "research/approval", "runtime evidence", "draft/execution/revision", "critic", "candidate", "optional publication/audit"],
+    "minimalSchemaDraft": {
+      "id": "topic slug",
+      "source": [{"ref": "SOURCE-relative path", "sha256": "64-hex"}],
+      "cartography": {"ref": "LAB ref", "sha256": "64-hex", "decisionRef": "LAB ref", "decision": "MERGE|REWRITE|KEEP_AND_UPDATE"},
+      "research": {"packetRef": "LAB ref", "packetHash": "64-hex", "approvalRef": "LAB ref", "status": "approved|validated"},
+      "runtimeEvidence": {"ref": "LAB ref", "sha256": "64-hex", "status": "PASS"},
+      "writer": {"draftRef": "LAB ref", "metadataRef": "LAB ref", "articleHash": "64-hex"},
+      "critic": {"reviewRef": "LAB ref", "reviewHash": "64-hex", "verdict": "PASS|REVISE|BLOCK", "iterations": "integer"},
+      "candidate": {"ref": "LAB ref", "hash": "64-hex", "articleHash": "64-hex", "status": "publication-candidate"},
+      "publication": {"status": "not-requested|pending|approved|promoted", "decisionRef": "LAB ref or null", "auditRef": "LAB ref or null", "contentRef": "CONTENT ref or null"}
+    },
+    "constraints": ["references and hashes only", "do not copy payloads", "existing artifacts remain sources of truth", "publication is nullable/conditional"],
+    "implemented": false
+  },
+  "metrics": {
+    "available": ["source count/hash", "official research source count", "research finding counts", "runtime probes/assertions", "final executable examples/records", "Writer generations", "Critic iterations/verdicts/issues", "required/optional corrections", "candidate hashes/exact-copy", "recorded decision artifacts", "interaction metadata where contract existed", "recorded role calls"],
+    "unknown": ["end-to-end duration for all five runs", "model tokens", "quota percentage", "monetary cost", "human reading/review duration", "learner outcomes", "PHP Arrays interaction opportunities"],
+    "notMeasurableReliably": ["cross-run productivity from document counts alone", "semantic difficulty from word/example count", "unique human interventions when authorization is shared or chat-only", "token/quota percentage without a programmatic provider counter"],
+    "quotaConclusion": "A percentage counter would be unreliable because no programmatic quota denominator or complete token numerator exists. Do not build it."
+  },
+  "rationalizations": [
+    {"rank": 1, "idea": "verify:article", "evidenceStrength": "HIGH", "value": "High: removes repeated manual integrity checks without changing editorial judgment.", "implementationCost": "MEDIUM", "risk": "LOW if strictly read-only and generation-aware", "recommendation": "NOW"},
+    {"rank": 2, "idea": "Article Manifest", "evidenceStrength": "HIGH", "value": "High: one stable index over repeatedly dispersed refs and hashes.", "implementationCost": "MEDIUM", "risk": "MEDIUM: duplication or accidental new source of truth", "recommendation": "NEXT"},
+    {"rank": 3, "idea": "Precision Gate / Critic rubric extension", "evidenceStrength": "HIGH", "value": "High for early escalation of claim-boundary errors.", "implementationCost": "LOW as rubric; MEDIUM as gate", "risk": "LOW as rubric; HIGHER as autonomous gate", "recommendation": "NEXT", "scope": "Extend the existing Critic rubric only; keep a separate gate at LATER."},
+    {"rank": 4, "idea": "Humanizer rubric", "evidenceStrength": "LOW", "value": "Potential readability benefit, not demonstrated by reader evidence.", "implementationCost": "LOW for checklist; HIGH for agent", "risk": "MEDIUM: smoothing may broaden correct claims", "recommendation": "LATER"},
+    {"rank": 5, "idea": "first Interaction component", "evidenceStrength": "MEDIUM", "value": "Potentially useful around executed predict-output examples.", "implementationCost": "MEDIUM", "risk": "MEDIUM: accessibility, stale expected output and maintenance", "recommendation": "NEXT", "scope": "Run only as a separately approved predict-output micro-experiment."},
+    {"rank": 6, "idea": "Rendered Content QA", "evidenceStrength": "MEDIUM", "value": "Useful for output-only defects, but only one confirmed rendered-link incident exists.", "implementationCost": "MEDIUM", "risk": "LOW to MEDIUM", "recommendation": "LATER"},
+    {"rank": 7, "idea": "content-addressed LAB", "evidenceStrength": "LOW", "value": "Low now; traceability still outweighs unmeasured storage savings.", "implementationCost": "HIGH", "risk": "HIGH migration/readability cost", "recommendation": "LATER"},
+    {"rank": 8, "idea": "Dream Cycle", "evidenceStrength": "LOW", "value": "Unproven beyond a one-time manual review.", "implementationCost": "HIGH", "risk": "HIGH: automation pressure and noisy hypotheses", "recommendation": "REJECT"}
+  ],
+  "architecturePrinciple": {
+    "supported": true,
+    "recommendation": "Do not accelerate by adding agents. Reuse contracts, add deterministic read-only validators, remove repeated manual integrity work and escalate only evidence-backed exceptions to humans.",
+    "evidence": ["All five runs used the same four roles.", "Two successful corrections were small hash-bound prose edits followed by full re-review, not Writer loops.", "Most repeated work was deterministic validation, while claim scope and publication decisions required judgment."]
+  },
+  "recommendedNextExperiment": {
+    "name": "read-only verify:article contract spike",
+    "scope": "Specify fixtures and expected PASS/FAIL/NOT_APPLICABLE results for the five frozen samples before implementing any CLI.",
+    "why": "Highest repeated evidence, bounded risk and no need for a new agent or content mutation."
+  },
+  "limitations": [
+    "The two PHP samples are much larger and used richer research/runtime matrices than the three deliberately small B3 samples; counts are descriptive, not a benchmark.",
+    "PHP Arrays predates interaction metadata, so its interaction count is unknown rather than zero.",
+    "Recorded model labels are not reliable exact provider/model identifiers.",
+    "No elapsed-time, token, quota, monetary-cost or learner-outcome series exists.",
+    "No Knowledge Gap, Humanizer, UI or proposed rationalization was executed."
+  ]
+}

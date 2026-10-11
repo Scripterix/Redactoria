@@ -1,0 +1,200 @@
+{
+  "action": "DRAFT",
+  "approvedArtifacts": [
+    {
+      "path": "lab/decisions/b3-authorization.json",
+      "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+    },
+    {
+      "path": "lab/decisions/javascript-arrays-rewrite.json",
+      "sha256": "c6263e9b002048b80e4e68111023812d02e4e16ae0965593ec6df2c86334db78"
+    },
+    {
+      "path": "lab/cartography/javascript-arrays-single.json",
+      "sha256": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c"
+    },
+    {
+      "path": "lab/research/javascript-arrays/sources.json",
+      "sha256": "b242ceabbb5201c77207581a24da9b7a98a19856129e5630f8a63b4352a97cb8"
+    },
+    {
+      "path": "lab/research/javascript-arrays/probes.json",
+      "sha256": "7706bfe4c67ae34ddde231b290a808bcfa5478b615769a3a1c13a19d3b4c438c"
+    },
+    {
+      "path": "lab/research/javascript-arrays/research.json",
+      "sha256": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d"
+    },
+    {
+      "path": "lab/research/javascript-arrays/runtime-verification.json",
+      "sha256": "d7565cfabc4b3799c0d74a8d0544bf772d6b00e25ca62d80f125c95e79e15454"
+    },
+    {
+      "path": "lab/research/javascript-arrays/runtime-verification.md",
+      "sha256": "0aa211721f16066fd0fcd579c59314433e7befebcb43130908c75204f8961b8f"
+    }
+  ],
+  "articleHash": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+  "audience": "beginner / early intermediate",
+  "interactionOpportunities": [
+    {
+      "expectedConcept": "Kolejność operacji i brak ukrytej mutacji lub konwersji.",
+      "id": "predict-result",
+      "implemented": false,
+      "prompt": "Przewidź wynik przykładu i uzasadnij każdą część.",
+      "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+      "sectionId": "transform-filter",
+      "type": "predict-output"
+    },
+    {
+      "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+      "id": "change-boundary",
+      "implemented": false,
+      "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i uruchom przykład ponownie.",
+      "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+      "sectionId": "sorting",
+      "type": "exercise"
+    }
+  ],
+  "limitations": [
+    "Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI."
+  ],
+  "researchApproval": "lab/decisions/javascript-arrays-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-arrays/research.json",
+  "runtimeVerification": "lab/research/javascript-arrays/runtime-verification.json",
+  "schemaVersion": 2,
+  "sections": [
+    {
+      "body": "`map` wywołuje funkcję dla elementów i buduje nową tablicę wyników. `filter` także zwraca nową tablicę, lecz zachowuje tylko elementy spełniające warunek. Do nauki używamy stałych danych, aby każde uruchomienie dawało ten sam wynik.\n\nNie trzeba dopisywać obliczonego pola do obiektów wejściowych. Możesz zwrócić nowe obiekty przez składnię spread. To ułatwia sprawdzenie, że oryginalna kolekcja pozostała bez zmian.",
+      "coverage": [
+        "map",
+        "filter",
+        "stable-fixtures"
+      ],
+      "evidence": [
+        {
+          "id": "verified-core",
+          "kind": "finding"
+        },
+        {
+          "id": "correct-legacy",
+          "kind": "finding"
+        },
+        {
+          "id": "code-boundary",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "const scores = [40, 75, 90];\nconst doubled = scores.map(score => score * 2);\nconst passed = scores.filter(score => score >= 60);\nconsole.log(JSON.stringify({ doubled, passed, scores }));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "{\"doubled\":[80,150,180],\"passed\":[75,90],\"scores\":[40,75,90]}\n",
+          "id": "map-filter",
+          "language": "js",
+          "purpose": "Transformacja bez zmiany danych wejściowych"
+        }
+      ],
+      "heading": "Nowe tablice z map i filter",
+      "id": "transform-filter"
+    },
+    {
+      "body": "`reduce` łączy elementy w jedną wartość. Podanie wartości początkowej `0` sprawia, że suma pustej tablicy również jest zdefiniowana. Średnia wymaga osobnego kontraktu: dla braku elementów poniższa funkcja zwraca `null`, bo zero mogłoby wyglądać jak prawdziwy wynik.\n\nZaokrąglanie jest decyzją prezentacyjną. Najpierw policz dokładną średnią, a dopiero podczas wyświetlania wybierz potrzebną liczbę miejsc.",
+      "coverage": [
+        "reduce",
+        "empty-array"
+      ],
+      "evidence": [
+        {
+          "id": "verified-core",
+          "kind": "finding"
+        },
+        {
+          "id": "correct-legacy",
+          "kind": "finding"
+        },
+        {
+          "id": "code-boundary",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "const average = values => values.length\n  ? values.reduce((sum, value) => sum + value, 0) / values.length\n  : null;\nconsole.log(average([2, 4, 9]));\nconsole.log(average([]));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "5\nnull\n",
+          "id": "safe-average",
+          "language": "js",
+          "purpose": "Średnia z jawnym przypadkiem pustym"
+        }
+      ],
+      "heading": "reduce i pusta tablica",
+      "id": "reduce-average"
+    },
+    {
+      "body": "`sort` zmienia tablicę, na której został wywołany. Bez komparatora porównuje wartości jak napisy, więc liczba 10 może znaleźć się przed 2. Jeśli chcesz zachować dane wejściowe, posortuj kopię utworzoną przez spread. Komparator `(a, b) => a - b` ustala kolejność rosnącą liczb.\n\nPonowne liczenie tej samej czystej średniej w komparatorze może być zbędną pracą, ale nie wprowadza losowości. Optymalizację uzasadniaj pomiarem, nie obietnicą.",
+      "coverage": [
+        "numeric-sort",
+        "sort-mutation"
+      ],
+      "evidence": [
+        {
+          "id": "verified-core",
+          "kind": "finding"
+        },
+        {
+          "id": "correct-legacy",
+          "kind": "finding"
+        },
+        {
+          "id": "code-boundary",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "const values = [10, 2, 30];\nconst sorted = [...values].sort((a, b) => a - b);\nconsole.log(sorted.join(','));\nconsole.log(values.join(','));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "2,10,30\n10,2,30\n",
+          "id": "numeric-copy-sort",
+          "language": "js",
+          "purpose": "Komparator liczbowy i zachowane wejście"
+        }
+      ],
+      "heading": "Sortowanie numeryczne bez mutacji wejścia",
+      "id": "sorting"
+    }
+  ],
+  "sourceDecision": "lab/decisions/javascript-arrays-rewrite.json",
+  "sources": [
+    {
+      "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+      "providedCharacters": 5654,
+      "sourceId": "2048",
+      "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+      "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+      "truncated": false
+    }
+  ],
+  "status": "draft",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "title": "Tablice JavaScript: map, filter, reduce i sort bez mutowania danych",
+  "topic": "javascript-arrays",
+  "wordCount": 279,
+  "writerExecution": {
+    "inputHash": "234cd76502a997f69949967bdc08e8bf575471b89d70c934f005b6f0e3987a30",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "3490688f4a8fdf414874788ffc17a62497c82180326d510fc6c5325f99c617b4"
+  }
+}

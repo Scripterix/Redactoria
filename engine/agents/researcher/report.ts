@@ -5,13 +5,14 @@ import { findings } from './validation.ts';
 
 export function researchReport(packet: ResearchPacket, questions: ResearchBundle['questions']) {
 	const all = findings(packet);
+	const runtimeScope = 'phpVersionScope' in packet.environment ? packet.environment.phpVersionScope : packet.environment.runtimeScope;
 	const lines = [`# Researcher 0.1 — ${packet.topic}`, '', '## RESEARCH SCOPE', '',
 		(packet.targets.length === 2 ? 'Research Packet, nie artykuł ani zatwierdzenie publikacji. Dokładnie dwa pełne materiały SOURCE.' : 'Research Packet, nie artykuł ani zatwierdzenie publikacji. Jeden pełny materiał SOURCE.'), '',
 		...packet.targets.map(target => `- ${target.sourcePath} (${target.sourceId})`), '',
 		`Tryb: ${packet.analysisContext.model.mode}; model: ${packet.analysisContext.model.model}.`,
 		`Request SHA-256: ${packet.analysisContext.requestHash}`, '',
-		'## PHP VERSION TARGET', '', packet.environment.phpVersionScope, '', `Stan dokumentacji: ${packet.environment.asOfDate}.`, '',
-		...(packet.targets.length === 2 ? packet.analysisContext.probes.slice(0, 1).map(probe => `Próby wykonano lokalnie na PHP ${probe.phpVersion}; nie oznacza to uruchomienia na docelowych wersjach.`) : [`Wykonane runtime: ${[...new Set(packet.analysisContext.probes.map(probe => probe.phpVersion))].join(', ')}; szczegóły w osobnym execution evidence.`]), ''];
+		'## RUNTIME TARGET', '', runtimeScope, '', `Stan dokumentacji: ${packet.environment.asOfDate}.`, '',
+		...(packet.targets.length === 2 ? packet.analysisContext.probes.slice(0, 1).map(probe => `Próby wykonano lokalnie na PHP ${'phpVersion' in probe ? probe.phpVersion : probe.runtimeVersion}; nie oznacza to uruchomienia na docelowych wersjach.`) : [`Wykonane runtime: ${[...new Set(packet.analysisContext.probes.map(probe => 'phpVersion' in probe ? probe.phpVersion : `${probe.runtimeId} ${probe.runtimeVersion}`))].join(', ')}; szczegóły w osobnym execution evidence.`]), ''];
 	function render(items: readonly Finding[]) {
 		if (!items.length) { lines.push('Brak.', ''); return; }
 		for (const item of items) {
@@ -47,7 +48,7 @@ export function researchReport(packet: ResearchPacket, questions: ResearchBundle
 		'## SOURCE REGISTER', '', ...packet.sourceRegister.map(source =>
 		`- [${source.id} — ${source.title}](${source.url}); ${source.kind}; pobrano ${source.retrievedAt}; evidence: ${source.evidenceIds.join(', ')}; SHA-256: ${source.documentHash}`), '',
 		'## LIMITATIONS', '', ...packet.limitations.map(item => `- ${item}`), '',
-		'## WRITER HANDOFF', '', `Założona wersja: ${packet.environment.phpVersionScope}`, '');
+		'## WRITER HANDOFF', '', `Założony runtime: ${runtimeScope}`, '');
 	for (const [name, items] of [['Zachowaj', packet.writerHandoff.keep], ['Popraw', packet.writerHandoff.correct],
 		['Nie powielaj', packet.writerHandoff.avoid], ['Ostrożność', packet.writerHandoff.caution]] as const) {
 		lines.push(`### ${name}`, '', ...items.map(item => `- ${item.instruction} [${item.findingIds.join(', ')}]`), '');

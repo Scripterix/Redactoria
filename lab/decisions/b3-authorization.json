@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-11T14:25:35.124Z",
+  "recordedAt": "2026-10-11T14:25:35.124Z",
+  "scope": "B3: three sequential bounded Golden Path samples through exact LAB publication candidates only: JavaScript if/else, JavaScript Arrays, then DOM.",
+  "b1RankingRef": "lab/cartography/pilot-selection/ranking.json",
+  "b1RankingHash": "e53b8fb9400f2d63102807aed21f0e80e835c0c4169797d8fd31154671b580e8",
+  "authorization": "The human explicitly authorized all three B3 jobs through focused Cartographer, official Researcher evidence, validation, Writer, runtime/browser verification, Critic, one limited correction and full re-review when required, and exact LAB candidate. This is not publication approval.",
+  "researchAcceptance": {
+    "mode": "validation-under-human-task-authorization",
+    "humanReviewedPacket": false,
+    "writerAfterValidatedPacket": true,
+    "clarification": "The B3 instruction explicitly removes the separate Researcher-to-Writer human gate for these three jobs only. Packet validation under this task authorization is not represented as a later human review."
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "topic": "javascript-if-else",
+      "source": {
+        "sourceId": "2068",
+        "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+        "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+        "originalUrl": "https://opengateweb.com/posts/if-i-else-w-javascript-od-prostych-warunkow-do-praktycznych-aplikacji/",
+        "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji"
+      }
+    },
+    {
+      "order": 2,
+      "topic": "javascript-arrays",
+      "source": {
+        "sourceId": "2048",
+        "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+        "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+        "originalUrl": "https://opengateweb.com/posts/tablice-javascript-js-arrays-sortowanie-filtrowanie-i-srednia-ocen-krok-po-kroku/",
+        "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73"
+      }
+    },
+    {
+      "order": 3,
+      "topic": "javascript-dom",
+      "source": {
+        "sourceId": "940",
+        "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+        "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+        "originalUrl": "https://opengateweb.com/posts/45-js-dom/",
+        "title": "Post #45 JavaScript DOM selections i proste funkcje"
+      }
+    }
+  ],
+  "allowedStages": [
+    "cartographer",
+    "research",
+    "writer",
+    "runtime-verification",
+    "critic",
+    "limited-correction",
+    "publication-candidate",
+    "metrics",
+    "five-sample-report"
+  ],
+  "publicationApproved": false,
+  "contentWriteApproved": false,
+  "gitApproved": false,
+  "deploymentApproved": false,
+  "otherRanksApproved": false
+}

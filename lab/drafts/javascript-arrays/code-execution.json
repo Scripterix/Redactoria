@@ -1,0 +1,53 @@
+{
+  "articleHash": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+  "executedAt": "2026-10-11T14:49:16.149Z",
+  "limitations": [
+    "One local Node version; no cross-engine compatibility claim."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "debb5c48d12e8a52a3daf007dcea50521baf15ee710435d5bc263c110c22500d",
+          "exitCode": 0,
+          "id": "map-filter",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "{\"doubled\":[80,150,180],\"passed\":[75,90],\"scores\":[40,75,90]}\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "bee4bd18648fdfcbc678809aaf6501934b23b9e7d51f05836d894eb805666e92",
+          "exitCode": 0,
+          "id": "safe-average",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "5\nnull\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "a8147f47a5ddd08f46ba026ece562c8335351e4295843c6235c23a66949245ce",
+          "exitCode": 0,
+          "id": "numeric-copy-sort",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "2,10,30\n10,2,30\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

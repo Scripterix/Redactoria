@@ -1,0 +1,86 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321",
+  "authorizationRef": "lab/decisions/b3-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-dom-rewrite.json",
+        "sha256": "e3dda998fa5923d8f5c34bedd5c0046424b123149e555af93980da18f396a414"
+      },
+      {
+        "path": "lab/cartography/javascript-dom-single.json",
+        "sha256": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2"
+      },
+      {
+        "path": "lab/research/javascript-dom/sources.json",
+        "sha256": "a741ef2864671c40cf4a623d0c6ef9aa6836ec6dee0fc3ddcdb3bbad6c7141a1"
+      },
+      {
+        "path": "lab/research/javascript-dom/probes.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      {
+        "path": "lab/research/javascript-dom/research.json",
+        "sha256": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf"
+      },
+      {
+        "path": "lab/research/javascript-dom/runtime-verification.json",
+        "sha256": "0abe09fc06b2df671b2c9fc490a875d14e46c5019477590ec90b923a27db0b5a"
+      },
+      {
+        "path": "lab/research/javascript-dom/runtime-verification.md",
+        "sha256": "de0e2a9e3206b47c880caccfbac7e70f4b23e2ab0569ff0828b38cfe7f3238c6"
+      }
+    ],
+    "humanApproval": "The human authorized all three B3 jobs through candidates; this packet was validated in-session and was not separately reviewed by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/javascript-dom/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "chrome",
+          "status": "PASS",
+          "version": "154.0.0.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "b997ed03605cc2e19aa28cd8735207777840e1294238385d0f2115a53ab5e1d5",
+  "nextStep": "writer",
+  "packetHash": "40097d8e4e55fdf6fc3223c03ee95595424b0c9f5167bb8b9bde1021bb2c34bf",
+  "packetRef": "lab/research/javascript-dom/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts; execute every final draft example independently; keep interactions as metadata only.",
+  "requestHash": "6d7f68e8a81ee752dcfcc11676844b0a1fed38ea1017e5136019928ce4c64317",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "core"
+  ],
+  "schemaVersion": 3,
+  "scope": "B3 javascript-dom: validated packet and runtime evidence to LAB candidate only; no publication.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "786157fe64bdabe59cdef16a614e30676d45a47b070fab6fa562ffd0b6fe715a",
+      "providedCharacters": 14180,
+      "sourceId": "940",
+      "sourcePath": "940-post-45-javascript-dom-selections-i-proste-funkcje.md",
+      "title": "Post #45 JavaScript DOM selections i proste funkcje",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-dom",
+  "validatedAt": "2026-10-11T14:48:56.065Z"
+}

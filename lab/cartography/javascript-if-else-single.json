@@ -1,0 +1,188 @@
+{
+  "action": "REWRITE",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "requestHash": "e542e63d5639f08d21393a2a725d92c4afca396f1fba570835e878142c656e31",
+    "selectedInventoryHash": "78c7abab329ef9636760aa98ecd5207f4fb0230e83a2ff29e13e1eac4c717ace"
+  },
+  "artifactName": "javascript-if-else-single",
+  "confidence": 0.97,
+  "correct": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "id": "correct-finite",
+      "interpretation": "Po Number sprawdzać Number.isFinite, nie tylko Number.isNaN, oraz uznać sam biały znak za brak wartości."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "id": "keep-validation",
+      "interpretation": "Zachować ideę sprawdzania pustej wartości przed konwersją Number."
+    }
+  ],
+  "limitations": [
+    "Analiza obejmuje tylko jeden autoryzowany plik SOURCE; twierdzenia normatywne wymagają oficjalnych źródeł i wykonania przykładów."
+  ],
+  "missing": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "id": "missing-equality",
+      "interpretation": "Dodać ścisłe porównanie i wyjaśnić kolejność if/else if/else."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "id": "research-conversion",
+      "interpretation": "Zweryfikować ToBoolean, Number, NaN, Infinity i ścisłe porównanie w aktualnej specyfikacji oraz MDN."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "id": "uncertain-ranges",
+      "interpretation": "Nie powielać normatywnych opisów zakresów prędkości bez źródła prawnego."
+    }
+  ],
+  "prerequisites": [
+    "Podstawowa składnia JavaScript i uruchamianie małych przykładów."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Wyjaśnić i sprawdzić: decyzja i kolejność gałęzi.",
+      "sourceIds": [
+        "2068"
+      ],
+      "title": "Decyzja i kolejność gałęzi"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Wyjaśnić i sprawdzić: walidacja tekstowego wejścia.",
+      "sourceIds": [
+        "2068"
+      ],
+      "title": "Walidacja tekstowego wejścia"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Wyjaśnić i sprawdzić: granice, przypadki testowe i ćwiczenie.",
+      "sourceIds": [
+        "2068"
+      ],
+      "title": "Granice, przypadki testowe i ćwiczenie"
+    }
+  ],
+  "proposedTitle": "Warunki w JavaScript: if, else i bezpieczna walidacja liczby",
+  "reason": "Źródło ma wartościowy rdzeń dydaktyczny, ale wymaga ograniczenia zakresu, korekt faktów i deterministycznych przykładów; spójny rewrite zachowa pochodzenie bez kopiowania błędów.",
+  "recommended": true,
+  "relationships": [],
+  "remove": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "2068",
+          "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+          "value": "Bo inaczej Number('') zwróci 0, co wprowadziłoby w błąd."
+        }
+      ],
+      "id": "remove-apps",
+      "interpretation": "Usunąć poboczne aplikacje i skupić lekcję na kontrakcie jednej funkcji."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "if/else, kolejność gałęzi, truthy/falsy, === oraz jedna czysta funkcja analizująca tekst jako liczbę; bez prawa drogowego, logowania i kalkulatora kosztów.",
+  "targets": [
+    {
+      "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+      "providedCharacters": 9062,
+      "sourceId": "2068",
+      "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+      "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

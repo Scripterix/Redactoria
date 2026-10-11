@@ -66,7 +66,10 @@ editorial decisions or publish LAB artifacts as articles.
 | Critic | IMPLEMENTED | Separate grounded review of exact draft; PASS/REVISE/BLOCK, no rewrite or loop |
 | First publication candidate | PRESERVED IN LAB | Exact second-pass PASS copy; separate human local-only publication approval recorded |
 | Second publication candidate | PRESERVED IN LAB | B2 single-source PHP control-flow exact PASS copy; publication pending/false |
+| B3 JavaScript candidates | PRESERVED IN LAB | Three independent schema-v3 exact PASS copies: if/else, Arrays and DOM; publication pending/false |
 | Promotion Gate | IMPLEMENTED | Manual deterministic CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
+| Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all five lifecycles PASS |
+| CONTENT lineage validation | IMPLEMENTED | Closed post-promotion contract and deterministic replay integrated into verification; PHP Arrays backfill PASS. Future write policy remains separate |
 | Engine foundation | IMPLEMENTED | Minimal model port, source reader, validation, stable serialization, safe LAB writer |
 | Full Engine | FUTURE | Independent automation and orchestration |
 | Dispatcher | FUTURE | Single-step orchestration |
@@ -190,3 +193,11 @@ evidence, Critic PASS, revision audit and hashes before byte-copying Markdown to
 `lab/candidates/php-control-flow/`. This is not Publisher or Promotion Gate and does
 not write CONTENT. The B2 comparison records measured counts and `null` for unmeasured
 cost/time data; future-layer conclusions remain recommendations, not architecture.
+
+The separately authorized B3 run reuses the same manual Golden Path for B1 ranks
+#2–#4 as three isolated jobs. Backward-compatible schema variants describe Node or
+browser runtime evidence while historical PHP contracts remain valid. Pure
+JavaScript examples execute in Node; the DOM example uses a controlled Chromium
+harness. Candidate schema v3 is intentionally not accepted by the Promotion Gate.
+All three candidates remain in LAB with publication flags false; no CONTENT, Git,
+deployment, Dispatcher or future editorial layer was added.

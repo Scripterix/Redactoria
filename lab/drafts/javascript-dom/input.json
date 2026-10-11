@@ -1,0 +1,26 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "query-selector",
+    "query-selector-all",
+    "null",
+    "text-content",
+    "class-list",
+    "create-element",
+    "click",
+    "static-node-list"
+  ],
+  "researchApproval": "lab/decisions/javascript-dom-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-dom/research.json",
+  "runtimeVerification": "lab/research/javascript-dom/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/javascript-dom-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "chrome",
+      "kind": "browser",
+      "version": "154.0.0.0"
+    }
+  ],
+  "topic": "javascript-dom"
+}

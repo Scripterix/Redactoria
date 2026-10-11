@@ -1,0 +1,147 @@
+{
+  "provenance": {
+    "description": "B3 Writer response authored from the validated packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "3490688f4a8fdf414874788ffc17a62497c82180326d510fc6c5325f99c617b4",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Kolejność operacji i brak ukrytej mutacji lub konwersji.",
+          "id": "predict-result",
+          "implemented": false,
+          "prompt": "Przewidź wynik przykładu i uzasadnij każdą część.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "transform-filter",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i uruchom przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "sorting",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI."
+      ],
+      "sections": [
+        {
+          "body": "`map` wywołuje funkcję dla elementów i buduje nową tablicę wyników. `filter` także zwraca nową tablicę, lecz zachowuje tylko elementy spełniające warunek. Do nauki używamy stałych danych, aby każde uruchomienie dawało ten sam wynik.\n\nNie trzeba dopisywać obliczonego pola do obiektów wejściowych. Możesz zwrócić nowe obiekty przez składnię spread. To ułatwia sprawdzenie, że oryginalna kolekcja pozostała bez zmian.",
+          "coverage": [
+            "map",
+            "filter",
+            "stable-fixtures"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "const scores = [40, 75, 90];\nconst doubled = scores.map(score => score * 2);\nconst passed = scores.filter(score => score >= 60);\nconsole.log(JSON.stringify({ doubled, passed, scores }));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "{\"doubled\":[80,150,180],\"passed\":[75,90],\"scores\":[40,75,90]}\n",
+              "id": "map-filter",
+              "language": "js",
+              "purpose": "Transformacja bez zmiany danych wejściowych"
+            }
+          ],
+          "heading": "Nowe tablice z map i filter",
+          "id": "transform-filter"
+        },
+        {
+          "body": "`reduce` łączy elementy w jedną wartość. Podanie wartości początkowej `0` sprawia, że suma pustej tablicy również jest zdefiniowana. Średnia wymaga osobnego kontraktu: dla braku elementów poniższa funkcja zwraca `null`, bo zero mogłoby wyglądać jak prawdziwy wynik.\n\nZaokrąglanie jest decyzją prezentacyjną. Najpierw policz dokładną średnią, a dopiero podczas wyświetlania wybierz potrzebną liczbę miejsc.",
+          "coverage": [
+            "reduce",
+            "empty-array"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "const average = values => values.length\n  ? values.reduce((sum, value) => sum + value, 0) / values.length\n  : null;\nconsole.log(average([2, 4, 9]));\nconsole.log(average([]));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "5\nnull\n",
+              "id": "safe-average",
+              "language": "js",
+              "purpose": "Średnia z jawnym przypadkiem pustym"
+            }
+          ],
+          "heading": "reduce i pusta tablica",
+          "id": "reduce-average"
+        },
+        {
+          "body": "`sort` zmienia tablicę, na której został wywołany. Bez komparatora porównuje wartości jak napisy, więc liczba 10 może znaleźć się przed 2. Jeśli chcesz zachować dane wejściowe, posortuj kopię utworzoną przez spread. Komparator `(a, b) => a - b` ustala kolejność rosnącą liczb.\n\nPonowne liczenie tej samej czystej średniej w komparatorze może być zbędną pracą, ale nie wprowadza losowości. Optymalizację uzasadniaj pomiarem, nie obietnicą.",
+          "coverage": [
+            "numeric-sort",
+            "sort-mutation"
+          ],
+          "evidence": [
+            {
+              "id": "verified-core",
+              "kind": "finding"
+            },
+            {
+              "id": "correct-legacy",
+              "kind": "finding"
+            },
+            {
+              "id": "code-boundary",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "const values = [10, 2, 30];\nconst sorted = [...values].sort((a, b) => a - b);\nconsole.log(sorted.join(','));\nconsole.log(values.join(','));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "2,10,30\n10,2,30\n",
+              "id": "numeric-copy-sort",
+              "language": "js",
+              "purpose": "Komparator liczbowy i zachowane wejście"
+            }
+          ],
+          "heading": "Sortowanie numeryczne bez mutacji wejścia",
+          "id": "sorting"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "node",
+          "kind": "node",
+          "version": "v24.16.0"
+        }
+      ],
+      "title": "Tablice JavaScript: map, filter, reduce i sort bez mutowania danych"
+    }
+  }
+}

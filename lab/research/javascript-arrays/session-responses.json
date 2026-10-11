@@ -1,0 +1,195 @@
+{
+  "provenance": {
+    "description": "B3 official-source analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "research": {
+    "requestHash": "fabbf42d8b843b15e7109bb0831808e82fe078610e7df19512744852ac8e296c",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Pierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej."
+            }
+          ],
+          "claim": "Kontrolowana próba Node potwierdza oczekiwane wyniki dla przypadków granicznych.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "mdn-array-map",
+              "excerptId": "map-new-array"
+            },
+            {
+              "documentId": "mdn-array-reduce",
+              "excerptId": "reduce-empty"
+            },
+            {
+              "documentId": "mdn-array-sort",
+              "excerptId": "sort-mutates"
+            }
+          ],
+          "id": "code-boundary",
+          "probeIds": [
+            "node-array-behavior"
+          ],
+          "questionIds": [
+            "core"
+          ],
+          "recommendation": "Pisać przykłady zgodne z wykonanym probe i ponownie wykonać kod finalnego draftu.",
+          "sourceType": "official-documentation",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-11",
+        "evidence": [
+          {
+            "documentId": "mdn-array-map",
+            "excerptId": "map-new-array"
+          },
+          {
+            "documentId": "mdn-array-reduce",
+            "excerptId": "reduce-empty"
+          },
+          {
+            "documentId": "mdn-array-sort",
+            "excerptId": "sort-mutates"
+          }
+        ],
+        "runtimeScope": "Node v24.16.0"
+      },
+      "incorrectClaims": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Pierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej."
+            }
+          ],
+          "claim": "Wielokrotne wywołanie czystej funkcji avg może zwiększyć koszt, lecz nie powoduje samo w sobie różnych wyników sortowania.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "mdn-array-map",
+              "excerptId": "map-new-array"
+            }
+          ],
+          "id": "correct-legacy",
+          "questionIds": [
+            "core"
+          ],
+          "recommendation": "Nie przenosić błędu źródłowego do nowej wersji.",
+          "sourceType": "official-documentation",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "Badanie jest ograniczone do jednego autoryzowanego źródła legacy i wskazanych oficjalnych stron; nie stanowi zgody na publikację."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "verified-core",
+            "correct-legacy",
+            "code-boundary"
+          ],
+          "note": "Zakres rozstrzygnięty przez oficjalną dokumentację i właściwą dla runtime weryfikację.",
+          "questionId": "core",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "CORRECT",
+          "findingIds": [
+            "verified-core",
+            "correct-legacy",
+            "code-boundary"
+          ],
+          "id": "rewrite-bounded",
+          "instruction": "Napisać zwarty materiał od nowa, zachować pochodzenie i użyć tylko zweryfikowanych twierdzeń."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "javascript-arrays",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "2048",
+              "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+              "value": "Pierwotna wersja kodu miała drobny problem:średnia była liczona **na bieżąco w kilku miejscach** (avg(u.marks)), przez co sortowanie potrafiło zwracać różne wyniki albo działało wolniej."
+            }
+          ],
+          "claim": "map i filter zwracają nowe tablice, reduce z wartością początkową obsługuje pustą tablicę, a sort mutuje odbiorcę i potrzebuje komparatora numerycznego.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "mdn-array-map",
+              "excerptId": "map-new-array"
+            },
+            {
+              "documentId": "mdn-array-reduce",
+              "excerptId": "reduce-empty"
+            },
+            {
+              "documentId": "mdn-array-sort",
+              "excerptId": "sort-mutates"
+            }
+          ],
+          "id": "verified-core",
+          "questionIds": [
+            "core"
+          ],
+          "recommendation": "Użyć tej semantyki jako granicy treści i przykładów.",
+          "sourceType": "official-documentation",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [],
+        "caution": [
+          {
+            "findingIds": [
+              "code-boundary"
+            ],
+            "instruction": "Wyniki draftu wykonać ponownie, niezależnie od probe badawczego."
+          }
+        ],
+        "correct": [
+          {
+            "findingIds": [
+              "correct-legacy"
+            ],
+            "instruction": "Wielokrotne wywołanie czystej funkcji avg może zwiększyć koszt, lecz nie powoduje samo w sobie różnych wyników sortowania."
+          }
+        ],
+        "keep": [
+          {
+            "findingIds": [
+              "verified-core"
+            ],
+            "instruction": "Zachować dydaktyczny rdzeń źródła, ale przepisać prozę."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "code-boundary"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

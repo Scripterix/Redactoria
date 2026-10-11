@@ -1,0 +1,45 @@
+{
+  "additionalHumanInterventions": 0,
+  "b1Rank": 3,
+  "candidateState": {
+    "approvedForPublication": false,
+    "humanPublicationDecision": "pending",
+    "published": false
+  },
+  "cartographerAction": "REWRITE",
+  "changedExamplesAfterCritic": 0,
+  "criticIterations": 1,
+  "elapsedNote": "No reliable end-to-end timer was started before the first job; value intentionally unknown.",
+  "elapsedSeconds": null,
+  "exactCandidate": true,
+  "finalExamples": 3,
+  "finalWordCount": 279,
+  "hashes": {
+    "article": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+    "candidateArticle": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+    "draftMetadata": "d9ad043cac3cc5a23500939ce7d8552a41a2c606baeb8de10064aa5a78dc539b"
+  },
+  "humanAuthorizationEvents": 1,
+  "humanAuthorizationRef": "lab/decisions/b3-authorization.json",
+  "limitedCorrections": 0,
+  "modelCalls": {
+    "cartographer": 1,
+    "critic": 1,
+    "researcher": 1,
+    "total": 4,
+    "writer": 1
+  },
+  "modelIdentifier": null,
+  "modelIdentifierNote": "Requested model: GPT-5.6 Sol; exact runtime model identifier was not exposed, so it is recorded as unknown.",
+  "officialDocuments": 3,
+  "researchQuestions": 1,
+  "runtime": "Node v24.16.0",
+  "runtimeAssertions": 9,
+  "runtimeStatus": "PASS",
+  "schemaVersion": 1,
+  "sourceCount": 1,
+  "tokenUsage": null,
+  "topic": "javascript-arrays",
+  "unresolvedResearchQuestions": 0,
+  "writerGenerations": 1
+}
