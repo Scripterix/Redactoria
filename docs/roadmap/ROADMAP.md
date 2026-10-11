@@ -94,6 +94,17 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Read-only `verify:article` Operator CLI: one deterministic command composes the
   article and CONTENT-lineage contracts for five known lifecycles, supports
   human/JSON output and stable exit codes without invoking agents or writing data.
+- Verified Engine checkpoint `dfccf0c`: five lifecycle checks, 330 tests, Astro
+  check/build and diff check passed before push to `origin/master`.
+- Knowledge Gap 0.1 LAB diagnosis: six input layers kept separate, qualitative
+  TOP 10 with 2 MODERNIZE / 2 MERGE / 6 CREATE_NEW, three hypothetical paths and
+  explicit confidence limits. No content generation or publication.
+- Knowledge Gap 0.2 blind/ablation diagnosis: Run A frozen before Strategic Memory,
+  83 metadata records plus 12 bounded full reads, 9/10 overlap with Run B. Strategy
+  assists sequencing but can anchor toward the historical B1 queue.
+- Three separate schema-v3 human publication decisions and Promotion Gate audits for
+  JavaScript if/else, Arrays and DOM; exact candidates remain immutable. Local CONTENT,
+  15-page build, 14-page Pagefind index and append-only navigation lineage PASS.
 
 ## NOW
 
@@ -104,19 +115,25 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   public verification complete. Plan 010 completed; its Git scope is closed.
 - B1 selection complete in LAB; B2 rank #1 candidate preserved in LAB, promoted
   through a separate human decision and verified in production. Plan 013 DONE.
-- B3 complete in LAB: JavaScript if/else, Arrays and DOM candidates plus metrics
-  and five-sample report. No Promotion Gate, CONTENT, Git or deployment action.
+- B3 publication checkpoint: JavaScript if/else, Arrays and DOM are promoted locally
+  through separate decisions/audits; full gate, Git push and Cloudflare verification
+  remain in active plan 021.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
 - Plan 009 website utilities DONE; icons and educational media remain exploratory Futureboard items.
 - `verify:article` 0.1 IMPLEMENTED / ESTABLISHED; Article Manifest remains a
   separate NEXT hypothesis and Precision Gate/Humanizer remain later/too early.
+- Knowledge Gap 0.1 complete in LAB and uncommitted for human review. Its TOP 10
+  is diagnostic evidence, not an accepted production queue.
+- Knowledge Gap 0.2 recommends one new PHP foundation article as the next content
+  action, but the recommendation is unexecuted and requires separate authorization.
 
 ## NEXT
 
-- STOP. Any publication of a B3 candidate, work on ranks #5–#10 or a Futureboard
-  layer requires a new explicit human decision and, where needed, an ADR/milestone.
+- Finish plan 021 only: full gate, authorized Git checkpoint, Cloudflare production
+  verification and STOP. PHP foundation, ranks #5–#10 and Futureboard layers require
+  separate authorization.
 
 ## LATER
 

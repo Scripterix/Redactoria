@@ -1,8 +1,8 @@
 # Redactoria — STATUS
 
-Stan po Milestone 4/5, Search 0.1, selekcji B1, pilocie B2, jego formalnej
-promocji do CONTENT, trzech próbkach B3, Pipeline Review 0.1 oraz read-only
-verify:article i CONTENT Lineage Contract Spikes 0.1, 2026-10-11. Szczegóły: [Project Brain](index.md),
+Stan po Milestone 4/5, Search 0.1, selekcji B1, publikacji B2, lokalnej promocji
+trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-only
+`verify:article` oraz Knowledge Gap 0.1/0.2, 2026-10-11. Szczegóły: [Project Brain](index.md),
 [architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
@@ -10,7 +10,7 @@ verify:article i CONTENT Lineage Contract Spikes 0.1, 2026-10-11. Szczegóły: [
 | Etap | Zakres | Status |
 | --- | --- | --- |
 | Milestone 0 | Astro foundation | DONE |
-| Cloudflare Pages | Publiczny pilot, 11 stron Astro / 10 stron indeksu | DEPLOYMENT SUCCESS — B2 VERIFIED |
+| Cloudflare Pages | Publiczny pilot B2; lokalny build B3 ma 15 stron / indeks 14 | B3 DEPLOY PENDING |
 | Milestone 0.5 | Project Brain + Tests | DONE |
 | Milestone 1 | Inventory Scanner | DONE |
 | Milestone 2 | Cartographer 0.1 | DONE |
@@ -25,20 +25,23 @@ verify:article i CONTENT Lineage Contract Spikes 0.1, 2026-10-11. Szczegóły: [
 | Critic final verdict | One new full review after targeted revision | PASS |
 | Draft code verification | 17 examples on each PHP 8.4.26 / 8.5.11 | PASS |
 | Milestone 5 | First Publication Candidate, exact reviewed copy in LAB | DONE |
-| Human publication decisions | PHP Arrays local-only; B2 public-production | APPROVED — HUMAN, SCOPED |
-| Promotion Gate | Deterministic CLI, exact candidate → CONTENT + LAB audit | PASS |
-| Local website | 11 static routes, HTML/XML sitemap, trzy artykuły | PRODUCTION PREVIEW PASS |
+| Human publication decisions | PHP Arrays local-only; B2 + trzy B3 public-production | APPROVED — HUMAN, SCOPED |
+| Promotion Gate | Schema 1–3; exact candidate → CONTENT + osobny LAB audit | PASS |
+| Local website | 15 static routes, HTML/XML sitemap, sześć artykułów | LOCAL PRODUCTION BUILD PASS |
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
 | Current Cloudflare checkpoint | `ee3f1fd`, push master, public route/search checks | VERIFIED — SUCCESS |
 | B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
 | B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | PUBLISHED — VERIFIED |
-| B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy exact schema-v3 candidates | LAB ONLY — PASS |
+| B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy osobne decyzje/audity | CONTENT — LOCAL VERIFIED |
 | Pipeline Review 0.1 | Pięć frozen samples, osiem racjonalizacji, bez implementacji | COMPLETE — LAB ONLY |
 | verify:article Contract Spike 0.1 | 27 common + 4 conditional checks; bez operator CLI | 4 PASS / 1 CONTENT-LINEAGE FAIL |
 | CONTENT Lineage Contract Spike 0.1 | Replay PHP Arrays + 6 positive / 9 negative scenarios | PASS — READ-ONLY PROTOTYPE |
 | verify:article Operator CLI 0.1 | 32 checks, human/JSON, exit 0/1/2, pięć lifecycle’ów | IMPLEMENTED — 5/5 PASS |
+| Engine checkpoint | `dfccf0c`, full gate, push `origin/master` | VERIFIED — PUSHED |
+| Knowledge Gap 0.1 | TOP 10, 2 MODERNIZE / 2 MERGE / 6 CREATE_NEW | COMPLETE — LAB REVIEW |
+| Knowledge Gap 0.2 | Blind Run A + Strategic Memory Run B, 9/10 overlap | COMPLETE — LAB REVIEW |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
@@ -105,6 +108,8 @@ PHP Arrays I + II
 → Git checkpoint ee3f1fd i Cloudflare success verified
 → B3 ranks #2–#4: trzy exact LAB candidates, zero publikacji
 → Pipeline Review 0.1: evidence/status only; zero implementacji i Knowledge Gap run
+→ verify:article 5/5 + full gate → checkpoint dfccf0c pushed
+→ Knowledge Gap 0.1: LAB diagnosis only; zero content generation/publication
 ```
 
 ## Pipeline Review 0.1 result
@@ -119,8 +124,9 @@ Agentic Circus pozostają `FROZEN / CONCEPT`, nie `REJECTED`.
 [Raport](../lab/reports/pipeline-review-0.1.md) i
 [JSON](../lab/reports/pipeline-review-0.1.json) rozdzielają Quality Gap od Knowledge
 Gap, klasyfikują metryki jako AVAILABLE / UNKNOWN / NOT MEASURABLE RELIABLY i
-rekomendują mały contract spike dla `verify:article`. Knowledge Gap 0.1 nie został
-uruchomiony. Nie zmieniono SOURCE, CONTENT, pięciu kandydatów ani historycznych
+rekomendują mały contract spike dla `verify:article`. W chwili raportu Knowledge
+Gap 0.1 nie był uruchomiony; późniejszy osobno autoryzowany eksperyment jest opisany
+poniżej. Nie zmieniono SOURCE, CONTENT, pięciu kandydatów ani historycznych
 decyzji; nie uruchomiono Promotion Gate, Git ani deploymentu.
 
 ## verify:article Contract Spike 0.1 result
@@ -159,9 +165,10 @@ pozostają `FROZEN / CONCEPT`.
 Właściwa komenda `npm run verify:article -- --topic <topic>` jest wdrożona jako
 read-only Operator Mode. Komponuje istniejący 27-check wspólny rdzeń z pięcioma
 warunkowymi kontrolami publikacji, w tym deterministycznym CONTENT lineage.
-Wszystkie pięć znanych lifecycle’ów daje `OVERALL PASS`: oba opublikowane PHP oraz
-trzy pending candidates JavaScript. PHP Arrays przechodzi dzięki istniejącemu
-backfillowi; pending publication pozostaje w całości `NOT_APPLICABLE`.
+Wszystkie pięć znanych lifecycle’ów daje `OVERALL PASS`: dwa opublikowane PHP i trzy
+lokalnie promowane artykuły JavaScript. PHP Arrays przechodzi dzięki historycznemu
+backfillowi; JavaScript przechodzi przez osobne decyzje schema v3, audity promocji
+i bieżące rekordy nawigacyjnego CONTENT lineage.
 
 Domyślny output jest krótki i czytelny, `--json` zwraca dokładny verification
 result contract, a exit codes to 0 PASS, 1 zweryfikowany FAIL i 2 błąd
@@ -169,6 +176,41 @@ input/configuration. Test niezmienności potwierdza identyczne bajty snapshotu p
 i po uruchomieniu. CLI nie uruchamia agentów, niczego nie zatwierdza, nie naprawia
 i nie publikuje. Article Manifest pozostaje NEXT; Precision Gate i Humanizer nie
 zostały wdrożone; Dream/Agentic pozostają `FROZEN / CONCEPT`.
+
+## Knowledge Gap 0.1 result
+
+Pierwsza diagnoza braków mapy wiedzy rozdzieliła PUBLIC (2 lekcje + tekst projektu),
+PENDING (3 kandydatów JavaScript), 83 rekordy SOURCE, istniejącą mapę, pamięć
+strategiczną i Futureboard. TOP 3 to: fundamenty języka PHP, wejście do JavaScript
+oraz funkcje/callbacki JavaScript. Łącznie wynik wskazuje 2 MODERNIZE, 2 MERGE i
+6 CREATE_NEW; wysoki udział CREATE_NEW oznacza, że legacy nie tworzy kompletnego
+programu nauczania i nie powinien być sztucznie używany do każdej luki.
+
+Największa dziura strukturalna to brak warstwy wejściowej przed wszystkimi pięcioma
+lekcjami PUBLIC/PENDING. Najbardziej zaskakująca luka dotyczy debugowania: inventory
+ma tytuł o `console.log`, ale jego body jest puste. [Raport](../lab/reports/knowledge-gap-0.1.md)
+i [JSON](../lab/knowledge-gaps/knowledge-gap-0.1.json) odpowiadają **YES** na pytanie,
+czy system wykrył braki niewskazane wprost przez człowieka. To diagnoza LAB do human
+review, nie zgoda na Researchera, artykuł, promocję ani publikację B3.
+
+## Knowledge Gap 0.2 blind/ablation result
+
+Run A został zamrożony przed otwarciem Strategic Memory: 83/83 rekordy inventory,
+12 celowanych pełnych odczytów SOURCE oraz wyłącznie PUBLIC, PENDING, aktualna mapa
+i jawne prerequisites. Run B użył tego samego evidence i dodał checkpointowe wersje
+Roadmapy, B1 planu, Pipeline Review planu i STATUS. Knowledge Gap 0.1 oraz Futureboard
+były wyłączone; bieżącego STATUS nie użyto jako inputu, ponieważ zawiera wynik 0.1.
+
+Oba rankingi dzielą 9/10 luk i identyczne TOP 4. Strategic Memory podniosła API,
+Git i Python, a historyczna kolejka B1 wprowadziła metadata-only Markdown i wyparła
+niezależnie wykryte testowanie. Wniosek: pamięć strategiczna pomaga sekwencjonować,
+ale nie powinna poprzedzać blind discovery. Confidence żadnej wspólnej luki nie
+wzrosło, bo strategiczne dokumenty nie są niezależnym factual evidence.
+
+[Raport](../lab/reports/knowledge-gap-0.2.md), [Run A](../lab/knowledge-gaps/knowledge-gap-0.2-run-a.json)
+i [Run B](../lab/knowledge-gaps/knowledge-gap-0.2-run-b.json) odpowiadają **YES** na
+blind discovery. Jedyna rekomendacja to stworzenie po osobnej zgodzie jednego nowego
+artykułu-fundamentu PHP; rekomendacji nie wykonano.
 
 ## B3 result — three JavaScript samples
 
@@ -178,13 +220,19 @@ result, captured official MDN evidence, validated Research Packet, one Writer dr
 actual final-example execution and a full Critic PASS. Pure JavaScript ran on Node
 24.16.0; DOM ran in a controlled Chromium 154 harness. No correction was required.
 
-All three exact schema-v3 candidates remain under `lab/candidates/` with
-`humanPublicationDecision: pending`, `approvedForPublication: false` and
-`published: false`. Promotion Gate deliberately rejects schema v3. The
+All three exact schema-v3 candidates remain immutable under `lab/candidates/` with
+historical `humanPublicationDecision: pending`, `approvedForPublication: false` and
+`published: false`. Three new, separate human decisions are the publication authority;
+the Promotion Gate now accepts runtime-neutral schema v3 without changing candidates. The
 [five-sample report](../lab/reports/b3-five-sample-comparison.md) records per-job
-metrics and separates Quality Gaps from Knowledge Gaps. Final gate: 287 tests in
-22 files, zero Astro diagnostics, 11 static pages and a 10-page Pagefind index.
-SOURCE, CONTENT, B1 ranking and historical PHP candidate/review hashes are unchanged.
+metrics and separates Quality Gaps from Knowledge Gaps.
+
+Each exact candidate passed pre-flight, `PROMOTED_PUBLIC` and immediate post-promotion
+verification. The only Promotion Gate body transform removed the exact technical LAB
+note. Three later natural navigation links have one append-only, replayable
+`CONTENT_LINEAGE_RECORD` each; technical prose and examples are unchanged. The local
+production build has 15 static pages, a 14-page/1801-word Pagefind index and 15 sitemap
+URLs. Git/Cloudflare remain pending until the complete plan 021 quality gate passes.
 
 ## B2 result — PHP control flow
 
@@ -354,12 +402,11 @@ Nie zmieniono XAMPP/PATH ani nie skonfigurowano produkcyjnego LLM API lub system
 
 ## NEXT
 
-Pozytywny visual review z 2026-10-09 pozostaje zapisany. Osobne polecenia z
-2026-10-10 wdrożyły ograniczony plan 009 i jego append: czas czytania, korektę
-byline do `Scripterix`, sitemap, mapę HTML, back-to-top oraz Copy code.
-W [Futureboard](futureboard/ideas.md) ikony oraz media nadal pozostają do
-przemyślenia. Nowa jawna zgoda z 2026-10-10 obejmuje Search 0.1, porządki przed
-publicznym buildem i commit/push po pełnej bieżącej weryfikacji; nie wymaga kolejnego YES.
+Plan 021 ma jedną pozostałą granicę: pełny quality gate, logiczne commity, autoryzowany
+push `origin/master` i bezpośrednia weryfikacja Cloudflare. Po raporcie obowiązuje STOP.
+Knowledge Gap 0.2 pozostaje diagnozą; rekomendacja PHP foundation nie jest wykonana.
+Article Manifest, Humanizer, Precision Gate, Interaction Layer, Dream Cycle i Agentic
+Circus nie są rozpoczynane.
 
 **Human localhost visual review**: [HOME](http://localhost:4321/),
 [Start](http://localhost:4321/artykuly/start-redactoria-edu/),
@@ -524,7 +571,7 @@ Previous plan 009 local publication / website gate, 2026-10-10 (historical):
   oraz zaakceptowany correction pass zakończone finalnym PASS.
 - [Completed candidate plan](plans/completed/007-first-publication-candidate.md) —
   dokładna historyczna kopia w LAB; późniejsza lokalna promocja i publiczny checkpoint osobno zatwierdzone.
-- [content/](../content/) — Start, dwa promowane artykuły PHP oraz dwa publiczne tematy.
+- [content/](../content/) — Start, dwa artykuły PHP, trzy artykuły JavaScript oraz trzy publiczne tematy.
 - [lab/inventory/](../lab/inventory/) — metadane 83 źródeł.
 - [lab/cartography/](../lab/cartography/) — mapy i audyt Cartographera.
 - [lab/research/php-arrays/](../lab/research/php-arrays/) — pakiet, dokumenty, probes i import sesji.

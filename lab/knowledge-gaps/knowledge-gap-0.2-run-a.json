@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "experiment": "KNOWLEDGE_GAP_0_2",
+  "run": "A_BLIND_STRUCTURAL",
+  "status": "FROZEN_BEFORE_STRATEGIC_MEMORY",
+  "recordedAt": "2026-10-11",
+  "question": "Czego najbardziej brakuje obecnej bazie wiedzy Redactoria EDU?",
+  "excludedInputs": [
+    "lab/reports/knowledge-gap-0.1.md",
+    "lab/knowledge-gaps/knowledge-gap-0.1.json",
+    "earlier expected-gap prompts",
+    "Strategic Memory",
+    "roadmaps",
+    "Futureboard"
+  ],
+  "inputs": {
+    "public": {
+      "articleCount": 3,
+      "curriculumArticleCount": 2,
+      "artifacts": [
+        {
+          "path": "content/articles/start-redactoria-edu.md",
+          "sha256": "fc069456fdd6a0596548d07f5dce6359ec1b168c0eddc235e392999d90cb8712",
+          "role": "project context"
+        },
+        {
+          "path": "content/articles/tablice-w-php.md",
+          "sha256": "c4111bad6f943f9b19568f0b4474935f3fa510a02fa0f577c9a05031af742b38",
+          "role": "curriculum"
+        },
+        {
+          "path": "content/articles/instrukcje-sterujace-php.md",
+          "sha256": "695a76d153fd9390a146859b288e8e5ab23bed7377e7a011104f35e3d8f3c578",
+          "role": "curriculum"
+        }
+      ]
+    },
+    "pending": {
+      "candidateCount": 3,
+      "classification": "PENDING_NOT_PUBLIC",
+      "artifacts": [
+        {
+          "topic": "javascript-if-else",
+          "path": "lab/candidates/javascript-if-else/article.json",
+          "sha256": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7"
+        },
+        {
+          "topic": "javascript-arrays",
+          "path": "lab/candidates/javascript-arrays/article.json",
+          "sha256": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a"
+        },
+        {
+          "topic": "javascript-dom",
+          "path": "lab/candidates/javascript-dom/article.json",
+          "sha256": "af490c0e36f7cab2b470dd186ab5f4489e86e4a667bcae0007e55ba267a665b9"
+        }
+      ]
+    },
+    "inventory": {
+      "path": "lab/inventory/inventory.json",
+      "sha256": "5c21f3bacc28a11a75bd7450902334e5eb2f9a0aeb18466f57c8b6a0128586c6",
+      "recordsInspected": 83,
+      "recordsTotal": 83
+    },
+    "knowledgeMap": {
+      "path": "lab/cartography/knowledge-map.json",
+      "sha256": "ac5ea4586e93039c06c821ccbbf065a58705e9283263b80c5562b18fcc172126",
+      "domains": 20,
+      "clusters": 23
+    },
+    "prerequisiteArtifacts": [
+      {
+        "path": "lab/cartography/php-control-flow-single.json",
+        "sha256": "5495096718b52a7327d4c835acea78f15ac637823947cbc270051f1a174c8789"
+      },
+      {
+        "path": "lab/cartography/javascript-if-else-single.json",
+        "sha256": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8"
+      },
+      {
+        "path": "lab/cartography/javascript-arrays-single.json",
+        "sha256": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c"
+      },
+      {
+        "path": "lab/cartography/javascript-dom-single.json",
+        "sha256": "86a5fee4b53cb01f08a2bb924701f728a912929c64f9387f27bc92de8cc4b9f2"
+      }
+    ]
+  },
+  "sourceCoverage": {
+    "inventoryRecordsChecked": 83,
+    "fullBodiesRead": 12,
+    "fullBodySelectionRule": "Read only plausible acquisition sources needed to confirm or reject a structural gap or choose an origin.",
+    "fullBodySources": [
+      {
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813"
+      },
+      {
+        "sourceId": "977",
+        "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+        "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9"
+      },
+      {
+        "sourceId": "542",
+        "sourcePath": "542-post-17-przeglad-js-html-css.md",
+        "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07"
+      },
+      {
+        "sourceId": "551",
+        "sourcePath": "551-post-18-front-end-jakie-sa-wymagania.md",
+        "contentHash": "a99f5d391143e2ed1cae0ac52903d769a2262037709af72b7590525d1b8dd50d"
+      },
+      {
+        "sourceId": "2070",
+        "sourcePath": "2070-consolelog-triki-jakich-nie-znaja-juniorzy.md",
+        "contentHash": "0e553e9c89fb6acbbf72c7a087a72779bf4d6b57598984f2dde612437df127c1"
+      },
+      {
+        "sourceId": "410",
+        "sourcePath": "410-post-11-api-advanced-programming-interface.md",
+        "contentHash": "392d05b7db1574b6523df0ea3519b334a672b8b076bb3b0c7e117b8ca8661870"
+      },
+      {
+        "sourceId": "578",
+        "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+        "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13"
+      },
+      {
+        "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+        "sourcePath": "143-post-4-angular-podstawy-praktyka.md",
+        "contentHash": "7826f03a865f62ae6872e2b3ca45c99e03ccf81a3d4cdd29c2492477d893ecb6"
+      },
+      {
+        "sourceId": "981",
+        "sourcePath": "981-post-53-angular-podstawy-kompleksowy-przewodnik-dl.md",
+        "contentHash": "93d09a08ff09dc0caae7b57d401d7a4207334f0de4d2e56859ccaede1db41741"
+      },
+      {
+        "sourceId": "283",
+        "sourcePath": "283-post-10-python-crash-course.md",
+        "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5"
+      },
+      {
+        "sourceId": "277",
+        "sourcePath": "277-post-8-moj-gist.md",
+        "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12"
+      },
+      {
+        "sourceId": "1575",
+        "sourcePath": "1575-post-66-jak-zbudowac-srodowisko-programistyczne-na.md",
+        "contentHash": "92515775269ad4c74584ce313a5049f9978a624644c258f1df7c780db019a2d2"
+      }
+    ],
+    "metadataOnlyGapIds": [],
+    "bodyEvidenceGapIds": [
+      "php-language-foundation",
+      "javascript-language-foundation",
+      "javascript-functions-callbacks",
+      "html-css-before-dom",
+      "debugging-feedback-loop",
+      "api-http-json-bridge",
+      "small-program-testing",
+      "typescript-angular-prerequisite",
+      "python-foundation-path",
+      "local-git-workflow"
+    ],
+    "note": "All TOP 10 gaps have body evidence, but corpus-wide absence conclusions also depend on the complete metadata scan and remain bounded by unread bodies."
+  },
+  "methodology": {
+    "gapDefinition": "A missing knowledge-map node or relation that breaks or weakens a learnable sequence.",
+    "qualityGapExclusions": [
+      "incorrect claims inside an article",
+      "missing citations",
+      "missing runtime evidence",
+      "editorial defects",
+      "outdated examples"
+    ],
+    "priorityBands": {
+      "P1": "Missing prerequisite for multiple current PUBLIC/PENDING lessons, or a direct blocker on the public beginner path.",
+      "P2": "Defensible bridge or sequence gap with clear downstream value but fewer current beneficiaries or higher research cost.",
+      "P3": "Useful coverage expansion or tooling foundation not blocking several current lessons."
+    },
+    "noNumericComposite": true
+  },
+  "snapshot": {
+    "publicKnowledge": [
+      "PHP control flow",
+      "PHP arrays",
+      "Redactoria project/process context"
+    ],
+    "pendingKnowledge": [
+      "JavaScript conditions and numeric-input validation",
+      "JavaScript array transformations and sorting",
+      "JavaScript DOM selection, updates and click events"
+    ],
+    "legacyOnly": "77 of 83 SOURCE records are not represented by the five curriculum lifecycles; SOURCE readiness is not implied.",
+    "brokenPaths": [
+      "PHP prerequisites -> PUBLIC control flow/arrays",
+      "JavaScript basics/functions -> PENDING conditions/arrays/DOM",
+      "HTML/selectors -> PENDING DOM",
+      "PENDING DOM -> SOURCE API/CRUD cluster",
+      "JavaScript -> TypeScript -> SOURCE Angular cluster"
+    ]
+  },
+  "top10": [
+    {
+      "rank": 1,
+      "id": "php-language-foundation",
+      "proposedTopic": "PHP od pierwszego skryptu: zmienne, wartości, typy, operatory i CLI",
+      "domain": "PHP",
+      "gapType": "FOUNDATION_GAP",
+      "whatExistsNow": "PUBLIC control flow and arrays lessons. The focused control-flow analysis explicitly requires variables, scalar values, echo and CLI execution.",
+      "whatIsMissing": "A public entry node before both existing PHP lessons.",
+      "prerequisiteEvidence": [
+        "lab/cartography/php-control-flow-single.json: variables, numbers/strings/bool, echo and PHP CLI are explicit prerequisites"
+      ],
+      "downstreamArticles": [
+        "public:instrukcje-sterujace-php",
+        "public:tablice-w-php"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "977",
+          "evidenceMode": "BODY",
+          "finding": "Mentions dynamic typing and variable syntax only inside a broad PHP/Python comparison; insufficient as a bounded foundation."
+        }
+      ],
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P1"
+    },
+    {
+      "rank": 2,
+      "id": "javascript-language-foundation",
+      "proposedTopic": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+      "domain": "JavaScript",
+      "gapType": "FOUNDATION_GAP",
+      "whatExistsNow": "Three PENDING lessons start at conditions, array methods and DOM.",
+      "whatIsMissing": "One explicit entry node shared by all three candidates.",
+      "prerequisiteEvidence": [
+        "Each of javascript-if-else-single.json, javascript-arrays-single.json and javascript-dom-single.json requires basic JavaScript syntax and running small examples."
+      ],
+      "downstreamArticles": [
+        "pending:javascript-if-else",
+        "pending:javascript-arrays",
+        "pending:javascript-dom"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "542",
+          "evidenceMode": "BODY",
+          "finding": "A project catalogue, not a JavaScript foundation."
+        },
+        {
+          "sourceId": "281",
+          "evidenceMode": "BODY",
+          "finding": "Begins with DOM, functions and classes rather than an entry model."
+        }
+      ],
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P1"
+    },
+    {
+      "rank": 3,
+      "id": "javascript-functions-callbacks",
+      "proposedTopic": "Funkcje i callbacki JavaScript przed tablicami i zdarzeniami",
+      "domain": "JavaScript",
+      "gapType": "SEQUENCE_GAP",
+      "whatExistsNow": "PENDING arrays passes functions to map/filter/reduce; PENDING DOM registers a click callback; PENDING conditions defines a function.",
+      "whatIsMissing": "Parameters, return values, function forms and passing a function as behavior.",
+      "prerequisiteEvidence": [
+        "The constructs are used in all three pending candidates but are not a dedicated PUBLIC/PENDING node."
+      ],
+      "downstreamArticles": [
+        "pending:javascript-if-else",
+        "pending:javascript-arrays",
+        "pending:javascript-dom"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "281",
+          "evidenceMode": "BODY",
+          "finding": "Contains named functions, event callbacks and a Calculator class; useful bounded core after correcting scope and terminology."
+        }
+      ],
+      "sourceAvailability": "STRONG",
+      "estimatedResearchEffort": "LOW",
+      "confidence": "HIGH",
+      "recommendedOrigin": "MODERNIZE",
+      "recommendedPriority": "P1"
+    },
+    {
+      "rank": 4,
+      "id": "html-css-before-dom",
+      "proposedTopic": "Struktura HTML, atrybuty, klasy i selektory przed DOM",
+      "domain": "Web frontend",
+      "gapType": "PREREQUISITE_GAP",
+      "whatExistsNow": "PENDING DOM operates on an HTML document with id/class selectors; SOURCE 542 is a project overview and SOURCE 551 only names HTML/CSS as skills.",
+      "whatIsMissing": "A document-and-selector model before querySelector, classList and createElement.",
+      "prerequisiteEvidence": [
+        "The DOM candidate uses HTML elements, ids, classes and selector strings without a prior current lesson."
+      ],
+      "downstreamArticles": [
+        "pending:javascript-dom",
+        "source-cluster:ui-components"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "542",
+          "evidenceMode": "BODY",
+          "finding": "Lists projects but does not teach HTML/CSS."
+        },
+        {
+          "sourceId": "551",
+          "evidenceMode": "BODY",
+          "finding": "Names HTML/CSS as a competency but provides no instructional sequence."
+        }
+      ],
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P1"
+    },
+    {
+      "rank": 5,
+      "id": "debugging-feedback-loop",
+      "proposedTopic": "Od wyniku do diagnozy: konsola, komunikaty błędów i minimalny przypadek",
+      "domain": "Programming practice",
+      "gapType": "BRIDGE_GAP",
+      "whatExistsNow": "All five code lifecycles ask learners to run examples and observe results. The dedicated-looking console SOURCE has an empty body; SOURCE 1575 only lists debugger tooling.",
+      "whatIsMissing": "A reusable feedback loop for unexpected output and runtime/syntax failures.",
+      "prerequisiteEvidence": [
+        "Expected-output examples across current lessons imply the learner must compare observations and diagnose mismatches."
+      ],
+      "downstreamArticles": [
+        "public:instrukcje-sterujace-php",
+        "public:tablice-w-php",
+        "pending:javascript-if-else",
+        "pending:javascript-arrays",
+        "pending:javascript-dom"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "2070",
+          "evidenceMode": "BODY",
+          "finding": "Zero-word body; the title does not provide coverage."
+        },
+        {
+          "sourceId": "1575",
+          "evidenceMode": "BODY",
+          "finding": "Mentions a debugger as one tool but does not teach a diagnosis workflow."
+        }
+      ],
+      "sourceAvailability": "NONE",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P2"
+    },
+    {
+      "rank": 6,
+      "id": "api-http-json-bridge",
+      "proposedTopic": "HTTP, JSON i asynchroniczny fetch między DOM a projektami API",
+      "domain": "Web / API",
+      "gapType": "BRIDGE_GAP",
+      "whatExistsNow": "PENDING DOM covers local interaction. The SOURCE API/CRUD cluster contains overlapping intros and projects.",
+      "whatIsMissing": "A bounded bridge with request/response, status, JSON parsing, async flow and controlled error cases.",
+      "prerequisiteEvidence": [
+        "The knowledge map jumps from local JavaScript/DOM to an API/CRUD cluster with no reviewed intermediate node."
+      ],
+      "downstreamArticles": [
+        "source-cluster:api-crud",
+        "source-cluster:angular-projects"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "410",
+          "evidenceMode": "BODY",
+          "finding": "Covers API, HTTP methods, JSON Server and Express but has an empty Async/Await section and overly broad scope."
+        },
+        {
+          "sourceId": "578",
+          "evidenceMode": "BODY",
+          "finding": "Provides an introductory fetch example but mixes API types, external endpoints and server creation."
+        }
+      ],
+      "sourceAvailability": "STRONG",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "MERGE",
+      "recommendedPriority": "P2"
+    },
+    {
+      "rank": 7,
+      "id": "small-program-testing",
+      "proposedTopic": "Testowanie małych funkcji: przypadki, granice i regresje",
+      "domain": "Programming practice",
+      "gapType": "BRIDGE_GAP",
+      "whatExistsNow": "Current lessons have deterministic examples and expected results. SOURCE 551 describes testing conceptually; SOURCE 281 supplies a small calculator domain.",
+      "whatIsMissing": "A learner-facing transition from running examples to choosing cases and automating assertions.",
+      "prerequisiteEvidence": [
+        "Current materials repeatedly expose inputs and expected outputs but do not form a reusable testing node."
+      ],
+      "downstreamArticles": [
+        "public:instrukcje-sterujace-php",
+        "public:tablice-w-php",
+        "pending:javascript-if-else",
+        "pending:javascript-arrays"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "551",
+          "evidenceMode": "BODY",
+          "finding": "Defines unit testing at a high level without a bounded executable lesson."
+        },
+        {
+          "sourceId": "281",
+          "evidenceMode": "BODY",
+          "finding": "Calculator operations offer testable examples but no testing method."
+        }
+      ],
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "MEDIUM",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P2"
+    },
+    {
+      "rank": 8,
+      "id": "typescript-angular-prerequisite",
+      "proposedTopic": "TypeScript przed Angularem: typy, interfejsy i funkcje",
+      "domain": "Angular / TypeScript",
+      "gapType": "PREREQUISITE_GAP",
+      "whatExistsNow": "The Angular SOURCE cluster includes component code and a course outline that names TypeScript, types and interfaces.",
+      "whatIsMissing": "A dedicated TypeScript node before Angular component and Signals material.",
+      "prerequisiteEvidence": [
+        "SOURCE 143 lists TypeScript introduction/types/interfaces before components; SOURCE 981 says TypeScript contains component logic."
+      ],
+      "downstreamArticles": [
+        "source-cluster:angular-intro",
+        "source-cluster:angular-signals"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "path:143-post-4-angular-podstawy-praktyka.md",
+          "evidenceMode": "BODY",
+          "finding": "Names the prerequisite in a course outline but is not the lesson."
+        },
+        {
+          "sourceId": "981",
+          "evidenceMode": "BODY",
+          "finding": "Uses typed component examples without teaching TypeScript independently."
+        }
+      ],
+      "sourceAvailability": "NONE",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P2"
+    },
+    {
+      "rank": 9,
+      "id": "python-foundation-path",
+      "proposedTopic": "Python: wartości, warunki, pętle i funkcje w małych skryptach",
+      "domain": "Python",
+      "gapType": "COVERAGE_GAP",
+      "whatExistsNow": "Python is a three-record SOURCE domain with no PUBLIC or PENDING node.",
+      "whatIsMissing": "A reviewed bounded entry node that turns the SOURCE island into a learning path.",
+      "prerequisiteEvidence": [
+        "The map has python-start but no reviewed current node or relation from general programming practice."
+      ],
+      "downstreamArticles": [
+        "source:977 PHP/Python comparison",
+        "source:2003 Python environment setup"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "283",
+          "evidenceMode": "BODY",
+          "finding": "Contains variables, if, loops, functions and CLI execution, plus unrelated/random/network branches that require narrowing."
+        }
+      ],
+      "sourceAvailability": "STRONG",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "MEDIUM",
+      "recommendedOrigin": "MODERNIZE",
+      "recommendedPriority": "P3"
+    },
+    {
+      "rank": 10,
+      "id": "local-git-workflow",
+      "proposedTopic": "Git lokalnie: status, staging, diff, commit i historia",
+      "domain": "Developer tooling",
+      "gapType": "FOUNDATION_GAP",
+      "whatExistsNow": "The developer-setup SOURCE cluster contains installation/context and a loose Git/Gist command list, but no current reviewed tooling lesson.",
+      "whatIsMissing": "A safe local workflow separated from GitHub, push and destructive recovery.",
+      "prerequisiteEvidence": [
+        "Project practice needs a repeatable change/history workflow; current SOURCE fragments do not form one."
+      ],
+      "downstreamArticles": [
+        "future project-based lessons across mapped programming domains"
+      ],
+      "sourceSupport": [
+        {
+          "sourceId": "277",
+          "evidenceMode": "BODY",
+          "finding": "Contains a command list mixed with Gist promotion and an incorrect --cashed spelling."
+        },
+        {
+          "sourceId": "1575",
+          "evidenceMode": "BODY",
+          "finding": "Provides Git/Git Bash installation and environment context, not the full local workflow."
+        }
+      ],
+      "sourceAvailability": "PARTIAL",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "MEDIUM",
+      "recommendedOrigin": "MERGE",
+      "recommendedPriority": "P3"
+    }
+  ],
+  "originCounts": {
+    "MODERNIZE": 2,
+    "MERGE": 2,
+    "CREATE_NEW": 6
+  },
+  "largestStructuralHole": {
+    "id": "missing-entry-layer",
+    "finding": "All five current code-focused PUBLIC/PENDING lifecycles begin after one or more absent foundations."
+  },
+  "mostSurprisingGap": {
+    "id": "debugging-feedback-loop",
+    "finding": "A title suggests console coverage, but the full SOURCE body contains no instructional content."
+  },
+  "blindDiscovery": {
+    "result": "YES",
+    "reason": "PUBLIC/PENDING prerequisites and teaching constructs expose missing entry and bridge nodes; bounded SOURCE reads distinguish real acquisition material from title-only apparent coverage."
+  },
+  "confidenceLimitations": [
+    "Seventy-one SOURCE bodies were not read in this run.",
+    "A complete metadata scan cannot prove a concept is absent from every unread body.",
+    "The knowledge map itself is an earlier selective interpretation and contains only eight inherited deep reads.",
+    "PENDING candidates are not public and may never be published.",
+    "Priority bands are qualitative editorial judgments, not calibrated scores.",
+    "Technical correctness and current-version claims require Researcher/Critic work."
+  ]
+}

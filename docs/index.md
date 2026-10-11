@@ -73,6 +73,18 @@ which ideas are still exploratory.
 - [Operator command reference](../commands.md) — production read-only
   `verify:article` usage, JSON mode and exit codes. The implemented verifier checks
   all five known article lifecycles without invoking agents or writing artifacts.
+- [Knowledge Gap 0.1 report](../lab/reports/knowledge-gap-0.1.md) and
+  [structured diagnosis](../lab/knowledge-gaps/knowledge-gap-0.1.json) — status-aware
+  PUBLIC/PENDING/SOURCE snapshot, qualitative TOP 10, acquisition origins and three
+  hypothetical prerequisite paths. LAB only; no article or publication action.
+- [Knowledge Gap 0.2 ablation report](../lab/reports/knowledge-gap-0.2.md),
+  [blind Run A](../lab/knowledge-gaps/knowledge-gap-0.2-run-a.json) and
+  [Strategic Memory Run B](../lab/knowledge-gaps/knowledge-gap-0.2-run-b.json) —
+  frozen blind discovery followed by a controlled strategy pass. Nine of ten gaps
+  overlap; strategy helps sequencing but introduces measurable anchoring.
+- [JavaScript B3 publication plan](plans/active/021-javascript-b3-publication-checkpoint.md)
+  — three separately approved schema-v3 candidates promoted to CONTENT with exact
+  audits and append-only navigation lineage; Git/Cloudflare checkpoint pending.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and

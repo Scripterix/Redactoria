@@ -4,6 +4,32 @@
 
 ### Added
 
+- Three separate human public-production decisions and deterministic Promotion Gate
+  audits for JavaScript if/else, Arrays and DOM. Schema-v3 support validates runtime
+  targets while keeping all exact LAB candidates immutable and pending/false.
+- Published JavaScript topic plus three CONTENT articles. Each removes only the exact
+  technical LAB note during promotion; three natural internal navigation additions
+  have append-only, replayable CONTENT lineage records.
+- Local production build: 15 generated pages, 14 Pagefind pages / 1801 words and
+  15 sitemap URLs. Full Git/Cloudflare checkpoint remains pending plan 021 completion.
+
+- Knowledge Gap 0.2 blind/ablation experiment: Run A was frozen before any Strategic
+  Memory input, after inspecting all 83 inventory records and 12 bounded SOURCE bodies.
+- Separate Run B reuses the exact factual evidence and adds checkpoint-only strategic
+  documents. Nine of ten gaps overlap; the unchanged TOP 4 demonstrates blind
+  discovery, while Markdown entering and testing dropping exposes anchoring.
+- Exactly one unexecuted recommendation: create a new PHP language-foundation article
+  before publishing B3. No content, candidate, publication, commit or push action.
+
+- Knowledge Gap 0.1 LAB diagnosis across separately classified PUBLIC, PENDING,
+  SOURCE, knowledge-map, strategic-memory and Futureboard inputs: qualitative TOP
+  10, acquisition origins, prerequisite relations and three hypothetical paths.
+- The result identifies a missing beginner-entry layer and independently finds
+  debugging/testing bridges; 2 gaps are MODERNIZE, 2 MERGE and 6 CREATE_NEW. No
+  article, candidate, publication, Researcher, Writer or Critic run was started.
+- Verified checkpoint `dfccf0c` pushed to `origin/master` before the experiment;
+  Phase B remains uncommitted for human review.
+
 - Production read-only `npm run verify:article -- --topic <topic>` Operator Mode,
   with concise human output, schema-valid deterministic `--json` and stable exit
   codes: 0 PASS, 1 verification FAIL, 2 input/configuration error.

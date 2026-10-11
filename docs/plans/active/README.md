@@ -1,9 +1,21 @@
 # Active plans
 
-Active: [019: Checkpoint + Knowledge Gap
-0.1](019-checkpoint-knowledge-gap-01.md). Phase A may checkpoint and push the
-completed verified Engine; Phase B is a LAB-only knowledge-map diagnosis that must
-remain uncommitted for human review. It cannot generate or publish an article.
+Active: [021: JavaScript B3 publication
+checkpoint](021-javascript-b3-publication-checkpoint.md). It promotes only the three
+human-approved exact B3 candidates, one by one, through separate decisions and the
+existing Promotion Gate. Full verification, Git push and Cloudflare production
+review are required before the end-of-day STOP.
+
+Previous plan: [020: Knowledge Gap 0.2 blind discovery and
+ablation](../completed/020-knowledge-gap-02-blind-ablation.md) is completed. Blind
+Run A was frozen before Strategic Memory; Run B retained 9/10 gaps and exposed
+sequencing value plus anchoring. Both runs remain LAB-only and uncommitted, and the
+single PHP-foundation recommendation was not executed.
+
+Previous plan: [019: Checkpoint + Knowledge Gap
+0.1](../completed/019-checkpoint-knowledge-gap-01.md) is completed: checkpoint
+`dfccf0c` was pushed after the full gate, while the LAB-only TOP 10 diagnosis remains
+uncommitted for human review. No article or candidate was generated or published.
 
 Previous plan: [018: implement verify:article CLI
 0.1](../completed/018-verify-article-cli-01.md) is completed: all five known

@@ -50,9 +50,9 @@ editorial decisions or publish LAB artifacts as articles.
 
 | Element | Status | Notes |
 | --- | --- | --- |
-| Astro Website | IMPLEMENTED | Ten static routes; HTML/XML sitemap, reading time, copy code, long-form code/tables |
-| Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; nine public main-content pages, lazy search API on `/szukaj/` |
-| Cloudflare Pages deployment | VERIFIED PUBLIC PILOT | Exact checkpoint check SUCCESS; ten public pages, Pagefind nine pages; master → npm run build → dist |
+| Astro Website | IMPLEMENTED | Fifteen static routes; HTML/XML sitemap, reading time, copy code, long-form code/tables |
+| Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; fourteen public main-content pages, lazy search API on `/szukaj/` |
+| Cloudflare Pages deployment | B3 PENDING | B2 checkpoint verified; local B3 production build PASS before authorized push |
 | LAB | IMPLEMENTED | Separated workspace with publication rules |
 | Content Collections | IMPLEMENTED | `articles` and `topics` |
 | Project Brain | IMPLEMENTED | Documentation map and durable project memory |
@@ -66,10 +66,10 @@ editorial decisions or publish LAB artifacts as articles.
 | Critic | IMPLEMENTED | Separate grounded review of exact draft; PASS/REVISE/BLOCK, no rewrite or loop |
 | First publication candidate | PRESERVED IN LAB | Exact second-pass PASS copy; separate human local-only publication approval recorded |
 | Second publication candidate | PRESERVED IN LAB | B2 single-source PHP control-flow exact PASS copy; publication pending/false |
-| B3 JavaScript candidates | PRESERVED IN LAB | Three independent schema-v3 exact PASS copies: if/else, Arrays and DOM; publication pending/false |
-| Promotion Gate | IMPLEMENTED | Manual deterministic CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
+| B3 JavaScript candidates | PUBLISHED LOCALLY / PRESERVED IN LAB | Three immutable schema-v3 PASS copies plus separate human decisions, CONTENT and audits |
+| Promotion Gate | IMPLEMENTED | Manual deterministic schema 1–3 CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
 | Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all five lifecycles PASS |
-| CONTENT lineage validation | IMPLEMENTED | Closed post-promotion contract and deterministic replay integrated into verification; PHP Arrays backfill PASS. Future write policy remains separate |
+| CONTENT lineage validation | IMPLEMENTED | Deterministic replay integrated into verification; PHP Arrays backfill and three current B3 navigation records PASS |
 | Engine foundation | IMPLEMENTED | Minimal model port, source reader, validation, stable serialization, safe LAB writer |
 | Full Engine | FUTURE | Independent automation and orchestration |
 | Dispatcher | FUTURE | Single-step orchestration |
@@ -198,6 +198,9 @@ The separately authorized B3 run reuses the same manual Golden Path for B1 ranks
 #2–#4 as three isolated jobs. Backward-compatible schema variants describe Node or
 browser runtime evidence while historical PHP contracts remain valid. Pure
 JavaScript examples execute in Node; the DOM example uses a controlled Chromium
-harness. Candidate schema v3 is intentionally not accepted by the Promotion Gate.
-All three candidates remain in LAB with publication flags false; no CONTENT, Git,
-deployment, Dispatcher or future editorial layer was added.
+harness. A later explicit human decision authorized exactly these three immutable
+schema-v3 candidates for public production. Promotion Gate support was extended only
+to runtime-neutral target validation and separate schema-v3 decisions. Each candidate
+entered CONTENT through its own audit; three navigation-only post-promotion changes
+have append-only lineage. Candidate flags remain historical `pending/false`. No
+Publisher, Dispatcher or automatic publication policy was added.

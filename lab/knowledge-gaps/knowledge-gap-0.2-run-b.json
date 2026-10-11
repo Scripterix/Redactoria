@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "experiment": "KNOWLEDGE_GAP_0_2",
+  "run": "B_STRATEGIC_MEMORY",
+  "status": "LAB_DIAGNOSIS",
+  "recordedAt": "2026-10-11",
+  "runA": {
+    "path": "lab/knowledge-gaps/knowledge-gap-0.2-run-a.json",
+    "sha256AtFreeze": "98542ccd4bafc59a466a3180f8149822dad3c67bb8355789611bb3bc92bfacef",
+    "frozenBeforeStrategicMemory": true
+  },
+  "factualEvidencePolicy": "Run B reuses the exact Run A factual evidence set. Strategic Memory may reorder or suggest a hypothesis, but cannot prove coverage, absence or technical correctness.",
+  "strategicMemory": {
+    "checkpoint": "dfccf0c964eaf60ac4bcd921a4dff0584e17a8ae",
+    "artifacts": [
+      {
+        "path": "docs/roadmap/ROADMAP.md",
+        "gitBlob": "11dc124be99e75d39df12fff46b93371907b9a16",
+        "classification": "ACCEPTED_DELIVERY_ROADMAP",
+        "influence": "Confirms B3 is complete but pending, and content production requires a separate human decision."
+      },
+      {
+        "path": "docs/plans/completed/011-cartographer-pilot-selection.md",
+        "gitBlob": "1184a62ae6d1e445969fbe516e9d731cfc370b96",
+        "classification": "HISTORICAL_SELECTION_PLAN",
+        "influence": "Adds directional weight to calculator/functions, API, Git, Python and Markdown legacy opportunities."
+      },
+      {
+        "path": "docs/plans/completed/015-pipeline-review-01.md",
+        "gitBlob": "2c6a4222252f837bfda2d0a940198dfe0f5ade3a",
+        "classification": "HISTORICAL_REVIEW_PLAN",
+        "influence": "Reinforces that Knowledge Gaps must remain separate from Quality Gaps and that content action is not automatic."
+      },
+      {
+        "path": "docs/STATUS.md",
+        "gitBlob": "59e6014b52539cf9105baa32657416f347e9f56d",
+        "classification": "CHECKPOINT_STATUS",
+        "influence": "Confirms current B3 pending/public boundaries without exposing later uncommitted Knowledge Gap results."
+      }
+    ],
+    "explicitlyExcluded": [
+      "current uncommitted docs/STATUS.md",
+      "Knowledge Gap 0.1 artifacts",
+      "Futureboard"
+    ],
+    "notFound": [
+      "separately named Project Master",
+      "separately named historical OGW roadmap",
+      "separately named historical cluster plan"
+    ]
+  },
+  "top10": [
+    {
+      "rank": 1,
+      "id": "php-language-foundation",
+      "proposedTopic": "PHP od pierwszego skryptu: zmienne, wartości, typy, operatory i CLI",
+      "domain": "PHP",
+      "gapType": "FOUNDATION_GAP",
+      "whatExistsNow": "Two PUBLIC PHP lessons above entry level.",
+      "whatIsMissing": "A public entry node before control flow and arrays.",
+      "prerequisiteEvidence": "Explicit prerequisites in the focused PHP control-flow artifact.",
+      "downstreamArticles": [
+        "public:instrukcje-sterujace-php",
+        "public:tablice-w-php"
+      ],
+      "sourceSupport": "BODY: source 977 is too broad and thin for the missing node.",
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P1",
+      "runAChange": "UNCHANGED",
+      "strategicInfluence": "None; retained on structural evidence."
+    },
+    {
+      "rank": 2,
+      "id": "javascript-language-foundation",
+      "proposedTopic": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+      "domain": "JavaScript",
+      "gapType": "FOUNDATION_GAP",
+      "whatExistsNow": "Three PENDING JavaScript candidates above entry level.",
+      "whatIsMissing": "A shared JavaScript entry node.",
+      "prerequisiteEvidence": "All three focused JavaScript artifacts require basic syntax and running examples.",
+      "downstreamArticles": [
+        "pending:javascript-if-else",
+        "pending:javascript-arrays",
+        "pending:javascript-dom"
+      ],
+      "sourceSupport": "BODY: sources 542 and 281 do not provide an entry lesson.",
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P1",
+      "runAChange": "UNCHANGED",
+      "strategicInfluence": "B3 completion confirms relevance but does not alter the evidence or rank."
+    },
+    {
+      "rank": 3,
+      "id": "javascript-functions-callbacks",
+      "proposedTopic": "Funkcje i callbacki JavaScript przed tablicami i zdarzeniami",
+      "domain": "JavaScript",
+      "gapType": "SEQUENCE_GAP",
+      "whatExistsNow": "All three PENDING candidates use functions; SOURCE 281 contains a calculator/function core.",
+      "whatIsMissing": "A dedicated functions/callbacks step.",
+      "prerequisiteEvidence": "Named functions and callbacks are used before being introduced as their own node.",
+      "downstreamArticles": [
+        "pending:javascript-if-else",
+        "pending:javascript-arrays",
+        "pending:javascript-dom"
+      ],
+      "sourceSupport": "BODY: source 281 has a modernizable bounded core.",
+      "sourceAvailability": "STRONG",
+      "estimatedResearchEffort": "LOW",
+      "confidence": "HIGH",
+      "recommendedOrigin": "MODERNIZE",
+      "recommendedPriority": "P1",
+      "runAChange": "UNCHANGED",
+      "strategicInfluence": "Historical B1 also selected source 281, but confidence is not increased because this is directional, not independent factual evidence."
+    },
+    {
+      "rank": 4,
+      "id": "html-css-before-dom",
+      "proposedTopic": "Struktura HTML, atrybuty, klasy i selektory przed DOM",
+      "domain": "Web frontend",
+      "gapType": "PREREQUISITE_GAP",
+      "whatExistsNow": "PENDING DOM assumes HTML and selector concepts; SOURCE support is overview-only.",
+      "whatIsMissing": "A document-and-selector foundation.",
+      "prerequisiteEvidence": "The DOM candidate uses elements, ids, classes and selectors without a prior node.",
+      "downstreamArticles": [
+        "pending:javascript-dom",
+        "source-cluster:ui-components"
+      ],
+      "sourceSupport": "BODY: sources 542 and 551 name the area but do not teach it.",
+      "sourceAvailability": "THIN",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P1",
+      "runAChange": "UNCHANGED",
+      "strategicInfluence": "Historical B1 explicitly found adjacent shortlist texts too weak for a small tutorial; no confidence increase because it reuses the same corpus."
+    },
+    {
+      "rank": 5,
+      "id": "api-http-json-bridge",
+      "proposedTopic": "HTTP, JSON i asynchroniczny fetch między DOM a projektami API",
+      "domain": "Web / API",
+      "gapType": "BRIDGE_GAP",
+      "whatExistsNow": "Local DOM knowledge and a SOURCE API/CRUD project cluster.",
+      "whatIsMissing": "A bounded request/response and async bridge.",
+      "prerequisiteEvidence": "No reviewed node connects DOM to API projects.",
+      "downstreamArticles": [
+        "source-cluster:api-crud",
+        "source-cluster:angular-projects"
+      ],
+      "sourceSupport": "BODY: sources 410 and 578 are complementary but broad.",
+      "sourceAvailability": "STRONG",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "MERGE",
+      "recommendedPriority": "P2",
+      "runAChange": "UP_FROM_6",
+      "strategicInfluence": "B1's explicit API pilot direction increases priority, not confidence."
+    },
+    {
+      "rank": 6,
+      "id": "debugging-feedback-loop",
+      "proposedTopic": "Od wyniku do diagnozy: konsola, komunikaty błędów i minimalny przypadek",
+      "domain": "Programming practice",
+      "gapType": "BRIDGE_GAP",
+      "whatExistsNow": "Five executable lifecycles; console SOURCE body is empty; setup SOURCE only mentions debugger tooling.",
+      "whatIsMissing": "A reusable diagnosis feedback loop.",
+      "prerequisiteEvidence": "Current lessons rely on expected-output comparison without teaching recovery from mismatch.",
+      "downstreamArticles": [
+        "all five current code lifecycles"
+      ],
+      "sourceSupport": "BODY: source 2070 is empty and source 1575 is only a mention.",
+      "sourceAvailability": "NONE",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P2",
+      "runAChange": "DOWN_FROM_5",
+      "strategicInfluence": "Displaced one place by historical API direction; structural evidence unchanged."
+    },
+    {
+      "rank": 7,
+      "id": "local-git-workflow",
+      "proposedTopic": "Git lokalnie: status, staging, diff, commit i historia",
+      "domain": "Developer tooling",
+      "gapType": "FOUNDATION_GAP",
+      "whatExistsNow": "Two SOURCE fragments, no reviewed current tooling node.",
+      "whatIsMissing": "A safe local Git workflow separated from hosting and destructive actions.",
+      "prerequisiteEvidence": "Supports repeatable project practice rather than a specific language article.",
+      "downstreamArticles": [
+        "future project-based lessons"
+      ],
+      "sourceSupport": "BODY: sources 277 and 1575 are complementary and require correction/narrowing.",
+      "sourceAvailability": "PARTIAL",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "MEDIUM",
+      "recommendedOrigin": "MERGE",
+      "recommendedPriority": "P2",
+      "runAChange": "UP_FROM_10",
+      "strategicInfluence": "B1 rank #8 and the roadmap's project/tooling direction promote this opportunity; confidence remains unchanged."
+    },
+    {
+      "rank": 8,
+      "id": "python-foundation-path",
+      "proposedTopic": "Python: wartości, warunki, pętle i funkcje w małych skryptach",
+      "domain": "Python",
+      "gapType": "COVERAGE_GAP",
+      "whatExistsNow": "A three-record SOURCE island and no PUBLIC/PENDING Python node.",
+      "whatIsMissing": "A reviewed bounded Python entry node.",
+      "prerequisiteEvidence": "The map has python-start without a current learning-path connection.",
+      "downstreamArticles": [
+        "source:977 PHP/Python comparison",
+        "source:2003 Python environment setup"
+      ],
+      "sourceSupport": "BODY: source 283 has a modernizable core plus branches to remove.",
+      "sourceAvailability": "STRONG",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "MEDIUM",
+      "recommendedOrigin": "MODERNIZE",
+      "recommendedPriority": "P2",
+      "runAChange": "UP_FROM_9",
+      "strategicInfluence": "Historical B1 included Python fundamentals, changing priority but adding no independent factual evidence."
+    },
+    {
+      "rank": 9,
+      "id": "typescript-angular-prerequisite",
+      "proposedTopic": "TypeScript przed Angularem: typy, interfejsy i funkcje",
+      "domain": "Angular / TypeScript",
+      "gapType": "PREREQUISITE_GAP",
+      "whatExistsNow": "Angular SOURCE uses and names TypeScript but has no dedicated prerequisite node.",
+      "whatIsMissing": "A TypeScript foundation before Angular components and Signals.",
+      "prerequisiteEvidence": "Sources 143 and 981 position TypeScript concepts before or inside Angular components.",
+      "downstreamArticles": [
+        "source-cluster:angular-intro",
+        "source-cluster:angular-signals"
+      ],
+      "sourceSupport": "BODY: Angular sources contain mentions/usage, not a standalone lesson.",
+      "sourceAvailability": "NONE",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "HIGH",
+      "recommendedOrigin": "CREATE_NEW",
+      "recommendedPriority": "P3",
+      "runAChange": "DOWN_FROM_8",
+      "strategicInfluence": "The accepted roadmap prioritizes the completed PHP/JS pilot over opening the SOURCE-only Angular branch."
+    },
+    {
+      "rank": 10,
+      "id": "markdown-authoring-foundation",
+      "proposedTopic": "Markdown: nagłówki, linki, listy i bloki kodu",
+      "domain": "Developer tooling / documentation",
+      "gapType": "COVERAGE_GAP",
+      "whatExistsNow": "Inventory has one 348-word Markdown SOURCE; no PUBLIC/PENDING documentation node.",
+      "whatIsMissing": "A reviewed authoring foundation that supports project documentation and code examples.",
+      "prerequisiteEvidence": "No direct current article prerequisite; this is a strategic coverage opportunity.",
+      "downstreamArticles": [
+        "future project documentation lessons"
+      ],
+      "sourceSupport": "METADATA_ONLY in the fixed ablation evidence set: source 48 title/tags/word count; B1 historically selected it at rank #5.",
+      "sourceAvailability": "UNKNOWN_UNTIL_BODY_REVIEW",
+      "estimatedResearchEffort": "MEDIUM",
+      "confidence": "LOW",
+      "recommendedOrigin": "MODERNIZE",
+      "recommendedPriority": "P3",
+      "runAChange": "NEW_IN_RUN_B",
+      "strategicInfluence": "Appears only because B1 historical priority exposed it; this is the clearest anchoring signal."
+    }
+  ],
+  "droppedFromRunA": [
+    {
+      "id": "small-program-testing",
+      "runARank": 7,
+      "reason": "Historical selection pressure toward already ranked legacy sources displaced a structurally derived CREATE_NEW bridge despite unchanged factual evidence."
+    }
+  ],
+  "originCounts": {
+    "MODERNIZE": 3,
+    "MERGE": 2,
+    "CREATE_NEW": 5
+  },
+  "confidenceChanges": [],
+  "confidencePolicyResult": "No shared gap received a confidence increase because all Strategic Memory references reuse project/corpus interpretation rather than provide independent factual evidence.",
+  "strategicMemoryAssessment": {
+    "helps": "It makes acquisition sequencing and already-reviewed legacy opportunities more visible.",
+    "anchors": "It overweights the historical B1 queue: Git/Python rise and Markdown enters, displacing the independently derived testing bridge.",
+    "net": "USEFUL_FOR_SEQUENCING_BUT_NOT_FOR_DISCOVERY_TRUTH"
+  }
+}
