@@ -1,10 +1,11 @@
 # Active plans
 
-Active: [021: JavaScript B3 publication
-checkpoint](021-javascript-b3-publication-checkpoint.md). It promotes only the three
-human-approved exact B3 candidates, one by one, through separate decisions and the
-existing Promotion Gate. Full verification, Git push and Cloudflare production
-review are required before the end-of-day STOP.
+No execution plan is active.
+
+Previous plan: [021: JavaScript B3 publication
+checkpoint](../completed/021-javascript-b3-publication-checkpoint.md) is completed:
+three separate human decisions, Promotion Gate audits, complete local quality gate,
+Git push and direct Cloudflare production verification passed. End-of-day STOP.
 
 Previous plan: [020: Knowledge Gap 0.2 blind discovery and
 ablation](../completed/020-knowledge-gap-02-blind-ablation.md) is completed. Blind

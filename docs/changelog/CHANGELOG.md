@@ -10,8 +10,9 @@
 - Published JavaScript topic plus three CONTENT articles. Each removes only the exact
   technical LAB note during promotion; three natural internal navigation additions
   have append-only, replayable CONTENT lineage records.
-- Local production build: 15 generated pages, 14 Pagefind pages / 1801 words and
-  15 sitemap URLs. Full Git/Cloudflare checkpoint remains pending plan 021 completion.
+- Production build: 15 generated pages, 14 Pagefind pages / 1801 words and 15 sitemap
+  URLs. Commit `fb86db7` was pushed to master; Cloudflare Pages completed successfully,
+  and direct public routes, search, sitemap and responsive checks passed.
 
 - Knowledge Gap 0.2 blind/ablation experiment: Run A was frozen before any Strategic
   Memory input, after inspecting all 83 inventory records and 12 bounded SOURCE bodies.

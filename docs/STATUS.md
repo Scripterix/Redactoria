@@ -10,7 +10,7 @@ trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-onl
 | Etap | Zakres | Status |
 | --- | --- | --- |
 | Milestone 0 | Astro foundation | DONE |
-| Cloudflare Pages | Publiczny pilot B2; lokalny build B3 ma 15 stron / indeks 14 | B3 DEPLOY PENDING |
+| Cloudflare Pages | Publiczny pilot B3, 15 stron Astro / 14 stron indeksu | DEPLOYMENT SUCCESS — VERIFIED |
 | Milestone 0.5 | Project Brain + Tests | DONE |
 | Milestone 1 | Inventory Scanner | DONE |
 | Milestone 2 | Cartographer 0.1 | DONE |
@@ -27,14 +27,14 @@ trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-onl
 | Milestone 5 | First Publication Candidate, exact reviewed copy in LAB | DONE |
 | Human publication decisions | PHP Arrays local-only; B2 + trzy B3 public-production | APPROVED — HUMAN, SCOPED |
 | Promotion Gate | Schema 1–3; exact candidate → CONTENT + osobny LAB audit | PASS |
-| Local website | 15 static routes, HTML/XML sitemap, sześć artykułów | LOCAL PRODUCTION BUILD PASS |
+| Local website | 15 static routes, HTML/XML sitemap, sześć artykułów | PRODUCTION VERIFIED |
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
-| Current Cloudflare checkpoint | `ee3f1fd`, push master, public route/search checks | VERIFIED — SUCCESS |
+| Current Cloudflare checkpoint | `fb86db7`, push master, public route/search checks | VERIFIED — SUCCESS |
 | B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
 | B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | PUBLISHED — VERIFIED |
-| B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy osobne decyzje/audity | CONTENT — LOCAL VERIFIED |
+| B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy osobne decyzje/audity | PUBLISHED — VERIFIED |
 | Pipeline Review 0.1 | Pięć frozen samples, osiem racjonalizacji, bez implementacji | COMPLETE — LAB ONLY |
 | verify:article Contract Spike 0.1 | 27 common + 4 conditional checks; bez operator CLI | 4 PASS / 1 CONTENT-LINEAGE FAIL |
 | CONTENT Lineage Contract Spike 0.1 | Replay PHP Arrays + 6 positive / 9 negative scenarios | PASS — READ-ONLY PROTOTYPE |
@@ -47,9 +47,9 @@ trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-onl
 ## Cloudflare Pages — publiczne środowisko testowe
 
 Aktualny checkpoint potwierdzony bezpośrednio: Cloudflare Pages check dla commita
-`ee3f1fd932e6be674b99b9d3fe302265613a9ead` ma **completed / success**
-(`2026-10-10T22:03:16Z`). Jedenaście statycznych stron Astro i polski indeks
-Pagefind dziesięciu stron działają pod
+`fb86db7` ma **completed / success** (`2026-10-11T20:50:45Z`, deployment
+`1423959d-ce1a-4f45-894c-ba1e256e1997`). Piętnaście statycznych stron Astro i
+polski indeks Pagefind czternastu stron działają pod
 [redactoria.pages.dev](https://redactoria.pages.dev/).
 Provider: Cloudflare Pages; repository: `Scripterix/Redactoria`; production branch:
 `master`; build: `npm run build`; output directory: `dist`.
@@ -232,7 +232,9 @@ verification. The only Promotion Gate body transform removed the exact technical
 note. Three later natural navigation links have one append-only, replayable
 `CONTENT_LINEAGE_RECORD` each; technical prose and examples are unchanged. The local
 production build has 15 static pages, a 14-page/1801-word Pagefind index and 15 sitemap
-URLs. Git/Cloudflare remain pending until the complete plan 021 quality gate passes.
+URLs. Commit `fb86db7` został pushnięty do `origin/master`; Cloudflare Pages zakończył
+deployment sukcesem, a publiczne trasy, trzy artykuły JS, oba PHP, wyszukiwarka,
+sitemap oraz mobilne widoki zostały zweryfikowane bezpośrednio.
 
 ## B2 result — PHP control flow
 
@@ -402,9 +404,9 @@ Nie zmieniono XAMPP/PATH ani nie skonfigurowano produkcyjnego LLM API lub system
 
 ## NEXT
 
-Plan 021 ma jedną pozostałą granicę: pełny quality gate, logiczne commity, autoryzowany
-push `origin/master` i bezpośrednia weryfikacja Cloudflare. Po raporcie obowiązuje STOP.
-Knowledge Gap 0.2 pozostaje diagnozą; rekomendacja PHP foundation nie jest wykonana.
+Plan 021 jest zakończony: pełny quality gate, logiczne commity, push `origin/master`
+i bezpośrednia weryfikacja Cloudflare przeszły. Obowiązuje STOP. Knowledge Gap 0.2
+pozostaje diagnozą; rekomendacja PHP foundation nie jest wykonana.
 Article Manifest, Humanizer, Precision Gate, Interaction Layer, Dream Cycle i Agentic
 Circus nie są rozpoczynane.
 

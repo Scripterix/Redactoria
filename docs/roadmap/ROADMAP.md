@@ -88,7 +88,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - B3 ranks #2–#4: three bounded single-source JavaScript REWRITEs, official MDN
   evidence, Node/Chromium verification, first-pass Critic PASS and exact schema-v3
   candidates in LAB. Five-sample comparison separates Quality Gaps from Knowledge
-  Gaps; publication remains pending/false.
+  Gaps. Immutable candidate flags remain historically pending/false; later plan 021
+  separately authorized and verified their publication.
 - Public checkpoint `ee3f1fd`: push master, Cloudflare Pages success and direct
   production verification for routes, both PHP articles, search and sitemap.
 - Read-only `verify:article` Operator CLI: one deterministic command composes the
@@ -105,6 +106,9 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Three separate schema-v3 human publication decisions and Promotion Gate audits for
   JavaScript if/else, Arrays and DOM; exact candidates remain immutable. Local CONTENT,
   15-page build, 14-page Pagefind index and append-only navigation lineage PASS.
+- B3 public checkpoint `fb86db7`: three JavaScript articles, homepage refinement and
+  Knowledge Gap records pushed to `master`; Cloudflare success and direct production
+  routes, search, sitemap and responsive checks verified.
 
 ## NOW
 
@@ -115,9 +119,9 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   public verification complete. Plan 010 completed; its Git scope is closed.
 - B1 selection complete in LAB; B2 rank #1 candidate preserved in LAB, promoted
   through a separate human decision and verified in production. Plan 013 DONE.
-- B3 publication checkpoint: JavaScript if/else, Arrays and DOM are promoted locally
-  through separate decisions/audits; full gate, Git push and Cloudflare verification
-  remain in active plan 021.
+- B3 publication checkpoint complete: JavaScript if/else, Arrays and DOM are public
+  through separate decisions/audits; plan 021 full gate, Git push and Cloudflare
+  production verification passed.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
@@ -131,9 +135,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- Finish plan 021 only: full gate, authorized Git checkpoint, Cloudflare production
-  verification and STOP. PHP foundation, ranks #5–#10 and Futureboard layers require
-  separate authorization.
+- STOP. PHP foundation, ranks #5–#10 and Futureboard layers require separate
+  authorization.
 
 ## LATER
 

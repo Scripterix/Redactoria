@@ -55,7 +55,8 @@ which ideas are still exploratory.
 - [B3 five-sample comparison](../lab/reports/b3-five-sample-comparison.md) and
   [completed plan](plans/completed/014-b3-three-js-pipeline-samples.md) — ranks
   #2–#4 processed as three isolated JavaScript jobs to exact schema-v3 LAB
-  candidates. Node/Chromium evidence passed; publication remains pending/false.
+  candidates. Node/Chromium evidence passed; immutable candidate flags remain
+  pending/false while later plan 021 provides separate publication authority.
 - [Pipeline Review 0.1](../lab/reports/pipeline-review-0.1.md) and
   [structured evidence](../lab/reports/pipeline-review-0.1.json) — normalized
   review of five frozen samples, eight ranked rationalizations and explicit metric
@@ -82,9 +83,9 @@ which ideas are still exploratory.
   [Strategic Memory Run B](../lab/knowledge-gaps/knowledge-gap-0.2-run-b.json) —
   frozen blind discovery followed by a controlled strategy pass. Nine of ten gaps
   overlap; strategy helps sequencing but introduces measurable anchoring.
-- [JavaScript B3 publication plan](plans/active/021-javascript-b3-publication-checkpoint.md)
+- [JavaScript B3 publication checkpoint](plans/completed/021-javascript-b3-publication-checkpoint.md)
   — three separately approved schema-v3 candidates promoted to CONTENT with exact
-  audits and append-only navigation lineage; Git/Cloudflare checkpoint pending.
+  audits and append-only navigation lineage; Git/Cloudflare production verified.
 - [Architecture Decision Records](adr/README.md) — accepted architectural
   decisions and their consequences.
 - [Roadmap](roadmap/ROADMAP.md) — committed work organized as DONE, NOW, NEXT, and
