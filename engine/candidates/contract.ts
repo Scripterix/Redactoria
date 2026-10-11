@@ -16,7 +16,7 @@ export const PublicationCandidateV2Schema = z.strictObject({
 
 export type PublicationCandidateV2 = z.infer<typeof PublicationCandidateV2Schema>;
 
-/** B3 candidate remains LAB-only; Promotion Gate intentionally does not accept schema 3. */
+/** Schema 3 records runtime-neutral B3 candidates; publication still requires a separate human decision. */
 export const PublicationCandidateV3Schema = z.strictObject({
 	schemaVersion: z.literal(3), status: z.literal('publication-candidate'), topic: Slug, title: Text,
 	criticVerdict: z.literal('PASS'), targetRuntimes: RuntimeTargetsSchema,

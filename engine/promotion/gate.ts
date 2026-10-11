@@ -62,9 +62,11 @@ export async function promote(options: {
  const codeExecution = JSON.parse(await text('lab/drafts/' + candidate.topic + '/code-execution.json'));
  const criticInput = { editorial, draft, article, draftRef: candidate.draftRef, codeExecution };
  const validatedReview = validateCriticReview(review, criticInput);
+ const candidateTargets = candidate.schemaVersion === 3 ? candidate.targetRuntimes : candidate.targetPhpVersions;
+ const draftTargets = 'targetRuntimes' in draft ? draft.targetRuntimes : draft.targetPhpVersions;
  if (validatedReview.verdict !== 'PASS' || validatedReview.requiredChanges.length
   || candidate.title !== draft.title || candidate.topic !== draft.topic || candidate.wordCount !== draft.wordCount
-  || stableJson(candidate.targetPhpVersions) !== stableJson(draft.targetPhpVersions)
+  || stableJson(candidateTargets) !== stableJson(draftTargets)
   || (candidate.schemaVersion === 1 ? candidate.mergeDecision : candidate.sourceDecision) !== editorial.config.sourceDecision
   || (candidate.schemaVersion === 1 ? candidate.mergeDecision : candidate.sourceDecision) !== draft.sourceDecision
   || candidate.researchApproval !== editorial.config.researchApproval || candidate.researchApproval !== draft.researchApproval
@@ -159,7 +161,7 @@ export function renderApprovedPublicationContent(decision: unknown, article: str
  const parsed = AnyPublicationDecisionSchema.parse(decision);
  let publicArticle = article;
  const transforms = ['Content Collection YAML front matter'];
- if (parsed.schemaVersion === 2 && parsed.presentationCleanup) {
+ if (parsed.schemaVersion !== 1 && parsed.presentationCleanup) {
   for (const exact of parsed.presentationCleanup.removeExact) {
    if (publicArticle.split(exact).length !== 2) throw new Error('Approved presentation note is missing or not unique.');
    publicArticle = publicArticle.replace(exact, '');

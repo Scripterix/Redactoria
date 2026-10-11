@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { parse } from 'yaml';
 import { promote, renderPromotedArticle } from '../../engine/promotion/gate.ts';
-import { AnyPublicationCandidateSchema, parsePromotionArguments, PublicationDecisionSchema } from '../../engine/promotion/contract.ts';
+import { AnyPublicationCandidateSchema, parsePromotionArguments, PublicationDecisionSchema, PublicationDecisionV3Schema } from '../../engine/promotion/contract.ts';
 import { hashBytes } from '../../engine/core/editorial-context.ts';
 import { stableJson } from '../../engine/core/serialization.ts';
 import { inputFixture, textFile, jsonFile } from '../fixtures/editorial.ts';
@@ -165,6 +165,37 @@ describe('Promotion Gate — schema 2 public-production', () => {
  });
 });
 
+describe('Promotion Gate — schema 3 public-production', () => {
+ it('promotes the exact runtime-neutral B3 candidate after an explicit human decision', async () => {
+  const project = await mkdtemp(join(tmpdir(), 'redactoria-b3-public-promotion-')); temporary.push(project);
+  const candidatePath = 'lab/candidates/javascript-if-else/article.json';
+  const decisionPath = 'lab/decisions/javascript-if-else-publication.json';
+  const candidate = JSON.parse(await readFile(join(process.cwd(), candidatePath), 'utf8'));
+  const editorial = await loadEditorialInput('javascript-if-else');
+  const paths = new Set([
+   ...editorial.artifacts.map(item => item.path), candidatePath, candidatePath.replace('.json', '.md'),
+   decisionPath, candidate.draftRef, candidate.draftMetadataRef, candidate.criticReviewRef,
+   candidate.revisionRef, 'lab/drafts/javascript-if-else/code-execution.json', 'content/topics/javascript.yaml',
+  ]);
+  for (const path of paths) {
+   await mkdir(dirname(join(project, path)), { recursive: true });
+   await writeFile(join(project, path), await readFile(join(process.cwd(), path)));
+  }
+  await mkdir(join(project, 'content/articles'), { recursive: true });
+  await mkdir(join(project, 'lab/reports'), { recursive: true });
+  const record = await promote({ project, candidate: candidatePath, decision: decisionPath, loadEditorial: async () => editorial });
+  const content = await readFile(join(project, 'content/articles/warunki-w-javascript.md'), 'utf8');
+  const body = content.replace(/^---\r?\n[^]*?\r?\n---\r?\n/, '');
+  const source = await readFile(join(process.cwd(), candidatePath.replace('.json', '.md')), 'utf8');
+  const note = 'Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n';
+  expect(body).toBe(source.replace(note, ''));
+  expect(PublicationDecisionV3Schema.parse(JSON.parse(await readFile(join(project, decisionPath), 'utf8'))).scope).toBe('public-production');
+  expect(record).toMatchObject({ schemaVersion: 3, result: 'PROMOTED_PUBLIC', scope: 'public-production',
+   remotePublicationApproved: true, sourceDecisionRef: 'lab/decisions/javascript-if-else-rewrite.json' });
+  expect(record.transforms).toEqual(['Content Collection YAML front matter', 'Removed exact human-approved technical LAB/draft note']);
+ });
+});
+
 describe('Promotion CLI arguments', () => {
  it('accepts only explicit candidate + decision', () => expect(parsePromotionArguments(['--decision', decisionRef, '--candidate', candidateRef])).toEqual({candidate: candidateRef, decision: decisionRef}));
  it.each([[], ['--candidate', candidateRef], ['--candidate'], ['--candidate', '../source.md', '--decision', decisionRef],
@@ -172,10 +203,10 @@ describe('Promotion CLI arguments', () => {
   ['--candidate', candidateRef, '--candidate', candidateRef, '--decision', decisionRef]].map(args => ({args})))('rejects missing, escaping, duplicate or expanded flags: $args', ({args}) => expect(() => parsePromotionArguments(args)).toThrow());
 });
 
-describe('B3 remains outside the Promotion Gate', () => {
- it('rejects a schema 3 JavaScript candidate until a later milestone explicitly expands promotion', async () => {
+describe('B3 candidate contract', () => {
+ it('accepts schema 3 while preserving immutable pending publication flags', async () => {
   const candidate = JSON.parse(await readFile(join(process.cwd(), 'lab/candidates/javascript-if-else/article.json'), 'utf8'));
   expect(candidate).toMatchObject({ schemaVersion: 3, approvedForPublication: false, published: false });
-  expect(() => AnyPublicationCandidateSchema.parse(candidate)).toThrow();
+  expect(AnyPublicationCandidateSchema.parse(candidate)).toEqual(candidate);
  });
 });

@@ -67,6 +67,10 @@ function input(initialContent: string, currentContent: string, records: unknown[
 }
 
 describe('CONTENT lineage contract spike', () => {
+	it('distinguishes historical backfills from current append-only records', () => {
+		expect(ContentLineageBundleSchema.shape.status.options).toEqual(['BACKFILLED', 'RECORDED']);
+	});
+
 	it('keeps the change and review enums closed', () => {
 		expect(ContentChangeTypeSchema.options).toEqual([
 			'TECHNICAL_CLEANUP', 'METADATA_ONLY', 'LINK_FIX', 'TYPO_FIX', 'PRESENTATION_ONLY', 'CONTENT_CHANGE',
@@ -111,6 +115,20 @@ describe('CONTENT lineage contract spike', () => {
 		};
 		expect(validateContentLineage(input(initial, current, [record({
 			previous: initial, current, changeType: 'TYPO_FIX', transformation,
+		})])).overall).toBe('PASS');
+	});
+
+	it('accepts an append-only internal navigation insertion without invalidating review', () => {
+		const initial = '---\ntitle: Example\n---\nReviewed body.\n';
+		const addition = '\nDalej: [Następny artykuł](/artykuly/nastepny/).\n';
+		const current = initial + addition;
+		const transformation: ContentLineageTransformation = {
+			kind: 'navigation-insertions',
+			insertions: [{ after: 'Reviewed body.\n', content: addition }],
+		};
+		expect(applyContentLineageTransformation(initial, transformation)).toBe(current);
+		expect(validateContentLineage(input(initial, current, [record({
+			previous: initial, current, changeType: 'LINK_FIX', transformation,
 		})])).overall).toBe('PASS');
 	});
 

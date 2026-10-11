@@ -67,6 +67,13 @@ export function applyContentLineageTransformation(previous: string, transformati
 		const body = replaceExactlyOnce(article.body, transformation.replacements);
 		return body === null ? null : article.opening + article.metadata + article.separator + body;
 	}
+	if (transformation.kind === 'navigation-insertions') {
+		const body = replaceExactlyOnce(article.body, transformation.insertions.map(item => ({
+			from: item.after,
+			to: item.after + item.content,
+		})));
+		return body === null ? null : article.opening + article.metadata + article.separator + body;
+	}
 	const body = replaceExactlyOnce(article.body, transformation.replacements);
 	return body === null ? null : article.opening + article.metadata + article.separator + body;
 }

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "RECORDED",
+  "articleId": "tablice-w-javascript",
+  "candidateRef": "lab/candidates/javascript-arrays/article.json",
+  "sourceCandidateHash": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a",
+  "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
+  "promotedContentHash": "c2d379a8c39a29c29403fafb37350cf7b2ba85953f32888d470e6e0ed18e3704",
+  "currentContentRef": "content/articles/tablice-w-javascript.md",
+  "currentContentHash": "d10f769ba571041eb06a5c6e772b1860fbab29490b06cd783872526e7ee2b41a",
+  "records": [
+    {
+      "schemaVersion": 1,
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "articleId": "tablice-w-javascript",
+      "previousContentHash": "c2d379a8c39a29c29403fafb37350cf7b2ba85953f32888d470e6e0ed18e3704",
+      "newContentHash": "d10f769ba571041eb06a5c6e772b1860fbab29490b06cd783872526e7ee2b41a",
+      "changeType": "LINK_FIX",
+      "reason": "Add the human-authorized natural navigation from JavaScript Arrays to the published DOM article.",
+      "authorizedBy": "human",
+      "authorizationRef": "lab/decisions/javascript-arrays-publication.json",
+      "authorizationHash": "b044e173a3f7d521cf9965052a6f0d58256b8709606d827925ac7994acb78ce3",
+      "timestamp": "2026-10-11T20:43:05Z",
+      "sourceCandidateHash": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a",
+      "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "replacementReview": null,
+      "transformation": {
+        "kind": "navigation-insertions",
+        "insertions": [
+          {
+            "after": "- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.\n",
+            "content": "\nDalej: [DOM w JavaScript](/artykuly/dom-w-javascript/) — użycie danych do bezpiecznej aktualizacji dokumentu i obsługi zdarzeń.\n"
+          }
+        ]
+      },
+      "backfilled": false,
+      "notes": [
+        "Navigation only; no reviewed technical statement or code example changed."
+      ]
+    }
+  ],
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "The single append-only record replays the only post-promotion change."
+  ]
+}

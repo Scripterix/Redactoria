@@ -64,12 +64,13 @@ describe('verify:article operator CLI', () => {
 		expect(parsed.overall).toBe('PASS');
 	});
 
-	it('keeps all publication checks NOT_APPLICABLE for a pending candidate', async () => {
+	it('validates a published JavaScript candidate through current CONTENT lineage', async () => {
 		const result = ArticleVerificationResultSchema.parse(JSON.parse((await runVerifyArticleCli([
 			'--topic', 'javascript-if-else', '--json',
 		], verify)).stdout));
-		expect(result.areas.publication.status).toBe('NOT_APPLICABLE');
-		expect(Object.values(result.areas.publication.checks).every(check => check.status === 'NOT_APPLICABLE')).toBe(true);
+		expect(result.areas.publication.status).toBe('PASS');
+		expect(Object.values(result.areas.publication.checks).every(check => check.status === 'PASS')).toBe(true);
+		expect(result.areas.publication.checks.contentLineage.detail).toContain('1 post-promotion lineage record(s)');
 		expect(result.overall).toBe('PASS');
 	});
 

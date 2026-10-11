@@ -36,9 +36,15 @@ export const FROZEN_ARTICLE_FIXTURES: readonly VerificationFixture[] = [
 	{ topic: 'php-control-flow', candidateRef: 'lab/candidates/php-control-flow/article.json', publication: {
 		decisionRef: 'lab/decisions/php-control-flow-publication.json', auditRef: 'lab/reports/instrukcje-sterujace-php-promotion.json',
 	} },
-	{ topic: 'javascript-if-else', candidateRef: 'lab/candidates/javascript-if-else/article.json', publication: null },
-	{ topic: 'javascript-arrays', candidateRef: 'lab/candidates/javascript-arrays/article.json', publication: null },
-	{ topic: 'javascript-dom', candidateRef: 'lab/candidates/javascript-dom/article.json', publication: null },
+	{ topic: 'javascript-if-else', candidateRef: 'lab/candidates/javascript-if-else/article.json', publication: {
+		decisionRef: 'lab/decisions/javascript-if-else-publication.json', auditRef: 'lab/reports/warunki-w-javascript-promotion.json',
+	} },
+	{ topic: 'javascript-arrays', candidateRef: 'lab/candidates/javascript-arrays/article.json', publication: {
+		decisionRef: 'lab/decisions/javascript-arrays-publication.json', auditRef: 'lab/reports/tablice-w-javascript-promotion.json',
+	} },
+	{ topic: 'javascript-dom', candidateRef: 'lab/candidates/javascript-dom/article.json', publication: {
+		decisionRef: 'lab/decisions/javascript-dom-publication.json', auditRef: 'lab/reports/dom-w-javascript-promotion.json',
+	} },
 ] as const;
 
 export function verificationFixtureForTopic(topic: string): VerificationFixture | undefined {

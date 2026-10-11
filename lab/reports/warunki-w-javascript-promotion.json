@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "016fca1b663c48fdf8db76530be43d37f71769905c6a057647098f3755e06835",
+  "candidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+  "candidateRef": "lab/candidates/javascript-if-else/article.json",
+  "contentHash": "6893e836d792c1c0073870d8d4299e151b7c181adeb3c7a721e665d1601cb8f4",
+  "criticReviewHash": "b2ae5bf9effb327bc4367b364f175fd2951fa9815c4120961ec1f26f973ba0bf",
+  "criticReviewRef": "lab/reviews/javascript-if-else/critic-review.json",
+  "decisionHash": "2ff746fadfdd02605c07de2d54970b9b88ae682b49d84c4fab2ed55f2fcd1397",
+  "decisionRef": "lab/decisions/javascript-if-else-publication.json",
+  "destination": "content/articles/warunki-w-javascript.md",
+  "localPath": "/artykuly/warunki-w-javascript/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-if-else-rewrite.json",
+        "sha256": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4"
+      },
+      {
+        "path": "lab/cartography/javascript-if-else-single.json",
+        "sha256": "90bafe95449454d28f9d448d2ab3acf8d322869f3f0aad113ec2ddc056bdfff8"
+      },
+      {
+        "path": "lab/research/javascript-if-else/sources.json",
+        "sha256": "b338c2cd062128e86f77a14bcbc55e4bbb0431892a66626cf53cb554b0bc8051"
+      },
+      {
+        "path": "lab/research/javascript-if-else/probes.json",
+        "sha256": "561f7e0403acd3036781b2092a31b45c351b8dc2e32875f29629f4214f169671"
+      },
+      {
+        "path": "lab/research/javascript-if-else/research.json",
+        "sha256": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19"
+      },
+      {
+        "path": "lab/research/javascript-if-else/runtime-verification.json",
+        "sha256": "8207344be0efc718bd246f1639b6e7edca7896b3970b8ab087ec76412b24d854"
+      },
+      {
+        "path": "lab/research/javascript-if-else/runtime-verification.md",
+        "sha256": "52c49c2f6520b89ccaad53c1f8a7f3e384f948d918a2e3e723333477afd02dcb"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "616692e53120c31686f57cbac291bd1a438c27003fba9bda72d5a59fef6371e8",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "b27a8183e670df9fd01ce478313595536b225868ac840c56d1896cb4df21627e"
+    },
+    "revisionHash": "78e34ac15e49c608d73a8f571f006f68a6984cb66db4a0e7dafc4f78889c328e",
+    "revisionRef": "lab/drafts/javascript-if-else/revision.json",
+    "sources": [
+      {
+        "contentHash": "47adb6838a319abcd781504a75f071fe88c852c63fdd9cd5300e13f7cc1fa692",
+        "providedCharacters": 9062,
+        "sourceId": "2068",
+        "sourcePath": "2068-if-i-else-w-javascript-od-prostych-warunkow-do-pra.md",
+        "title": "If i Else w JavaScript – od prostych warunków do praktycznych aplikacji",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "00b889ed9c902cce64a7c46c419eacdf6404dbdeb5f5c0207396d7fd006404c2",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "c9e4a2f9f08f59f674a25ae60c94c802e775de8f168c61c126a80da8a781b84c"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "bb1072df546ac9f13f0abe59d6af0fb18e4e0050bd63a585619446fce359268a",
+  "researchApprovalRef": "lab/decisions/javascript-if-else-research-acceptance.json",
+  "researchPacketHash": "954ddc8831738b158aa82229a58c5ac2dc1bf9b56e4333df1caf6bb635c69c19",
+  "researchPacketRef": "lab/research/javascript-if-else/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "659e582996ebf582ba980be6b9c2144642d4990df7f90b3214dc276d1012e9f4",
+  "sourceDecisionRef": "lab/decisions/javascript-if-else-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { LabRef, PhpVersions, Sha, Slug, Text } from '../core/editorial-context.ts';
 import { DraftSchema } from '../agents/writer/contract.ts';
-import { PublicationCandidateV2Schema } from '../candidates/contract.ts';
+import { PublicationCandidateV2Schema, PublicationCandidateV3Schema } from '../candidates/contract.ts';
 import { createArticleSchema } from '../../src/lib/content-schema.ts';
 
 export const CandidateRef = z.string().regex(/^lab\/candidates\/[a-z0-9]+(?:-[a-z0-9]+)*\/article\.json$/);
@@ -23,6 +23,7 @@ export const PublicationCandidateSchema = z.strictObject({
 export const AnyPublicationCandidateSchema = z.discriminatedUnion('schemaVersion', [
 	PublicationCandidateSchema,
 	PublicationCandidateV2Schema,
+	PublicationCandidateV3Schema,
 ]);
 
 export const PublicationDecisionSchema = z.strictObject({
@@ -53,9 +54,23 @@ export const PublicationDecisionV2Schema = z.strictObject({
 });
 export type PublicationDecisionV2 = z.infer<typeof PublicationDecisionV2Schema>;
 
+/** Schema 3 publishes a runtime-neutral B3 candidate after a separate human decision. */
+export const PublicationDecisionV3Schema = z.strictObject({
+	schemaVersion: z.literal(3), status: z.literal('approved'), approvedBy: z.literal('human'),
+	scope: z.literal('public-production'), approvedAt: z.iso.datetime(), authorization: Text,
+	candidateRef: CandidateRef, candidateHash: Sha, articleHash: Sha,
+	criticReviewRef: LabRef, criticReviewHash: Sha,
+	destination: z.string().regex(/^content\/articles\/[a-z0-9]+(?:-[a-z0-9]+)*\.md$/),
+	metadata: ContentMetadataSchema,
+	presentationCleanup: z.strictObject({ removeExact: z.array(PublicDraftNote).max(1) }).optional(),
+	remotePublicationApproved: z.literal(true),
+});
+export type PublicationDecisionV3 = z.infer<typeof PublicationDecisionV3Schema>;
+
 export const AnyPublicationDecisionSchema = z.discriminatedUnion('schemaVersion', [
 	PublicationDecisionSchema,
 	PublicationDecisionV2Schema,
+	PublicationDecisionV3Schema,
 ]);
 
 export function parsePromotionArguments(args: string[]) {

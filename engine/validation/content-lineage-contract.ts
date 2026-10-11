@@ -23,6 +23,11 @@ const ExactReplacementSchema = z.strictObject({
 	to: z.string(),
 });
 
+const NavigationInsertionSchema = z.strictObject({
+	after: z.string().min(1),
+	content: z.string().regex(/\]\(\/[a-z0-9/-]+\/\)/, 'Navigation insertion must contain an internal Markdown link'),
+});
+
 export const ContentLineageTransformationSchema = z.discriminatedUnion('kind', [
 	z.strictObject({
 		kind: z.literal('metadata-replacements'),
@@ -36,6 +41,10 @@ export const ContentLineageTransformationSchema = z.discriminatedUnion('kind', [
 		kind: z.literal('link-replacements'),
 		scope: z.enum(['navigation', 'citation', 'evidence']),
 		replacements: z.array(ExactReplacementSchema).min(1),
+	}),
+	z.strictObject({
+		kind: z.literal('navigation-insertions'),
+		insertions: z.array(NavigationInsertionSchema).min(1),
 	}),
 	z.strictObject({
 		kind: z.literal('body-replacements'),
@@ -79,15 +88,17 @@ export const ContentLineageRecordSchema = z.strictObject({
 	backfilled: z.boolean(),
 	notes: z.array(Text),
 }).superRefine((record, context) => {
-	const expectedKind: Record<ContentChangeType, ContentLineageTransformation['kind']> = {
+	const expectedKind: Omit<Record<ContentChangeType, ContentLineageTransformation['kind']>, 'LINK_FIX'> = {
 		TECHNICAL_CLEANUP: 'remove-body-exact',
 		METADATA_ONLY: 'metadata-replacements',
-		LINK_FIX: 'link-replacements',
 		TYPO_FIX: 'body-replacements',
 		PRESENTATION_ONLY: 'presentation-normalization',
 		CONTENT_CHANGE: 'body-replacements',
 	};
-	if (record.transformation.kind !== expectedKind[record.changeType]) {
+	const kindMatches = record.changeType === 'LINK_FIX'
+		? record.transformation.kind === 'link-replacements' || record.transformation.kind === 'navigation-insertions'
+		: record.transformation.kind === expectedKind[record.changeType];
+	if (!kindMatches) {
 		context.addIssue({ code: 'custom', path: ['transformation'], message: 'Transformation does not match changeType.' });
 	}
 	if (record.changeType === 'TYPO_FIX' && record.transformation.kind === 'body-replacements'
@@ -110,7 +121,7 @@ export type ContentLineageRecord = z.infer<typeof ContentLineageRecordSchema>;
 
 export const ContentLineageBundleSchema = z.strictObject({
 	schemaVersion: z.literal(1),
-	status: z.literal('BACKFILLED'),
+	status: z.enum(['BACKFILLED', 'RECORDED']),
 	articleId: Slug,
 	candidateRef: z.string().regex(/^lab\/candidates\/[a-z0-9]+(?:-[a-z0-9]+)*\/article\.json$/),
 	sourceCandidateHash: Sha,

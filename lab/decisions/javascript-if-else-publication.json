@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "public-production",
+  "approvedAt": "2026-10-11T20:39:53Z",
+  "authorization": "Explicit human end-of-day authorization: publish the exact javascript-if-else B3 candidate through the formal Promotion Gate, allow only the exact technical LAB-note removal and a separately recorded natural navigation link to the approved JavaScript Arrays article, commit and push master only after the complete gate passes, verify Cloudflare production, then STOP.",
+  "candidateRef": "lab/candidates/javascript-if-else/article.json",
+  "candidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+  "articleHash": "016fca1b663c48fdf8db76530be43d37f71769905c6a057647098f3755e06835",
+  "criticReviewRef": "lab/reviews/javascript-if-else/critic-review.json",
+  "criticReviewHash": "b2ae5bf9effb327bc4367b364f175fd2951fa9815c4120961ec1f26f973ba0bf",
+  "destination": "content/articles/warunki-w-javascript.md",
+  "metadata": {
+    "title": "Warunki w JavaScript: if, else i bezpieczna walidacja liczby",
+    "description": "Praktyczne wprowadzenie do if/else, kolejności gałęzi, truthiness, ścisłych porównań i bezpiecznej walidacji liczb w JavaScript.",
+    "slug": "warunki-w-javascript",
+    "status": "published",
+    "created": "2026-10-11",
+    "updated": "2026-10-11",
+    "domain": "programming",
+    "topic": "javascript",
+    "author": { "type": "ai-assisted", "name": "Scripterix" },
+    "sources": [
+      { "title": "MDN — if...else", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Boolean", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Number", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number", "publisher": "MDN Web Docs" }
+    ],
+    "origin": {
+      "type": "wordpress-export",
+      "source_id": "2068",
+      "original_url": "https://opengateweb.com/posts/if-i-else-w-javascript-od-prostych-warunkow-do-praktycznych-aplikacji/",
+      "original_date": "2025-09-21",
+      "original_author": "Scripterix"
+    },
+    "review": { "status": "approved", "reviewer": "human — public production approval", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-11", "update_priority": "normal" },
+    "redactoria": { "decision": "rewrite", "modernization": "major" }
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true
+}

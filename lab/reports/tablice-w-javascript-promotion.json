@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "c0a29c1cc9a1e68702bac00d9eff999b1240cab0e622199b64ce8e1602f6f465",
+  "candidateHash": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a",
+  "candidateRef": "lab/candidates/javascript-arrays/article.json",
+  "contentHash": "c2d379a8c39a29c29403fafb37350cf7b2ba85953f32888d470e6e0ed18e3704",
+  "criticReviewHash": "04cb641cf60622eb7a53ee647d581943602015b08e878482de5907809ee5fcf1",
+  "criticReviewRef": "lab/reviews/javascript-arrays/critic-review.json",
+  "decisionHash": "b044e173a3f7d521cf9965052a6f0d58256b8709606d827925ac7994acb78ce3",
+  "decisionRef": "lab/decisions/javascript-arrays-publication.json",
+  "destination": "content/articles/tablice-w-javascript.md",
+  "localPath": "/artykuly/tablice-w-javascript/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b3-authorization.json",
+        "sha256": "fdb3a7c7506f39f8c7a3028d5b6dc6e6ea09c122441933d04990ff7557650321"
+      },
+      {
+        "path": "lab/decisions/javascript-arrays-rewrite.json",
+        "sha256": "c6263e9b002048b80e4e68111023812d02e4e16ae0965593ec6df2c86334db78"
+      },
+      {
+        "path": "lab/cartography/javascript-arrays-single.json",
+        "sha256": "4cbe71b1bca22b4a9596a32f1fabaea4c998ee2f76ac739943485eda5999290c"
+      },
+      {
+        "path": "lab/research/javascript-arrays/sources.json",
+        "sha256": "b242ceabbb5201c77207581a24da9b7a98a19856129e5630f8a63b4352a97cb8"
+      },
+      {
+        "path": "lab/research/javascript-arrays/probes.json",
+        "sha256": "7706bfe4c67ae34ddde231b290a808bcfa5478b615769a3a1c13a19d3b4c438c"
+      },
+      {
+        "path": "lab/research/javascript-arrays/research.json",
+        "sha256": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d"
+      },
+      {
+        "path": "lab/research/javascript-arrays/runtime-verification.json",
+        "sha256": "d7565cfabc4b3799c0d74a8d0544bf772d6b00e25ca62d80f125c95e79e15454"
+      },
+      {
+        "path": "lab/research/javascript-arrays/runtime-verification.md",
+        "sha256": "0aa211721f16066fd0fcd579c59314433e7befebcb43130908c75204f8961b8f"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "fcfe58785f86d299ca49a4b94c87aa8275284d291ff4a77be1b9cf5379ce39c0",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "a657916abf3c2e6f4c48b2f9788987554665b772ff160a87c75e86f8fc5624d8"
+    },
+    "revisionHash": "93aac84c01d96acbd88d35ff930e848c38177c6a0d7085e8a663196489d3e4fd",
+    "revisionRef": "lab/drafts/javascript-arrays/revision.json",
+    "sources": [
+      {
+        "contentHash": "c6a8b0859da9d9186a3bccc697bb1f82eb382ebe498c64dfea0603635e8c42fe",
+        "providedCharacters": 5654,
+        "sourceId": "2048",
+        "sourcePath": "2048-tablice-javascript-js-arrays-sortowanie-filtrowani.md",
+        "title": "Tablice JavaScript JS Arrays – sortowanie, filtrowanie i średnia ocen krok po kroku. Post #73",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "234cd76502a997f69949967bdc08e8bf575471b89d70c934f005b6f0e3987a30",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "3490688f4a8fdf414874788ffc17a62497c82180326d510fc6c5325f99c617b4"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "b20cab448f7a790e32d3782a848900c8d1c34bb5d6edad721c3aff9534ce588e",
+  "researchApprovalRef": "lab/decisions/javascript-arrays-research-acceptance.json",
+  "researchPacketHash": "d3e7925bf29a2f62a9dcb37837369b6776052b4a67cf7ebf9fccddb1a572200d",
+  "researchPacketRef": "lab/research/javascript-arrays/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "c6263e9b002048b80e4e68111023812d02e4e16ae0965593ec6df2c86334db78",
+  "sourceDecisionRef": "lab/decisions/javascript-arrays-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

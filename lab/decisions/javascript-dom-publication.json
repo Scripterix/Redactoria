@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "public-production",
+  "approvedAt": "2026-10-11T20:39:53Z",
+  "authorization": "Explicit human end-of-day authorization: publish the exact javascript-dom B3 candidate through the formal Promotion Gate, allow only the exact technical LAB-note removal and a separately recorded natural navigation link to the published JavaScript topic, commit and push master only after the complete gate passes, verify Cloudflare production, then STOP.",
+  "candidateRef": "lab/candidates/javascript-dom/article.json",
+  "candidateHash": "af490c0e36f7cab2b470dd186ab5f4489e86e4a667bcae0007e55ba267a665b9",
+  "articleHash": "7774e12d71a8622eb5df093c1f124a5970853bddb74885cd501ae2119c901bed",
+  "criticReviewRef": "lab/reviews/javascript-dom/critic-review.json",
+  "criticReviewHash": "cac7389627f7dd5a7651306dbe410f3c7025b83dbd5163775d64606d164232ba",
+  "destination": "content/articles/dom-w-javascript.md",
+  "metadata": {
+    "title": "DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia",
+    "description": "Praktyczne podstawy DOM: selektory, obsługa braku elementu, textContent, klasy, tworzenie węzłów i zdarzenie click.",
+    "slug": "dom-w-javascript",
+    "status": "published",
+    "created": "2026-10-11",
+    "updated": "2026-10-11",
+    "domain": "programming",
+    "topic": "javascript",
+    "author": { "type": "ai-assisted", "name": "Scripterix" },
+    "sources": [
+      { "title": "MDN — Document.querySelector", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Document.querySelectorAll", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Node.textContent", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Element.classList", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Document.createElement", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement", "publisher": "MDN Web Docs" }
+    ],
+    "origin": {
+      "type": "wordpress-export",
+      "source_id": "940",
+      "original_url": "https://opengateweb.com/posts/45-js-dom/",
+      "original_date": "2025-04-05",
+      "original_author": "Scripterix"
+    },
+    "review": { "status": "approved", "reviewer": "human — public production approval", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-11", "update_priority": "normal" },
+    "redactoria": { "decision": "rewrite", "modernization": "major" }
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true
+}
