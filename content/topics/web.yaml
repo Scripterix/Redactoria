@@ -1,0 +1,5 @@
+name: Web i narzędzia
+slug: web
+description: Markdown, HTTP, API, formaty danych i praktyczne narzędzia pracy z webem.
+order: 3
+status: published

@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "ee2a0cde2ea6105d61c48cc4a4af40ebbe333db4d24efa3cda62ff78791df009",
+  "candidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+  "candidateRef": "lab/candidates/api-http-json/article.json",
+  "contentHash": "3da7f179e0102eaf26f69e6a832db65452a6b0e323434784a745f34f952faa9c",
+  "criticReviewHash": "0cca9677657a20deae0b6620f54a0007d8e251031c2d552cb744e721d0f6241c",
+  "criticReviewRef": "lab/reviews/api-http-json/critic-review.json",
+  "decisionHash": "b6ed19cce21fc2c50d0e46f2061b1807347616f2ed0c145768beffd7fe84ae4b",
+  "decisionRef": "lab/decisions/api-http-json-publication.json",
+  "destination": "content/articles/api-http-json.md",
+  "localPath": "/artykuly/api-http-json/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b4-authorization.json",
+        "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+      },
+      {
+        "path": "lab/decisions/api-http-json-rewrite.json",
+        "sha256": "faa80a7e2771dd162bae43cdc9f39f6d378f30bb68693d9fa474ab5e9d3f32ee"
+      },
+      {
+        "path": "lab/cartography/api-http-json-single.json",
+        "sha256": "26bbbff0f28ddc0e8d4d650169ba7fca8ac71c091566413687930def4e394b94"
+      },
+      {
+        "path": "lab/research/api-http-json/sources.json",
+        "sha256": "fa2fff06fae65cbc8c97d56b186728e09040ebb5272f8e9cd1d01934730de7f7"
+      },
+      {
+        "path": "lab/research/api-http-json/probes.json",
+        "sha256": "3a403f5801961b834bc319682449522699e7db0f93f4fdda9b5a4f2af4c448c3"
+      },
+      {
+        "path": "lab/research/api-http-json/research.json",
+        "sha256": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b"
+      },
+      {
+        "path": "lab/research/api-http-json/runtime-verification.json",
+        "sha256": "3cf2deca3da1436d9b171c73396a99ea232807e406f8ff9ec82bc491bd2da0f8"
+      },
+      {
+        "path": "lab/research/api-http-json/runtime-verification.md",
+        "sha256": "e9288bcb91fe0471fbfd3b046b3464c343c9b61e46a2654ba44b6ce817e3b499"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "0b5c4fde3cbee0294152e6599e2b1b85c01c218e9e06bf8ed48ce95f79f54e5c",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "1eec754fb36d3163585da0d78048059bdfa2fec11c01f3a1ea121e57c4ce75a7"
+    },
+    "revisionHash": "f0028734397d6fe522cafbc07a0d0617f7e8764be543b31274cc9c354c7cbdc2",
+    "revisionRef": "lab/drafts/api-http-json/revision.json",
+    "sources": [
+      {
+        "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+        "providedCharacters": 4535,
+        "sourceId": "578",
+        "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+        "title": "Post #22 Wprowadzenie do API.",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "dec4cd8f11dd4c7301f17c8846d15caa8e3f0b7f81666e4cffe48000cd42dc92",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "60af6443783e5c010b378e1583051e23645e97bdf9ca6cb05f9009f197fd5e62"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "adbf9baa8284e94b4ffbb5d56678133d64bbe81fbeebf1cb3b8b5830235bf4c2",
+  "researchApprovalRef": "lab/decisions/api-http-json-research-acceptance.json",
+  "researchPacketHash": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b",
+  "researchPacketRef": "lab/research/api-http-json/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "faa80a7e2771dd162bae43cdc9f39f6d378f30bb68693d9fa474ab5e9d3f32ee",
+  "sourceDecisionRef": "lab/decisions/api-http-json-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

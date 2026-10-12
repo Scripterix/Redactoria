@@ -45,8 +45,11 @@ export function researchReport(packet: ResearchPacket, questions: ResearchBundle
 	lines.push('## RECOMMENDED ARTICLE CHANGES', '', ...packet.recommendations.map(item =>
 		`- ${item.action}: ${item.instruction} [${item.findingIds.join(', ')}]`), '',
 		'## UNRESOLVED QUESTIONS', '', ...packet.unresolvedQuestions.map(item => `- ${item.questionId}: ${item.reason} (needs-review)`), '',
-		'## SOURCE REGISTER', '', ...packet.sourceRegister.map(source =>
-		`- [${source.id} — ${source.title}](${source.url}); ${source.kind}; pobrano ${source.retrievedAt}; evidence: ${source.evidenceIds.join(', ')}; SHA-256: ${source.documentHash}`), '',
+		'## SOURCE REGISTER', '', ...packet.sourceRegister.map(source => {
+			const authority = 'authorityTier' in source
+				? `tier ${source.authorityTier} / ${source.authorityClass} / ${source.evidenceRole}; ` : '';
+			return `- [${source.id} — ${source.title}](${source.url}); ${authority}${source.kind}; pobrano ${source.retrievedAt}; evidence: ${source.evidenceIds.join(', ')}; SHA-256: ${source.documentHash}`;
+		}), '',
 		'## LIMITATIONS', '', ...packet.limitations.map(item => `- ${item}`), '',
 		'## WRITER HANDOFF', '', `Założony runtime: ${runtimeScope}`, '');
 	for (const [name, items] of [['Zachowaj', packet.writerHandoff.keep], ['Popraw', packet.writerHandoff.correct],

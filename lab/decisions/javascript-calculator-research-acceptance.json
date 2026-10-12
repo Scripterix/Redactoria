@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b4-authorization.json",
+        "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+      },
+      {
+        "path": "lab/decisions/javascript-calculator-rewrite.json",
+        "sha256": "a46bdd4abf45f40b0fba820f22e22fa1b9e8fe1ad6a043a34bb3060ea5e90de8"
+      },
+      {
+        "path": "lab/cartography/javascript-calculator-single.json",
+        "sha256": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786"
+      },
+      {
+        "path": "lab/research/javascript-calculator/sources.json",
+        "sha256": "0873fe3c50291fae0314a00239ebbc116f7618bd49a1b7574068752ac0a03d7d"
+      },
+      {
+        "path": "lab/research/javascript-calculator/probes.json",
+        "sha256": "2d94adc09bd57d43cddfbe7b850f05d0d4aa15b4643ec61c92feabfd37d3639d"
+      },
+      {
+        "path": "lab/research/javascript-calculator/research.json",
+        "sha256": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96"
+      },
+      {
+        "path": "lab/research/javascript-calculator/runtime-verification.json",
+        "sha256": "58784b4639f02e8ec84538cfe8fdfb02549f250172f48db96db8d7bb7a7ac0ed"
+      },
+      {
+        "path": "lab/research/javascript-calculator/runtime-verification.md",
+        "sha256": "6c5d21045a0fadb62acc585afa5c836e186fba08a8a87b9f1deaa237bba913cc"
+      }
+    ],
+    "humanApproval": "The human explicitly authorized all three B4 jobs through publication; this packet was validated in-session and was not separately read by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/javascript-calculator/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "node",
+          "status": "PASS",
+          "version": "v24.16.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "a0c386e10168856890e3242d9666dad6fbaa2376d798eded4a128d9101d54fd3",
+  "nextStep": "writer",
+  "packetHash": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96",
+  "packetRef": "lab/research/javascript-calculator/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, keep dialect/runtime limits explicit, and execute every final draft example independently.",
+  "requestHash": "5d71bf798a55227ea43b74c121866944d0ff11ff367d9dce2f4e0317a49c0ff0",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "numeric-input",
+    "function-class"
+  ],
+  "schemaVersion": 3,
+  "scope": "B4 javascript-calculator: validated packet and runtime evidence through the authorized publication lifecycle.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-calculator",
+  "validatedAt": "2026-10-12T20:44:19.246Z"
+}

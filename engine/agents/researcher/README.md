@@ -1,7 +1,7 @@
 # Researcher 0.1
 
 Independent runtime agent-module: verifies one or two approved source articles against an
-explicit official-document evidence snapshot and produces a Research Packet.
+explicit, authority-classified evidence snapshot and produces a Research Packet.
 It does not write an article, execute the MERGE decision or publish.
 
 - `contract.ts`: strict, versioned input/output, documents, probes and findings.
@@ -22,7 +22,14 @@ B2 single-source decision plus its explicit human task authorization and validat
 research acceptance. In both cases the unchanged focused map, selected inventory,
 full bodies, questions, captured documents and optional recorded probes are hash-bound.
 Output action is only `RESEARCH_PACKET`; recommendations are not publication actions.
-Verified findings require known official document/excerpt IDs. Article critiques
+New schema-v3 evidence bundles use the seven-level Source Authority Ladder: standards,
+official project/runtime docs, MDN, implementation/platform docs, compatibility
+data, educational sources and real-world problem reports. Tier, class and evidence
+role are host-validated. Stack Overflow is supplementary problem evidence only and
+cannot independently verify a technical claim. Historical schema-v1/v2 bundles and
+packets remain valid.
+
+Verified findings require known document/excerpt IDs. Article critiques
 require exact article evidence. Unknown facts remain needs-review.
 
 See [operation and evidence contract](../../../docs/architecture/researcher.md).

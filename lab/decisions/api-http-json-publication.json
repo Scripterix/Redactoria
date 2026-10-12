@@ -1,0 +1,77 @@
+{
+  "approvedAt": "2026-10-12T20:48:09.952Z",
+  "approvedBy": "human",
+  "articleHash": "ee2a0cde2ea6105d61c48cc4a4af40ebbe333db4d24efa3cda62ff78791df009",
+  "authorization": "Explicit B4 CONTINUE authorization: publish Markdown, JavaScript Calculator and API / HTTP / JSON after exact Critic PASS, candidate integrity and verify PASS; commit, push master and verify Cloudflare after the complete gate.",
+  "candidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+  "candidateRef": "lab/candidates/api-http-json/article.json",
+  "criticReviewHash": "0cca9677657a20deae0b6620f54a0007d8e251031c2d552cb744e721d0f6241c",
+  "criticReviewRef": "lab/reviews/api-http-json/critic-review.json",
+  "destination": "content/articles/api-http-json.md",
+  "metadata": {
+    "author": {
+      "name": "Scripterix",
+      "type": "ai-assisted"
+    },
+    "automation": {
+      "generated": true,
+      "last_checked": "2026-10-12",
+      "update_priority": "normal"
+    },
+    "created": "2026-10-12",
+    "description": "Wprowadzenie do API, metody GET, statusów HTTP, JSON i poprawnej obsługi błędów fetch na kontrolowanych przykładach.",
+    "domain": "programming",
+    "origin": {
+      "original_author": "Scripterix",
+      "original_date": "2025-03-07",
+      "original_url": "https://opengateweb.com/posts/22-post-api/",
+      "source_id": "578",
+      "type": "wordpress-export"
+    },
+    "redactoria": {
+      "decision": "rewrite",
+      "modernization": "major"
+    },
+    "review": {
+      "confidence": 1,
+      "reviewer": "human — B4 publication authorization",
+      "status": "approved"
+    },
+    "slug": "api-http-json",
+    "sources": [
+      {
+        "publisher": "WHATWG",
+        "title": "WHATWG Fetch Standard",
+        "url": "https://fetch.spec.whatwg.org/"
+      },
+      {
+        "publisher": "IETF",
+        "title": "RFC 9110 — HTTP Semantics",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+      },
+      {
+        "publisher": "IETF",
+        "title": "RFC 8259 — The JavaScript Object Notation Data Interchange Format",
+        "url": "https://www.rfc-editor.org/rfc/rfc8259.html"
+      },
+      {
+        "publisher": "MDN Web Docs",
+        "title": "MDN — Window.fetch()",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch"
+      }
+    ],
+    "status": "published",
+    "title": "API, HTTP i JSON: bezpieczne pobieranie danych przez fetch",
+    "topic": "web",
+    "updated": "2026-10-12"
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true,
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "status": "approved"
+}

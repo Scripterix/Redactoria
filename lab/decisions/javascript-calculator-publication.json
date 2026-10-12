@@ -1,0 +1,72 @@
+{
+  "approvedAt": "2026-10-12T20:48:09.943Z",
+  "approvedBy": "human",
+  "articleHash": "5d7211e27cb0d03a59ecc154015832dad1e7b6e923b543bad4742a3ad5162966",
+  "authorization": "Explicit B4 CONTINUE authorization: publish Markdown, JavaScript Calculator and API / HTTP / JSON after exact Critic PASS, candidate integrity and verify PASS; commit, push master and verify Cloudflare after the complete gate.",
+  "candidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+  "candidateRef": "lab/candidates/javascript-calculator/article.json",
+  "criticReviewHash": "749a7afbb9fc19aed818ae9f45be3671fc951fda89f1b75f135903ee6ecf79cf",
+  "criticReviewRef": "lab/reviews/javascript-calculator/critic-review.json",
+  "destination": "content/articles/kalkulator-w-javascript.md",
+  "metadata": {
+    "author": {
+      "name": "Scripterix",
+      "type": "ai-assisted"
+    },
+    "automation": {
+      "generated": true,
+      "last_checked": "2026-10-12",
+      "update_priority": "normal"
+    },
+    "created": "2026-10-12",
+    "description": "Prosty kalkulator w JavaScript z jawną walidacją liczb, obsługą operatorów oraz porównaniem funkcji i metody klasy.",
+    "domain": "programming",
+    "origin": {
+      "original_author": "Scripterix",
+      "original_date": "2025-02-15",
+      "original_url": "https://opengateweb.com/posts/9-post-calc/",
+      "source_id": "281",
+      "type": "wordpress-export"
+    },
+    "redactoria": {
+      "decision": "rewrite",
+      "modernization": "major"
+    },
+    "review": {
+      "confidence": 1,
+      "reviewer": "human — B4 publication authorization",
+      "status": "approved"
+    },
+    "slug": "kalkulator-w-javascript",
+    "sources": [
+      {
+        "publisher": "TC39",
+        "title": "ECMAScript Language Specification — Numbers and Dates",
+        "url": "https://tc39.es/ecma262/multipage/numbers-and-dates.html"
+      },
+      {
+        "publisher": "TC39",
+        "title": "ECMAScript Language Specification — Functions and Classes",
+        "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html"
+      },
+      {
+        "publisher": "MDN Web Docs",
+        "title": "MDN — Number.isFinite()",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite"
+      }
+    ],
+    "status": "published",
+    "title": "Kalkulator w JavaScript: walidacja, funkcja i klasa",
+    "topic": "javascript",
+    "updated": "2026-10-12"
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true,
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "status": "approved"
+}

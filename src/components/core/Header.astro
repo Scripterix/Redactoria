@@ -8,9 +8,14 @@
 			<a href="/artykuly/">Artykuły</a>
 			<a href="/tematy/">Tematy</a>
 			<a href="/o-projekcie/">O projekcie</a>
-			<a href="/szukaj/">Szukaj <span aria-hidden="true">↗</span></a>
 		</nav>
-		<span class="pilot"><span class="pilot__dot" aria-hidden="true"></span> EDU · Pilot</span>
+		<a class="header-search" href="/szukaj/">
+			<span>Szukaj</span>
+			<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+				<circle cx="11" cy="11" r="6.5"></circle>
+				<path d="m16 16 4 4"></path>
+			</svg>
+		</a>
 	</div>
 </header>
 
@@ -23,7 +28,7 @@
 
 	.site-header__inner,
 	.brand,
-	.pilot {
+	.header-search {
 		display: flex;
 		align-items: center;
 	}
@@ -72,29 +77,40 @@
 		font-weight: 400;
 	}
 
-	.pilot {
+	.header-search {
 		gap: 0.55rem;
-		color: var(--color-muted);
 		font-size: 0.68rem;
 		font-weight: 700;
 		letter-spacing: 0.12em;
+		text-decoration: none;
 		text-transform: uppercase;
+		white-space: nowrap;
 	}
 
-	.pilot__dot {
-		width: 0.4rem;
-		height: 0.4rem;
-		border-radius: 50%;
-		background: var(--color-accent);
-		box-shadow: 0 0 0 4px var(--color-accent-soft);
+	.header-search:hover {
+		color: var(--color-accent);
+	}
+
+	.header-search svg {
+		width: 1rem;
+		height: 1rem;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-width: 1.75;
 	}
 
 	@media (max-width: 35rem) {
 		nav { gap: 0.6rem; }
 		nav a { font-size: 0.62rem; letter-spacing: 0.05em; white-space: nowrap; }
 		.brand__name,
-		.pilot {
+		.header-search span {
 			display: none;
+		}
+
+		.header-search svg {
+			width: 1.15rem;
+			height: 1.15rem;
 		}
 	}
 </style>

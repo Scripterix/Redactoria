@@ -1,0 +1,148 @@
+{
+  "provenance": {
+    "description": "B4 Writer response authored from the validated Authority Ladder packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "60af6443783e5c010b378e1583051e23645e97bdf9ca6cb05f9009f197fd5e62",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+          "id": "predict-output",
+          "implemented": false,
+          "prompt": "Przewidź dokładny wynik pierwszego przykładu, a potem porównaj go z wykonaniem.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "api-http",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Granice formatu lub błędu pozostają jawne.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "error-boundaries",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI."
+      ],
+      "sections": [
+        {
+          "body": "API opisuje sposób komunikacji między programami. W webowym API klient wysyła żądanie HTTP do zasobu, a serwer zwraca odpowiedź ze statusem, nagłówkami i opcjonalnym ciałem. Metoda GET służy do pobrania bieżącej reprezentacji wskazanego zasobu.\n\n`fetch` zwraca obietnicę z obiektem `Response`. Statusy 200–299 dają `response.ok === true`. Odpowiedź 404 nadal jest odpowiedzią HTTP, dlatego sama nie powoduje odrzucenia obietnicy `fetch`; trzeba sprawdzić `ok` albo `status`.",
+          "coverage": [
+            "api-http",
+            "get",
+            "response-status",
+            "response-ok"
+          ],
+          "evidence": [
+            {
+              "id": "get-representation",
+              "kind": "finding"
+            },
+            {
+              "id": "fetch-error-boundaries",
+              "kind": "finding"
+            },
+            {
+              "id": "api-status-check",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "const success = new Response('{}', { status: 200 });\nconst missing = new Response('{}', { status: 404 });\nconsole.log(JSON.stringify([\n  { status: success.status, ok: success.ok },\n  { status: missing.status, ok: missing.ok },\n]));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "[{\"status\":200,\"ok\":true},{\"status\":404,\"ok\":false}]\n",
+              "id": "response-status",
+              "language": "js",
+              "purpose": "Porównanie kontrolowanej odpowiedzi 200 i 404"
+            }
+          ],
+          "heading": "API, metoda GET i odpowiedź HTTP",
+          "id": "api-http"
+        },
+        {
+          "body": "JSON może reprezentować obiekt, tablicę, liczbę, napis, `true`, `false` albo `null`. Nie jest wykonywalnym kodem i nie gwarantuje, że odpowiedź ma pola oczekiwane przez aplikację. Po parsowaniu nadal trzeba sprawdzić strukturę danych.\n\nMetoda `response.json()` odczytuje ciało i próbuje sparsować je jako JSON. Może odrzucić obietnicę, gdy ciało ma niepoprawną składnię. Nagłówek `Content-Type` pomaga opisać reprezentację, ale nie zastępuje obsługi błędu parsera.",
+          "coverage": [
+            "json",
+            "json-error"
+          ],
+          "evidence": [
+            {
+              "id": "json-values",
+              "kind": "finding"
+            },
+            {
+              "id": "fetch-error-boundaries",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "async function parse(response) {\n  try {\n    return { ok: true, data: await response.json() };\n  } catch {\n    return { ok: false, kind: 'json' };\n  }\n}\n;(async () => {\n  console.log(JSON.stringify(await parse(new Response('{\"name\":\"Ada\"}'))));\n  console.log(JSON.stringify(await parse(new Response('{bad json'))));\n})();",
+              "expectedDiagnostics": [],
+              "expectedOutput": "{\"ok\":true,\"data\":{\"name\":\"Ada\"}}\n{\"ok\":false,\"kind\":\"json\"}\n",
+              "id": "json-parse-error",
+              "language": "js",
+              "purpose": "Oddzielenie poprawnego JSON od błędu składni"
+            }
+          ],
+          "heading": "JSON jest formatem danych",
+          "id": "json-body"
+        },
+        {
+          "body": "Kod klienta powinien rozróżniać błąd sieci lub samego żądania, nieudany status HTTP oraz błąd parsowania JSON. Dzięki temu interfejs może pokazać właściwy komunikat, a logi nie sklejają odmiennych przyczyn w jedno ogólne „API nie działa”.\n\nPoniższa funkcja przyjmuje `fetcher` jako zależność. W produkcji może to być globalne `fetch`, a w sprawdzalnym przykładzie są to lokalne funkcje zwracające kontrolowane obiekty `Response`. Żadne zewnętrzne API nie jest potrzebne.",
+          "coverage": [
+            "http-error",
+            "network-error"
+          ],
+          "evidence": [
+            {
+              "id": "fetch-error-boundaries",
+              "kind": "finding"
+            },
+            {
+              "id": "api-status-check",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "async function loadJson(fetcher, url) {\n  try {\n    const response = await fetcher(url);\n    if (!response.ok) return { ok: false, kind: 'http', status: response.status };\n    try {\n      return { ok: true, data: await response.json() };\n    } catch {\n      return { ok: false, kind: 'json' };\n    }\n  } catch {\n    return { ok: false, kind: 'network' };\n  }\n}\nconst fixtures = {\n  success: async () => new Response('{\"name\":\"Ada\"}', { status: 200 }),\n  missing: async () => new Response('{}', { status: 404 }),\n  invalid: async () => new Response('{bad json', { status: 200 }),\n  network: async () => { throw new TypeError('network'); },\n};\n;(async () => {\n  const result = {};\n  for (const [name, fixture] of Object.entries(fixtures)) {\n    result[name] = await loadJson(fixture, '/users');\n  }\n  console.log(JSON.stringify(result));\n})();",
+              "expectedDiagnostics": [],
+              "expectedOutput": "{\"success\":{\"ok\":true,\"data\":{\"name\":\"Ada\"}},\"missing\":{\"ok\":false,\"kind\":\"http\",\"status\":404},\"invalid\":{\"ok\":false,\"kind\":\"json\"},\"network\":{\"ok\":false,\"kind\":\"network\"}}\n",
+              "id": "load-json-boundaries",
+              "language": "js",
+              "purpose": "Sukces, błąd HTTP, błąd JSON i błąd sieci"
+            }
+          ],
+          "heading": "Trzy różne granice błędu",
+          "id": "error-boundaries"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "node",
+          "kind": "node",
+          "version": "v24.16.0"
+        }
+      ],
+      "title": "API, HTTP i JSON: bezpieczne pobieranie danych przez fetch"
+    }
+  }
+}

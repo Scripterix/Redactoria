@@ -37,6 +37,27 @@ export function analysisFixture(): ResearchAnalysis {
 		questionAnswers: [{ questionId: 'question', status: 'resolved', findingIds: ['fact'], note: 'Supported by supplied documentation.' }],
 		unresolvedQuestions: [], writerHandoff: { keep: [], correct: [], avoid: [], caution: [], verifiedCodeFindingIds: [] }, limitations: ['Test fixture only.'] };
 }
+export function authorityInputFixture(): ResearcherInput {
+	const input = structuredClone(inputFixture()) as any;
+	const legacy = input.research.sources[0];
+	input.research = { ...input.research, schemaVersion: 3, probes: [], sources: [{
+		...legacy, sourceType: 'authority-ladder', kind: 'project-documentation', authorityTier: 2,
+		authorityClass: 'official-project-runtime', evidenceRole: 'technical-authority',
+		retrieval: { ...legacy.retrieval, selection: 'authoritative-content' },
+	}, {
+		...legacy, id: 'problem', title: 'Fixture real-world question', url: 'https://stackoverflow.com/questions/1/example',
+		documentHash: '3'.repeat(64), sourceType: 'authority-ladder', kind: 'problem-report', authorityTier: 7,
+		authorityClass: 'real-world-problem', evidenceRole: 'problem-signal',
+		retrieval: { ...legacy.retrieval, finalUrl: 'https://stackoverflow.com/questions/1/example', selection: 'reviewed-problem-content' },
+		excerpts: [{ id: 'symptom', text: 'A representative problem report.', locator: 'Question' }],
+	}] };
+	return input;
+}
+export function authorityAnalysisFixture(): ResearchAnalysis {
+	const analysis = structuredClone(analysisFixture());
+	analysis.verifiedFacts[0]!.sourceType = 'authority-ladder';
+	return analysis;
+}
 export const readerFixture = async (article: ResearcherInput['inventory']['articles'][number]) => ({
 	sourceId: article.source_id, sourcePath: article.source_path, contentHash: article.content_hash,
 	body: 'Complete fixture body for inspection.', truncated: false,

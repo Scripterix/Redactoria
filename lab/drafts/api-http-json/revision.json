@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "ee2a0cde2ea6105d61c48cc4a4af40ebbe333db4d24efa3cda62ff78791df009",
+  "afterDraftHash": "b6fae9a15c71939e3202ac28dda93a44b2288cee8274ce08d5d4bbecf785897a",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "beforeArticleHash": "ee2a0cde2ea6105d61c48cc4a4af40ebbe333db4d24efa3cda62ff78791df009",
+  "beforeDraftHash": "b6fae9a15c71939e3202ac28dda93a44b2288cee8274ce08d5d4bbecf785897a",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "api-http-json",
+  "writerGenerations": 1
+}

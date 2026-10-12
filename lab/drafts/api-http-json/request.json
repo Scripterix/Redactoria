@@ -1,0 +1,1188 @@
+{
+  "inputHash": "dec4cd8f11dd4c7301f17c8846d15caa8e3f0b7f81666e4cffe48000cd42dc92",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+        "authorizationRef": "lab/decisions/b4-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b4-authorization.json",
+              "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+            },
+            {
+              "path": "lab/decisions/api-http-json-rewrite.json",
+              "sha256": "faa80a7e2771dd162bae43cdc9f39f6d378f30bb68693d9fa474ab5e9d3f32ee"
+            },
+            {
+              "path": "lab/cartography/api-http-json-single.json",
+              "sha256": "26bbbff0f28ddc0e8d4d650169ba7fca8ac71c091566413687930def4e394b94"
+            },
+            {
+              "path": "lab/research/api-http-json/sources.json",
+              "sha256": "fa2fff06fae65cbc8c97d56b186728e09040ebb5272f8e9cd1d01934730de7f7"
+            },
+            {
+              "path": "lab/research/api-http-json/probes.json",
+              "sha256": "3a403f5801961b834bc319682449522699e7db0f93f4fdda9b5a4f2af4c448c3"
+            },
+            {
+              "path": "lab/research/api-http-json/research.json",
+              "sha256": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b"
+            },
+            {
+              "path": "lab/research/api-http-json/runtime-verification.json",
+              "sha256": "3cf2deca3da1436d9b171c73396a99ea232807e406f8ff9ec82bc491bd2da0f8"
+            },
+            {
+              "path": "lab/research/api-http-json/runtime-verification.md",
+              "sha256": "e9288bcb91fe0471fbfd3b046b3464c343c9b61e46a2654ba44b6ce817e3b499"
+            }
+          ],
+          "humanApproval": "The human explicitly authorized all three B4 jobs through publication; this packet was validated in-session and was not separately read by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/api-http-json/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "node",
+                "status": "PASS",
+                "version": "v24.16.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "7e0755c325ab04ab6248f07525acc5fc2e8fc9ea5894a82b05ba8a3b2af433d8",
+        "nextStep": "writer",
+        "packetHash": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b",
+        "packetRef": "lab/research/api-http-json/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts, keep dialect/runtime limits explicit, and execute every final draft example independently.",
+        "requestHash": "77d802e02d0a4e733049c2e7d3aaf853323c76ab46aa7b512af18db9abe625ff",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "http-json",
+          "fetch-errors"
+        ],
+        "schemaVersion": 3,
+        "scope": "B4 api-http-json: validated packet and runtime evidence through the authorized publication lifecycle.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+            "providedCharacters": 4535,
+            "sourceId": "578",
+            "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+            "title": "Post #22 Wprowadzenie do API.",
+            "truncated": false
+          }
+        ],
+        "topic": "api-http-json",
+        "validatedAt": "2026-10-12T20:44:19.273Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: api, http i reprezentacja json.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "API, HTTP i reprezentacja JSON"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: żądanie get i status odpowiedzi.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "Żądanie GET i status odpowiedzi"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: parsowanie json dopiero po sprawdzeniu http.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "Parsowanie JSON dopiero po sprawdzeniu HTTP"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: trzy różne klasy błędów.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "Trzy różne klasy błędów"
+        }
+      ],
+      "config": {
+        "audience": "beginner / early intermediate",
+        "requiredCoverage": [
+          "api-http",
+          "get",
+          "response-status",
+          "response-ok",
+          "json",
+          "http-error",
+          "json-error",
+          "network-error"
+        ],
+        "researchApproval": "lab/decisions/api-http-json-research-acceptance.json",
+        "researchPacket": "lab/research/api-http-json/research.json",
+        "runtimeVerification": "lab/research/api-http-json/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/api-http-json-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "node",
+            "kind": "node",
+            "version": "v24.16.0"
+          }
+        ],
+        "topic": "api-http-json"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "26bbbff0f28ddc0e8d4d650169ba7fca8ac71c091566413687930def4e394b94",
+        "analysisRef": "lab/cartography/api-http-json-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+        "authorizationRef": "lab/decisions/b4-authorization.json",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "578",
+            "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+            "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+            "providedCharacters": 4535,
+            "sourceId": "578",
+            "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+            "title": "Post #22 Wprowadzenie do API.",
+            "truncated": false
+          }
+        ],
+        "topic": "api-http-json"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "26bbbff0f28ddc0e8d4d650169ba7fca8ac71c091566413687930def4e394b94",
+          "decisionHash": "faa80a7e2771dd162bae43cdc9f39f6d378f30bb68693d9fa474ab5e9d3f32ee",
+          "fullReadCount": 1,
+          "inputHash": "7e0755c325ab04ab6248f07525acc5fc2e8fc9ea5894a82b05ba8a3b2af433d8",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "941d63ffa7caea2aa5a92b8b1a12dd67b7f616b1099511adac968dc3eca12177",
+              "description": "Controlled Response fixtures for 200 JSON, 404, invalid JSON and rejected network request",
+              "diagnostics": [],
+              "id": "node-fetch-response-boundaries",
+              "result": {
+                "invalid": {
+                  "kind": "json",
+                  "ok": false
+                },
+                "missing": {
+                  "kind": "http",
+                  "ok": false,
+                  "status": 404
+                },
+                "network": {
+                  "kind": "network",
+                  "ok": false
+                },
+                "success": {
+                  "data": {
+                    "name": "Ada"
+                  },
+                  "ok": true
+                }
+              },
+              "runtimeId": "node",
+              "runtimeVersion": "v24.16.0"
+            }
+          ],
+          "requestHash": "77d802e02d0a4e733049c2e7d3aaf853323c76ab46aa7b512af18db9abe625ff",
+          "researchBundleHash": "fa2fff06fae65cbc8c97d56b186728e09040ebb5272f8e9cd1d01934730de7f7",
+          "topicSlug": "api-http-json"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "578",
+                "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+                "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+              }
+            ],
+            "claim": "Kontrolowane obiekty Response w Node potwierdziły cztery rozłączne wyniki: sukces JSON, błąd HTTP, błąd JSON i błąd sieci.",
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "documentId": "whatwg-fetch",
+                "excerptId": "ok-status"
+              },
+              {
+                "documentId": "rfc-9110",
+                "excerptId": "get-semantics"
+              },
+              {
+                "documentId": "rfc-8259",
+                "excerptId": "json-values"
+              },
+              {
+                "documentId": "mdn-fetch",
+                "excerptId": "fetch-rejection"
+              }
+            ],
+            "id": "executed-boundaries",
+            "probeIds": [
+              "node-fetch-response-boundaries"
+            ],
+            "questionIds": [
+              "http-json",
+              "fetch-errors"
+            ],
+            "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+            "sourceType": "authority-ladder",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-12",
+          "evidence": [
+            {
+              "documentId": "whatwg-fetch",
+              "excerptId": "ok-status"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "get-semantics"
+            },
+            {
+              "documentId": "rfc-8259",
+              "excerptId": "json-values"
+            },
+            {
+              "documentId": "mdn-fetch",
+              "excerptId": "fetch-rejection"
+            }
+          ],
+          "runtimeScope": "Node v24.16.0; semantyka zgodna ze wskazanymi standardami"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "578",
+                "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+                "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+              }
+            ],
+            "claim": "Łańcuch fetch(...).then(response => response.json()) nie odróżnia odpowiedzi HTTP 404 od sukcesu przed próbą parsowania JSON.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-fetch",
+                "excerptId": "fetch-rejection"
+              },
+              {
+                "documentId": "whatwg-fetch",
+                "excerptId": "ok-status"
+              }
+            ],
+            "id": "api-status-check",
+            "questionIds": [
+              "fetch-errors"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Research obejmuje jeden autoryzowany materiał SOURCE i tylko tyle źródeł Authority Ladder, ile potrzeba do rozstrzygnięcia claims; nie jest samodzielną zgodą na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "get-representation",
+              "json-values",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+            "questionId": "http-json",
+            "status": "resolved"
+          },
+          {
+            "findingIds": [
+              "fetch-error-boundaries",
+              "api-status-check",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+            "questionId": "fetch-errors",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "get-representation",
+              "json-values",
+              "fetch-error-boundaries",
+              "api-status-check",
+              "executed-boundaries"
+            ],
+            "id": "modernize-bounded",
+            "instruction": "Zmodernizować pojedynczy materiał legacy bez przenoszenia błędów i bez poszerzania zakresu."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "81b021244f1b9a2c3e4b8dfd55721bb79f1ac54f5529119db166ff9f8dfa8be9",
+            "evidenceIds": [
+              "ok-status",
+              "body-json"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "whatwg-fetch",
+            "kind": "standard",
+            "retrieval": {
+              "finalUrl": "https://fetch.spec.whatwg.org/",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "WHATWG Fetch Standard",
+            "url": "https://fetch.spec.whatwg.org/"
+          },
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "d431760660ea44e130f6e919dab216df2d0b3a490567a98089267523368fe1e5",
+            "evidenceIds": [
+              "get-semantics",
+              "method-purpose"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "rfc-9110",
+            "kind": "standard",
+            "retrieval": {
+              "finalUrl": "https://www.rfc-editor.org/rfc/rfc9110.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "RFC 9110 — HTTP Semantics",
+            "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+          },
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "5302d6ccb6cf221817bdd1f8cd7221661d4519372e0ac0b4cf641e11e8037de7",
+            "evidenceIds": [
+              "json-values"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "rfc-8259",
+            "kind": "standard",
+            "retrieval": {
+              "finalUrl": "https://www.rfc-editor.org/rfc/rfc8259.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "RFC 8259 — The JavaScript Object Notation Data Interchange Format",
+            "url": "https://www.rfc-editor.org/rfc/rfc8259.html"
+          },
+          {
+            "authorityClass": "mdn",
+            "authorityTier": 3,
+            "documentHash": "0d1e47df62aeef4d2e125a77b3f0455745e6afeee8e2198cb52ae750b6d32571",
+            "evidenceIds": [
+              "fetch-rejection"
+            ],
+            "evidenceRole": "practical-reference",
+            "id": "mdn-fetch",
+            "kind": "web-platform-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "practical-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "MDN — Window.fetch()",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+            "providedCharacters": 4535,
+            "sourceId": "578",
+            "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+            "title": "Post #22 Wprowadzenie do API.",
+            "truncated": false
+          }
+        ],
+        "topic": "api-http-json",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "578",
+                "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+                "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+              }
+            ],
+            "claim": "Metoda GET żąda transferu bieżącej reprezentacji zasobu, a znaczenie odpowiedzi wynika także ze statusu HTTP.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "rfc-9110",
+                "excerptId": "get-semantics"
+              },
+              {
+                "documentId": "rfc-9110",
+                "excerptId": "method-purpose"
+              }
+            ],
+            "id": "get-representation",
+            "questionIds": [
+              "http-json"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "578",
+                "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+                "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+              }
+            ],
+            "claim": "JSON przenosi wartości będące obiektem, tablicą, liczbą, napisem, true, false albo null.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "rfc-8259",
+                "excerptId": "json-values"
+              }
+            ],
+            "id": "json-values",
+            "questionIds": [
+              "http-json"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "578",
+                "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+                "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+              }
+            ],
+            "claim": "fetch odrzuca obietnicę przy błędzie żądania lub sieci, natomiast status HTTP trzeba sprawdzić przez Response.ok lub status; parsowanie JSON może odrzucić osobno.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "whatwg-fetch",
+                "excerptId": "ok-status"
+              },
+              {
+                "documentId": "whatwg-fetch",
+                "excerptId": "body-json"
+              },
+              {
+                "documentId": "mdn-fetch",
+                "excerptId": "fetch-rejection"
+              }
+            ],
+            "id": "fetch-error-boundaries",
+            "questionIds": [
+              "fetch-errors"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "api-status-check"
+              ],
+              "instruction": "Łańcuch fetch(...).then(response => response.json()) nie odróżnia odpowiedzi HTTP 404 od sukcesu przed próbą parsowania JSON."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "get-representation",
+                "json-values",
+                "fetch-error-boundaries"
+              ],
+              "instruction": "Zachować krótki, praktyczny charakter materiału legacy."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "executed-boundaries"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Weryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP."
+        ],
+        "packetHash": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "invalid": {
+                    "kind": "json",
+                    "ok": false
+                  },
+                  "missing": {
+                    "kind": "http",
+                    "ok": false,
+                    "status": 404
+                  },
+                  "network": {
+                    "kind": "network",
+                    "ok": false
+                  },
+                  "success": {
+                    "data": {
+                      "name": "Ada"
+                    },
+                    "ok": true
+                  }
+                },
+                "expected": {
+                  "invalid": {
+                    "kind": "json",
+                    "ok": false
+                  },
+                  "missing": {
+                    "kind": "http",
+                    "ok": false,
+                    "status": 404
+                  },
+                  "network": {
+                    "kind": "network",
+                    "ok": false
+                  },
+                  "success": {
+                    "data": {
+                      "name": "Ada"
+                    },
+                    "ok": true
+                  }
+                },
+                "id": "observed-result",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+            "execution": "actual-local-cli",
+            "kind": "node",
+            "records": [
+              {
+                "code": "async function loadJson(fetcher, url) { try { const response = await fetcher(url); if (!response.ok) return { ok: false, kind: 'http', status: response.status }; try { return { ok: true, data: await response.json() }; } catch { return { ok: false, kind: 'json' }; } } catch { return { ok: false, kind: 'network' }; } } const fixtures = { success: async () => new Response('{\"name\":\"Ada\"}', { status: 200, headers: { 'content-type': 'application/json' } }), missing: async () => new Response('{\"error\":\"missing\"}', { status: 404, headers: { 'content-type': 'application/json' } }), invalid: async () => new Response('{bad json', { status: 200, headers: { 'content-type': 'application/json' } }), network: async () => { throw new TypeError('network'); } }; const result = {}; for (const [name, fixture] of Object.entries(fixtures)) result[name] = await loadJson(fixture, '/users'); console.log(JSON.stringify(result));",
+                "codeHash": "941d63ffa7caea2aa5a92b8b1a12dd67b7f616b1099511adac968dc3eca12177",
+                "description": "Controlled Response fixtures for 200 JSON, 404, invalid JSON and rejected network request",
+                "diagnostics": [],
+                "id": "node-fetch-response-boundaries",
+                "result": {
+                  "invalid": {
+                    "kind": "json",
+                    "ok": false
+                  },
+                  "missing": {
+                    "kind": "http",
+                    "ok": false,
+                    "status": 404
+                  },
+                  "network": {
+                    "kind": "network",
+                    "ok": false
+                  },
+                  "success": {
+                    "data": {
+                      "name": "Ada"
+                    },
+                    "ok": true
+                  }
+                },
+                "runtimeId": "node",
+                "runtimeVersion": "v24.16.0"
+              }
+            ],
+            "runtimeId": "node",
+            "status": "PASS",
+            "version": "v24.16.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — api-http-json\n\nStatus: **PASS**\n\n- runtime: Node v24.16.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nWeryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP.\n",
+      "sources": [
+        {
+          "body": "\n# **Wprowadzenie do API: Jak Komunikują się Aplikacje?**\n\nCzy kiedykolwiek zastanawiałeś się, jak aplikacje na Twoim telefonie lub komputerze wymieniają się informacjami? Jak aplikacja pogodowa pobiera dane o temperaturze, a aplikacja do zamawiania jedzenia wie, jakie restauracje są otwarte? Odpowiedź brzmi: **API**.\n\n## **Czym jest API? (Definicja i Podstawy)**\n\nAPI (**Application Programming Interface**) to interfejs programowania aplikacji. Można go porównać do kelnera w restauracji – Ty (aplikacja) składasz zamówienie (żądanie), a on dostarcza Ci potrzebne danie (dane) z kuchni (serwera).\n\nW świecie programowania API to zestaw reguł i protokołów umożliwiających różnym aplikacjom komunikację i wymianę danych.\n\n## **Gdzie Spotkasz API?**\n\nAPI są wszechobecne w dzisiejszym cyfrowym świecie. Oto kilka przykładów:\n\n- **Aplikacje mobilne i webowe** – integracja z usługami takimi jak płatności online (np. PayPal), mapy (np. Google Maps), media społecznościowe (np. Facebook, Twitter) czy systemy zarządzania zapasami.\n\n- **Internet rzeczy (IoT)** – komunikacja między inteligentnymi urządzeniami a chmurą.\n\n- **Mikrousługi** – budowanie aplikacji z małych, niezależnych modułów, które komunikują się za pomocą API.\n\n- **Automatyzacja procesów** – integracja różnych systemów w celu usprawnienia pracy.\n\n## **Rodzaje API**\n\nIstnieje kilka rodzajów API, z których każdy ma swoje unikalne cechy:\n\n- **REST API (Representational State Transfer)** – najpopularniejszy rodzaj API, oparty na standardach HTTP, prosty i skalowalny.\n\n- **SOAP API (Simple Object Access Protocol)** – starszy, bardziej złożony standard, często stosowany w systemach korporacyjnych.\n\n- **RPC API (Remote Procedure Call)** – umożliwia zdalne wywoływanie funkcji na serwerze.\n\n## **Metody HTTP: Język Komunikacji API**\n\nAPI często wykorzystują protokół HTTP do wymiany danych. Oto najważniejsze metody:\n\n- **GET** – pobiera dane z serwera.\n\n- **POST** – wysyła nowe dane na serwer.\n\n- **PUT** – aktualizuje istniejące dane.\n\n- **DELETE** – usuwa dane.\n\n### **Pobieranie danych za pomocą metody GET i fetch()**\n\nW JavaScript można pobrać dane z API za pomocą funkcji fetch().\n\njavascriptKopiujEdytujfetch('https://przykladoweapi.com/uzytkownicy') // Adres API\n  .then(response => response.json()) // Parsowanie odpowiedzi do JSON\n  .then(data => console.log(data)) // Wyświetlenie danych w konsoli\n  .catch(error => console.error('Błąd:', error)); // Obsługa błędów\n\n**Wyjaśnienie kodu:**\n\n- fetch('https://przykladoweapi.com/uzytkownicy') – wysyła żądanie GET do API.\n\n- .then(response => response.json()) – konwertuje odpowiedź do formatu JSON.\n\n- .then(data => console.log(data)) – wyświetla otrzymane dane.\n\n- .catch(error => console.error('Błąd:', error)) – obsługuje ewentualne błędy.\n\n## **Dlaczego Warto Korzystać z API?**\n\n- **Automatyzacja** – API umożliwiają integrację i automatyzację procesów.\n\n- **Dane w czasie rzeczywistym** – dostęp do aktualnych informacji z różnych źródeł.\n\n- **Bezpieczeństwo** – kontrola dostępu do danych.\n\n- **Łatwość tworzenia aplikacji** – możliwość korzystania z gotowych usług.\n\n## **Darmowe API – Gdzie Znaleźć?**\n\nWiele organizacji oferuje darmowe API, które można wykorzystać w swoich projektach:\n\n- **API pogodowe** (np. OpenWeatherMap)\n\n- **API jakości powietrza**\n\n- **API do quizów i gier**\n\n- **API danych geograficznych**\n\n## **Narzędzia i Platformy Wspomagające Pracę z API**\n\n- **Swagger, Postman** – testowanie i dokumentowanie API.\n\n- **Zapier, Integromat** – łączenie różnych aplikacji i usług.\n\n## **Tworzenie Własnego API w Express.js**\n\nJeśli chcesz stworzyć własne API, pomocny będzie **Express.js** – popularny framework Node.js.\n\n### **Przykładowy serwer API w Express.js**\n\njavascriptKopiujEdytujconst express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.get('/produkty', (req, res) => {\n  const produkty = [\n    { id: 1, nazwa: 'Laptop', cena: 2500 },\n    { id: 2, nazwa: 'Myszka', cena: 50 },\n  ];\n  res.json(produkty);\n});\n\napp.listen(port, () => {\n  console.log(`Serwer działa na porcie ${port}`);\n});\n\nTen kod tworzy serwer, który zwraca listę produktów w formacie JSON po wysłaniu żądania GET na /produkty.\n\n## **Podsumowanie**\n\nAPI to fundament współczesnych aplikacji, umożliwiający wymianę danych i integrację usług. Mam nadzieję, że ten artykuł pomógł Ci zrozumieć podstawy API oraz sposoby ich wykorzystania w praktyce. W aplikacji Teachers Grade Book zastosowałem [Express.JS i metody API zobacz](https://opengateweb.com/posts/15-post-app-teachers-2/).\n",
+          "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+          "sourceId": "578",
+          "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded single-source modernization. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under the supplied human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All examples are structured,\nself-contained and use an explicit supported language with exact expected output and diagnostics. No code fences hidden in prose.\nFollow the topic-specific scope, corrections, cautions and runtime limits from the approved evidence.\nDo not add unrelated tutorials, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "60af6443783e5c010b378e1583051e23645e97bdf9ca6cb05f9009f197fd5e62",
+  "schemaVersion": 1
+}

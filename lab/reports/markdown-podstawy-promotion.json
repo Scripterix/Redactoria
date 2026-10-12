@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "d6335cf1be4fa58d16b4fb86eb0759c5b237605ec1da0ebbd519c8010197de57",
+  "candidateHash": "0a1ba6f4d6bdddea87613b138fc8c7cac82b5f6b76f26ceeb386c37b3b18e35e",
+  "candidateRef": "lab/candidates/markdown/article.json",
+  "contentHash": "2ef7bc42076830ed4f2b3070b1feb695ce135d4751fbfcda0404e62f17c3f463",
+  "criticReviewHash": "8afb63434eb8ec0eab7e91a6c54aaaf0b305ce570c641432c6206942a93afbf7",
+  "criticReviewRef": "lab/reviews/markdown/critic-review.json",
+  "decisionHash": "cd5f924f255308d15c21eb4400074eec6d4bd868edf650350aefe3ed4f31e59c",
+  "decisionRef": "lab/decisions/markdown-publication.json",
+  "destination": "content/articles/markdown-podstawy.md",
+  "localPath": "/artykuly/markdown-podstawy/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b4-authorization.json",
+        "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+      },
+      {
+        "path": "lab/decisions/markdown-rewrite.json",
+        "sha256": "879b4dcf06566f77c8e94d18f4d3bcb342375698b3514b81a2b9987a108cad1a"
+      },
+      {
+        "path": "lab/cartography/markdown-single.json",
+        "sha256": "bf9770525c227d35025f6151c20fb24d142b1c3591af197f819898b70ff675c0"
+      },
+      {
+        "path": "lab/research/markdown/sources.json",
+        "sha256": "ec08eedacf6042c4c87de8b56f70139a2ecd1ea266fe5a3e2d64897a45a065de"
+      },
+      {
+        "path": "lab/research/markdown/probes.json",
+        "sha256": "a67eff9933b6576b58584d16c5118394715c21d54e03051aa9b5447d617f694e"
+      },
+      {
+        "path": "lab/research/markdown/research.json",
+        "sha256": "b0f943639dbb9ab7e0e7f9cabacce5569fb6eccbe16258a5a3f42bb83d516dcd"
+      },
+      {
+        "path": "lab/research/markdown/runtime-verification.json",
+        "sha256": "b6e7d2a13c5ed41cc6ab344c65b44cd2404317c8c57121c20075fbe84e5772b3"
+      },
+      {
+        "path": "lab/research/markdown/runtime-verification.md",
+        "sha256": "60dbd145a8c9c06e2b723dd1a754c9a65ad67e1a7a428f472f9e344912aeed6f"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "6b4dbe51bd6e49829ae264edcef1196ac67c75100053974fc4c225848af320d4",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "98bd59577f94ba166c1e515cbb5120132dbe9c2e2a61bc0d8223b66c3557fd98"
+    },
+    "revisionHash": "1a0d2f35ac84aca5b94f98d16768b590b98f80ac616680872720d1e61beab3fe",
+    "revisionRef": "lab/drafts/markdown/revision.json",
+    "sources": [
+      {
+        "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+        "providedCharacters": 2700,
+        "sourceId": "48",
+        "sourcePath": "48-post-2-jezyk-markdown.md",
+        "title": "Post #2 język Markdown",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "7acf6e5a2494891547fa68548c4ad57246da867ce29b96e783c8bb083d4dd818",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "f80514520a316ea7e07060a484926326102f066a4a30cc7a8730677a3cea39dd"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "66bda1cb9fb89c984e548376da4037f28fcae867412ccbdda54c3e3e11b3d993",
+  "researchApprovalRef": "lab/decisions/markdown-research-acceptance.json",
+  "researchPacketHash": "b0f943639dbb9ab7e0e7f9cabacce5569fb6eccbe16258a5a3f42bb83d516dcd",
+  "researchPacketRef": "lab/research/markdown/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "879b4dcf06566f77c8e94d18f4d3bcb342375698b3514b81a2b9987a108cad1a",
+  "sourceDecisionRef": "lab/decisions/markdown-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

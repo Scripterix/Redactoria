@@ -1,0 +1,26 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "markdown-model",
+    "headings-paragraphs",
+    "emphasis-links",
+    "lists",
+    "code-spans",
+    "fenced-code",
+    "escaping",
+    "commonmark-gfm"
+  ],
+  "researchApproval": "lab/decisions/markdown-research-acceptance.json",
+  "researchPacket": "lab/research/markdown/research.json",
+  "runtimeVerification": "lab/research/markdown/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/markdown-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "markdown"
+}

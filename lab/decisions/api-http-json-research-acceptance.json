@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b4-authorization.json",
+        "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+      },
+      {
+        "path": "lab/decisions/api-http-json-rewrite.json",
+        "sha256": "faa80a7e2771dd162bae43cdc9f39f6d378f30bb68693d9fa474ab5e9d3f32ee"
+      },
+      {
+        "path": "lab/cartography/api-http-json-single.json",
+        "sha256": "26bbbff0f28ddc0e8d4d650169ba7fca8ac71c091566413687930def4e394b94"
+      },
+      {
+        "path": "lab/research/api-http-json/sources.json",
+        "sha256": "fa2fff06fae65cbc8c97d56b186728e09040ebb5272f8e9cd1d01934730de7f7"
+      },
+      {
+        "path": "lab/research/api-http-json/probes.json",
+        "sha256": "3a403f5801961b834bc319682449522699e7db0f93f4fdda9b5a4f2af4c448c3"
+      },
+      {
+        "path": "lab/research/api-http-json/research.json",
+        "sha256": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b"
+      },
+      {
+        "path": "lab/research/api-http-json/runtime-verification.json",
+        "sha256": "3cf2deca3da1436d9b171c73396a99ea232807e406f8ff9ec82bc491bd2da0f8"
+      },
+      {
+        "path": "lab/research/api-http-json/runtime-verification.md",
+        "sha256": "e9288bcb91fe0471fbfd3b046b3464c343c9b61e46a2654ba44b6ce817e3b499"
+      }
+    ],
+    "humanApproval": "The human explicitly authorized all three B4 jobs through publication; this packet was validated in-session and was not separately read by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/api-http-json/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "node",
+          "status": "PASS",
+          "version": "v24.16.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "7e0755c325ab04ab6248f07525acc5fc2e8fc9ea5894a82b05ba8a3b2af433d8",
+  "nextStep": "writer",
+  "packetHash": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b",
+  "packetRef": "lab/research/api-http-json/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, keep dialect/runtime limits explicit, and execute every final draft example independently.",
+  "requestHash": "77d802e02d0a4e733049c2e7d3aaf853323c76ab46aa7b512af18db9abe625ff",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "http-json",
+    "fetch-errors"
+  ],
+  "schemaVersion": 3,
+  "scope": "B4 api-http-json: validated packet and runtime evidence through the authorized publication lifecycle.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+      "providedCharacters": 4535,
+      "sourceId": "578",
+      "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+      "title": "Post #22 Wprowadzenie do API.",
+      "truncated": false
+    }
+  ],
+  "topic": "api-http-json",
+  "validatedAt": "2026-10-12T20:44:19.273Z"
+}

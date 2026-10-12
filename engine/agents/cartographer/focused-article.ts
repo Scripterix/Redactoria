@@ -38,7 +38,7 @@ export const ApprovedArticleDecisionV3Schema = z.strictObject({
 	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE']), nextStep: z.literal('research'),
 	targets: FocusedArticleResultSchema.shape.targets, confidence, reason: text, evidence: z.array(EvidenceSchema).min(1),
 	analysisHash: sha, analysisRef: z.string().regex(/^lab\/cartography\/[a-z0-9-]+-single\.json$/),
-	authorizationRef: z.literal('lab/decisions/b3-authorization.json'), authorizationHash: sha,
+	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json']), authorizationHash: sha,
 	topic: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
 });
 export const ApprovedArticleDecisionSchema = z.union([ApprovedArticleDecisionV2Schema, ApprovedArticleDecisionV3Schema]);

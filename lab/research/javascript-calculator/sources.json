@@ -1,0 +1,149 @@
+{
+  "asOfDate": "2026-10-12",
+  "probes": [
+    {
+      "code": "function parseDecimal(raw) { if (raw == null || String(raw).trim() === '') return { ok: false, error: 'empty' }; const value = Number(raw); return Number.isFinite(value) ? { ok: true, value } : { ok: false, error: 'invalid-number' }; } function calculate(a, operator, b) { if (!['+', '-'].includes(operator)) return { ok: false, error: 'unsupported-operator' }; return { ok: true, value: operator === '+' ? a + b : a - b }; } class Calculator { calculate(a, operator, b) { return calculate(a, operator, b); } } const values = ['12.5', ' ', '12px', 'Infinity'].map(parseDecimal); console.log(JSON.stringify({ values, functionResult: calculate(7, '-', 2), classResult: new Calculator().calculate(7, '-', 2), badOperator: calculate(1, '*', 2) }));",
+      "codeHash": "1968357f1aa9dc8a6e0a5daa0a07a7588fee1a78d8eef380ed721b1f1448432a",
+      "description": "Full Number conversion, finite checks, supported operators and equivalent function/class results",
+      "diagnostics": [],
+      "id": "node-calculator-boundaries",
+      "result": {
+        "badOperator": {
+          "error": "unsupported-operator",
+          "ok": false
+        },
+        "classResult": {
+          "ok": true,
+          "value": 5
+        },
+        "functionResult": {
+          "ok": true,
+          "value": 5
+        },
+        "values": [
+          {
+            "ok": true,
+            "value": 12.5
+          },
+          {
+            "error": "empty",
+            "ok": false
+          },
+          {
+            "error": "invalid-number",
+            "ok": false
+          },
+          {
+            "error": "invalid-number",
+            "ok": false
+          }
+        ]
+      },
+      "runtimeId": "node",
+      "runtimeVersion": "v24.16.0"
+    }
+  ],
+  "provenance": "Source Authority Ladder snapshots plus one controlled local Node probe; no external example API calls.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-calculator"
+      ],
+      "id": "numeric-input",
+      "question": "Jak przekształcić cały tekst w skończoną liczbę bez maskowania błędów?",
+      "section": "input"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-calculator"
+      ],
+      "id": "function-class",
+      "question": "Co faktycznie zmienia zapis tej samej operacji jako funkcji lub metody klasy?",
+      "section": "organization"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "28696fd0ccd73f6a8eb3940022a6ab44f8f8e050201520487392d0f597b09118",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "number-conversion",
+          "locator": "Number constructor",
+          "text": "Calling Number as a function converts the supplied value to a Number according to the specification conversion rules."
+        },
+        {
+          "id": "number-is-finite",
+          "locator": "Number.isFinite",
+          "text": "Number.isFinite returns false for non-Number values and for NaN or positive or negative infinity."
+        }
+      ],
+      "id": "ecmascript-numbers",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://tc39.es/ecma262/multipage/numbers-and-dates.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "ECMAScript Language Specification — Numbers and Dates",
+      "url": "https://tc39.es/ecma262/multipage/numbers-and-dates.html"
+    },
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "cf6ad4b66633da478685ee1a2c4206ea11a91e45784616cf78002985235b3bfa",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "class-methods",
+          "locator": "Class Definitions",
+          "text": "A class body can define a constructor and methods; class definitions are always strict mode code."
+        }
+      ],
+      "id": "ecmascript-classes",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "ECMAScript Language Specification — Functions and Classes",
+      "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "7920a587bf6efb2760349bb42ed29e6a1c2eead4e2a1b5582eefc6ace1d92e28",
+      "evidenceRole": "practical-reference",
+      "excerpts": [
+        {
+          "id": "finite-practical",
+          "locator": "Description",
+          "text": "Number.isFinite accepts only finite values already having the Number type and performs no preliminary coercion."
+        }
+      ],
+      "id": "mdn-number-is-finite",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — Number.isFinite()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite"
+    }
+  ],
+  "topicSlug": "javascript-calculator"
+}

@@ -1,0 +1,276 @@
+{
+  "provenance": {
+    "description": "B4 Authority Ladder analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "research": {
+    "requestHash": "77d802e02d0a4e733049c2e7d3aaf853323c76ab46aa7b512af18db9abe625ff",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "claim": "Kontrolowane obiekty Response w Node potwierdziły cztery rozłączne wyniki: sukces JSON, błąd HTTP, błąd JSON i błąd sieci.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "whatwg-fetch",
+              "excerptId": "ok-status"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "get-semantics"
+            },
+            {
+              "documentId": "rfc-8259",
+              "excerptId": "json-values"
+            },
+            {
+              "documentId": "mdn-fetch",
+              "excerptId": "fetch-rejection"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "node-fetch-response-boundaries"
+          ],
+          "questionIds": [
+            "http-json",
+            "fetch-errors"
+          ],
+          "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-12",
+        "evidence": [
+          {
+            "documentId": "whatwg-fetch",
+            "excerptId": "ok-status"
+          },
+          {
+            "documentId": "rfc-9110",
+            "excerptId": "get-semantics"
+          },
+          {
+            "documentId": "rfc-8259",
+            "excerptId": "json-values"
+          },
+          {
+            "documentId": "mdn-fetch",
+            "excerptId": "fetch-rejection"
+          }
+        ],
+        "runtimeScope": "Node v24.16.0; semantyka zgodna ze wskazanymi standardami"
+      },
+      "incorrectClaims": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "claim": "Łańcuch fetch(...).then(response => response.json()) nie odróżnia odpowiedzi HTTP 404 od sukcesu przed próbą parsowania JSON.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "mdn-fetch",
+              "excerptId": "fetch-rejection"
+            },
+            {
+              "documentId": "whatwg-fetch",
+              "excerptId": "ok-status"
+            }
+          ],
+          "id": "api-status-check",
+          "questionIds": [
+            "fetch-errors"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "Research obejmuje jeden autoryzowany materiał SOURCE i tylko tyle źródeł Authority Ladder, ile potrzeba do rozstrzygnięcia claims; nie jest samodzielną zgodą na publikację."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "get-representation",
+            "json-values",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+          "questionId": "http-json",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "fetch-error-boundaries",
+            "api-status-check",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+          "questionId": "fetch-errors",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "CORRECT",
+          "findingIds": [
+            "get-representation",
+            "json-values",
+            "fetch-error-boundaries",
+            "api-status-check",
+            "executed-boundaries"
+          ],
+          "id": "modernize-bounded",
+          "instruction": "Zmodernizować pojedynczy materiał legacy bez przenoszenia błędów i bez poszerzania zakresu."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "api-http-json",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "claim": "Metoda GET żąda transferu bieżącej reprezentacji zasobu, a znaczenie odpowiedzi wynika także ze statusu HTTP.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "get-semantics"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "method-purpose"
+            }
+          ],
+          "id": "get-representation",
+          "questionIds": [
+            "http-json"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "claim": "JSON przenosi wartości będące obiektem, tablicą, liczbą, napisem, true, false albo null.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "rfc-8259",
+              "excerptId": "json-values"
+            }
+          ],
+          "id": "json-values",
+          "questionIds": [
+            "http-json"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "claim": "fetch odrzuca obietnicę przy błędzie żądania lub sieci, natomiast status HTTP trzeba sprawdzić przez Response.ok lub status; parsowanie JSON może odrzucić osobno.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "whatwg-fetch",
+              "excerptId": "ok-status"
+            },
+            {
+              "documentId": "whatwg-fetch",
+              "excerptId": "body-json"
+            },
+            {
+              "documentId": "mdn-fetch",
+              "excerptId": "fetch-rejection"
+            }
+          ],
+          "id": "fetch-error-boundaries",
+          "questionIds": [
+            "fetch-errors"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+          }
+        ],
+        "correct": [
+          {
+            "findingIds": [
+              "api-status-check"
+            ],
+            "instruction": "Łańcuch fetch(...).then(response => response.json()) nie odróżnia odpowiedzi HTTP 404 od sukcesu przed próbą parsowania JSON."
+          }
+        ],
+        "keep": [
+          {
+            "findingIds": [
+              "get-representation",
+              "json-values",
+              "fetch-error-boundaries"
+            ],
+            "instruction": "Zachować krótki, praktyczny charakter materiału legacy."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

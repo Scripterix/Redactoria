@@ -1,0 +1,16 @@
+[
+  {
+    "code": "import * as commonmark from 'commonmark'; const parser = new commonmark.Parser(); const renderer = new commonmark.HtmlRenderer(); const samples = { core: '# Tytuł\\n\\n**ważne** i [link](https://example.com)', list: '- jeden\\n  - dwa', fence: '~~~js\\nconsole.log(1);\\n~~~' }; const output = Object.fromEntries(Object.entries(samples).map(([key, value]) => [key, renderer.render(parser.parse(value))])); console.log(JSON.stringify(output));",
+    "codeHash": "b2b4eb2e91f4bbf9dd43045edad67fac6392acb26b421892cd453eda4a33148f",
+    "description": "Render headings, emphasis, links, nested lists and tilde-fenced code with commonmark 0.31.2",
+    "diagnostics": [],
+    "id": "node-commonmark-render",
+    "result": {
+      "core": "<h1>Tytuł</h1>\n<p><strong>ważne</strong> i <a href=\"https://example.com\">link</a></p>\n",
+      "fence": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+      "list": "<ul>\n<li>jeden\n<ul>\n<li>dwa</li>\n</ul>\n</li>\n</ul>\n"
+    },
+    "runtimeId": "node",
+    "runtimeVersion": "v24.16.0"
+  }
+]

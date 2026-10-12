@@ -4,7 +4,7 @@ import { DeepReadSchema } from '../agents/cartographer/contract.ts';
 import { FocusedMergeResultSchema } from '../agents/cartographer/focused-merge.ts';
 import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../agents/cartographer/focused-article.ts';
 import { validateB2Authorization } from './b2-authorization.ts';
-import { validateB3Authorization } from './b3-authorization.ts';
+import { validateBatchAuthorization } from './b4-authorization.ts';
 import { ApprovedMergeDecisionSchema, ResearchPacketSchema, ProbeSchema, RuntimeProbeSchema } from '../agents/researcher/contract.ts';
 import { findings } from '../agents/researcher/validation.ts';
 import { hashJson, stableJson } from './serialization.ts';
@@ -42,7 +42,7 @@ export const B2ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ sch
 export const B3ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ schemaVersion: true, status: true, approvedBy: true, approvedAt: true, targets: true }).extend({
  schemaVersion: z.literal(3), status: z.literal('validated'), approvedBy: z.literal('session-review-under-human-authorization'),
  validatedAt: z.iso.datetime(), humanReviewedPacket: z.literal(false),
- authorizationRef: z.literal('lab/decisions/b3-authorization.json'), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
+	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json']), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
 });
 export const ResearchApprovalSchema = z.union([HumanResearchApprovalSchema, B2ResearchAcceptanceSchema, B3ResearchAcceptanceSchema]);
 export const TopicConfigV1Schema = z.strictObject({
@@ -101,7 +101,7 @@ export function editorialBasis(raw: unknown) {
    validateB2Authorization(artifact(approval.authorizationRef), approval.authorizationHash, decision.targets);
   } else {
    if (decision.schemaVersion !== 3 || decision.topic !== input.config.topic) throw new Error('Invalid B3 topic/decision.');
-   validateB3Authorization(artifact(approval.authorizationRef), approval.authorizationHash, input.config.topic, decision.targets);
+		validateBatchAuthorization(approval.authorizationRef, artifact(approval.authorizationRef), approval.authorizationHash, input.config.topic, decision.targets);
   }
   if (research.unresolvedQuestions.length || research.codeReview.some(item => item.verification === 'needs-review')) throw new Error('Bounded research must be resolved before Writer.');
  }

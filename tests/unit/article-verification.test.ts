@@ -77,6 +77,9 @@ describe('verify:article contract spike', () => {
 			['javascript-if-else', 'PASS'],
 			['javascript-arrays', 'PASS'],
 			['javascript-dom', 'PASS'],
+			['markdown', 'PASS'],
+			['javascript-calculator', 'PASS'],
+			['api-http-json', 'PASS'],
 		]);
 		expect(results[0]!.areas.publication.checks.contentLineage.status).toBe('PASS');
 		expect(results[0]!.areas.publication.checks.contentIntegrity.status).toBe('PASS');

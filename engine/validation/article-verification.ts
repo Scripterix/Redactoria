@@ -45,6 +45,15 @@ export const FROZEN_ARTICLE_FIXTURES: readonly VerificationFixture[] = [
 	{ topic: 'javascript-dom', candidateRef: 'lab/candidates/javascript-dom/article.json', publication: {
 		decisionRef: 'lab/decisions/javascript-dom-publication.json', auditRef: 'lab/reports/dom-w-javascript-promotion.json',
 	} },
+	{ topic: 'markdown', candidateRef: 'lab/candidates/markdown/article.json', publication: {
+		decisionRef: 'lab/decisions/markdown-publication.json', auditRef: 'lab/reports/markdown-podstawy-promotion.json',
+	} },
+	{ topic: 'javascript-calculator', candidateRef: 'lab/candidates/javascript-calculator/article.json', publication: {
+		decisionRef: 'lab/decisions/javascript-calculator-publication.json', auditRef: 'lab/reports/kalkulator-w-javascript-promotion.json',
+	} },
+	{ topic: 'api-http-json', candidateRef: 'lab/candidates/api-http-json/article.json', publication: {
+		decisionRef: 'lab/decisions/api-http-json-publication.json', auditRef: 'lab/reports/api-http-json-promotion.json',
+	} },
 ] as const;
 
 export function verificationFixtureForTopic(topic: string): VerificationFixture | undefined {

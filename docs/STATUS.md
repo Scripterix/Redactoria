@@ -1,8 +1,8 @@
 # Redactoria — STATUS
 
-Stan po Milestone 4/5, Search 0.1, selekcji B1, publikacji B2, lokalnej promocji
-trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-only
-`verify:article` oraz Knowledge Gap 0.1/0.2, 2026-10-11. Szczegóły: [Project Brain](index.md),
+Stan po Milestone 4/5, Search 0.1, selekcji B1, publikacji B2/B3 i lokalnej
+publikacji trzech artykułów B4, Pipeline Review 0.1, produkcyjnym read-only
+`verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder, 2026-10-12. Szczegóły: [Project Brain](index.md),
 [architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
@@ -25,9 +25,9 @@ trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-onl
 | Critic final verdict | One new full review after targeted revision | PASS |
 | Draft code verification | 17 examples on each PHP 8.4.26 / 8.5.11 | PASS |
 | Milestone 5 | First Publication Candidate, exact reviewed copy in LAB | DONE |
-| Human publication decisions | PHP Arrays local-only; B2 + trzy B3 public-production | APPROVED — HUMAN, SCOPED |
+| Human publication decisions | PHP Arrays local-only; B2 + trzy B3 + trzy B4 public-production | APPROVED — HUMAN, SCOPED |
 | Promotion Gate | Schema 1–3; exact candidate → CONTENT + osobny LAB audit | PASS |
-| Local website | 15 static routes, HTML/XML sitemap, sześć artykułów | PRODUCTION VERIFIED |
+| Local website | 19 static routes, HTML/XML sitemap, dziewięć artykułów | BUILD + SMOKE PASS |
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
@@ -38,10 +38,12 @@ trzech zatwierdzonych artykułów B3, Pipeline Review 0.1, produkcyjnym read-onl
 | Pipeline Review 0.1 | Pięć frozen samples, osiem racjonalizacji, bez implementacji | COMPLETE — LAB ONLY |
 | verify:article Contract Spike 0.1 | 27 common + 4 conditional checks; bez operator CLI | 4 PASS / 1 CONTENT-LINEAGE FAIL |
 | CONTENT Lineage Contract Spike 0.1 | Replay PHP Arrays + 6 positive / 9 negative scenarios | PASS — READ-ONLY PROTOTYPE |
-| verify:article Operator CLI 0.1 | 32 checks, human/JSON, exit 0/1/2, pięć lifecycle’ów | IMPLEMENTED — 5/5 PASS |
+| verify:article Operator CLI 0.1 | 32 checks, human/JSON, exit 0/1/2, osiem lifecycle’ów | IMPLEMENTED — 8/8 PASS |
 | Engine checkpoint | `dfccf0c`, full gate, push `origin/master` | VERIFIED — PUSHED |
 | Knowledge Gap 0.1 | TOP 10, 2 MODERNIZE / 2 MERGE / 6 CREATE_NEW | COMPLETE — LAB REVIEW |
 | Knowledge Gap 0.2 | Blind Run A + Strategic Memory Run B, 9/10 overlap | COMPLETE — LAB REVIEW |
+| Source Authority Ladder | Researcher schema-v3 + Writer/Critic policy | IMPLEMENTED — BACKWARD COMPATIBLE |
+| B4 — ranks #5–#7 | Markdown, JS Calculator, API/HTTP/JSON | PUBLISHED LOCAL — 8/8 VERIFIED |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
@@ -235,6 +237,31 @@ production build has 15 static pages, a 14-page/1801-word Pagefind index and 15 
 URLs. Commit `fb86db7` został pushnięty do `origin/master`; Cloudflare Pages zakończył
 deployment sukcesem, a publiczne trasy, trzy artykuły JS, oba PHP, wyszukiwarka,
 sitemap oraz mobilne widoki zostały zweryfikowane bezpośrednio.
+
+## B4 result — three additional publications
+
+B1 ranks #5–#7 were processed sequentially as three single-source `REWRITE` jobs:
+Markdown (source 48), JavaScript Calculator (source 281) and API / HTTP / JSON
+(source 578). A minimal B4 authorization extends the existing schema-v3 allowed
+topics and research-acceptance reference; the Promotion Gate and its semantics are
+unchanged. `verify:article` received exactly three explicit lifecycle registry
+entries, without auto-discovery or Article Manifest.
+
+Research uses Authority Ladder evidence: CommonMark and GFM for Markdown; TC39 and
+MDN for the calculator; WHATWG Fetch, RFC 9110, RFC 8259 and MDN for API. All three
+packets resolved their questions, every final example passed controlled CommonMark
+rendering or actual Node execution, and each full Critic review returned PASS with
+zero required changes. Three exact schema-v3 candidates remain immutable and
+pending/false; three separate publication decisions bind their candidate and review
+hashes.
+
+Promotion Gate returned `PROMOTED_PUBLIC` in the authorized order and wrote three
+CONTENT articles plus audits. All eight registered lifecycles pass the read-only
+32-check verifier. Final local gate: 345/345 tests, Astro check 0 diagnostics,
+19-page build, Pagefind 18 pages / 2063 words and `git diff --check` PASS. Browser
+smoke found no console errors or horizontal overflow; the mobile back-to-top control
+is fixed with a transparent background. [Plan 027](plans/active/027-b4-contract-and-publication.md)
+remains active only through the authorized Git/Cloudflare checkpoint.
 
 ## B2 result — PHP control flow
 
@@ -573,7 +600,8 @@ Previous plan 009 local publication / website gate, 2026-10-10 (historical):
   oraz zaakceptowany correction pass zakończone finalnym PASS.
 - [Completed candidate plan](plans/completed/007-first-publication-candidate.md) —
   dokładna historyczna kopia w LAB; późniejsza lokalna promocja i publiczny checkpoint osobno zatwierdzone.
-- [content/](../content/) — Start, dwa artykuły PHP, trzy artykuły JavaScript oraz trzy publiczne tematy.
+- [content/](../content/) — Start, dwa artykuły PHP, cztery artykuły JavaScript,
+  dwa artykuły webowe oraz cztery publiczne tematy.
 - [lab/inventory/](../lab/inventory/) — metadane 83 źródeł.
 - [lab/cartography/](../lab/cartography/) — mapy i audyt Cartographera.
 - [lab/research/php-arrays/](../lab/research/php-arrays/) — pakiet, dokumenty, probes i import sesji.

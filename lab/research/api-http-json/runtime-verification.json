@@ -1,0 +1,99 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP."
+  ],
+  "packetHash": "b1785e01994277e1e3eeacc1503d29408f252e41afc1f0696aebdf9bee0b224b",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "invalid": {
+              "kind": "json",
+              "ok": false
+            },
+            "missing": {
+              "kind": "http",
+              "ok": false,
+              "status": 404
+            },
+            "network": {
+              "kind": "network",
+              "ok": false
+            },
+            "success": {
+              "data": {
+                "name": "Ada"
+              },
+              "ok": true
+            }
+          },
+          "expected": {
+            "invalid": {
+              "kind": "json",
+              "ok": false
+            },
+            "missing": {
+              "kind": "http",
+              "ok": false,
+              "status": 404
+            },
+            "network": {
+              "kind": "network",
+              "ok": false
+            },
+            "success": {
+              "data": {
+                "name": "Ada"
+              },
+              "ok": true
+            }
+          },
+          "id": "observed-result",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "records": [
+        {
+          "code": "async function loadJson(fetcher, url) { try { const response = await fetcher(url); if (!response.ok) return { ok: false, kind: 'http', status: response.status }; try { return { ok: true, data: await response.json() }; } catch { return { ok: false, kind: 'json' }; } } catch { return { ok: false, kind: 'network' }; } } const fixtures = { success: async () => new Response('{\"name\":\"Ada\"}', { status: 200, headers: { 'content-type': 'application/json' } }), missing: async () => new Response('{\"error\":\"missing\"}', { status: 404, headers: { 'content-type': 'application/json' } }), invalid: async () => new Response('{bad json', { status: 200, headers: { 'content-type': 'application/json' } }), network: async () => { throw new TypeError('network'); } }; const result = {}; for (const [name, fixture] of Object.entries(fixtures)) result[name] = await loadJson(fixture, '/users'); console.log(JSON.stringify(result));",
+          "codeHash": "941d63ffa7caea2aa5a92b8b1a12dd67b7f616b1099511adac968dc3eca12177",
+          "description": "Controlled Response fixtures for 200 JSON, 404, invalid JSON and rejected network request",
+          "diagnostics": [],
+          "id": "node-fetch-response-boundaries",
+          "result": {
+            "invalid": {
+              "kind": "json",
+              "ok": false
+            },
+            "missing": {
+              "kind": "http",
+              "ok": false,
+              "status": 404
+            },
+            "network": {
+              "kind": "network",
+              "ok": false
+            },
+            "success": {
+              "data": {
+                "name": "Ada"
+              },
+              "ok": true
+            }
+          },
+          "runtimeId": "node",
+          "runtimeVersion": "v24.16.0"
+        }
+      ],
+      "runtimeId": "node",
+      "status": "PASS",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

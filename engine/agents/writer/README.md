@@ -11,6 +11,8 @@ The module has only a LanguageModel port; no filesystem, shell, research or agen
 The manual CLI saves structured article.json and its exact Markdown projection only
 under LAB/drafts. Request/response hashes expose recorded import vs live inference.
 New snippets require separate trusted execution, not a fabricated runtime claim.
+Writer preserves the approved packet's Source Authority Ladder: it cannot promote
+educational/problem-signal evidence into stronger technical claims or research anew.
 The B2 single-source variant additionally records 2–4 interaction opportunities as
 unimplemented metadata; Writer does not build an Interaction Layer.
 

@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "bf9770525c227d35025f6151c20fb24d142b1c3591af197f819898b70ff675c0",
+  "analysisRef": "lab/cartography/markdown-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "confidence": 0.98,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "48",
+      "sourcePath": "48-post-2-jezyk-markdown.md",
+      "value": "Potrójny backtick ``````` – używany do bloków kodu"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+      "providedCharacters": 2700,
+      "sourceId": "48",
+      "sourcePath": "48-post-2-jezyk-markdown.md",
+      "title": "Post #2 język Markdown",
+      "truncated": false
+    }
+  ],
+  "topic": "markdown"
+}

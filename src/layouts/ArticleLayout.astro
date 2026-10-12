@@ -39,7 +39,11 @@ const hasCodeBlocks = /(^|\n) {0,3}(?:```|~~~)/.test(article.body ?? '');
 				<a href="/artykuly/start-redactoria-edu/">Start Redactoria EDU →</a>
 				<a href="/o-projekcie/">Jak powstają materiały →</a>
 			</nav>
-			<a class="back-to-top" href="#top"><span aria-hidden="true">↑</span> Wróć na górę</a>
+			<a class="back-to-top" href="#top" aria-label="Wróć na górę strony">
+				<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+					<path d="m6 14 6-6 6 6"></path>
+				</svg>
+			</a>
 		</div>
 	</article>
 </BaseLayout>
@@ -128,10 +132,14 @@ const hasCodeBlocks = /(^|\n) {0,3}(?:```|~~~)/.test(article.body ?? '');
 	.article__body :global(tbody tr:nth-child(even)) { background: var(--color-surface); }
 	.article__continue { display: flex; flex-direction: column; align-items: flex-start; gap: 0.7rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); font-family: var(--font-sans); font-size: 0.85rem; }
 	.article__continue span { margin-bottom: 0.3rem; color: var(--color-subtle); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-	.back-to-top { display: inline-flex; margin-top: 2.5rem; align-items: center; gap: 0.55rem; color: var(--color-muted); font-family: var(--font-sans); font-size: 0.75rem; font-weight: 750; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
-	.back-to-top span { color: var(--color-accent); font-size: 1.1rem; }
-	.back-to-top:hover { color: var(--color-accent); }
-	@media (max-width: 36rem) { .article__body :global(pre) { padding: 1rem; font-size: 0.85rem; } h1 { font-size: clamp(2.6rem, 10vw, 3.5rem); line-height: 1.04; } }
+	.back-to-top { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 20; display: grid; width: 2.75rem; height: 2.75rem; border: 1px solid rgba(39, 37, 31, 0.25); border-radius: 50%; background: rgba(252, 250, 244, 0.92); color: var(--color-ink); box-shadow: 0 0.35rem 1rem rgba(39, 37, 31, 0.08); place-items: center; text-decoration: none; }
+	.back-to-top svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.9; }
+	.back-to-top:hover { border-color: var(--color-accent); color: var(--color-accent); }
+	@media (max-width: 36rem) {
+		.back-to-top { background: transparent; box-shadow: none; }
+		.article__body :global(pre) { padding: 1rem; font-size: 0.85rem; }
+		h1 { font-size: clamp(2.6rem, 10vw, 3.5rem); line-height: 1.04; }
+	}
 
 	.article__body :global(p) {
 		color: #46423a;

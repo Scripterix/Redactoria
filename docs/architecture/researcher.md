@@ -9,7 +9,7 @@ agent. SOURCE != LAB != ENGINE != CONTENT != WEBSITE; AI proposes, human decides
 ```text
 human-approved MERGE + unchanged focused map + selected inventory
            ↓
-two full SOURCE bodies + official evidence snapshot + questions
+two full SOURCE bodies + authority-classified evidence snapshot + questions
            ↓
 one Researcher model request → validation → LAB Research Packet → STOP
 ```
@@ -33,7 +33,7 @@ recommendations, question answers, source register, explicit unresolved question
 limitations and Writer handoff instructions. Confidence is declared certainty,
 not a statistical probability. It must be finite and within 0–1.
 
-All factual findings marked verified require an official document reference.
+All factual findings marked verified require a known document reference.
 Article corrections/security/code findings also require exact selected-source
 evidence. Document and excerpt IDs must exist in the independently captured input.
 The register is built by code, not invented by the model: only used documents and
@@ -42,9 +42,33 @@ validated. Unknown/unverified code cannot be labelled executed or handed off as
 verified code. Probes record actual PHP version, exact code SHA-256, output and
 diagnostics; captured code hashes are checked on input.
 
+## Source Authority Ladder
+
+New research bundles use schema version 3 and record three inseparable properties
+for every document: `authorityTier`, `authorityClass` and `evidenceRole`. The
+Researcher validates those properties against a closed HTTPS host catalogue.
+Historical schema-v1/v2 evidence remains valid and is not rewritten.
+
+1. Specifications and standards: TC39/ECMAScript, WHATWG, W3C, RFC/IETF.
+2. Official project/runtime documentation: Node.js, TypeScript, Python, Git, curl,
+   GitHub Docs and relevant official runtime manuals.
+3. MDN as the practical web-platform reference.
+4. Implementation/platform documentation: web.dev, Chrome for Developers, V8.
+5. Compatibility/support evidence: Can I use.
+6. High-quality educational sources: javascript.info and CommonMark material where
+   it improves teaching clarity.
+7. Real-world problem sources: Stack Overflow.
+
+The ordering is a preference for the highest adequate authority, not a quota and
+not a reason to collect redundant pages. Stack Overflow has the fixed role
+`problem-signal`: it may support discovery of real questions, edge cases, common
+errors and Knowledge Gaps, but it cannot be the sole evidence for a verified
+technical finding or runtime/environment scope. When stronger supplied evidence is
+insufficient, the result is `needs-review`, not an inferred fact.
+
 ## Evidence is not interpretation
 
-The pilot uses an explicit 34-page php.net manifest, not a crawler. The capture
+The original pilot uses an explicit 34-page php.net manifest, not a crawler. The capture
 script checks HTTPS/HTTP 200, disallows redirects, locates official content and
 excludes user-contributed notes. Short exact anchors and locators, real URLs/titles,
 retrieval timestamps and original response hashes are kept in `sources.json`.

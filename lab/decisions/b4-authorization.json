@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-12T20:37:28.592Z",
+  "recordedAt": "2026-10-12T20:37:28.592Z",
+  "scope": "B4: minimal schema-v3 and lifecycle registry extension, then three sequential Golden Path publications: Markdown, JavaScript Calculator, API / HTTP / JSON.",
+  "b1RankingRef": "lab/cartography/pilot-selection/ranking.json",
+  "b1RankingHash": "e53b8fb9400f2d63102807aed21f0e80e835c0c4169797d8fd31154671b580e8",
+  "authorization": "The human explicitly authorized the three B4 jobs through Cartographer, Source Authority Ladder research, Writer, runtime verification, Critic, exact candidate, separate hash-bound publication decision, Promotion Gate, CONTENT, post-promotion verification, commit, push and Cloudflare production verification when all quality gates pass.",
+  "researchAcceptance": {
+    "mode": "validation-under-human-task-authorization",
+    "humanReviewedPacket": false,
+    "writerAfterValidatedPacket": true,
+    "clarification": "This task authorizes continuous processing of the three named jobs after validated Research Packets. It does not represent a claim that the human separately reviewed each generated packet."
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "b1Rank": 5,
+      "topic": "markdown",
+      "origin": "MODERNIZE",
+      "source": {
+        "sourceId": "48",
+        "sourcePath": "48-post-2-jezyk-markdown.md",
+        "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+        "originalUrl": "https://opengateweb.com/posts/2-jezyk-mark-down/",
+        "title": "Post #2 język Markdown"
+      }
+    },
+    {
+      "order": 2,
+      "b1Rank": 6,
+      "topic": "javascript-calculator",
+      "origin": "MODERNIZE",
+      "source": {
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+        "originalUrl": "https://opengateweb.com/posts/9-post-calc/",
+        "title": "Post #9 Calculator Math Func OOP"
+      }
+    },
+    {
+      "order": 3,
+      "b1Rank": 7,
+      "topic": "api-http-json",
+      "origin": "MODERNIZE",
+      "source": {
+        "sourceId": "578",
+        "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+        "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+        "originalUrl": "https://opengateweb.com/posts/22-post-api/",
+        "title": "Post #22 Wprowadzenie do API."
+      }
+    }
+  ],
+  "allowedStages": [
+    "cartographer",
+    "research",
+    "writer",
+    "runtime-verification",
+    "critic",
+    "limited-correction",
+    "publication-candidate",
+    "publication-decision",
+    "promotion",
+    "post-promotion-verification",
+    "git",
+    "deployment"
+  ],
+  "publicationApproved": true,
+  "contentWriteApproved": true,
+  "gitApproved": true,
+  "deploymentApproved": true,
+  "otherRanksApproved": false
+}

@@ -4,6 +4,25 @@
 
 ### Added
 
+- B4 ranks #5–#7 completed as three bounded `MODERNIZE` lifecycles: Markdown,
+  JavaScript Calculator and API / HTTP / JSON. The change extends existing schema-v3
+  topic/authorization handling and the explicit `verify:article` registry only;
+  Promotion Gate semantics remain unchanged.
+- Three Authority Ladder Research Packets, executable Writer drafts, Critic PASS
+  reviews, exact candidates, separate human publication decisions and deterministic
+  promotion audits. Three new CONTENT articles and the published `web` topic bring
+  the local site to 19 routes; all eight lifecycle verifications pass.
+
+- Seven-level Source Authority Ladder for new Researcher schema-v3 evidence bundles:
+  standards, official project/runtime docs, MDN, implementation/platform docs,
+  compatibility data, educational material and real-world problem sources.
+- Closed HTTPS host classification plus deterministic tier/class/role validation.
+  Stack Overflow is fixed to `problem-signal` and cannot be the sole evidence for a
+  verified technical claim or runtime/environment scope.
+- Writer and Critic policy now preserves evidence authority: lower-tier sources are
+  not promoted into stronger claims, and missing authority becomes `needs-review` /
+  `NEEDS_RESEARCH`. Historical schema-v1/v2 research remains valid without migration.
+
 - Three separate human public-production decisions and deterministic Promotion Gate
   audits for JavaScript if/else, Arrays and DOM. Schema-v3 support validates runtime
   targets while keeping all exact LAB candidates immutable and pending/false.
@@ -203,6 +222,11 @@
 
 ### Changed
 
+- Header Search now occupies the former `EDU · Pilot` position and uses a small
+  inline magnifying-glass icon. The article back-to-top link is an icon-only circular
+  control fixed at the viewport's bottom-right, with a transparent mobile background,
+  and article-card links share the brown heading hover color. No icon dependency or
+  client JavaScript was introduced.
 - Removed only obsolete draft/LAB notes from the public PHP article and its
   local-test banner; preserved substantive text/code and original LAB provenance.
   Start now describes the public pilot; current status reflects explicit checkpoint approval.

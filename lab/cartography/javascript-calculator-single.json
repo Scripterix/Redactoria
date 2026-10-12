@@ -1,0 +1,210 @@
+{
+  "action": "REWRITE",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "requestHash": "49d6e18a4bc9d334c2a009494c065910a221d04e39070a20e1cb28dbac8c3482",
+    "selectedInventoryHash": "14f0f6d35e0f568199b689146776c42c60d7a435629cb137bb7563e90eebd31c"
+  },
+  "artifactName": "javascript-calculator-single",
+  "confidence": 0.98,
+  "correct": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "id": "correct-functional-label",
+      "interpretation": "Nie nazywać zwykłych handlerów DOM programowaniem funkcyjnym i nie maskować błędnego wejścia przez || 0."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "value": "class Calculator {"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "id": "keep-function-class",
+      "interpretation": "Zachować porównanie prostego wywołania funkcji z metodą małej klasy na tym samym kontrakcie."
+    }
+  ],
+  "limitations": [
+    "Analiza obejmuje tylko jeden autoryzowany plik SOURCE; techniczne twierdzenia wymagają Source Authority Ladder i kontrolowanej weryfikacji."
+  ],
+  "missing": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "id": "missing-input-contract",
+      "interpretation": "Dodać pełne parsowanie liczby, Number.isFinite, jawny błąd operatora i testy przypadków granicznych."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "id": "research-calculator",
+      "interpretation": "Zweryfikować konwersję Number, liczby skończone, metody klas oraz różnicę między funkcją, stylem proceduralnym i funkcyjnym."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "id": "uncertain-oop-choice",
+      "interpretation": "Nie przedstawiać klasy jako automatycznie łatwiejszej w utrzymaniu bez kontekstu i potrzebnego stanu."
+    }
+  ],
+  "prerequisites": [
+    "Podstawowa umiejętność pracy z plikiem tekstowym i uruchamiania krótkich przykładów."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Wyjaśnić i sprawdzić: najpierw kontrakt kalkulatora.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Najpierw kontrakt kalkulatora"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Wyjaśnić i sprawdzić: czysta funkcja z jawnymi błędami.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Czysta funkcja z jawnymi błędami"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Wyjaśnić i sprawdzić: ta sama operacja jako metoda klasy.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Ta sama operacja jako metoda klasy"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Wyjaśnić i sprawdzić: parsowanie wejścia i przypadki graniczne.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Parsowanie wejścia i przypadki graniczne"
+    }
+  ],
+  "proposedTitle": "Kalkulator w JavaScript: funkcja, klasa i poprawne dane wejściowe",
+  "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/warunki-w-javascript/",
+      "reason": "Materiał wykorzystuje jawne warunki i kontrolę błędów poznane wcześniej."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "class Calculator {"
+        }
+      ],
+      "id": "remove-person-ui",
+      "interpretation": "Usunąć poboczne klasy Person, zdarzenie mouseout oraz niekompletny UI."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Jedna czysta funkcja obliczeniowa i mała bezstanowa klasa obsługujące dodawanie oraz odejmowanie; jawne parsowanie pełnej liczby dziesiętnej i błędy. Bez Person, mouseout, alertów i trzech kalkulatorów.",
+  "targets": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

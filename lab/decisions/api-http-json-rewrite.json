@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "26bbbff0f28ddc0e8d4d650169ba7fca8ac71c091566413687930def4e394b94",
+  "analysisRef": "lab/cartography/api-http-json-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "confidence": 0.98,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "578",
+      "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+      "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "161efccbf72c77b0fd87280c7adc963f7d5a7b675f72f70756b2af1b51bcbf13",
+      "providedCharacters": 4535,
+      "sourceId": "578",
+      "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+      "title": "Post #22 Wprowadzenie do API.",
+      "truncated": false
+    }
+  ],
+  "topic": "api-http-json"
+}

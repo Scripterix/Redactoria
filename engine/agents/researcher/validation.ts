@@ -4,7 +4,7 @@ import { hashJson, stableJson } from '../../core/serialization.ts';
 import type { DeepRead } from '../cartographer/contract.ts';
 import { ResearchAnalysisSchema, ResearcherInputSchema, ResearchPacketSchema } from './contract.ts';
 import type { ResearchAnalysis, ResearcherInput } from './contract.ts';
-import { assertDocumentUrl } from './policies.ts';
+import { assertDocumentUrl, sourceAuthorityForUrl } from './policies.ts';
 
 function unique(values: string[], label: string) {
 	if (new Set(values).size !== values.length) throw new Error(`Duplicate ${label}.`);
@@ -39,6 +39,20 @@ export function validateResearchInput(raw: unknown): ResearcherInput {
 		if (source.url !== source.retrieval.finalUrl) throw new Error('Document redirect requires explicit source review.');
 		unique(source.excerpts.map(excerpt => excerpt.id), 'excerpt IDs');
 		if (source.excerpts.some(excerpt => excerpt.text.length > 2000)) throw new Error('Excerpt budget exceeded.');
+	}
+	if (research.schemaVersion === 3) for (const source of research.sources) {
+		const expected = sourceAuthorityForUrl(source.url);
+		const finalExpected = sourceAuthorityForUrl(source.retrieval.finalUrl);
+		if (expected.tier !== source.authorityTier || expected.authorityClass !== source.authorityClass
+			|| expected.evidenceRole !== source.evidenceRole
+			|| expected.tier !== finalExpected.tier || expected.authorityClass !== finalExpected.authorityClass) {
+			throw new Error('Source Authority Ladder metadata does not match the document host.');
+		}
+		const expectedSelection = source.authorityTier <= 2 ? 'authoritative-content'
+			: source.authorityTier === 7 ? 'reviewed-problem-content' : 'practical-content';
+		if (source.retrieval.selection !== expectedSelection) {
+			throw new Error('Source capture selection does not match its Authority Ladder role.');
+		}
 	}
 	unique(research.questions.map(question => question.id), 'question IDs');
 	const mapFindings = new Set(cartography.needsResearch.map(finding => finding.id));
@@ -83,6 +97,17 @@ export function validateResearchAnalysis(raw: unknown, input: ResearcherInput, r
 		if (finding.status === 'verified' && !finding.evidence.length) throw new Error('Verified factual finding requires documentation evidence.');
 		if (finding.questionIds.some(id => !questions.has(id))) throw new Error('Unknown research question.');
 		assertEvidence(finding.articleEvidence, articleContext(input), reads);
+	}
+	if (input.research.schemaVersion === 3) {
+		if (all.some(finding => finding.sourceType !== 'authority-ladder')) throw new Error('Authority-ladder research requires authority-ladder findings.');
+		const hasTechnicalBasis = (items: Array<{ documentId: string }>) => items.some(item => {
+			const source = documents.get(item.documentId);
+			return source && 'authorityTier' in source && source.authorityTier < 7;
+		});
+		if (!hasTechnicalBasis(analysis.environment.evidence)) throw new Error('Runtime/environment scope requires evidence above problem-signal tier.');
+		for (const finding of all) if (finding.status === 'verified' && !hasTechnicalBasis(finding.evidence)) {
+			throw new Error('Verified technical finding cannot rely only on real-world problem sources.');
+		}
 	}
 	for (const finding of [...analysis.outdatedClaims, ...analysis.incorrectClaims, ...analysis.ambiguousClaims, ...analysis.securityNotes]) {
 		if (!finding.articleEvidence.length) throw new Error('Article critique requires article evidence.');

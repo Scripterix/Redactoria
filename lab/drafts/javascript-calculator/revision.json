@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "5d7211e27cb0d03a59ecc154015832dad1e7b6e923b543bad4742a3ad5162966",
+  "afterDraftHash": "9a6b092f33171d4bb6f11a3bcd75c1874902a93a213975bd0fdeb2e1f0f84d27",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "beforeArticleHash": "5d7211e27cb0d03a59ecc154015832dad1e7b6e923b543bad4742a3ad5162966",
+  "beforeDraftHash": "9a6b092f33171d4bb6f11a3bcd75c1874902a93a213975bd0fdeb2e1f0f84d27",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "javascript-calculator",
+  "writerGenerations": 1
+}

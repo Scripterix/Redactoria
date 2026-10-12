@@ -1,0 +1,51 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP."
+  ],
+  "packetHash": "b0f943639dbb9ab7e0e7f9cabacce5569fb6eccbe16258a5a3f42bb83d516dcd",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "core": "<h1>Tytuł</h1>\n<p><strong>ważne</strong> i <a href=\"https://example.com\">link</a></p>\n",
+            "fence": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+            "list": "<ul>\n<li>jeden\n<ul>\n<li>dwa</li>\n</ul>\n</li>\n</ul>\n"
+          },
+          "expected": {
+            "core": "<h1>Tytuł</h1>\n<p><strong>ważne</strong> i <a href=\"https://example.com\">link</a></p>\n",
+            "fence": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+            "list": "<ul>\n<li>jeden\n<ul>\n<li>dwa</li>\n</ul>\n</li>\n</ul>\n"
+          },
+          "id": "observed-result",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "records": [
+        {
+          "code": "import * as commonmark from 'commonmark'; const parser = new commonmark.Parser(); const renderer = new commonmark.HtmlRenderer(); const samples = { core: '# Tytuł\\n\\n**ważne** i [link](https://example.com)', list: '- jeden\\n  - dwa', fence: '~~~js\\nconsole.log(1);\\n~~~' }; const output = Object.fromEntries(Object.entries(samples).map(([key, value]) => [key, renderer.render(parser.parse(value))])); console.log(JSON.stringify(output));",
+          "codeHash": "b2b4eb2e91f4bbf9dd43045edad67fac6392acb26b421892cd453eda4a33148f",
+          "description": "Render headings, emphasis, links, nested lists and tilde-fenced code with commonmark 0.31.2",
+          "diagnostics": [],
+          "id": "node-commonmark-render",
+          "result": {
+            "core": "<h1>Tytuł</h1>\n<p><strong>ważne</strong> i <a href=\"https://example.com\">link</a></p>\n",
+            "fence": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+            "list": "<ul>\n<li>jeden\n<ul>\n<li>dwa</li>\n</ul>\n</li>\n</ul>\n"
+          },
+          "runtimeId": "node",
+          "runtimeVersion": "v24.16.0"
+        }
+      ],
+      "runtimeId": "node",
+      "status": "PASS",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

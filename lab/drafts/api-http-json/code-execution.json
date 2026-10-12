@@ -1,0 +1,53 @@
+{
+  "articleHash": "ee2a0cde2ea6105d61c48cc4a4af40ebbe333db4d24efa3cda62ff78791df009",
+  "executedAt": "2026-10-12T20:46:02.273Z",
+  "limitations": [
+    "One local Node version; Markdown examples use commonmark 0.31.2 and HTTP examples use controlled Response fixtures without external requests."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "b26bde888375dc6fdc2db5e5f1133a651bffb5ed6c4d755b4fedb116876b29c5",
+          "exitCode": 0,
+          "id": "response-status",
+          "limitation": "One local Node version; no cross-engine compatibility claim.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "[{\"status\":200,\"ok\":true},{\"status\":404,\"ok\":false}]\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "5339a04e1766aa557c5569759dcb32eaaf1fd43b4f0b886941395c3ae28ec135",
+          "exitCode": 0,
+          "id": "json-parse-error",
+          "limitation": "One local Node version; no cross-engine compatibility claim.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "{\"ok\":true,\"data\":{\"name\":\"Ada\"}}\n{\"ok\":false,\"kind\":\"json\"}\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "a021d894f74479fb31f0c5e8c5c77235fe56d198588e8da0d3937efe5166b714",
+          "exitCode": 0,
+          "id": "load-json-boundaries",
+          "limitation": "One local Node version; no cross-engine compatibility claim.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "{\"success\":{\"ok\":true,\"data\":{\"name\":\"Ada\"}},\"missing\":{\"ok\":false,\"kind\":\"http\",\"status\":404},\"invalid\":{\"ok\":false,\"kind\":\"json\"},\"network\":{\"ok\":false,\"kind\":\"network\"}}\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

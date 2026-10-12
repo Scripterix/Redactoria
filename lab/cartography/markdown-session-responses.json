@@ -1,0 +1,196 @@
+{
+  "focused-article": {
+    "requestHash": "93d054cddd1ff1b5411d10e7c404be2f0ff883be7738c43a10e63819361c1b15",
+    "response": {
+      "action": "REWRITE",
+      "artifactName": "markdown-single",
+      "confidence": 0.98,
+      "correct": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "id": "correct-dialects",
+          "interpretation": "Oddzielić składnię CommonMark od rozszerzeń GFM i usunąć niestandardowe atrybuty nagłówka."
+        }
+      ],
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick ``````` – używany do bloków kodu"
+        }
+      ],
+      "keep": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "id": "keep-readable-source",
+          "interpretation": "Zachować naukę przez krótki, czytelny tekst źródłowy i natychmiastowy wynik renderowania."
+        }
+      ],
+      "limitations": [
+        "Analiza obejmuje tylko jeden autoryzowany plik SOURCE; techniczne twierdzenia wymagają Source Authority Ladder i kontrolowanej weryfikacji."
+      ],
+      "missing": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "id": "missing-rendering-model",
+          "interpretation": "Dodać rozróżnienie między tekstem Markdown, dialektem i wynikowym HTML oraz pokazać escaping."
+        }
+      ],
+      "needsResearch": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "id": "research-markdown",
+          "interpretation": "Zweryfikować nagłówki, linki, listy, code spans, fenced code blocks oraz granicę CommonMark/GFM."
+        }
+      ],
+      "outdatedOrUncertain": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "id": "uncertain-universality",
+          "interpretation": "Nie twierdzić, że każdy renderer obsługuje te same rozszerzenia i surowy HTML."
+        }
+      ],
+      "prerequisites": [
+        "Podstawowa umiejętność pracy z plikiem tekstowym i uruchamiania krótkich przykładów."
+      ],
+      "proposedStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: markdown jako tekst i wynik renderowania.",
+          "sourceIds": [
+            "48"
+          ],
+          "title": "Markdown jako tekst i wynik renderowania"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: nagłówki, akapity, wyróżnienie i linki.",
+          "sourceIds": [
+            "48"
+          ],
+          "title": "Nagłówki, akapity, wyróżnienie i linki"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: listy oraz bezpieczne bloki kodu.",
+          "sourceIds": [
+            "48"
+          ],
+          "title": "Listy oraz bezpieczne bloki kodu"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: commonmark a rozszerzenia gfm.",
+          "sourceIds": [
+            "48"
+          ],
+          "title": "CommonMark a rozszerzenia GFM"
+        }
+      ],
+      "proposedTitle": "Markdown: nagłówki, linki, listy i bloki kodu",
+      "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+      "recommended": true,
+      "relationships": [],
+      "remove": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "48",
+              "sourcePath": "48-post-2-jezyk-markdown.md",
+              "value": "Potrójny backtick ``````` – używany do bloków kodu"
+            }
+          ],
+          "id": "remove-broken-examples",
+          "interpretation": "Usunąć niedomknięte znaczniki HTML, samotny backtick oraz niespójne ogrodzenia kodu."
+        }
+      ],
+      "scope": "Podstawy CommonMark: struktura dokumentu, akapity, wyróżnienie, linki, listy i fenced code blocks; osobno jednoznacznie nazwane rozszerzenia GFM. Bez atrybutów nagłówków, CMS-ów i eksportu PDF.",
+      "task": "SINGLE_ARTICLE"
+    }
+  },
+  "provenance": {
+    "description": "B4 focused analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1
+}

@@ -1,0 +1,53 @@
+{
+  "articleHash": "5d7211e27cb0d03a59ecc154015832dad1e7b6e923b543bad4742a3ad5162966",
+  "executedAt": "2026-10-12T20:46:01.740Z",
+  "limitations": [
+    "One local Node version; Markdown examples use commonmark 0.31.2 and HTTP examples use controlled Response fixtures without external requests."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "871ff3ae4e918624ba932c5858b6f23ae77672ad5379ec84ee7b446b737bd9f1",
+          "exitCode": 0,
+          "id": "calculate-operation",
+          "limitation": "One local Node version; no cross-engine compatibility claim.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "{\"ok\":true,\"value\":5}\n{\"ok\":false,\"error\":\"unsupported-operator\"}\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "f087ba32098351899d280afa827a4ee403e96cba17a69a1d80c3c0a7a8ea97e3",
+          "exitCode": 0,
+          "id": "parse-decimal",
+          "limitation": "One local Node version; no cross-engine compatibility claim.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "[{\"ok\":true,\"value\":12.5},{\"ok\":false,\"error\":\"empty\"},{\"ok\":false,\"error\":\"invalid-number\"},{\"ok\":false,\"error\":\"invalid-number\"}]\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "34d8da9543d7a1593d653c06a7802612b966093d1991af0c312cba774287d980",
+          "exitCode": 0,
+          "id": "calculator-class",
+          "limitation": "One local Node version; no cross-engine compatibility claim.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "5\n5\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

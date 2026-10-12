@@ -1,0 +1,327 @@
+{
+  "action": "RESEARCH_PACKET",
+  "ambiguousClaims": [],
+  "analysisContext": {
+    "cartographyHash": "bf9770525c227d35025f6151c20fb24d142b1c3591af197f819898b70ff675c0",
+    "decisionHash": "879b4dcf06566f77c8e94d18f4d3bcb342375698b3514b81a2b9987a108cad1a",
+    "fullReadCount": 1,
+    "inputHash": "9e08081121cb98099b0e2c73849480155046a3e489b698d05d83a65fde587162",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "probes": [
+      {
+        "codeHash": "b2b4eb2e91f4bbf9dd43045edad67fac6392acb26b421892cd453eda4a33148f",
+        "description": "Render headings, emphasis, links, nested lists and tilde-fenced code with commonmark 0.31.2",
+        "diagnostics": [],
+        "id": "node-commonmark-render",
+        "result": {
+          "core": "<h1>Tytuł</h1>\n<p><strong>ważne</strong> i <a href=\"https://example.com\">link</a></p>\n",
+          "fence": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+          "list": "<ul>\n<li>jeden\n<ul>\n<li>dwa</li>\n</ul>\n</li>\n</ul>\n"
+        },
+        "runtimeId": "node",
+        "runtimeVersion": "v24.16.0"
+      }
+    ],
+    "requestHash": "f6c1620e9a1da6cef6ecea7e2a8c89988faa79c0afa38faf1de7db88a494ad89",
+    "researchBundleHash": "ec08eedacf6042c4c87de8b56f70139a2ecd1ea266fe5a3e2d64897a45a065de",
+    "topicSlug": "markdown"
+  },
+  "codeReview": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick ``````` – używany do bloków kodu"
+        }
+      ],
+      "claim": "Kontrolowany renderer CommonMark 0.31.2 potwierdził wyniki dla nagłówka, wyróżnienia, linku, listy zagnieżdżonej i bloku kodu ogrodzonego tyldami.",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "documentId": "commonmark-spec",
+          "excerptId": "blocks-inlines"
+        },
+        {
+          "documentId": "gfm-spec",
+          "excerptId": "gfm-superset"
+        }
+      ],
+      "id": "executed-boundaries",
+      "probeIds": [
+        "node-commonmark-render"
+      ],
+      "questionIds": [
+        "commonmark-core",
+        "gfm-boundary"
+      ],
+      "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+      "sourceType": "authority-ladder",
+      "status": "verified",
+      "verification": "executed-probe"
+    }
+  ],
+  "environment": {
+    "asOfDate": "2026-10-12",
+    "evidence": [
+      {
+        "documentId": "commonmark-spec",
+        "excerptId": "blocks-inlines"
+      },
+      {
+        "documentId": "gfm-spec",
+        "excerptId": "gfm-superset"
+      }
+    ],
+    "runtimeScope": "Node v24.16.0; semantyka zgodna ze wskazanymi standardami"
+  },
+  "incorrectClaims": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick ``````` – używany do bloków kodu"
+        }
+      ],
+      "claim": "Przykład atrybutów nagłówka z materiału legacy nie należy do podstawowej składni CommonMark ani do opisanych rozszerzeń GFM.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "commonmark-spec",
+          "excerptId": "blocks-inlines"
+        },
+        {
+          "documentId": "gfm-spec",
+          "excerptId": "gfm-superset"
+        }
+      ],
+      "id": "markdown-legacy-dialect",
+      "questionIds": [
+        "gfm-boundary"
+      ],
+      "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    }
+  ],
+  "limitations": [
+    "Research obejmuje jeden autoryzowany materiał SOURCE i tylko tyle źródeł Authority Ladder, ile potrzeba do rozstrzygnięcia claims; nie jest samodzielną zgodą na publikację."
+  ],
+  "outdatedClaims": [],
+  "questionAnswers": [
+    {
+      "findingIds": [
+        "commonmark-blocks",
+        "commonmark-fences",
+        "executed-boundaries"
+      ],
+      "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+      "questionId": "commonmark-core",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "gfm-boundary",
+        "markdown-legacy-dialect",
+        "executed-boundaries"
+      ],
+      "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+      "questionId": "gfm-boundary",
+      "status": "resolved"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "CORRECT",
+      "findingIds": [
+        "commonmark-blocks",
+        "commonmark-fences",
+        "gfm-boundary",
+        "markdown-legacy-dialect",
+        "executed-boundaries"
+      ],
+      "id": "modernize-bounded",
+      "instruction": "Zmodernizować pojedynczy materiał legacy bez przenoszenia błędów i bez poszerzania zakresu."
+    }
+  ],
+  "schemaVersion": 1,
+  "securityNotes": [],
+  "sourceRegister": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "c85f56cc2101f761cc94215c677cd2c7c1ecca9c47be016479fdfe718af60f0d",
+      "evidenceIds": [
+        "blocks-inlines",
+        "fenced-code"
+      ],
+      "evidenceRole": "technical-authority",
+      "id": "commonmark-spec",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://spec.commonmark.org/0.31.2/",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "CommonMark Specification 0.31.2",
+      "url": "https://spec.commonmark.org/0.31.2/"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "b153d814fdfc8624bb6da7449162c1cd707a637f7d1c1b636eb44b9cf63fa220",
+      "evidenceIds": [
+        "gfm-superset",
+        "gfm-extensions"
+      ],
+      "evidenceRole": "technical-authority",
+      "id": "gfm-spec",
+      "kind": "project-documentation",
+      "retrieval": {
+        "finalUrl": "https://github.github.com/gfm/",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "GitHub Flavored Markdown Specification",
+      "url": "https://github.github.com/gfm/"
+    }
+  ],
+  "targets": [
+    {
+      "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+      "providedCharacters": 2700,
+      "sourceId": "48",
+      "sourcePath": "48-post-2-jezyk-markdown.md",
+      "title": "Post #2 język Markdown",
+      "truncated": false
+    }
+  ],
+  "topic": "markdown",
+  "unresolvedQuestions": [],
+  "verifiedFacts": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick ``````` – używany do bloków kodu"
+        }
+      ],
+      "claim": "CommonMark rozróżnia bloki, takie jak nagłówki, akapity, listy i bloki kodu, od elementów inline, takich jak wyróżnienia i linki.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "commonmark-spec",
+          "excerptId": "blocks-inlines"
+        }
+      ],
+      "id": "commonmark-blocks",
+      "questionIds": [
+        "commonmark-core"
+      ],
+      "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick ``````` – używany do bloków kodu"
+        }
+      ],
+      "claim": "Fenced code block zaczyna się co najmniej trzema kolejnymi backtickami albo tyldami; znaków ogrodzenia nie wolno mieszać.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "commonmark-spec",
+          "excerptId": "fenced-code"
+        }
+      ],
+      "id": "commonmark-fences",
+      "questionIds": [
+        "commonmark-core"
+      ],
+      "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "48",
+          "sourcePath": "48-post-2-jezyk-markdown.md",
+          "value": "Potrójny backtick ``````` – używany do bloków kodu"
+        }
+      ],
+      "claim": "GFM jest ścisłym nadzbiorem CommonMark, a tabele, przekreślenie i task listy są rozszerzeniami GFM.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "gfm-spec",
+          "excerptId": "gfm-superset"
+        },
+        {
+          "documentId": "gfm-spec",
+          "excerptId": "gfm-extensions"
+        }
+      ],
+      "id": "gfm-boundary",
+      "questionIds": [
+        "gfm-boundary"
+      ],
+      "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    }
+  ],
+  "writerHandoff": {
+    "avoid": [],
+    "caution": [
+      {
+        "findingIds": [
+          "executed-boundaries"
+        ],
+        "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+      }
+    ],
+    "correct": [
+      {
+        "findingIds": [
+          "markdown-legacy-dialect"
+        ],
+        "instruction": "Przykład atrybutów nagłówka z materiału legacy nie należy do podstawowej składni CommonMark ani do opisanych rozszerzeń GFM."
+      }
+    ],
+    "keep": [
+      {
+        "findingIds": [
+          "commonmark-blocks",
+          "commonmark-fences",
+          "gfm-boundary"
+        ],
+        "instruction": "Zachować krótki, praktyczny charakter materiału legacy."
+      }
+    ],
+    "verifiedCodeFindingIds": [
+      "executed-boundaries"
+    ]
+  }
+}

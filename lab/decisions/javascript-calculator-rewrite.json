@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786",
+  "analysisRef": "lab/cartography/javascript-calculator-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+  "authorizationRef": "lab/decisions/b4-authorization.json",
+  "confidence": 0.98,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "value": "class Calculator {"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-calculator"
+}

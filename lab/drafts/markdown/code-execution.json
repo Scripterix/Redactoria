@@ -1,0 +1,53 @@
+{
+  "articleHash": "d6335cf1be4fa58d16b4fb86eb0759c5b237605ec1da0ebbd519c8010197de57",
+  "executedAt": "2026-10-12T20:46:01.371Z",
+  "limitations": [
+    "One local Node version; Markdown examples use commonmark 0.31.2 and HTTP examples use controlled Response fixtures without external requests."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "c4b68cc0f6769e58a4daf450633688aaa6b384a320362ebc92c11af420cdcc8a",
+          "exitCode": 0,
+          "id": "heading-emphasis-link",
+          "limitation": "Rendered with commonmark 0.31.2 in the local Node process; extensions specific to other Markdown dialects were not enabled.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "<h1>Plan</h1>\n<p>To jest <strong>ważne</strong> i zawiera <a href=\"https://example.com\">link</a>.</p>\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "eedccb75320c7b9b52ecef046c338893c2061fd08fcdc7ddcd1c6ed801c49514",
+          "exitCode": 0,
+          "id": "nested-list",
+          "limitation": "Rendered with commonmark 0.31.2 in the local Node process; extensions specific to other Markdown dialects were not enabled.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "<ul>\n<li>pierwszy\n<ul>\n<li>zagnieżdżony</li>\n</ul>\n</li>\n</ul>\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "b13156e763f59fd2124f2f5db3420a227dd270b8b976cb5ca562b078ce787e29",
+          "exitCode": 0,
+          "id": "tilde-fence",
+          "limitation": "Rendered with commonmark 0.31.2 in the local Node process; extensions specific to other Markdown dialects were not enabled.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

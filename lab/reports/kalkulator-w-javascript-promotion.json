@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "5d7211e27cb0d03a59ecc154015832dad1e7b6e923b543bad4742a3ad5162966",
+  "candidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+  "candidateRef": "lab/candidates/javascript-calculator/article.json",
+  "contentHash": "68ce56358302f153fca5e0293c36418c77180105e75b3b3a2384e7074d36251e",
+  "criticReviewHash": "749a7afbb9fc19aed818ae9f45be3671fc951fda89f1b75f135903ee6ecf79cf",
+  "criticReviewRef": "lab/reviews/javascript-calculator/critic-review.json",
+  "decisionHash": "dc299a983809e7396d6c1b0c9b535d17da6dcf38c2bb20c316fca5a1816ea07a",
+  "decisionRef": "lab/decisions/javascript-calculator-publication.json",
+  "destination": "content/articles/kalkulator-w-javascript.md",
+  "localPath": "/artykuly/kalkulator-w-javascript/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b4-authorization.json",
+        "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+      },
+      {
+        "path": "lab/decisions/javascript-calculator-rewrite.json",
+        "sha256": "a46bdd4abf45f40b0fba820f22e22fa1b9e8fe1ad6a043a34bb3060ea5e90de8"
+      },
+      {
+        "path": "lab/cartography/javascript-calculator-single.json",
+        "sha256": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786"
+      },
+      {
+        "path": "lab/research/javascript-calculator/sources.json",
+        "sha256": "0873fe3c50291fae0314a00239ebbc116f7618bd49a1b7574068752ac0a03d7d"
+      },
+      {
+        "path": "lab/research/javascript-calculator/probes.json",
+        "sha256": "2d94adc09bd57d43cddfbe7b850f05d0d4aa15b4643ec61c92feabfd37d3639d"
+      },
+      {
+        "path": "lab/research/javascript-calculator/research.json",
+        "sha256": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96"
+      },
+      {
+        "path": "lab/research/javascript-calculator/runtime-verification.json",
+        "sha256": "58784b4639f02e8ec84538cfe8fdfb02549f250172f48db96db8d7bb7a7ac0ed"
+      },
+      {
+        "path": "lab/research/javascript-calculator/runtime-verification.md",
+        "sha256": "6c5d21045a0fadb62acc585afa5c836e186fba08a8a87b9f1deaa237bba913cc"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "f0a33e765361c9ef12ff28393ea73a034f9fde4974f25c4f0b98052528037a92",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "2453612a429164d9decd7f7bf92125d53eb1dcf0b40dc8dba405a3298affe6b2"
+    },
+    "revisionHash": "d7b6740b298ffb7e2b42105611d19e60045f18dc05a2454ef09c939cfd66f3bc",
+    "revisionRef": "lab/drafts/javascript-calculator/revision.json",
+    "sources": [
+      {
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+        "providedCharacters": 7595,
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "title": "Post #9 Calculator Math Func OOP",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "37f57a48561e2aff953f167a3354c9c0b55fe7835ecee20f0fbbecebcca074ad",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "0d99b39f7a21108a3351903fb8da6a4803d58313312866a95bf4c9f412ef9590"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "7eecd2cbed7acbadb9a305083b3a63ac0d64e4b2def2c514574f636989487579",
+  "researchApprovalRef": "lab/decisions/javascript-calculator-research-acceptance.json",
+  "researchPacketHash": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96",
+  "researchPacketRef": "lab/research/javascript-calculator/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "a46bdd4abf45f40b0fba820f22e22fa1b9e8fe1ad6a043a34bb3060ea5e90de8",
+  "sourceDecisionRef": "lab/decisions/javascript-calculator-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

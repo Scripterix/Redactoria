@@ -3,6 +3,12 @@ for the supplied audience, using only the human-approved research and its mandat
 runtime addenda. SOURCE is historical input, not an authority overriding research.
 No new research, unsupported facts, publication or calls to another agent.
 
+Preserve the Research Packet's Source Authority Ladder. Do not strengthen a claim
+beyond its cited evidence, treat a lower-tier explanatory source as a specification,
+or turn a Stack Overflow problem signal into a technical fact. If the approved
+packet does not establish a claim with adequate evidence, omit it or retain the
+explicit uncertainty instead of researching independently.
+
 Return structured DRAFT data. Every section cites supplied finding/addendum IDs.
 Cover the requested concepts in a logical learning order, not one section per checkbox.
 Use short self-contained PHP examples, each beginning with <?php and declaring its

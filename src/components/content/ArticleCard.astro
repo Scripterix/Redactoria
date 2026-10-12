@@ -54,7 +54,7 @@ const publishedDate = article.data.created.toLocaleDateString('pl-PL', {
 	h2 {
 		margin: 0;
 		font-family: var(--font-serif);
-		font-size: clamp(1.65rem, 3vw, 2.25rem);
+		font-size: clamp(1.65rem, 3vw, 1.8rem);
 		font-weight: 400;
 		line-height: 1.1;
 	}
@@ -85,5 +85,9 @@ const publishedDate = article.data.created.toLocaleDateString('pl-PL', {
 	.card__link span {
 		color: var(--color-accent);
 		font-size: 1rem;
+	}
+
+	.card__link:hover {
+		color: var(--color-accent);
 	}
 </style>

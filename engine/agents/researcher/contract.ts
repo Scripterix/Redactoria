@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { EvidenceSchema, InventoryInputSchema } from '../cartographer/contract.ts';
 import { FocusedMergeResultSchema, MergeProposalSchema } from '../cartographer/focused-merge.ts';
 import { ApprovedArticleDecisionSchema, FocusedArticleResultSchema } from '../cartographer/focused-article.ts';
-import { ResearchLimitsSchema } from './policies.ts';
+import { ResearchLimitsSchema, SourceAuthorityClassSchema, SourceAuthorityTierSchema, SourceEvidenceRoleSchema } from './policies.ts';
 
 const text = z.string().min(1).refine(value => value.trim().length > 0, 'Nonblank text required');
 const sha = z.string().regex(/^[a-f0-9]{64}$/);
@@ -10,13 +10,25 @@ const ids = z.array(text).min(1);
 const confidence = z.number().min(0).max(1);
 const docEvidence = z.strictObject({ documentId: text, excerptId: text });
 export const DocumentEvidenceSchema = docEvidence;
-export const DocumentSchema = z.strictObject({
-	id: text, title: text, url: z.url(), sourceType: z.literal('official-documentation'),
-	kind: z.enum(['manual', 'language-reference', 'migration', 'support-lifecycle']),
+const documentCore = {
+	id: text, title: text, url: z.url(),
 	retrievedAt: z.iso.datetime(), documentHash: sha,
 	retrieval: z.strictObject({ method: z.literal('https-get'), httpStatus: z.literal(200), finalUrl: z.url(),
 		selection: z.literal('official-content-excluding-user-notes') }),
 	excerpts: z.array(z.strictObject({ id: text, text: text, locator: text })).min(1),
+
+};
+export const DocumentSchema = z.strictObject({
+	...documentCore, sourceType: z.literal('official-documentation'),
+	kind: z.enum(['manual', 'language-reference', 'migration', 'support-lifecycle']),
+});
+export const AuthorityDocumentSchema = z.strictObject({
+	...documentCore, sourceType: z.literal('authority-ladder'),
+	retrieval: z.strictObject({ method: z.literal('https-get'), httpStatus: z.literal(200), finalUrl: z.url(),
+		selection: z.enum(['authoritative-content', 'practical-content', 'reviewed-problem-content']) }),
+	kind: z.enum(['specification', 'standard', 'project-documentation', 'runtime-documentation',
+		'web-platform-reference', 'implementation-documentation', 'compatibility-data', 'educational-guide', 'problem-report']),
+	authorityTier: SourceAuthorityTierSchema, authorityClass: SourceAuthorityClassSchema, evidenceRole: SourceEvidenceRoleSchema,
 });
 export const ProbeSchema = z.strictObject({
 	id: text, description: text, phpVersion: text, code: text, codeHash: sha,
@@ -38,7 +50,13 @@ export const ResearchBundleV2Schema = z.strictObject({
 	questions: z.array(z.strictObject({ id: text, section: text, question: text, cartographerFindingIds: z.array(text) })).min(1),
 	sources: z.array(DocumentSchema).min(1), probes: z.array(RuntimeProbeSchema),
 });
-export const ResearchBundleSchema = z.union([ResearchBundleV1Schema, ResearchBundleV2Schema]);
+export const ResearchBundleV3Schema = z.strictObject({
+	schemaVersion: z.literal(3), topicSlug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+	asOfDate: z.iso.date(), provenance: text,
+	questions: z.array(z.strictObject({ id: text, section: text, question: text, cartographerFindingIds: z.array(text) })).min(1),
+	sources: z.array(AuthorityDocumentSchema).min(1), probes: z.array(RuntimeProbeSchema),
+});
+export const ResearchBundleSchema = z.union([ResearchBundleV1Schema, ResearchBundleV2Schema, ResearchBundleV3Schema]);
 export const ApprovedMergeDecisionSchema = MergeProposalSchema.extend({
 	status: z.literal('approved'), approvedBy: z.literal('human'), approvedAt: z.iso.datetime().optional(), nextStep: z.literal('research'),
 });
@@ -50,7 +68,7 @@ export type ResearcherInput = z.infer<typeof ResearcherInputSchema>;
 export type ResearchBundle = z.infer<typeof ResearchBundleSchema>;
 
 const finding = z.strictObject({
-	id: text, questionIds: ids, claim: text, sourceType: z.literal('official-documentation'),
+	id: text, questionIds: ids, claim: text, sourceType: z.enum(['official-documentation', 'authority-ladder']),
 	status: z.enum(['verified', 'needs-review']), evidence: z.array(docEvidence),
 	articleEvidence: z.array(EvidenceSchema), confidence, recommendation: text,
 });
@@ -75,7 +93,10 @@ export const ResearchAnalysisSchema = z.strictObject({
 	limitations: z.array(text).min(1),
 });
 export type ResearchAnalysis = z.infer<typeof ResearchAnalysisSchema>;
-export const RegisteredSourceSchema = DocumentSchema.omit({ excerpts: true }).extend({ evidenceIds: ids });
+export const RegisteredSourceSchema = z.union([
+	DocumentSchema.omit({ excerpts: true }).extend({ evidenceIds: ids }),
+	AuthorityDocumentSchema.omit({ excerpts: true }).extend({ evidenceIds: ids }),
+]);
 export const ResearchPacketSchema = ResearchAnalysisSchema.extend({
 	schemaVersion: z.literal(1), targets: z.union([MergeProposalSchema.shape.targets, FocusedArticleResultSchema.shape.targets]),
 	sourceRegister: z.array(RegisteredSourceSchema).min(1),

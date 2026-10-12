@@ -1,0 +1,173 @@
+{
+  "asOfDate": "2026-10-12",
+  "probes": [
+    {
+      "code": "async function loadJson(fetcher, url) { try { const response = await fetcher(url); if (!response.ok) return { ok: false, kind: 'http', status: response.status }; try { return { ok: true, data: await response.json() }; } catch { return { ok: false, kind: 'json' }; } } catch { return { ok: false, kind: 'network' }; } } const fixtures = { success: async () => new Response('{\"name\":\"Ada\"}', { status: 200, headers: { 'content-type': 'application/json' } }), missing: async () => new Response('{\"error\":\"missing\"}', { status: 404, headers: { 'content-type': 'application/json' } }), invalid: async () => new Response('{bad json', { status: 200, headers: { 'content-type': 'application/json' } }), network: async () => { throw new TypeError('network'); } }; const result = {}; for (const [name, fixture] of Object.entries(fixtures)) result[name] = await loadJson(fixture, '/users'); console.log(JSON.stringify(result));",
+      "codeHash": "941d63ffa7caea2aa5a92b8b1a12dd67b7f616b1099511adac968dc3eca12177",
+      "description": "Controlled Response fixtures for 200 JSON, 404, invalid JSON and rejected network request",
+      "diagnostics": [],
+      "id": "node-fetch-response-boundaries",
+      "result": {
+        "invalid": {
+          "kind": "json",
+          "ok": false
+        },
+        "missing": {
+          "kind": "http",
+          "ok": false,
+          "status": 404
+        },
+        "network": {
+          "kind": "network",
+          "ok": false
+        },
+        "success": {
+          "data": {
+            "name": "Ada"
+          },
+          "ok": true
+        }
+      },
+      "runtimeId": "node",
+      "runtimeVersion": "v24.16.0"
+    }
+  ],
+  "provenance": "Source Authority Ladder snapshots plus one controlled local Node probe; no external example API calls.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-api"
+      ],
+      "id": "http-json",
+      "question": "Jak połączyć semantykę metody GET, status HTTP i reprezentację JSON?",
+      "section": "protocol"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-api"
+      ],
+      "id": "fetch-errors",
+      "question": "Jak rozdzielić błąd sieci, nieudany status HTTP i błąd parsowania JSON?",
+      "section": "errors"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "81b021244f1b9a2c3e4b8dfd55721bb79f1ac54f5529119db166ff9f8dfa8be9",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "ok-status",
+          "locator": "Response and fetch methods",
+          "text": "A Response reports whether its status is an ok status; a network failure is represented as a network error."
+        },
+        {
+          "id": "body-json",
+          "locator": "Body mixin methods",
+          "text": "The Body json method parses the body bytes as JSON and can reject when parsing fails."
+        }
+      ],
+      "id": "whatwg-fetch",
+      "kind": "standard",
+      "retrieval": {
+        "finalUrl": "https://fetch.spec.whatwg.org/",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "WHATWG Fetch Standard",
+      "url": "https://fetch.spec.whatwg.org/"
+    },
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "d431760660ea44e130f6e919dab216df2d0b3a490567a98089267523368fe1e5",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "get-semantics",
+          "locator": "9.3.1 GET",
+          "text": "GET requests transfer a current representation of the target resource."
+        },
+        {
+          "id": "method-purpose",
+          "locator": "9.1 Overview",
+          "text": "The request method token indicates the purpose of the request and the expected meaning of a successful result."
+        }
+      ],
+      "id": "rfc-9110",
+      "kind": "standard",
+      "retrieval": {
+        "finalUrl": "https://www.rfc-editor.org/rfc/rfc9110.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "RFC 9110 — HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+    },
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "5302d6ccb6cf221817bdd1f8cd7221661d4519372e0ac0b4cf641e11e8037de7",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "json-values",
+          "locator": "3 Values",
+          "text": "A JSON value is an object, array, number, string, true, false or null."
+        },
+        {
+          "id": "unique-names",
+          "locator": "4 Objects",
+          "text": "Object member names should be unique for interoperable behavior."
+        }
+      ],
+      "id": "rfc-8259",
+      "kind": "standard",
+      "retrieval": {
+        "finalUrl": "https://www.rfc-editor.org/rfc/rfc8259.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "RFC 8259 — The JavaScript Object Notation Data Interchange Format",
+      "url": "https://www.rfc-editor.org/rfc/rfc8259.html"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "0d1e47df62aeef4d2e125a77b3f0455745e6afeee8e2198cb52ae750b6d32571",
+      "evidenceRole": "practical-reference",
+      "excerpts": [
+        {
+          "id": "fetch-rejection",
+          "locator": "Return value",
+          "text": "fetch rejects for request or network failures, but HTTP error statuses require an explicit Response.ok or status check."
+        }
+      ],
+      "id": "mdn-fetch",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — Window.fetch()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/fetch"
+    }
+  ],
+  "topicSlug": "api-http-json"
+}

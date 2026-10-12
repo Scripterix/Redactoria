@@ -1,0 +1,132 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP."
+  ],
+  "packetHash": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "badOperator": {
+              "error": "unsupported-operator",
+              "ok": false
+            },
+            "classResult": {
+              "ok": true,
+              "value": 5
+            },
+            "functionResult": {
+              "ok": true,
+              "value": 5
+            },
+            "values": [
+              {
+                "ok": true,
+                "value": 12.5
+              },
+              {
+                "error": "empty",
+                "ok": false
+              },
+              {
+                "error": "invalid-number",
+                "ok": false
+              },
+              {
+                "error": "invalid-number",
+                "ok": false
+              }
+            ]
+          },
+          "expected": {
+            "badOperator": {
+              "error": "unsupported-operator",
+              "ok": false
+            },
+            "classResult": {
+              "ok": true,
+              "value": 5
+            },
+            "functionResult": {
+              "ok": true,
+              "value": 5
+            },
+            "values": [
+              {
+                "ok": true,
+                "value": 12.5
+              },
+              {
+                "error": "empty",
+                "ok": false
+              },
+              {
+                "error": "invalid-number",
+                "ok": false
+              },
+              {
+                "error": "invalid-number",
+                "ok": false
+              }
+            ]
+          },
+          "id": "observed-result",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "records": [
+        {
+          "code": "function parseDecimal(raw) { if (raw == null || String(raw).trim() === '') return { ok: false, error: 'empty' }; const value = Number(raw); return Number.isFinite(value) ? { ok: true, value } : { ok: false, error: 'invalid-number' }; } function calculate(a, operator, b) { if (!['+', '-'].includes(operator)) return { ok: false, error: 'unsupported-operator' }; return { ok: true, value: operator === '+' ? a + b : a - b }; } class Calculator { calculate(a, operator, b) { return calculate(a, operator, b); } } const values = ['12.5', ' ', '12px', 'Infinity'].map(parseDecimal); console.log(JSON.stringify({ values, functionResult: calculate(7, '-', 2), classResult: new Calculator().calculate(7, '-', 2), badOperator: calculate(1, '*', 2) }));",
+          "codeHash": "1968357f1aa9dc8a6e0a5daa0a07a7588fee1a78d8eef380ed721b1f1448432a",
+          "description": "Full Number conversion, finite checks, supported operators and equivalent function/class results",
+          "diagnostics": [],
+          "id": "node-calculator-boundaries",
+          "result": {
+            "badOperator": {
+              "error": "unsupported-operator",
+              "ok": false
+            },
+            "classResult": {
+              "ok": true,
+              "value": 5
+            },
+            "functionResult": {
+              "ok": true,
+              "value": 5
+            },
+            "values": [
+              {
+                "ok": true,
+                "value": 12.5
+              },
+              {
+                "error": "empty",
+                "ok": false
+              },
+              {
+                "error": "invalid-number",
+                "ok": false
+              },
+              {
+                "error": "invalid-number",
+                "ok": false
+              }
+            ]
+          },
+          "runtimeId": "node",
+          "runtimeVersion": "v24.16.0"
+        }
+      ],
+      "runtimeId": "node",
+      "status": "PASS",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

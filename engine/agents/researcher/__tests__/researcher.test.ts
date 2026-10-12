@@ -10,9 +10,10 @@ import { parseResearcherArguments } from '../../../../scripts/researcher.ts';
 import { officialText } from '../../../../scripts/research/capture-php-arrays.ts';
 import { prepareResearchRequest, runResearcher } from '../agent.ts';
 import { ResearchPacketSchema } from '../contract.ts';
+import { SOURCE_AUTHORITY_HOSTS, sourceAuthorityForUrl } from '../policies.ts';
 import { createResearchArtifacts } from '../report.ts';
 import { validateResearchAnalysis, validateResearchInput, validateResearchPacket } from '../validation.ts';
-import { analysisFixture, FakeLanguageModel, fixturesDirectory, inputFixture, readerFixture } from './helpers.ts';
+import { analysisFixture, authorityAnalysisFixture, authorityInputFixture, FakeLanguageModel, fixturesDirectory, inputFixture, readerFixture } from './helpers.ts';
 
 const directories: string[] = [];
 afterEach(async () => { for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
@@ -46,6 +47,45 @@ describe('Researcher deterministic boundaries', () => {
 		expect(() => validateResearchAnalysis(analysis, inputFixture(), [])).toThrow();
 		const other = analysisFixture(); other.ambiguousClaims = [{ ...other.verifiedFacts[0]!, id: 'other', evidence: [], articleEvidence: [{ sourceId: 'missing', sourcePath: 'missing.md', field: 'body', value: 'x' }] }];
 		expect(() => validateResearchAnalysis(other, inputFixture(), [])).toThrow('requires documentation');
+	});
+	it('classifies every approved Source Authority Ladder host', () => {
+		expect(SOURCE_AUTHORITY_HOSTS.length).toBeGreaterThan(20);
+		for (const host of SOURCE_AUTHORITY_HOSTS) expect(sourceAuthorityForUrl(`https://${host}/reference`).tier).toBeGreaterThanOrEqual(1);
+		expect(sourceAuthorityForUrl('https://tc39.es/ecma262/')).toMatchObject({ tier: 1, authorityClass: 'specification-standard' });
+		expect(sourceAuthorityForUrl('https://developer.mozilla.org/docs/Web/API/Fetch_API')).toMatchObject({ tier: 3, evidenceRole: 'practical-reference' });
+		expect(sourceAuthorityForUrl('https://stackoverflow.com/questions/1/example')).toEqual({ tier: 7, authorityClass: 'real-world-problem', evidenceRole: 'problem-signal' });
+		expect(() => sourceAuthorityForUrl('https://example.invalid/reference')).toThrow('not classified');
+	});
+	it('accepts ladder evidence while keeping the historical bundle valid', () => {
+		expect(validateResearchInput(inputFixture()).research.schemaVersion).toBe(1);
+		const input = validateResearchInput(authorityInputFixture());
+		const analysis = authorityAnalysisFixture();
+		analysis.verifiedFacts[0]!.evidence.push({ documentId: 'problem', excerptId: 'symptom' });
+		expect(validateResearchAnalysis(analysis, input, []).verifiedFacts[0]!.evidence).toHaveLength(2);
+	});
+	it('preserves ladder metadata in the packet register and human report', async () => {
+		const input = authorityInputFixture(), analysis = authorityAnalysisFixture();
+		analysis.verifiedFacts[0]!.evidence.push({ documentId: 'problem', excerptId: 'symptom' });
+		const packet = await runResearcher(input, 'Prompt', new FakeLanguageModel([analysis]), readerFixture);
+		expect(packet.sourceRegister.map(source => source.id)).toEqual(['manual', 'problem']);
+		expect(packet.sourceRegister[1]).toMatchObject({ authorityTier: 7, evidenceRole: 'problem-signal' });
+		const report = createResearchArtifacts(packet, input.research.questions)['research/fixture/research.md'];
+		expect(report).toContain('tier 7 / real-world-problem / problem-signal');
+	});
+	it('rejects forged ladder metadata and Stack Overflow-only verified facts', () => {
+		const forged = authorityInputFixture();
+		if (forged.research.schemaVersion !== 3) throw new Error('Expected authority bundle fixture.');
+		forged.research.sources[0]!.authorityTier = 1;
+		expect(() => validateResearchInput(forged)).toThrow('metadata');
+		const wrongCapture = authorityInputFixture();
+		if (wrongCapture.research.schemaVersion !== 3) throw new Error('Expected authority bundle fixture.');
+		wrongCapture.research.sources[0]!.retrieval.selection = 'practical-content';
+		expect(() => validateResearchInput(wrongCapture)).toThrow('capture selection');
+
+		const input = validateResearchInput(authorityInputFixture());
+		const analysis = authorityAnalysisFixture();
+		analysis.verifiedFacts[0]!.evidence = [{ documentId: 'problem', excerptId: 'symptom' }];
+		expect(() => validateResearchAnalysis(analysis, input, [])).toThrow('cannot rely only');
 	});
 	it.each(['unknown-document', 'unknown-excerpt'])('rejects %s reference', type => {
 		const analysis = analysisFixture(); const evidence = analysis.verifiedFacts[0]!.evidence[0]!;
@@ -138,7 +178,9 @@ describe('Researcher deterministic boundaries', () => {
 		input.research.sources[0]!.documentHash = '4'.repeat(64); await expect(replay()).rejects.toThrow('hash mismatch');
 	});
 	it('excludes unused documents from the source register', async () => {
-		const input = inputFixture(); input.research.sources.push({ ...input.research.sources[0]!, id: 'unused', url: 'https://www.php.net/manual/en/function.isset.php',
+		const input = inputFixture();
+		if (input.research.schemaVersion !== 1) throw new Error('Expected historical PHP fixture.');
+		input.research.sources.push({ ...input.research.sources[0]!, id: 'unused', url: 'https://www.php.net/manual/en/function.isset.php',
 			retrieval: { ...input.research.sources[0]!.retrieval, finalUrl: 'https://www.php.net/manual/en/function.isset.php' } });
 		const packet = await runResearcher(input, 'Prompt', new FakeLanguageModel([analysisFixture()]), readerFixture);
 		expect(packet.sourceRegister.map(source => source.id)).toEqual(['manual']);

@@ -1,0 +1,201 @@
+{
+  "focused-article": {
+    "requestHash": "fed4e98fce5ae3c943b207122968403eb870c54812cf1e7c0e9ee9fd6484ef07",
+    "response": {
+      "action": "REWRITE",
+      "artifactName": "api-http-json-single",
+      "confidence": 0.98,
+      "correct": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "id": "correct-fetch-errors",
+          "interpretation": "Wyjaśnić, że fetch nie odrzuca Promise wyłącznie z powodu statusu 404 i że response.json może odrzucić dla błędnego JSON."
+        }
+      ],
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "578",
+          "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+          "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+        }
+      ],
+      "keep": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "id": "keep-request-response",
+          "interpretation": "Zachować prosty model żądanie → odpowiedź → dane jako wejście do tematu."
+        }
+      ],
+      "limitations": [
+        "Analiza obejmuje tylko jeden autoryzowany plik SOURCE; techniczne twierdzenia wymagają Source Authority Ladder i kontrolowanej weryfikacji."
+      ],
+      "missing": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "id": "missing-controlled-errors",
+          "interpretation": "Dodać kontrolowane przypadki 200, 404, niepoprawnego JSON i błędu sieci."
+        }
+      ],
+      "needsResearch": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "id": "research-api",
+          "interpretation": "Zweryfikować semantykę GET, fetch, Response.ok, Response.json oraz składnię JSON w WHATWG i aktualnych RFC."
+        }
+      ],
+      "outdatedOrUncertain": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "id": "uncertain-security",
+          "interpretation": "Nie przedstawiać samego API jako gwarancji bezpieczeństwa ani aktualności danych."
+        }
+      ],
+      "prerequisites": [
+        "Podstawowa umiejętność pracy z plikiem tekstowym i uruchamiania krótkich przykładów."
+      ],
+      "proposedStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: api, http i reprezentacja json.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "API, HTTP i reprezentacja JSON"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: żądanie get i status odpowiedzi.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "Żądanie GET i status odpowiedzi"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: parsowanie json dopiero po sprawdzeniu http.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "Parsowanie JSON dopiero po sprawdzeniu HTTP"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: trzy różne klasy błędów.",
+          "sourceIds": [
+            "578"
+          ],
+          "title": "Trzy różne klasy błędów"
+        }
+      ],
+      "proposedTitle": "API, HTTP i JSON: od żądania do bezpiecznej odpowiedzi",
+      "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+      "recommended": true,
+      "relationships": [
+        {
+          "publicPath": "/artykuly/warunki-w-javascript/",
+          "reason": "Materiał wykorzystuje jawne warunki i kontrolę błędów poznane wcześniej."
+        }
+      ],
+      "remove": [
+        {
+          "confidence": 0.97,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "578",
+              "sourcePath": "578-post-22-wprowadzenie-do-api.md",
+              "value": "fetch('https://przykladoweapi.com/uzytkownicy')"
+            }
+          ],
+          "id": "remove-external-backend",
+          "interpretation": "Usunąć niedziałającą domenę przykładową, katalog darmowych API i serwer Express wykraczający poza zakres."
+        }
+      ],
+      "scope": "API a HTTP API, żądanie GET, status odpowiedzi, response.ok, parsowanie JSON i osobne błędy HTTP, JSON oraz sieci. Kontrolowane Response fixtures; bez zewnętrznego API, CRUD, Express i kluczy.",
+      "task": "SINGLE_ARTICLE"
+    }
+  },
+  "provenance": {
+    "description": "B4 focused analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1
+}

@@ -1,0 +1,26 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "api-http",
+    "get",
+    "response-status",
+    "response-ok",
+    "json",
+    "http-error",
+    "json-error",
+    "network-error"
+  ],
+  "researchApproval": "lab/decisions/api-http-json-research-acceptance.json",
+  "researchPacket": "lab/research/api-http-json/research.json",
+  "runtimeVerification": "lab/research/api-http-json/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/api-http-json-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "api-http-json"
+}

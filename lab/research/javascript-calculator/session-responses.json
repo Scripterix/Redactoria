@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "description": "B4 Authority Ladder analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "research": {
+    "requestHash": "5d71bf798a55227ea43b74c121866944d0ff11ff367d9dce2f4e0317a49c0ff0",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "claim": "Kontrolowana próba Node potwierdziła pełną konwersję, odrzucenie pustego tekstu, 12px i Infinity oraz identyczny wynik funkcji i delegującej metody klasy.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "ecmascript-numbers",
+              "excerptId": "number-conversion"
+            },
+            {
+              "documentId": "ecmascript-classes",
+              "excerptId": "class-methods"
+            },
+            {
+              "documentId": "mdn-number-is-finite",
+              "excerptId": "finite-practical"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "node-calculator-boundaries"
+          ],
+          "questionIds": [
+            "numeric-input",
+            "function-class"
+          ],
+          "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-12",
+        "evidence": [
+          {
+            "documentId": "ecmascript-numbers",
+            "excerptId": "number-conversion"
+          },
+          {
+            "documentId": "ecmascript-classes",
+            "excerptId": "class-methods"
+          },
+          {
+            "documentId": "mdn-number-is-finite",
+            "excerptId": "finite-practical"
+          }
+        ],
+        "runtimeScope": "Node v24.16.0; semantyka zgodna ze wskazanymi standardami"
+      },
+      "incorrectClaims": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "claim": "Wzorzec parseFloat(value) || 0 maskuje pustą lub błędną wartość jako poprawne zero; walidacja powinna zwrócić jawny błąd.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "ecmascript-numbers",
+              "excerptId": "number-conversion"
+            },
+            {
+              "documentId": "mdn-number-is-finite",
+              "excerptId": "finite-practical"
+            }
+          ],
+          "id": "calculator-default-zero",
+          "questionIds": [
+            "numeric-input"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "Research obejmuje jeden autoryzowany materiał SOURCE i tylko tyle źródeł Authority Ladder, ile potrzeba do rozstrzygnięcia claims; nie jest samodzielną zgodą na publikację."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "number-conversion",
+            "finite-no-coercion",
+            "calculator-default-zero",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+          "questionId": "numeric-input",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "function-class-boundary",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+          "questionId": "function-class",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "CORRECT",
+          "findingIds": [
+            "number-conversion",
+            "finite-no-coercion",
+            "function-class-boundary",
+            "calculator-default-zero",
+            "executed-boundaries"
+          ],
+          "id": "modernize-bounded",
+          "instruction": "Zmodernizować pojedynczy materiał legacy bez przenoszenia błędów i bez poszerzania zakresu."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "javascript-calculator",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "claim": "Wywołanie Number(value) wykonuje pełną konwersję wartości do typu Number; po konwersji Number.isFinite odrzuca NaN oraz dodatnią i ujemną nieskończoność.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "ecmascript-numbers",
+              "excerptId": "number-conversion"
+            },
+            {
+              "documentId": "ecmascript-numbers",
+              "excerptId": "number-is-finite"
+            }
+          ],
+          "id": "number-conversion",
+          "questionIds": [
+            "numeric-input"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "claim": "Number.isFinite nie wykonuje wstępnej konwersji, dlatego należy wywołać je na już przekonwertowanej liczbie.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "mdn-number-is-finite",
+              "excerptId": "finite-practical"
+            }
+          ],
+          "id": "finite-no-coercion",
+          "questionIds": [
+            "numeric-input"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "claim": "Klasa może grupować konstruktor i metody, lecz metoda może delegować tę samą operację do zwykłej funkcji; wybór formy organizuje API, a nie zmienia arytmetyki.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "ecmascript-classes",
+              "excerptId": "class-methods"
+            }
+          ],
+          "id": "function-class-boundary",
+          "questionIds": [
+            "function-class"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+          }
+        ],
+        "correct": [
+          {
+            "findingIds": [
+              "calculator-default-zero"
+            ],
+            "instruction": "Wzorzec parseFloat(value) || 0 maskuje pustą lub błędną wartość jako poprawne zero; walidacja powinna zwrócić jawny błąd."
+          }
+        ],
+        "keep": [
+          {
+            "findingIds": [
+              "number-conversion",
+              "finite-no-coercion",
+              "function-class-boundary"
+            ],
+            "instruction": "Zachować krótki, praktyczny charakter materiału legacy."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

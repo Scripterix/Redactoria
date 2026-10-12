@@ -1,0 +1,144 @@
+{
+  "provenance": {
+    "description": "B4 Writer response authored from the validated Authority Ladder packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "0d99b39f7a21108a3351903fb8da6a4803d58313312866a95bf4c9f412ef9590",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+          "id": "predict-output",
+          "implemented": false,
+          "prompt": "Przewidź dokładny wynik pierwszego przykładu, a potem porównaj go z wykonaniem.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "calculator-contract",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Granice formatu lub błędu pozostają jawne.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "function-or-class",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI."
+      ],
+      "sections": [
+        {
+          "body": "Prosty kalkulator potrzebuje jawnej listy operatorów oraz przewidywalnego wyniku błędu. Zamiast wykonywać dowolny tekst, funkcja poniżej dopuszcza tylko dodawanie i odejmowanie. Zwraca obiekt z polem `ok`, dzięki czemu kod wywołujący nie musi zgadywać, czy liczba jest wynikiem, czy wartością zastępczą.\n\nTaki rdzeń nie zna DOM-u i nie czyta pól formularza. Dzięki temu można go wykonać bez przeglądarki, a warstwę interfejsu dołączyć osobno.",
+          "coverage": [
+            "calculator-contract",
+            "operators",
+            "errors"
+          ],
+          "evidence": [
+            {
+              "id": "function-class-boundary",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "function calculate(a, operator, b) {\n  if (!['+', '-'].includes(operator)) {\n    return { ok: false, error: 'unsupported-operator' };\n  }\n  return { ok: true, value: operator === '+' ? a + b : a - b };\n}\nconsole.log(JSON.stringify(calculate(7, '-', 2)));\nconsole.log(JSON.stringify(calculate(1, '*', 2)));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "{\"ok\":true,\"value\":5}\n{\"ok\":false,\"error\":\"unsupported-operator\"}\n",
+              "id": "calculate-operation",
+              "language": "js",
+              "purpose": "Dwa obsługiwane operatory i jawny błąd"
+            }
+          ],
+          "heading": "Najpierw kontrakt kalkulatora",
+          "id": "calculator-contract"
+        },
+        {
+          "body": "Wartość z formularza jest tekstem. Najpierw odrzuć `null`, `undefined` i tekst pusty po `trim()`. Następnie użyj `Number`, aby przetworzyć całą wartość, oraz `Number.isFinite`, aby odrzucić `NaN` i nieskończoność. Napis `12px` nie jest poprawną liczbą dla tego kontraktu.\n\nZapis `parseFloat(value) || 0` jest kusząco krótki, ale maskuje błąd jako zero. Zero może być prawidłowym operandem, więc brak danych i błędne dane powinny dostać osobne rezultaty.",
+          "coverage": [
+            "number-conversion",
+            "finite-number",
+            "edge-cases"
+          ],
+          "evidence": [
+            {
+              "id": "number-conversion",
+              "kind": "finding"
+            },
+            {
+              "id": "finite-no-coercion",
+              "kind": "finding"
+            },
+            {
+              "id": "calculator-default-zero",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "function parseDecimal(raw) {\n  if (raw == null || String(raw).trim() === '') {\n    return { ok: false, error: 'empty' };\n  }\n  const value = Number(raw);\n  return Number.isFinite(value)\n    ? { ok: true, value }\n    : { ok: false, error: 'invalid-number' };\n}\nconsole.log(JSON.stringify(['12.5', ' ', '12px', 'Infinity'].map(parseDecimal)));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "[{\"ok\":true,\"value\":12.5},{\"ok\":false,\"error\":\"empty\"},{\"ok\":false,\"error\":\"invalid-number\"},{\"ok\":false,\"error\":\"invalid-number\"}]\n",
+              "id": "parse-decimal",
+              "language": "js",
+              "purpose": "Walidacja wartości pustej, niepełnej i nieskończonej"
+            }
+          ],
+          "heading": "Od tekstu do skończonej liczby",
+          "id": "number-input"
+        },
+        {
+          "body": "Zwykła funkcja wystarcza, gdy operacja nie przechowuje stanu. Klasa może zapewnić wygodne API, gdy kalkulator ma konfigurację lub kilka powiązanych metod. Sama obecność klasy nie zmienia reguł dodawania ani odejmowania.\n\nNajprostsza metoda może delegować do przetestowanej funkcji. Nie nazywaj jednak każdej funkcji „programowaniem funkcyjnym”: w tym przykładzie chodzi o organizację kodu i jeden wspólny kontrakt.",
+          "coverage": [
+            "function",
+            "class-method"
+          ],
+          "evidence": [
+            {
+              "id": "function-class-boundary",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "function calculate(a, operator, b) {\n  if (operator === '+') return a + b;\n  if (operator === '-') return a - b;\n  throw new Error('unsupported-operator');\n}\nclass Calculator {\n  calculate(a, operator, b) {\n    return calculate(a, operator, b);\n  }\n}\nconsole.log(calculate(7, '-', 2));\nconsole.log(new Calculator().calculate(7, '-', 2));",
+              "expectedDiagnostics": [],
+              "expectedOutput": "5\n5\n",
+              "id": "calculator-class",
+              "language": "js",
+              "purpose": "Metoda klasy delegująca do zwykłej funkcji"
+            }
+          ],
+          "heading": "Funkcja albo metoda klasy",
+          "id": "function-or-class"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "node",
+          "kind": "node",
+          "version": "v24.16.0"
+        }
+      ],
+      "title": "Kalkulator w JavaScript: walidacja, funkcja i klasa"
+    }
+  }
+}

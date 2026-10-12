@@ -1,6 +1,14 @@
 # Active plans
 
-No execution plan is active.
+Active: [027: B4 minimal contract extension and publication](027-b4-contract-and-publication.md).
+The three articles are promoted locally and all eight lifecycle checks plus the full
+quality gate pass. Only the authorized Git push and Cloudflare production checkpoint
+remain.
+
+Previous plan: [026: Source Authority Ladder](../completed/026-source-authority-ladder.md)
+is completed: new Researcher schema-v3 evidence records carry validated tier/class/role,
+Writer and Critic preserve the hierarchy, Stack Overflow is problem-signal only, and
+historical research artifacts remain valid.
 
 Previous plan: [021: JavaScript B3 publication
 checkpoint](../completed/021-javascript-b3-publication-checkpoint.md) is completed:

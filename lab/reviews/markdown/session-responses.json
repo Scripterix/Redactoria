@@ -1,0 +1,72 @@
+{
+  "critic": {
+    "requestHash": "98bd59577f94ba166c1e515cbb5120132dbe9c2e2a61bc0d8223b66c3557fd98",
+    "response": {
+      "action": "REVIEW",
+      "checks": [
+        {
+          "criterion": "FACTUAL_ACCURACY",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "SOURCE_ALIGNMENT",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "CODE_CORRECTNESS",
+          "note": "Każdy finalny przykład ma zgodny hash i przeszedł kontrolowane renderowanie CommonMark albo rzeczywiste wykonanie Node.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "RESEARCH_COVERAGE",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "STRUCTURE",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "CLARITY",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "DUPLICATION",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "SECURITY",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "VERSION_CLAIMS",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        },
+        {
+          "criterion": "UNSUPPORTED_CLAIMS",
+          "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+          "result": "PASS"
+        }
+      ],
+      "issues": [],
+      "limitations": [
+        "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; decyzja publikacyjna pozostaje oddzielnym, jawnie autoryzowanym krokiem."
+      ],
+      "summary": "Draft pozostaje w autoryzowanym zakresie B4, koryguje problem legacy, wiąże twierdzenia z Authority Ladder i ma przechodzące wykonanie każdego przykładu.",
+      "verdict": "PASS"
+    }
+  },
+  "provenance": {
+    "description": "B4 full Critic pass recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1
+}

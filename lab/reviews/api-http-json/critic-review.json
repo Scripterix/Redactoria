@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "ee2a0cde2ea6105d61c48cc4a4af40ebbe333db4d24efa3cda62ff78791df009",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "Każdy finalny przykład ma zgodny hash i przeszedł kontrolowane renderowanie CommonMark albo rzeczywiste wykonanie Node.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "0b5c4fde3cbee0294152e6599e2b1b85c01c218e9e06bf8ed48ce95f79f54e5c",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "1eec754fb36d3163585da0d78048059bdfa2fec11c01f3a1ea121e57c4ce75a7"
+  },
+  "draftMetadataHash": "b6fae9a15c71939e3202ac28dda93a44b2288cee8274ce08d5d4bbecf785897a",
+  "draftRef": "lab/drafts/api-http-json/article.md",
+  "issues": [],
+  "limitations": [
+    "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; decyzja publikacyjna pozostaje oddzielnym, jawnie autoryzowanym krokiem."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/api-http-json-research-acceptance.json",
+  "researchPacket": "lab/research/api-http-json/research.json",
+  "schemaVersion": 1,
+  "summary": "Draft pozostaje w autoryzowanym zakresie B4, koryguje problem legacy, wiąże twierdzenia z Authority Ladder i ma przechodzące wykonanie każdego przykładu.",
+  "topic": "api-http-json",
+  "verdict": "PASS"
+}

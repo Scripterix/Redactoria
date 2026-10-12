@@ -1,0 +1,1194 @@
+{
+  "inputHash": "37f57a48561e2aff953f167a3354c9c0b55fe7835ecee20f0fbbecebcca074ad",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+        "authorizationRef": "lab/decisions/b4-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b4-authorization.json",
+              "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+            },
+            {
+              "path": "lab/decisions/javascript-calculator-rewrite.json",
+              "sha256": "a46bdd4abf45f40b0fba820f22e22fa1b9e8fe1ad6a043a34bb3060ea5e90de8"
+            },
+            {
+              "path": "lab/cartography/javascript-calculator-single.json",
+              "sha256": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786"
+            },
+            {
+              "path": "lab/research/javascript-calculator/sources.json",
+              "sha256": "0873fe3c50291fae0314a00239ebbc116f7618bd49a1b7574068752ac0a03d7d"
+            },
+            {
+              "path": "lab/research/javascript-calculator/probes.json",
+              "sha256": "2d94adc09bd57d43cddfbe7b850f05d0d4aa15b4643ec61c92feabfd37d3639d"
+            },
+            {
+              "path": "lab/research/javascript-calculator/research.json",
+              "sha256": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96"
+            },
+            {
+              "path": "lab/research/javascript-calculator/runtime-verification.json",
+              "sha256": "58784b4639f02e8ec84538cfe8fdfb02549f250172f48db96db8d7bb7a7ac0ed"
+            },
+            {
+              "path": "lab/research/javascript-calculator/runtime-verification.md",
+              "sha256": "6c5d21045a0fadb62acc585afa5c836e186fba08a8a87b9f1deaa237bba913cc"
+            }
+          ],
+          "humanApproval": "The human explicitly authorized all three B4 jobs through publication; this packet was validated in-session and was not separately read by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/javascript-calculator/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "node",
+                "status": "PASS",
+                "version": "v24.16.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "a0c386e10168856890e3242d9666dad6fbaa2376d798eded4a128d9101d54fd3",
+        "nextStep": "writer",
+        "packetHash": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96",
+        "packetRef": "lab/research/javascript-calculator/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts, keep dialect/runtime limits explicit, and execute every final draft example independently.",
+        "requestHash": "5d71bf798a55227ea43b74c121866944d0ff11ff367d9dce2f4e0317a49c0ff0",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "numeric-input",
+          "function-class"
+        ],
+        "schemaVersion": 3,
+        "scope": "B4 javascript-calculator: validated packet and runtime evidence through the authorized publication lifecycle.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+            "providedCharacters": 7595,
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "title": "Post #9 Calculator Math Func OOP",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-calculator",
+        "validatedAt": "2026-10-12T20:44:19.246Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: najpierw kontrakt kalkulatora.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Najpierw kontrakt kalkulatora"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: czysta funkcja z jawnymi błędami.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Czysta funkcja z jawnymi błędami"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: ta sama operacja jako metoda klasy.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Ta sama operacja jako metoda klasy"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "class Calculator {"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: parsowanie wejścia i przypadki graniczne.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Parsowanie wejścia i przypadki graniczne"
+        }
+      ],
+      "config": {
+        "audience": "beginner / early intermediate",
+        "requiredCoverage": [
+          "calculator-contract",
+          "number-conversion",
+          "finite-number",
+          "operators",
+          "function",
+          "class-method",
+          "errors",
+          "edge-cases"
+        ],
+        "researchApproval": "lab/decisions/javascript-calculator-research-acceptance.json",
+        "researchPacket": "lab/research/javascript-calculator/research.json",
+        "runtimeVerification": "lab/research/javascript-calculator/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/javascript-calculator-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "node",
+            "kind": "node",
+            "version": "v24.16.0"
+          }
+        ],
+        "topic": "javascript-calculator"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786",
+        "analysisRef": "lab/cartography/javascript-calculator-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16",
+        "authorizationRef": "lab/decisions/b4-authorization.json",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "value": "class Calculator {"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Legacy ma wartościowy rdzeń dydaktyczny i zachowane pochodzenie, ale wymaga zwartej modernizacji, korekt technicznych i wykonywalnych przykładów zamiast pobocznych obietnic.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+            "providedCharacters": 7595,
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "title": "Post #9 Calculator Math Func OOP",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-calculator"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786",
+          "decisionHash": "a46bdd4abf45f40b0fba820f22e22fa1b9e8fe1ad6a043a34bb3060ea5e90de8",
+          "fullReadCount": 1,
+          "inputHash": "a0c386e10168856890e3242d9666dad6fbaa2376d798eded4a128d9101d54fd3",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "1968357f1aa9dc8a6e0a5daa0a07a7588fee1a78d8eef380ed721b1f1448432a",
+              "description": "Full Number conversion, finite checks, supported operators and equivalent function/class results",
+              "diagnostics": [],
+              "id": "node-calculator-boundaries",
+              "result": {
+                "badOperator": {
+                  "error": "unsupported-operator",
+                  "ok": false
+                },
+                "classResult": {
+                  "ok": true,
+                  "value": 5
+                },
+                "functionResult": {
+                  "ok": true,
+                  "value": 5
+                },
+                "values": [
+                  {
+                    "ok": true,
+                    "value": 12.5
+                  },
+                  {
+                    "error": "empty",
+                    "ok": false
+                  },
+                  {
+                    "error": "invalid-number",
+                    "ok": false
+                  },
+                  {
+                    "error": "invalid-number",
+                    "ok": false
+                  }
+                ]
+              },
+              "runtimeId": "node",
+              "runtimeVersion": "v24.16.0"
+            }
+          ],
+          "requestHash": "5d71bf798a55227ea43b74c121866944d0ff11ff367d9dce2f4e0317a49c0ff0",
+          "researchBundleHash": "0873fe3c50291fae0314a00239ebbc116f7618bd49a1b7574068752ac0a03d7d",
+          "topicSlug": "javascript-calculator"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "class Calculator {"
+              }
+            ],
+            "claim": "Kontrolowana próba Node potwierdziła pełną konwersję, odrzucenie pustego tekstu, 12px i Infinity oraz identyczny wynik funkcji i delegującej metody klasy.",
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "documentId": "ecmascript-numbers",
+                "excerptId": "number-conversion"
+              },
+              {
+                "documentId": "ecmascript-classes",
+                "excerptId": "class-methods"
+              },
+              {
+                "documentId": "mdn-number-is-finite",
+                "excerptId": "finite-practical"
+              }
+            ],
+            "id": "executed-boundaries",
+            "probeIds": [
+              "node-calculator-boundaries"
+            ],
+            "questionIds": [
+              "numeric-input",
+              "function-class"
+            ],
+            "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+            "sourceType": "authority-ladder",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-12",
+          "evidence": [
+            {
+              "documentId": "ecmascript-numbers",
+              "excerptId": "number-conversion"
+            },
+            {
+              "documentId": "ecmascript-classes",
+              "excerptId": "class-methods"
+            },
+            {
+              "documentId": "mdn-number-is-finite",
+              "excerptId": "finite-practical"
+            }
+          ],
+          "runtimeScope": "Node v24.16.0; semantyka zgodna ze wskazanymi standardami"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "class Calculator {"
+              }
+            ],
+            "claim": "Wzorzec parseFloat(value) || 0 maskuje pustą lub błędną wartość jako poprawne zero; walidacja powinna zwrócić jawny błąd.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "ecmascript-numbers",
+                "excerptId": "number-conversion"
+              },
+              {
+                "documentId": "mdn-number-is-finite",
+                "excerptId": "finite-practical"
+              }
+            ],
+            "id": "calculator-default-zero",
+            "questionIds": [
+              "numeric-input"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Research obejmuje jeden autoryzowany materiał SOURCE i tylko tyle źródeł Authority Ladder, ile potrzeba do rozstrzygnięcia claims; nie jest samodzielną zgodą na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "number-conversion",
+              "finite-no-coercion",
+              "calculator-default-zero",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+            "questionId": "numeric-input",
+            "status": "resolved"
+          },
+          {
+            "findingIds": [
+              "function-class-boundary",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła z Authority Ladder i kontrolowaną próbę.",
+            "questionId": "function-class",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "number-conversion",
+              "finite-no-coercion",
+              "function-class-boundary",
+              "calculator-default-zero",
+              "executed-boundaries"
+            ],
+            "id": "modernize-bounded",
+            "instruction": "Zmodernizować pojedynczy materiał legacy bez przenoszenia błędów i bez poszerzania zakresu."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "28696fd0ccd73f6a8eb3940022a6ab44f8f8e050201520487392d0f597b09118",
+            "evidenceIds": [
+              "number-conversion",
+              "number-is-finite"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "ecmascript-numbers",
+            "kind": "specification",
+            "retrieval": {
+              "finalUrl": "https://tc39.es/ecma262/multipage/numbers-and-dates.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "ECMAScript Language Specification — Numbers and Dates",
+            "url": "https://tc39.es/ecma262/multipage/numbers-and-dates.html"
+          },
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "cf6ad4b66633da478685ee1a2c4206ea11a91e45784616cf78002985235b3bfa",
+            "evidenceIds": [
+              "class-methods"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "ecmascript-classes",
+            "kind": "specification",
+            "retrieval": {
+              "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "ECMAScript Language Specification — Functions and Classes",
+            "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html"
+          },
+          {
+            "authorityClass": "mdn",
+            "authorityTier": 3,
+            "documentHash": "7920a587bf6efb2760349bb42ed29e6a1c2eead4e2a1b5582eefc6ace1d92e28",
+            "evidenceIds": [
+              "finite-practical"
+            ],
+            "evidenceRole": "practical-reference",
+            "id": "mdn-number-is-finite",
+            "kind": "web-platform-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "practical-content"
+            },
+            "retrievedAt": "2026-10-12T20:42:35.721Z",
+            "sourceType": "authority-ladder",
+            "title": "MDN — Number.isFinite()",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+            "providedCharacters": 7595,
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "title": "Post #9 Calculator Math Func OOP",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-calculator",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "class Calculator {"
+              }
+            ],
+            "claim": "Wywołanie Number(value) wykonuje pełną konwersję wartości do typu Number; po konwersji Number.isFinite odrzuca NaN oraz dodatnią i ujemną nieskończoność.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "ecmascript-numbers",
+                "excerptId": "number-conversion"
+              },
+              {
+                "documentId": "ecmascript-numbers",
+                "excerptId": "number-is-finite"
+              }
+            ],
+            "id": "number-conversion",
+            "questionIds": [
+              "numeric-input"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "class Calculator {"
+              }
+            ],
+            "claim": "Number.isFinite nie wykonuje wstępnej konwersji, dlatego należy wywołać je na już przekonwertowanej liczbie.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-number-is-finite",
+                "excerptId": "finite-practical"
+              }
+            ],
+            "id": "finite-no-coercion",
+            "questionIds": [
+              "numeric-input"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "class Calculator {"
+              }
+            ],
+            "claim": "Klasa może grupować konstruktor i metody, lecz metoda może delegować tę samą operację do zwykłej funkcji; wybór formy organizuje API, a nie zmienia arytmetyki.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "ecmascript-classes",
+                "excerptId": "class-methods"
+              }
+            ],
+            "id": "function-class-boundary",
+            "questionIds": [
+              "function-class"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "calculator-default-zero"
+              ],
+              "instruction": "Wzorzec parseFloat(value) || 0 maskuje pustą lub błędną wartość jako poprawne zero; walidacja powinna zwrócić jawny błąd."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "number-conversion",
+                "finite-no-coercion",
+                "function-class-boundary"
+              ],
+              "instruction": "Zachować krótki, praktyczny charakter materiału legacy."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "executed-boundaries"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Weryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP."
+        ],
+        "packetHash": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "badOperator": {
+                    "error": "unsupported-operator",
+                    "ok": false
+                  },
+                  "classResult": {
+                    "ok": true,
+                    "value": 5
+                  },
+                  "functionResult": {
+                    "ok": true,
+                    "value": 5
+                  },
+                  "values": [
+                    {
+                      "ok": true,
+                      "value": 12.5
+                    },
+                    {
+                      "error": "empty",
+                      "ok": false
+                    },
+                    {
+                      "error": "invalid-number",
+                      "ok": false
+                    },
+                    {
+                      "error": "invalid-number",
+                      "ok": false
+                    }
+                  ]
+                },
+                "expected": {
+                  "badOperator": {
+                    "error": "unsupported-operator",
+                    "ok": false
+                  },
+                  "classResult": {
+                    "ok": true,
+                    "value": 5
+                  },
+                  "functionResult": {
+                    "ok": true,
+                    "value": 5
+                  },
+                  "values": [
+                    {
+                      "ok": true,
+                      "value": 12.5
+                    },
+                    {
+                      "error": "empty",
+                      "ok": false
+                    },
+                    {
+                      "error": "invalid-number",
+                      "ok": false
+                    },
+                    {
+                      "error": "invalid-number",
+                      "ok": false
+                    }
+                  ]
+                },
+                "id": "observed-result",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+            "execution": "actual-local-cli",
+            "kind": "node",
+            "records": [
+              {
+                "code": "function parseDecimal(raw) { if (raw == null || String(raw).trim() === '') return { ok: false, error: 'empty' }; const value = Number(raw); return Number.isFinite(value) ? { ok: true, value } : { ok: false, error: 'invalid-number' }; } function calculate(a, operator, b) { if (!['+', '-'].includes(operator)) return { ok: false, error: 'unsupported-operator' }; return { ok: true, value: operator === '+' ? a + b : a - b }; } class Calculator { calculate(a, operator, b) { return calculate(a, operator, b); } } const values = ['12.5', ' ', '12px', 'Infinity'].map(parseDecimal); console.log(JSON.stringify({ values, functionResult: calculate(7, '-', 2), classResult: new Calculator().calculate(7, '-', 2), badOperator: calculate(1, '*', 2) }));",
+                "codeHash": "1968357f1aa9dc8a6e0a5daa0a07a7588fee1a78d8eef380ed721b1f1448432a",
+                "description": "Full Number conversion, finite checks, supported operators and equivalent function/class results",
+                "diagnostics": [],
+                "id": "node-calculator-boundaries",
+                "result": {
+                  "badOperator": {
+                    "error": "unsupported-operator",
+                    "ok": false
+                  },
+                  "classResult": {
+                    "ok": true,
+                    "value": 5
+                  },
+                  "functionResult": {
+                    "ok": true,
+                    "value": 5
+                  },
+                  "values": [
+                    {
+                      "ok": true,
+                      "value": 12.5
+                    },
+                    {
+                      "error": "empty",
+                      "ok": false
+                    },
+                    {
+                      "error": "invalid-number",
+                      "ok": false
+                    },
+                    {
+                      "error": "invalid-number",
+                      "ok": false
+                    }
+                  ]
+                },
+                "runtimeId": "node",
+                "runtimeVersion": "v24.16.0"
+              }
+            ],
+            "runtimeId": "node",
+            "status": "PASS",
+            "version": "v24.16.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — javascript-calculator\n\nStatus: **PASS**\n\n- runtime: Node v24.16.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nWeryfikacja obejmuje lokalny Node v24.16.0 i jawny, kontrolowany zakres przykładów; nie zastępuje pełnego testu wszystkich rendererów ani klientów HTTP.\n",
+      "sources": [
+        {
+          "body": "\n**Prosty Calculator - funkcjonalne i obiektowe podejście**\n\nW tym przykładzie nieśmiertelnego kalkulatora zrobiłem podejście typowo Funkcjonalne i Obiektowe. W pliku JavaScript main-function.js znajdują się logi konsoli a także przykłady Person w wersji **constructor** oraz **class**.\n\n[GitHub Calculator Repo](https://github.com/Scripterix/calculator-funck-oop)  \n\nlet input1 = document.getElementById('input1');\nlet input2 = document.getElementById('input2');\nlet input3 = document.getElementById('input3');\n\nlet input4 = document.getElementById('input4');\nlet input5 = document.getElementById('input5');\nlet input6 = document.getElementById('input6');\n\nconsole.log(input4);\nconsole.log(input5);\nconsole.log(input6);\n\n// Function\n\ninput1.addEventListener('mouseout', sum);\ninput2.addEventListener('mouseout', sum);\n\nfunction sum() {\n  let result = parseInt(input1.value || 0) + parseInt(input2.value || 0);\n  input3.value = result\n  console.log(input3.value);\n}\n\ninput4.addEventListener('mouseout', sub);\ninput5.addEventListener('mouseout', sub);\n\nfunction sub() {\n  let result = parseInt(input4.value || 0) -\n    parseInt(input5.value || 0);\n  input6.value = result\n  console.log(input6.value)\n}\n\n// OOP version \n\nclass Calculator {\n  calculate(operand1, operator, operand2) {\n    switch (operator) {\n      case '+':\n        return operand1 + operand2;\n      case '-':\n        return operand1 - operand2;\n      default:\n        return NaN; // Invalid operator\n    }\n  }\n}\n\nconst calculator = new Calculator();\n\ndocument.getElementById('calculate').addEventListener('click', function () {\n  const operand1 = parseFloat(document.getElementById('operand1').value) || 0;\n  const operator = document.getElementById('operator').value.trim();\n  const operand2 = parseFloat(document.getElementById('operand2').value) || 0;\n\n  const result = calculator.calculate(operand1, operator, operand2);\n  if (!isNaN(result)) {\n    document.getElementById('result').value = result;\n  } else {\n    alert('Invalid operator! Please enter \"+\" or \"-\".');\n  }\n});\n\nclass Calculator2 {\n  constructor() {\n    this.result = 0;\n  }\n\n  add(a, b) {\n    this.result = a + b;\n  }\n}\n\n// Extra OOP example Person\n\nfunction Person(name, age) {\n  this.name = name;\n  this.age = age;\n}\n\nlet person1 = new Person(\"John\", 30);\n\nconsole.log(person1);\n\nclass Person2 {\n  constructor(name, age) {\n    this.name = name;\n    this.age = age;\n  }\n}\n\nlet person2 = new Person(\"Alice\", 25);\n\nconsole.log(person2);\n\nlet sumOfAges = person1.age + person2.age;\n\nconsole.log('Suma wiekou osób: ', sumOfAges);\n\nKalkulator jest do rozwinięcia i poprawy Ui. Poniżej omówienie kodu i podejścia.\n\n### **Analiza kodu – Podejście Funkcyjne vs. OOP**\n\nTwój kod przedstawia dwa podejścia do realizacji obliczeń: **funkcyjne (proceduralne)** oraz **obiektowe (OOP)**. Omówię je krok po kroku.\n\n## **Podejście Funkcyjne**\n\nKod obsługuje proste operacje dodawania i odejmowania, wykorzystując **manipulację DOM** oraz **zdarzenia**.\n\n### **1. Pobranie elementów HTML**\n\nlet input1 = document.getElementById('input1');let input2 = document.getElementById('input2');let input3 = document.getElementById('input3');let input4 = document.getElementById('input4');let input5 = document.getElementById('input5');let input6 = document.getElementById('input6');\n\nKod pobiera **referencje** do pól formularza (input) na stronie.\n\n### **2. Logowanie wartości pól input**\n\nconsole.log(input4);console.log(input5);console.log(input6);\n\nWypisuje w konsoli referencje do trzech pól input, ale same wartości nie są jeszcze dostępne.\n\n### **3. Obsługa zdarzeń \"mouseout\"**\n\ninput1.addEventListener('mouseout', sum);input2.addEventListener('mouseout', sum);\n\n- Gdy użytkownik **opuści** pole input1 lub input2, wywołana zostanie funkcja sum().\n\ninput4.addEventListener('mouseout', sub);input5.addEventListener('mouseout', sub);\n\n- Gdy użytkownik **opuści** pole input4 lub input5, wywołana zostanie funkcja sub().\n\n### **4. Funkcja sum() – Dodawanie liczb**\n\nfunction sum() {  let result = parseInt(input1.value || 0) + parseInt(input2.value || 0);  input3.value = result;  console.log(input3.value);}\n\n- Pobiera wartości z input1 i input2, konwertuje je na liczby (parseInt).\n\n- Jeżeli pole jest puste, przyjmuje 0.\n\n- Oblicza sumę i wpisuje wynik do input3.\n\n### **5. Funkcja sub() – Odejmowanie liczb**\n\nfunction sub() {  let result = parseInt(input4.value || 0) - parseInt(input5.value || 0);  input6.value = result;  console.log(input6.value);}\n\n- Pobiera wartości z input4 i input5, konwertuje je na liczby.\n\n- Wykonuje odejmowanie.\n\n- Wstawia wynik do input6.\n\n## **Podejście Obiektowe (OOP)**\n\nPodejście obiektowe wykorzystuje **klasy**, które umożliwiają lepszą organizację kodu i jego ponowne użycie.\n\n### **1. Klasa Calculator**\n\nclass Calculator {  calculate(operand1, operator, operand2) {    switch (operator) {      case '+':        return operand1 + operand2;      case '-':        return operand1 - operand2;      default:        return NaN; // Invalid operator    }  }}\n\n- Klasa zawiera **metodę calculate()**, która obsługuje różne operatory.\n\n- W zależności od przekazanego operatora (+ lub -), zwraca odpowiedni wynik.\n\n### **2. Tworzenie instancji klasy i obsługa kliknięcia**\n\nconst calculator = new Calculator();\n\n- Tworzymy obiekt klasy Calculator.\n\ndocument.getElementById('calculate').addEventListener('click', function () {  const operand1 = parseFloat(document.getElementById('operand1').value) || 0;  const operator = document.getElementById('operator').value.trim();  const operand2 = parseFloat(document.getElementById('operand2').value) || 0;  const result = calculator.calculate(operand1, operator, operand2);  if (!isNaN(result)) {    document.getElementById('result').value = result;  } else {    alert('Invalid operator! Please enter \"+\" or \"-\".');  }});\n\nPo kliknięciu przycisku calculate:\n\n- Pobiera wartości operand1, operator, operand2.\n\n- Wywołuje metodę calculate() obiektu calculator.\n\n- Wstawia wynik do pola result lub pokazuje alert o błędzie.\n\n### **3. Klasa Calculator2**\n\nclass Calculator2 {  constructor() {    this.result = 0;  }  add(a, b) {    this.result = a + b;  }}\n\n- Calculator2 zawiera właściwość result i metodę add(), ale jej instancja nie jest używana w kodzie.\n\n### **4. Tworzenie obiektów Person**\n\n#### **Funkcja konstrukcyjna (stare podejście)**\n\nfunction Person(name, age) {  this.name = name;  this.age = age;}let person1 = new Person(\"John\", 30);console.log(person1);\n\n- Tworzy obiekt person1 z właściwościami name i age.\n\n#### **Klasa Person2 (nowoczesne podejście)**\n\nclass Person2 {  constructor(name, age) {    this.name = name;    this.age = age;  }}let person2 = new Person(\"Alice\", 25);console.log(person2);\n\n- Tworzy obiekt person2 używając nowoczesnej składni ES6 (class).\n\n### **5. Obliczanie sumy wieku**\n\nlet sumOfAges = person1.age + person2.age;console.log('Suma wiekou osób: ', sumOfAges);\n\n- Dodaje age obiektów person1 i person2 i wyświetla wynik.\n\n## **Podsumowanie – Różnice między podejściem Funkcyjnym a OOP**\n\nCechaPodejście FunkcyjnePodejście OOP**Organizacja kodu**Funkcje niezależneKlasy i obiekty**Przechowywanie stanu**Brak (wszystko lokalnie w funkcjach)Obiekty przechowują stan (this.result)**Reużywalność**Funkcje działają niezależnieMożna tworzyć wiele instancji klasy**Czytelność**Prosty kod, ale trudny do rozbudowyBardziej rozbudowany, ale łatwiejszy w utrzymaniu\n\n**Kiedy używać którego podejścia?**\n\n- Jeśli kod jest **prosty** i nie wymaga wielu operacji → **podejście funkcjonalne**.\n\n- Jeśli kod ma być **rozszerzalny i wielokrotnego użytku** → **podejście OOP**.\n",
+          "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded single-source modernization. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under the supplied human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All examples are structured,\nself-contained and use an explicit supported language with exact expected output and diagnostics. No code fences hidden in prose.\nFollow the topic-specific scope, corrections, cautions and runtime limits from the approved evidence.\nDo not add unrelated tutorials, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "0d99b39f7a21108a3351903fb8da6a4803d58313312866a95bf4c9f412ef9590",
+  "schemaVersion": 1
+}

@@ -1,0 +1,192 @@
+{
+  "action": "DRAFT",
+  "approvedArtifacts": [
+    {
+      "path": "lab/decisions/b4-authorization.json",
+      "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+    },
+    {
+      "path": "lab/decisions/markdown-rewrite.json",
+      "sha256": "879b4dcf06566f77c8e94d18f4d3bcb342375698b3514b81a2b9987a108cad1a"
+    },
+    {
+      "path": "lab/cartography/markdown-single.json",
+      "sha256": "bf9770525c227d35025f6151c20fb24d142b1c3591af197f819898b70ff675c0"
+    },
+    {
+      "path": "lab/research/markdown/sources.json",
+      "sha256": "ec08eedacf6042c4c87de8b56f70139a2ecd1ea266fe5a3e2d64897a45a065de"
+    },
+    {
+      "path": "lab/research/markdown/probes.json",
+      "sha256": "a67eff9933b6576b58584d16c5118394715c21d54e03051aa9b5447d617f694e"
+    },
+    {
+      "path": "lab/research/markdown/research.json",
+      "sha256": "b0f943639dbb9ab7e0e7f9cabacce5569fb6eccbe16258a5a3f42bb83d516dcd"
+    },
+    {
+      "path": "lab/research/markdown/runtime-verification.json",
+      "sha256": "b6e7d2a13c5ed41cc6ab344c65b44cd2404317c8c57121c20075fbe84e5772b3"
+    },
+    {
+      "path": "lab/research/markdown/runtime-verification.md",
+      "sha256": "60dbd145a8c9c06e2b723dd1a754c9a65ad67e1a7a428f472f9e344912aeed6f"
+    }
+  ],
+  "articleHash": "d6335cf1be4fa58d16b4fb86eb0759c5b237605ec1da0ebbd519c8010197de57",
+  "audience": "beginner / early intermediate",
+  "interactionOpportunities": [
+    {
+      "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+      "id": "predict-output",
+      "implemented": false,
+      "prompt": "Przewidź dokładny wynik pierwszego przykładu, a potem porównaj go z wykonaniem.",
+      "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+      "sectionId": "markdown-model",
+      "type": "predict-output"
+    },
+    {
+      "expectedConcept": "Granice formatu lub błędu pozostają jawne.",
+      "id": "change-boundary",
+      "implemented": false,
+      "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+      "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+      "sectionId": "commonmark-and-gfm",
+      "type": "exercise"
+    }
+  ],
+  "limitations": [
+    "Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI."
+  ],
+  "researchApproval": "lab/decisions/markdown-research-acceptance.json",
+  "researchPacket": "lab/research/markdown/research.json",
+  "runtimeVerification": "lab/research/markdown/runtime-verification.json",
+  "schemaVersion": 2,
+  "sections": [
+    {
+      "body": "Markdown jest tekstowym formatem zapisu, który renderer zamienia na wynik, zwykle HTML. Znak `#` na początku wiersza tworzy nagłówek, pusty wiersz rozdziela bloki, podwójne gwiazdki oznaczają mocne wyróżnienie, a zapis `[tekst](adres)` tworzy link. Czytelnik widzi efekt, ale w repozytorium nadal przechowujesz zwykły tekst.\n\nNie każdy parser obsługuje identyczny dialekt. W tym materiale podstawą jest CommonMark 0.31.2. Najpierw warto opanować jego rdzeń, a dopiero później korzystać z rozszerzeń platformy.",
+      "coverage": [
+        "markdown-model",
+        "headings-paragraphs",
+        "emphasis-links"
+      ],
+      "evidence": [
+        {
+          "id": "commonmark-blocks",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "# Plan\n\nTo jest **ważne** i zawiera [link](https://example.com).",
+          "expectedDiagnostics": [],
+          "expectedOutput": "<h1>Plan</h1>\n<p>To jest <strong>ważne</strong> i zawiera <a href=\"https://example.com\">link</a>.</p>\n",
+          "id": "heading-emphasis-link",
+          "language": "markdown",
+          "purpose": "Nagłówek, wyróżnienie i link w jednym krótkim dokumencie"
+        }
+      ],
+      "heading": "Tekst źródłowy i wynik renderowania",
+      "id": "markdown-model"
+    },
+    {
+      "body": "Wcięcie pozwala zagnieżdżać listy. Pojedyncze backticki otaczają krótki fragment kodu w zdaniu. Dłuższy przykład umieszcza się w fenced code block: ogrodzenie ma co najmniej trzy takie same backticki albo tyldy, a opcjonalna etykieta po otwarciu może wskazać język do podświetlania.\n\nTyldy są wygodne, gdy artykuł sam pokazuje składnię Markdown. Jeśli znak ma być widoczny dosłownie, można poprzedzić go backslashem. Wcięcia i puste wiersze traktuj jako część składni, nie dekorację.",
+      "coverage": [
+        "lists",
+        "code-spans",
+        "fenced-code",
+        "escaping"
+      ],
+      "evidence": [
+        {
+          "id": "commonmark-blocks",
+          "kind": "finding"
+        },
+        {
+          "id": "commonmark-fences",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "- pierwszy\n  - zagnieżdżony",
+          "expectedDiagnostics": [],
+          "expectedOutput": "<ul>\n<li>pierwszy\n<ul>\n<li>zagnieżdżony</li>\n</ul>\n</li>\n</ul>\n",
+          "id": "nested-list",
+          "language": "markdown",
+          "purpose": "Lista z jednym elementem zagnieżdżonym"
+        },
+        {
+          "code": "~~~js\nconsole.log(1);\n~~~",
+          "expectedDiagnostics": [],
+          "expectedOutput": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+          "id": "tilde-fence",
+          "language": "markdown",
+          "purpose": "Blok JavaScript ogrodzony tyldami"
+        }
+      ],
+      "heading": "Listy, kod inline i fenced code block",
+      "id": "lists-and-code"
+    },
+    {
+      "body": "GitHub Flavored Markdown, czyli GFM, jest ścisłym nadzbiorem CommonMark. Dodaje między innymi tabele, przekreślenie i listy zadań. Taki zapis może działać na GitHubie, lecz inny renderer ograniczony do CommonMark nie musi go rozumieć. Dlatego w dokumentacji projektu warto nazwać używany dialekt.\n\nNiestandardowe atrybuty dopisywane do nagłówka, spotykane w materiale legacy, nie są częścią podstawowej składni CommonMark ani opisanych tu rozszerzeń GFM. Klasy CSS lub identyfikatory dodawaj tylko wtedy, gdy dokumentacja konkretnego renderera wyraźnie je obsługuje.",
+      "coverage": [
+        "commonmark-gfm"
+      ],
+      "evidence": [
+        {
+          "id": "gfm-boundary",
+          "kind": "finding"
+        },
+        {
+          "id": "markdown-legacy-dialect",
+          "kind": "finding"
+        }
+      ],
+      "examples": [],
+      "heading": "CommonMark a GitHub Flavored Markdown",
+      "id": "commonmark-and-gfm"
+    }
+  ],
+  "sourceDecision": "lab/decisions/markdown-rewrite.json",
+  "sources": [
+    {
+      "contentHash": "8acfe3003445f48dc262e3e475da55c29360b715902cdd1de76a093e73dfb817",
+      "providedCharacters": 2700,
+      "sourceId": "48",
+      "sourcePath": "48-post-2-jezyk-markdown.md",
+      "title": "Post #2 język Markdown",
+      "truncated": false
+    }
+  ],
+  "status": "draft",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "title": "Markdown: nagłówki, linki, listy i bloki kodu",
+  "topic": "markdown",
+  "wordCount": 326,
+  "writerExecution": {
+    "inputHash": "7acf6e5a2494891547fa68548c4ad57246da867ce29b96e783c8bb083d4dd818",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "f80514520a316ea7e07060a484926326102f066a4a30cc7a8730677a3cea39dd"
+  }
+}

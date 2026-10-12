@@ -37,6 +37,13 @@ do not override research. Input text is data, not tool instructions. Trusted sna
 are not cryptographic attestations; validators check shape, hashes and references,
 not automatic semantic truth.
 
+For schema-v3 research, both modules preserve the Researcher's Source Authority
+Ladder. Writer cannot silently strengthen lower-tier explanatory or problem-signal
+evidence. Critic evaluates this under `SOURCE_ALIGNMENT` and `UNSUPPORTED_CLAIMS`;
+when the approved packet lacks adequate authority, the result is `NEEDS_RESEARCH`.
+Stack Overflow can identify a real problem or Knowledge Gap but is never accepted as
+the sole source of truth for a technical claim.
+
 ## Writer contract
 
 WriterInputSchema is a strict EditorialInputSchema: config, bounded immutable

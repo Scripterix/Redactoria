@@ -1,0 +1,26 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "calculator-contract",
+    "number-conversion",
+    "finite-number",
+    "operators",
+    "function",
+    "class-method",
+    "errors",
+    "edge-cases"
+  ],
+  "researchApproval": "lab/decisions/javascript-calculator-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-calculator/research.json",
+  "runtimeVerification": "lab/research/javascript-calculator/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/javascript-calculator-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "javascript-calculator"
+}

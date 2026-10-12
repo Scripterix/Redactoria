@@ -1,0 +1,197 @@
+{
+  "action": "DRAFT",
+  "approvedArtifacts": [
+    {
+      "path": "lab/decisions/b4-authorization.json",
+      "sha256": "d239a43634b9a64a6551bc05c2d2414123e4d889a4be85426e7ea7c85863fe16"
+    },
+    {
+      "path": "lab/decisions/javascript-calculator-rewrite.json",
+      "sha256": "a46bdd4abf45f40b0fba820f22e22fa1b9e8fe1ad6a043a34bb3060ea5e90de8"
+    },
+    {
+      "path": "lab/cartography/javascript-calculator-single.json",
+      "sha256": "cb3dabb2676921c75c9056c37fd8aa2fcd4b50a2ec78570728c998a3b0c52786"
+    },
+    {
+      "path": "lab/research/javascript-calculator/sources.json",
+      "sha256": "0873fe3c50291fae0314a00239ebbc116f7618bd49a1b7574068752ac0a03d7d"
+    },
+    {
+      "path": "lab/research/javascript-calculator/probes.json",
+      "sha256": "2d94adc09bd57d43cddfbe7b850f05d0d4aa15b4643ec61c92feabfd37d3639d"
+    },
+    {
+      "path": "lab/research/javascript-calculator/research.json",
+      "sha256": "5e78f0b4ea3156e72bb936bd014aebeda8d6826b345f8eb68f2685932c0bcb96"
+    },
+    {
+      "path": "lab/research/javascript-calculator/runtime-verification.json",
+      "sha256": "58784b4639f02e8ec84538cfe8fdfb02549f250172f48db96db8d7bb7a7ac0ed"
+    },
+    {
+      "path": "lab/research/javascript-calculator/runtime-verification.md",
+      "sha256": "6c5d21045a0fadb62acc585afa5c836e186fba08a8a87b9f1deaa237bba913cc"
+    }
+  ],
+  "articleHash": "5d7211e27cb0d03a59ecc154015832dad1e7b6e923b543bad4742a3ad5162966",
+  "audience": "beginner / early intermediate",
+  "interactionOpportunities": [
+    {
+      "expectedConcept": "Jawny kontrakt i obserwowalny wynik.",
+      "id": "predict-output",
+      "implemented": false,
+      "prompt": "Przewidź dokładny wynik pierwszego przykładu, a potem porównaj go z wykonaniem.",
+      "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+      "sectionId": "calculator-contract",
+      "type": "predict-output"
+    },
+    {
+      "expectedConcept": "Granice formatu lub błędu pozostają jawne.",
+      "id": "change-boundary",
+      "implemented": false,
+      "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+      "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+      "sectionId": "function-or-class",
+      "type": "exercise"
+    }
+  ],
+  "limitations": [
+    "Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI."
+  ],
+  "researchApproval": "lab/decisions/javascript-calculator-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-calculator/research.json",
+  "runtimeVerification": "lab/research/javascript-calculator/runtime-verification.json",
+  "schemaVersion": 2,
+  "sections": [
+    {
+      "body": "Prosty kalkulator potrzebuje jawnej listy operatorów oraz przewidywalnego wyniku błędu. Zamiast wykonywać dowolny tekst, funkcja poniżej dopuszcza tylko dodawanie i odejmowanie. Zwraca obiekt z polem `ok`, dzięki czemu kod wywołujący nie musi zgadywać, czy liczba jest wynikiem, czy wartością zastępczą.\n\nTaki rdzeń nie zna DOM-u i nie czyta pól formularza. Dzięki temu można go wykonać bez przeglądarki, a warstwę interfejsu dołączyć osobno.",
+      "coverage": [
+        "calculator-contract",
+        "operators",
+        "errors"
+      ],
+      "evidence": [
+        {
+          "id": "function-class-boundary",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "function calculate(a, operator, b) {\n  if (!['+', '-'].includes(operator)) {\n    return { ok: false, error: 'unsupported-operator' };\n  }\n  return { ok: true, value: operator === '+' ? a + b : a - b };\n}\nconsole.log(JSON.stringify(calculate(7, '-', 2)));\nconsole.log(JSON.stringify(calculate(1, '*', 2)));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "{\"ok\":true,\"value\":5}\n{\"ok\":false,\"error\":\"unsupported-operator\"}\n",
+          "id": "calculate-operation",
+          "language": "js",
+          "purpose": "Dwa obsługiwane operatory i jawny błąd"
+        }
+      ],
+      "heading": "Najpierw kontrakt kalkulatora",
+      "id": "calculator-contract"
+    },
+    {
+      "body": "Wartość z formularza jest tekstem. Najpierw odrzuć `null`, `undefined` i tekst pusty po `trim()`. Następnie użyj `Number`, aby przetworzyć całą wartość, oraz `Number.isFinite`, aby odrzucić `NaN` i nieskończoność. Napis `12px` nie jest poprawną liczbą dla tego kontraktu.\n\nZapis `parseFloat(value) || 0` jest kusząco krótki, ale maskuje błąd jako zero. Zero może być prawidłowym operandem, więc brak danych i błędne dane powinny dostać osobne rezultaty.",
+      "coverage": [
+        "number-conversion",
+        "finite-number",
+        "edge-cases"
+      ],
+      "evidence": [
+        {
+          "id": "number-conversion",
+          "kind": "finding"
+        },
+        {
+          "id": "finite-no-coercion",
+          "kind": "finding"
+        },
+        {
+          "id": "calculator-default-zero",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "function parseDecimal(raw) {\n  if (raw == null || String(raw).trim() === '') {\n    return { ok: false, error: 'empty' };\n  }\n  const value = Number(raw);\n  return Number.isFinite(value)\n    ? { ok: true, value }\n    : { ok: false, error: 'invalid-number' };\n}\nconsole.log(JSON.stringify(['12.5', ' ', '12px', 'Infinity'].map(parseDecimal)));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "[{\"ok\":true,\"value\":12.5},{\"ok\":false,\"error\":\"empty\"},{\"ok\":false,\"error\":\"invalid-number\"},{\"ok\":false,\"error\":\"invalid-number\"}]\n",
+          "id": "parse-decimal",
+          "language": "js",
+          "purpose": "Walidacja wartości pustej, niepełnej i nieskończonej"
+        }
+      ],
+      "heading": "Od tekstu do skończonej liczby",
+      "id": "number-input"
+    },
+    {
+      "body": "Zwykła funkcja wystarcza, gdy operacja nie przechowuje stanu. Klasa może zapewnić wygodne API, gdy kalkulator ma konfigurację lub kilka powiązanych metod. Sama obecność klasy nie zmienia reguł dodawania ani odejmowania.\n\nNajprostsza metoda może delegować do przetestowanej funkcji. Nie nazywaj jednak każdej funkcji „programowaniem funkcyjnym”: w tym przykładzie chodzi o organizację kodu i jeden wspólny kontrakt.",
+      "coverage": [
+        "function",
+        "class-method"
+      ],
+      "evidence": [
+        {
+          "id": "function-class-boundary",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "function calculate(a, operator, b) {\n  if (operator === '+') return a + b;\n  if (operator === '-') return a - b;\n  throw new Error('unsupported-operator');\n}\nclass Calculator {\n  calculate(a, operator, b) {\n    return calculate(a, operator, b);\n  }\n}\nconsole.log(calculate(7, '-', 2));\nconsole.log(new Calculator().calculate(7, '-', 2));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "5\n5\n",
+          "id": "calculator-class",
+          "language": "js",
+          "purpose": "Metoda klasy delegująca do zwykłej funkcji"
+        }
+      ],
+      "heading": "Funkcja albo metoda klasy",
+      "id": "function-or-class"
+    }
+  ],
+  "sourceDecision": "lab/decisions/javascript-calculator-rewrite.json",
+  "sources": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "status": "draft",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "title": "Kalkulator w JavaScript: walidacja, funkcja i klasa",
+  "topic": "javascript-calculator",
+  "wordCount": 290,
+  "writerExecution": {
+    "inputHash": "37f57a48561e2aff953f167a3354c9c0b55fe7835ecee20f0fbbecebcca074ad",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "0d99b39f7a21108a3351903fb8da6a4803d58313312866a95bf4c9f412ef9590"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "asOfDate": "2026-10-12",
+  "probes": [
+    {
+      "code": "import * as commonmark from 'commonmark'; const parser = new commonmark.Parser(); const renderer = new commonmark.HtmlRenderer(); const samples = { core: '# Tytuł\\n\\n**ważne** i [link](https://example.com)', list: '- jeden\\n  - dwa', fence: '~~~js\\nconsole.log(1);\\n~~~' }; const output = Object.fromEntries(Object.entries(samples).map(([key, value]) => [key, renderer.render(parser.parse(value))])); console.log(JSON.stringify(output));",
+      "codeHash": "b2b4eb2e91f4bbf9dd43045edad67fac6392acb26b421892cd453eda4a33148f",
+      "description": "Render headings, emphasis, links, nested lists and tilde-fenced code with commonmark 0.31.2",
+      "diagnostics": [],
+      "id": "node-commonmark-render",
+      "result": {
+        "core": "<h1>Tytuł</h1>\n<p><strong>ważne</strong> i <a href=\"https://example.com\">link</a></p>\n",
+        "fence": "<pre><code class=\"language-js\">console.log(1);\n</code></pre>\n",
+        "list": "<ul>\n<li>jeden\n<ul>\n<li>dwa</li>\n</ul>\n</li>\n</ul>\n"
+      },
+      "runtimeId": "node",
+      "runtimeVersion": "v24.16.0"
+    }
+  ],
+  "provenance": "Source Authority Ladder snapshots plus one controlled local Node probe; no external example API calls.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-markdown"
+      ],
+      "id": "commonmark-core",
+      "question": "Jak działają podstawowe bloki i elementy inline oraz fenced code blocks w CommonMark?",
+      "section": "commonmark"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-markdown"
+      ],
+      "id": "gfm-boundary",
+      "question": "Które elementy są rozszerzeniami GFM i dlaczego trzeba nazwać dialekt?",
+      "section": "dialects"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "c85f56cc2101f761cc94215c677cd2c7c1ecca9c47be016479fdfe718af60f0d",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "blocks-inlines",
+          "locator": "3 Blocks and inlines",
+          "text": "A document contains block structures such as paragraphs, headings, lists and code blocks, whose content can contain inline elements."
+        },
+        {
+          "id": "fenced-code",
+          "locator": "4.5 Fenced code blocks",
+          "text": "A fenced code block starts with at least three consecutive backticks or tildes; the two fence characters cannot be mixed."
+        },
+        {
+          "id": "inline-links",
+          "locator": "6.4 Links",
+          "text": "Inline links place the destination and optional title directly after link text."
+        }
+      ],
+      "id": "commonmark-spec",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://spec.commonmark.org/0.31.2/",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "CommonMark Specification 0.31.2",
+      "url": "https://spec.commonmark.org/0.31.2/"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "b153d814fdfc8624bb6da7449162c1cd707a637f7d1c1b636eb44b9cf63fa220",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "gfm-superset",
+          "locator": "1.1 What is GitHub Flavored Markdown?",
+          "text": "GFM is a strict superset of CommonMark and marks its additional features as extensions."
+        },
+        {
+          "id": "gfm-extensions",
+          "locator": "4.10 and 5 Extensions",
+          "text": "Tables, strikethrough and task list items are defined as GFM extensions rather than CommonMark core syntax."
+        }
+      ],
+      "id": "gfm-spec",
+      "kind": "project-documentation",
+      "retrieval": {
+        "finalUrl": "https://github.github.com/gfm/",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-12T20:42:35.721Z",
+      "sourceType": "authority-ladder",
+      "title": "GitHub Flavored Markdown Specification",
+      "url": "https://github.github.com/gfm/"
+    }
+  ],
+  "topicSlug": "markdown"
+}
