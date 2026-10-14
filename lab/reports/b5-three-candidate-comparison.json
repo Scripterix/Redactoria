@@ -1,0 +1,105 @@
+{
+  "boundaries": {
+    "contentModified": false,
+    "deployment": false,
+    "gitCommitOrPush": false,
+    "publicationDecisionRecorded": false,
+    "publicationPerformed": false,
+    "sourceModified": false
+  },
+  "comparison": [
+    "Wszystkie trzy pozycje zaakceptowanej kolejki B5 pozostały zasadne po ponownej weryfikacji i zakończyły się dokładnym kandydatem LAB.",
+    "Kontrakty runtime rozszerzono wstecznie kompatybilnie o narzędzia CLI, dzięki czemu finalne przykłady Git, curl i Python mają rzeczywiste, przypięte wykonanie.",
+    "Każdy pierwszy pełny przebieg Critica zwrócił PASS bez wymaganych zmian; żaden kandydat nie otrzymał decyzji publikacyjnej."
+  ],
+  "generatedAt": "2026-10-14T07:14:49.004+02:00",
+  "qualityGaps": [
+    "Git zweryfikowano w jednej dostępnej wersji Windows; materiał celowo nie obejmuje hostingu, push, merge ani konfiguracji globalnej.",
+    "curl zweryfikowano wyłącznie względem kontrolowanego serwera 127.0.0.1; materiał nie dowodzi zachowania dowolnego zewnętrznego API ani sieci produkcyjnej.",
+    "Python sprawdzono w wersjach 3.14.5 i 3.11.9; normalizacja końców linii CRLF do LF jest jawnie zapisana jako ograniczenie środowiska Windows."
+  ],
+  "samples": [
+    {
+      "articleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+      "candidateJsonHash": "e2d7e47d70d339ec1a42a3fd1df4a870cb1ff237681bd0fb6de2d4cdbcd3b83d",
+      "candidateSchema": 3,
+      "corrections": 1,
+      "criticIterations": 1,
+      "criticVerdict": "PASS",
+      "exactCandidate": true,
+      "exampleAssertions": 9,
+      "examples": 3,
+      "officialSources": 6,
+      "rank": 8,
+      "requiredChanges": 0,
+      "runtimeTargets": [
+        "Git 2.21.0.windows.1"
+      ],
+      "sourceId": "277",
+      "topic": "git-local-basics",
+      "unresolvedQuestions": 0,
+      "verifiedFacts": 3,
+      "wordCount": 364
+    },
+    {
+      "articleHash": "6d5442a749bb2d76b183fa7f26e423e0b6725d394b0779adf9f9219cecfc5fe7",
+      "candidateJsonHash": "0048cdf3e038e5abe995db735bd2541170963ada20c5f882ed8442ff49225fed",
+      "candidateSchema": 3,
+      "corrections": 1,
+      "criticIterations": 1,
+      "criticVerdict": "PASS",
+      "exactCandidate": true,
+      "exampleAssertions": 6,
+      "examples": 2,
+      "officialSources": 2,
+      "rank": 9,
+      "requiredChanges": 0,
+      "runtimeTargets": [
+        "curl 8.13.0"
+      ],
+      "sourceId": "1336",
+      "topic": "curl-http-basics",
+      "unresolvedQuestions": 0,
+      "verifiedFacts": 3,
+      "wordCount": 311
+    },
+    {
+      "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+      "candidateJsonHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+      "candidateSchema": 3,
+      "corrections": 1,
+      "criticIterations": 1,
+      "criticVerdict": "PASS",
+      "exactCandidate": true,
+      "exampleAssertions": 18,
+      "examples": 3,
+      "officialSources": 2,
+      "rank": 10,
+      "requiredChanges": 0,
+      "runtimeTargets": [
+        "Python 3.14.5",
+        "Python 3.11.9"
+      ],
+      "sourceId": "283",
+      "topic": "python-fundamentals",
+      "unresolvedQuestions": 0,
+      "verifiedFacts": 4,
+      "wordCount": 260
+    }
+  ],
+  "schemaVersion": 1,
+  "status": "B5_COMPLETE_LAB_ONLY",
+  "totals": {
+    "corrections": 3,
+    "criticIterations": 3,
+    "exampleAssertions": 33,
+    "examples": 8,
+    "jobs": 3,
+    "officialSources": 10,
+    "requiredChanges": 0,
+    "runtimeExecutions": 4,
+    "unresolvedQuestions": 0,
+    "verifiedFacts": 10,
+    "words": 935
+  }
+}

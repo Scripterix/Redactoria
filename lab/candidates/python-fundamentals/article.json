@@ -1,0 +1,246 @@
+{
+  "approvedForPublication": false,
+  "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "criticReviewHash": "d0a07ca5e246025da4e649f49b4411bd1911996a82eeb12c4fec75e0f057bd5d",
+  "criticReviewRef": "lab/reviews/python-fundamentals/critic-review.json",
+  "criticVerdict": "PASS",
+  "draftMetadataHash": "f5f8d19e2a0a2d941ac7fd24a38e5dec0b30430eb8539f34031ddb2f8bd93b76",
+  "draftMetadataRef": "lab/drafts/python-fundamentals/article.json",
+  "draftRef": "lab/drafts/python-fundamentals/article.md",
+  "humanPublicationDecision": "pending",
+  "preparedAt": "2026-10-13T19:42:44.640Z",
+  "published": false,
+  "readyForHumanPublicationDecision": true,
+  "researchApproval": "lab/decisions/python-fundamentals-research-acceptance.json",
+  "researchPacket": "lab/research/python-fundamentals/research.json",
+  "reviewedDraft": {
+    "action": "DRAFT",
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b5-authorization.json",
+        "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+      },
+      {
+        "path": "lab/decisions/python-fundamentals-rewrite.json",
+        "sha256": "43add2d256a941c3d97aab47500ee76714302ad60ea3d91e09c688e83f3e3bab"
+      },
+      {
+        "path": "lab/cartography/python-fundamentals-single.json",
+        "sha256": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981"
+      },
+      {
+        "path": "lab/research/python-fundamentals/sources.json",
+        "sha256": "cf7ef1a04be92855cb225b113e11905d77bceda49dab4c957a04191f8a56752a"
+      },
+      {
+        "path": "lab/research/python-fundamentals/probes.json",
+        "sha256": "23d5fb6157820f001225b9f5e45b660a2494d5bc83b3f49497e6ac4b3d276f26"
+      },
+      {
+        "path": "lab/research/python-fundamentals/research.json",
+        "sha256": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57"
+      },
+      {
+        "path": "lab/research/python-fundamentals/runtime-verification.json",
+        "sha256": "b01184ed371682f288b67861bfe3e868ee0f79e298bb6512dcec359f21e5de1f"
+      },
+      {
+        "path": "lab/research/python-fundamentals/runtime-verification.md",
+        "sha256": "507e1488c954f861ba1bcccdeea9bba2ce4aa213d70174cbed6d1b9dcbd4cf0c"
+      }
+    ],
+    "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+    "audience": "beginner / intermediate",
+    "interactionOpportunities": [
+      {
+        "expectedConcept": "Jawny stan wejściowy prowadzi do obserwowalnego wyniku.",
+        "id": "predict-output",
+        "implemented": false,
+        "prompt": "Przewidź dokładny wynik pierwszego wykonywalnego przykładu, a potem porównaj go z uruchomieniem.",
+        "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+        "sectionId": "conditions-range",
+        "type": "predict-output"
+      },
+      {
+        "expectedConcept": "Granice polecenia lub języka pozostają jawne.",
+        "id": "change-boundary",
+        "implemented": false,
+        "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+        "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+        "sectionId": "function-return",
+        "type": "exercise"
+      }
+    ],
+    "limitations": [
+      "Przykłady dotyczą czystego Pythona 3.14 i 3.11. Nie obejmują sieci, bibliotek zewnętrznych, scrapingu, AI ani Pythona 2."
+    ],
+    "researchApproval": "lab/decisions/python-fundamentals-research-acceptance.json",
+    "researchPacket": "lab/research/python-fundamentals/research.json",
+    "runtimeVerification": "lab/research/python-fundamentals/runtime-verification.json",
+    "schemaVersion": 2,
+    "sections": [
+      {
+        "body": "Python przechowuje wartości różnych typów, między innymi liczby, napisy i listy. `type(value).__name__` pozwala zobaczyć nazwę typu. Lista zachowuje kolejność, jej pierwszy element ma indeks `0`, a slicing `lista[1:]` zwraca nową listę od indeksu 1 do końca.\n\nPrzypisanie wiąże nazwę z wartością. Nie trzeba deklarować typu przed pierwszym przypisaniem, ale kod nadal powinien jasno określać, jakich danych oczekuje.",
+        "coverage": [
+          "values",
+          "types",
+          "lists",
+          "indexing",
+          "slicing"
+        ],
+        "evidence": [
+          {
+            "id": "python-values-lists",
+            "kind": "finding"
+          },
+          {
+            "id": "executed-boundaries",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "name = \"Ada\"\nscores = [2, 4, 6]\nprint(type(name).__name__)\nprint(scores[0])\nprint(scores[1:])",
+            "expectedDiagnostics": [],
+            "expectedOutput": "str\n2\n[4, 6]\n",
+            "id": "python-values-lists",
+            "language": "python",
+            "purpose": "Typ napisu, pierwszy element i fragment listy"
+          }
+        ],
+        "heading": "Wartości, typy i listy",
+        "id": "values-lists"
+      },
+      {
+        "body": "`if`, `elif` i `else` wybierają jedną gałąź. Blok jest wyznaczony wcięciem, dlatego linie należące do warunku muszą mieć spójne wcięcie.\n\n`range(-1, 2)` tworzy wartości -1, 0 i 1; koniec 2 jest wyłączony. Pętla `for` przechodzi po każdej z nich. Ten przykład obejmuje gałąź ujemną, zero i gałąź dodatnią.",
+        "coverage": [
+          "if-elif-else",
+          "for",
+          "range",
+          "indentation"
+        ],
+        "evidence": [
+          {
+            "id": "python-branches",
+            "kind": "finding"
+          },
+          {
+            "id": "python-range",
+            "kind": "finding"
+          },
+          {
+            "id": "python-complete-blocks",
+            "kind": "finding"
+          },
+          {
+            "id": "executed-boundaries",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "for number in range(-1, 2):\n    if number > 0:\n        label = \"positive\"\n    elif number < 0:\n        label = \"negative\"\n    else:\n        label = \"zero\"\n    print(number, label)",
+            "expectedDiagnostics": [],
+            "expectedOutput": "-1 negative\n0 zero\n1 positive\n",
+            "id": "python-condition-range",
+            "language": "python",
+            "purpose": "Trzy gałęzie dla wartości z range"
+          }
+        ],
+        "heading": "Warunek i pętla range",
+        "id": "conditions-range"
+      },
+      {
+        "body": "`def` rozpoczyna definicję funkcji. Parametr `values` przyjmuje listę przekazaną przy wywołaniu. `return` kończy funkcję i oddaje obliczony wynik; dopiero `print` wypisuje go na standardowe wyjście.\n\nFunkcja poniżej używa jawnej wartości początkowej `0`, dzięki czemu dla pustej listy również zwróci zero.",
+        "coverage": [
+          "functions",
+          "return"
+        ],
+        "evidence": [
+          {
+            "id": "python-function-return",
+            "kind": "finding"
+          },
+          {
+            "id": "python-complete-blocks",
+            "kind": "finding"
+          },
+          {
+            "id": "executed-boundaries",
+            "kind": "finding"
+          }
+        ],
+        "examples": [
+          {
+            "code": "def total(values):\n    result = 0\n    for value in values:\n        result += value\n    return result\n\nprint(total([2, 4, 6]))\nprint(total([]))",
+            "expectedDiagnostics": [],
+            "expectedOutput": "12\n0\n",
+            "id": "python-function-total",
+            "language": "python",
+            "purpose": "Suma listy zwracana z funkcji"
+          }
+        ],
+        "heading": "Funkcja zwraca wynik",
+        "id": "function-return"
+      }
+    ],
+    "sourceDecision": "lab/decisions/python-fundamentals-rewrite.json",
+    "sources": [
+      {
+        "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+        "providedCharacters": 6634,
+        "sourceId": "283",
+        "sourcePath": "283-post-10-python-crash-course.md",
+        "title": "Post #10 Python Crash Course",
+        "truncated": false
+      }
+    ],
+    "status": "draft",
+    "targetRuntimes": [
+      {
+        "id": "python-3-14",
+        "kind": "cli",
+        "version": "3.14.5"
+      },
+      {
+        "id": "python-3-11",
+        "kind": "cli",
+        "version": "3.11.9"
+      }
+    ],
+    "title": "Podstawy Pythona: wartości, warunki, pętle i funkcje",
+    "topic": "python-fundamentals",
+    "wordCount": 260,
+    "writerExecution": {
+      "inputHash": "7dcaba42cf938228d72888f631164245bea049334ac0c950d08a05d30a9f3d97",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "a47f973920ab24d015e126f54384978bbc4c1ad18d2f8ad09d51df8ea67e6981"
+    }
+  },
+  "revisionHash": "e006b8bc015c4096dbdecd9133e9cb90089f2ba8484d155216e16ba5ce8b4fad",
+  "revisionRef": "lab/drafts/python-fundamentals/revision.json",
+  "runtimeVerification": "lab/research/python-fundamentals/runtime-verification.json",
+  "schemaVersion": 3,
+  "sourceDecision": "lab/decisions/python-fundamentals-rewrite.json",
+  "status": "publication-candidate",
+  "targetRuntimes": [
+    {
+      "id": "python-3-14",
+      "kind": "cli",
+      "version": "3.14.5"
+    },
+    {
+      "id": "python-3-11",
+      "kind": "cli",
+      "version": "3.11.9"
+    }
+  ],
+  "title": "Podstawy Pythona: wartości, warunki, pętle i funkcje",
+  "topic": "python-fundamentals",
+  "wordCount": 260
+}

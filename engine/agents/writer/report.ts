@@ -1,10 +1,13 @@
 import type { WriterAnalysis, Draft } from './contract.ts';
 import { stableJson } from '../../core/serialization.ts';
-export function renderArticle(analysis: WriterAnalysis & { interactionOpportunities?: Draft['interactionOpportunities'] }) {
+type RenderableAnalysis = WriterAnalysis & { interactionOpportunities?: Draft['interactionOpportunities'] };
+const CURRENT_AUDIENCE = 'Materiał dla początkujących i osób na poziomie średnim.';
+const LEGACY_AUDIENCE = 'Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.';
+function renderArticleWithAudience(analysis: RenderableAnalysis, audience: string) {
  const scope = 'targetPhpVersions' in analysis
   ? 'PHP ' + analysis.targetPhpVersions.join('–')
   : analysis.targetRuntimes.map(runtime => `${runtime.kind} ${runtime.version}`).join(', ');
- const lines = ['# ' + analysis.title, '', 'Zakres: ' + scope + '. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.', ''];
+ const lines = ['# ' + analysis.title, '', 'Zakres: ' + scope + '. ' + audience, ''];
  for (const section of analysis.sections) {
   lines.push('<a id="' + section.id + '"></a>', '', '## ' + section.heading, '', section.body, '');
   for (const example of section.examples) lines.push('### ' + example.purpose, '', '```' + (example.language ?? 'php'), example.code, '```', '',
@@ -19,6 +22,13 @@ export function renderArticle(analysis: WriterAnalysis & { interactionOpportunit
  lines.push('---', '', note, '',
   ...analysis.limitations.map(item => '- ' + item), '');
  return lines.join('\n');
+}
+export function renderArticle(analysis: RenderableAnalysis) {
+ return renderArticleWithAudience(analysis, CURRENT_AUDIENCE);
+}
+/** Replays immutable pre-cleanup drafts without changing their recorded hashes. */
+export function renderLegacyArticle(analysis: RenderableAnalysis) {
+ return renderArticleWithAudience(analysis, LEGACY_AUDIENCE);
 }
 export function wordCount(article: string) {
  const prose = article.replace(/\`\`\`[\s\S]*?\`\`\`/g, '').replace(/<[^>]*>/g, '');

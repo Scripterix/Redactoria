@@ -1,0 +1,34 @@
+{
+  "audience": "beginner / intermediate",
+  "requiredCoverage": [
+    "values",
+    "types",
+    "lists",
+    "indexing",
+    "slicing",
+    "if-elif-else",
+    "for",
+    "range",
+    "functions",
+    "return",
+    "indentation"
+  ],
+  "researchApproval": "lab/decisions/python-fundamentals-research-acceptance.json",
+  "researchPacket": "lab/research/python-fundamentals/research.json",
+  "runtimeVerification": "lab/research/python-fundamentals/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/python-fundamentals-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "python-3-14",
+      "kind": "cli",
+      "version": "3.14.5"
+    },
+    {
+      "id": "python-3-11",
+      "kind": "cli",
+      "version": "3.11.9"
+    }
+  ],
+  "topic": "python-fundamentals"
+}

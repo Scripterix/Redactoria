@@ -1,0 +1,157 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja obejmuje czysty Python 3.14.5 i 3.11.9 bez sieci oraz bibliotek zewnętrznych; nie jest deklaracją zgodności z Pythonem 2."
+  ],
+  "packetHash": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "labels": [
+              "negative",
+              "zero",
+              "positive"
+            ],
+            "range": [
+              1,
+              3,
+              5
+            ],
+            "slice": [
+              4,
+              6
+            ]
+          },
+          "expected": {
+            "labels": [
+              "negative",
+              "zero",
+              "positive"
+            ],
+            "range": [
+              1,
+              3,
+              5
+            ],
+            "slice": [
+              4,
+              6
+            ]
+          },
+          "id": "python-3-14-fundamentals-observed",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "records": [
+        {
+          "code": "import json\nvalues = [2, 4, 6]\ndef classify(number):\n    if number > 0:\n        return \"positive\"\n    if number < 0:\n        return \"negative\"\n    return \"zero\"\nprint(json.dumps({\"slice\": values[1:], \"range\": list(range(1, 6, 2)), \"labels\": [classify(x) for x in [-1, 0, 1]]}, separators=(\",\", \":\")))",
+          "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+          "description": "Numbers, lists, slicing, range, conditions and function return values",
+          "diagnostics": [],
+          "id": "python-3-14-fundamentals",
+          "result": {
+            "labels": [
+              "negative",
+              "zero",
+              "positive"
+            ],
+            "range": [
+              1,
+              3,
+              5
+            ],
+            "slice": [
+              4,
+              6
+            ]
+          },
+          "runtimeId": "python-3-14",
+          "runtimeVersion": "3.14.5"
+        }
+      ],
+      "runtimeId": "python-3-14",
+      "status": "PASS",
+      "version": "3.14.5"
+    },
+    {
+      "checks": [
+        {
+          "actual": {
+            "labels": [
+              "negative",
+              "zero",
+              "positive"
+            ],
+            "range": [
+              1,
+              3,
+              5
+            ],
+            "slice": [
+              4,
+              6
+            ]
+          },
+          "expected": {
+            "labels": [
+              "negative",
+              "zero",
+              "positive"
+            ],
+            "range": [
+              1,
+              3,
+              5
+            ],
+            "slice": [
+              4,
+              6
+            ]
+          },
+          "id": "python-3-11-fundamentals-observed",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "records": [
+        {
+          "code": "import json\nvalues = [2, 4, 6]\ndef classify(number):\n    if number > 0:\n        return \"positive\"\n    if number < 0:\n        return \"negative\"\n    return \"zero\"\nprint(json.dumps({\"slice\": values[1:], \"range\": list(range(1, 6, 2)), \"labels\": [classify(x) for x in [-1, 0, 1]]}, separators=(\",\", \":\")))",
+          "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+          "description": "Numbers, lists, slicing, range, conditions and function return values",
+          "diagnostics": [],
+          "id": "python-3-11-fundamentals",
+          "result": {
+            "labels": [
+              "negative",
+              "zero",
+              "positive"
+            ],
+            "range": [
+              1,
+              3,
+              5
+            ],
+            "slice": [
+              4,
+              6
+            ]
+          },
+          "runtimeId": "python-3-11",
+          "runtimeVersion": "3.11.9"
+        }
+      ],
+      "runtimeId": "python-3-11",
+      "status": "PASS",
+      "version": "3.11.9"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

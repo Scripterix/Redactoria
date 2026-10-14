@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import FeaturedImage from './FeaturedImage.astro';
 
 interface Props {
 	article: CollectionEntry<'articles'>;
@@ -20,6 +21,14 @@ const publishedDate = article.data.created.toLocaleDateString('pl-PL', {
 		<time datetime={article.data.created.toISOString()}>{publishedDate}</time>
 	</p>
 	<h2><a href={`/artykuly/${article.data.slug}/`}>{article.data.title}</a></h2>
+	<a class="card__image-link" href={`/artykuly/${article.data.slug}/`}>
+		<FeaturedImage
+			title={article.data.title}
+			featuredImage={article.data.featuredImage}
+			featuredAlt={article.data.featuredAlt}
+			variant="thumbnail"
+		/>
+	</a>
 	<p class="card__description">{article.data.description}</p>
 	<a class="card__link" href={`/artykuly/${article.data.slug}/`} aria-label={`Czytaj: ${article.data.title}`}>
 		Czytaj artykuł <span aria-hidden="true">→</span>
@@ -49,6 +58,13 @@ const publishedDate = article.data.created.toLocaleDateString('pl-PL', {
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		flex-wrap: wrap;
+	}
+
+	.card__image-link {
+		display: block;
+		margin-top: 1.25rem;
+		border-radius: var(--radius-small);
+		overflow: hidden;
 	}
 
 	h2 {

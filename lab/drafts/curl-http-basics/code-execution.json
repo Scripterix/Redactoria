@@ -1,0 +1,42 @@
+{
+  "articleHash": "6d5442a749bb2d76b183fa7f26e423e0b6725d394b0779adf9f9219cecfc5fe7",
+  "executedAt": "2026-10-13T19:41:35.389Z",
+  "limitations": [
+    "Examples ran independently against a controlled local fixture; no remote service or global configuration was used."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "33583bd30b644839147e1a9ff02a601642456df5cc3be49ec0f65017451abc8e",
+          "exitCode": 0,
+          "id": "curl-get-json",
+          "limitation": "Executed against a controlled loopback HTTP server on 127.0.0.1:38421.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "{\"name\":\"Ada\"}\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "19c0d6ab398885134c9869ccc40229dc4700e8e2746a99cbfb9bca8b8ad6c443",
+          "exitCode": 0,
+          "id": "curl-http-status",
+          "limitation": "Executed against a controlled loopback HTTP server on 127.0.0.1:38421.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "status=404"
+        }
+      ],
+      "executableHash": "3345339164cf384eff527b6c3160fea8d849a4231ec6ca80513e3a739e505168",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "runtimeId": "curl",
+      "version": "8.13.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

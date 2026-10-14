@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import ArticleMeta from '../components/content/ArticleMeta.astro';
 import CodeCopy from '../components/content/CodeCopy.astro';
+import FeaturedImage from '../components/content/FeaturedImage.astro';
 import SourceList from '../components/content/SourceList.astro';
 import BaseLayout from './BaseLayout.astro';
 
@@ -23,6 +24,14 @@ const hasCodeBlocks = /(^|\n) {0,3}(?:```|~~~)/.test(article.body ?? '');
 			<p class="article__description">{article.data.description}</p>
 			<ArticleMeta {article} />
 		</header>
+		<div class="article__featured">
+			<FeaturedImage
+				title={article.data.title}
+				featuredImage={article.data.featuredImage}
+				featuredAlt={article.data.featuredAlt}
+				variant="hero"
+			/>
+		</div>
 
 		<div class="article__body">
 			{sections.length > 4 && <details class="article__toc">
@@ -60,6 +69,11 @@ const hasCodeBlocks = /(^|\n) {0,3}(?:```|~~~)/.test(article.body ?? '');
 		margin-inline: auto;
 		padding-bottom: clamp(3rem, 6vw, 5rem);
 		border-bottom: 1px solid var(--color-line);
+	}
+
+	.article__featured {
+		max-width: 70rem;
+		margin: clamp(2rem, 5vw, 4rem) auto 0;
 	}
 
 	.article__eyebrow {

@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "Każdy finalny przykład ma zgodny hash, dokładny oczekiwany wynik i przeszedł rzeczywiste kontrolowane wykonanie CLI.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "da7ef0bfc851eb9e4353fdaad81cd342b401dd1f5064bd1c749786d897ce53b8",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "8d90216f0b9ebb15341e921fe2b2dea840cacf6886469fa8f167c8eed722fea4"
+  },
+  "draftMetadataHash": "1e7b13cb5187affe5c9b22dabe173e777b61ef36a31fb434a9b6dfd89b656c93",
+  "draftRef": "lab/drafts/git-local-basics/article.md",
+  "issues": [],
+  "limitations": [
+    "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; decyzja publikacyjna pozostaje oddzielnym krokiem człowieka."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/git-local-basics-research-acceptance.json",
+  "researchPacket": "lab/research/git-local-basics/research.json",
+  "schemaVersion": 1,
+  "summary": "Draft pozostaje w autoryzowanym zakresie B5, koryguje materiał legacy, wiąże twierdzenia z oficjalnymi źródłami i ma przechodzące wykonanie każdego przykładu w zatwierdzonych runtime CLI.",
+  "topic": "git-local-basics",
+  "verdict": "PASS"
+}

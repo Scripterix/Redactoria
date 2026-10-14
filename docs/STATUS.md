@@ -1,8 +1,9 @@
 # Redactoria — STATUS
 
-Stan po Milestone 4/5, Search 0.1, selekcji B1, publikacji B2/B3 i lokalnej
-publikacji trzech artykułów B4, Pipeline Review 0.1, produkcyjnym read-only
-`verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder, 2026-10-12. Szczegóły: [Project Brain](index.md),
+Stan po Milestone 4/5, Search 0.1, selekcji B1, publikacji B2/B3/B4,
+przygotowaniu trzech kandydatów B5 w LAB, Pipeline Review 0.1, produkcyjnym
+read-only `verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder,
+2026-10-14. Szczegóły: [Project Brain](index.md),
 [architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
@@ -27,11 +28,11 @@ publikacji trzech artykułów B4, Pipeline Review 0.1, produkcyjnym read-only
 | Milestone 5 | First Publication Candidate, exact reviewed copy in LAB | DONE |
 | Human publication decisions | PHP Arrays local-only; B2 + trzy B3 + trzy B4 public-production | APPROVED — HUMAN, SCOPED |
 | Promotion Gate | Schema 1–3; exact candidate → CONTENT + osobny LAB audit | PASS |
-| Local website | 19 static routes, HTML/XML sitemap, dziewięć artykułów | BUILD + SMOKE PASS |
+| Local website | 19 static routes, HTML/XML sitemap, dziewięć artykułów, shared Featured Image fallback | BUILD + SMOKE PASS |
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
-| Current Cloudflare checkpoint | `fb86db7`, push master, public route/search checks | VERIFIED — SUCCESS |
+| Current Cloudflare checkpoint | `828703e`, B4 push master and direct public route checks | VERIFIED — SUCCESS |
 | B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
 | B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | PUBLISHED — VERIFIED |
 | B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy osobne decyzje/audity | PUBLISHED — VERIFIED |
@@ -43,7 +44,8 @@ publikacji trzech artykułów B4, Pipeline Review 0.1, produkcyjnym read-only
 | Knowledge Gap 0.1 | TOP 10, 2 MODERNIZE / 2 MERGE / 6 CREATE_NEW | COMPLETE — LAB REVIEW |
 | Knowledge Gap 0.2 | Blind Run A + Strategic Memory Run B, 9/10 overlap | COMPLETE — LAB REVIEW |
 | Source Authority Ladder | Researcher schema-v3 + Writer/Critic policy | IMPLEMENTED — BACKWARD COMPATIBLE |
-| B4 — ranks #5–#7 | Markdown, JS Calculator, API/HTTP/JSON | PUBLISHED LOCAL — 8/8 VERIFIED |
+| B4 — ranks #5–#7 | Markdown, JS Calculator, API/HTTP/JSON | PUBLISHED — PRODUCTION VERIFIED |
+| B5 — ranks #8–#10 | Git, curl/HTTP, Python fundamentals | 3 CANDIDATES — LAB ONLY |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
@@ -260,8 +262,35 @@ CONTENT articles plus audits. All eight registered lifecycles pass the read-only
 32-check verifier. Final local gate: 345/345 tests, Astro check 0 diagnostics,
 19-page build, Pagefind 18 pages / 2063 words and `git diff --check` PASS. Browser
 smoke found no console errors or horizontal overflow; the mobile back-to-top control
-is fixed with a transparent background. [Plan 027](plans/active/027-b4-contract-and-publication.md)
-remains active only through the authorized Git/Cloudflare checkpoint.
+is fixed with a transparent background. Commit `828703e` is present on
+`origin/master`; on 2026-10-13 the listing and all three production routes returned
+HTTP 200 with the expected titles and content. [Plan 027](plans/completed/027-b4-contract-and-publication.md)
+is complete.
+
+## B5 result — three candidates in LAB
+
+B1 ranks #8–#10 were revalidated against unchanged SOURCE hashes and the current
+public collection. Git locally (source 277), curl/HTTP (source 1336) and Python
+fundamentals (source 283) all remained `PROCEED`; no replacement search was needed.
+Each then passed the same bounded, manually advanced Cartographer → Researcher →
+research acceptance → Writer → runtime verification → Critic → Candidate flow.
+
+Research used official Git documentation, curl documentation with RFC 9110, and
+the official Python tutorial. The three packets contain 10 verified facts, 3 legacy
+corrections and no unresolved questions. Eight unique final examples passed actual
+Git 2.21.0.windows.1, curl 8.13.0 against a controlled `127.0.0.1` service, and
+Python 3.14.5 plus 3.11.9. Each first full Critic returned PASS with zero required
+changes. The runtime contracts now support a backward-compatible `cli` target and
+`shell` / `python` example languages; historical PHP, Node and browser evidence
+remains valid.
+
+All three exact candidates remain in LAB with publication state `pending/false`.
+[Comparison](../lab/reports/b5-three-candidate-comparison.md),
+[structured report](../lab/reports/b5-three-candidate-comparison.json) and
+[plan 029](plans/completed/029-b5-ranks-8-10.md) record the result. B5 did not write
+CONTENT, run Promotion Gate, record a publication decision, commit, push or deploy.
+Final gate: 353/353 tests, Astro check for 162 files with zero diagnostics,
+19-page build, Pagefind 18 pages / 2060 words and `git diff --check` PASS.
 
 ## B2 result — PHP control flow
 
@@ -431,29 +460,14 @@ Nie zmieniono XAMPP/PATH ani nie skonfigurowano produkcyjnego LLM API lub system
 
 ## NEXT
 
-Plan 021 jest zakończony: pełny quality gate, logiczne commity, push `origin/master`
-i bezpośrednia weryfikacja Cloudflare przeszły. Obowiązuje STOP. Knowledge Gap 0.2
-pozostaje diagnozą; rekomendacja PHP foundation nie jest wykonana.
-Article Manifest, Humanizer, Precision Gate, Interaction Layer, Dream Cycle i Agentic
-Circus nie są rozpoczynane.
+Plan 029 jest zakończony: trzy zweryfikowane kandydatury B5 czekają w LAB na ocenę
+człowieka. Następna granica to osobna decyzja dla każdego kandydata: publikować,
+odesłać do ograniczonej korekty albo odrzucić. Bez takiej decyzji nie wolno uruchomić
+Promotion Gate, zapisać do CONTENT, wykonać commita/pushu ani deploymentu.
 
-**Human localhost visual review**: [HOME](http://localhost:4321/),
-[Start](http://localhost:4321/artykuly/start-redactoria-edu/),
-[About](http://localhost:4321/o-projekcie/),
-[PHP Arrays](http://localhost:4321/artykuly/tablice-w-php/),
-[Articles](http://localhost:4321/artykuly/), [Topics](http://localhost:4321/tematy/),
-[Site map](http://localhost:4321/mapa-strony/).
-Production-like preview gotowego buildu: [HOME](http://127.0.0.1:4322/),
-[Search](http://127.0.0.1:4322/szukaj/); zwykły dev nie generuje indeksu Pagefind.
-Git checkpoint i Cloudflare zweryfikowane. Kolejne polecenie człowieka uruchomiło
-wyłącznie B1: [nowy ranking 1–10](../lab/reports/pilot-selection-b1.md) i
-[JSON](../lab/cartography/pilot-selection/ranking.json), 19 pełnych odczytów.
-Wcześniejsze TOP 10 nie zostało użyte jako ranking B1. Rank #1 — instrukcje sterujące
-w PHP (source 1308) — zakończył osobny B2 dokładnym kandydatem w LAB i porównaniem
-z PHP Arrays. Następna granica to decyzja człowieka po ocenie B2. Rank #2 nie został
-uruchomiony. Nie wykonano promocji do CONTENT, commit/push ani deploymentu;
-wcześniejsza zgoda Git była tylko dla planu 010. Publisher i Dispatcher pozostają
-nierozpoczęte.
+Knowledge Gap 0.2 pozostaje diagnozą; rekomendacja PHP foundation nie jest wykonana.
+Article Manifest, Humanizer, Precision Gate, Interaction Layer, Dream Cycle i Agentic
+Circus nie są rozpoczynane. Publisher i Dispatcher pozostają nierozpoczęte.
 
 ## LATER
 

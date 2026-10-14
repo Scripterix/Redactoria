@@ -109,6 +109,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - B3 public checkpoint `fb86db7`: three JavaScript articles, homepage refinement and
   Knowledge Gap records pushed to `master`; Cloudflare success and direct production
   routes, search, sitemap and responsive checks verified.
+- B4 public checkpoint `828703e`: Markdown, JavaScript Calculator and API/HTTP/JSON
+  pushed to `master`; the production listing and all three article routes verified.
 
 ## NOW
 
@@ -122,10 +124,15 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - B3 publication checkpoint complete: JavaScript if/else, Arrays and DOM are public
   through separate decisions/audits; plan 021 full gate, Git push and Cloudflare
   production verification passed.
+- B4 publication checkpoint complete: ranks #5–#7 are public and plan 027 is closed.
+- B5 ranks #8–#10 complete in LAB: Git, curl/HTTP and Python each have an exact
+  runtime-verified candidate with Critic PASS. Publication is not authorized.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
 - Plan 009 website utilities DONE; icons and educational media remain exploratory Futureboard items.
+- Featured Image 0.1 DONE: one Astro-managed fallback serves responsive 16:9
+  article heroes and listing thumbnails; optional metadata enables later per-article images.
 - `verify:article` 0.1 IMPLEMENTED / ESTABLISHED; Article Manifest remains a
   separate NEXT hypothesis and Precision Gate/Humanizer remain later/too early.
 - Knowledge Gap 0.1 complete in LAB and uncommitted for human review. Its TOP 10
@@ -135,8 +142,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- STOP. PHP foundation, ranks #5–#10 and Futureboard layers require separate
-  authorization.
+- Human editorial review of the three B5 candidates. Any publication decision must
+  be separate, explicit and candidate-specific; until then, STOP in LAB.
 
 ## LATER
 

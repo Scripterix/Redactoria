@@ -55,7 +55,7 @@ redactoria:
 ---
 # Instrukcje sterujące PHP: warunki i pętle
 
-Zakres: PHP 8.4–8.5. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: PHP 8.4–8.5. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="before-start"></a>
 

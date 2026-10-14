@@ -1,0 +1,21 @@
+[
+  {
+    "code": "Local HTTP fixture; curl.exe GET; --head; --write-out %{http_code}; --fail-with-body on 404",
+    "codeHash": "47f23a7ad244e1a8520b19df18924f053fd181184c19a3b332431f1a5a00173f",
+    "description": "GET, HEAD, status reporting and HTTP failure against a controlled loopback server",
+    "diagnostics": [],
+    "id": "curl-local-http",
+    "result": {
+      "failure": {
+        "code": 22,
+        "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+        "stdout": "{\"error\":\"missing\"}\n"
+      },
+      "get": "{\"name\":\"Ada\"}\n",
+      "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+      "status": "404"
+    },
+    "runtimeId": "curl",
+    "runtimeVersion": "8.13.0"
+  }
+]

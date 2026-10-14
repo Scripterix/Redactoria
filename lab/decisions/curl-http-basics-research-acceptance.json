@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b5-authorization.json",
+        "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+      },
+      {
+        "path": "lab/decisions/curl-http-basics-rewrite.json",
+        "sha256": "823ca534080e4254c027f2378f52d8dd13d62b685a6e5850c0a92ed87c62ed4b"
+      },
+      {
+        "path": "lab/cartography/curl-http-basics-single.json",
+        "sha256": "8b33cfb34cccef94639f37b7a9546695e8d91b5b82eb1f5f307168706a3902b2"
+      },
+      {
+        "path": "lab/research/curl-http-basics/sources.json",
+        "sha256": "8db24e57c65dec50d026a52c7b63c652eeee4ab3a10cca3fb6555e564c3e8796"
+      },
+      {
+        "path": "lab/research/curl-http-basics/probes.json",
+        "sha256": "544e4b411d047dca588575f1292fe6f5fc3b382ce7e4774074b4e6ddae068aba"
+      },
+      {
+        "path": "lab/research/curl-http-basics/research.json",
+        "sha256": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e"
+      },
+      {
+        "path": "lab/research/curl-http-basics/runtime-verification.json",
+        "sha256": "f95aea0ce4feb3fb237c3dce0439bf3563c81be3456a6ffd08f2bf5aedb61ee2"
+      },
+      {
+        "path": "lab/research/curl-http-basics/runtime-verification.md",
+        "sha256": "26a807da98eaa5dfd0ecd79d223811a063140b32e742fb663e58a989e6406eff"
+      }
+    ],
+    "humanApproval": "The human authorized the three B5 jobs through exact pending candidates; this packet was validated in-session and was not separately read by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/curl-http-basics/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "curl",
+          "status": "PASS",
+          "version": "8.13.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "3e19d39968f1e4f06173f0bf56cd20b420e8903fdd582387d9732810e6541449",
+  "nextStep": "writer",
+  "packetHash": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e",
+  "packetRef": "lab/research/curl-http-basics/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, keep local CLI limits explicit, and execute every final draft example independently.",
+  "requestHash": "b10325358654e472a97d0304b6bd88f9376bdf23d4bdaf49b30b5cde6626750d",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "curl-response-parts",
+    "curl-exit-boundary"
+  ],
+  "schemaVersion": 3,
+  "scope": "B5 curl-http-basics: validated packet and CLI runtime evidence through candidate preparation only.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+      "providedCharacters": 9125,
+      "sourceId": "1336",
+      "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+      "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat",
+      "truncated": false
+    }
+  ],
+  "topic": "curl-http-basics",
+  "validatedAt": "2026-10-13T19:41:12.694Z"
+}

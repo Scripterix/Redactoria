@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "6d5442a749bb2d76b183fa7f26e423e0b6725d394b0779adf9f9219cecfc5fe7",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "Każdy finalny przykład ma zgodny hash, dokładny oczekiwany wynik i przeszedł rzeczywiste kontrolowane wykonanie CLI.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "88a48a7c8a86da2259601dded673af94f73502d178f8d38258e6f88469a68b1b",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "dc0a46466176d682acc8794caad26609292c66817356af8e4a493e94ba5c7415"
+  },
+  "draftMetadataHash": "7c6c98e24ad71b5976ebc5836309a76c30d2b21662380bc32d83c086751903cf",
+  "draftRef": "lab/drafts/curl-http-basics/article.md",
+  "issues": [],
+  "limitations": [
+    "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; decyzja publikacyjna pozostaje oddzielnym krokiem człowieka."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/curl-http-basics-research-acceptance.json",
+  "researchPacket": "lab/research/curl-http-basics/research.json",
+  "schemaVersion": 1,
+  "summary": "Draft pozostaje w autoryzowanym zakresie B5, koryguje materiał legacy, wiąże twierdzenia z oficjalnymi źródłami i ma przechodzące wykonanie każdego przykładu w zatwierdzonych runtime CLI.",
+  "topic": "curl-http-basics",
+  "verdict": "PASS"
+}

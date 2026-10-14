@@ -30,12 +30,12 @@ export function validateCriticInput(raw: unknown) {
   } else {
    unique(execution.runs.map(run => run.runtimeId), 'execution runtimes');
    const expectedRuntimes = runtimeTargets(basis.input.config);
-   if (execution.runs.length !== expectedRuntimes.length || basis.runtime.schemaVersion !== 2) throw new Error('Missing JavaScript execution runtime.');
+   if (execution.runs.length !== expectedRuntimes.length || basis.runtime.schemaVersion !== 2) throw new Error('Missing draft execution runtime.');
    for (const run of execution.runs) {
     const target = expectedRuntimes.find(item => item.id === run.runtimeId);
     const runtime = basis.runtime.runs.find(item => item.runtimeId === run.runtimeId);
     if (!target || !runtime || target.kind !== run.kind || target.version !== run.version
-     || runtime.version !== run.version || runtime.executableHash !== run.executableHash) throw new Error('Unknown executed JavaScript runtime.');
+     || runtime.version !== run.version || runtime.executableHash !== run.executableHash) throw new Error('Unknown executed runtime.');
     unique(run.examples.map(item => item.id), 'executed examples');
     if (run.examples.length !== examples.length) throw new Error('Missing executed draft examples.');
     for (const example of examples) {
@@ -44,7 +44,7 @@ export function validateCriticInput(raw: unknown) {
      const matches = record.stdout === example.expectedOutput
       && (example.expectedDiagnostics.length ? example.expectedDiagnostics.join('\n') + '\n' : '') === record.stderr
       && (run.kind === 'browser' ? record.exitCode === null : record.exitCode === 0);
-     if ((record.status === 'PASS') !== matches) throw new Error('Incorrect JavaScript execution status.');
+     if ((record.status === 'PASS') !== matches) throw new Error('Incorrect draft execution status.');
     }
    }
   }

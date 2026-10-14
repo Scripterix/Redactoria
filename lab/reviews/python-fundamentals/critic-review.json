@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "Każdy finalny przykład ma zgodny hash, dokładny oczekiwany wynik i przeszedł rzeczywiste kontrolowane wykonanie CLI.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "Brak wymaganej korekty w tym kryterium przy ograniczonym zakresie i dostępnych dowodach.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "98b65e4bbc4fb5ba2a1cf82f9be82794a7997fbab0aa1ef9dbc84b5622fa99cb",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "8796b6e41c9ea68d7213682c03b2cb3452f197178178f925b0a26bbc24c5d67f"
+  },
+  "draftMetadataHash": "f5f8d19e2a0a2d941ac7fd24a38e5dec0b30430eb8539f34031ddb2f8bd93b76",
+  "draftRef": "lab/drafts/python-fundamentals/article.md",
+  "issues": [],
+  "limitations": [
+    "Review ocenia wyłącznie ten draft, zaakceptowany Research Packet i przypięte wykonanie; decyzja publikacyjna pozostaje oddzielnym krokiem człowieka."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/python-fundamentals-research-acceptance.json",
+  "researchPacket": "lab/research/python-fundamentals/research.json",
+  "schemaVersion": 1,
+  "summary": "Draft pozostaje w autoryzowanym zakresie B5, koryguje materiał legacy, wiąże twierdzenia z oficjalnymi źródłami i ma przechodzące wykonanie każdego przykładu w zatwierdzonych runtime CLI.",
+  "topic": "python-fundamentals",
+  "verdict": "PASS"
+}

@@ -70,7 +70,7 @@ describe('verify:article operator CLI', () => {
 		], verify)).stdout));
 		expect(result.areas.publication.status).toBe('PASS');
 		expect(Object.values(result.areas.publication.checks).every(check => check.status === 'PASS')).toBe(true);
-		expect(result.areas.publication.checks.contentLineage.detail).toContain('1 post-promotion lineage record(s)');
+		expect(result.areas.publication.checks.contentLineage.detail).toContain('3 post-promotion lineage record(s)');
 		expect(result.overall).toBe('PASS');
 	});
 
@@ -81,7 +81,7 @@ describe('verify:article operator CLI', () => {
 		expect(result.areas.publication.checks.promotionAudit.status).toBe('PASS');
 		expect(result.areas.publication.checks.contentLineage.status).toBe('PASS');
 		expect(result.areas.publication.checks.contentIntegrity.status).toBe('PASS');
-		expect(result.areas.publication.checks.contentLineage.detail).toContain('2 post-promotion lineage record(s)');
+		expect(result.areas.publication.checks.contentLineage.detail).toContain('3 post-promotion lineage record(s)');
 	});
 
 	it('does not change loaded pipeline bytes', async () => {

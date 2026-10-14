@@ -1,0 +1,201 @@
+{
+  "focused-article": {
+    "requestHash": "69fae5bca4e4421d2e1df41cbd8fd51affff8f287fadd5bbea48211cee3cd64e",
+    "response": {
+      "action": "REWRITE",
+      "artifactName": "curl-http-basics-single",
+      "confidence": 0.96,
+      "correct": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "id": "correct-command-boundaries",
+          "interpretation": "Rozróżnić body, nagłówki, metodę HEAD, status HTTP i kod wyjścia; używać curl.exe, aby uniknąć niejednoznaczności PowerShell."
+        }
+      ],
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "1336",
+          "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+          "value": "curl -I https://example.com"
+        }
+      ],
+      "keep": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "id": "keep-terminal-observation",
+          "interpretation": "Zachować bezpośrednią obserwację odpowiedzi HTTP z terminala jako główną wartość dydaktyczną."
+        }
+      ],
+      "limitations": [
+        "Analiza obejmuje dokładnie jeden autoryzowany plik SOURCE; nie potwierdza technicznych twierdzeń bez Authority Ladder i kontrolowanego wykonania."
+      ],
+      "missing": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "id": "missing-local-fixture",
+          "interpretation": "Dodać kontrolowany lokalny serwer z trasą JSON oraz dokładne oczekiwane nagłówki, status i stdout."
+        }
+      ],
+      "needsResearch": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "id": "research-curl-http",
+          "interpretation": "Zweryfikować opcje --head, --include, --write-out i --fail-with-body oraz znaczenie statusu i kodu wyjścia."
+        }
+      ],
+      "outdatedOrUncertain": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "id": "uncertain-platform-availability",
+          "interpretation": "Nie twierdzić bez sprawdzenia, że curl jest zawsze zainstalowany ani że każde API zachowuje się jednakowo."
+        }
+      ],
+      "prerequisites": [
+        "Umiejętność utworzenia pliku tekstowego i uruchomienia jawnie wskazanego polecenia w terminalu."
+      ],
+      "proposedStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: co curl pokazuje o odpowiedzi http.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "Co curl pokazuje o odpowiedzi HTTP"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: get i body z lokalnego endpointu.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "GET i body z lokalnego endpointu"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: head, nagłówki oraz kod statusu.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "HEAD, nagłówki oraz kod statusu"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: json i błędy bez sekretów.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "JSON i błędy bez sekretów"
+        }
+      ],
+      "proposedTitle": "curl i HTTP: odpowiedź, nagłówki i lokalny JSON",
+      "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+      "recommended": true,
+      "relationships": [
+        {
+          "publicPath": "/artykuly/api-http-json/",
+          "reason": "Artykuł o fetch wyjaśnia granice odpowiedzi w kodzie; curl pokaże ten sam protokół z perspektywy terminala."
+        }
+      ],
+      "remove": [
+        {
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "id": "remove-sensitive-breadth",
+          "interpretation": "Usunąć Basic Auth, JWT, cookies, proxy, cron, publiczne short linki, placeholder API i pobieranie plików."
+        }
+      ],
+      "scope": "Jawne curl.exe wobec kontrolowanego lokalnego endpointu: GET, HEAD, nagłówki odpowiedzi, kod statusu i jeden dokument JSON. Bez auth, cookies, proxy, cron, publicznych skracaczy, zewnętrznych API i szerokiego porównania curl/wget.",
+      "task": "SINGLE_ARTICLE"
+    }
+  },
+  "provenance": {
+    "description": "B5 focused analysis authored and recorded in the active coding session from the exact prepared request.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1
+}

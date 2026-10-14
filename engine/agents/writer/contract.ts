@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { EditorialInputSchema, EvidenceRefSchema, ModelIdentitySchema, PhpVersions, RuntimeTargetsSchema, Sha, Slug, Text, LabRef } from '../../core/editorial-context.ts';
 export const WriterInputSchema = EditorialInputSchema;
 export const CodeExampleSchema = z.strictObject({ id: Slug, purpose: Text, code: Text,
- expectedOutput: z.string(), expectedDiagnostics: z.array(Text), language: z.enum(['php', 'js', 'html', 'markdown']).optional() });
+ expectedOutput: z.string(), expectedDiagnostics: z.array(Text), language: z.enum(['php', 'js', 'html', 'markdown', 'shell', 'python']).optional() });
 const section = z.strictObject({ id: Slug, heading: Text, body: Text,
  coverage: z.array(Slug), evidence: z.array(EvidenceRefSchema).min(1), examples: z.array(CodeExampleSchema) });
 const analysisFields = {

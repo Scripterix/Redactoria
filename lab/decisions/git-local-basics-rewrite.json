@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "fc93c76bec7f74b1d52c69742dc3425e476742431caf889071a1906ec0e74676",
+  "analysisRef": "lab/cartography/git-local-basics-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "confidence": 0.96,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "value": "# git rm --cashed index.html"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "providedCharacters": 3443,
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "title": "Post #8 Mój Gist",
+      "truncated": false
+    }
+  ],
+  "topic": "git-local-basics"
+}

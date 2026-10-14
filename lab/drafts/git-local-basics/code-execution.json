@@ -1,0 +1,53 @@
+{
+  "articleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+  "executedAt": "2026-10-13T19:40:29.369Z",
+  "limitations": [
+    "Examples ran independently against a controlled local fixture; no remote service or global configuration was used."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "e810864d617148e966f7a850ddfa0cbd650c78019c06a3531c778787f28835e6",
+          "exitCode": 0,
+          "id": "git-init-status",
+          "limitation": "Executed in a newly created isolated local repository with repository-local identity.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "?? note.txt\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "96441a7c026a79f3804190167e609415166520864186472c7eeeef740f1562c0",
+          "exitCode": 0,
+          "id": "git-diff-stage",
+          "limitation": "Executed in a newly created isolated local repository with repository-local identity.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "1\t0\tnote.txt\n1\t0\tnote.txt\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "93027ad69f8edd5135c41cf91469a4c10c6c18951c98c381d2c63be87d257be4",
+          "exitCode": 0,
+          "id": "git-commit-log",
+          "limitation": "Executed in a newly created isolated local repository with repository-local identity.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Druga wersja\nPierwsza wersja"
+        }
+      ],
+      "executableHash": "d1c4b1f642e94a5131394c35744efbfa4523368efa609b4cefaa6b12f9a7f2a8",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "runtimeId": "git",
+      "version": "2.21.0.windows.1"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

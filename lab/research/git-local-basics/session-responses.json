@@ -1,0 +1,288 @@
+{
+  "provenance": {
+    "description": "B5 Authority Ladder analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "research": {
+    "requestHash": "36478f0726e225b323cb31d5ca17571b25962b5b12eb1c43bf52fa90e1dadc83",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "277",
+              "sourcePath": "277-post-8-moj-gist.md",
+              "value": "# git rm --cashed index.html"
+            }
+          ],
+          "claim": "Izolowane lokalne repozytorium potwierdziło stany ??, A, różnicę working tree, różnicę --cached oraz kolejność dwóch komunikatów w logu.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "git-init",
+              "excerptId": "init-repository"
+            },
+            {
+              "documentId": "git-status",
+              "excerptId": "status-state"
+            },
+            {
+              "documentId": "git-add",
+              "excerptId": "add-index"
+            },
+            {
+              "documentId": "git-diff",
+              "excerptId": "diff-working-index"
+            },
+            {
+              "documentId": "git-commit-log",
+              "excerptId": "commit-index"
+            },
+            {
+              "documentId": "git-log",
+              "excerptId": "log-history"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "git-local-cycle"
+          ],
+          "questionIds": [
+            "git-state-model",
+            "git-local-cycle"
+          ],
+          "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-13",
+        "evidence": [
+          {
+            "documentId": "git-init",
+            "excerptId": "init-repository"
+          },
+          {
+            "documentId": "git-status",
+            "excerptId": "status-state"
+          },
+          {
+            "documentId": "git-add",
+            "excerptId": "add-index"
+          },
+          {
+            "documentId": "git-diff",
+            "excerptId": "diff-working-index"
+          },
+          {
+            "documentId": "git-commit-log",
+            "excerptId": "commit-index"
+          },
+          {
+            "documentId": "git-log",
+            "excerptId": "log-history"
+          }
+        ],
+        "runtimeScope": "Git 2.21.0.windows.1; wyłącznie izolowane repozytorium lokalne i konfiguracja autora w tym repozytorium"
+      },
+      "incorrectClaims": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "277",
+              "sourcePath": "277-post-8-moj-gist.md",
+              "value": "# git rm --cashed index.html"
+            }
+          ],
+          "claim": "Materiał legacy zawiera literówkę --cashed; poprawna opcja używana do porównania staged changes to --cached.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "git-diff",
+              "excerptId": "diff-working-index"
+            }
+          ],
+          "id": "git-cached-spelling",
+          "questionIds": [
+            "git-state-model"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "Research obejmuje jeden autoryzowany materiał SOURCE, oficjalne źródła potrzebne do zakresu oraz kontrolowane lokalne wykonanie; nie jest zgodą na publikację."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "git-three-states",
+            "git-two-diffs",
+            "git-cached-spelling",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+          "questionId": "git-state-model",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "git-local-history",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+          "questionId": "git-local-cycle",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "CORRECT",
+          "findingIds": [
+            "git-three-states",
+            "git-two-diffs",
+            "git-local-history",
+            "git-cached-spelling",
+            "executed-boundaries"
+          ],
+          "id": "modernize-bounded",
+          "instruction": "Zmodernizować jeden materiał legacy w ograniczonym, lokalnym i sprawdzalnym zakresie."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "git-local-basics",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "277",
+              "sourcePath": "277-post-8-moj-gist.md",
+              "value": "# git rm --cashed index.html"
+            }
+          ],
+          "claim": "Git rozróżnia zawartość pliku w working tree, zapis przygotowany w indexie oraz wersję z bieżącego commita HEAD; status opisuje różnice między tymi obszarami.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "git-status",
+              "excerptId": "status-state"
+            },
+            {
+              "documentId": "git-add",
+              "excerptId": "add-index"
+            }
+          ],
+          "id": "git-three-states",
+          "questionIds": [
+            "git-state-model"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "277",
+              "sourcePath": "277-post-8-moj-gist.md",
+              "value": "# git rm --cashed index.html"
+            }
+          ],
+          "claim": "git diff pokazuje zmiany working tree względem indexu, a git diff --cached pokazuje zmiany przygotowane w indexie względem HEAD.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "git-diff",
+              "excerptId": "diff-working-index"
+            }
+          ],
+          "id": "git-two-diffs",
+          "questionIds": [
+            "git-state-model"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "277",
+              "sourcePath": "277-post-8-moj-gist.md",
+              "value": "# git rm --cashed index.html"
+            }
+          ],
+          "claim": "git init tworzy lokalne repozytorium, commit zapisuje zawartość wybraną w indexie, a log pokazuje historię commitów.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "git-init",
+              "excerptId": "init-repository"
+            },
+            {
+              "documentId": "git-commit-log",
+              "excerptId": "commit-index"
+            },
+            {
+              "documentId": "git-log",
+              "excerptId": "log-history"
+            }
+          ],
+          "id": "git-local-history",
+          "questionIds": [
+            "git-local-cycle"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+          }
+        ],
+        "correct": [
+          {
+            "findingIds": [
+              "git-cached-spelling"
+            ],
+            "instruction": "Materiał legacy zawiera literówkę --cashed; poprawna opcja używana do porównania staged changes to --cached."
+          }
+        ],
+        "keep": [
+          {
+            "findingIds": [
+              "git-three-states",
+              "git-two-diffs",
+              "git-local-history"
+            ],
+            "instruction": "Zachować praktyczny, terminalowy charakter materiału i jawne oczekiwane wyniki."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

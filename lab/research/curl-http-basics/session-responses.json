@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "description": "B5 Authority Ladder analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "research": {
+    "requestHash": "b10325358654e472a97d0304b6bd88f9376bdf23d4bdaf49b30b5cde6626750d",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "claim": "Kontrolowany serwer loopback potwierdził body GET, nagłówki HEAD, zapis statusu 404 oraz kod wyjścia 22 z zachowanym body dla --fail-with-body.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-head"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "get-head"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "curl-local-http"
+          ],
+          "questionIds": [
+            "curl-response-parts",
+            "curl-exit-boundary"
+          ],
+          "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-13",
+        "evidence": [
+          {
+            "documentId": "curl-manpage",
+            "excerptId": "curl-head"
+          },
+          {
+            "documentId": "rfc-9110",
+            "excerptId": "get-head"
+          }
+        ],
+        "runtimeScope": "curl 8.13.0 na Windows; wyłącznie kontrolowany serwer 127.0.0.1 bez zewnętrznych żądań"
+      },
+      "incorrectClaims": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "claim": "Status HTTP i kod wyjścia procesu nie są tym samym; bez opcji fail curl może zakończyć transfer 404 kodem procesu 0.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-write-out"
+            },
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-fail-body"
+            }
+          ],
+          "id": "curl-status-exit-separation",
+          "questionIds": [
+            "curl-exit-boundary"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "Research obejmuje jeden autoryzowany materiał SOURCE, oficjalne źródła potrzebne do zakresu oraz kontrolowane lokalne wykonanie; nie jest zgodą na publikację."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "curl-body-headers",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+          "questionId": "curl-response-parts",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "curl-status-output",
+            "curl-fail-body",
+            "curl-status-exit-separation",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+          "questionId": "curl-exit-boundary",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "CORRECT",
+          "findingIds": [
+            "curl-body-headers",
+            "curl-status-output",
+            "curl-fail-body",
+            "curl-status-exit-separation",
+            "executed-boundaries"
+          ],
+          "id": "modernize-bounded",
+          "instruction": "Zmodernizować jeden materiał legacy w ograniczonym, lokalnym i sprawdzalnym zakresie."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "curl-http-basics",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "claim": "curl domyślnie wypisuje body; --include dołącza nagłówki odpowiedzi, a --head wysyła dla HTTP metodę HEAD i pobiera same nagłówki.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-include"
+            },
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-head"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "get-head"
+            }
+          ],
+          "id": "curl-body-headers",
+          "questionIds": [
+            "curl-response-parts"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "claim": "--write-out może wypisać po transferze kod statusu HTTP przez zmienną http_code.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-write-out"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "status-code"
+            }
+          ],
+          "id": "curl-status-output",
+          "questionIds": [
+            "curl-exit-boundary"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "claim": "--fail-with-body zachowuje body odpowiedzi, ale dla statusu HTTP 400 lub wyższego kończy curl kodem 22.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-fail-body"
+            }
+          ],
+          "id": "curl-fail-body",
+          "questionIds": [
+            "curl-exit-boundary"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+          }
+        ],
+        "correct": [
+          {
+            "findingIds": [
+              "curl-status-exit-separation"
+            ],
+            "instruction": "Status HTTP i kod wyjścia procesu nie są tym samym; bez opcji fail curl może zakończyć transfer 404 kodem procesu 0."
+          }
+        ],
+        "keep": [
+          {
+            "findingIds": [
+              "curl-body-headers",
+              "curl-status-output",
+              "curl-fail-body"
+            ],
+            "instruction": "Zachować praktyczny, terminalowy charakter materiału i jawne oczekiwane wyniki."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

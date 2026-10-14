@@ -40,7 +40,7 @@ redactoria:
 ---
 # Warunki w JavaScript: if, else i bezpieczna walidacja liczby
 
-Zakres: node v24.16.0. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="branches"></a>
 
@@ -96,9 +96,5 @@ Oczekiwany wynik:
 ```text
 brak|dodatnia|niepoprawna|niepoprawna|zero|ujemna
 ```
-
----
-
-- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.
 
 Dalej: [tablice w JavaScript](/artykuly/tablice-w-javascript/) — transformacje, filtrowanie, redukcja i sortowanie bez zmiany danych wejściowych.

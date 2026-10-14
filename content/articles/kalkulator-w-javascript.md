@@ -40,7 +40,7 @@ redactoria:
 ---
 # Kalkulator w JavaScript: walidacja, funkcja i klasa
 
-Zakres: node v24.16.0. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="calculator-contract"></a>
 
@@ -130,7 +130,3 @@ Oczekiwany wynik:
 5
 5
 ```
-
----
-
-- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.

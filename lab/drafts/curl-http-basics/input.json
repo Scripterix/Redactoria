@@ -1,0 +1,26 @@
+{
+  "audience": "beginner / intermediate",
+  "requiredCoverage": [
+    "curl-command",
+    "get-body",
+    "head-headers",
+    "include",
+    "write-out",
+    "http-status",
+    "exit-code",
+    "fail-with-body"
+  ],
+  "researchApproval": "lab/decisions/curl-http-basics-research-acceptance.json",
+  "researchPacket": "lab/research/curl-http-basics/research.json",
+  "runtimeVerification": "lab/research/curl-http-basics/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/curl-http-basics-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "curl",
+      "kind": "cli",
+      "version": "8.13.0"
+    }
+  ],
+  "topic": "curl-http-basics"
+}

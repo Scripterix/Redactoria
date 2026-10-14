@@ -1,0 +1,277 @@
+{
+  "provenance": {
+    "description": "B5 Authority Ladder analysis recorded in-session; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "research": {
+    "requestHash": "491b43a1d17018d0e34d101fbcd352e1898c85d9f40384a3f290bde1bcb87c42",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "claim": "Te same deterministyczne przykłady wartości, slicing, range, warunków i return dały zgodny wynik w Pythonie 3.14.5 oraz 3.11.9.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "python-introduction",
+              "excerptId": "numbers-text-lists"
+            },
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "if-elif-else"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "python-3-14-fundamentals",
+            "python-3-11-fundamentals"
+          ],
+          "questionIds": [
+            "python-values",
+            "python-flow-functions"
+          ],
+          "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-13",
+        "evidence": [
+          {
+            "documentId": "python-introduction",
+            "excerptId": "numbers-text-lists"
+          },
+          {
+            "documentId": "python-control-flow",
+            "excerptId": "if-elif-else"
+          }
+        ],
+        "runtimeScope": "Python 3.14.5 i 3.11.9; czysty standardowy język bez sieci i bibliotek zewnętrznych"
+      },
+      "incorrectClaims": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "claim": "Fragmenty legacy trzeba odtworzyć jako kompletne bloki z prawidłowymi wcięciami i jawnym stdout; sama linia for i range nie tworzy kompletnego programu.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "for-range"
+            },
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "function-definition"
+            }
+          ],
+          "id": "python-complete-blocks",
+          "questionIds": [
+            "python-flow-functions"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "Research obejmuje jeden autoryzowany materiał SOURCE, oficjalne źródła potrzebne do zakresu oraz kontrolowane lokalne wykonanie; nie jest zgodą na publikację."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "python-values-lists",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+          "questionId": "python-values",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "python-branches",
+            "python-range",
+            "python-function-return",
+            "python-complete-blocks",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+          "questionId": "python-flow-functions",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "CORRECT",
+          "findingIds": [
+            "python-values-lists",
+            "python-branches",
+            "python-range",
+            "python-function-return",
+            "python-complete-blocks",
+            "executed-boundaries"
+          ],
+          "id": "modernize-bounded",
+          "instruction": "Zmodernizować jeden materiał legacy w ograniczonym, lokalnym i sprawdzalnym zakresie."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "python-fundamentals",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "claim": "Python obsługuje liczby, napisy i listy; indeksowanie list zaczyna się od zera, a slicing zwraca wybrany fragment.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "python-introduction",
+              "excerptId": "numbers-text-lists"
+            }
+          ],
+          "id": "python-values-lists",
+          "questionIds": [
+            "python-values"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "claim": "if wybiera gałąź, opcjonalne elif dodaje kolejne warunki, a else obsługuje pozostały przypadek.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "if-elif-else"
+            }
+          ],
+          "id": "python-branches",
+          "questionIds": [
+            "python-flow-functions"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "claim": "range tworzy postęp arytmetyczny z wyłączoną wartością końcową i może sterować pętlą for.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "for-range"
+            }
+          ],
+          "id": "python-range",
+          "questionIds": [
+            "python-flow-functions"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "claim": "def rozpoczyna definicję funkcji, a return zwraca wartość do miejsca wywołania.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "function-definition"
+            }
+          ],
+          "id": "python-function-return",
+          "questionIds": [
+            "python-flow-functions"
+          ],
+          "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+          }
+        ],
+        "correct": [
+          {
+            "findingIds": [
+              "python-complete-blocks"
+            ],
+            "instruction": "Fragmenty legacy trzeba odtworzyć jako kompletne bloki z prawidłowymi wcięciami i jawnym stdout; sama linia for i range nie tworzy kompletnego programu."
+          }
+        ],
+        "keep": [
+          {
+            "findingIds": [
+              "python-values-lists",
+              "python-branches",
+              "python-range",
+              "python-function-return"
+            ],
+            "instruction": "Zachować praktyczny, terminalowy charakter materiału i jawne oczekiwane wyniki."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

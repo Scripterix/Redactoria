@@ -40,7 +40,7 @@ redactoria:
 ---
 # Tablice JavaScript: map, filter, reduce i sort bez mutowania danych
 
-Zakres: node v24.16.0. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="transform-filter"></a>
 
@@ -113,9 +113,5 @@ Oczekiwany wynik:
 2,10,30
 10,2,30
 ```
-
----
-
-- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.
 
 Dalej: [DOM w JavaScript](/artykuly/dom-w-javascript/) — użycie danych do bezpiecznej aktualizacji dokumentu i obsługi zdarzeń.

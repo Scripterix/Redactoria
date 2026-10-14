@@ -1,47 +1,106 @@
 {
-  "schemaVersion": 1,
-  "status": "RECORDED",
   "articleId": "warunki-w-javascript",
   "candidateRef": "lab/candidates/javascript-if-else/article.json",
-  "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
-  "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
-  "promotedContentHash": "6893e836d792c1c0073870d8d4299e151b7c181adeb3c7a721e665d1601cb8f4",
+  "currentContentHash": "5cf2ab68e295a390934e5640ca126a44bb0d814dd761de1802ecfa5cb8a5e4d6",
   "currentContentRef": "content/articles/warunki-w-javascript.md",
-  "currentContentHash": "7f4e11f59a8ed75124ade77de2a833b54f8cb19e20968095298e19a78f458a99",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "The single append-only record replays the only post-promotion change.",
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+  ],
+  "promotedContentHash": "6893e836d792c1c0073870d8d4299e151b7c181adeb3c7a721e665d1601cb8f4",
+  "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
   "records": [
     {
-      "schemaVersion": 1,
-      "recordType": "CONTENT_LINEAGE_RECORD",
       "articleId": "warunki-w-javascript",
-      "previousContentHash": "6893e836d792c1c0073870d8d4299e151b7c181adeb3c7a721e665d1601cb8f4",
-      "newContentHash": "7f4e11f59a8ed75124ade77de2a833b54f8cb19e20968095298e19a78f458a99",
-      "changeType": "LINK_FIX",
-      "reason": "Add the human-authorized natural navigation from JavaScript conditions to the published Arrays article.",
-      "authorizedBy": "human",
-      "authorizationRef": "lab/decisions/javascript-if-else-publication.json",
       "authorizationHash": "2ff746fadfdd02605c07de2d54970b9b88ae682b49d84c4fab2ed55f2fcd1397",
-      "timestamp": "2026-10-11T20:43:05Z",
-      "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+      "authorizationRef": "lab/decisions/javascript-if-else-publication.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "LINK_FIX",
+      "newContentHash": "7f4e11f59a8ed75124ade77de2a833b54f8cb19e20968095298e19a78f458a99",
+      "notes": [
+        "Navigation only; no reviewed technical statement or code example changed."
+      ],
+      "previousContentHash": "6893e836d792c1c0073870d8d4299e151b7c181adeb3c7a721e665d1601cb8f4",
       "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
-      "reviewImpact": "REVIEW_STILL_VALID",
+      "reason": "Add the human-authorized natural navigation from JavaScript conditions to the published Arrays article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
       "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+      "timestamp": "2026-10-11T20:43:05Z",
       "transformation": {
-        "kind": "navigation-insertions",
         "insertions": [
           {
             "after": "- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.\n",
             "content": "\nDalej: [tablice w JavaScript](/artykuly/tablice-w-javascript/) — transformacje, filtrowanie, redukcja i sortowanie bez zmiany danych wejściowych.\n"
           }
-        ]
-      },
+        ],
+        "kind": "navigation-insertions"
+      }
+    },
+    {
+      "articleId": "warunki-w-javascript",
+      "authorizationHash": "5cb9fba3809b6c1267d988907ae9066c40db0dab8a0d608532a42bb0a4be9003",
+      "authorizationRef": "lab/decisions/public-article-reader-copy-cleanup.json",
+      "authorizedBy": "human",
       "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "a86cea87df34748fb407e396d1ceb9c47fd127b94e23a1cdb8d6fb0e6e6b0870",
       "notes": [
-        "Navigation only; no reviewed technical statement or code example changed."
-      ]
+        "The audience wording is editorial; reviewed technical statements and code examples are byte-identical."
+      ],
+      "previousContentHash": "7f4e11f59a8ed75124ade77de2a833b54f8cb19e20968095298e19a78f458a99",
+      "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
+      "reason": "Simplify the reader-facing audience label without changing any technical claim or example.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+      "timestamp": "2026-10-13T19:25:37Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.",
+            "to": "Materiał dla początkujących i osób na poziomie średnim."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "warunki-w-javascript",
+      "authorizationHash": "5cb9fba3809b6c1267d988907ae9066c40db0dab8a0d608532a42bb0a4be9003",
+      "authorizationRef": "lab/decisions/public-article-reader-copy-cleanup.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TECHNICAL_CLEANUP",
+      "newContentHash": "5cf2ab68e295a390934e5640ca126a44bb0d814dd761de1802ecfa5cb8a5e4d6",
+      "notes": [
+        "Internal workflow copy only; reviewed educational content and code examples are unchanged."
+      ],
+      "previousContentHash": "a86cea87df34748fb407e396d1ceb9c47fd127b94e23a1cdb8d6fb0e6e6b0870",
+      "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
+      "reason": "Remove an internal batch-authorization and interaction-metadata note from the reader-facing article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+      "timestamp": "2026-10-13T19:25:37Z",
+      "transformation": {
+        "kind": "remove-body-exact",
+        "removals": [
+          "---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.\n\n"
+        ]
+      }
     }
   ],
-  "notes": [
-    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "The single append-only record replays the only post-promotion change."
-  ]
+  "schemaVersion": 1,
+  "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+  "status": "RECORDED"
 }

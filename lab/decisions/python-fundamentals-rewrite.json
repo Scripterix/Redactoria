@@ -1,0 +1,32 @@
+{
+  "action": "REWRITE",
+  "analysisHash": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981",
+  "analysisRef": "lab/cartography/python-fundamentals-single.json",
+  "approvedBy": "human",
+  "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "confidence": 0.96,
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "value": "for i in range(5):"
+    }
+  ],
+  "nextStep": "research",
+  "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+  "schemaVersion": 3,
+  "status": "approved",
+  "targets": [
+    {
+      "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+      "providedCharacters": 6634,
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "title": "Post #10 Python Crash Course",
+      "truncated": false
+    }
+  ],
+  "topic": "python-fundamentals"
+}

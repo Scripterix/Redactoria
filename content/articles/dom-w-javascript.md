@@ -46,7 +46,7 @@ redactoria:
 ---
 # DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia
 
-Zakres: browser 154.0.0.0. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: browser 154.0.0.0. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="selection"></a>
 
@@ -101,9 +101,5 @@ Oczekiwany wynik:
 ```text
 Po kliknięciu: widoczny tekst <strong>Bezpieczny tekst</strong>; klasa updated; elementy listy A i B; konsola: 1 2.
 ```
-
----
-
-- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.
 
 Zobacz także [pozostałe materiały JavaScript](/tematy/javascript/).

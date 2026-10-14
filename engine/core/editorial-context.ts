@@ -15,7 +15,7 @@ export const Slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 export const LabRef = z.string().regex(/^lab\/(decisions|cartography|research|drafts|reviews|inventory)\/[a-zA-Z0-9/_-]+\.(json|md)$/);
 export const PhpVersions = z.tuple([z.literal('8.4'), z.literal('8.5')]);
 export const RuntimeTargetSchema = z.strictObject({
- id: Slug, kind: z.enum(['node', 'browser']), version: Text,
+ id: Slug, kind: z.enum(['node', 'browser', 'cli']), version: Text,
 });
 export const RuntimeTargetsSchema = z.array(RuntimeTargetSchema).min(1).max(2);
 export const ModelIdentitySchema = z.strictObject({ adapter: Text, model: Text, mode: z.enum(['imported-session-analysis', 'live', 'test']) });
@@ -42,7 +42,7 @@ export const B2ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ sch
 export const B3ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ schemaVersion: true, status: true, approvedBy: true, approvedAt: true, targets: true }).extend({
  schemaVersion: z.literal(3), status: z.literal('validated'), approvedBy: z.literal('session-review-under-human-authorization'),
  validatedAt: z.iso.datetime(), humanReviewedPacket: z.literal(false),
-	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json']), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
+	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json', 'lab/decisions/b5-authorization.json']), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
 });
 export const ResearchApprovalSchema = z.union([HumanResearchApprovalSchema, B2ResearchAcceptanceSchema, B3ResearchAcceptanceSchema]);
 export const TopicConfigV1Schema = z.strictObject({
@@ -131,7 +131,7 @@ export function editorialBasis(raw: unknown) {
  });
  const jsRuntime = z.strictObject({
   schemaVersion: z.literal(2), status: z.literal('PASS'), packetHash: Sha,
-  runs: z.array(z.strictObject({ runtimeId: Slug, kind: z.enum(['node', 'browser']), version: Text, status: z.literal('PASS'),
+  runs: z.array(z.strictObject({ runtimeId: Slug, kind: z.enum(['node', 'browser', 'cli']), version: Text, status: z.literal('PASS'),
    execution: z.enum(['actual-local-cli', 'controlled-browser']), executableHash: Sha.nullable(), records: z.array(RuntimeProbeSchema).min(1),
    checks: z.array(z.strictObject({ id: Text, status: z.literal('PASS'), expected: z.unknown(), actual: z.unknown() })).min(1) })).min(1).max(2),
   errata: z.array(z.strictObject({ id: Text, claim: Text, source: LabRef, evidenceId: Text, recommendation: Text })),

@@ -1,0 +1,95 @@
+{
+  "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "executedAt": "2026-10-13T19:42:36.994Z",
+  "limitations": [
+    "Examples ran independently in both approved Python runtimes."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "3126ab74b212090689a2397934485d17ebc8fe041b03fe93c3f18feae7e07c33",
+          "exitCode": 0,
+          "id": "python-values-lists",
+          "limitation": "Executed as an isolated -c program in python-3-14; Windows CRLF output was normalized to LF for deterministic comparison.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "str\n2\n[4, 6]\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "3ff8b31721e309b7f59d94ffe3d6d20cbf1dddb1d037cd0109262c4968ff8661",
+          "exitCode": 0,
+          "id": "python-condition-range",
+          "limitation": "Executed as an isolated -c program in python-3-14; Windows CRLF output was normalized to LF for deterministic comparison.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "-1 negative\n0 zero\n1 positive\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "bf3883e89b3c6779baa85742c9dfe73eeb1f976811d220a835c60140c55dc823",
+          "exitCode": 0,
+          "id": "python-function-total",
+          "limitation": "Executed as an isolated -c program in python-3-14; Windows CRLF output was normalized to LF for deterministic comparison.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "12\n0\n"
+        }
+      ],
+      "executableHash": "3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "runtimeId": "python-3-14",
+      "version": "3.14.5"
+    },
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "3126ab74b212090689a2397934485d17ebc8fe041b03fe93c3f18feae7e07c33",
+          "exitCode": 0,
+          "id": "python-values-lists",
+          "limitation": "Executed as an isolated -c program in python-3-11; Windows CRLF output was normalized to LF for deterministic comparison.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "str\n2\n[4, 6]\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "3ff8b31721e309b7f59d94ffe3d6d20cbf1dddb1d037cd0109262c4968ff8661",
+          "exitCode": 0,
+          "id": "python-condition-range",
+          "limitation": "Executed as an isolated -c program in python-3-11; Windows CRLF output was normalized to LF for deterministic comparison.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "-1 negative\n0 zero\n1 positive\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "bf3883e89b3c6779baa85742c9dfe73eeb1f976811d220a835c60140c55dc823",
+          "exitCode": 0,
+          "id": "python-function-total",
+          "limitation": "Executed as an isolated -c program in python-3-11; Windows CRLF output was normalized to LF for deterministic comparison.",
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "12\n0\n"
+        }
+      ],
+      "executableHash": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "runtimeId": "python-3-11",
+      "version": "3.11.9"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

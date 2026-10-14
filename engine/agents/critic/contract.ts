@@ -10,7 +10,7 @@ export const CodeExecutionV1Schema = z.strictObject({
 });
 export const CodeExecutionV2Schema = z.strictObject({
  schemaVersion: z.literal(2), status: z.enum(['PASS', 'FAIL']), articleHash: Sha, executedAt: z.iso.datetime(),
- runs: z.array(z.strictObject({ runtimeId: Slug, kind: z.enum(['node', 'browser']), version: Text,
+ runs: z.array(z.strictObject({ runtimeId: Slug, kind: z.enum(['node', 'browser', 'cli']), version: Text,
   executableHash: Sha.nullable(), execution: z.enum(['actual-local-cli', 'controlled-browser']),
   examples: z.array(z.strictObject({ id: Slug, codeHash: Sha, stdout: z.string(), stderr: z.string(), exitCode: z.number().int().nullable(),
    assertions: z.number().int().positive(), automated: z.boolean(), limitation: Text.nullable(), status: z.enum(['PASS', 'FAIL']) })) })).min(1).max(2),

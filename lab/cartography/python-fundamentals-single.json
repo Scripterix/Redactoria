@@ -1,0 +1,210 @@
+{
+  "action": "REWRITE",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "requestHash": "b642898e5a54ecd12f5e519620b0b8d9a56ea2e1978624a1e1fd558735b77546",
+    "selectedInventoryHash": "178f888bdeca5d3299b35bf6997d07a842a94d0bb1537087fc561612ce6b0fa9"
+  },
+  "artifactName": "python-fundamentals-single",
+  "confidence": 0.96,
+  "correct": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "id": "correct-code-formatting",
+      "interpretation": "Odtworzyć poprawne wcięcia i kompletne bloki kodu oraz oddzielić wartości wejściowe od dokładnego stdout."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "value": "for i in range(5):"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "id": "keep-language-core",
+      "interpretation": "Zachować prosty ciąg wartości, warunku, pętli range i wywołania funkcji jako rdzeń pierwszej lekcji."
+    }
+  ],
+  "limitations": [
+    "Analiza obejmuje dokładnie jeden autoryzowany plik SOURCE; nie potwierdza technicznych twierdzeń bez Authority Ladder i kontrolowanego wykonania."
+  ],
+  "missing": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "id": "missing-deterministic-boundaries",
+      "interpretation": "Dodać przykłady typów, gałęzi false, granic range, return z funkcji i znaczenia wcięć, każdy z oczekiwanym stdout."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "id": "research-python-core",
+      "interpretation": "Zweryfikować typy wbudowane, truth testing, range, definicje funkcji, return i reguły bloków w oficjalnej dokumentacji Python."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "id": "uncertain-language-claims",
+      "interpretation": "Nie opierać lekcji na ogólnych twierdzeniach o popularności, łatwości lub zastosowaniach Pythona."
+    }
+  ],
+  "prerequisites": [
+    "Umiejętność utworzenia pliku tekstowego i uruchomienia jawnie wskazanego polecenia w terminalu."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Wyjaśnić i sprawdzić: wartości, nazwy i podstawowe typy.",
+      "sourceIds": [
+        "283"
+      ],
+      "title": "Wartości, nazwy i podstawowe typy"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Wyjaśnić i sprawdzić: warunek if i jawne gałęzie.",
+      "sourceIds": [
+        "283"
+      ],
+      "title": "Warunek if i jawne gałęzie"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Wyjaśnić i sprawdzić: pętla for oraz granice range.",
+      "sourceIds": [
+        "283"
+      ],
+      "title": "Pętla for oraz granice range"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Wyjaśnić i sprawdzić: funkcja, argument i wartość return.",
+      "sourceIds": [
+        "283"
+      ],
+      "title": "Funkcja, argument i wartość return"
+    }
+  ],
+  "proposedTitle": "Podstawy Pythona: wartości, warunki, pętle i funkcje",
+  "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/warunki-w-javascript/",
+      "reason": "Czytelnik może porównać ten sam model decyzji z istniejącą lekcją JavaScript bez mieszania składni w jednym artykule."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "value": "for i in range(5):"
+        }
+      ],
+      "id": "remove-unrelated-python",
+      "interpretation": "Usunąć losową grę, scraping, biblioteki zewnętrzne, AI, CDN i porównanie składni z C."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Czysty Python: wartości i podstawowe typy, if, range, mała funkcja, wcięcia i deterministyczny stdout. Bez scrapingu, requests, BeautifulSoup, AI, CDN, gry losowej, marketingu i porównania z C.",
+  "targets": [
+    {
+      "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+      "providedCharacters": 6634,
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "title": "Post #10 Python Crash Course",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

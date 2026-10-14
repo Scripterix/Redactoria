@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "stage": "B5_QUEUE_VERIFICATION",
+  "verifiedAt": "2026-10-13T21:17:15+02:00",
+  "b1Ranking": {
+    "ref": "lab/cartography/pilot-selection/ranking.json",
+    "hash": "e53b8fb9400f2d63102807aed21f0e80e835c0c4169797d8fd31154671b580e8"
+  },
+  "currentContent": {
+    "articleCount": 9,
+    "articles": [
+      { "path": "content/articles/api-http-json.md", "hash": "3da7f179e0102eaf26f69e6a832db65452a6b0e323434784a745f34f952faa9c" },
+      { "path": "content/articles/dom-w-javascript.md", "hash": "a2805f426426d32c25810ee7d887b302fa74cb4eac1903703e05f8fe1e9e5e59" },
+      { "path": "content/articles/instrukcje-sterujace-php.md", "hash": "695a76d153fd9390a146859b288e8e5ab23bed7377e7a011104f35e3d8f3c578" },
+      { "path": "content/articles/kalkulator-w-javascript.md", "hash": "68ce56358302f153fca5e0293c36418c77180105e75b3b3a2384e7074d36251e" },
+      { "path": "content/articles/markdown-podstawy.md", "hash": "2ef7bc42076830ed4f2b3070b1feb695ce135d4751fbfcda0404e62f17c3f463" },
+      { "path": "content/articles/start-redactoria-edu.md", "hash": "fc069456fdd6a0596548d07f5dce6359ec1b168c0eddc235e392999d90cb8712" },
+      { "path": "content/articles/tablice-w-javascript.md", "hash": "d10f769ba571041eb06a5c6e772b1860fbab29490b06cd783872526e7ee2b41a" },
+      { "path": "content/articles/tablice-w-php.md", "hash": "c4111bad6f943f9b19568f0b4474935f3fa510a02fa0f577c9a05031af742b38" },
+      { "path": "content/articles/warunki-w-javascript.md", "hash": "7f4e11f59a8ed75124ade77de2a833b54f8cb19e20968095298e19a78f458a99" }
+    ]
+  },
+  "availableRuntimes": [
+    { "id": "git", "version": "2.21.0.windows.1", "role": "isolated temporary repository verification" },
+    { "id": "curl", "version": "8.13.0", "role": "controlled local HTTP endpoint verification" },
+    { "id": "python", "version": "3.14.5", "role": "primary Python example verification" },
+    { "id": "python", "version": "3.11", "role": "secondary Python compatibility verification" }
+  ],
+  "candidates": [
+    {
+      "rank": 8,
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "sourceHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "sourceHashMatchesB1": true,
+      "topic": "git-local-basics",
+      "proposedTitle": "Git lokalnie: status, staging, commit i historia",
+      "decision": "PROCEED",
+      "reason": "Current CONTENT has no Git lesson. The usable legacy material is small but supports a bounded rewrite grounded in official Git documentation and isolated local execution.",
+      "scope": "git init, status, add, diff, diff --cached, commit and log in a temporary repository with local-only identity configuration.",
+      "excluded": ["GitHub and Gist promotion", "push", "reset --hard", "recursive cleanup", "automatic merge", "global Git configuration"],
+      "requiredEvidence": ["official Git documentation", "exact transcript from an isolated temporary repository"],
+      "risks": ["legacy typo git rm --cashed", "legacy editor workflow is unsuitable for a deterministic beginner example"]
+    },
+    {
+      "rank": 9,
+      "sourceId": "1336",
+      "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+      "sourceHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+      "sourceHashMatchesB1": true,
+      "topic": "curl-http-basics",
+      "proposedTitle": "curl i HTTP: odpowiedź, nagłówki i lokalny JSON",
+      "decision": "PROCEED",
+      "reason": "The published fetch article explains browser-side response boundaries, while this candidate can teach terminal inspection of one controlled HTTP endpoint without external services.",
+      "scope": "GET, HEAD, response headers, status output and one JSON response against a controlled local endpoint, with explicit curl.exe syntax on Windows.",
+      "excluded": ["authentication and secrets", "cookies", "proxy", "cron", "public short links", "external demo APIs", "broad curl-versus-wget comparison"],
+      "requiredEvidence": ["official curl manual", "HTTP semantics", "recorded local server and curl transcript"],
+      "risks": ["overlap with the published API/fetch article", "PowerShell curl alias ambiguity", "legacy examples contain placeholder endpoints and unsafe auth breadth"]
+    },
+    {
+      "rank": 10,
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "sourceHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+      "sourceHashMatchesB1": true,
+      "topic": "python-fundamentals",
+      "proposedTitle": "Podstawy Pythona: wartości, warunki, pętle i funkcje",
+      "decision": "PROCEED",
+      "reason": "Current CONTENT has no Python entry layer. The candidate can be reduced to deterministic standard-library examples and checked on two locally available Python versions.",
+      "scope": "values and basic types, if, range, a small function, indentation and deterministic stdout using pure Python.",
+      "excluded": ["scraping", "requests", "BeautifulSoup", "AI frameworks", "CDN claims", "random guessing game", "language marketing", "Python-versus-C comparison"],
+      "requiredEvidence": ["official Python language tutorial and reference", "example execution on Python 3.14.5 and 3.11"],
+      "risks": ["legacy formatting hides indentation", "legacy snippets mix unrelated scopes", "a new python topic would be required only at a later publication gate"]
+    }
+  ],
+  "summary": {
+    "proceed": 3,
+    "replace": 0,
+    "stop": 0,
+    "replacementSearchRequired": false,
+    "publicationAuthorized": false
+  },
+  "limitations": [
+    "Matching source hashes prove identity, not technical correctness.",
+    "PROCEED authorizes bounded research and candidate preparation only.",
+    "Every factual or behavioral claim still requires Authority Ladder evidence or controlled execution.",
+    "A valid later result may be BLOCK or no publication candidate."
+  ]
+}

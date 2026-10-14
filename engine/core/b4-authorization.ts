@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { validateB3Authorization } from './b3-authorization.ts';
+import { B5_AUTHORIZATION_REF, validateB5Authorization } from './b5-authorization.ts';
 
 const Sha = z.string().regex(/^[a-f0-9]{64}$/);
 const Text = z.string().trim().min(1);
@@ -85,6 +86,9 @@ export function validateBatchAuthorization(
 	}
 	if (reference === B4_AUTHORIZATION_REF) {
 		return validateB4Authorization(contents, expectedHash, topic, targets);
+	}
+	if (reference === B5_AUTHORIZATION_REF) {
+		return validateB5Authorization(contents, expectedHash, topic, targets);
 	}
 	throw new Error('Unsupported bounded article authorization reference.');
 }

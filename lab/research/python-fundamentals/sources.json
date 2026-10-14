@@ -1,0 +1,138 @@
+{
+  "asOfDate": "2026-10-13",
+  "probes": [
+    {
+      "code": "import json\nvalues = [2, 4, 6]\ndef classify(number):\n    if number > 0:\n        return \"positive\"\n    if number < 0:\n        return \"negative\"\n    return \"zero\"\nprint(json.dumps({\"slice\": values[1:], \"range\": list(range(1, 6, 2)), \"labels\": [classify(x) for x in [-1, 0, 1]]}, separators=(\",\", \":\")))",
+      "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+      "description": "Numbers, lists, slicing, range, conditions and function return values",
+      "diagnostics": [],
+      "id": "python-3-14-fundamentals",
+      "result": {
+        "labels": [
+          "negative",
+          "zero",
+          "positive"
+        ],
+        "range": [
+          1,
+          3,
+          5
+        ],
+        "slice": [
+          4,
+          6
+        ]
+      },
+      "runtimeId": "python-3-14",
+      "runtimeVersion": "3.14.5"
+    },
+    {
+      "code": "import json\nvalues = [2, 4, 6]\ndef classify(number):\n    if number > 0:\n        return \"positive\"\n    if number < 0:\n        return \"negative\"\n    return \"zero\"\nprint(json.dumps({\"slice\": values[1:], \"range\": list(range(1, 6, 2)), \"labels\": [classify(x) for x in [-1, 0, 1]]}, separators=(\",\", \":\")))",
+      "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+      "description": "Numbers, lists, slicing, range, conditions and function return values",
+      "diagnostics": [],
+      "id": "python-3-11-fundamentals",
+      "result": {
+        "labels": [
+          "negative",
+          "zero",
+          "positive"
+        ],
+        "range": [
+          1,
+          3,
+          5
+        ],
+        "slice": [
+          4,
+          6
+        ]
+      },
+      "runtimeId": "python-3-11",
+      "runtimeVersion": "3.11.9"
+    }
+  ],
+  "provenance": "Current official project/runtime documentation snapshots plus controlled local CLI probes; no remote repository, external API or global configuration mutation.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-python-core"
+      ],
+      "id": "python-values",
+      "question": "Jak wyjaśnić liczby, napisy, listy i indeksowanie bez przenoszenia nieaktualnej składni?",
+      "section": "values"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-python-core"
+      ],
+      "id": "python-flow-functions",
+      "question": "Jak połączyć if, for, range i funkcję w małych deterministycznych przykładach?",
+      "section": "flow"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "9b2220697c438e0d0587fde87899394f4639e0b2db5062944a81684d7084d50d",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "numbers-text-lists",
+          "locator": "3.1 Using Python as a Calculator",
+          "text": "The tutorial introduces numeric expressions, strings and lists, including zero-based indexing and slicing."
+        }
+      ],
+      "id": "python-introduction",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://docs.python.org/3.14/tutorial/introduction.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-13T19:41:54.898Z",
+      "sourceType": "authority-ladder",
+      "title": "Python 3.14 Tutorial — An Informal Introduction",
+      "url": "https://docs.python.org/3.14/tutorial/introduction.html"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "81c06607b328554e746fda0693485df392d84b38c25450ed0c4fd11d5d434565",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "if-elif-else",
+          "locator": "4.1 if Statements",
+          "text": "Python uses if with optional elif and else clauses for conditional execution."
+        },
+        {
+          "id": "for-range",
+          "locator": "4.2 for Statements and 4.3 range()",
+          "text": "for iterates over collection items, and range generates arithmetic progressions with an excluded end value."
+        },
+        {
+          "id": "function-definition",
+          "locator": "4.7 Defining Functions",
+          "text": "def introduces a function definition; return sends a value back to the caller."
+        }
+      ],
+      "id": "python-control-flow",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://docs.python.org/3.14/tutorial/controlflow.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-13T19:41:54.898Z",
+      "sourceType": "authority-ladder",
+      "title": "Python 3.14 Tutorial — More Control Flow Tools",
+      "url": "https://docs.python.org/3.14/tutorial/controlflow.html"
+    }
+  ],
+  "topicSlug": "python-fundamentals"
+}

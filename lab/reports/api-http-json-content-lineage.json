@@ -1,0 +1,75 @@
+{
+  "articleId": "api-http-json",
+  "candidateRef": "lab/candidates/api-http-json/article.json",
+  "currentContentHash": "bebaded0a1262da589dd931d98a4021ef76869b6b7d08ab37921bed7ed11df71",
+  "currentContentRef": "content/articles/api-http-json.md",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+  ],
+  "promotedContentHash": "3da7f179e0102eaf26f69e6a832db65452a6b0e323434784a745f34f952faa9c",
+  "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+  "records": [
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "5cb9fba3809b6c1267d988907ae9066c40db0dab8a0d608532a42bb0a4be9003",
+      "authorizationRef": "lab/decisions/public-article-reader-copy-cleanup.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "0e297391853bfd147b42cfdbe79242f18574ec11991792c988d7b1157087b570",
+      "notes": [
+        "The audience wording is editorial; reviewed technical statements and code examples are byte-identical."
+      ],
+      "previousContentHash": "3da7f179e0102eaf26f69e6a832db65452a6b0e323434784a745f34f952faa9c",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Simplify the reader-facing audience label without changing any technical claim or example.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-13T19:25:37Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.",
+            "to": "Materiał dla początkujących i osób na poziomie średnim."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "5cb9fba3809b6c1267d988907ae9066c40db0dab8a0d608532a42bb0a4be9003",
+      "authorizationRef": "lab/decisions/public-article-reader-copy-cleanup.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TECHNICAL_CLEANUP",
+      "newContentHash": "bebaded0a1262da589dd931d98a4021ef76869b6b7d08ab37921bed7ed11df71",
+      "notes": [
+        "Internal workflow copy only; reviewed educational content and code examples are unchanged."
+      ],
+      "previousContentHash": "0e297391853bfd147b42cfdbe79242f18574ec11991792c988d7b1157087b570",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Remove an internal batch-authorization and interaction-metadata note from the reader-facing article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-13T19:25:37Z",
+      "transformation": {
+        "kind": "remove-body-exact",
+        "removals": [
+          "\n---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.\n"
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+  "status": "RECORDED"
+}

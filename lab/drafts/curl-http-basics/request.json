@@ -1,0 +1,1093 @@
+{
+  "inputHash": "2c6f8a57736aa6922030a3cbb83d2e8c55726d2ae97f288f46afee2802dae460",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+        "authorizationRef": "lab/decisions/b5-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b5-authorization.json",
+              "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+            },
+            {
+              "path": "lab/decisions/curl-http-basics-rewrite.json",
+              "sha256": "823ca534080e4254c027f2378f52d8dd13d62b685a6e5850c0a92ed87c62ed4b"
+            },
+            {
+              "path": "lab/cartography/curl-http-basics-single.json",
+              "sha256": "8b33cfb34cccef94639f37b7a9546695e8d91b5b82eb1f5f307168706a3902b2"
+            },
+            {
+              "path": "lab/research/curl-http-basics/sources.json",
+              "sha256": "8db24e57c65dec50d026a52c7b63c652eeee4ab3a10cca3fb6555e564c3e8796"
+            },
+            {
+              "path": "lab/research/curl-http-basics/probes.json",
+              "sha256": "544e4b411d047dca588575f1292fe6f5fc3b382ce7e4774074b4e6ddae068aba"
+            },
+            {
+              "path": "lab/research/curl-http-basics/research.json",
+              "sha256": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e"
+            },
+            {
+              "path": "lab/research/curl-http-basics/runtime-verification.json",
+              "sha256": "f95aea0ce4feb3fb237c3dce0439bf3563c81be3456a6ffd08f2bf5aedb61ee2"
+            },
+            {
+              "path": "lab/research/curl-http-basics/runtime-verification.md",
+              "sha256": "26a807da98eaa5dfd0ecd79d223811a063140b32e742fb663e58a989e6406eff"
+            }
+          ],
+          "humanApproval": "The human authorized the three B5 jobs through exact pending candidates; this packet was validated in-session and was not separately read by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/curl-http-basics/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "curl",
+                "status": "PASS",
+                "version": "8.13.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "3e19d39968f1e4f06173f0bf56cd20b420e8903fdd582387d9732810e6541449",
+        "nextStep": "writer",
+        "packetHash": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e",
+        "packetRef": "lab/research/curl-http-basics/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts, keep local CLI limits explicit, and execute every final draft example independently.",
+        "requestHash": "b10325358654e472a97d0304b6bd88f9376bdf23d4bdaf49b30b5cde6626750d",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "curl-response-parts",
+          "curl-exit-boundary"
+        ],
+        "schemaVersion": 3,
+        "scope": "B5 curl-http-basics: validated packet and CLI runtime evidence through candidate preparation only.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+            "providedCharacters": 9125,
+            "sourceId": "1336",
+            "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+            "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat",
+            "truncated": false
+          }
+        ],
+        "topic": "curl-http-basics",
+        "validatedAt": "2026-10-13T19:41:12.694Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: co curl pokazuje o odpowiedzi http.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "Co curl pokazuje o odpowiedzi HTTP"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: get i body z lokalnego endpointu.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "GET i body z lokalnego endpointu"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: head, nagłówki oraz kod statusu.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "HEAD, nagłówki oraz kod statusu"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "1336",
+              "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+              "value": "curl -I https://example.com"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: json i błędy bez sekretów.",
+          "sourceIds": [
+            "1336"
+          ],
+          "title": "JSON i błędy bez sekretów"
+        }
+      ],
+      "config": {
+        "audience": "beginner / intermediate",
+        "requiredCoverage": [
+          "curl-command",
+          "get-body",
+          "head-headers",
+          "include",
+          "write-out",
+          "http-status",
+          "exit-code",
+          "fail-with-body"
+        ],
+        "researchApproval": "lab/decisions/curl-http-basics-research-acceptance.json",
+        "researchPacket": "lab/research/curl-http-basics/research.json",
+        "runtimeVerification": "lab/research/curl-http-basics/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/curl-http-basics-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "curl",
+            "kind": "cli",
+            "version": "8.13.0"
+          }
+        ],
+        "topic": "curl-http-basics"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "8b33cfb34cccef94639f37b7a9546695e8d91b5b82eb1f5f307168706a3902b2",
+        "analysisRef": "lab/cartography/curl-http-basics-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+        "authorizationRef": "lab/decisions/b5-authorization.json",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "1336",
+            "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+            "value": "curl -I https://example.com"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+            "providedCharacters": 9125,
+            "sourceId": "1336",
+            "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+            "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat",
+            "truncated": false
+          }
+        ],
+        "topic": "curl-http-basics"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "8b33cfb34cccef94639f37b7a9546695e8d91b5b82eb1f5f307168706a3902b2",
+          "decisionHash": "823ca534080e4254c027f2378f52d8dd13d62b685a6e5850c0a92ed87c62ed4b",
+          "fullReadCount": 1,
+          "inputHash": "3e19d39968f1e4f06173f0bf56cd20b420e8903fdd582387d9732810e6541449",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "47f23a7ad244e1a8520b19df18924f053fd181184c19a3b332431f1a5a00173f",
+              "description": "GET, HEAD, status reporting and HTTP failure against a controlled loopback server",
+              "diagnostics": [],
+              "id": "curl-local-http",
+              "result": {
+                "failure": {
+                  "code": 22,
+                  "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+                  "stdout": "{\"error\":\"missing\"}\n"
+                },
+                "get": "{\"name\":\"Ada\"}\n",
+                "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+                "status": "404"
+              },
+              "runtimeId": "curl",
+              "runtimeVersion": "8.13.0"
+            }
+          ],
+          "requestHash": "b10325358654e472a97d0304b6bd88f9376bdf23d4bdaf49b30b5cde6626750d",
+          "researchBundleHash": "8db24e57c65dec50d026a52c7b63c652eeee4ab3a10cca3fb6555e564c3e8796",
+          "topicSlug": "curl-http-basics"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "1336",
+                "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+                "value": "curl -I https://example.com"
+              }
+            ],
+            "claim": "Kontrolowany serwer loopback potwierdził body GET, nagłówki HEAD, zapis statusu 404 oraz kod wyjścia 22 z zachowanym body dla --fail-with-body.",
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-head"
+              },
+              {
+                "documentId": "rfc-9110",
+                "excerptId": "get-head"
+              }
+            ],
+            "id": "executed-boundaries",
+            "probeIds": [
+              "curl-local-http"
+            ],
+            "questionIds": [
+              "curl-response-parts",
+              "curl-exit-boundary"
+            ],
+            "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+            "sourceType": "authority-ladder",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-13",
+          "evidence": [
+            {
+              "documentId": "curl-manpage",
+              "excerptId": "curl-head"
+            },
+            {
+              "documentId": "rfc-9110",
+              "excerptId": "get-head"
+            }
+          ],
+          "runtimeScope": "curl 8.13.0 na Windows; wyłącznie kontrolowany serwer 127.0.0.1 bez zewnętrznych żądań"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "1336",
+                "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+                "value": "curl -I https://example.com"
+              }
+            ],
+            "claim": "Status HTTP i kod wyjścia procesu nie są tym samym; bez opcji fail curl może zakończyć transfer 404 kodem procesu 0.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-write-out"
+              },
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-fail-body"
+              }
+            ],
+            "id": "curl-status-exit-separation",
+            "questionIds": [
+              "curl-exit-boundary"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Research obejmuje jeden autoryzowany materiał SOURCE, oficjalne źródła potrzebne do zakresu oraz kontrolowane lokalne wykonanie; nie jest zgodą na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "curl-body-headers",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+            "questionId": "curl-response-parts",
+            "status": "resolved"
+          },
+          {
+            "findingIds": [
+              "curl-status-output",
+              "curl-fail-body",
+              "curl-status-exit-separation",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+            "questionId": "curl-exit-boundary",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "curl-body-headers",
+              "curl-status-output",
+              "curl-fail-body",
+              "curl-status-exit-separation",
+              "executed-boundaries"
+            ],
+            "id": "modernize-bounded",
+            "instruction": "Zmodernizować jeden materiał legacy w ograniczonym, lokalnym i sprawdzalnym zakresie."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "authorityClass": "official-project-runtime",
+            "authorityTier": 2,
+            "documentHash": "0ef77bad12997946fd2663bb2222b4201ab5cf3b2d724595cb099ca2ef58283d",
+            "evidenceIds": [
+              "curl-head",
+              "curl-include",
+              "curl-write-out",
+              "curl-fail-body"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "curl-manpage",
+            "kind": "project-documentation",
+            "retrieval": {
+              "finalUrl": "https://curl.se/docs/manpage.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-13T19:41:02.183Z",
+            "sourceType": "authority-ladder",
+            "title": "curl command line tool man page",
+            "url": "https://curl.se/docs/manpage.html"
+          },
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "d431760660ea44e130f6e919dab216df2d0b3a490567a98089267523368fe1e5",
+            "evidenceIds": [
+              "get-head",
+              "status-code"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "rfc-9110",
+            "kind": "standard",
+            "retrieval": {
+              "finalUrl": "https://www.rfc-editor.org/rfc/rfc9110.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-13T19:41:02.183Z",
+            "sourceType": "authority-ladder",
+            "title": "RFC 9110 — HTTP Semantics",
+            "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+            "providedCharacters": 9125,
+            "sourceId": "1336",
+            "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+            "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat",
+            "truncated": false
+          }
+        ],
+        "topic": "curl-http-basics",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "1336",
+                "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+                "value": "curl -I https://example.com"
+              }
+            ],
+            "claim": "curl domyślnie wypisuje body; --include dołącza nagłówki odpowiedzi, a --head wysyła dla HTTP metodę HEAD i pobiera same nagłówki.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-include"
+              },
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-head"
+              },
+              {
+                "documentId": "rfc-9110",
+                "excerptId": "get-head"
+              }
+            ],
+            "id": "curl-body-headers",
+            "questionIds": [
+              "curl-response-parts"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "1336",
+                "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+                "value": "curl -I https://example.com"
+              }
+            ],
+            "claim": "--write-out może wypisać po transferze kod statusu HTTP przez zmienną http_code.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-write-out"
+              },
+              {
+                "documentId": "rfc-9110",
+                "excerptId": "status-code"
+              }
+            ],
+            "id": "curl-status-output",
+            "questionIds": [
+              "curl-exit-boundary"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "1336",
+                "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+                "value": "curl -I https://example.com"
+              }
+            ],
+            "claim": "--fail-with-body zachowuje body odpowiedzi, ale dla statusu HTTP 400 lub wyższego kończy curl kodem 22.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "curl-manpage",
+                "excerptId": "curl-fail-body"
+              }
+            ],
+            "id": "curl-fail-body",
+            "questionIds": [
+              "curl-exit-boundary"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "curl-status-exit-separation"
+              ],
+              "instruction": "Status HTTP i kod wyjścia procesu nie są tym samym; bez opcji fail curl może zakończyć transfer 404 kodem procesu 0."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "curl-body-headers",
+                "curl-status-output",
+                "curl-fail-body"
+              ],
+              "instruction": "Zachować praktyczny, terminalowy charakter materiału i jawne oczekiwane wyniki."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "executed-boundaries"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Weryfikacja obejmuje curl 8.13.0 na Windows i kontrolowany endpoint loopback; nie obejmuje zewnętrznych API, auth, cookies ani proxy."
+        ],
+        "packetHash": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "failure": {
+                    "code": 22,
+                    "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+                    "stdout": "{\"error\":\"missing\"}\n"
+                  },
+                  "get": "{\"name\":\"Ada\"}\n",
+                  "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+                  "status": "404"
+                },
+                "expected": {
+                  "failure": {
+                    "code": 22,
+                    "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+                    "stdout": "{\"error\":\"missing\"}\n"
+                  },
+                  "get": "{\"name\":\"Ada\"}\n",
+                  "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+                  "status": "404"
+                },
+                "id": "curl-local-http-observed",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "3345339164cf384eff527b6c3160fea8d849a4231ec6ca80513e3a739e505168",
+            "execution": "actual-local-cli",
+            "kind": "cli",
+            "records": [
+              {
+                "code": "Local HTTP fixture; curl.exe GET; --head; --write-out %{http_code}; --fail-with-body on 404",
+                "codeHash": "47f23a7ad244e1a8520b19df18924f053fd181184c19a3b332431f1a5a00173f",
+                "description": "GET, HEAD, status reporting and HTTP failure against a controlled loopback server",
+                "diagnostics": [],
+                "id": "curl-local-http",
+                "result": {
+                  "failure": {
+                    "code": 22,
+                    "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+                    "stdout": "{\"error\":\"missing\"}\n"
+                  },
+                  "get": "{\"name\":\"Ada\"}\n",
+                  "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+                  "status": "404"
+                },
+                "runtimeId": "curl",
+                "runtimeVersion": "8.13.0"
+              }
+            ],
+            "runtimeId": "curl",
+            "status": "PASS",
+            "version": "8.13.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — curl-http-basics\n\nStatus: **PASS**\n\n- runtime: curl 8.13.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nWeryfikacja obejmuje curl 8.13.0 na Windows i kontrolowany endpoint loopback; nie obejmuje zewnętrznych API, auth, cookies ani proxy.\n",
+      "sources": [
+        {
+          "body": "\n## **Jak testować API, pobierać pliki i debugować żądania HTTP jak zawodowiec**.\n\nPoniższy artykuł jest w formule tutorial** Curl** i zawiera zbiór komend i opis jak pracować z Curl.\n\n## Spis treści\n\n- [Wprowadzenie – czym właściwie jest curl?](#Wprowadzenie-–-czym-właściwie-jest-curl)\n\n- [Instalacja i konfiguracja](#Instalacja-i-konfiguracja-curl)\n\n- [Najważniejsze komendy w praktyce](#Najważniejsze-komendy-w-praktyce-curl)\n\n- [Curl i API – jak testować endpointy i pracować z JSON-em](#Curl-i-API-–-jak-testować-endpointy)\n\n- [Autoryzacja, nagłówki i metody HTTP](#Autoryzacja,-nagłówki-i-metody-HTTP)\n\n- [Debugowanie i śledzenie przekierowań](#Debugowanie-i-śledzenie-przekierowań)\n\n- [Automatyzacja w skryptach](#Automatyzacja-w-skryptach)\n\n- [Porównanie curl i wget – kiedy używać którego?](#Porównanie-curl-i-wget-–-kiedy-używać-którego?)\n\n- [FAQ - Często zadawane pytania](#-FAQ---Często-zadawane-pytania)\n\n- [Komendy curl – PDF do pobrania](#Komendy-curl-–-PDF-do-pobrania-(Markdown-tekst-do-eksportu))\n\n- [Podsumowanie co się nauczyliśmy o Curl](#Podsumowanie-co-się-nauczyliśmy-o-Curl)\n\nKod źródłowy do wpisu oraz komendy zostały umieszczone i są dostępne jako **[Gist] Scripetrix dla [Post #64 Curl – Twoje Terminalowe Okno na Świat](https://gist.github.com/Scripterix/5dcbc8e77570e42f2bb635e10eb3a607)**\n\n## 1. Wprowadzenie – czym właściwie jest curl?\n\nWyobraź sobie, że możesz porozmawiać z dowolnym serwerem bezpośrednio z terminala – bez przeglądarki, bez graficznych bajerów. Tylko Ty, adres URL i odpowiedź serwera.Tym właśnie jest curl.\n\nTo jedno z najczęściej używanych narzędzi w świecie programistów, testerów i DevOps. Pomaga wysyłać żądania HTTP, testować API, pobierać pliki i analizować odpowiedzi.\n\n![coding-opengateweb](https://opengateweb.com/wp-content/uploads/2025/07/image-2-559x745.jpg)\n\n## 2. Instalacja i konfiguracja\n\nCurl jest dostępny na większości systemów:\n\n- **Linux** – często zainstalowany domyślnie (sprawdź: curl --version)\n\n- **macOS** – również w standardzie\n\n- **Windows** – dostępny jako curl.exe w PowerShell lub przez instalator\n\n- **Visual Studio Code / Git Bash** – jeśli używasz Windows i masz zainstalowany Git, curl jest dostępny w terminalu (MINGW64), który uruchamiasz np. przez VSC\n\nJeśli chcesz, możesz też zainstalować aktualną wersję z oficjalnego repozytorium: [https://curl.se](https://curl.se)\n\n## 3. Najważniejsze komendy w praktyce\n\ncurl https://example.com\n\nPobiera HTML strony.\n\ncurl -I https://example.com\n\nWyświetla tylko nagłówki odpowiedzi (HEAD).\n\ncurl -v https://example.com\n\nTryb verbose – pokazuje cały proces żądania.\n\ncurl -o plik.png https://example.com/logo.png\n\nZapisuje odpowiedź do pliku.\n\ncurl -L https://bit.ly/xyz\n\nŚledzi przekierowania (301/302).\n\n## 4. Curl i API – jak testować endpointy i pracować z JSON-em\n\nCurl to niezastąpione narzędzie do testowania REST API:\n\ncurl -X GET https://api.example.com/users\n\nWysyłanie danych JSON:\n\ncurl -X POST -H \"Content-Type: application/json\" \\     -d '{\"name\":\"Piotr\"}' https://api.example.com/users\n\nOdbieranie odpowiedzi? Surowe dane JSON można sformatować narzędziem jq:\n\ncurl https://api.example.com/data | jq .\n\n## 5. Autoryzacja, nagłówki i metody HTTP\n\n### Basic Auth\n\ncurl -u user:pass https://api.example.com\n\n### Token JWT\n\ncurl -H \"Authorization: Bearer TwójToken\" https://api.example.com\n\n### Niestandardowe nagłówki\n\ncurl -H \"X-Custom: wartość\" https://example.com\n\n## 6. Debugowanie i śledzenie przekierowań\n\n- -v pokazuje cały przebieg żądania\n\n- -i dołącza nagłówki HTTP\n\n- --location automatycznie podąża za przekierowaniami\n\nDzięki temu możesz analizować łańcuchy redirectów, statusy HTTP, i błędy po stronie serwera.\n\n## 7. Automatyzacja w skryptach\n\nCurl świetnie nadaje się do cronów, testów integracyjnych, CI/CD.Przykład użycia w bashu:\n\nif curl -s --fail https://strona.pl/health; then  echo \"Strona działa poprawnie\"else  echo \"Uwaga – problem z endpointem!\"fi\n\nNajważniejsze komendy Curl znajdziesz w naszym darmowym CheatSheet. Kliknij w link, aby pobrać [listę poleceń Curl](https://opengateweb.com/wp-content/uploads/2025/07/Curl-–-Najwazniejsze-Komendy.pdf) lub skorzystaj z przycisku poniżej. Nie musisz nawet się rejestrować do newslettera – to proste i szybkie!\n\n[Pobierz polecenie Curl](https://opengateweb.com/wp-content/uploads/2025/07/Curl-–-Najwazniejsze-Komendy.pdf)\n\n## 8. Porównanie curl i wget – kiedy używać którego?\n\nCechacurlwgetWspiera API✅ (POST, PUT itd.)❌ tylko GET i pobieraniePobieranie plików✅✅Śledzenie redirectów✅ -L✅ domyślnieObsługa protokołówHTTP, FTP, SMTPHTTP, FTPSkryptyDoskonały do testowania APIŚwietny do masowego pobierania\n\n## 9. FAQ - Często zadawane pytania\n\n**Jak pobrać plik PDF za pomocą curl?**\n\ncurl -o plik.pdf https://adres.pl/plik.pdf\n\n📌 curl nawiązuje połączenie HTTP z podanym adresem i pobiera surową zawartość odpowiedzi – czyli dane binarne pliku PDF. Dzięki opcji -o (output) treść ta zostaje zapisana bezpośrednio do wskazanego pliku lokalnego, a nie wyświetlona w terminalu.\n\n**Czy curl działa z proxy?**\n\ncurl -x http://proxy.example.com:8080 https://example.com\n\n📌 Flaga -x ustawia zewnętrzny serwer proxy, przez który curl kieruje całe połączenie. To przydatne w firmowych sieciach, testach lokalizacji lub omijaniu ograniczeń regionalnych.\n\n**Czy curl obsługuje cookies?**\n\ncurl -c cookies.txt https://example.com\n\n📌 Flaga -c zapisuje wszystkie ciasteczka otrzymane od serwera (np. Set-Cookie) do pliku cookies.txt. Curl działa tu jak przeglądarka – przechowuje informacje o sesji, autoryzacji, itp.\n\ncurl -b cookies.txt https://example.com\n\n📌 Flaga -b pozwala odczytać i przesłać zapisane wcześniej ciasteczka jako nagłówki HTTP w kolejnych żądaniach. Dzięki temu możesz zachować sesję lub zalogowanie między wywołaniami curl.\n\n**Jak wyświetlić nagłówki odpowiedzi HTTP?**\n\ncurl -i https://example.com\n\n📌 Flaga -i sprawia, że curl dołącza do odpowiedzi nie tylko ciało (HTML, JSON, itd.), ale też nagłówki HTTP – takie jak Content-Type, Server, Date, Cache-Control, itp.\n\n**Jak podejrzeć cały proces komunikacji z serwerem?**\n\ncurl -v https://example.com\n\n📌 -v (verbose) to tryb diagnostyczny. Pokazuje wszystko: rozwiązywanie DNS, połączenie z portem, wysłane żądanie HTTP i pełną odpowiedź, włącznie z kodem statusu i nagłówkami. Niezbędne przy debugowaniu API i błędów 403, 404, 500.\n\n**Jak pobrać plik bez pokazywania postępu (cicho)?**\n\ncurl -s -o plik.txt https://example.com/data.txt\n\n📌 Flaga -s (silent) wyłącza pasek postępu i komunikaty – przydatne w skryptach, cronach i logach CI/CD.\n\n[![cURL Cheat Sheet – darmowy PDF z najważniejszymi komendami terminalowymi, API i JSON](https://opengateweb.com/wp-content/uploads/2025/07/post-64-curl-twoje-terminalowe-okno-na-swiat-497x745.png)](https://opengateweb.com/wp-content/uploads/2025/07/Curl-–-Najwazniejsze-Komendy.pdf)\n\n## 10. Komendy curl – [**PDF do pobrania**](https://opengateweb.com/wp-content/uploads/2025/07/Curl-–-Najwazniejsze-Komendy.pdf)\n\nCurl – Najważniejsze Komendy## Podstawowe- `curl https://example.com` – pobranie HTML- `curl -I https://example.com` – tylko nagłówki- `curl -v https://example.com` – verbose mode- `curl -L https://bit.ly/link` – śledzenie redirectów## API i JSON- `curl -X GET https://api.example.com/users`- `curl -X POST -H \"Content-Type: application/json\" -d '{\"name\":\"Anna\"}' https://api.example.com`- `curl -H \"Authorization: Bearer TOKEN\" https://api.example.com`## Pobieranie plików- `curl -o obrazek.png https://example.com/img.png`- `curl -O https://example.com/dokument.pdf`## Debugowanie- `curl -i https://example.com` – nagłówki- `curl -v https://example.com` – cały log- `curl --trace-ascii log.txt https://example.com`## Autoryzacja- `curl -u user:pass https://api.example.com`- `curl -H \"Authorization: Bearer TOKEN\" https://api.example.com`## Inne- `curl --help` – pomoc- `man curl` – pełna dokumentacja\n\n## 11. Podsumowanie co się nauczyliśmy o Curl\n\n11. Podsumowanie – czego się nauczyliśmy?\n\nW tym poradniku poznaliśmy najważniejsze aspekty pracy z curl, w tym:\n\n- jak instalować i uruchamiać curl na różnych systemach (nawet z Git Bash w VSC),\n\n- jak wykonywać podstawowe żądania GET i POST,\n\n- jak testować API i przesyłać dane w formacie JSON,\n\n- jak ustawiać nagłówki, tokeny, autoryzację,\n\n- jak śledzić przekierowania i analizować odpowiedzi HTTP,\n\n- oraz jak zautomatyzować powtarzalne zapytania w skryptach.\n\nDowiedziałeś się również, jak curl wypada w porównaniu do wget, oraz jak diagnozować problemy sieciowe przy pomocy trybu verbose, trace-ascii i opcji -i, -s, -L.\n\n📌 **Chcesz pogłębić wiedzę o testowaniu API?** Zajrzyj do naszych pokrewnych artykułów:\n\n-  [Post #22 wprowadzenie do API](https://opengateweb.com/posts/22-post-api/)\n\n-  [Post #11 API Advanced Programming Interface](https://opengateweb.com/posts/11-post-api/)\n\nZachęcamy do dodania curl do swojego codziennego workflow – niezależnie od tego, czy jesteś programistą, testerem, DevOpsem czy po prostu chcesz zrozumieć, co naprawdę dzieje się między Twoją aplikacją a serwerem.\n\n**📝 Zespół OpenGateWeb**\n\nArtykuł przygotowany w ramach wyzwania **10k godzin programowania** i kategorii Coding Corner.\n",
+          "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+          "sourceId": "1336",
+          "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded single-source modernization. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under the supplied human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All examples are structured,\nself-contained and use an explicit supported language with exact expected output and diagnostics. No code fences hidden in prose.\nFollow the topic-specific scope, corrections, cautions and runtime limits from the approved evidence.\nDo not add unrelated tutorials, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser",
+                      "cli"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "fff247accd50d7c3ddcaff48094c7b69ccdc79028f02632fdd3affe33bbcb195",
+  "schemaVersion": 1
+}

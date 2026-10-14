@@ -2,7 +2,7 @@ import { editorialBasis, hashBytes, runtimeTargets, unique } from '../../core/ed
 import type { EditorialInput, EditorialBasis } from '../../core/editorial-context.ts';
 import { hashJson, stableJson } from '../../core/serialization.ts';
 import { DraftSchema, WriterAnalysisV1Schema, WriterAnalysisV2Schema, SingleWriterAnalysisSchema } from './contract.ts';
-import { renderArticle, wordCount } from './report.ts';
+import { renderArticle, renderLegacyArticle, wordCount } from './report.ts';
 export function validateWriterInput(raw: unknown) { return editorialBasis(raw); }
 export function validateWriterAnalysis(raw: unknown, basis: EditorialBasis) {
  const baseSchema = basis.input.config.schemaVersion === 1 ? WriterAnalysisV1Schema : WriterAnalysisV2Schema;
@@ -38,15 +38,17 @@ export function validateDraft(raw: unknown, input: EditorialInput, article?: str
   ...(draft.schemaVersion === 1 ? { targetPhpVersions: draft.targetPhpVersions } : { targetRuntimes: draft.targetRuntimes }),
   sections: draft.sections, limitations: draft.limitations,
   ...(draft.interactionOpportunities ? { interactionOpportunities: draft.interactionOpportunities } : {}) }, basis);
- const rendered = renderArticle(draft);
+ const rendered = [renderArticle(draft), renderLegacyArticle(draft)].find(candidate =>
+  draft.articleHash === hashBytes(candidate)
+  && draft.wordCount === wordCount(candidate)
+  && (article === undefined || article === candidate));
  if (draft.topic !== input.config.topic || draft.audience !== input.config.audience
   || draft.sourceDecision !== input.config.sourceDecision || draft.researchPacket !== input.config.researchPacket
   || draft.researchApproval !== input.config.researchApproval || draft.runtimeVerification !== input.config.runtimeVerification
   || stableJson(draft.sources) !== stableJson(basis.decision.targets)
   || stableJson(draft.approvedArtifacts) !== stableJson(basis.approval.evidence.artifacts)
   || draft.writerExecution.inputHash !== hashJson(input)
-  || draft.articleHash !== hashBytes(rendered) || draft.wordCount !== wordCount(rendered)
-  || (article !== undefined && article !== rendered)) throw new Error('Unknown/changed draft or provenance mismatch.');
+  || rendered === undefined) throw new Error('Unknown/changed draft or provenance mismatch.');
  return draft;
 }
 

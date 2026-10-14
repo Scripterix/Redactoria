@@ -50,9 +50,9 @@ editorial decisions or publish LAB artifacts as articles.
 
 | Element | Status | Notes |
 | --- | --- | --- |
-| Astro Website | IMPLEMENTED | Fifteen static routes; HTML/XML sitemap, reading time, copy code, long-form code/tables |
-| Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; fourteen public main-content pages, lazy search API on `/szukaj/` |
-| Cloudflare Pages deployment | VERIFIED B3 CHECKPOINT | Commit `fb86db7`; fifteen public pages, Pagefind fourteen pages; direct route/search/sitemap review PASS |
+| Astro Website | IMPLEMENTED | Nineteen static routes; shared featured-image hero/thumbnails, HTML/XML sitemap, reading time, copy code, long-form code/tables |
+| Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; eighteen public main-content pages, lazy search API on `/szukaj/` |
+| Cloudflare Pages deployment | VERIFIED B4 CHECKPOINT | Commit `828703e`; nineteen public pages, Pagefind eighteen pages; direct B4 listing/article review PASS |
 | LAB | IMPLEMENTED | Separated workspace with publication rules |
 | Content Collections | IMPLEMENTED | `articles` and `topics` |
 | Project Brain | IMPLEMENTED | Documentation map and durable project memory |
@@ -67,9 +67,11 @@ editorial decisions or publish LAB artifacts as articles.
 | First publication candidate | PRESERVED IN LAB | Exact second-pass PASS copy; separate human local-only publication approval recorded |
 | Second publication candidate | PRESERVED IN LAB | B2 single-source PHP control-flow exact PASS copy; publication pending/false |
 | B3 JavaScript candidates | PUBLISHED LOCALLY / PRESERVED IN LAB | Three immutable schema-v3 PASS copies plus separate human decisions, CONTENT and audits |
+| B4 candidates | PUBLISHED / PRESERVED IN LAB | Markdown, JavaScript Calculator and API/HTTP/JSON exact PASS copies; production checkpoint `828703e` verified |
+| B5 candidates | PRESERVED IN LAB | Git, curl/HTTP and Python exact PASS copies; publication pending/false, no CONTENT write |
 | Promotion Gate | IMPLEMENTED | Manual deterministic schema 1–3 CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
-| Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all five lifecycles PASS |
-| CONTENT lineage validation | IMPLEMENTED | Deterministic replay integrated into verification; PHP Arrays backfill and three current B3 navigation records PASS |
+| Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all eight published lifecycles PASS |
+| CONTENT lineage validation | IMPLEMENTED | Deterministic replay integrated into verification; all eight public technical articles have current append-only lineage |
 | Engine foundation | IMPLEMENTED | Minimal model port, source reader, validation, stable serialization, safe LAB writer |
 | Full Engine | FUTURE | Independent automation and orchestration |
 | Dispatcher | FUTURE | Single-step orchestration |
@@ -88,10 +90,11 @@ specific interactive need.
 The public test environment is [redactoria.pages.dev](https://redactoria.pages.dev/).
 The human-reported successful deployment uses `Scripterix/Redactoria`, production
 branch `master`, Astro, build command `npm run build` and output directory `dist`.
-The B3 publication build serves fifteen static pages and a fourteen-page Pagefind
-index. Commit `fb86db7` passed its Cloudflare check and direct public route, search,
-sitemap and responsive verification. Cloudflare is WEBSITE infrastructure, not
-an agent runtime, LAB service or part of the Engine.
+The current B4 publication checkpoint serves nineteen static pages and an
+eighteen-page Pagefind index. Commit `828703e` passed its Cloudflare check and the
+three B4 article routes plus their listing entries were verified directly.
+Cloudflare is WEBSITE infrastructure, not an agent runtime, LAB service or part of
+the Engine.
 
 Content publication remains human-controlled:
 
@@ -204,3 +207,12 @@ to runtime-neutral target validation and separate schema-v3 decisions. Each cand
 entered CONTENT through its own audit; three navigation-only post-promotion changes
 have append-only lineage. Candidate flags remain historical `pending/false`. No
 Publisher, Dispatcher or automatic publication policy was added.
+
+The separately authorized B5 run applies the same isolated manual pipeline to B1
+ranks #8–#10. Queue verification preserved the original source hashes and returned
+`PROCEED` for Git, curl/HTTP and Python fundamentals. Runtime evidence gained one
+backward-compatible `cli` kind plus `shell` and `python` example languages. Final
+examples run against isolated local Git, a controlled loopback HTTP server and two
+installed Python versions. Every candidate has exact hashes and Critic PASS, but
+all publication flags remain pending/false. The work stops in LAB: no CONTENT,
+Promotion Gate, Git checkpoint or deployment follows from B5 authorization.

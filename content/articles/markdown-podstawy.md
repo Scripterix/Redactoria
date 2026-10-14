@@ -37,7 +37,7 @@ redactoria:
 ---
 # Markdown: nagłówki, linki, listy i bloki kodu
 
-Zakres: node v24.16.0. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="markdown-model"></a>
 
@@ -111,7 +111,3 @@ Oczekiwany wynik:
 GitHub Flavored Markdown, czyli GFM, jest ścisłym nadzbiorem CommonMark. Dodaje między innymi tabele, przekreślenie i listy zadań. Taki zapis może działać na GitHubie, lecz inny renderer ograniczony do CommonMark nie musi go rozumieć. Dlatego w dokumentacji projektu warto nazwać używany dialekt.
 
 Niestandardowe atrybuty dopisywane do nagłówka, spotykane w materiale legacy, nie są częścią podstawowej składni CommonMark ani opisanych tu rozszerzeń GFM. Klasy CSS lub identyfikatory dodawaj tylko wtedy, gdy dokumentacja konkretnego renderera wyraźnie je obsługuje.
-
----
-
-- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.

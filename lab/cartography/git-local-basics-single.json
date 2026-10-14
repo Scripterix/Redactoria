@@ -1,0 +1,210 @@
+{
+  "action": "REWRITE",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "requestHash": "907360bb27d1b879d997c5678a529633203a0859b1ec3a6e4a931cd89a9398d3",
+    "selectedInventoryHash": "b8fe7bbe58a0367b95051cf4f5c6be3fd61bda7b755952c2096032e6839da258"
+  },
+  "artifactName": "git-local-basics-single",
+  "confidence": 0.96,
+  "correct": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "id": "correct-index-command",
+      "interpretation": "Poprawić literówkę --cashed na --cached i nie uczyć usuwania pliku z indeksu przed wyjaśnieniem working tree, index oraz HEAD."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "value": "# git rm --cashed index.html"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "id": "keep-local-commands",
+      "interpretation": "Zachować lokalne polecenia init, add, status i commit jako punkt wyjścia do obserwowalnego przepływu pracy."
+    }
+  ],
+  "limitations": [
+    "Analiza obejmuje dokładnie jeden autoryzowany plik SOURCE; nie potwierdza technicznych twierdzeń bez Authority Ladder i kontrolowanego wykonania."
+  ],
+  "missing": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "id": "missing-state-model",
+      "interpretation": "Dodać model working tree → staging area → commit oraz porównanie diff i diff --cached na jednym pliku."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "id": "research-git-local",
+      "interpretation": "Zweryfikować semantykę init, status, add, diff, diff --cached, commit i log w oficjalnej dokumentacji Git oraz w izolowanym repo."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "id": "uncertain-git-hosting",
+      "interpretation": "Oddzielić Git od GitHub i Gist; nie obiecywać aktualności ani jakości zewnętrznego zbioru skryptów."
+    }
+  ],
+  "prerequisites": [
+    "Umiejętność utworzenia pliku tekstowego i uruchomienia jawnie wskazanego polecenia w terminalu."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Wyjaśnić i sprawdzić: trzy stany pliku w lokalnym repozytorium.",
+      "sourceIds": [
+        "277"
+      ],
+      "title": "Trzy stany pliku w lokalnym repozytorium"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Wyjaśnić i sprawdzić: inicjalizacja i pierwszy status.",
+      "sourceIds": [
+        "277"
+      ],
+      "title": "Inicjalizacja i pierwszy status"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Wyjaśnić i sprawdzić: zmiana, diff oraz staging.",
+      "sourceIds": [
+        "277"
+      ],
+      "title": "Zmiana, diff oraz staging"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Wyjaśnić i sprawdzić: commit i czytanie krótkiej historii.",
+      "sourceIds": [
+        "277"
+      ],
+      "title": "Commit i czytanie krótkiej historii"
+    }
+  ],
+  "proposedTitle": "Git lokalnie: status, staging, commit i historia",
+  "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/start-redactoria-edu/",
+      "reason": "Git pełni w Redactorii rolę pamięci zmian, ale lekcja pozostaje niezależnym lokalnym ćwiczeniem."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "277",
+          "sourcePath": "277-post-8-moj-gist.md",
+          "value": "# git rm --cashed index.html"
+        }
+      ],
+      "id": "remove-gist-promotion",
+      "interpretation": "Usunąć reklamowy przegląd Gist, push, edytor Vim, stash i tworzenie branchy poza małym zakresem podstaw."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Jedno izolowane lokalne repozytorium: init, status, add, diff, diff --cached, commit i log. Lokalna konfiguracja autora tylko w repo. Bez GitHub/Gist, push, reset --hard, automatycznych merge i zmian konfiguracji globalnej.",
+  "targets": [
+    {
+      "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "providedCharacters": 3443,
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "title": "Post #8 Mój Gist",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

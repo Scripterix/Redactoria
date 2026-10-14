@@ -1,0 +1,117 @@
+{
+  "asOfDate": "2026-10-13",
+  "probes": [
+    {
+      "code": "Local HTTP fixture; curl.exe GET; --head; --write-out %{http_code}; --fail-with-body on 404",
+      "codeHash": "47f23a7ad244e1a8520b19df18924f053fd181184c19a3b332431f1a5a00173f",
+      "description": "GET, HEAD, status reporting and HTTP failure against a controlled loopback server",
+      "diagnostics": [],
+      "id": "curl-local-http",
+      "result": {
+        "failure": {
+          "code": 22,
+          "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+          "stdout": "{\"error\":\"missing\"}\n"
+        },
+        "get": "{\"name\":\"Ada\"}\n",
+        "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+        "status": "404"
+      },
+      "runtimeId": "curl",
+      "runtimeVersion": "8.13.0"
+    }
+  ],
+  "provenance": "Current official project/runtime documentation snapshots plus controlled local CLI probes; no remote repository, external API or global configuration mutation.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-curl-http"
+      ],
+      "id": "curl-response-parts",
+      "question": "Jak curl rozdziela body, nagłówki, status HTTP i metodę HEAD?",
+      "section": "response"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-curl-http"
+      ],
+      "id": "curl-exit-boundary",
+      "question": "Jak --write-out i --fail-with-body rozdzielają status HTTP od kodu wyjścia procesu?",
+      "section": "errors"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "0ef77bad12997946fd2663bb2222b4201ab5cf3b2d724595cb099ca2ef58283d",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "curl-head",
+          "locator": "--head",
+          "text": "--head fetches headers only and makes curl issue an HTTP HEAD request."
+        },
+        {
+          "id": "curl-include",
+          "locator": "--include",
+          "text": "--include adds response headers to the normal output together with the response body."
+        },
+        {
+          "id": "curl-write-out",
+          "locator": "--write-out and VARIABLES",
+          "text": "--write-out prints selected transfer information after completion; http_code exposes the response status code."
+        },
+        {
+          "id": "curl-fail-body",
+          "locator": "--fail-with-body",
+          "text": "--fail-with-body returns error 22 for HTTP responses with status 400 or greater while preserving the response body."
+        }
+      ],
+      "id": "curl-manpage",
+      "kind": "project-documentation",
+      "retrieval": {
+        "finalUrl": "https://curl.se/docs/manpage.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-13T19:41:02.183Z",
+      "sourceType": "authority-ladder",
+      "title": "curl command line tool man page",
+      "url": "https://curl.se/docs/manpage.html"
+    },
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "d431760660ea44e130f6e919dab216df2d0b3a490567a98089267523368fe1e5",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "get-head",
+          "locator": "9.3.1 GET and 9.3.2 HEAD",
+          "text": "GET requests transfer a current representation; HEAD has the same semantics as GET but the server does not send content in the response."
+        },
+        {
+          "id": "status-code",
+          "locator": "15 Status Codes",
+          "text": "The status code describes the result of attempting to understand and satisfy the request."
+        }
+      ],
+      "id": "rfc-9110",
+      "kind": "standard",
+      "retrieval": {
+        "finalUrl": "https://www.rfc-editor.org/rfc/rfc9110.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-13T19:41:02.183Z",
+      "sourceType": "authority-ladder",
+      "title": "RFC 9110 — HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+    }
+  ],
+  "topicSlug": "curl-http-basics"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-13T21:25:37+02:00",
+  "scope": "public-article-reader-copy-cleanup",
+  "authorization": "Apply the reader-facing wording cleanup to all applicable published posts: describe the audience as beginners and people at an intermediate level, and remove internal B3/B4 authorization and interaction-metadata notes from the public article body.",
+  "articles": [
+    "api-http-json",
+    "dom-w-javascript",
+    "instrukcje-sterujace-php",
+    "kalkulator-w-javascript",
+    "markdown-podstawy",
+    "tablice-w-javascript",
+    "tablice-w-php",
+    "warunki-w-javascript"
+  ],
+  "boundaries": {
+    "technicalMeaningChanged": false,
+    "codeExamplesChanged": false,
+    "sourceOrLabHistoryChanged": false,
+    "publicationAuthorized": true,
+    "gitAuthorized": false,
+    "deploymentAuthorized": false
+  }
+}

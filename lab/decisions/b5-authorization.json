@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-13T21:17:15+02:00",
+  "recordedAt": "2026-10-13T21:17:15+02:00",
+  "scope": "B5: revalidate and process B1 ranks 8–10 as three independent bounded candidate jobs without publication.",
+  "b1RankingRef": "lab/cartography/pilot-selection/ranking.json",
+  "b1RankingHash": "e53b8fb9400f2d63102807aed21f0e80e835c0c4169797d8fd31154671b580e8",
+  "queueVerificationRef": "lab/reports/b5-queue-verification.json",
+  "queueVerificationHash": "bfadbc88de6023d8d217f1a334754aeaf467d60570978650d631a6e20357d748",
+  "authorization": "The human accepted Git locally, curl and HTTP, and Python fundamentals as the B5 queue and authorized the same validated editorial path through exact pending candidates. The coding session may prepare and capture structured module responses without requiring the human to relay prompts through a separate general-purpose chat. Publication remains a separate human decision.",
+  "researchAcceptance": {
+    "mode": "validation-under-human-task-authorization",
+    "humanReviewedPacket": false,
+    "writerAfterValidatedPacket": true,
+    "clarification": "Validated Authority Ladder packets may advance to Writer under this bounded task authorization. This does not claim separate human review of each generated packet and does not authorize publication."
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "b1Rank": 8,
+      "topic": "git-local-basics",
+      "origin": "MODERNIZE",
+      "source": {
+        "sourceId": "277",
+        "sourcePath": "277-post-8-moj-gist.md",
+        "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+        "originalUrl": "https://opengateweb.com/posts/8-post-gist/",
+        "title": "Post #8 Mój Gist"
+      }
+    },
+    {
+      "order": 2,
+      "b1Rank": 9,
+      "topic": "curl-http-basics",
+      "origin": "MODERNIZE",
+      "source": {
+        "sourceId": "1336",
+        "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+        "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+        "originalUrl": "https://opengateweb.com/posts/post-64-curl-twoje-terminalowe-okno-na-swiat/",
+        "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat"
+      }
+    },
+    {
+      "order": 3,
+      "b1Rank": 10,
+      "topic": "python-fundamentals",
+      "origin": "MODERNIZE",
+      "source": {
+        "sourceId": "283",
+        "sourcePath": "283-post-10-python-crash-course.md",
+        "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+        "originalUrl": "https://opengateweb.com/posts/10-post-python/",
+        "title": "Post #10 Python Crash Course"
+      }
+    }
+  ],
+  "allowedStages": [
+    "cartographer",
+    "research",
+    "writer",
+    "runtime-verification",
+    "critic",
+    "limited-correction",
+    "publication-candidate"
+  ],
+  "publicationApproved": false,
+  "contentWriteApproved": false,
+  "gitApproved": false,
+  "deploymentApproved": false,
+  "otherRanksApproved": false
+}

@@ -1,0 +1,66 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja obejmuje curl 8.13.0 na Windows i kontrolowany endpoint loopback; nie obejmuje zewnętrznych API, auth, cookies ani proxy."
+  ],
+  "packetHash": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "failure": {
+              "code": 22,
+              "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+              "stdout": "{\"error\":\"missing\"}\n"
+            },
+            "get": "{\"name\":\"Ada\"}\n",
+            "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+            "status": "404"
+          },
+          "expected": {
+            "failure": {
+              "code": 22,
+              "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+              "stdout": "{\"error\":\"missing\"}\n"
+            },
+            "get": "{\"name\":\"Ada\"}\n",
+            "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+            "status": "404"
+          },
+          "id": "curl-local-http-observed",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "3345339164cf384eff527b6c3160fea8d849a4231ec6ca80513e3a739e505168",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "records": [
+        {
+          "code": "Local HTTP fixture; curl.exe GET; --head; --write-out %{http_code}; --fail-with-body on 404",
+          "codeHash": "47f23a7ad244e1a8520b19df18924f053fd181184c19a3b332431f1a5a00173f",
+          "description": "GET, HEAD, status reporting and HTTP failure against a controlled loopback server",
+          "diagnostics": [],
+          "id": "curl-local-http",
+          "result": {
+            "failure": {
+              "code": 22,
+              "stderr": "curl: (22) The requested URL returned error: 404\r\n",
+              "stdout": "{\"error\":\"missing\"}\n"
+            },
+            "get": "{\"name\":\"Ada\"}\n",
+            "head": "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\nContent-Length: 15\r\n\r\n\nstatus=200\n",
+            "status": "404"
+          },
+          "runtimeId": "curl",
+          "runtimeVersion": "8.13.0"
+        }
+      ],
+      "runtimeId": "curl",
+      "status": "PASS",
+      "version": "8.13.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

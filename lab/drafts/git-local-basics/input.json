@@ -1,0 +1,28 @@
+{
+  "audience": "beginner / intermediate",
+  "requiredCoverage": [
+    "working-tree",
+    "index",
+    "head",
+    "init",
+    "status",
+    "add",
+    "diff",
+    "diff-cached",
+    "commit",
+    "log"
+  ],
+  "researchApproval": "lab/decisions/git-local-basics-research-acceptance.json",
+  "researchPacket": "lab/research/git-local-basics/research.json",
+  "runtimeVerification": "lab/research/git-local-basics/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/git-local-basics-rewrite.json",
+  "targetRuntimes": [
+    {
+      "id": "git",
+      "kind": "cli",
+      "version": "2.21.0.windows.1"
+    }
+  ],
+  "topic": "git-local-basics"
+}

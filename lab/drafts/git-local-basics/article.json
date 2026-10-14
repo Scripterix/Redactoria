@@ -1,0 +1,217 @@
+{
+  "action": "DRAFT",
+  "approvedArtifacts": [
+    {
+      "path": "lab/decisions/b5-authorization.json",
+      "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+    },
+    {
+      "path": "lab/decisions/git-local-basics-rewrite.json",
+      "sha256": "c3d4b2f6c21c92a867ef156c1a743f8f72858d514ff55b1de623a5cb1739034e"
+    },
+    {
+      "path": "lab/cartography/git-local-basics-single.json",
+      "sha256": "fc93c76bec7f74b1d52c69742dc3425e476742431caf889071a1906ec0e74676"
+    },
+    {
+      "path": "lab/research/git-local-basics/sources.json",
+      "sha256": "f9c46b32d932c7eb365b9807d312beac304e70660b68a3d49413c43255c8b7fd"
+    },
+    {
+      "path": "lab/research/git-local-basics/probes.json",
+      "sha256": "32a3e1ef4f7c6cbaf1d21ba5cb8e898d4a48b9bbb0885e15a261ceae734651bb"
+    },
+    {
+      "path": "lab/research/git-local-basics/research.json",
+      "sha256": "19f5c293dd4dd8fc907d9f396c64bbcd2ea9e793240cd1bff00b112692d0adc5"
+    },
+    {
+      "path": "lab/research/git-local-basics/runtime-verification.json",
+      "sha256": "10911e89d5d91bd86adee35408217ea95bf204666414a12dd5b7b8def12e8755"
+    },
+    {
+      "path": "lab/research/git-local-basics/runtime-verification.md",
+      "sha256": "53102a412a87ee8226977223ba6fd5c6105920cbe1f1c22361fc55f776a34705"
+    }
+  ],
+  "articleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+  "audience": "beginner / intermediate",
+  "interactionOpportunities": [
+    {
+      "expectedConcept": "Jawny stan wejściowy prowadzi do obserwowalnego wyniku.",
+      "id": "predict-output",
+      "implemented": false,
+      "prompt": "Przewidź dokładny wynik pierwszego wykonywalnego przykładu, a potem porównaj go z uruchomieniem.",
+      "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+      "sectionId": "init-status",
+      "type": "predict-output"
+    },
+    {
+      "expectedConcept": "Granice polecenia lub języka pozostają jawne.",
+      "id": "change-boundary",
+      "implemented": false,
+      "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+      "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+      "sectionId": "commit-log",
+      "type": "exercise"
+    }
+  ],
+  "limitations": [
+    "Ćwiczenie dotyczy jednego lokalnego repozytorium. Nie obejmuje GitHub, Gist, push, merge, stash, reset --hard ani konfiguracji globalnej."
+  ],
+  "researchApproval": "lab/decisions/git-local-basics-research-acceptance.json",
+  "researchPacket": "lab/research/git-local-basics/research.json",
+  "runtimeVerification": "lab/research/git-local-basics/runtime-verification.json",
+  "schemaVersion": 2,
+  "sections": [
+    {
+      "body": "W lokalnym repozytorium warto rozdzielić trzy obrazy pliku. Working tree to plik, który właśnie edytujesz. Index, nazywany też staging area, przechowuje treść przygotowaną do następnego commita. HEAD wskazuje bieżący commit, czyli ostatni zapis historii na aktualnej gałęzi.\n\n`git status` opisuje różnice między tymi obszarami. `git add` nie zapisuje historii: kopiuje bieżącą treść pliku do indexu. Jeżeli po `git add` ponownie zmienisz plik, część staged i nowa zmiana w working tree mogą istnieć jednocześnie.",
+      "coverage": [
+        "working-tree",
+        "index",
+        "head"
+      ],
+      "evidence": [
+        {
+          "id": "git-three-states",
+          "kind": "finding"
+        },
+        {
+          "id": "git-two-diffs",
+          "kind": "finding"
+        }
+      ],
+      "examples": [],
+      "heading": "Working tree, index i HEAD",
+      "id": "three-states"
+    },
+    {
+      "body": "Utwórz pusty katalog ćwiczenia i plik `note.txt` z wierszem `pierwsza wersja`. Następnie wykonaj poniższe polecenia w tym katalogu. `git init` tworzy lokalne repozytorium; nie zakłada konta i nie wysyła niczego do GitHub.\n\nFormat `--short` skraca wynik statusu. Dwa znaki zapytania oznaczają plik untracked: Git widzi go w working tree, ale nie ma go jeszcze w indexie ani historii.",
+      "coverage": [
+        "init",
+        "status"
+      ],
+      "evidence": [
+        {
+          "id": "git-local-history",
+          "kind": "finding"
+        },
+        {
+          "id": "git-three-states",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "git init --quiet\ngit status --short",
+          "expectedDiagnostics": [],
+          "expectedOutput": "?? note.txt\n",
+          "id": "git-init-status",
+          "language": "shell",
+          "purpose": "Inicjalizacja i status istniejącego pliku note.txt"
+        }
+      ],
+      "heading": "Nowe repozytorium i pierwszy status",
+      "id": "init-status"
+    },
+    {
+      "body": "Po pierwszym commicie dopisz do `note.txt` wiersz `druga linia`. Zwykły `git diff` porównuje working tree z indexem. Po `git add note.txt` ta sama treść znajduje się w indexie, dlatego oglądasz ją przez `git diff --cached`.\n\nOpcja nazywa się `--cached`, nie `--cashed`. Wariant `--numstat` pokazuje zwięzłe liczby dodanych i usuniętych wierszy; tutaj jedna linia została dodana i żadna usunięta.",
+      "coverage": [
+        "add",
+        "diff",
+        "diff-cached"
+      ],
+      "evidence": [
+        {
+          "id": "git-two-diffs",
+          "kind": "finding"
+        },
+        {
+          "id": "git-cached-spelling",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "git diff --numstat -- note.txt\ngit add note.txt\ngit diff --cached --numstat -- note.txt",
+          "expectedDiagnostics": [],
+          "expectedOutput": "1\t0\tnote.txt\n1\t0\tnote.txt\n",
+          "id": "git-diff-stage",
+          "language": "shell",
+          "purpose": "Ta sama zmiana przed i po stagingu"
+        }
+      ],
+      "heading": "Zmiana przed i po git add",
+      "id": "diff-and-stage"
+    },
+    {
+      "body": "Commit zapisuje wersję przygotowaną w indexie. Do lokalnego ćwiczenia ustaw nazwę i e-mail autora wyłącznie w tym repozytorium przez `git config user.name` oraz `git config user.email`; nie zmieniaj konfiguracji globalnej.\n\nPo drugim commicie `git log -2` ogranicza wynik do dwóch wpisów, a format `%s` pokazuje same tematy komunikatów. Najnowszy commit jest pierwszy.",
+      "coverage": [
+        "commit",
+        "log"
+      ],
+      "evidence": [
+        {
+          "id": "git-local-history",
+          "kind": "finding"
+        },
+        {
+          "id": "executed-boundaries",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "git add note.txt\ngit commit --quiet -m \"Druga wersja\"\ngit log -2 --pretty=format:\"%s\"",
+          "expectedDiagnostics": [],
+          "expectedOutput": "Druga wersja\nPierwsza wersja",
+          "id": "git-commit-log",
+          "language": "shell",
+          "purpose": "Drugi commit i dwa komunikaty historii"
+        }
+      ],
+      "heading": "Commit i krótka historia",
+      "id": "commit-log"
+    }
+  ],
+  "sourceDecision": "lab/decisions/git-local-basics-rewrite.json",
+  "sources": [
+    {
+      "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "providedCharacters": 3443,
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "title": "Post #8 Mój Gist",
+      "truncated": false
+    }
+  ],
+  "status": "draft",
+  "targetRuntimes": [
+    {
+      "id": "git",
+      "kind": "cli",
+      "version": "2.21.0.windows.1"
+    }
+  ],
+  "title": "Git lokalnie: status, staging, commit i historia",
+  "topic": "git-local-basics",
+  "wordCount": 364,
+  "writerExecution": {
+    "inputHash": "e0e3a993b0d3ef08bf69376eddae8d7fcab394580fe61d63e88d938fb74227c9",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "unknown-codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "acee9ffbc9cad3a1e130ff9d43419924ef152b7463472543e88443e8cb05c47b"
+  }
+}

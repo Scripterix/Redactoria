@@ -49,7 +49,7 @@ redactoria:
 ---
 # Tablice w PHP — od podstaw do sortowania i mapowania
 
-Zakres: PHP 8.4–8.5. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: PHP 8.4–8.5. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="model"></a>
 

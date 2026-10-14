@@ -36,6 +36,14 @@ which ideas are still exploratory.
   URLs, responsive review, quality results and the next human gate.
 - [Website utilities](plans/completed/009-reading-time-and-website-utilities.md) —
   reading time, official sitemap XML, HTML map, back-to-top and progressive code copy.
+- [Featured Image 0.1](plans/completed/028-featured-image-01.md) — optional article
+  image metadata, one shared Astro-managed fallback, article hero and card thumbnails.
+- [B4 ranks #5–#7](plans/completed/027-b4-contract-and-publication.md) — three
+  authority-backed publications, commit `828703e` and verified production routes.
+- [B5 ranks #8–#10](plans/completed/029-b5-ranks-8-10.md) and
+  [three-candidate comparison](../lab/reports/b5-three-candidate-comparison.md) —
+  Git, curl/HTTP and Python completed as exact runtime-verified LAB candidates;
+  publication remains pending/false.
 - [Search/public checkpoint](plans/completed/010-pagefind-search-public-checkpoint.md) —
   Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
 - [B1 pilot selection](../lab/reports/pilot-selection-b1.md) and

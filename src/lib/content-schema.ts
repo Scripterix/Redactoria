@@ -6,6 +6,8 @@ const nullableText = z.string().nullable().optional();
 export function createArticleSchema<T extends z.ZodType>(topic: T) {
 	return z.object({
 		title: z.string().min(1), description: z.string().min(1), slug: z.string().min(1),
+		featuredImage: z.string().trim().min(1).optional(),
+		featuredAlt: z.string().trim().min(1).optional(),
 		status: z.enum(['draft', 'review', 'published', 'archived']),
 		created: z.coerce.date(), updated: z.coerce.date(), domain: z.string().min(1), topic,
 		author: z.object({ type: z.enum(['human', 'ai-assisted']), name: z.string().min(1) }),

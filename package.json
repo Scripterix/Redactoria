@@ -18,6 +18,7 @@
     "cartographer": "node --experimental-strip-types scripts/cartographer.ts",
     "select:pilot": "node --experimental-strip-types scripts/select-pilot.ts",
     "b3:cartographer": "node --experimental-strip-types scripts/b3-cartographer.ts",
+    "b5:cartographer": "node --experimental-strip-types scripts/b3-cartographer.ts",
     "researcher": "node --experimental-strip-types scripts/researcher.ts",
     "writer": "node --experimental-strip-types scripts/writer.ts",
     "critic": "node --experimental-strip-types scripts/critic.ts",

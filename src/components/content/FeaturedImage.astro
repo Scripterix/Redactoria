@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import defaultFeaturedImage from '../../assets/default-img.webp';
+import { resolveArticleFeaturedImage } from '../../lib/featured-image';
+
+interface Props {
+	title: string;
+	featuredImage?: string;
+	featuredAlt?: string;
+	variant: 'hero' | 'thumbnail';
+}
+
+const { title, featuredImage, featuredAlt, variant } = Astro.props;
+const image = resolveArticleFeaturedImage({ title, featuredImage, featuredAlt }, defaultFeaturedImage);
+const imageClass = ['featured-image', `featured-image--${variant}`];
+---
+
+{typeof image.src === 'string' ? (
+	<Image
+		src={image.src}
+		alt={image.alt}
+		width={1600}
+		height={900}
+		loading={variant === 'hero' ? 'eager' : 'lazy'}
+		decoding="async"
+		class:list={imageClass}
+	/>
+) : (
+	<Image
+		src={image.src}
+		alt={image.alt}
+		width={1600}
+		height={900}
+		loading={variant === 'hero' ? 'eager' : 'lazy'}
+		decoding="async"
+		class:list={imageClass}
+	/>
+)}
+
+<style>
+	.featured-image {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		background: var(--color-secondary-soft);
+	}
+
+	.featured-image--hero {
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-medium);
+	}
+
+	.featured-image--thumbnail {
+		border-radius: var(--radius-small);
+	}
+</style>

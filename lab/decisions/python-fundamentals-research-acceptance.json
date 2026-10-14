@@ -1,0 +1,94 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b5-authorization.json",
+        "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+      },
+      {
+        "path": "lab/decisions/python-fundamentals-rewrite.json",
+        "sha256": "43add2d256a941c3d97aab47500ee76714302ad60ea3d91e09c688e83f3e3bab"
+      },
+      {
+        "path": "lab/cartography/python-fundamentals-single.json",
+        "sha256": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981"
+      },
+      {
+        "path": "lab/research/python-fundamentals/sources.json",
+        "sha256": "cf7ef1a04be92855cb225b113e11905d77bceda49dab4c957a04191f8a56752a"
+      },
+      {
+        "path": "lab/research/python-fundamentals/probes.json",
+        "sha256": "23d5fb6157820f001225b9f5e45b660a2494d5bc83b3f49497e6ac4b3d276f26"
+      },
+      {
+        "path": "lab/research/python-fundamentals/research.json",
+        "sha256": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57"
+      },
+      {
+        "path": "lab/research/python-fundamentals/runtime-verification.json",
+        "sha256": "b01184ed371682f288b67861bfe3e868ee0f79e298bb6512dcec359f21e5de1f"
+      },
+      {
+        "path": "lab/research/python-fundamentals/runtime-verification.md",
+        "sha256": "507e1488c954f861ba1bcccdeea9bba2ce4aa213d70174cbed6d1b9dcbd4cf0c"
+      }
+    ],
+    "humanApproval": "The human authorized the three B5 jobs through exact pending candidates; this packet was validated in-session and was not separately read by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/python-fundamentals/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "python-3-14",
+          "status": "PASS",
+          "version": "3.14.5"
+        },
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "python-3-11",
+          "status": "PASS",
+          "version": "3.11.9"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "9fd0e37d50cebf4d4a788c27ce660d4448b333717bdd051636ab478f4c4871b5",
+  "nextStep": "writer",
+  "packetHash": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57",
+  "packetRef": "lab/research/python-fundamentals/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, keep local CLI limits explicit, and execute every final draft example independently.",
+  "requestHash": "491b43a1d17018d0e34d101fbcd352e1898c85d9f40384a3f290bde1bcb87c42",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "python-values",
+    "python-flow-functions"
+  ],
+  "schemaVersion": 3,
+  "scope": "B5 python-fundamentals: validated packet and CLI runtime evidence through candidate preparation only.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+      "providedCharacters": 6634,
+      "sourceId": "283",
+      "sourcePath": "283-post-10-python-crash-course.md",
+      "title": "Post #10 Python Crash Course",
+      "truncated": false
+    }
+  ],
+  "topic": "python-fundamentals",
+  "validatedAt": "2026-10-13T19:42:05.198Z"
+}

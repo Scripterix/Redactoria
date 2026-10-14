@@ -1,0 +1,1244 @@
+{
+  "inputHash": "7dcaba42cf938228d72888f631164245bea049334ac0c950d08a05d30a9f3d97",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+        "authorizationRef": "lab/decisions/b5-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b5-authorization.json",
+              "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+            },
+            {
+              "path": "lab/decisions/python-fundamentals-rewrite.json",
+              "sha256": "43add2d256a941c3d97aab47500ee76714302ad60ea3d91e09c688e83f3e3bab"
+            },
+            {
+              "path": "lab/cartography/python-fundamentals-single.json",
+              "sha256": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981"
+            },
+            {
+              "path": "lab/research/python-fundamentals/sources.json",
+              "sha256": "cf7ef1a04be92855cb225b113e11905d77bceda49dab4c957a04191f8a56752a"
+            },
+            {
+              "path": "lab/research/python-fundamentals/probes.json",
+              "sha256": "23d5fb6157820f001225b9f5e45b660a2494d5bc83b3f49497e6ac4b3d276f26"
+            },
+            {
+              "path": "lab/research/python-fundamentals/research.json",
+              "sha256": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57"
+            },
+            {
+              "path": "lab/research/python-fundamentals/runtime-verification.json",
+              "sha256": "b01184ed371682f288b67861bfe3e868ee0f79e298bb6512dcec359f21e5de1f"
+            },
+            {
+              "path": "lab/research/python-fundamentals/runtime-verification.md",
+              "sha256": "507e1488c954f861ba1bcccdeea9bba2ce4aa213d70174cbed6d1b9dcbd4cf0c"
+            }
+          ],
+          "humanApproval": "The human authorized the three B5 jobs through exact pending candidates; this packet was validated in-session and was not separately read by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/python-fundamentals/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "python-3-14",
+                "status": "PASS",
+                "version": "3.14.5"
+              },
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "python-3-11",
+                "status": "PASS",
+                "version": "3.11.9"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "9fd0e37d50cebf4d4a788c27ce660d4448b333717bdd051636ab478f4c4871b5",
+        "nextStep": "writer",
+        "packetHash": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57",
+        "packetRef": "lab/research/python-fundamentals/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "unknown-codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts, keep local CLI limits explicit, and execute every final draft example independently.",
+        "requestHash": "491b43a1d17018d0e34d101fbcd352e1898c85d9f40384a3f290bde1bcb87c42",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "python-values",
+          "python-flow-functions"
+        ],
+        "schemaVersion": 3,
+        "scope": "B5 python-fundamentals: validated packet and CLI runtime evidence through candidate preparation only.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+            "providedCharacters": 6634,
+            "sourceId": "283",
+            "sourcePath": "283-post-10-python-crash-course.md",
+            "title": "Post #10 Python Crash Course",
+            "truncated": false
+          }
+        ],
+        "topic": "python-fundamentals",
+        "validatedAt": "2026-10-13T19:42:05.198Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Wyjaśnić i sprawdzić: wartości, nazwy i podstawowe typy.",
+          "sourceIds": [
+            "283"
+          ],
+          "title": "Wartości, nazwy i podstawowe typy"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Wyjaśnić i sprawdzić: warunek if i jawne gałęzie.",
+          "sourceIds": [
+            "283"
+          ],
+          "title": "Warunek if i jawne gałęzie"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Wyjaśnić i sprawdzić: pętla for oraz granice range.",
+          "sourceIds": [
+            "283"
+          ],
+          "title": "Pętla for oraz granice range"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "283",
+              "sourcePath": "283-post-10-python-crash-course.md",
+              "value": "for i in range(5):"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Wyjaśnić i sprawdzić: funkcja, argument i wartość return.",
+          "sourceIds": [
+            "283"
+          ],
+          "title": "Funkcja, argument i wartość return"
+        }
+      ],
+      "config": {
+        "audience": "beginner / intermediate",
+        "requiredCoverage": [
+          "values",
+          "types",
+          "lists",
+          "indexing",
+          "slicing",
+          "if-elif-else",
+          "for",
+          "range",
+          "functions",
+          "return",
+          "indentation"
+        ],
+        "researchApproval": "lab/decisions/python-fundamentals-research-acceptance.json",
+        "researchPacket": "lab/research/python-fundamentals/research.json",
+        "runtimeVerification": "lab/research/python-fundamentals/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/python-fundamentals-rewrite.json",
+        "targetRuntimes": [
+          {
+            "id": "python-3-14",
+            "kind": "cli",
+            "version": "3.14.5"
+          },
+          {
+            "id": "python-3-11",
+            "kind": "cli",
+            "version": "3.11.9"
+          }
+        ],
+        "topic": "python-fundamentals"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981",
+        "analysisRef": "lab/cartography/python-fundamentals-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+        "authorizationRef": "lab/decisions/b5-authorization.json",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "283",
+            "sourcePath": "283-post-10-python-crash-course.md",
+            "value": "for i in range(5):"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "Źródło zachowuje użyteczny rdzeń początkującej lekcji, ale miesza go z promocją, zbyt szerokim zakresem lub niezweryfikowanymi przykładami; wymaga zwartego rewrite opartego na dokumentacji i kontrolowanym wykonaniu.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+            "providedCharacters": 6634,
+            "sourceId": "283",
+            "sourcePath": "283-post-10-python-crash-course.md",
+            "title": "Post #10 Python Crash Course",
+            "truncated": false
+          }
+        ],
+        "topic": "python-fundamentals"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981",
+          "decisionHash": "43add2d256a941c3d97aab47500ee76714302ad60ea3d91e09c688e83f3e3bab",
+          "fullReadCount": 1,
+          "inputHash": "9fd0e37d50cebf4d4a788c27ce660d4448b333717bdd051636ab478f4c4871b5",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "unknown-codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+              "description": "Numbers, lists, slicing, range, conditions and function return values",
+              "diagnostics": [],
+              "id": "python-3-14-fundamentals",
+              "result": {
+                "labels": [
+                  "negative",
+                  "zero",
+                  "positive"
+                ],
+                "range": [
+                  1,
+                  3,
+                  5
+                ],
+                "slice": [
+                  4,
+                  6
+                ]
+              },
+              "runtimeId": "python-3-14",
+              "runtimeVersion": "3.14.5"
+            },
+            {
+              "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+              "description": "Numbers, lists, slicing, range, conditions and function return values",
+              "diagnostics": [],
+              "id": "python-3-11-fundamentals",
+              "result": {
+                "labels": [
+                  "negative",
+                  "zero",
+                  "positive"
+                ],
+                "range": [
+                  1,
+                  3,
+                  5
+                ],
+                "slice": [
+                  4,
+                  6
+                ]
+              },
+              "runtimeId": "python-3-11",
+              "runtimeVersion": "3.11.9"
+            }
+          ],
+          "requestHash": "491b43a1d17018d0e34d101fbcd352e1898c85d9f40384a3f290bde1bcb87c42",
+          "researchBundleHash": "cf7ef1a04be92855cb225b113e11905d77bceda49dab4c957a04191f8a56752a",
+          "topicSlug": "python-fundamentals"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "283",
+                "sourcePath": "283-post-10-python-crash-course.md",
+                "value": "for i in range(5):"
+              }
+            ],
+            "claim": "Te same deterministyczne przykłady wartości, slicing, range, warunków i return dały zgodny wynik w Pythonie 3.14.5 oraz 3.11.9.",
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "documentId": "python-introduction",
+                "excerptId": "numbers-text-lists"
+              },
+              {
+                "documentId": "python-control-flow",
+                "excerptId": "if-elif-else"
+              }
+            ],
+            "id": "executed-boundaries",
+            "probeIds": [
+              "python-3-14-fundamentals",
+              "python-3-11-fundamentals"
+            ],
+            "questionIds": [
+              "python-values",
+              "python-flow-functions"
+            ],
+            "recommendation": "Finalne przykłady draftu wykonać ponownie niezależnie od próby badawczej.",
+            "sourceType": "authority-ladder",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-13",
+          "evidence": [
+            {
+              "documentId": "python-introduction",
+              "excerptId": "numbers-text-lists"
+            },
+            {
+              "documentId": "python-control-flow",
+              "excerptId": "if-elif-else"
+            }
+          ],
+          "runtimeScope": "Python 3.14.5 i 3.11.9; czysty standardowy język bez sieci i bibliotek zewnętrznych"
+        },
+        "incorrectClaims": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "283",
+                "sourcePath": "283-post-10-python-crash-course.md",
+                "value": "for i in range(5):"
+              }
+            ],
+            "claim": "Fragmenty legacy trzeba odtworzyć jako kompletne bloki z prawidłowymi wcięciami i jawnym stdout; sama linia for i range nie tworzy kompletnego programu.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "python-control-flow",
+                "excerptId": "for-range"
+              },
+              {
+                "documentId": "python-control-flow",
+                "excerptId": "function-definition"
+              }
+            ],
+            "id": "python-complete-blocks",
+            "questionIds": [
+              "python-flow-functions"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "limitations": [
+          "Research obejmuje jeden autoryzowany materiał SOURCE, oficjalne źródła potrzebne do zakresu oraz kontrolowane lokalne wykonanie; nie jest zgodą na publikację."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "python-values-lists",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+            "questionId": "python-values",
+            "status": "resolved"
+          },
+          {
+            "findingIds": [
+              "python-branches",
+              "python-range",
+              "python-function-return",
+              "python-complete-blocks",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez źródła Authority Ladder i kontrolowane wykonanie lokalne.",
+            "questionId": "python-flow-functions",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "CORRECT",
+            "findingIds": [
+              "python-values-lists",
+              "python-branches",
+              "python-range",
+              "python-function-return",
+              "python-complete-blocks",
+              "executed-boundaries"
+            ],
+            "id": "modernize-bounded",
+            "instruction": "Zmodernizować jeden materiał legacy w ograniczonym, lokalnym i sprawdzalnym zakresie."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "authorityClass": "official-project-runtime",
+            "authorityTier": 2,
+            "documentHash": "9b2220697c438e0d0587fde87899394f4639e0b2db5062944a81684d7084d50d",
+            "evidenceIds": [
+              "numbers-text-lists"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "python-introduction",
+            "kind": "runtime-documentation",
+            "retrieval": {
+              "finalUrl": "https://docs.python.org/3.14/tutorial/introduction.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-13T19:41:54.898Z",
+            "sourceType": "authority-ladder",
+            "title": "Python 3.14 Tutorial — An Informal Introduction",
+            "url": "https://docs.python.org/3.14/tutorial/introduction.html"
+          },
+          {
+            "authorityClass": "official-project-runtime",
+            "authorityTier": 2,
+            "documentHash": "81c06607b328554e746fda0693485df392d84b38c25450ed0c4fd11d5d434565",
+            "evidenceIds": [
+              "if-elif-else",
+              "for-range",
+              "function-definition"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "python-control-flow",
+            "kind": "runtime-documentation",
+            "retrieval": {
+              "finalUrl": "https://docs.python.org/3.14/tutorial/controlflow.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-13T19:41:54.898Z",
+            "sourceType": "authority-ladder",
+            "title": "Python 3.14 Tutorial — More Control Flow Tools",
+            "url": "https://docs.python.org/3.14/tutorial/controlflow.html"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+            "providedCharacters": 6634,
+            "sourceId": "283",
+            "sourcePath": "283-post-10-python-crash-course.md",
+            "title": "Post #10 Python Crash Course",
+            "truncated": false
+          }
+        ],
+        "topic": "python-fundamentals",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "283",
+                "sourcePath": "283-post-10-python-crash-course.md",
+                "value": "for i in range(5):"
+              }
+            ],
+            "claim": "Python obsługuje liczby, napisy i listy; indeksowanie list zaczyna się od zera, a slicing zwraca wybrany fragment.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "python-introduction",
+                "excerptId": "numbers-text-lists"
+              }
+            ],
+            "id": "python-values-lists",
+            "questionIds": [
+              "python-values"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "283",
+                "sourcePath": "283-post-10-python-crash-course.md",
+                "value": "for i in range(5):"
+              }
+            ],
+            "claim": "if wybiera gałąź, opcjonalne elif dodaje kolejne warunki, a else obsługuje pozostały przypadek.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "python-control-flow",
+                "excerptId": "if-elif-else"
+              }
+            ],
+            "id": "python-branches",
+            "questionIds": [
+              "python-flow-functions"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "283",
+                "sourcePath": "283-post-10-python-crash-course.md",
+                "value": "for i in range(5):"
+              }
+            ],
+            "claim": "range tworzy postęp arytmetyczny z wyłączoną wartością końcową i może sterować pętlą for.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "python-control-flow",
+                "excerptId": "for-range"
+              }
+            ],
+            "id": "python-range",
+            "questionIds": [
+              "python-flow-functions"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "283",
+                "sourcePath": "283-post-10-python-crash-course.md",
+                "value": "for i in range(5):"
+              }
+            ],
+            "claim": "def rozpoczyna definicję funkcji, a return zwraca wartość do miejsca wywołania.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "python-control-flow",
+                "excerptId": "function-definition"
+              }
+            ],
+            "id": "python-function-return",
+            "questionIds": [
+              "python-flow-functions"
+            ],
+            "recommendation": "Użyć jako zweryfikowanej granicy treści i przykładów.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [],
+          "caution": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Nie przedstawiać próby badawczej jako wykonania finalnego kodu artykułu."
+            }
+          ],
+          "correct": [
+            {
+              "findingIds": [
+                "python-complete-blocks"
+              ],
+              "instruction": "Fragmenty legacy trzeba odtworzyć jako kompletne bloki z prawidłowymi wcięciami i jawnym stdout; sama linia for i range nie tworzy kompletnego programu."
+            }
+          ],
+          "keep": [
+            {
+              "findingIds": [
+                "python-values-lists",
+                "python-branches",
+                "python-range",
+                "python-function-return"
+              ],
+              "instruction": "Zachować praktyczny, terminalowy charakter materiału i jawne oczekiwane wyniki."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "executed-boundaries"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Weryfikacja obejmuje czysty Python 3.14.5 i 3.11.9 bez sieci oraz bibliotek zewnętrznych; nie jest deklaracją zgodności z Pythonem 2."
+        ],
+        "packetHash": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "labels": [
+                    "negative",
+                    "zero",
+                    "positive"
+                  ],
+                  "range": [
+                    1,
+                    3,
+                    5
+                  ],
+                  "slice": [
+                    4,
+                    6
+                  ]
+                },
+                "expected": {
+                  "labels": [
+                    "negative",
+                    "zero",
+                    "positive"
+                  ],
+                  "range": [
+                    1,
+                    3,
+                    5
+                  ],
+                  "slice": [
+                    4,
+                    6
+                  ]
+                },
+                "id": "python-3-14-fundamentals-observed",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "3adbbf2af609e206e3ca18cd55fc7c4b52f5c8bb8218dd99fd5a9e50d7a193cd",
+            "execution": "actual-local-cli",
+            "kind": "cli",
+            "records": [
+              {
+                "code": "import json\nvalues = [2, 4, 6]\ndef classify(number):\n    if number > 0:\n        return \"positive\"\n    if number < 0:\n        return \"negative\"\n    return \"zero\"\nprint(json.dumps({\"slice\": values[1:], \"range\": list(range(1, 6, 2)), \"labels\": [classify(x) for x in [-1, 0, 1]]}, separators=(\",\", \":\")))",
+                "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+                "description": "Numbers, lists, slicing, range, conditions and function return values",
+                "diagnostics": [],
+                "id": "python-3-14-fundamentals",
+                "result": {
+                  "labels": [
+                    "negative",
+                    "zero",
+                    "positive"
+                  ],
+                  "range": [
+                    1,
+                    3,
+                    5
+                  ],
+                  "slice": [
+                    4,
+                    6
+                  ]
+                },
+                "runtimeId": "python-3-14",
+                "runtimeVersion": "3.14.5"
+              }
+            ],
+            "runtimeId": "python-3-14",
+            "status": "PASS",
+            "version": "3.14.5"
+          },
+          {
+            "checks": [
+              {
+                "actual": {
+                  "labels": [
+                    "negative",
+                    "zero",
+                    "positive"
+                  ],
+                  "range": [
+                    1,
+                    3,
+                    5
+                  ],
+                  "slice": [
+                    4,
+                    6
+                  ]
+                },
+                "expected": {
+                  "labels": [
+                    "negative",
+                    "zero",
+                    "positive"
+                  ],
+                  "range": [
+                    1,
+                    3,
+                    5
+                  ],
+                  "slice": [
+                    4,
+                    6
+                  ]
+                },
+                "id": "python-3-11-fundamentals-observed",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+            "execution": "actual-local-cli",
+            "kind": "cli",
+            "records": [
+              {
+                "code": "import json\nvalues = [2, 4, 6]\ndef classify(number):\n    if number > 0:\n        return \"positive\"\n    if number < 0:\n        return \"negative\"\n    return \"zero\"\nprint(json.dumps({\"slice\": values[1:], \"range\": list(range(1, 6, 2)), \"labels\": [classify(x) for x in [-1, 0, 1]]}, separators=(\",\", \":\")))",
+                "codeHash": "aff92370110e8990956c52223e8891ee40c3c809c8f011020903ca709e781371",
+                "description": "Numbers, lists, slicing, range, conditions and function return values",
+                "diagnostics": [],
+                "id": "python-3-11-fundamentals",
+                "result": {
+                  "labels": [
+                    "negative",
+                    "zero",
+                    "positive"
+                  ],
+                  "range": [
+                    1,
+                    3,
+                    5
+                  ],
+                  "slice": [
+                    4,
+                    6
+                  ]
+                },
+                "runtimeId": "python-3-11",
+                "runtimeVersion": "3.11.9"
+              }
+            ],
+            "runtimeId": "python-3-11",
+            "status": "PASS",
+            "version": "3.11.9"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — python-fundamentals\n\nStatus: **PASS**\n\n- runtime: python-3-14 3.14.5\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\n- runtime: python-3-11 3.11.9\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nWeryfikacja obejmuje czysty Python 3.14.5 i 3.11.9 bez sieci oraz bibliotek zewnętrznych; nie jest deklaracją zgodności z Pythonem 2.\n",
+      "sources": [
+        {
+          "body": "\n## **Python - Crash Course Python**\n\nDodatkowy język czemu nie. Python przydaje się do AI i ma dużo ciekawych zastosowań. Zatem zaczynam kurs podstaw \"co gdzie jak\".\n\n## **Opis języka**\n\nPython to potężny, wysokopoziomowy język programowania znany ze swojej prostoty i czytelności. Został stworzony przez Guido van Rossuma i po raz pierwszy wydany w 1991 roku. Filozofia projektowa Pythona kładzie nacisk na czytelność kodu, co wyróżnia go znaczące wykorzystanie białych znaków.\n\nJedną z kluczowych cech Pythona jest jego wszechstronność; może być używany do szerokiego zakresu zastosowań, od tworzenia stron internetowych przez analizę danych, sztuczną inteligencję, obliczenia naukowe, po wiele innych. Obsługuje wiele paradygmatów programowania, w tym programowanie proceduralne, obiektowe i funkcyjne.\n\n## **Biblioteki Python**\n\nPython posiada dużą i aktywną społeczność, która przyczynia się do jego obszernej biblioteki standardowej oraz licznych pakietów i frameworków innych firm, takich jak Django do tworzenia stron internetowych, NumPy i Pandas do analizy danych, TensorFlow i PyTorch do uczenia maszynowego, oraz wiele innych.\n\nJego łatwość nauki i solidność sprawiają, że Python jest popularnym wyborem zarówno dla początkujących, jak i doświadczonych programistów. Dodatkowo, interpreter Pythona oraz obszerna dokumentacja sprawiają, że jest on dostępny i łatwy w użyciu na różnych systemach operacyjnych.\n\n[Python Org](https://www.python.org/) to link do zasobów języka. \n\n## **Kurs który przerabiam**\n\nKurs podstaw stworzony przez [Traversy Media Python CC](https://youtu.be/JJmcL1N2KQs?si=z3Ep76w1zHUxHud_) jest wystarczający do opanowania podstaw. Poniżej są pliki do podzielonych różnych właściwości i metod zapisu języka.\n\n[Python_sandbox/python_sandbox_starter](https://github.com/bradtraversy/python_sandbox/tree/master/python_sandbox_starter)\n\n**Już zrobione** - variables if loop i inne przykłady prostej składni. Jeśli utkniesz i nie wiesz jak przygotować środowisko do pracy z Python możesz zrobić to według szybkiego przepisu - [Jak zacząć naukę Pythona w Windows i Visual Studio Code](https://opengateweb.com/posts/jak-zaczac-nauke-pythona-w-windows-i-visual-studio-code-post-70/)\n\nComments\n\nVariable Rules\n\n\"\"\"\n\nx = 1            # int\n\ny = 2.5          # float\n\nname = 'John'    # str\n\nis_cool = True   # bool\n\na = x + y\n\nprint(type(x))\n\nprint(a)\n\n# Instrukcje warunkowe (if)\n\nif is_cool:\n\n    print(\"John is cool!\")  # Wyświetla komunikat, jeśli is_cool jest prawdą\n\n# Pętla (for)\n\nfor i in range(5):\n\n    print(i)  # Wyświetla liczby od 0 do 4\n\n# Funkcje\n\ndef greet(name):\n\n    print(\"Hello, \" + name)\n\ngreet(\"Alice\")  # Wywołuje funkcję greet z argumentem \"Alice\" i wyświetla powitanie\n\n# Metody\n\nsentence = \"Python is awesome!\"\n\nprint(sentence.upper())  # Wyświetla zdanie w dużych literach\n\n### W pliku python.py zamieniamy liczby na binarne:\n\nprint(bin(5))\nprint(bin(1))\nwszystkie = \"\".join(bin(i)[2:] for i in range(1, 22))\nprint(wszystkie)\n\n### Plik zgadnij,py zawiera namiastkę logiki i polega na zgadnięciu liczby w mini skrypcie Python\n\nimport random\n\ndef zgadnij_liczbe():\n    sekretny = random.randint(1, 100)  # losuje od 1 do 100\n    print(\"Zgadnij liczbę od 1 do 100!\")\n\n    while True:\n        try:\n            strzal = int(input(\"Podaj liczbę: \"))\n        except ValueError:\n            print(\"To nie jest liczba! Spróbuj jeszcze raz.\")\n            continue\n\n        if strzal < sekretny:\n            print(\"Za mało!\")\n        elif strzal > sekretny:\n            print(\"Za dużo!\")\n        else:\n            print(f\"Brawo 🎉! Zgadłeś liczbę {sekretny}\")\n            break\n\nzgadnij_liczbe()\n\n## Jak wywołać kod  Python w terminalu - można to  zrobić w terminalu i VSC \n\nJeśli masz plik zgadnij.py w VSC to w terminalu wpisujesz polecenie python <nazwa pliku> \n\n**python zgdanij.py **\n\n![Python crash course ](https://opengateweb.com/wp-content/uploads/2025/02/python-crash-course-1340x726.png)\n\n## **Porównanie składni Python i C**\n\nJedną z cech, która wyróżnia Python spośród innych języków programowania, jest jego skupienie na czytelności i prostocie składni. Python stara się być \"zrozumiały\" dla programistów poprzez promowanie czytelnego i eleganckiego kodu. Przejrzysta składnia Pythona sprawia, że jest on szczególnie atrakcyjny dla początkujących programistów, ale również dla doświadczonych deweloperów.\n\nPrzykładowo, porównajmy Python z językiem C w kontekście prostego programu wypisującego liczby od 1 do 10:\n\n**Python**\n\nfor i in range(1, 11):\n\n    print(i)\n\n**Język C**\n\n#include <stdio.h>\n\nint main() {\n\n    int i;\n\n    for (i = 1; i <= 10; i++) {\n\n        printf(\"%d\\n\", i);\n\n    }\n\n    return 0;\n\n}\n\nChoć oba przykłady robią to samo - wypisują liczby od 1 do 10 - różnica w składni jest dość znacząca. Python eliminuje konieczność deklaracji zmiennych i określania typów danych, co sprawia, że kod jest bardziej zwięzły i czytelny. Ponadto, w Pythonie nie ma potrzeby używania nawiasów klamrowych ani średników do oznaczania bloków kodu, co również przyczynia się do jego czytelności.\n\n**Scrapowanie stron z lib Beatyful Soup**\n\nMożemy użyć Pythona w połączeniu z biblioteką do scrapowania stron internetowych, na przykład BeautifulSoup, aby pobrać dane ze strony HTML. Poniżej znajduje się prosty przykład pokazujący, jak użyć Pythona do pobrania tytułów artykułów z strony internetowej i wyświetlenia ich:\n\nimport requests\n\nfrom bs4 import BeautifulSoup\n\n# Adres URL strony do scrapowania\n\nurl = 'https://example.com'\n\n# Wyślij zapytanie GET do strony i pobierz jej zawartość\n\nresponse = requests.get(url)\n\n# Sprawdź, czy zapytanie zakończyło się sukcesem (status kod 200)\n\nif response.status_code == 200:\n\n    # Parsuj zawartość strony HTML za pomocą BeautifulSoup\n\n    soup = BeautifulSoup(response.text, 'html.parser')\n\n    # Znajdź wszystkie tytuły artykułów (załóżmy, że są one w tagach <h2>)\n\n    article_titles = soup.find_all('h2')\n\n    # Wyświetl znalezione tytuły artykułów\n\n    for title in article_titles:\n\n        print(title.text)\n\nelse:\n\n    print('Nie udało się pobrać zawartości strony.')\n\nW tym **kodzie** najpierw wysyłamy zapytanie GET do wskazanej strony internetowej za pomocą modułu requests. Jeśli zapytanie zostanie pomyślnie zakończone (status kod 200), używamy biblioteki BeautifulSoup, aby sparsować zawartość strony HTML i znaleźć wszystkie tytuły artykułów (przyjmując, że są one w tagach <h2>). Następnie wyświetlamy znalezione tytuły artykułów.\n\nTrochę więcej w perspektywie Server Side i backend, informacji o Python znajdzie tutaj [Post #52 Jakie są Python i PHP](https://opengateweb.com/posts/52-php-python/)\n\n### **Python CDN** ...\n",
+          "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+          "sourceId": "283",
+          "sourcePath": "283-post-10-python-crash-course.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded single-source modernization. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under the supplied human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All examples are structured,\nself-contained and use an explicit supported language with exact expected output and diagnostics. No code fences hidden in prose.\nFollow the topic-specific scope, corrections, cautions and runtime limits from the approved evidence.\nDo not add unrelated tutorials, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser",
+                      "cli"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "a47f973920ab24d015e126f54384978bbc4c1ad18d2f8ad09d51df8ea67e6981",
+  "schemaVersion": 1
+}

@@ -4,6 +4,28 @@
 
 ### Added
 
+- B5 ranks #8–#10 completed as three bounded LAB-only jobs: Git locally, curl/HTTP
+  and Python fundamentals. Unchanged SOURCE hashes and current coverage supported
+  `PROCEED` for all three, so no replacement search was needed.
+- Three official-source Research Packets, actual CLI runtime evidence, Writer drafts,
+  first-pass Critic PASS reviews and exact candidates. Eight unique examples passed
+  Git 2.21.0.windows.1, curl 8.13.0 on loopback, and Python 3.14.5/3.11.9.
+- Backward-compatible `cli` runtime targets plus `shell` and `python` example
+  languages. B5 remains publication-pending in LAB; no CONTENT, Promotion Gate,
+  commit, push or deployment action was performed.
+
+- B4 production checkpoint `828703e`: the Markdown, JavaScript Calculator and
+  API/HTTP/JSON routes plus their listing entries return HTTP 200 with expected
+  production titles. Plan 027 is closed; later B5 work remained limited to LAB
+  candidate preparation.
+
+- Featured Image 0.1: optional `featuredImage` / `featuredAlt` article metadata,
+  one imported `src/assets` fallback, a 16:9 article hero and the same source as a
+  thumbnail in every shared article card. Existing Markdown requires no migration.
+- Human-authorized reader-copy cleanup across eight technical articles: the audience
+  label is shorter, and six internal B3/B4 workflow notes no longer appear publicly.
+  Append-only CONTENT lineage records preserve the original candidates and reviews.
+
 - B4 ranks #5–#7 completed as three bounded `MODERNIZE` lifecycles: Markdown,
   JavaScript Calculator and API / HTTP / JSON. The change extends existing schema-v3
   topic/authorization handling and the explicit `verify:article` registry only;

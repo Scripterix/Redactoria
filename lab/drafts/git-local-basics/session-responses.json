@@ -1,0 +1,164 @@
+{
+  "provenance": {
+    "description": "B5 Writer response authored from the validated Authority Ladder packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "acee9ffbc9cad3a1e130ff9d43419924ef152b7463472543e88443e8cb05c47b",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Jawny stan wejściowy prowadzi do obserwowalnego wyniku.",
+          "id": "predict-output",
+          "implemented": false,
+          "prompt": "Przewidź dokładny wynik pierwszego wykonywalnego przykładu, a potem porównaj go z uruchomieniem.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "init-status",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Granice polecenia lub języka pozostają jawne.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "commit-log",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Ćwiczenie dotyczy jednego lokalnego repozytorium. Nie obejmuje GitHub, Gist, push, merge, stash, reset --hard ani konfiguracji globalnej."
+      ],
+      "sections": [
+        {
+          "body": "W lokalnym repozytorium warto rozdzielić trzy obrazy pliku. Working tree to plik, który właśnie edytujesz. Index, nazywany też staging area, przechowuje treść przygotowaną do następnego commita. HEAD wskazuje bieżący commit, czyli ostatni zapis historii na aktualnej gałęzi.\n\n`git status` opisuje różnice między tymi obszarami. `git add` nie zapisuje historii: kopiuje bieżącą treść pliku do indexu. Jeżeli po `git add` ponownie zmienisz plik, część staged i nowa zmiana w working tree mogą istnieć jednocześnie.",
+          "coverage": [
+            "working-tree",
+            "index",
+            "head"
+          ],
+          "evidence": [
+            {
+              "id": "git-three-states",
+              "kind": "finding"
+            },
+            {
+              "id": "git-two-diffs",
+              "kind": "finding"
+            }
+          ],
+          "examples": [],
+          "heading": "Working tree, index i HEAD",
+          "id": "three-states"
+        },
+        {
+          "body": "Utwórz pusty katalog ćwiczenia i plik `note.txt` z wierszem `pierwsza wersja`. Następnie wykonaj poniższe polecenia w tym katalogu. `git init` tworzy lokalne repozytorium; nie zakłada konta i nie wysyła niczego do GitHub.\n\nFormat `--short` skraca wynik statusu. Dwa znaki zapytania oznaczają plik untracked: Git widzi go w working tree, ale nie ma go jeszcze w indexie ani historii.",
+          "coverage": [
+            "init",
+            "status"
+          ],
+          "evidence": [
+            {
+              "id": "git-local-history",
+              "kind": "finding"
+            },
+            {
+              "id": "git-three-states",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "git init --quiet\ngit status --short",
+              "expectedDiagnostics": [],
+              "expectedOutput": "?? note.txt\n",
+              "id": "git-init-status",
+              "language": "shell",
+              "purpose": "Inicjalizacja i status istniejącego pliku note.txt"
+            }
+          ],
+          "heading": "Nowe repozytorium i pierwszy status",
+          "id": "init-status"
+        },
+        {
+          "body": "Po pierwszym commicie dopisz do `note.txt` wiersz `druga linia`. Zwykły `git diff` porównuje working tree z indexem. Po `git add note.txt` ta sama treść znajduje się w indexie, dlatego oglądasz ją przez `git diff --cached`.\n\nOpcja nazywa się `--cached`, nie `--cashed`. Wariant `--numstat` pokazuje zwięzłe liczby dodanych i usuniętych wierszy; tutaj jedna linia została dodana i żadna usunięta.",
+          "coverage": [
+            "add",
+            "diff",
+            "diff-cached"
+          ],
+          "evidence": [
+            {
+              "id": "git-two-diffs",
+              "kind": "finding"
+            },
+            {
+              "id": "git-cached-spelling",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "git diff --numstat -- note.txt\ngit add note.txt\ngit diff --cached --numstat -- note.txt",
+              "expectedDiagnostics": [],
+              "expectedOutput": "1\t0\tnote.txt\n1\t0\tnote.txt\n",
+              "id": "git-diff-stage",
+              "language": "shell",
+              "purpose": "Ta sama zmiana przed i po stagingu"
+            }
+          ],
+          "heading": "Zmiana przed i po git add",
+          "id": "diff-and-stage"
+        },
+        {
+          "body": "Commit zapisuje wersję przygotowaną w indexie. Do lokalnego ćwiczenia ustaw nazwę i e-mail autora wyłącznie w tym repozytorium przez `git config user.name` oraz `git config user.email`; nie zmieniaj konfiguracji globalnej.\n\nPo drugim commicie `git log -2` ogranicza wynik do dwóch wpisów, a format `%s` pokazuje same tematy komunikatów. Najnowszy commit jest pierwszy.",
+          "coverage": [
+            "commit",
+            "log"
+          ],
+          "evidence": [
+            {
+              "id": "git-local-history",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "git add note.txt\ngit commit --quiet -m \"Druga wersja\"\ngit log -2 --pretty=format:\"%s\"",
+              "expectedDiagnostics": [],
+              "expectedOutput": "Druga wersja\nPierwsza wersja",
+              "id": "git-commit-log",
+              "language": "shell",
+              "purpose": "Drugi commit i dwa komunikaty historii"
+            }
+          ],
+          "heading": "Commit i krótka historia",
+          "id": "commit-log"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "git",
+          "kind": "cli",
+          "version": "2.21.0.windows.1"
+        }
+      ],
+      "title": "Git lokalnie: status, staging, commit i historia"
+    }
+  }
+}

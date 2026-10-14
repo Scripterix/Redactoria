@@ -43,7 +43,7 @@ redactoria:
 ---
 # API, HTTP i JSON: bezpieczne pobieranie danych przez fetch
 
-Zakres: node v24.16.0. Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.
+Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 
 <a id="api-http"></a>
 
@@ -145,7 +145,3 @@ Oczekiwany wynik:
 ```text
 {"success":{"ok":true,"data":{"name":"Ada"}},"missing":{"ok":false,"kind":"http","status":404},"invalid":{"ok":false,"kind":"json"},"network":{"ok":false,"kind":"network"}}
 ```
-
----
-
-- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.

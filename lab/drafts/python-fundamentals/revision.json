@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "afterDraftHash": "f5f8d19e2a0a2d941ac7fd24a38e5dec0b30430eb8539f34031ddb2f8bd93b76",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "beforeArticleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "beforeDraftHash": "f5f8d19e2a0a2d941ac7fd24a38e5dec0b30430eb8539f34031ddb2f8bd93b76",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "python-fundamentals",
+  "writerGenerations": 1
+}

@@ -1,0 +1,48 @@
+{
+  "articleId": "instrukcje-sterujace-php",
+  "candidateRef": "lab/candidates/php-control-flow/article.json",
+  "currentContentHash": "21df978d81e8a0266c2e6284d72a4639bf62e53e9643ef7476e758243ea29feb",
+  "currentContentRef": "content/articles/instrukcje-sterujace-php.md",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+  ],
+  "promotedContentHash": "695a76d153fd9390a146859b288e8e5ab23bed7377e7a011104f35e3d8f3c578",
+  "promotionAuditRef": "lab/reports/instrukcje-sterujace-php-promotion.json",
+  "records": [
+    {
+      "articleId": "instrukcje-sterujace-php",
+      "authorizationHash": "5cb9fba3809b6c1267d988907ae9066c40db0dab8a0d608532a42bb0a4be9003",
+      "authorizationRef": "lab/decisions/public-article-reader-copy-cleanup.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "21df978d81e8a0266c2e6284d72a4639bf62e53e9643ef7476e758243ea29feb",
+      "notes": [
+        "The audience wording is editorial; reviewed technical statements and code examples are byte-identical."
+      ],
+      "previousContentHash": "695a76d153fd9390a146859b288e8e5ab23bed7377e7a011104f35e3d8f3c578",
+      "promotionAuditRef": "lab/reports/instrukcje-sterujace-php-promotion.json",
+      "reason": "Simplify the reader-facing audience label without changing any technical claim or example.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "1d1500fb7c023b07d320d78aa7ee46faf8240ae32c3e6938b176ce3e5511a396",
+      "timestamp": "2026-10-13T19:25:37Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.",
+            "to": "Materiał dla początkujących i osób na poziomie średnim."
+          }
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidateHash": "1d1500fb7c023b07d320d78aa7ee46faf8240ae32c3e6938b176ce3e5511a396",
+  "status": "RECORDED"
+}

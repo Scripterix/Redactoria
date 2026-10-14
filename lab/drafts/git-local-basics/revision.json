@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+  "afterDraftHash": "1e7b13cb5187affe5c9b22dabe173e777b61ef36a31fb434a9b6dfd89b656c93",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "beforeArticleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+  "beforeDraftHash": "1e7b13cb5187affe5c9b22dabe173e777b61ef36a31fb434a9b6dfd89b656c93",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "git-local-basics",
+  "writerGenerations": 1
+}

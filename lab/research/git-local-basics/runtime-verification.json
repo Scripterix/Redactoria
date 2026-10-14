@@ -1,0 +1,57 @@
+{
+  "errata": [],
+  "limitations": [
+    "Weryfikacja obejmuje Git 2.21.0.windows.1 w izolowanych repozytoriach lokalnych; nie obejmuje hostingu, push, merge ani konfiguracji globalnej."
+  ],
+  "packetHash": "19f5c293dd4dd8fc907d9f396c64bbcd2ea9e793240cd1bff00b112692d0adc5",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "log": "Druga wersja\nPierwsza wersja",
+            "stagedDiff": "1\t0\tnote.txt\n",
+            "stagedNew": "A  note.txt\n",
+            "untracked": "?? note.txt\n",
+            "workingDiff": "1\t0\tnote.txt\n"
+          },
+          "expected": {
+            "log": "Druga wersja\nPierwsza wersja",
+            "stagedDiff": "1\t0\tnote.txt\n",
+            "stagedNew": "A  note.txt\n",
+            "untracked": "?? note.txt\n",
+            "workingDiff": "1\t0\tnote.txt\n"
+          },
+          "id": "git-local-cycle-observed",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "d1c4b1f642e94a5131394c35744efbfa4523368efa609b4cefaa6b12f9a7f2a8",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "records": [
+        {
+          "code": "git init; git config (repository-local); status --short; add; commit; diff --numstat; diff --cached --numstat; log --pretty=format:%s",
+          "codeHash": "1ee8f04fe5487326a96c7427f0abb95d6d7dac7fc35601641e6167f694409bf8",
+          "description": "Isolated local repository with untracked, staged, modified and committed states",
+          "diagnostics": [],
+          "id": "git-local-cycle",
+          "result": {
+            "log": "Druga wersja\nPierwsza wersja",
+            "stagedDiff": "1\t0\tnote.txt\n",
+            "stagedNew": "A  note.txt\n",
+            "untracked": "?? note.txt\n",
+            "workingDiff": "1\t0\tnote.txt\n"
+          },
+          "runtimeId": "git",
+          "runtimeVersion": "2.21.0.windows.1"
+        }
+      ],
+      "runtimeId": "git",
+      "status": "PASS",
+      "version": "2.21.0.windows.1"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

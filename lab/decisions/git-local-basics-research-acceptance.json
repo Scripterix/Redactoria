@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591",
+  "authorizationRef": "lab/decisions/b5-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b5-authorization.json",
+        "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+      },
+      {
+        "path": "lab/decisions/git-local-basics-rewrite.json",
+        "sha256": "c3d4b2f6c21c92a867ef156c1a743f8f72858d514ff55b1de623a5cb1739034e"
+      },
+      {
+        "path": "lab/cartography/git-local-basics-single.json",
+        "sha256": "fc93c76bec7f74b1d52c69742dc3425e476742431caf889071a1906ec0e74676"
+      },
+      {
+        "path": "lab/research/git-local-basics/sources.json",
+        "sha256": "f9c46b32d932c7eb365b9807d312beac304e70660b68a3d49413c43255c8b7fd"
+      },
+      {
+        "path": "lab/research/git-local-basics/probes.json",
+        "sha256": "32a3e1ef4f7c6cbaf1d21ba5cb8e898d4a48b9bbb0885e15a261ceae734651bb"
+      },
+      {
+        "path": "lab/research/git-local-basics/research.json",
+        "sha256": "19f5c293dd4dd8fc907d9f396c64bbcd2ea9e793240cd1bff00b112692d0adc5"
+      },
+      {
+        "path": "lab/research/git-local-basics/runtime-verification.json",
+        "sha256": "10911e89d5d91bd86adee35408217ea95bf204666414a12dd5b7b8def12e8755"
+      },
+      {
+        "path": "lab/research/git-local-basics/runtime-verification.md",
+        "sha256": "53102a412a87ee8226977223ba6fd5c6105920cbe1f1c22361fc55f776a34705"
+      }
+    ],
+    "humanApproval": "The human authorized the three B5 jobs through exact pending candidates; this packet was validated in-session and was not separately read by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/git-local-basics/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "git",
+          "status": "PASS",
+          "version": "2.21.0.windows.1"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "546b5516fed9bcda8acbad4dca4896568e4da2d5569f2acf05b32d3052f7f218",
+  "nextStep": "writer",
+  "packetHash": "19f5c293dd4dd8fc907d9f396c64bbcd2ea9e793240cd1bff00b112692d0adc5",
+  "packetRef": "lab/research/git-local-basics/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, keep local CLI limits explicit, and execute every final draft example independently.",
+  "requestHash": "36478f0726e225b323cb31d5ca17571b25962b5b12eb1c43bf52fa90e1dadc83",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "git-state-model",
+    "git-local-cycle"
+  ],
+  "schemaVersion": 3,
+  "scope": "B5 git-local-basics: validated packet and CLI runtime evidence through candidate preparation only.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "29f5f3797f45a8e5f6c9612beb0d1f98f8728785f6ff92180b9d3abfd4f6bc12",
+      "providedCharacters": 3443,
+      "sourceId": "277",
+      "sourcePath": "277-post-8-moj-gist.md",
+      "title": "Post #8 Mój Gist",
+      "truncated": false
+    }
+  ],
+  "topic": "git-local-basics",
+  "validatedAt": "2026-10-13T19:38:21.318Z"
+}

@@ -1,0 +1,156 @@
+{
+  "provenance": {
+    "description": "B5 Writer response authored from the validated Authority Ladder packet; exact model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "unknown-codex-session"
+  },
+  "schemaVersion": 1,
+  "writer": {
+    "requestHash": "a47f973920ab24d015e126f54384978bbc4c1ad18d2f8ad09d51df8ea67e6981",
+    "response": {
+      "action": "DRAFT",
+      "interactionOpportunities": [
+        {
+          "expectedConcept": "Jawny stan wejściowy prowadzi do obserwowalnego wyniku.",
+          "id": "predict-output",
+          "implemented": false,
+          "prompt": "Przewidź dokładny wynik pierwszego wykonywalnego przykładu, a potem porównaj go z uruchomieniem.",
+          "purpose": "Sprawdzić model mentalny przed uruchomieniem.",
+          "sectionId": "conditions-range",
+          "type": "predict-output"
+        },
+        {
+          "expectedConcept": "Granice polecenia lub języka pozostają jawne.",
+          "id": "change-boundary",
+          "implemented": false,
+          "prompt": "Zmień jedną wartość graniczną, zapisz przewidywanie i wykonaj przykład ponownie.",
+          "purpose": "Samodzielnie sprawdzić przypadek graniczny.",
+          "sectionId": "function-return",
+          "type": "exercise"
+        }
+      ],
+      "limitations": [
+        "Przykłady dotyczą czystego Pythona 3.14 i 3.11. Nie obejmują sieci, bibliotek zewnętrznych, scrapingu, AI ani Pythona 2."
+      ],
+      "sections": [
+        {
+          "body": "Python przechowuje wartości różnych typów, między innymi liczby, napisy i listy. `type(value).__name__` pozwala zobaczyć nazwę typu. Lista zachowuje kolejność, jej pierwszy element ma indeks `0`, a slicing `lista[1:]` zwraca nową listę od indeksu 1 do końca.\n\nPrzypisanie wiąże nazwę z wartością. Nie trzeba deklarować typu przed pierwszym przypisaniem, ale kod nadal powinien jasno określać, jakich danych oczekuje.",
+          "coverage": [
+            "values",
+            "types",
+            "lists",
+            "indexing",
+            "slicing"
+          ],
+          "evidence": [
+            {
+              "id": "python-values-lists",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "name = \"Ada\"\nscores = [2, 4, 6]\nprint(type(name).__name__)\nprint(scores[0])\nprint(scores[1:])",
+              "expectedDiagnostics": [],
+              "expectedOutput": "str\n2\n[4, 6]\n",
+              "id": "python-values-lists",
+              "language": "python",
+              "purpose": "Typ napisu, pierwszy element i fragment listy"
+            }
+          ],
+          "heading": "Wartości, typy i listy",
+          "id": "values-lists"
+        },
+        {
+          "body": "`if`, `elif` i `else` wybierają jedną gałąź. Blok jest wyznaczony wcięciem, dlatego linie należące do warunku muszą mieć spójne wcięcie.\n\n`range(-1, 2)` tworzy wartości -1, 0 i 1; koniec 2 jest wyłączony. Pętla `for` przechodzi po każdej z nich. Ten przykład obejmuje gałąź ujemną, zero i gałąź dodatnią.",
+          "coverage": [
+            "if-elif-else",
+            "for",
+            "range",
+            "indentation"
+          ],
+          "evidence": [
+            {
+              "id": "python-branches",
+              "kind": "finding"
+            },
+            {
+              "id": "python-range",
+              "kind": "finding"
+            },
+            {
+              "id": "python-complete-blocks",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "for number in range(-1, 2):\n    if number > 0:\n        label = \"positive\"\n    elif number < 0:\n        label = \"negative\"\n    else:\n        label = \"zero\"\n    print(number, label)",
+              "expectedDiagnostics": [],
+              "expectedOutput": "-1 negative\n0 zero\n1 positive\n",
+              "id": "python-condition-range",
+              "language": "python",
+              "purpose": "Trzy gałęzie dla wartości z range"
+            }
+          ],
+          "heading": "Warunek i pętla range",
+          "id": "conditions-range"
+        },
+        {
+          "body": "`def` rozpoczyna definicję funkcji. Parametr `values` przyjmuje listę przekazaną przy wywołaniu. `return` kończy funkcję i oddaje obliczony wynik; dopiero `print` wypisuje go na standardowe wyjście.\n\nFunkcja poniżej używa jawnej wartości początkowej `0`, dzięki czemu dla pustej listy również zwróci zero.",
+          "coverage": [
+            "functions",
+            "return"
+          ],
+          "evidence": [
+            {
+              "id": "python-function-return",
+              "kind": "finding"
+            },
+            {
+              "id": "python-complete-blocks",
+              "kind": "finding"
+            },
+            {
+              "id": "executed-boundaries",
+              "kind": "finding"
+            }
+          ],
+          "examples": [
+            {
+              "code": "def total(values):\n    result = 0\n    for value in values:\n        result += value\n    return result\n\nprint(total([2, 4, 6]))\nprint(total([]))",
+              "expectedDiagnostics": [],
+              "expectedOutput": "12\n0\n",
+              "id": "python-function-total",
+              "language": "python",
+              "purpose": "Suma listy zwracana z funkcji"
+            }
+          ],
+          "heading": "Funkcja zwraca wynik",
+          "id": "function-return"
+        }
+      ],
+      "targetRuntimes": [
+        {
+          "id": "python-3-14",
+          "kind": "cli",
+          "version": "3.14.5"
+        },
+        {
+          "id": "python-3-11",
+          "kind": "cli",
+          "version": "3.11.9"
+        }
+      ],
+      "title": "Podstawy Pythona: wartości, warunki, pętle i funkcje"
+    }
+  }
+}

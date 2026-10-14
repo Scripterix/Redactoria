@@ -1,6 +1,6 @@
 # 027 — B4 minimal contract extension and publication
 
-Status: ACTIVE · 2026-10-12
+Status: COMPLETED · 2026-10-13
 
 ## Objective
 
@@ -49,8 +49,6 @@ required when authoritative sources already cover the claims.
 
 ## Result
 
-Local pipeline and publication gate complete; Git/Cloudflare checkpoint pending.
-
 - Existing schema v3 was extended with one exact B4 authorization and three allowed
   topics; no new schema version, agent, pipeline semantics or Promotion Gate change.
 - All three origins: `MODERNIZE` / single-source `REWRITE`.
@@ -66,3 +64,8 @@ Local pipeline and publication gate complete; Git/Cloudflare checkpoint pending.
   `git diff --check`: PASS.
 - Browser smoke: all three routes render, no console error or horizontal overflow;
   mobile back-to-top is fixed with a transparent background.
+- Commit `828703ef54f7624f34eabe557c1c22df13688355` was pushed to
+  `origin/master`. On 2026-10-13 the production listing and all three Cloudflare
+  Pages routes returned HTTP 200 with their expected titles and article content:
+  `/artykuly/markdown-podstawy/`, `/artykuly/kalkulator-w-javascript/` and
+  `/artykuly/api-http-json/`.
