@@ -81,7 +81,7 @@ describe('verify:article operator CLI', () => {
 		expect(result.areas.publication.checks.promotionAudit.status).toBe('PASS');
 		expect(result.areas.publication.checks.contentLineage.status).toBe('PASS');
 		expect(result.areas.publication.checks.contentIntegrity.status).toBe('PASS');
-		expect(result.areas.publication.checks.contentLineage.detail).toContain('3 post-promotion lineage record(s)');
+		expect(result.areas.publication.checks.contentLineage.detail).toContain('5 post-promotion lineage record(s)');
 	});
 
 	it('does not change loaded pipeline bytes', async () => {

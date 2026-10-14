@@ -30,6 +30,18 @@ describe('article featured image', () => {
 		});
 	});
 
+	it('preserves imported Astro image metadata for local optimized assets', () => {
+		const featuredImage = { src: '/_astro/tablice.hash.webp', width: 1600, height: 900, format: 'webp' } as const;
+		expect(resolveArticleFeaturedImage({
+			title: 'Tablice w PHP',
+			featuredImage,
+			featuredAlt: 'Opis lokalnej ilustracji',
+		}, '/fallback.webp')).toEqual({
+			src: featuredImage,
+			alt: 'Opis lokalnej ilustracji',
+		});
+	});
+
 	it('falls back safely when optional strings and the title are blank', () => {
 		expect(resolveArticleFeaturedImage({
 			title: ' ',

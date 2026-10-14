@@ -1,11 +1,12 @@
 {
   "articleId": "instrukcje-sterujace-php",
   "candidateRef": "lab/candidates/php-control-flow/article.json",
-  "currentContentHash": "21df978d81e8a0266c2e6284d72a4639bf62e53e9643ef7476e758243ea29feb",
+  "currentContentHash": "fc680161c7ef9d4dfb2882c40a614302d500b43a2671aa6ada82ca66a4788537",
   "currentContentRef": "content/articles/instrukcje-sterujace-php.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
   ],
   "promotedContentHash": "695a76d153fd9390a146859b288e8e5ab23bed7377e7a011104f35e3d8f3c578",
   "promotionAuditRef": "lab/reports/instrukcje-sterujace-php-promotion.json",
@@ -37,6 +38,37 @@
           {
             "from": "Materiał edukacyjny dla początkujących i osób na wczesnym poziomie średniozaawansowanym.",
             "to": "Materiał dla początkujących i osób na poziomie średnim."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "instrukcje-sterujace-php",
+      "authorizationHash": "059e6e934cda76a4e27aa61dd1d00fe061581c9ef6072ccad395dd337cedd17d",
+      "authorizationRef": "lab/decisions/php-featured-images-pair.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "fc680161c7ef9d4dfb2882c40a614302d500b43a2671aa6ada82ca66a4788537",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "21df978d81e8a0266c2e6284d72a4639bf62e53e9643ef7476e758243ea29feb",
+      "promotionAuditRef": "lab/reports/instrukcje-sterujace-php-promotion.json",
+      "reason": "Assign the human-supplied article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "1d1500fb7c023b07d320d78aa7ee46faf8240ae32c3e6938b176ce3e5511a396",
+      "timestamp": "2026-10-14T16:57:46Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: instrukcje-sterujace-php",
+            "to": "slug: instrukcje-sterujace-php\nfeaturedImage: ../../src/assets/instrukcje-sterujace.webp\nfeaturedAlt: Dwie osoby analizują schematy warunków i pętli na ekranie."
           }
         ]
       }

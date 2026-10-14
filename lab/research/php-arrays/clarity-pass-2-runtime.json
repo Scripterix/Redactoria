@@ -1,0 +1,558 @@
+{
+  "articleHash": "4deb6d03abfc89a75626233854198c821770206cec67662736fbebdedd9810ec",
+  "articleRef": "content/articles/tablice-w-php.md",
+  "baselineRuntimeEvidenceRef": "lab/research/php-arrays/runtime-verification.json",
+  "exampleCount": 23,
+  "executionCount": 46,
+  "finishedAt": "2026-10-14T11:09:39.996Z",
+  "limitations": [
+    "Each fenced PHP example paired with its expected-output block was executed independently through actual local CLI stdin.",
+    "Exact stdout, empty stderr and exit code 0 were required; this is not a web-server, security or cross-platform test.",
+    "The executable hashes must match the official PHP 8.4.26 and 8.5.11 binaries recorded by the existing approved runtime evidence."
+  ],
+  "runs": [
+    {
+      "arguments": [
+        "-n",
+        "stdin"
+      ],
+      "executableHash": "9c9c7cdb2ec112cf39498dd1a77b56eacac482487182066920f1bcd209091898",
+      "execution": "actual-local-cli",
+      "family": "8.4",
+      "passed": 23,
+      "results": [
+        {
+          "actualStdoutHash": "34cd4acaf0e39e4b986480a98cf871187886e4545b94507aa798e69317d89bc5",
+          "codeHash": "159b13c4d842b3a35374b18a7af6e04821977bbb8d06777bff390a8e4239a1f6",
+          "exitCode": 0,
+          "expectedStdoutHash": "34cd4acaf0e39e4b986480a98cf871187886e4545b94507aa798e69317d89bc5",
+          "id": "lista-automatyczne-klucze-ca-kowite",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Lista: automatyczne klucze całkowite"
+        },
+        {
+          "actualStdoutHash": "60abc87bc97ea0e17a7c8cc661ee53b5e85afaf006743ef0111bf67968f754a9",
+          "codeHash": "b3573982f0a831fe44a97933265546834f8ed5c03997312c583a6392e92d99ea",
+          "exitCode": 0,
+          "expectedStdoutHash": "60abc87bc97ea0e17a7c8cc661ee53b5e85afaf006743ef0111bf67968f754a9",
+          "id": "nazwane-klucze",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Nazwane klucze"
+        },
+        {
+          "actualStdoutHash": "ebfcfd9f491f6136291195057eae67e7fa44a8ced528f2e82074d2ead7c5451a",
+          "codeHash": "794c5486d8e2dbe9ececff9ce7abc0ca6f506ac4fc9d60307f86f618bc9219e5",
+          "exitCode": 0,
+          "expectedStdoutHash": "ebfcfd9f491f6136291195057eae67e7fa44a8ced528f2e82074d2ead7c5451a",
+          "id": "stan-tablicy-krok-po-kroku",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Stan tablicy krok po kroku"
+        },
+        {
+          "actualStdoutHash": "436400c36584e1d149396cefdc4f8460d154d74b80b6ecdb8386e96080c2929c",
+          "codeHash": "016a676df453f3afb81442e56adaea04904c09062e003f38c565894c02ce5c9d",
+          "exitCode": 0,
+          "expectedStdoutHash": "436400c36584e1d149396cefdc4f8460d154d74b80b6ecdb8386e96080c2929c",
+          "id": "typy-wartosci-w-danych-uzytkownika",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Typy wartości w danych użytkownika"
+        },
+        {
+          "actualStdoutHash": "eab226ae2943ee5979c3d21f2bc8f1b706a9b86fdd2fc49ba63da506659fbe18",
+          "codeHash": "b29446491025f5acdca6f730e374443537ec9a20e4ee54fb8077a152f2e07ff7",
+          "exitCode": 0,
+          "expectedStdoutHash": "eab226ae2943ee5979c3d21f2bc8f1b706a9b86fdd2fc49ba63da506659fbe18",
+          "id": "odczyt-z-dwoch-poziomow",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Odczyt z dwóch poziomów"
+        },
+        {
+          "actualStdoutHash": "623a6c9789f158c40e4f55e714c6763077ad3171abc38c744c6f564f0fcfefd9",
+          "codeHash": "09c0cdc9066bbbbf426b9f05f74010032335c3715bfbbfa8857f9a80f0855c50",
+          "exitCode": 0,
+          "expectedStdoutHash": "623a6c9789f158c40e4f55e714c6763077ad3171abc38c744c6f564f0fcfefd9",
+          "id": "przejscie-po-wartosciach",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Przejście po wartościach"
+        },
+        {
+          "actualStdoutHash": "6d80b66b0adcdb59cc09abde7dca5d329b132198fb5f4e6fbbcbabc353d5d540",
+          "codeHash": "4f6f8063bb418d4f0b876630173220d4287d52bde6c5f0900eaf8cfe5fcd203d",
+          "exitCode": 0,
+          "expectedStdoutHash": "6d80b66b0adcdb59cc09abde7dca5d329b132198fb5f4e6fbbcbabc353d5d540",
+          "id": "przejscie-po-kluczach-i-wartosciach",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Przejście po kluczach i wartościach"
+        },
+        {
+          "actualStdoutHash": "499dd230cdabe0b086853b34c98549f10b7b4c0fa7c31ea0100545c80434db24",
+          "codeHash": "fb725323d53ec46697256c93c2ed07837305965712acd668f016dc41a19aea89",
+          "exitCode": 0,
+          "expectedStdoutHash": "499dd230cdabe0b086853b34c98549f10b7b4c0fa7c31ea0100545c80434db24",
+          "id": "istniejacy-null-a-brak-pola",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Istniejący null a brak pola"
+        },
+        {
+          "actualStdoutHash": "7b25bf9779cb0026c812226dfd6075b4abc05142f34a559d4f68dae3dfe8bb89",
+          "codeHash": "8ee28e8954ab81c60e926050dbf8ceeafa7cec32c85c2e8ca9d435ca0b1559fc",
+          "exitCode": 0,
+          "expectedStdoutHash": "7b25bf9779cb0026c812226dfd6075b4abc05142f34a559d4f68dae3dfe8bb89",
+          "id": "dodanie-jednego-elementu",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Dodanie jednego elementu"
+        },
+        {
+          "actualStdoutHash": "6cb549d0930cd776ab5732d1f6a1acd85b92d696d1241b46e279f1252c8cbda5",
+          "codeHash": "3f4c2285fa97eae84d9d0f1a6c4d31ffb5c12a3366100a44de0412b02f006f1e",
+          "exitCode": 0,
+          "expectedStdoutHash": "6cb549d0930cd776ab5732d1f6a1acd85b92d696d1241b46e279f1252c8cbda5",
+          "id": "usuniecie-jednego-elementu",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Usunięcie jednego elementu"
+        },
+        {
+          "actualStdoutHash": "d8bbe6b75f7754d9fd9aea61c5f3bf9b599a0dd3ba512d61c8095ed85dd96c3a",
+          "codeHash": "df4aa6d1aaaf38cc2adaf89133461da0976dee37072cd3bdc8bedb67e957af10",
+          "exitCode": 0,
+          "expectedStdoutHash": "d8bbe6b75f7754d9fd9aea61c5f3bf9b599a0dd3ba512d61c8095ed85dd96c3a",
+          "id": "funkcje-operujace-na-koncu-tablicy",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Funkcje operujące na końcu tablicy"
+        },
+        {
+          "actualStdoutHash": "2b3840715a9ffe3e6a62c9270fda51ab203471ada6f35fd88f9040fe16f5187b",
+          "codeHash": "a3f2d6430221d60f749c25e3fb80db99be1e0e459ea4b716b8a8444491362fcf",
+          "exitCode": 0,
+          "expectedStdoutHash": "2b3840715a9ffe3e6a62c9270fda51ab203471ada6f35fd88f9040fe16f5187b",
+          "id": "funkcje-operujace-na-poczatku-tablicy",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Funkcje operujące na początku tablicy"
+        },
+        {
+          "actualStdoutHash": "66889a268236eb4115c14c1a70006a46ecff2efe752207a50120f1373287ca7d",
+          "codeHash": "ab2f63773948809773da679a302de6d8976f12ecf86193e04044019525b4839a",
+          "exitCode": 0,
+          "expectedStdoutHash": "66889a268236eb4115c14c1a70006a46ecff2efe752207a50120f1373287ca7d",
+          "id": "usuniecie-fragmentu-przez-array-splice",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Usunięcie fragmentu przez array_splice"
+        },
+        {
+          "actualStdoutHash": "f9e9acad1769cdea470740e558d800ca91844b880400320f4a5b25b2d0b4759a",
+          "codeHash": "719c4e55f9dc907549437b1ff443caca934964ff79defcacc0823394d9e6c86c",
+          "exitCode": 0,
+          "expectedStdoutHash": "f9e9acad1769cdea470740e558d800ca91844b880400320f4a5b25b2d0b4759a",
+          "id": "kolizja-po-konwersji-klucza",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Kolizja po konwersji klucza"
+        },
+        {
+          "actualStdoutHash": "7d1418462ee63050547b09a688ee75d6624aa69ff6a84d30ecfa2f014e5d34f9",
+          "codeHash": "0647efb331bc4f0ebec89caa64e59af70fcf75a94e597736faddc6f5ea45e294",
+          "exitCode": 0,
+          "expectedStdoutHash": "7d1418462ee63050547b09a688ee75d6624aa69ff6a84d30ecfa2f014e5d34f9",
+          "id": "trzy-operacje-na-tej-samej-parze-danych",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Trzy operacje na tej samej parze danych"
+        },
+        {
+          "actualStdoutHash": "940024e9308b14c83ac429d256a7ccc9e8e921bb2be7504d8770f898018c6103",
+          "codeHash": "2835b071aef28e8f681c49faa309db0d5379aa461d7d3b94e5c9e4c58671689a",
+          "exitCode": 0,
+          "expectedStdoutHash": "940024e9308b14c83ac429d256a7ccc9e8e921bb2be7504d8770f898018c6103",
+          "id": "sort-zmienia-klucze-asort-je-zachowuje",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "sort zmienia klucze, asort je zachowuje"
+        },
+        {
+          "actualStdoutHash": "38822ad8f845af39e28bc9ac1b1f4308caa32d29e8f71c91d610e03ce448bd13",
+          "codeHash": "a1f0fd2c5a496d68a039f1a968abdf70e5b0196872bb234a33bc92b9edb3b3ae",
+          "exitCode": 0,
+          "expectedStdoutHash": "38822ad8f845af39e28bc9ac1b1f4308caa32d29e8f71c91d610e03ce448bd13",
+          "id": "podwojenie-liczb",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Podwojenie liczb"
+        },
+        {
+          "actualStdoutHash": "4dfca16d1599f857e5ff7ca53cf3a3a85704aab6eef5c825bad3e778ecd98310",
+          "codeHash": "1fe52cacb10b19741ad0f56a7f147bd1a85dbd8e6fa9045760a00783bfcd53b6",
+          "exitCode": 0,
+          "expectedStdoutHash": "4dfca16d1599f857e5ff7ca53cf3a3a85704aab6eef5c825bad3e778ecd98310",
+          "id": "parzyste-liczby-z-zachowaniem-kluczy",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Parzyste liczby z zachowaniem kluczy"
+        },
+        {
+          "actualStdoutHash": "32f235e845219e0408c1484a0ecfe9b2b54897dba4e19431ee705dc74eff1095",
+          "codeHash": "f749d048879855d59c2d20ff7861f370f83fc0610b8535d37139ca720e541cb6",
+          "exitCode": 0,
+          "expectedStdoutHash": "32f235e845219e0408c1484a0ecfe9b2b54897dba4e19431ee705dc74eff1095",
+          "id": "sumowanie-z-poczatkowym-akumulatorem",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Sumowanie z początkowym akumulatorem"
+        },
+        {
+          "actualStdoutHash": "dad11b0fc7344a25ebc6a4d4ef788c0def71d13c695716bebbf57a2c1adfaf44",
+          "codeHash": "b1e1383895b7d4314a0f4ced43c04603bc115dddfdadb9e9fb13ed70d09a9a4d",
+          "exitCode": 0,
+          "expectedStdoutHash": "dad11b0fc7344a25ebc6a4d4ef788c0def71d13c695716bebbf57a2c1adfaf44",
+          "id": "liczenie-powtarzajacych-sie-owocow",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Liczenie powtarzających się owoców"
+        },
+        {
+          "actualStdoutHash": "1ae57f14e079e2dc5895b9e804f1f5d8a0928826230893e298e179bf4b7b2a6e",
+          "codeHash": "96505c833af5c255cda68382cfa4be6a29f04607d064850800ede5d780ec1b23",
+          "exitCode": 0,
+          "expectedStdoutHash": "1ae57f14e079e2dc5895b9e804f1f5d8a0928826230893e298e179bf4b7b2a6e",
+          "id": "zagniezdzona-opcja-i-opcjonalny-stan-menu",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Zagnieżdżona opcja i opcjonalny stan menu"
+        },
+        {
+          "actualStdoutHash": "bbbb18fdbaa1af40c2bd4d49902799b8c67f867a54ba4fabd7a013a7be24e399",
+          "codeHash": "1a98769218baf047e3a16ff7f1d2e51a791f194821e65e8549a93c8d57254076",
+          "exitCode": 0,
+          "expectedStdoutHash": "bbbb18fdbaa1af40c2bd4d49902799b8c67f867a54ba4fabd7a013a7be24e399",
+          "id": "najpierw-sprawdz-typ-potem-waliduj",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Najpierw sprawdź typ, potem waliduj"
+        },
+        {
+          "actualStdoutHash": "7c2a5ce76c7e3ff8658d4b1e56b48e1218a65282ad65be06532202e22918245f",
+          "codeHash": "edb9e397628bb4a6f043143912ef2a607a9a78deaa587247a4ebea2199578255",
+          "exitCode": 0,
+          "expectedStdoutHash": "7c2a5ce76c7e3ff8658d4b1e56b48e1218a65282ad65be06532202e22918245f",
+          "id": "demonstracja-nadpisania-nie-wzorzec-dla-formularza",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Demonstracja nadpisania, nie wzorzec dla formularza"
+        }
+      ],
+      "status": "PASS",
+      "total": 23,
+      "version": "8.4.26",
+      "versionBanner": "PHP 8.4.26 (cli) (built: Sep 22 2026 15:11:32) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.4.26, Copyright (c) Zend Technologies"
+    },
+    {
+      "arguments": [
+        "-n",
+        "stdin"
+      ],
+      "executableHash": "d256e5d6bfd86905f336bf39b2f4a68d3fde0faabbce3080330de9600cd8e6c4",
+      "execution": "actual-local-cli",
+      "family": "8.5",
+      "passed": 23,
+      "results": [
+        {
+          "actualStdoutHash": "34cd4acaf0e39e4b986480a98cf871187886e4545b94507aa798e69317d89bc5",
+          "codeHash": "159b13c4d842b3a35374b18a7af6e04821977bbb8d06777bff390a8e4239a1f6",
+          "exitCode": 0,
+          "expectedStdoutHash": "34cd4acaf0e39e4b986480a98cf871187886e4545b94507aa798e69317d89bc5",
+          "id": "lista-automatyczne-klucze-ca-kowite",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Lista: automatyczne klucze całkowite"
+        },
+        {
+          "actualStdoutHash": "60abc87bc97ea0e17a7c8cc661ee53b5e85afaf006743ef0111bf67968f754a9",
+          "codeHash": "b3573982f0a831fe44a97933265546834f8ed5c03997312c583a6392e92d99ea",
+          "exitCode": 0,
+          "expectedStdoutHash": "60abc87bc97ea0e17a7c8cc661ee53b5e85afaf006743ef0111bf67968f754a9",
+          "id": "nazwane-klucze",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Nazwane klucze"
+        },
+        {
+          "actualStdoutHash": "ebfcfd9f491f6136291195057eae67e7fa44a8ced528f2e82074d2ead7c5451a",
+          "codeHash": "794c5486d8e2dbe9ececff9ce7abc0ca6f506ac4fc9d60307f86f618bc9219e5",
+          "exitCode": 0,
+          "expectedStdoutHash": "ebfcfd9f491f6136291195057eae67e7fa44a8ced528f2e82074d2ead7c5451a",
+          "id": "stan-tablicy-krok-po-kroku",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Stan tablicy krok po kroku"
+        },
+        {
+          "actualStdoutHash": "436400c36584e1d149396cefdc4f8460d154d74b80b6ecdb8386e96080c2929c",
+          "codeHash": "016a676df453f3afb81442e56adaea04904c09062e003f38c565894c02ce5c9d",
+          "exitCode": 0,
+          "expectedStdoutHash": "436400c36584e1d149396cefdc4f8460d154d74b80b6ecdb8386e96080c2929c",
+          "id": "typy-wartosci-w-danych-uzytkownika",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Typy wartości w danych użytkownika"
+        },
+        {
+          "actualStdoutHash": "eab226ae2943ee5979c3d21f2bc8f1b706a9b86fdd2fc49ba63da506659fbe18",
+          "codeHash": "b29446491025f5acdca6f730e374443537ec9a20e4ee54fb8077a152f2e07ff7",
+          "exitCode": 0,
+          "expectedStdoutHash": "eab226ae2943ee5979c3d21f2bc8f1b706a9b86fdd2fc49ba63da506659fbe18",
+          "id": "odczyt-z-dwoch-poziomow",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Odczyt z dwóch poziomów"
+        },
+        {
+          "actualStdoutHash": "623a6c9789f158c40e4f55e714c6763077ad3171abc38c744c6f564f0fcfefd9",
+          "codeHash": "09c0cdc9066bbbbf426b9f05f74010032335c3715bfbbfa8857f9a80f0855c50",
+          "exitCode": 0,
+          "expectedStdoutHash": "623a6c9789f158c40e4f55e714c6763077ad3171abc38c744c6f564f0fcfefd9",
+          "id": "przejscie-po-wartosciach",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Przejście po wartościach"
+        },
+        {
+          "actualStdoutHash": "6d80b66b0adcdb59cc09abde7dca5d329b132198fb5f4e6fbbcbabc353d5d540",
+          "codeHash": "4f6f8063bb418d4f0b876630173220d4287d52bde6c5f0900eaf8cfe5fcd203d",
+          "exitCode": 0,
+          "expectedStdoutHash": "6d80b66b0adcdb59cc09abde7dca5d329b132198fb5f4e6fbbcbabc353d5d540",
+          "id": "przejscie-po-kluczach-i-wartosciach",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Przejście po kluczach i wartościach"
+        },
+        {
+          "actualStdoutHash": "499dd230cdabe0b086853b34c98549f10b7b4c0fa7c31ea0100545c80434db24",
+          "codeHash": "fb725323d53ec46697256c93c2ed07837305965712acd668f016dc41a19aea89",
+          "exitCode": 0,
+          "expectedStdoutHash": "499dd230cdabe0b086853b34c98549f10b7b4c0fa7c31ea0100545c80434db24",
+          "id": "istniejacy-null-a-brak-pola",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Istniejący null a brak pola"
+        },
+        {
+          "actualStdoutHash": "7b25bf9779cb0026c812226dfd6075b4abc05142f34a559d4f68dae3dfe8bb89",
+          "codeHash": "8ee28e8954ab81c60e926050dbf8ceeafa7cec32c85c2e8ca9d435ca0b1559fc",
+          "exitCode": 0,
+          "expectedStdoutHash": "7b25bf9779cb0026c812226dfd6075b4abc05142f34a559d4f68dae3dfe8bb89",
+          "id": "dodanie-jednego-elementu",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Dodanie jednego elementu"
+        },
+        {
+          "actualStdoutHash": "6cb549d0930cd776ab5732d1f6a1acd85b92d696d1241b46e279f1252c8cbda5",
+          "codeHash": "3f4c2285fa97eae84d9d0f1a6c4d31ffb5c12a3366100a44de0412b02f006f1e",
+          "exitCode": 0,
+          "expectedStdoutHash": "6cb549d0930cd776ab5732d1f6a1acd85b92d696d1241b46e279f1252c8cbda5",
+          "id": "usuniecie-jednego-elementu",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Usunięcie jednego elementu"
+        },
+        {
+          "actualStdoutHash": "d8bbe6b75f7754d9fd9aea61c5f3bf9b599a0dd3ba512d61c8095ed85dd96c3a",
+          "codeHash": "df4aa6d1aaaf38cc2adaf89133461da0976dee37072cd3bdc8bedb67e957af10",
+          "exitCode": 0,
+          "expectedStdoutHash": "d8bbe6b75f7754d9fd9aea61c5f3bf9b599a0dd3ba512d61c8095ed85dd96c3a",
+          "id": "funkcje-operujace-na-koncu-tablicy",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Funkcje operujące na końcu tablicy"
+        },
+        {
+          "actualStdoutHash": "2b3840715a9ffe3e6a62c9270fda51ab203471ada6f35fd88f9040fe16f5187b",
+          "codeHash": "a3f2d6430221d60f749c25e3fb80db99be1e0e459ea4b716b8a8444491362fcf",
+          "exitCode": 0,
+          "expectedStdoutHash": "2b3840715a9ffe3e6a62c9270fda51ab203471ada6f35fd88f9040fe16f5187b",
+          "id": "funkcje-operujace-na-poczatku-tablicy",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Funkcje operujące na początku tablicy"
+        },
+        {
+          "actualStdoutHash": "66889a268236eb4115c14c1a70006a46ecff2efe752207a50120f1373287ca7d",
+          "codeHash": "ab2f63773948809773da679a302de6d8976f12ecf86193e04044019525b4839a",
+          "exitCode": 0,
+          "expectedStdoutHash": "66889a268236eb4115c14c1a70006a46ecff2efe752207a50120f1373287ca7d",
+          "id": "usuniecie-fragmentu-przez-array-splice",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Usunięcie fragmentu przez array_splice"
+        },
+        {
+          "actualStdoutHash": "f9e9acad1769cdea470740e558d800ca91844b880400320f4a5b25b2d0b4759a",
+          "codeHash": "719c4e55f9dc907549437b1ff443caca934964ff79defcacc0823394d9e6c86c",
+          "exitCode": 0,
+          "expectedStdoutHash": "f9e9acad1769cdea470740e558d800ca91844b880400320f4a5b25b2d0b4759a",
+          "id": "kolizja-po-konwersji-klucza",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Kolizja po konwersji klucza"
+        },
+        {
+          "actualStdoutHash": "7d1418462ee63050547b09a688ee75d6624aa69ff6a84d30ecfa2f014e5d34f9",
+          "codeHash": "0647efb331bc4f0ebec89caa64e59af70fcf75a94e597736faddc6f5ea45e294",
+          "exitCode": 0,
+          "expectedStdoutHash": "7d1418462ee63050547b09a688ee75d6624aa69ff6a84d30ecfa2f014e5d34f9",
+          "id": "trzy-operacje-na-tej-samej-parze-danych",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Trzy operacje na tej samej parze danych"
+        },
+        {
+          "actualStdoutHash": "940024e9308b14c83ac429d256a7ccc9e8e921bb2be7504d8770f898018c6103",
+          "codeHash": "2835b071aef28e8f681c49faa309db0d5379aa461d7d3b94e5c9e4c58671689a",
+          "exitCode": 0,
+          "expectedStdoutHash": "940024e9308b14c83ac429d256a7ccc9e8e921bb2be7504d8770f898018c6103",
+          "id": "sort-zmienia-klucze-asort-je-zachowuje",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "sort zmienia klucze, asort je zachowuje"
+        },
+        {
+          "actualStdoutHash": "38822ad8f845af39e28bc9ac1b1f4308caa32d29e8f71c91d610e03ce448bd13",
+          "codeHash": "a1f0fd2c5a496d68a039f1a968abdf70e5b0196872bb234a33bc92b9edb3b3ae",
+          "exitCode": 0,
+          "expectedStdoutHash": "38822ad8f845af39e28bc9ac1b1f4308caa32d29e8f71c91d610e03ce448bd13",
+          "id": "podwojenie-liczb",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Podwojenie liczb"
+        },
+        {
+          "actualStdoutHash": "4dfca16d1599f857e5ff7ca53cf3a3a85704aab6eef5c825bad3e778ecd98310",
+          "codeHash": "1fe52cacb10b19741ad0f56a7f147bd1a85dbd8e6fa9045760a00783bfcd53b6",
+          "exitCode": 0,
+          "expectedStdoutHash": "4dfca16d1599f857e5ff7ca53cf3a3a85704aab6eef5c825bad3e778ecd98310",
+          "id": "parzyste-liczby-z-zachowaniem-kluczy",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Parzyste liczby z zachowaniem kluczy"
+        },
+        {
+          "actualStdoutHash": "32f235e845219e0408c1484a0ecfe9b2b54897dba4e19431ee705dc74eff1095",
+          "codeHash": "f749d048879855d59c2d20ff7861f370f83fc0610b8535d37139ca720e541cb6",
+          "exitCode": 0,
+          "expectedStdoutHash": "32f235e845219e0408c1484a0ecfe9b2b54897dba4e19431ee705dc74eff1095",
+          "id": "sumowanie-z-poczatkowym-akumulatorem",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Sumowanie z początkowym akumulatorem"
+        },
+        {
+          "actualStdoutHash": "dad11b0fc7344a25ebc6a4d4ef788c0def71d13c695716bebbf57a2c1adfaf44",
+          "codeHash": "b1e1383895b7d4314a0f4ced43c04603bc115dddfdadb9e9fb13ed70d09a9a4d",
+          "exitCode": 0,
+          "expectedStdoutHash": "dad11b0fc7344a25ebc6a4d4ef788c0def71d13c695716bebbf57a2c1adfaf44",
+          "id": "liczenie-powtarzajacych-sie-owocow",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Liczenie powtarzających się owoców"
+        },
+        {
+          "actualStdoutHash": "1ae57f14e079e2dc5895b9e804f1f5d8a0928826230893e298e179bf4b7b2a6e",
+          "codeHash": "96505c833af5c255cda68382cfa4be6a29f04607d064850800ede5d780ec1b23",
+          "exitCode": 0,
+          "expectedStdoutHash": "1ae57f14e079e2dc5895b9e804f1f5d8a0928826230893e298e179bf4b7b2a6e",
+          "id": "zagniezdzona-opcja-i-opcjonalny-stan-menu",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Zagnieżdżona opcja i opcjonalny stan menu"
+        },
+        {
+          "actualStdoutHash": "bbbb18fdbaa1af40c2bd4d49902799b8c67f867a54ba4fabd7a013a7be24e399",
+          "codeHash": "1a98769218baf047e3a16ff7f1d2e51a791f194821e65e8549a93c8d57254076",
+          "exitCode": 0,
+          "expectedStdoutHash": "bbbb18fdbaa1af40c2bd4d49902799b8c67f867a54ba4fabd7a013a7be24e399",
+          "id": "najpierw-sprawdz-typ-potem-waliduj",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Najpierw sprawdź typ, potem waliduj"
+        },
+        {
+          "actualStdoutHash": "7c2a5ce76c7e3ff8658d4b1e56b48e1218a65282ad65be06532202e22918245f",
+          "codeHash": "edb9e397628bb4a6f043143912ef2a607a9a78deaa587247a4ebea2199578255",
+          "exitCode": 0,
+          "expectedStdoutHash": "7c2a5ce76c7e3ff8658d4b1e56b48e1218a65282ad65be06532202e22918245f",
+          "id": "demonstracja-nadpisania-nie-wzorzec-dla-formularza",
+          "signal": null,
+          "status": "PASS",
+          "stderr": "",
+          "title": "Demonstracja nadpisania, nie wzorzec dla formularza"
+        }
+      ],
+      "status": "PASS",
+      "total": 23,
+      "version": "8.5.11",
+      "versionBanner": "PHP 8.5.11 (cli) (built: Sep 22 2026 13:51:38) (NTS Visual C++ 2022 x64)\nCopyright (c) The PHP Group\nBuilt by The PHP Group\nZend Engine v4.5.11, Copyright (c) Zend Technologies\n    with Zend OPcache v8.5.11, Copyright (c), by Zend Technologies"
+    }
+  ],
+  "runtimeCount": 2,
+  "schemaVersion": 1,
+  "startedAt": "2026-10-14T11:09:33.135Z",
+  "status": "PASS",
+  "topic": "php-arrays-beginner-clarity-pass-2"
+}

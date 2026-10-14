@@ -33,11 +33,12 @@ istniejącego dorobku: 83 historycznych artykułów zachowanych w eksporcie blog
 
 ## Dlaczego odzyskujemy starsze treści
 
-Dobry przykład czy jasno opisana idea nie tracą wartości tylko dlatego, że zmienił
-się silnik bloga. Jednocześnie stare teksty mogą zawierać nieaktualne reguły,
-powtórzenia i luki. Chcemy rozpoznać, co warto zachować, co wymaga sprawdzenia,
-a co lepiej połączyć lub pozostawić w archiwum. Liczba nowych artykułów nie jest
-miarą sukcesu. Jest nią użyteczny i sprawdzalny materiał.
+Poprzedni blog zawierał wiele cennych materiałów i chcemy się nimi podzielić. Wpisy
+są materiałem edukacyjnym. dlatego dobrze wpisują się w nową treść. Dobry przykład czy jasno opisana idea nie tracą
+wartości tylko dlatego, że zmienił się silnik bloga. Jednocześnie stare teksty mogą
+zawierać nieaktualne reguły, powtórzenia i luki. Chcemy rozpoznać, co warto zachować,
+co wymaga sprawdzenia, a co lepiej połączyć lub pozostawić w archiwum. Liczba nowych
+artykułów nie jest miarą sukcesu. Jest nią użyteczny i sprawdzalny materiał.
 
 Pierwszym przykładem tej pracy są [tablice w PHP](/artykuly/tablice-w-php/).
 Dwa teksty historyczne stały się podstawą jednej lekcji dla PHP 8.4–8.5.
@@ -60,10 +61,12 @@ nie zmienia oryginałów i nie staje się samoczynnie artykułem na stronie.
 
 ## Od mapy do decyzji człowieka
 
-Deterministyczny scanner tworzy inwentaryzację. Cartographer rozpoznaje związki,
-pokrycie tematów i możliwe dalsze działania. Researcher sprawdza wskazane kwestie
-i przygotowuje pakiet dowodów. Writer buduje draft na zatwierdzonej podstawie,
-a Critic ocenia go względem źródeł, czytelności i wymagań zadania.
+Silnik Redactorii pozyskuje artykuły z eksportu bloga, a wyspecjalizowani agenci
+aktualizują je oraz dbają o ich jakość i publikację. Deterministyczny scanner tworzy
+inwentaryzację. Cartographer rozpoznaje związki, pokrycie tematów i możliwe dalsze
+działania. Researcher sprawdza wskazane kwestie i przygotowuje pakiet dowodów. Writer
+buduje draft na zatwierdzonej podstawie, a Critic ocenia go względem źródeł,
+czytelności i wymagań zadania.
 
 Wynik Critic PASS nie jest zgodą na publikację. Następny krok należy do człowieka:
 review, jawna akceptacja i określenie zakresu. Mały Promotion Gate sprawdza decyzję,

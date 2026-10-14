@@ -1,12 +1,17 @@
 import { z } from 'astro/zod';
 
 const nullableText = z.string().nullable().optional();
+const featuredImagePath = z.string().trim().min(1);
 
 /** One schema for Astro and the deterministic promotion boundary. */
-export function createArticleSchema<T extends z.ZodType>(topic: T) {
+export function createArticleSchema<
+	T extends z.ZodType,
+	I extends z.ZodType = typeof featuredImagePath,
+>(topic: T, featuredImage?: I) {
+	const featuredImageSchema = featuredImage ?? featuredImagePath;
 	return z.object({
 		title: z.string().min(1), description: z.string().min(1), slug: z.string().min(1),
-		featuredImage: z.string().trim().min(1).optional(),
+		featuredImage: featuredImageSchema.optional(),
 		featuredAlt: z.string().trim().min(1).optional(),
 		status: z.enum(['draft', 'review', 'published', 'archived']),
 		created: z.coerce.date(), updated: z.coerce.date(), domain: z.string().min(1), topic,

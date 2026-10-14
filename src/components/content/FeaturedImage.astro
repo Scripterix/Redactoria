@@ -1,11 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import defaultFeaturedImage from '../../assets/default-img.webp';
-import { resolveArticleFeaturedImage } from '../../lib/featured-image';
+import {
+	resolveArticleFeaturedImage,
+	type ImportedArticleImage,
+} from '../../lib/featured-image';
 
 interface Props {
 	title: string;
-	featuredImage?: string;
+	featuredImage?: string | ImportedArticleImage;
 	featuredAlt?: string;
 	variant: 'hero' | 'thumbnail';
 }

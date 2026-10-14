@@ -4,6 +4,15 @@
 
 ### Added
 
+- PHP Arrays beginner clarity pass 2: beginner-first ordering, visible state and
+  labelled output across 23 self-contained examples. All 46 PHP 8.4.26/8.5.11
+  executions PASS; a fresh Critic PASS and append-only `CONTENT_CHANGE` lineage
+  bind the revised public article.
+- Article-specific, Astro-optimized Featured Images for PHP control flow and PHP
+  arrays. Both local `src/assets` sources render as the article hero and listing
+  thumbnail with descriptive alt text; metadata-only lineage preserves the
+  effective technical reviews.
+
 - B5 public-production run: three separate human decisions and Promotion Gate audits
   publish Git locally, curl/HTTP and Python fundamentals to `git-lokalnie`,
   `curl-http` and `podstawy-pythona`. Each immediate verification and all eleven

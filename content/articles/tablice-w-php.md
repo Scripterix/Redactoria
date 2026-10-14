@@ -2,6 +2,8 @@
 title: Tablice w PHP — od podstaw do sortowania i mapowania
 description: "Przewodnik po tablicach w PHP 8.4–8.5: klucze, odczyt i zmiana danych, iterowanie, łączenie, sortowanie oraz mapowanie i filtrowanie. Z przykładami i ćwiczeniami."
 slug: tablice-w-php
+featuredImage: ../../src/assets/tablice-php.webp
+featuredAlt: Osoba porządkuje elementy w szufladach symbolizujących tablice PHP.
 status: published
 created: 2026-10-09T00:00:00.000Z
 updated: 2026-10-10T00:00:00.000Z
@@ -55,109 +57,371 @@ Zakres: PHP 8.4–8.5. Materiał dla początkujących i osób na poziomie średn
 
 ## Tablica to mapa kluczy i wartości
 
-Tablica w PHP jest uporządkowaną mapą: każda wartość ma klucz, a elementy mają kolejność, w której można po nich przejść. Klucz wskazuje jedną wartość. Ponowne przypisanie pod ten sam klucz zastępuje tę wartość, nie dokłada drugiej obok niej. Wartością może być również inna tablica.
+Tablica w PHP przechowuje elementy jako pary:
 
-„Tablica indeksowana” i „tablica asocjacyjna” opisują sposoby użycia tego samego typu `array`. W pierwszym przypadku zwykle pracujemy z kluczami całkowitymi, w drugim z nazwami, np. `name`. Jedna tablica może łączyć oba rodzaje kluczy i wartości różnych typów.
+```text
+KLUCZ → WARTOŚĆ
+```
 
-W tej lekcji przejdziemy od tworzenia i odczytu danych przez operacje zmieniające tablicę do sortowania, mapowania, filtrowania i agregacji. Ważne będą trzy pytania: czy operacja zmienia wejście, co zwraca oraz co robi z kluczami. To pomaga wybrać właściwe narzędzie bez zapamiętywania samych nazw funkcji.
+Klucz identyfikuje element, a wartość jest daną zapisaną pod tym kluczem. Elementy mają też kolejność, w której można po nich przejść. Ponowne przypisanie pod ten sam klucz zmienia istniejącą wartość, zamiast dodawać drugą obok niej.
 
-Każdy blok PHP uruchamiaj osobno jako plik, np. `php example.php`. Każdy sam inicjalizuje dane; nie wymaga wykonania poprzedniego bloku.
+Tablice są elastyczne: można odczytywać i zmieniać ich elementy, dopisywać i usuwać dane, przechodzić po nich oraz tworzyć na ich podstawie nowe wyniki. Zaczniemy jednak od jednego prostego modelu `klucz → wartość`, a kolejne możliwości będziemy dodawać krok po kroku.
+
+### Jak uruchamiać przykłady
+
+Kod PHP zapisujemy w pliku z rozszerzeniem `.php`, na przykład `example.php`. Na komputerze musi być zainstalowany interpreter PHP, a polecenie `php` musi być dostępne w terminalu. Terminal to program, w którym wpisuje się polecenia tekstowe.
+
+Otwórz terminal w katalogu zawierającym plik i uruchom:
+
+```text
+php example.php
+```
+
+`php` uruchamia interpreter PHP, czyli program wykonujący kod. `example.php` jest nazwą pliku, który ma zostać wykonany. Każdy przykład w artykule jest samodzielny: zapisz wybrany blok do osobnego pliku i nie uruchamiaj wcześniejszych przykładów.
+
+Jeżeli nie masz jeszcze lokalnego PHP, możesz przepisać przykład do zaufanego środowiska PHP online. Podstawowym sposobem w tej lekcji pozostaje jednak lokalny plik `.php`.
+
+### Kod nie zawsze coś wyświetla
+
+Przypisanie `$numbers = [10, 20];` tworzy tablicę w pamięci, ale samo niczego nie wypisuje. Podobnie `$numbers[1] = 25;` zmienia dane, lecz efekt zobaczysz dopiero wtedy, gdy jawnie go wyświetlisz.
+
+W przykładach używamy dwóch podstawowych narzędzi:
+
+- `echo` wypisuje tekst albo prostą wartość;
+- `print_r()` pokazuje czytelną strukturę tablicy, razem z kluczami i wartościami.
+
+Etykiety takie jak `Na początku:` i `Po zmianie:` są częścią programu. Dzięki nim wynik pokazuje nie tylko dane, lecz także etap, którego dotyczą.
 
 <a id="creation"></a>
 
 ## Tworzenie tablic: lista i nazwane pola
 
-Zapis `[]` jest krótką składnią tworzenia tablicy. Zapis `array(...)` również jest poprawny; w tej lekcji stosujemy spójnie krótszą postać. Pusta tablica to `[]`.
+Zapis `[]` jest krótką składnią tworzenia tablicy. Pusta tablica to `[]`. Starszy zapis `array(...)` również jest poprawny, ale w tej lekcji konsekwentnie używamy krótszej postaci.
 
-W prostej liście utworzonej bez jawnych kluczy kolejne elementy dostają klucze `0`, `1`, `2`. Nie jest to reguła dla każdej tablicy z kluczami liczbowymi: klucze można nadawać samodzielnie, zaczynać od innej liczby i pozostawiać luki.
+### Lista: automatyczne klucze całkowite
 
-W zapisie `klucz => wartość` lewa strona identyfikuje element, prawa jest jego zawartością. Nazwane klucze ułatwiają opis danych osoby czy konfiguracji. Dostęp `$person['name']` oznacza odczyt konkretnego pola, a nie elementu o pozycji nazwanej „name”.
+Jeżeli nie podasz kluczy, PHP utworzy je automatycznie. Pierwszym kluczem jest `0`:
 
-### Lista owoców i dane osoby
+```text
+0 → apple
+1 → pear
+2 → plum
+```
 
 ```php
 <?php
 $fruits = ['apple', 'pear', 'plum'];
-$person = ['name' => 'Jan', 'age' => 30];
-echo $fruits[0], "\n";
-echo $person['name'], "\n";
+
+echo "Lista owoców:\n";
+print_r($fruits);
 ```
 
 Oczekiwany wynik:
 
 ```text
-apple
-Jan
+Lista owoców:
+Array
+(
+    [0] => apple
+    [1] => pear
+    [2] => plum
+)
 ```
 
-<a id="keys"></a>
+`apple`, `pear` i `plum` są wartościami. Liczby `0`, `1` i `2` są ich kluczami. Odczyt `$fruits[0]` oznacza: „pobierz wartość zapisaną pod kluczem `0`”.
 
-## Konwersja kluczy i kolizje
+**Kiedy może się przydać?** Lista jest wygodna, gdy kolejność danych ma znaczenie, na przykład dla produktów, kroków instrukcji albo wyników.
 
-Klucze tablic PHP są typu `int` lub `string`. Niektóre wartości użyte jako klucze są konwertowane. String `"0"` oznacza ten sam klucz co liczba `0`. String `"8"` zostaje kluczem całkowitym `8`, ale `"08"` pozostaje stringiem. Wartość `true` staje się kluczem `1`, a `false` kluczem `0`.
+### Nazwane klucze
 
-Poniżej drugie przypisanie zastępuje wartość pierwszego. Jeśli klucz jest identyfikatorem, zastanów się, czy jego zapis ma znaczenie: `"08"` i `8` nie wskazują tu tego samego elementu.
+W zapisie `klucz => wartość` lewa strona jest kluczem, a prawa wartością:
 
-Nie stosuj ułamków jako praktycznych kluczy. Niejawna konwersja np. `1.5` do `1` z utratą precyzji jest deprecated od PHP 8.1. Również `null` jest konwertowany do klucza pustego stringa `""`, ale w PHP 8.5 użycie `null` jako offsetu tablicy emituje `E_DEPRECATED`. Od tej wersji deprecated jest też `null` jako argument klucza w `array_key_exists()`. Jeżeli naprawdę potrzebujesz pustego klucza, podaj jawnie `""`. **Wartość `null` pod zwykłym kluczem pozostaje dozwolona** — to inna sytuacja.
-
-Dopisywanie przez `[]` zależy od historii kluczy całkowitych, nie od liczby elementów. Po przypisaniu klucza `10` i usunięciu go przez `unset()` kolejne dopisanie otrzyma klucz `11`. Szczególny przypadek: po nadaniu pustej tablicy klucza `-5` dopisanie otrzyma `-4` w docelowych 8.4–8.5. Nie przenoś tutaj starego wyniku `0` z PHP 8.2.
-
-### Ten sam klucz zapisany jako int i string
+```text
+name → Jan
+age  → 30
+```
 
 ```php
 <?php
-$data = [0 => 'first'];
-$data['0'] = 'replacement';
-$data['08'] = 'padded';
-$data[8] = 'integer';
-foreach ($data as $key => $value) {
-    echo $key, '=', $value, "\n";
-}
+$person = [
+    'name' => 'Jan',
+    'age' => 30,
+];
+
+echo "Dane osoby:\n";
+print_r($person);
+echo "Imię: ", $person['name'], "\n";
 ```
 
 Oczekiwany wynik:
 
 ```text
-0=replacement
-08=padded
-8=integer
+Dane osoby:
+Array
+(
+    [name] => Jan
+    [age] => 30
+)
+Imię: Jan
 ```
+
+Klucz `name` identyfikuje pole, a `Jan` jest przechowywaną wartością. Nazwane klucze opisują dane czytelniej niż pozycje liczbowe.
+
+**Kiedy może się przydać?** Nazwane klucze dobrze pasują do danych użytkownika i konfiguracji.
 
 <a id="read-write"></a>
 
 ## Odczyt, zapis i dopisywanie
 
-Odczyt korzysta z nawiasów kwadratowych z konkretnym kluczem. Przypisanie pod istniejący klucz zmienia jego wartość, a przypisanie pod nowy dodaje element. Zapis bez klucza, `$numbers[] = 60`, dopisuje wartość pod automatycznie dobranym kluczem całkowitym.
+Pierwszy dłuższy przykład pokazuje konwencję używaną dalej: stan początkowy, jedna operacja, stan po operacji i podpisany wynik.
 
-Klucz `10` nie oznacza dziesiątego elementu. Poniższa tablica ma tylko cztery elementy, choć jednym z kluczy jest `10`. Funkcja `count()` zwraca liczbę elementów, a nie największy klucz ani następny wolny indeks. Nie wyznaczaj następnego klucza za pomocą `count($numbers)`; do zwykłego dopisywania użyj `[]`.
-
-Takie rozróżnienie przyda się po usuwaniu i filtrowaniu, kiedy numeracja może mieć luki. Klucz jest identyfikatorem elementu; pozycja jest jego miejscem w aktualnej kolejności.
-
-### Zmiana wartości i jawny klucz
+### Stan tablicy krok po kroku
 
 ```php
 <?php
 $numbers = [10, 20];
+
+echo "Na początku:\n";
+print_r($numbers);
+
 $numbers[1] = 25;
+
+echo "Po zmianie drugiego elementu:\n";
+print_r($numbers);
+
 $numbers[] = 30;
+
+echo "Po dodaniu nowego elementu:\n";
+print_r($numbers);
+
 $numbers[10] = 100;
-echo $numbers[1], "\n";
-echo count($numbers), "\n";
-foreach ($numbers as $key => $value) {
-    echo $key, '=', $value, "\n";
+
+echo "Po dodaniu wartości pod kluczem 10:\n";
+print_r($numbers);
+
+echo "Liczba elementów: ", count($numbers), "\n";
+```
+
+Oczekiwany wynik:
+
+```text
+Na początku:
+Array
+(
+    [0] => 10
+    [1] => 20
+)
+Po zmianie drugiego elementu:
+Array
+(
+    [0] => 10
+    [1] => 25
+)
+Po dodaniu nowego elementu:
+Array
+(
+    [0] => 10
+    [1] => 25
+    [2] => 30
+)
+Po dodaniu wartości pod kluczem 10:
+Array
+(
+    [0] => 10
+    [1] => 25
+    [2] => 30
+    [10] => 100
+)
+Liczba elementów: 4
+```
+
+Na początku `$numbers = [10, 20];` tworzy dwie pary:
+
+```text
+0 → 10
+1 → 20
+```
+
+`10` i `20` są wartościami. `0` i `1` są automatycznie utworzonymi kluczami.
+
+Następnie `$numbers[1] = 25;` znaczy: „zmień wartość pod kluczem `1`”.
+
+```text
+przed: 1 → 20
+po:    1 → 25
+```
+
+Zapis `$numbers[] = 30;` dopisuje wartość pod następnym odpowiednim kluczem całkowitym:
+
+```text
+przed: 0 → 10, 1 → 25
+po:    0 → 10, 1 → 25, 2 → 30
+```
+
+Puste `[]` przy przypisaniu nie oznacza „drugiego elementu”. Oznacza: „dobierz następny odpowiedni klucz całkowity i dopisz wartość”.
+
+Na końcu `$numbers[10] = 100;` dodaje element pod jawnie wybranym kluczem `10`:
+
+```text
+0  → 10
+1  → 25
+2  → 30
+10 → 100
+```
+
+Tablica ma cztery elementy. Klucz `10` nie oznacza dziesięciu elementów. `count($numbers)` liczy elementy, nie największy klucz. Klucz jest identyfikatorem elementu, a nie jego numerem porządkowym.
+
+<a id="types"></a>
+
+## Wartości mogą mieć różne typy
+
+Jedna tablica może przechowywać wartości różnych typów:
+
+### Typy wartości w danych użytkownika
+
+Aby nazwy typów były widoczne, użyjemy pomocniczej funkcji `get_debug_type()`. Zwraca ona nazwę rzeczywistego typu podanej wartości.
+
+```php
+<?php
+$user = [
+    'name' => 'Jan',
+    'age' => 30,
+    'height' => 1.82,
+    'active' => true,
+    'skills' => ['PHP', 'Git'],
+    'secondName' => null,
+];
+
+echo "Dane użytkownika:\n";
+echo "name       → ", get_debug_type($user['name']), "\n";
+echo "age        → ", get_debug_type($user['age']), "\n";
+echo "height     → ", get_debug_type($user['height']), "\n";
+echo "active     → ", get_debug_type($user['active']), "\n";
+echo "skills     → ", get_debug_type($user['skills']), "\n";
+echo "secondName → ", get_debug_type($user['secondName']), "\n";
+```
+
+Oczekiwany wynik:
+
+```text
+Dane użytkownika:
+name       → string
+age        → int
+height     → float
+active     → bool
+skills     → array
+secondName → null
+```
+
+Znaczenie pól jest następujące:
+
+| Klucz | Typ wartości | Praktyczne znaczenie |
+| --- | --- | --- |
+| `name` | `string` | tekst |
+| `age` | `int` | liczba całkowita |
+| `height` | `float` | liczba dziesiętna |
+| `active` | `bool` | odpowiedź tak/nie: `true` albo `false` |
+| `skills` | `array` | kolejna grupa danych |
+| `secondName` | `null` | świadomy brak wartości |
+
+Używamy `get_debug_type()` tylko po to, aby typów nie trzeba było zgadywać.
+
+<a id="nested"></a>
+
+## Tablica zagnieżdżona
+
+Wartością elementu może być kolejna tablica. Taką strukturę nazywamy tablicą zagnieżdżoną:
+
+```text
+user
+├── name → Jan
+└── skills
+    ├── 0 → PHP
+    └── 1 → Git
+```
+
+### Odczyt z dwóch poziomów
+
+```php
+<?php
+$user = [
+    'name' => 'Jan',
+    'skills' => ['PHP', 'Git'],
+];
+
+echo "Pierwsza umiejętność: ", $user['skills'][0], "\n";
+```
+
+Oczekiwany wynik:
+
+```text
+Pierwsza umiejętność: PHP
+```
+
+Odczyt `$user['skills'][0]` wykonujemy etapami:
+
+1. wybierz klucz `skills` w tablicy `$user`;
+2. otrzymasz tablicę `['PHP', 'Git']`;
+3. z tej tablicy wybierz klucz `0`;
+4. wynikiem będzie wartość `PHP`.
+
+**Kiedy może się przydać?** Tablice zagnieżdżone reprezentują na przykład listę użytkowników, menu albo pogrupowaną konfigurację.
+
+<a id="iteration"></a>
+
+## foreach: najpierw wartości, potem klucze
+
+Pętla `foreach` wykonuje ten sam fragment kodu dla kolejnych elementów tablicy.
+
+### Przejście po wartościach
+
+```php
+<?php
+$fruits = ['apple', 'pear', 'plum'];
+
+echo "Owoce:\n";
+foreach ($fruits as $fruit) {
+    echo $fruit, "\n";
 }
 ```
 
 Oczekiwany wynik:
 
 ```text
-25
-4
-0=10
-1=25
-2=30
-10=100
+Owoce:
+apple
+pear
+plum
 ```
+
+`foreach ($fruits as $fruit)` czytaj: „dla każdego elementu tablicy `$fruits` pobierz jego wartość i na czas tego obiegu nazwij ją `$fruit`”.
+
+### Przejście po kluczach i wartościach
+
+```php
+<?php
+$person = [
+    'name' => 'Jan',
+    'age' => 30,
+];
+
+echo "Pola osoby:\n";
+foreach ($person as $key => $value) {
+    echo $key, ': ', $value, "\n";
+}
+```
+
+Oczekiwany wynik:
+
+```text
+Pola osoby:
+name: Jan
+age: 30
+```
+
+`foreach ($person as $key => $value)` czytaj: „dla każdego elementu pobierz jego klucz i wartość”. Nie potrzebujesz ciągłej numeracji.
+
+**Kiedy może się przydać?** `foreach` służy do wypisywania albo przetwarzania każdego elementu.
 
 <a id="presence"></a>
 
@@ -180,181 +444,296 @@ Te narzędzia nie są zamienne. Jeżeli `null` ma znaczyć „pole jest obecne, 
 | false | true | true | false | true |
 | "" | true | true | "" | true |
 
-`empty()` sprawdza brak lub wartość falsey, nie samo istnienie klucza. Może więc odrzucić string `"0"`, który w twoim formularzu jest prawidłową wartością. Operator `??` zachowuje `0`, `false` i pusty string — nie zastępuje ich fallbackiem.
+`empty()` sprawdza brak lub wartość interpretowaną jako fałsz (często nazywaną *falsey*), nie samo istnienie klucza. Może więc odrzucić string `"0"`, który w twoim formularzu jest prawidłową wartością. Operator `??` zachowuje `0`, `false` i pusty string — nie zastępuje ich fallbackiem.
 
 Szukanie wartości jest jeszcze innym pytaniem. Jeśli używasz `in_array()` do danych mieszanych, parametr `true` włącza porównanie także typów; nie myl szukania wartości ze sprawdzaniem klucza.
 
 ### Istniejący null a brak pola
 
+W kodzie poniżej zapis `warunek ? 'true' : 'false'` wybiera pierwszy tekst, gdy warunek jest spełniony, a drugi, gdy nie jest. Używamy go tylko do czytelnego wypisania wyniku sprawdzenia.
+
 ```php
 <?php
 $data = ['name' => null, 'count' => 0];
-echo isset($data['name']) ? 'true' : 'false', "\n";
-echo array_key_exists('name', $data) ? 'true' : 'false', "\n";
-echo $data['name'] ?? 'fallback', "\n";
-echo $data['missing'] ?? 'fallback', "\n";
-echo $data['count'] ?? 99, "\n";
+
+echo "isset dla name: ", isset($data['name']) ? 'true' : 'false', "\n";
+echo "Klucz name istnieje: ", array_key_exists('name', $data) ? 'true' : 'false', "\n";
+echo "name z fallbackiem: ", $data['name'] ?? 'fallback', "\n";
+echo "missing z fallbackiem: ", $data['missing'] ?? 'fallback', "\n";
+echo "count z fallbackiem: ", $data['count'] ?? 99, "\n";
 ```
 
 Oczekiwany wynik:
 
 ```text
-false
-true
-fallback
-fallback
-0
-```
-
-<a id="nested"></a>
-
-## Tablice zagnieżdżone i różne typy danych
-
-Wartość elementu może być kolejną tablicą. Nie powstaje wtedy drugi rodzaj typu: przechodzisz przez następne poziomy tej samej struktury. Najpierw wybierasz użytkownika, potem pole, następnie element listy umiejętności.
-
-Dane można mieszać: osoba może mieć nazwę jako string, wiek jako int, znacznik aktywności jako bool oraz umiejętności jako tablicę. Czytelne klucze pomagają pokazać, co reprezentują wartości. Mała macierz liczb działa analogicznie: `$matrix[1][2]` odczytuje element drugiego wiersza pod kluczem `2`.
-
-W poniższym przykładzie strukturę znamy, więc bezpośredni odczyt jest uzasadniony. Przy danych z zewnątrz samo założenie, że istnieją wszystkie poziomy i mają oczekiwane typy, nie wystarcza.
-
-### Odczyt z listy użytkowników
-
-```php
-<?php
-$users = [
-    ['name' => 'Jan', 'skills' => ['PHP', 'JavaScript']],
-    ['name' => 'Anna', 'skills' => ['Python']],
-];
-$matrix = [[1, 2, 3], [4, 5, 6]];
-echo $users[0]['name'], "\n";
-echo $users[1]['skills'][0], "\n";
-echo $matrix[1][2], "\n";
-```
-
-Oczekiwany wynik:
-
-```text
-Jan
-Python
-6
+isset dla name: false
+Klucz name istnieje: true
+name z fallbackiem: fallback
+missing z fallbackiem: fallback
+count z fallbackiem: 0
 ```
 
 <a id="mutations"></a>
 
-## Dodawanie i usuwanie: obserwuj stan po operacji
+## Dodawanie i usuwanie: najpierw proste operacje
 
-Operacje mutujące zmieniają przekazaną tablicę. Ich wynik zwracany nie musi być nową tablicą:
+Najpierw użyjemy dwóch podstawowych zapisów: `[]` do dopisania wartości i `unset()` do usunięcia elementu. Po każdej operacji wypiszemy stan tablicy.
 
-- `[]` dopisuje element;
-- `array_push()` dopisuje wartości na końcu;
-- `array_unshift()` dodaje na początku i reindeksuje klucze liczbowe od zera, zachowując klucze nazwane;
-- `array_pop()` usuwa ostatnią wartość i ją zwraca;
-- `array_shift()` usuwa pierwszą wartość i ją zwraca; reindeksuje klucze liczbowe;
-- `unset($a[$key])` usuwa wskazany klucz bez automatycznego reindeksowania pozostałych;
-- `array_splice()` operuje na pozycji w kolejności tablicy, zwraca usunięty wycinek i reindeksuje klucze liczbowe.
-
-`array_push()` oraz `array_unshift()` zwracają liczbę elementów po operacji, nie tablicę. Dla pustej tablicy `array_pop()` i `array_shift()` zwracają `null`.
-
-W drugim przykładzie po `shift()` mamy `[2, 3, 4]`. Usunięcie klucza `1` zostawia pary `0 => 2`, `2 => 4`. Następnie `splice(..., 1, 2)` zaczyna od drugiej pozycji, nie od klucza `1`: usuwa dostępny element `4`. Pokazanie pośrednich stanów jest ważniejsze niż długa lista nazw funkcji.
-
-W wyniku drugiego przykładu pierwsze dwie linie to wartości zwrócone przez `array_pop()` i `array_shift()`. Cztery bloki `Array` pokazują kolejno: stan po `array_shift()`, stan po `unset()`, usunięty wycinek w `$removed` i końcowy stan `$numbers`.
-
-### Dodawanie na koniec i początek
+### Dodanie jednego elementu
 
 ```php
 <?php
 $fruits = ['apple', 'pear'];
+
+echo "Na początku:\n";
+print_r($fruits);
+
 $fruits[] = 'plum';
-$afterPush = array_push($fruits, 'cherry');
-$afterUnshift = array_unshift($fruits, 'peach');
-echo $afterPush, '/', $afterUnshift, "\n";
-foreach ($fruits as $key => $value) {
-    echo $key, '=', $value, "\n";
-}
+
+echo "Po dodaniu plum:\n";
+print_r($fruits);
 ```
 
 Oczekiwany wynik:
 
 ```text
-4/5
-0=peach
-1=apple
-2=pear
-3=plum
-4=cherry
+Na początku:
+Array
+(
+    [0] => apple
+    [1] => pear
+)
+Po dodaniu plum:
+Array
+(
+    [0] => apple
+    [1] => pear
+    [2] => plum
+)
 ```
 
-### Klucz w unset a pozycja w splice
+`$fruits[] = 'plum';` zmienia tablicę w pamięci. Dopiero `print_r($fruits)` pokazuje nowy stan.
+
+### Usunięcie jednego elementu
 
 ```php
 <?php
-$numbers = [1, 2, 3, 4, 5];
-echo array_pop($numbers), "\n";
-echo array_shift($numbers), "\n";
+$fruits = ['apple', 'pear', 'plum'];
+
+echo "Na początku:\n";
+print_r($fruits);
+
+unset($fruits[1]);
+
+echo "Po usunięciu klucza 1:\n";
+print_r($fruits);
+```
+
+Oczekiwany wynik:
+
+```text
+Na początku:
+Array
+(
+    [0] => apple
+    [1] => pear
+    [2] => plum
+)
+Po usunięciu klucza 1:
+Array
+(
+    [0] => apple
+    [2] => plum
+)
+```
+
+`unset($fruits[1])` usuwa element pod kluczem `1`, ale nie zmienia automatycznie klucza `2` na `1`. Luki w kluczach są dozwolone.
+
+**Kiedy może się przydać?** Dopisywanie i usuwanie pozwala aktualizować listę produktów, tagów albo zadań.
+
+### Funkcje operujące na końcu tablicy
+
+```php
+<?php
+$fruits = ['apple', 'pear'];
+
+echo "Na początku:\n";
+print_r($fruits);
+
+$size = array_push($fruits, 'plum');
+echo "Po array_push; liczba elementów: ", $size, "\n";
+print_r($fruits);
+
+$removed = array_pop($fruits);
+echo "array_pop usunęło: ", $removed, "\n";
+echo "Po array_pop:\n";
+print_r($fruits);
+```
+
+Oczekiwany wynik:
+
+```text
+Na początku:
+Array
+(
+    [0] => apple
+    [1] => pear
+)
+Po array_push; liczba elementów: 3
+Array
+(
+    [0] => apple
+    [1] => pear
+    [2] => plum
+)
+array_pop usunęło: plum
+Po array_pop:
+Array
+(
+    [0] => apple
+    [1] => pear
+)
+```
+
+`array_push()` dopisuje wartość na końcu i zwraca nową liczbę elementów. `array_pop()` usuwa ostatnią wartość i ją zwraca. Zwykłe `$fruits[] = 'plum'` jest prostszym zapisem, gdy dopisujesz jedną wartość.
+
+### Funkcje operujące na początku tablicy
+
+```php
+<?php
+$numbers = [20, 30];
+
+echo "Na początku:\n";
 print_r($numbers);
-unset($numbers[1]);
+
+$size = array_unshift($numbers, 10);
+echo "Po array_unshift; liczba elementów: ", $size, "\n";
 print_r($numbers);
+
+$removed = array_shift($numbers);
+echo "array_shift usunęło: ", $removed, "\n";
+echo "Po array_shift:\n";
+print_r($numbers);
+```
+
+Oczekiwany wynik:
+
+```text
+Na początku:
+Array
+(
+    [0] => 20
+    [1] => 30
+)
+Po array_unshift; liczba elementów: 3
+Array
+(
+    [0] => 10
+    [1] => 20
+    [2] => 30
+)
+array_shift usunęło: 10
+Po array_shift:
+Array
+(
+    [0] => 20
+    [1] => 30
+)
+```
+
+`array_unshift()` dodaje wartość na początku i zwraca nową liczbę elementów. `array_shift()` usuwa pierwszą wartość i ją zwraca. Obie operacje porządkują klucze liczbowe od zera.
+
+### Usunięcie fragmentu przez array_splice
+
+```php
+<?php
+$numbers = [10, 20, 30, 40];
+
+echo "Na początku:\n";
+print_r($numbers);
+
 $removed = array_splice($numbers, 1, 2);
+
+echo "Usunięty fragment:\n";
 print_r($removed);
+echo "Po array_splice:\n";
 print_r($numbers);
 ```
 
 Oczekiwany wynik:
 
 ```text
-5
-1
+Na początku:
 Array
 (
-    [0] => 2
-    [1] => 3
-    [2] => 4
+    [0] => 10
+    [1] => 20
+    [2] => 30
+    [3] => 40
 )
+Usunięty fragment:
 Array
 (
-    [0] => 2
-    [2] => 4
+    [0] => 20
+    [1] => 30
 )
+Po array_splice:
 Array
 (
-    [0] => 4
-)
-Array
-(
-    [0] => 2
+    [0] => 10
+    [1] => 40
 )
 ```
 
-<a id="iteration"></a>
+`array_splice($numbers, 1, 2)` zaczyna od drugiej pozycji i usuwa dwa elementy. Drugi argument opisuje pozycję w bieżącej kolejności, a nie dowolnie nazwany klucz. Funkcja zwraca usunięty fragment i reindeksuje klucze liczbowe w pozostałej tablicy.
 
-## foreach: wartości albo pary klucz–wartość
+<a id="keys"></a>
 
-Pętla `foreach ($data as $value)` udostępnia kolejne wartości. Wariant `foreach ($data as $key => $value)` udostępnia również rzeczywisty klucz każdego elementu w kolejności iteracji. Nie potrzebujesz ciągłych indeksów.
+## Dodatkowe reguły kluczy w PHP
 
-Zwykła pętla jest dobrym pierwszym wyborem, gdy chcesz wypisać dane lub wykonać kilka różnych operacji dla każdego elementu. Gdy potrzebujesz tablicy przekształconych wartości, później pokażemy `array_map()`; gdy wybierasz część elementów — `array_filter()`.
+Podstawowy model już znamy: klucz identyfikuje wartość, a `[]` dopisuje element. PHP ma jeszcze reguły konwersji kluczy, które warto znać później.
 
-Uwaga na wariant z referencją `&$value`: może zmieniać wartości wejścia, a po zakończeniu pętli zmienna nadal może odnosić się do ostatniego elementu. Trzeba świadomie przerwać tę referencję przez `unset($value)`. W przykładach podstawowych pozostajemy przy pętli po wartości.
+Klucz tablicy ma typ `int` albo `string`. String `"0"` staje się tym samym kluczem co liczba `0`. String `"8"` staje się kluczem całkowitym `8`, ale `"08"` pozostaje stringiem. Wartość `true` użyta jako klucz staje się `1`, a `false` staje się `0`.
 
-### Iteracja bez ciągłej numeracji
+### Kolizja po konwersji klucza
 
 ```php
 <?php
-$data = ['x' => 1, 4 => 2];
-foreach ($data as $key => $value) {
-    echo $key, ': ', $value, "\n";
-}
-foreach ($data as $value) {
-    echo $value, "\n";
-}
+$data = [0 => 'first'];
+
+echo "Na początku:\n";
+print_r($data);
+
+$data['0'] = 'replacement';
+$data['08'] = 'padded';
+$data[8] = 'integer';
+
+echo "Po przypisaniach:\n";
+print_r($data);
 ```
 
 Oczekiwany wynik:
 
 ```text
-x: 1
-4: 2
-1
-2
+Na początku:
+Array
+(
+    [0] => first
+)
+Po przypisaniach:
+Array
+(
+    [0] => replacement
+    [08] => padded
+    [8] => integer
+)
 ```
+
+`'0'` i `0` wskazują ten sam klucz, więc pierwsza wartość zostaje zastąpiona. `'08'` i `8` pozostają dwoma różnymi kluczami.
+
+Nie stosuj ułamków ani `null` jako praktycznych kluczy. Konwersja ułamka, na przykład `1.5` do `1`, może tracić precyzję i od PHP 8.1 jest oznaczona jako przestarzała (*deprecated*). `null` jest konwertowany do pustego stringa, a w PHP 8.5 użycie go jako klucza tablicy albo argumentu klucza w `array_key_exists()` emituje ostrzeżenie `E_DEPRECATED`. Wartość `null` zapisana pod zwykłym kluczem nadal jest dozwolona.
+
+Zaawansowana uwaga: automatyczny klucz zależy od największego użytego klucza całkowitego, nie od `count()`. Po użyciu klucza `10`, nawet jeśli go usuniesz, kolejne `[]` może otrzymać klucz `11`. Od PHP 8.3 po kluczu `-5` w pustej tablicy kolejny automatyczny klucz to `-4`.
 
 <a id="merge"></a>
 
@@ -378,14 +757,19 @@ W `array_merge()` nie przenoś na klucze liczbowe reguły „prawa wartość nad
 <?php
 $left = [2 => 'left-number', 'x' => 'left'];
 $right = [2 => 'right-number', 'x' => 'right', 7 => 'seven'];
+
+echo "array_merge:\n";
 print_r(array_merge($left, $right));
+echo "Suma tablic (+):\n";
 print_r($left + $right);
+echo "array_replace:\n";
 print_r(array_replace($left, $right));
 ```
 
 Oczekiwany wynik:
 
 ```text
+array_merge:
 Array
 (
     [0] => left-number
@@ -393,12 +777,14 @@ Array
     [1] => right-number
     [2] => seven
 )
+Suma tablic (+):
 Array
 (
     [2] => left-number
     [x] => left
     [7] => seven
 )
+array_replace:
 Array
 (
     [2] => right-number
@@ -406,6 +792,8 @@ Array
     [7] => seven
 )
 ```
+
+**Kiedy może się przydać?** Łączenie pomaga składać listy lub nakładać ustawienia, ale wybór operacji zależy od tego, która strona ma wygrać przy kolizji kluczy.
 
 <a id="sorting"></a>
 
@@ -431,29 +819,48 @@ Używamy jednorodnych liczb. Ten przykład nie jest gwarancją polskiego porząd
 ```php
 <?php
 $scores = ['a' => 3, 'b' => 2, 'c' => 1];
+
+echo "Na początku:\n";
+print_r($scores);
+
 $values = $scores;
 sort($values);
+echo "Po sort:\n";
 print_r($values);
+
 $associated = $scores;
 asort($associated);
-foreach ($associated as $key => $value) {
-    echo $key, '=', $value, "\n";
-}
+echo "Po asort:\n";
+print_r($associated);
 ```
 
 Oczekiwany wynik:
 
 ```text
+Na początku:
+Array
+(
+    [a] => 3
+    [b] => 2
+    [c] => 1
+)
+Po sort:
 Array
 (
     [0] => 1
     [1] => 2
     [2] => 3
 )
-c=1
-b=2
-a=3
+Po asort:
+Array
+(
+    [c] => 1
+    [b] => 2
+    [a] => 3
+)
 ```
+
+**Kiedy może się przydać?** Sortowanie porządkuje wyniki, ceny lub nazwy. Gdy klucze wskazują konkretne obiekty, wybierz funkcję zachowującą powiązanie klucz–wartość.
 
 <a id="map"></a>
 
@@ -470,14 +877,30 @@ Mapowanie nie służy do usuwania elementów na podstawie warunku. Zwrócenie `f
 ```php
 <?php
 $numbers = [1, 2, 3, 4, 5];
+
+echo "Na początku:\n";
+print_r($numbers);
+
 $doubled = array_map(fn($number) => $number * 2, $numbers);
+
+echo "Po array_map:\n";
 print_r($doubled);
-echo $numbers[0], "\n";
+echo "Tablica wejściowa nadal ma pierwszy element: ", $numbers[0], "\n";
 ```
 
 Oczekiwany wynik:
 
 ```text
+Na początku:
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+)
+Po array_map:
 Array
 (
     [0] => 2
@@ -486,8 +909,10 @@ Array
     [3] => 8
     [4] => 10
 )
-1
+Tablica wejściowa nadal ma pierwszy element: 1
 ```
+
+**Kiedy może się przydać?** `array_map()` przekształca wszystkie wartości, na przykład przelicza ceny lub formatuje nazwy.
 
 <a id="filter"></a>
 
@@ -504,19 +929,37 @@ Bez callbacku `array_filter()` usuwa wartości uznawane za puste/falsey, w tym `
 ```php
 <?php
 $numbers = [1, 2, 3, 4, 5];
+
+echo "Na początku:\n";
+print_r($numbers);
+
 $even = array_filter($numbers, fn($number) => $number % 2 === 0);
+
+echo "Liczby parzyste:\n";
 print_r($even);
 ```
 
 Oczekiwany wynik:
 
 ```text
+Na początku:
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+)
+Liczby parzyste:
 Array
 (
     [1] => 2
     [3] => 4
 )
 ```
+
+**Kiedy może się przydać?** `array_filter()` wybiera tylko elementy spełniające warunek, na przykład aktywnych użytkowników albo dostępne produkty.
 
 <a id="aggregation"></a>
 
@@ -536,15 +979,16 @@ Suma `15` poniżej jest wynikiem redukcji. Częstości owoców `2/2/1` są wynik
 <?php
 $numbers = [1, 2, 3, 4, 5];
 $total = array_reduce($numbers, fn($carry, $number) => $carry + $number, 0);
-echo $total, "\n";
-echo array_reduce([], fn($carry, $number) => $carry + $number, 0), "\n";
+
+echo "Suma liczb: ", $total, "\n";
+echo "Suma pustej tablicy ze startowym 0: ", array_reduce([], fn($carry, $number) => $carry + $number, 0), "\n";
 ```
 
 Oczekiwany wynik:
 
 ```text
-15
-0
+Suma liczb: 15
+Suma pustej tablicy ze startowym 0: 0
 ```
 
 ### Liczenie powtarzających się owoców
@@ -552,12 +996,15 @@ Oczekiwany wynik:
 ```php
 <?php
 $products = ['apple', 'pear', 'apple', 'cherry', 'pear'];
+
+echo "Liczba wystąpień:\n";
 print_r(array_count_values($products));
 ```
 
 Oczekiwany wynik:
 
 ```text
+Liczba wystąpień:
 Array
 (
     [apple] => 2
@@ -565,6 +1012,8 @@ Array
     [cherry] => 1
 )
 ```
+
+**Kiedy może się przydać?** Redukcja tworzy jeden wynik z wielu wartości, a zliczanie częstotliwości pokazuje, ile razy wystąpiła każda wartość.
 
 <a id="practice"></a>
 
@@ -578,6 +1027,8 @@ Przy formularzu jest dodatkowa granica: `$_POST['email'] ?? ''` zapewnia fallbac
 
 Drugi przykład używa lokalnego wejścia o kształcie pola formularza, nie obsługuje HTTP i niczego nie wysyła. Walidacja email to nie autoryzacja ani uniwersalne „oczyszczanie”. Przy wyświetlaniu dynamicznego tekstu w HTML stosuje się osobny escaping, np. `htmlspecialchars(..., ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`; nie jest on ochroną dowolnego URL, SQL lub JavaScript. Pełny handler formularza pozostaje poza tą lekcją.
 
+Instrukcje `if` i `elseif` wybierają jedną z trzech ścieżek. W tym przykładzie najważniejsza jest kolejność: najpierw sprawdzenie typu, dopiero potem walidacja wartości.
+
 ### Zagnieżdżona opcja i opcjonalny stan menu
 
 ```php
@@ -587,7 +1038,9 @@ $menu = [
     ['title' => 'Start', 'active' => true],
     ['title' => 'Docs'],
 ];
-echo $config['cache']['ttl'], "\n";
+
+echo "Czas cache: ", $config['cache']['ttl'], " sekund\n";
+echo "Menu:\n";
 foreach ($menu as $item) {
     $active = $item['active'] ?? false;
     echo $item['title'], ': ', $active ? 'active' : 'inactive', "\n";
@@ -597,7 +1050,8 @@ foreach ($menu as $item) {
 Oczekiwany wynik:
 
 ```text
-3600
+Czas cache: 3600 sekund
+Menu:
 Start: active
 Docs: inactive
 ```
@@ -611,7 +1065,7 @@ $email = $input['email'] ?? '';
 if (!is_string($email)) {
     echo "Odrzucono nieoczekiwany typ\n";
 } elseif (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-    echo "Nieprawidlowy email\n";
+    echo "Nieprawidłowy email\n";
 } else {
     echo "Email przeszedl walidacje\n";
 }
@@ -647,16 +1101,21 @@ Nie stosuj `extract()` do nieufnych danych, w szczególności pól formularza. F
 <?php
 $name = 'original';
 $trusted = ['name' => 'overwritten'];
+
+echo "Przed extract: ", $name, "\n";
+
 $count = extract($trusted);
-echo $name, "\n";
-echo $count, "\n";
+
+echo "Po extract: ", $name, "\n";
+echo "Utworzone lub nadpisane zmienne: ", $count, "\n";
 ```
 
 Oczekiwany wynik:
 
 ```text
-overwritten
-1
+Przed extract: original
+Po extract: overwritten
+Utworzone lub nadpisane zmienne: 1
 ```
 
 <a id="exercises"></a>
@@ -672,7 +1131,7 @@ overwritten
 
 Rozwiązania ćwiczeń nie zostały wykonane jako część przykładów tej lekcji — są zadaniem do samodzielnego sprawdzenia. Jako dalszą naukę wybierz świadome kontrakty danych: oczekiwane klucze, typy wartości, reguły ich walidacji i znaczenie kolejności.
 
-Dokumentacyjne źródła użytych reguł: [model tablic](https://www.php.net/manual/en/language.types.array.php), [sprawdzanie obecności](https://www.php.net/manual/en/function.array-key-exists.php), [sortowanie](https://www.php.net/manual/en/array.sorting.php), [funkcje tablicowe](https://www.php.net/manual/en/function.array-map.php), [ostrożność przy extract](https://www.php.net/manual/en/function.extract.php) oraz [deprecacje PHP 8.5](https://www.php.net/manual/en/migration85.deprecated.php).
+Dokumentacyjne źródła użytych reguł: [model tablic](https://www.php.net/manual/en/language.types.array.php), [foreach](https://www.php.net/manual/en/control-structures.foreach.php), [print_r](https://www.php.net/manual/en/function.print-r.php), [sprawdzanie obecności](https://www.php.net/manual/en/function.array-key-exists.php), [sortowanie](https://www.php.net/manual/en/array.sorting.php), [array_map](https://www.php.net/manual/en/function.array-map.php), [array_filter](https://www.php.net/manual/en/function.array-filter.php), [ostrożność przy extract](https://www.php.net/manual/en/function.extract.php) oraz [deprecacje PHP 8.5](https://www.php.net/manual/en/migration85.deprecated.php).
 
 ---
 

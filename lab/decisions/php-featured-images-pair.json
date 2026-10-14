@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-14T18:57:46+02:00",
+  "scope": "php-featured-images-pair",
+  "authorization": "Assign the two supplied src/assets illustrations to the matching published articles by filename: instructions/control-flow to instrukcje-sterujace-php and PHP arrays to tablice-w-php. Keep one source file per illustration and use the same image for the article hero and listing thumbnail.",
+  "articles": [
+    "instrukcje-sterujace-php",
+    "tablice-w-php"
+  ],
+  "boundaries": {
+    "articleBodyChanged": false,
+    "technicalMeaningChanged": false,
+    "sourceOrHistoricalLabChanged": false,
+    "gitPushAuthorized": true,
+    "deploymentVerificationRequired": false
+  }
+}

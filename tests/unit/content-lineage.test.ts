@@ -228,7 +228,7 @@ describe('CONTENT lineage contract spike', () => {
 	});
 
 	it('reconstructs and validates the real PHP Arrays post-promotion chain', async () => {
-		const [candidateArticle, candidateRecord, decisionRecord, auditRecord, current, lineageText, plan009, plan010, readerCopyAuthorization] = await Promise.all([
+		const [candidateArticle, candidateRecord, decisionRecord, auditRecord, current, lineageText, plan009, plan010, readerCopyAuthorization, clarityAuthorization, clarityReview, featuredImageAuthorization] = await Promise.all([
 			readFile(new URL('../../lab/candidates/php-arrays/article.md', import.meta.url), 'utf8'),
 			readFile(new URL('../../lab/candidates/php-arrays/article.json', import.meta.url), 'utf8'),
 			readFile(new URL('../../lab/decisions/php-arrays-publication.json', import.meta.url), 'utf8'),
@@ -238,6 +238,9 @@ describe('CONTENT lineage contract spike', () => {
 			readFile(new URL('../../docs/plans/completed/009-reading-time-and-website-utilities.md', import.meta.url), 'utf8'),
 			readFile(new URL('../../docs/plans/completed/010-pagefind-search-public-checkpoint.md', import.meta.url), 'utf8'),
 			readFile(new URL('../../lab/decisions/public-article-reader-copy-cleanup.json', import.meta.url), 'utf8'),
+			readFile(new URL('../../lab/decisions/php-arrays-beginner-clarity-pass-2.json', import.meta.url), 'utf8'),
+			readFile(new URL('../../lab/reviews/php-arrays/clarity-pass-2-review.json', import.meta.url), 'utf8'),
+			readFile(new URL('../../lab/decisions/php-featured-images-pair.json', import.meta.url), 'utf8'),
 		]);
 		const decision = JSON.parse(decisionRecord) as { metadata: unknown };
 		const audit = JSON.parse(auditRecord) as { contentHash: string };
@@ -258,10 +261,13 @@ describe('CONTENT lineage contract spike', () => {
 				'docs/plans/completed/009-reading-time-and-website-utilities.md': plan009,
 				'docs/plans/completed/010-pagefind-search-public-checkpoint.md': plan010,
 				'lab/decisions/public-article-reader-copy-cleanup.json': readerCopyAuthorization,
+				'lab/decisions/php-arrays-beginner-clarity-pass-2.json': clarityAuthorization,
+				'lab/reviews/php-arrays/clarity-pass-2-review.json': clarityReview,
+				'lab/decisions/php-featured-images-pair.json': featuredImageAuthorization,
 			},
 		});
 		expect(result.overall).toBe('PASS');
 		expect(result.effectiveReview).toBe('VALID');
-		expect(bundle.records.map(item => item.changeType)).toEqual(['METADATA_ONLY', 'TECHNICAL_CLEANUP', 'TYPO_FIX']);
+		expect(bundle.records.map(item => item.changeType)).toEqual(['METADATA_ONLY', 'TECHNICAL_CLEANUP', 'TYPO_FIX', 'CONTENT_CHANGE', 'METADATA_ONLY']);
 	});
 });

@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "action": "REVIEW",
+  "reviewType": "content-lineage-replacement-critic",
+  "topic": "php-arrays",
+  "articleRef": "content/articles/tablice-w-php.md",
+  "reviewedContentHash": "4deb6d03abfc89a75626233854198c821770206cec67662736fbebdedd9810ec",
+  "authorizationRef": "lab/decisions/php-arrays-beginner-clarity-pass-2.json",
+  "runtimeEvidence": {
+    "ref": "lab/research/php-arrays/clarity-pass-2-runtime.json",
+    "sha256": "670c12ce62ebe888fcae0b59a0462ef339edb31e6f644418a419b9eb9f356be1",
+    "status": "PASS",
+    "examples": 23,
+    "runtimes": [
+      "PHP 8.4.26",
+      "PHP 8.5.11"
+    ],
+    "executions": 46
+  },
+  "sourceVerification": {
+    "checkedAt": "2026-10-14",
+    "authority": "Current official PHP documentation",
+    "urls": [
+      "https://www.php.net/manual/en/language.types.array.php",
+      "https://www.php.net/manual/en/control-structures.foreach.php",
+      "https://www.php.net/manual/en/function.print-r.php",
+      "https://www.php.net/manual/en/function.get-debug-type.php",
+      "https://www.php.net/manual/en/function.array-key-exists.php",
+      "https://www.php.net/manual/en/array.sorting.php",
+      "https://www.php.net/manual/en/function.array-map.php",
+      "https://www.php.net/manual/en/function.array-filter.php",
+      "https://www.php.net/manual/en/function.array-push.php",
+      "https://www.php.net/manual/en/function.extract.php",
+      "https://www.php.net/manual/en/migration85.deprecated.php"
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "result": "PASS",
+      "note": "Ordered-map semantics, automatic and explicit keys, append behavior, nested access, presence checks, mutations, merge, sorting, map, filter, reduce and counting agree with the official PHP documentation and exact runtime output."
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "result": "PASS",
+      "note": "The rewrite stays within the approved PHP-arrays scope and current official PHP documentation. The immutable SOURCE, candidate, draft and earlier reviews were not changed."
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "result": "PASS",
+      "note": "Every one of the 23 article examples was executed independently on PHP 8.4.26 and 8.5.11. All 46 executions matched the displayed stdout exactly, exited with code 0 and produced empty stderr."
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "result": "PASS",
+      "note": "Changed explanations and added functions are covered by current official documentation; version-sensitive null and negative-key statements remain bounded to the approved 8.4–8.5 range."
+    },
+    {
+      "criterion": "STRUCTURE",
+      "result": "PASS",
+      "note": "The basic path is now execution and output → key/value model → list and named keys → visible read/update/append → value types → nesting → foreach → presence → simple then advanced mutations. Edge-case key conversion and higher-order operations follow later."
+    },
+    {
+      "criterion": "CLARITY",
+      "result": "PASS",
+      "note": "Multi-operation examples label their output, overloaded mutation examples are split, unfamiliar helper syntax is introduced locally, and eleven examples explicitly expose an initial and resulting state."
+    },
+    {
+      "criterion": "DUPLICATION",
+      "result": "PASS",
+      "note": "Repeated state displays serve progression or contrast. No obsolete part-I/part-II framing, duplicate summary or internal workflow note was introduced."
+    },
+    {
+      "criterion": "SECURITY",
+      "result": "PASS",
+      "note": "The form-shaped example still checks type before validation and explicitly excludes a complete HTTP handler. extract() remains a warning demonstrated only with local trusted data."
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "result": "PASS",
+      "note": "The article declares PHP 8.4–8.5. Runtime claims are limited to exact PHP 8.4.26 and 8.5.11 CLI runs; PHP 8.1, 8.3 and 8.5 behavior changes are named only where documented."
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "result": "PASS",
+      "note": "No new unsupported framework, installation, web-server or application-security guarantee is made. Practical-use sentences are examples of use, not claims of complete application behavior."
+    }
+  ],
+  "beginnerLightTest": [
+    {
+      "question": "Skąd wzięły się dane?",
+      "result": "PASS",
+      "note": "Każdy przykład sam inicjalizuje dane."
+    },
+    {
+      "question": "Co dokładnie robi instrukcja?",
+      "result": "PASS",
+      "note": "Nowe konstrukcje są objaśnione przed przykładem albo bezpośrednio po jego pierwszym użyciu."
+    },
+    {
+      "question": "Co zmieniło się w tablicy?",
+      "result": "PASS",
+      "note": "Operacje mutujące pokazują podpisane stany, a operacje zwracające nową tablicę odróżniają wejście od wyniku."
+    },
+    {
+      "question": "Czy kod coś wyświetla?",
+      "result": "PASS",
+      "note": "Wprowadzenie rozróżnia zapis w pamięci od jawnego outputu; każdy wykonywalny blok ma widoczny wynik."
+    },
+    {
+      "question": "Jeśli kod nie wyświetla, czy tekst to mówi?",
+      "result": "PASS",
+      "note": "Samodzielne przypisania są pokazywane inline i jawnie opisane jako niewypisujące wyniku."
+    },
+    {
+      "question": "Jeśli kod wyświetla, czy output jest podpisany?",
+      "result": "PASS",
+      "note": "Wszystkie przykłady wieloetapowe mają etykiety, a każdy blok ma sekcję oczekiwanego wyniku."
+    },
+    {
+      "question": "Czy wiadomo, co jest kluczem, a co wartością?",
+      "result": "PASS",
+      "note": "Model KEY → VALUE, lista i nazwane pola poprzedzają odczyt, append, nesting i foreach."
+    },
+    {
+      "question": "Czy wynik można przewidzieć z wcześniejszego wyjaśnienia?",
+      "result": "PASS",
+      "note": "Przykłady przechodzą od prostych do złożonych; konwersje kluczy i funkcje zaawansowane są odsunięte poza podstawowy flow."
+    }
+  ],
+  "issues": [],
+  "requiredChanges": [],
+  "optionalImprovements": [],
+  "knowledgeGap": {
+    "status": "OBSERVED_NOT_EXPANDED",
+    "name": "PHP Fundamentals",
+    "prerequisites": [
+      "plik PHP",
+      "uruchamianie programu",
+      "zmienne",
+      "typy",
+      "echo i output",
+      "podstawowe operatory"
+    ]
+  },
+  "limitations": [
+    "This is a fresh replacement Critic pass for published CONTENT in the current Codex session, not an independent provider or a rerun of the immutable original draft Critic artifact.",
+    "Runtime execution covers the exact fenced examples and expected stdout, not a web server, every branch, every patch release, every OS or a complete application security audit.",
+    "PASS validates this authorized CONTENT revision for lineage purposes; it does not authorize another article, commit, push or deployment."
+  ],
+  "summary": "The beginner-first rewrite is technically grounded, all displayed examples match actual PHP 8.4 and 8.5 execution, and the eight-question beginner-light test passes. No required or optional correction remains in the authorized scope.",
+  "verdict": "PASS"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-14T13:09:19+02:00",
+  "scope": "php-arrays-beginner-clarity-pass-2",
+  "authorization": "Rewrite only the published article ‘Tablice w PHP — od podstaw do sortowania i mapowania’ for beginner clarity: introduce execution and visible-output conventions, teach key-to-value before edge cases, split overloaded examples, show state before and after operations, verify every new or rebuilt example on supported PHP 8.4 and 8.5 runtimes, perform any required replacement Critic review, and append a substantive CONTENT_CHANGE lineage record.",
+  "article": "content/articles/tablice-w-php.md",
+  "requiredEvidence": [
+    "current official PHP documentation",
+    "actual PHP 8.4 and 8.5 CLI execution of every article example",
+    "beginner-light test",
+    "replacement Critic review",
+    "append-only Content Lineage validation"
+  ],
+  "knowledgeGapObservation": "PHP Fundamentals: file execution, variables, types, output and basic operators should precede arrays in a future curriculum item; no new article is authorized now.",
+  "boundaries": {
+    "contentMeaningChanged": true,
+    "otherArticlesAuthorized": false,
+    "sourceHistoryMutable": false,
+    "uiAuthorized": false,
+    "engineArchitectureAuthorized": false,
+    "futureboardAuthorized": false,
+    "pipelineContractChangesAuthorized": false,
+    "gitAuthorized": false,
+    "deploymentAuthorized": false
+  }
+}

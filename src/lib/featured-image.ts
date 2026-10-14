@@ -1,13 +1,19 @@
+import type { ImageMetadata } from 'astro';
+
 export const GENERIC_FEATURED_IMAGE_ALT = 'Ilustracja artykułu';
+
+export type ImportedArticleImage = ImageMetadata;
 
 interface ArticleImageData {
 	title?: string | null;
-	featuredImage?: string | null;
+	featuredImage?: string | ImportedArticleImage | null;
 	featuredAlt?: string | null;
 }
 
 export function resolveArticleFeaturedImage<T>(data: ArticleImageData, fallbackImage: T) {
-	const featuredImage = data.featuredImage?.trim();
+	const featuredImage = typeof data.featuredImage === 'string'
+		? data.featuredImage.trim()
+		: data.featuredImage;
 	const featuredAlt = data.featuredAlt?.trim();
 	const title = data.title?.trim();
 

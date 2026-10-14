@@ -2,6 +2,8 @@
 title: "Instrukcje sterujące PHP: warunki i pętle"
 description: Praktyczny przewodnik po warunkach, porównaniach, switch, match oraz pętlach w PHP 8.4–8.5, z 16 wykonanymi przykładami.
 slug: instrukcje-sterujace-php
+featuredImage: ../../src/assets/instrukcje-sterujace.webp
+featuredAlt: Dwie osoby analizują schematy warunków i pętli na ekranie.
 status: published
 created: 2026-10-10T00:00:00.000Z
 updated: 2026-10-10T00:00:00.000Z

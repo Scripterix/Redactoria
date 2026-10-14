@@ -4,7 +4,7 @@ import { createArticleSchema, topicSchema } from './lib/content-schema.ts';
 
 const articles = defineCollection({
 	loader: glob({ pattern: '**/*.md', base: './content/articles' }),
-	schema: createArticleSchema(reference('topics')),
+	schema: ({ image }) => createArticleSchema(reference('topics'), image()),
 });
 
 const topics = defineCollection({

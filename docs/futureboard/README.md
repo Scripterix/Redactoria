@@ -81,9 +81,9 @@ PROMOTE
 PUBLISH
 ```
 
-PHP Arrays i PHP Control Flow przeszły pełny pipeline oraz publiczny quality gate.
-Kolejne hipotezy mają upraszczać albo wzmacniać ten proces bez zacierania granic
-`SOURCE != LAB != ENGINE != CONTENT != WEBSITE`.
+PHP Arrays, PHP Control Flow oraz trzy artykuły JavaScript przeszły pełny pipeline
+i publiczny quality gate. Kolejne hipotezy mają upraszczać albo wzmacniać ten
+proces bez zacierania granic `SOURCE != LAB != ENGINE != CONTENT != WEBSITE`.
 
 ---
 
@@ -93,7 +93,7 @@ Kolejne hipotezy mają upraszczać albo wzmacniać ten proces bez zacierania gra
 
 **Problem**
 
-Pipeline działa, ale istnieją dopiero dwie pełne próbki. Nie wiadomo jeszcze, które
+Początkowo pipeline miał tylko dwie pełne próbki. Trzeba było sprawdzić, które
 elementy procesu są trwałym wzorcem, a które wynikały z charakteru materiałów PHP.
 
 **Hipoteza**
@@ -109,17 +109,20 @@ SOURCE → Cartographer → Researcher → runtime verification
 
 PHP Arrays i PHP Control Flow zakończyły się poprawnymi publikacjami, zachowaną
 proweniencją i pełnym quality gate. Pipeline Review 0.1 potwierdził wspólny rdzeń
-od SOURCE do exact, pending candidate w pięciu próbkach; publikacja pozostała
-osobnym etapem tylko w dwóch przebiegach.
+od SOURCE do exact, pending candidate w pięciu próbkach. Następnie JavaScript
+if/else, JavaScript Arrays i DOM przeszły oddzielne human publication decisions,
+Promotion Gate, CONTENT lineage i produkcyjny quality gate. Pięć pełnych próbek
+potwierdza wspólny przebieg bez zmiany ról runtime agentów.
 
 **Minimalny eksperyment**
 
-Przeprowadzić osobno JavaScript if/else, JavaScript Arrays i DOM bez dużych zmian
-w pipeline.
+Wykonany: przeprowadzić osobno JavaScript if/else, JavaScript Arrays i DOM bez
+dużych zmian w pipeline.
 
 **Trigger do promocji**
 
-Pięć pełnych próbek i Pipeline Review 0.1 wskazujące stabilny wspólny przebieg.
+Spełniony na poziomie evidence: pięć pełnych próbek i Pipeline Review 0.1 wskazują
+stabilny wspólny przebieg. Status pozostaje `CANDIDATE` do jawnej decyzji człowieka.
 
 **Nie robić jeszcze**
 
@@ -484,16 +487,36 @@ Cartographer może wykrywać luki na podstawie public CONTENT, Knowledge Map, le
 SOURCE, Strategic Memory, prerequisites, roadmapy, a później także search failures
 i analytics.
 
+**Evidence**
+
+Knowledge Gap 0.1 utworzył uzasadniony TOP 10 bez traktowania planów jako istniejącej
+wiedzy. Knowledge Gap 0.2 rozdzielił blind structural discovery od późniejszego
+odczytu Strategic Memory: oba przebiegi miały 9/10 wspólnych luk i identyczne TOP 4.
+Najsilniejsze braki, w tym fundament PHP, dały się więc odkryć bez strategicznego
+zakotwiczenia. Rekomendacja utworzenia nowego contentu pozostała niewykonana.
+
+Po publikacji B3 mapa JavaScript nadal wskazuje braki wejściowe i pomostowe:
+fundament języka, funkcje/callbacki, HTML i selektory przed DOM oraz
+HTTP/JSON/async. Jest to input do przyszłego Cartographer run, nie Roadmapa.
+
+**Niepewności**
+
+Obecne evidence mierzy wartość strukturalną luki, lecz nie wartość dla uczącego się.
+Nie ma jeszcze sygnałów z search failures, zero-results, porzuconych ścieżek ani
+learning outcomes. Przyszła priorytetyzacja mogłaby uwzględniać demand, wartość
+projektową i koszt/ryzyko, ale nie ma podstaw do budowy scoringu.
+
 **Minimalny eksperyment**
 
-Po pięciu pełnych próbkach uruchomić Knowledge Gap 0.1 bez podpowiadania konkretnego
-braku. Wejściem byłyby public EDU map, OGW inventory, Strategic Memory i istniejące
-candidates. Wynik powinien zawierać TOP gaps, reasoning, prerequisites, priority i
-confidence.
+Wykonany w dwóch krokach: Knowledge Gap 0.1 oraz blind/strategic ablation 0.2.
+Raporty zawierają TOP gaps, reasoning, prerequisites, priority, confidence i jawne
+ograniczenia; oba pozostają diagnozą LAB wymagającą decyzji człowieka.
 
 **Trigger do promocji**
 
-Cartographer generuje użyteczne i uzasadnione luki bez ręcznego wskazania odpowiedzi.
+Spełniony na poziomie evidence: Cartographer wygenerował użyteczne i uzasadnione
+luki bez ręcznego wskazania odpowiedzi. Status pozostaje `CANDIDATE` do jawnej
+decyzji człowieka.
 
 **Nie robić jeszcze**
 
@@ -530,18 +553,38 @@ faktów dla Researchera.
 B1 i B2 korzystały z wyraźnego oddzielenia SOURCE, decyzji i Project Brain; dalsze
 planowanie będzie potrzebowało także historycznych intencji bez mylenia ich z evidence.
 
+Knowledge Gap 0.2 pokazał, że Run A bez Strategic Memory oraz Run B z jego udziałem
+mają 9/10 wspólnych luk i identyczne TOP 4. Strategic Memory pomagało w sekwencjonowaniu
+i ocenie gotowości zasobów, ale również zakotwiczyło ranking: wprowadziło Markdown i
+wyparło niezależnie odkryte testing bez osłabienia evidence dla tej luki.
+
+Robocza zasada operacyjna:
+
+```text
+STRUCTURE FIRST
+MEMORY SECOND
+EVIDENCE ALWAYS
+HUMAN DECISION LAST
+```
+
+Strategic Memory może wpływać na priorytet, ale nie dowodzi istnienia contentu, nie
+zastępuje Research evidence i nie powinno prowadzić blind discovery.
+
 **Niepewności**
 
-Nie znamy jeszcze minimalnego kontraktu ani zasad rozstrzygania sprzecznych planów.
+Nie wiemy jeszcze, czy ten sam stopień zgodności i anchoringu powtórzy się w innych
+domenach ani jaki minimalny kontrakt wystarczy do rozstrzygania sprzecznych planów.
 
 **Minimalny eksperyment**
 
-W Knowledge Gap 0.1 oznaczyć każdy strategiczny input jako osobną, niewiążącą
-kategorię i sprawdzić, czy poprawia ranking bez tworzenia fałszywych faktów.
+Wykonany dla Knowledge Gap 0.2: najpierw zamrożono blind Run A, a dopiero potem
+otwarto Strategic Memory i wykonano Run B.
 
 **Trigger do promocji**
 
-Eksperyment wykaże powtarzalną wartość i bezpieczną granicę względem Research evidence.
+Pierwszy eksperyment wykazał wartość dla sekwencjonowania i ryzyko anchoringu.
+Powtórzenie wyniku w innej domenie może uzasadnić jawną decyzję o promocji; obecny
+status pozostaje `CANDIDATE`.
 
 **Nie robić jeszcze**
 
@@ -676,14 +719,18 @@ Quality Gaps, rendering defects i Knowledge Gaps.
 Pipeline Review 0.1 po pięciu próbkach, wykonany jako jednorazowy human-reviewed
 raport, bez runtime loop.
 
-Eksperyment wykonano na zamrożonych artefaktach. Dał osiem jawnych racjonalizacji,
-ale jego wartość nie została jeszcze potwierdzona w następnym przebiegu, więc nie
-spełnia triggera do promocji.
+Eksperyment wykonano na zamrożonych artefaktach i uzyskano osiem jawnych
+racjonalizacji. Jedna z nich przeszła pełny kolejny cykl: hipoteza `verify:article`
+została sprawdzona przez contract spike, ujawniła problem CONTENT lineage, otrzymała
+ograniczony kontrakt, operator CLI i rzeczywiste użycie podczas publikacji B3.
+To pierwszy mocny dowód, że Redactoria potrafi poprawiać własny sposób pracy na
+podstawie evidence, bez samomodyfikującego się runtime loopa.
 
 **Trigger do promocji**
 
-Review prowadzi do co najmniej jednej mierzalnej racjonalizacji potwierdzonej w
-następnym przebiegu.
+Spełniony na poziomie evidence: review doprowadził do mierzalnej racjonalizacji
+potwierdzonej w następnym przebiegu. Status pozostaje `EXPERIMENT` do jawnej decyzji
+człowieka o ewentualnej promocji.
 
 **Nie robić jeszcze**
 
@@ -777,21 +824,26 @@ przejścia: `METADATA_ONLY` i `TECHNICAL_CLEANUP`. Oddzielny backfill nie zmieni
 historycznego auditu, a replay osiąga obecny hash dokładnie. Sześć scenariuszy
 pozytywnych przechodzi; dziewięć klas błędów zostaje wykrytych.
 
+Publikacja B3 dostarczyła trzy nowe rzeczywiste przypadki: każda późniejsza zmiana
+nawigacji w artykule JavaScript otrzymała osobny append-only rekord typu
+`navigation-insertions`, a `verify:article` poprawnie odtworzył finalny CONTENT.
+
 **Niepewności**
 
-Nie ustalono jeszcze trwałej lokalizacji i atomowego zapisu nowych rekordów. Typy
-link fix wymagają większej liczby realnych przykładów. Jeden deterministyczny
-backfill nie dowodzi jeszcze ergonomii polityki w kolejnych publikacjach.
+Obecna lokalizacja i zapis zadziałały dla trzech zmian jednego typu w jednym
+checkpointcie. Nadal nie wiadomo, czy polityka będzie ergonomiczna dla innych typów
+zmian i kolejnych, niezależnych publikacji.
 
 **Minimalny eksperyment**
 
-Przy następnej jawnie autoryzowanej zmianie opublikowanego CONTENT zapisać rekord w
-tym samym reviewed change i sprawdzić go read-only przed quality gate.
+Wykonany dla trzech artykułów B3: rekord zapisano w tym samym reviewed change i
+sprawdzono read-only przed końcowym quality gate.
 
 **Trigger do promocji**
 
-Co najmniej dwie nowe rzeczywiste zmiany po promocji tworzą poprawny łańcuch bez
-ręcznego rekonstruowania historii, a reguły wpływu na Critic review pozostają jasne.
+Spełniony dla jednego typu zmiany: trzy nowe rzeczywiste zmiany po promocji tworzą
+poprawne łańcuchy bez ręcznego rekonstruowania historii. Status pozostaje
+`CANDIDATE` do jawnej decyzji człowieka i evidence z innych typów zmian.
 
 **Nie robić jeszcze**
 
@@ -800,45 +852,150 @@ uznawać prose-only uzasadnienia i nie integrować z publikacją bez osobnej dec
 
 **Możliwy przyszły właściciel:** Engine validation / Promotion policy.
 
+## IDEA 16: Milestone Closure Snapshot
+
+**Status:** `OBSERVE`
+
+**Problem**
+
+Po udanej publikacji serwis i repozytorium mogą być poprawne, podczas gdy część
+Project Brain nadal opisuje wcześniejszy stan. Zakończenie milestone'u jest
+rozproszone między decyzjami, CONTENT, lineage, walidacją, Git i deploymentem.
+To state drift procesu, nie wada artykułu.
+
+**Hipoteza**
+
+Mały, read-only zapis zamknięcia milestone'u mógłby wskazywać jeden zestaw
+kanonicznych faktów:
+
+```text
+scope + decisions + validation + Git SHA + deployment + next boundary
+```
+
+Snapshot nie zastępuje istniejących dokumentów ani Article Manifestu. Manifest
+opisuje lifecycle pojedynczego artykułu; closure snapshot służyłby wyłącznie do
+sprawdzenia, czy stan całego zakończonego milestone'u jest opisywany spójnie.
+
+**Evidence**
+
+Po produkcyjnym checkpointcie B3 Futureboard nadal opisywał trzy kandydatury jako
+nieopublikowane i Knowledge Gap jako niewykonany, mimo poprawnych CONTENT, Git,
+Cloudflare i pozostałych dokumentów Project Brain.
+
+**Niepewności**
+
+Nie wiadomo, czy jest to powtarzalna klasa problemu ani czy osobny snapshot wniesie
+więcej wartości niż krótka checklista w planie wykonania.
+
+**Minimalny eksperyment**
+
+Przy następnym milestone ręcznie wskazać kilka kanonicznych faktów i policzyć, w ilu
+miejscach wymagają synchronizacji. Najpierw sprawdzić, czy wystarczy istniejący plan
+zamknięcia.
+
+**Trigger do promocji**
+
+Ten sam rodzaj rozjazdu pojawia się przy dwóch kolejnych zamknięciach, a mały
+read-only snapshot wykrywa go bez tworzenia nowego źródła prawdy.
+
+**Nie robić jeszcze**
+
+Nie tworzyć agenta, centralnej bazy stanu, automatycznego przepisywania dokumentacji
+ani ciężkiego manifestu tylko dla closure.
+
+**Możliwy przyszły właściciel:** Project Brain / Engine validation.
+
+## IDEA 17: Knowledge Units / Multi-format Compiler
+
+**Status:** `CONCEPT`
+
+**Problem**
+
+Pipeline wytwarza więcej zweryfikowanej struktury niż końcowy Markdown: claims,
+evidence, źródła, wyniki runtime, przykłady, prerequisites, relacje wiedzy i stan
+walidacji. Ponowne interpretowanie gotowego artykułu dla każdego przyszłego formatu
+mogłoby duplikować research, osłabiać provenance i rozjeżdżać fakty.
+
+**Hipoteza**
+
+Docelową jednostką wiedzy mógłby być mały, zweryfikowany Knowledge Unit:
+
+```text
+claim + evidence + source + example + prerequisite relations + verification state
+```
+
+Artykuł byłby jedną z możliwych projekcji obok quizu, learning path, krótkiego
+materiału, newslettera, tłumaczenia lub kontekstu dla przyszłego Ask Redactoria.
+To koncepcja odrębna od Article Manifestu: manifest wskazuje artefakty lifecycle'u,
+a Knowledge Unit opisywałby atom treści merytorycznej.
+
+**Evidence**
+
+Pięć pełnych pipeline runs utrwaliło sekcyjne evidence, claims, przykłady, runtime
+results i prerequisites, ale dotąd wykorzystano je tylko do artykułów. Nie ma jeszcze
+dowodu, że ten sam materiał da kilka wartościowych formatów bez dodatkowego researchu.
+
+**Niepewności**
+
+Nie znamy właściwej granularności, kosztu authoringu, ryzyka utraty kontekstu ani
+tego, czy obecne Research Packets są wystarczająco regularne.
+
+**Minimalny eksperyment**
+
+Bez zmiany architektury wybrać jeden istniejący Research Packet i ręcznie sprawdzić,
+czy to samo evidence może zasilić artykuł, mini quiz i jeden krótki format bez
+ponownego researchu oraz bez rozjazdu twierdzeń.
+
+**Trigger do promocji**
+
+Ten sam zweryfikowany materiał daje co najmniej trzy użyteczne formaty, zachowując
+provenance i zgodność faktów.
+
+**Nie robić jeszcze**
+
+Nie tworzyć knowledge graph database, nie migrować LAB, nie zmieniać kontraktu
+Writera, nie budować multi-format runtime ani nowej warstwy storage.
+
+**Możliwy przyszły właściciel:** LAB contracts / przyszła warstwa renderowania.
+
 ---
 
 ## Najbliższa sekwencja eksperymentalna
 
-Golden Path B3 wykonano bez zmiany ról i bez publikacji kandydatów:
+Golden Path B3 wykonano bez zmiany ról, a następnie trzy kandydatury otrzymały
+oddzielne zgody człowieka i zostały opublikowane:
 
 1. JavaScript if/else.
 2. JavaScript Arrays.
 3. DOM.
 
-Podczas trzech osobnych bounded jobs:
+Podczas trzech osobnych bounded jobs zebrano evidence dla pipeline, claim scope,
+interaction candidates, języka i renderingu. Nie uruchomiono pozostałych idei
+Futureboardu.
 
-- zbierać lekkie pipeline metrics,
-- klasyfikować Critic failures i claim-boundary problems,
-- zbierać interaction candidates,
-- obserwować problemy językowe i rendering defects,
-- nie implementować pozostałych idei Futureboard.
-
-Stan po przeglądzie:
+Stan po checkpointach 019–021:
 
 ```text
 5 full pipeline samples — DONE
   ↓
 Pipeline Review 0.1 — DONE, LAB only
   ↓
-read-only verify:article contract spike — DONE, 4 PASS / 1 LINEAGE FAIL
+verify:article Operator Mode — IMPLEMENTED / ESTABLISHED, 5/5 PASS
   ↓
-post-promotion CONTENT lineage contract spike — DONE, prototype PASS
+post-promotion CONTENT lineage — USED BY THREE B3 PUBLICATIONS
   ↓
-operator CLI / durable lineage policy — SEPARATE DECISION REQUIRED
+Knowledge Gap 0.1 + blind/strategic ablation 0.2 — DONE, LAB diagnosis
   ↓
-Knowledge Gap 0.1 — NOT RUN
+B3 publication + Git + Cloudflare verification — DONE
   ↓
 jawne decyzje o dalszych eksperymentach lub promocji — REQUIRED
 ```
 
-Review może ocenić Article Manifest, `verify:article`, Precision Gate, Humanizer
-rubric, pierwszy Interaction component, Rendered Content QA i zasadność dalszych
-pomysłów.
+Najsilniejsza rekomendacja Knowledge Gap 0.2 — fundament PHP — nie została wykonana.
+Kolejny krok wymaga osobnej decyzji człowieka. Review może ocenić statusy Golden
+Path, Learning Loop, Knowledge Gaps, Strategic Memory i CONTENT Lineage oraz dalszą
+zasadność Article Manifestu, Precision Gate, Humanizer rubric, pierwszego Interaction
+componentu, Rendered Content QA i nowych koncepcji 16–17.
 
 Zasada nadrzędna:
 

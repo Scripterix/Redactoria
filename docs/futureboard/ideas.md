@@ -75,12 +75,14 @@ The default execution would remain bounded to one job and one agent branch.
 
 ## Website icons
 
-- Status: `idea`
+- Status: `partially implemented`
 - Recorded: 2026-10-09, human feedback after the local website review.
 - Add a consistent icon system that fits Redactoria's editorial visual style.
-- Specific icons, placement and implementation remain to be chosen. Keep navigation
-  understandable and accessible without relying on icons alone.
-- Future work only; no icon library or assets added now.
+- First bounded use accepted and implemented on 2026-10-12: inline SVG icons for
+  header Search and the article back-to-top control. Visible labels remain available,
+  the SVGs are decorative, and no icon dependency or client JavaScript was added.
+- A broader reusable icon system, additional placements and media strategy remain
+  future work. Evidence: [completed plan 022](../plans/completed/022-header-search-and-article-controls.md).
 
 ## Media in educational articles
 
