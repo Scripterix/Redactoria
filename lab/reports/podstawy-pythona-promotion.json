@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "candidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+  "candidateRef": "lab/candidates/python-fundamentals/article.json",
+  "contentHash": "d362fbeacf4672ed4259066303e45952bf335fc113923002c881a91a9856d33a",
+  "criticReviewHash": "d0a07ca5e246025da4e649f49b4411bd1911996a82eeb12c4fec75e0f057bd5d",
+  "criticReviewRef": "lab/reviews/python-fundamentals/critic-review.json",
+  "decisionHash": "14effce4c63b6e4bea8c97b7478c7d21785de7407bcfb0ff4062e8bd85e710a9",
+  "decisionRef": "lab/decisions/python-fundamentals-publication.json",
+  "destination": "content/articles/podstawy-pythona.md",
+  "localPath": "/artykuly/podstawy-pythona/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b5-authorization.json",
+        "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+      },
+      {
+        "path": "lab/decisions/python-fundamentals-rewrite.json",
+        "sha256": "43add2d256a941c3d97aab47500ee76714302ad60ea3d91e09c688e83f3e3bab"
+      },
+      {
+        "path": "lab/cartography/python-fundamentals-single.json",
+        "sha256": "292f68962e2a2cddb42e73f985a3d2c288bc7d23a7f20a64297108ba0e582981"
+      },
+      {
+        "path": "lab/research/python-fundamentals/sources.json",
+        "sha256": "cf7ef1a04be92855cb225b113e11905d77bceda49dab4c957a04191f8a56752a"
+      },
+      {
+        "path": "lab/research/python-fundamentals/probes.json",
+        "sha256": "23d5fb6157820f001225b9f5e45b660a2494d5bc83b3f49497e6ac4b3d276f26"
+      },
+      {
+        "path": "lab/research/python-fundamentals/research.json",
+        "sha256": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57"
+      },
+      {
+        "path": "lab/research/python-fundamentals/runtime-verification.json",
+        "sha256": "b01184ed371682f288b67861bfe3e868ee0f79e298bb6512dcec359f21e5de1f"
+      },
+      {
+        "path": "lab/research/python-fundamentals/runtime-verification.md",
+        "sha256": "507e1488c954f861ba1bcccdeea9bba2ce4aa213d70174cbed6d1b9dcbd4cf0c"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "98b65e4bbc4fb5ba2a1cf82f9be82794a7997fbab0aa1ef9dbc84b5622fa99cb",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "8796b6e41c9ea68d7213682c03b2cb3452f197178178f925b0a26bbc24c5d67f"
+    },
+    "revisionHash": "e006b8bc015c4096dbdecd9133e9cb90089f2ba8484d155216e16ba5ce8b4fad",
+    "revisionRef": "lab/drafts/python-fundamentals/revision.json",
+    "sources": [
+      {
+        "contentHash": "ca517d073632503903aaedf853cfe13e99a863b52c3939ef6330c2d84115b0e5",
+        "providedCharacters": 6634,
+        "sourceId": "283",
+        "sourcePath": "283-post-10-python-crash-course.md",
+        "title": "Post #10 Python Crash Course",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "7dcaba42cf938228d72888f631164245bea049334ac0c950d08a05d30a9f3d97",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "a47f973920ab24d015e126f54384978bbc4c1ad18d2f8ad09d51df8ea67e6981"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "211d6db5e023fe400e8c571f90056983c0c09e3c179d905ca0c0292de353a909",
+  "researchApprovalRef": "lab/decisions/python-fundamentals-research-acceptance.json",
+  "researchPacketHash": "2a77f03a928e67bacaae1c9a1183bfebc4f46a28f7b7ed3ab18270c25b7fdf57",
+  "researchPacketRef": "lab/research/python-fundamentals/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "43add2d256a941c3d97aab47500ee76714302ad60ea3d91e09c688e83f3e3bab",
+  "sourceDecisionRef": "lab/decisions/python-fundamentals-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

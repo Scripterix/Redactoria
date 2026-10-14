@@ -1,0 +1,67 @@
+{
+  "approvedAt": "2026-10-14T06:04:04.825Z",
+  "approvedBy": "human",
+  "articleHash": "a0d6d66e55df963970352043d5ba7e0a36456085a7920991c81023d3b0205b3c",
+  "authorization": "Explicit B5 publication authorization: publish exactly the reviewed Git local, curl / HTTP and Python candidates sequentially; verify each lifecycle, then commit, push master and verify the final Cloudflare production deployment.",
+  "candidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+  "candidateRef": "lab/candidates/python-fundamentals/article.json",
+  "criticReviewHash": "d0a07ca5e246025da4e649f49b4411bd1911996a82eeb12c4fec75e0f057bd5d",
+  "criticReviewRef": "lab/reviews/python-fundamentals/critic-review.json",
+  "destination": "content/articles/podstawy-pythona.md",
+  "metadata": {
+    "author": {
+      "name": "Scripterix",
+      "type": "ai-assisted"
+    },
+    "automation": {
+      "generated": true,
+      "last_checked": "2026-10-14",
+      "update_priority": "normal"
+    },
+    "created": "2026-10-14",
+    "description": "Pierwsze kroki w Pythonie: wartości, zmienne, warunki, pętle i proste funkcje na wykonywalnych przykładach.",
+    "domain": "programming",
+    "origin": {
+      "original_author": "Scripterix",
+      "original_date": "2025-02-17",
+      "original_url": "https://opengateweb.com/posts/10-post-python/",
+      "source_id": "283",
+      "type": "wordpress-export"
+    },
+    "redactoria": {
+      "decision": "rewrite",
+      "modernization": "major"
+    },
+    "review": {
+      "confidence": 1,
+      "reviewer": "human — B5 publication authorization",
+      "status": "approved"
+    },
+    "slug": "podstawy-pythona",
+    "sources": [
+      {
+        "publisher": "Python Software Foundation",
+        "title": "Python 3.14 Tutorial — An Informal Introduction",
+        "url": "https://docs.python.org/3.14/tutorial/introduction.html"
+      },
+      {
+        "publisher": "Python Software Foundation",
+        "title": "Python 3.14 Tutorial — More Control Flow Tools",
+        "url": "https://docs.python.org/3.14/tutorial/controlflow.html"
+      }
+    ],
+    "status": "published",
+    "title": "Podstawy Pythona: wartości, warunki, pętle i funkcje",
+    "topic": "python",
+    "updated": "2026-10-14"
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true,
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "status": "approved"
+}

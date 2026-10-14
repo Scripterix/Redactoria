@@ -54,6 +54,15 @@ export const FROZEN_ARTICLE_FIXTURES: readonly VerificationFixture[] = [
 	{ topic: 'api-http-json', candidateRef: 'lab/candidates/api-http-json/article.json', publication: {
 		decisionRef: 'lab/decisions/api-http-json-publication.json', auditRef: 'lab/reports/api-http-json-promotion.json',
 	} },
+	{ topic: 'git-local-basics', candidateRef: 'lab/candidates/git-local-basics/article.json', publication: {
+		decisionRef: 'lab/decisions/git-local-basics-publication.json', auditRef: 'lab/reports/git-lokalnie-promotion.json',
+	} },
+	{ topic: 'curl-http-basics', candidateRef: 'lab/candidates/curl-http-basics/article.json', publication: {
+		decisionRef: 'lab/decisions/curl-http-basics-publication.json', auditRef: 'lab/reports/curl-http-promotion.json',
+	} },
+	{ topic: 'python-fundamentals', candidateRef: 'lab/candidates/python-fundamentals/article.json', publication: {
+		decisionRef: 'lab/decisions/python-fundamentals-publication.json', auditRef: 'lab/reports/podstawy-pythona-promotion.json',
+	} },
 ] as const;
 
 export function verificationFixtureForTopic(topic: string): VerificationFixture | undefined {

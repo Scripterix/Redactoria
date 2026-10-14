@@ -1,0 +1,87 @@
+{
+  "approvedAt": "2026-10-14T06:04:04.783Z",
+  "approvedBy": "human",
+  "articleHash": "f9d4cbd9f9487827fc66f57cef4604f677fc8769fb44f8770416f0c8f7cacd38",
+  "authorization": "Explicit B5 publication authorization: publish exactly the reviewed Git local, curl / HTTP and Python candidates sequentially; verify each lifecycle, then commit, push master and verify the final Cloudflare production deployment.",
+  "candidateHash": "e2d7e47d70d339ec1a42a3fd1df4a870cb1ff237681bd0fb6de2d4cdbcd3b83d",
+  "candidateRef": "lab/candidates/git-local-basics/article.json",
+  "criticReviewHash": "3bcfe85d0529181602563a83c7429144520086785a032a52c478b9f35eaf79a4",
+  "criticReviewRef": "lab/reviews/git-local-basics/critic-review.json",
+  "destination": "content/articles/git-lokalnie.md",
+  "metadata": {
+    "author": {
+      "name": "Scripterix",
+      "type": "ai-assisted"
+    },
+    "automation": {
+      "generated": true,
+      "last_checked": "2026-10-14",
+      "update_priority": "normal"
+    },
+    "created": "2026-10-14",
+    "description": "Praktyczne podstawy lokalnego Git: working tree, staging, status, diff, commit i krótka historia zmian.",
+    "domain": "programming",
+    "origin": {
+      "original_author": "Scripterix",
+      "original_date": "2025-02-13",
+      "original_url": "https://opengateweb.com/posts/8-post-gist/",
+      "source_id": "277",
+      "type": "wordpress-export"
+    },
+    "redactoria": {
+      "decision": "rewrite",
+      "modernization": "major"
+    },
+    "review": {
+      "confidence": 1,
+      "reviewer": "human — B5 publication authorization",
+      "status": "approved"
+    },
+    "slug": "git-lokalnie",
+    "sources": [
+      {
+        "publisher": "Git",
+        "title": "git-init Documentation",
+        "url": "https://git-scm.com/docs/git-init"
+      },
+      {
+        "publisher": "Git",
+        "title": "git-status Documentation",
+        "url": "https://git-scm.com/docs/git-status"
+      },
+      {
+        "publisher": "Git",
+        "title": "git-add Documentation",
+        "url": "https://git-scm.com/docs/git-add"
+      },
+      {
+        "publisher": "Git",
+        "title": "git-diff Documentation",
+        "url": "https://git-scm.com/docs/git-diff"
+      },
+      {
+        "publisher": "Git",
+        "title": "git-commit Documentation",
+        "url": "https://git-scm.com/docs/git-commit"
+      },
+      {
+        "publisher": "Git",
+        "title": "git-log Documentation",
+        "url": "https://git-scm.com/docs/git-log"
+      }
+    ],
+    "status": "published",
+    "title": "Git lokalnie: status, staging, commit i historia",
+    "topic": "web",
+    "updated": "2026-10-14"
+  },
+  "presentationCleanup": {
+    "removeExact": [
+      "Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"
+    ]
+  },
+  "remotePublicationApproved": true,
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "status": "approved"
+}

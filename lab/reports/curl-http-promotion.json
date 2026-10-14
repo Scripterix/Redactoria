@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "6d5442a749bb2d76b183fa7f26e423e0b6725d394b0779adf9f9219cecfc5fe7",
+  "candidateHash": "0048cdf3e038e5abe995db735bd2541170963ada20c5f882ed8442ff49225fed",
+  "candidateRef": "lab/candidates/curl-http-basics/article.json",
+  "contentHash": "b9160109024b8371201c07fe4eb47b2c5aed2059f6182a6d84c6fe2663a96efe",
+  "criticReviewHash": "7a3d6f8baae105f3e22cdb6d52fc2ddcb9cc92cf2be8faeb877278b1c89c6865",
+  "criticReviewRef": "lab/reviews/curl-http-basics/critic-review.json",
+  "decisionHash": "4ea452417561adedca2a18b65f8138a24cf4651d586840a466ab3a7e3d778deb",
+  "decisionRef": "lab/decisions/curl-http-basics-publication.json",
+  "destination": "content/articles/curl-http.md",
+  "localPath": "/artykuly/curl-http/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b5-authorization.json",
+        "sha256": "84ab1de07d38232a68fbea67500566f78156dc8c9d2e2c9dc8f86494cfeaf591"
+      },
+      {
+        "path": "lab/decisions/curl-http-basics-rewrite.json",
+        "sha256": "823ca534080e4254c027f2378f52d8dd13d62b685a6e5850c0a92ed87c62ed4b"
+      },
+      {
+        "path": "lab/cartography/curl-http-basics-single.json",
+        "sha256": "8b33cfb34cccef94639f37b7a9546695e8d91b5b82eb1f5f307168706a3902b2"
+      },
+      {
+        "path": "lab/research/curl-http-basics/sources.json",
+        "sha256": "8db24e57c65dec50d026a52c7b63c652eeee4ab3a10cca3fb6555e564c3e8796"
+      },
+      {
+        "path": "lab/research/curl-http-basics/probes.json",
+        "sha256": "544e4b411d047dca588575f1292fe6f5fc3b382ce7e4774074b4e6ddae068aba"
+      },
+      {
+        "path": "lab/research/curl-http-basics/research.json",
+        "sha256": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e"
+      },
+      {
+        "path": "lab/research/curl-http-basics/runtime-verification.json",
+        "sha256": "f95aea0ce4feb3fb237c3dce0439bf3563c81be3456a6ffd08f2bf5aedb61ee2"
+      },
+      {
+        "path": "lab/research/curl-http-basics/runtime-verification.md",
+        "sha256": "26a807da98eaa5dfd0ecd79d223811a063140b32e742fb663e58a989e6406eff"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "88a48a7c8a86da2259601dded673af94f73502d178f8d38258e6f88469a68b1b",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "dc0a46466176d682acc8794caad26609292c66817356af8e4a493e94ba5c7415"
+    },
+    "revisionHash": "13067bcc5b1e10c82b417ccf79f097aa1d7c84e35ed1f78f43702b9a9f6debbc",
+    "revisionRef": "lab/drafts/curl-http-basics/revision.json",
+    "sources": [
+      {
+        "contentHash": "354c16de83a9f44d0d924b3eea7e087f773b10b717bcb8781b47c3564ac43401",
+        "providedCharacters": 9125,
+        "sourceId": "1336",
+        "sourcePath": "1336-post-64-curl-twoje-terminalowe-okno-na-swiat.md",
+        "title": "Post #64 Curl – Twoje Terminalowe Okno na Świat",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "2c6f8a57736aa6922030a3cbb83d2e8c55726d2ae97f288f46afee2802dae460",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "unknown-codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "fff247accd50d7c3ddcaff48094c7b69ccdc79028f02632fdd3affe33bbcb195"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "8c9d35ad31eed390a925cf8d94f632617f11b1710340f6aef15da79b3442ead1",
+  "researchApprovalRef": "lab/decisions/curl-http-basics-research-acceptance.json",
+  "researchPacketHash": "144402a67c9ed7f908e36e76d06fa691496a3126f4e8f8be7d856f5b58a93b1e",
+  "researchPacketRef": "lab/research/curl-http-basics/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "823ca534080e4254c027f2378f52d8dd13d62b685a6e5850c0a92ed87c62ed4b",
+  "sourceDecisionRef": "lab/decisions/curl-http-basics-rewrite.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}
