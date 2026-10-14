@@ -1,6 +1,6 @@
 # 030 — B5 publication checkpoint
 
-Status: ACTIVE · 2026-10-14
+Status: COMPLETED · 2026-10-14
 
 ## Objective
 
@@ -16,11 +16,11 @@ Git checkpoint and Cloudflare production deployment.
 ## Authorization
 
 The human explicitly authorized public production for only these three exact
-Critic-PASS candidates on 2026-10-14. Each publication decision must independently
-bind its candidate JSON, article Markdown and final Critic review hashes.
+Critic-PASS candidates on 2026-10-14. Each publication decision independently
+binds its candidate JSON, article Markdown and final Critic review hashes.
 
-This authorization also permits the final quality gate, publication commits, push
-to `origin/master` and production verification. It does not authorize another
+This authorization also permitted the final quality gate, publication commits,
+push to `origin/master` and production verification. It did not authorize another
 content batch, new experiments, Futureboard rationalization or runtime agents.
 
 ## Execution
@@ -34,25 +34,11 @@ checkpoint completed B5 candidate work
 → browser/search/sitemap smoke → commit/push → Cloudflare verification → STOP
 ```
 
-Minimal registry additions are allowed only for these three explicit lifecycles.
-The exact candidate bodies must not be regenerated. All new articles use the
-established Astro-managed Featured Image fallback; no individual artwork is added.
-
-## Done criteria
-
-- Three separate human publication decisions and three Promotion Gate audits.
-- Three exact CONTENT articles and one minimal published Python topic if required.
-- Every supported public lifecycle returns `OVERALL PASS`.
-- `npm run test`, `npm run check`, `npm run build` and `git diff --check` PASS.
-- Homepage, listing, three routes, fallback images, mobile overflow, search and
-  sitemap pass smoke verification.
-- Publication commits pushed to `origin/master`; Cloudflare production final HEAD
-  and public routes verified.
-- Unrelated user-owned Futureboard changes remain untouched and outside commits.
+The registry gained only three explicit B5 lifecycle entries. Candidate bodies
+were not regenerated. All new articles use the established Astro-managed Featured
+Image fallback; no individual artwork was added.
 
 ## Result
-
-Local publication complete:
 
 - Checkpoint `cd03a35` preserves Featured Image 0.1, reader-copy cleanup and exact
   B5 candidate evidence before publication.
@@ -64,7 +50,13 @@ Local publication complete:
 - `npm run build`: 23 pages; Pagefind 22 pages / 2235 words; sitemap 23 URLs.
 - Browser smoke: homepage, listing, three articles, search and sitemap return 200;
   fallback heroes/thumbnails have correct order, alt, 16:9 cover and no 320 px
-  overflow. Search returns Git and no internal LAB/docs paths.
-- Publication commit: `9f99ebf` (`feat: publish B5 pilot articles`).
+  overflow. Search returns public B5 content and no internal LAB/docs paths.
+- Publication commit `9f99ebf` and Project Brain checkpoint `a17c9be` were pushed
+  to `origin/master` after the pre-publication checkpoint.
+- Cloudflare Pages check for `a17c9be` completed with success, deployment
+  `1d9da92c-ca41-4ec5-90f8-a774d833aab3`. Direct production browser checks passed
+  for homepage, listing, all three B5 routes, search and the 23-URL sitemap, with
+  no console errors.
+- Unrelated user-owned Futureboard edits remained untouched and outside commits.
 
-Pending: push and direct Cloudflare production verification for final HEAD.
+STOP: no next content batch or experiment was started.

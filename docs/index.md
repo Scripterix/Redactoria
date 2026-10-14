@@ -45,9 +45,9 @@ which ideas are still exploratory.
   Git, curl/HTTP and Python completed as exact runtime-verified LAB candidates;
   immutable candidate flags remain pending/false while separate decisions promoted
   the exact reviewed copies.
-- [B5 publication checkpoint](plans/active/030-b5-publication-checkpoint.md) — three
-  separate decisions, promotions and local verification complete; production
-  push/Cloudflare verification is the remaining boundary.
+- [B5 publication checkpoint](plans/completed/030-b5-publication-checkpoint.md) —
+  three separate decisions and promotions, eleven lifecycle checks, full local
+  gate, Git push and Cloudflare production verification complete.
 - [Search/public checkpoint](plans/completed/010-pagefind-search-public-checkpoint.md) —
   Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
 - [B1 pilot selection](../lab/reports/pilot-selection-b1.md) and

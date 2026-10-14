@@ -111,6 +111,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   routes, search, sitemap and responsive checks verified.
 - B4 public checkpoint `828703e`: Markdown, JavaScript Calculator and API/HTTP/JSON
   pushed to `master`; the production listing and all three article routes verified.
+- B5 public checkpoint `a17c9be`: Git, curl/HTTP and Python pushed to `master`;
+  Cloudflare success plus direct listing, article, search and sitemap checks verified.
 
 ## NOW
 
@@ -142,8 +144,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- Complete plan 030 with the authorized push and final Cloudflare production
-  verification, then STOP before another content batch.
+- STOP. Plan 030, authorized push and Cloudflare production verification are
+  complete. Another content batch requires a new explicit scope.
 
 ## LATER
 

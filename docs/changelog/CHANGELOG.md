@@ -11,6 +11,9 @@
 - Minimal published Python topic plus local 23-route build, 22-page / 2235-word
   Pagefind index and 23-URL sitemap. The shared Featured Image fallback renders as
   linked thumbnails and article heroes without 320 px overflow.
+- B5 production checkpoint `a17c9be`: Cloudflare Pages completed successfully;
+  homepage, listing, three articles, search and sitemap returned the expected public
+  state with no browser console errors.
 
 - B5 ranks #8–#10 completed as three bounded LAB-only jobs: Git locally, curl/HTTP
   and Python fundamentals. Unchanged SOURCE hashes and current coverage supported

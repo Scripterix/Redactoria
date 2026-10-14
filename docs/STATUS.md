@@ -32,7 +32,7 @@ read-only `verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder,
 | Plan 009 utilities | Reading time, `Scripterix`, back-to-top, Copy code | DONE |
 | Search 0.1 | Pagefind CLI after Astro build, public WEBSITE only | IMPLEMENTED |
 | Public checkpoint approval | Human authorizes commit/push after the current full gate | APPROVED — HUMAN |
-| Current Cloudflare checkpoint | `828703e`, B4 push master and direct public route checks | VERIFIED — SUCCESS |
+| Current Cloudflare checkpoint | `a17c9be`, B5 push master and direct public route checks | VERIFIED — SUCCESS |
 | B1 — ten-article selection | 83 metadata records, 19 full reads, fresh ranking 1–10 | SELECTION ONLY |
 | B2 — rank #1 PHP control flow | Candidate `2a4414…` → human decision → Promotion Gate | PUBLISHED — VERIFIED |
 | B3 — ranks #2–#4 JavaScript | if/else, Arrays, DOM; trzy osobne decyzje/audity | PUBLISHED — VERIFIED |
@@ -45,14 +45,13 @@ read-only `verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder,
 | Knowledge Gap 0.2 | Blind Run A + Strategic Memory Run B, 9/10 overlap | COMPLETE — LAB REVIEW |
 | Source Authority Ladder | Researcher schema-v3 + Writer/Critic policy | IMPLEMENTED — BACKWARD COMPATIBLE |
 | B4 — ranks #5–#7 | Markdown, JS Calculator, API/HTTP/JSON | PUBLISHED — PRODUCTION VERIFIED |
-| B5 — ranks #8–#10 | Git, curl/HTTP, Python fundamentals | PUBLISHED LOCALLY — PRODUCTION CHECKPOINT PENDING |
+| B5 — ranks #8–#10 | Git, curl/HTTP, Python fundamentals | PUBLISHED — PRODUCTION VERIFIED |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe
 
-Ostatni potwierdzony checkpoint produkcyjny przed bieżącym pushem to commit
-`828703e`. Dziewiętnaście statycznych stron Astro i polski indeks Pagefind
-osiemnastu stron działają pod
+Aktualny potwierdzony checkpoint produkcyjny to commit `a17c9be`. Dwadzieścia trzy
+statyczne strony Astro i polski indeks Pagefind dwudziestu dwóch stron działają pod
 [redactoria.pages.dev](https://redactoria.pages.dev/).
 Provider: Cloudflare Pages; repository: `Scripterix/Redactoria`; production branch:
 `master`; build: `npm run build`; output directory: `dist`.
@@ -292,12 +291,14 @@ public lifecycles.
 
 [Comparison](../lab/reports/b5-three-candidate-comparison.md),
 [structured report](../lab/reports/b5-three-candidate-comparison.json) and
-[publication plan 030](plans/active/030-b5-publication-checkpoint.md) record the
-result and current boundary. Local gate: 359/359 tests, Astro check for 163 files
+[publication plan 030](plans/completed/030-b5-publication-checkpoint.md) record the
+result. Local gate: 359/359 tests, Astro check for 163 files
 with zero diagnostics, 23-page build, Pagefind 22 pages / 2235 words, 23 sitemap
 URLs and `git diff --check` PASS. Browser smoke confirms three routes, hero/card
-fallback images, search and no 320 px overflow. Publication commit `9f99ebf` exists
-locally; push and Cloudflare verification remain the active checkpoint.
+fallback images, search and no 320 px overflow. Commits through `a17c9be` were
+pushed to `origin/master`; Cloudflare deployment
+`1d9da92c-ca41-4ec5-90f8-a774d833aab3` completed successfully and the homepage,
+listing, three B5 routes, search and sitemap passed direct production checks.
 
 ## B2 result — PHP control flow
 
@@ -467,9 +468,9 @@ Nie zmieniono XAMPP/PATH ani nie skonfigurowano produkcyjnego LLM API lub system
 
 ## NEXT
 
-Plan 030 pozostaje aktywny wyłącznie przez autoryzowany push `origin/master` i
-bezpośrednią weryfikację finalnego deploymentu Cloudflare. Trzy decyzje, promocje,
-lokalne lifecycle checks i pełny quality gate już przeszły.
+Plan 030 jest zakończony: autoryzowany push `origin/master`, Cloudflare success i
+bezpośrednia weryfikacja publicznych tras przeszły. Obowiązuje STOP przed kolejnym
+content batchem lub eksperymentem.
 
 Knowledge Gap 0.2 pozostaje diagnozą; rekomendacja PHP foundation nie jest wykonana.
 Article Manifest, Humanizer, Precision Gate, Interaction Layer, Dream Cycle i Agentic

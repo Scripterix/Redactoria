@@ -52,7 +52,7 @@ editorial decisions or publish LAB artifacts as articles.
 | --- | --- | --- |
 | Astro Website | IMPLEMENTED | Twenty-three static routes; shared featured-image hero/thumbnails, HTML/XML sitemap, reading time, copy code, long-form code/tables |
 | Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; twenty-two public main-content pages, lazy search API on `/szukaj/` |
-| Cloudflare Pages deployment | VERIFIED B4 CHECKPOINT | Commit `828703e`; nineteen public pages, Pagefind eighteen pages; direct B4 listing/article review PASS |
+| Cloudflare Pages deployment | VERIFIED B5 CHECKPOINT | Commit `a17c9be`; twenty-three public pages, Pagefind twenty-two pages; direct B5 listing/article/search review PASS |
 | LAB | IMPLEMENTED | Separated workspace with publication rules |
 | Content Collections | IMPLEMENTED | `articles` and `topics` |
 | Project Brain | IMPLEMENTED | Documentation map and durable project memory |
@@ -68,7 +68,7 @@ editorial decisions or publish LAB artifacts as articles.
 | Second publication candidate | PRESERVED IN LAB | B2 single-source PHP control-flow exact PASS copy; publication pending/false |
 | B3 JavaScript candidates | PUBLISHED LOCALLY / PRESERVED IN LAB | Three immutable schema-v3 PASS copies plus separate human decisions, CONTENT and audits |
 | B4 candidates | PUBLISHED / PRESERVED IN LAB | Markdown, JavaScript Calculator and API/HTTP/JSON exact PASS copies; production checkpoint `828703e` verified |
-| B5 candidates | PUBLISHED LOCALLY / PRESERVED IN LAB | Git, curl/HTTP and Python exact PASS copies plus separate decisions, CONTENT and audits; production checkpoint pending |
+| B5 candidates | PUBLISHED / PRESERVED IN LAB | Git, curl/HTTP and Python exact PASS copies plus separate decisions, CONTENT and audits; production checkpoint verified |
 | Promotion Gate | IMPLEMENTED | Manual deterministic schema 1–3 CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
 | Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all eleven published lifecycles PASS |
 | CONTENT lineage validation | IMPLEMENTED | Deterministic replay integrated into verification; all eleven public technical articles match promotion plus optional append-only lineage |
@@ -90,9 +90,9 @@ specific interactive need.
 The public test environment is [redactoria.pages.dev](https://redactoria.pages.dev/).
 The human-reported successful deployment uses `Scripterix/Redactoria`, production
 branch `master`, Astro, build command `npm run build` and output directory `dist`.
-The current B4 publication checkpoint serves nineteen static pages and an
-eighteen-page Pagefind index. Commit `828703e` passed its Cloudflare check and the
-three B4 article routes plus their listing entries were verified directly.
+The current B5 publication checkpoint serves twenty-three static pages and a
+twenty-two-page Pagefind index. Commit `a17c9be` passed its Cloudflare check and the
+three B5 article routes plus listing, search and sitemap were verified directly.
 Cloudflare is WEBSITE infrastructure, not an agent runtime, LAB service or part of
 the Engine.
 
