@@ -50,8 +50,8 @@ editorial decisions or publish LAB artifacts as articles.
 
 | Element | Status | Notes |
 | --- | --- | --- |
-| Astro Website | IMPLEMENTED | Nineteen static routes; shared featured-image hero/thumbnails, HTML/XML sitemap, reading time, copy code, long-form code/tables |
-| Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; eighteen public main-content pages, lazy search API on `/szukaj/` |
+| Astro Website | IMPLEMENTED | Twenty-three static routes; shared featured-image hero/thumbnails, HTML/XML sitemap, reading time, copy code, long-form code/tables |
+| Static search | IMPLEMENTED | Official Pagefind CLI after Astro build; twenty-two public main-content pages, lazy search API on `/szukaj/` |
 | Cloudflare Pages deployment | VERIFIED B4 CHECKPOINT | Commit `828703e`; nineteen public pages, Pagefind eighteen pages; direct B4 listing/article review PASS |
 | LAB | IMPLEMENTED | Separated workspace with publication rules |
 | Content Collections | IMPLEMENTED | `articles` and `topics` |
@@ -68,10 +68,10 @@ editorial decisions or publish LAB artifacts as articles.
 | Second publication candidate | PRESERVED IN LAB | B2 single-source PHP control-flow exact PASS copy; publication pending/false |
 | B3 JavaScript candidates | PUBLISHED LOCALLY / PRESERVED IN LAB | Three immutable schema-v3 PASS copies plus separate human decisions, CONTENT and audits |
 | B4 candidates | PUBLISHED / PRESERVED IN LAB | Markdown, JavaScript Calculator and API/HTTP/JSON exact PASS copies; production checkpoint `828703e` verified |
-| B5 candidates | PRESERVED IN LAB | Git, curl/HTTP and Python exact PASS copies; publication pending/false, no CONTENT write |
+| B5 candidates | PUBLISHED LOCALLY / PRESERVED IN LAB | Git, curl/HTTP and Python exact PASS copies plus separate decisions, CONTENT and audits; production checkpoint pending |
 | Promotion Gate | IMPLEMENTED | Manual deterministic schema 1–3 CLI; validated human scope/hashes/approvals → exact CONTENT + LAB audit; not Publisher |
-| Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all eight published lifecycles PASS |
-| CONTENT lineage validation | IMPLEMENTED | Deterministic replay integrated into verification; all eight public technical articles have current append-only lineage |
+| Article verification | IMPLEMENTED | Read-only 32-check `verify:article` Operator CLI, human/JSON output and exit codes 0/1/2; all eleven published lifecycles PASS |
+| CONTENT lineage validation | IMPLEMENTED | Deterministic replay integrated into verification; all eleven public technical articles match promotion plus optional append-only lineage |
 | Engine foundation | IMPLEMENTED | Minimal model port, source reader, validation, stable serialization, safe LAB writer |
 | Full Engine | FUTURE | Independent automation and orchestration |
 | Dispatcher | FUTURE | Single-step orchestration |
@@ -214,5 +214,8 @@ ranks #8–#10. Queue verification preserved the original source hashes and retu
 backward-compatible `cli` kind plus `shell` and `python` example languages. Final
 examples run against isolated local Git, a controlled loopback HTTP server and two
 installed Python versions. Every candidate has exact hashes and Critic PASS, but
-all publication flags remain pending/false. The work stops in LAB: no CONTENT,
-Promotion Gate, Git checkpoint or deployment follows from B5 authorization.
+all historical candidate publication flags remain pending/false. A later explicit
+human authorization created three separate hash-bound decisions and promoted each
+candidate through the existing gate. Git and curl join `web`; Python uses one
+minimal published `python` topic. Eleven explicit lifecycles pass without registry
+auto-discovery. The production checkpoint remains separately controlled.

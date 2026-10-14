@@ -4,6 +4,14 @@
 
 ### Added
 
+- B5 public-production run: three separate human decisions and Promotion Gate audits
+  publish Git locally, curl/HTTP and Python fundamentals to `git-lokalnie`,
+  `curl-http` and `podstawy-pythona`. Each immediate verification and all eleven
+  registered public lifecycles PASS.
+- Minimal published Python topic plus local 23-route build, 22-page / 2235-word
+  Pagefind index and 23-URL sitemap. The shared Featured Image fallback renders as
+  linked thumbnails and article heroes without 320 px overflow.
+
 - B5 ranks #8–#10 completed as three bounded LAB-only jobs: Git locally, curl/HTTP
   and Python fundamentals. Unchanged SOURCE hashes and current coverage supported
   `PROCEED` for all three, so no replacement search was needed.
@@ -11,8 +19,8 @@
   first-pass Critic PASS reviews and exact candidates. Eight unique examples passed
   Git 2.21.0.windows.1, curl 8.13.0 on loopback, and Python 3.14.5/3.11.9.
 - Backward-compatible `cli` runtime targets plus `shell` and `python` example
-  languages. B5 remains publication-pending in LAB; no CONTENT, Promotion Gate,
-  commit, push or deployment action was performed.
+  languages. Candidate preparation itself stopped in LAB; publication happened
+  only under the later, separate human authorization recorded above.
 
 - B4 production checkpoint `828703e`: the Markdown, JavaScript Calculator and
   API/HTTP/JSON routes plus their listing entries return HTTP 200 with expected

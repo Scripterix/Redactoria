@@ -43,7 +43,11 @@ which ideas are still exploratory.
 - [B5 ranks #8–#10](plans/completed/029-b5-ranks-8-10.md) and
   [three-candidate comparison](../lab/reports/b5-three-candidate-comparison.md) —
   Git, curl/HTTP and Python completed as exact runtime-verified LAB candidates;
-  publication remains pending/false.
+  immutable candidate flags remain pending/false while separate decisions promoted
+  the exact reviewed copies.
+- [B5 publication checkpoint](plans/active/030-b5-publication-checkpoint.md) — three
+  separate decisions, promotions and local verification complete; production
+  push/Cloudflare verification is the remaining boundary.
 - [Search/public checkpoint](plans/completed/010-pagefind-search-public-checkpoint.md) —
   Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
 - [B1 pilot selection](../lab/reports/pilot-selection-b1.md) and

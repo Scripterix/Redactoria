@@ -125,8 +125,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
   through separate decisions/audits; plan 021 full gate, Git push and Cloudflare
   production verification passed.
 - B4 publication checkpoint complete: ranks #5–#7 are public and plan 027 is closed.
-- B5 ranks #8–#10 complete in LAB: Git, curl/HTTP and Python each have an exact
-  runtime-verified candidate with Critic PASS. Publication is not authorized.
+- B5 ranks #8–#10 published locally through three separate decisions and Promotion
+  Gate audits; Git, curl/HTTP and Python all pass post-promotion verification.
 - Milestone 3 DONE; Research Packet APPROVED; research and draft PHP verification PASS.
 - PHP MERGE remains approved; SOURCE unchanged, CONTENT modified only in authorized local scope.
 - One original Writer run + two separately authorized Critic passes. No automatic loop.
@@ -142,8 +142,8 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 
 ## NEXT
 
-- Human editorial review of the three B5 candidates. Any publication decision must
-  be separate, explicit and candidate-specific; until then, STOP in LAB.
+- Complete plan 030 with the authorized push and final Cloudflare production
+  verification, then STOP before another content batch.
 
 ## LATER
 

@@ -52,4 +52,19 @@ established Astro-managed Featured Image fallback; no individual artwork is adde
 
 ## Result
 
-Pending.
+Local publication complete:
+
+- Checkpoint `cd03a35` preserves Featured Image 0.1, reader-copy cleanup and exact
+  B5 candidate evidence before publication.
+- Separate decisions bind each candidate JSON, article body and final Critic review.
+- Promotion Gate: `PROMOTED_PUBLIC` for `git-lokalnie`, `curl-http` and
+  `podstawy-pythona`; each immediate 32-check verification PASS.
+- All eleven registered public lifecycles PASS.
+- `npm run test`: 359/359 PASS. `npm run check`: 163 files, zero diagnostics.
+- `npm run build`: 23 pages; Pagefind 22 pages / 2235 words; sitemap 23 URLs.
+- Browser smoke: homepage, listing, three articles, search and sitemap return 200;
+  fallback heroes/thumbnails have correct order, alt, 16:9 cover and no 320 px
+  overflow. Search returns Git and no internal LAB/docs paths.
+- Publication commit: `9f99ebf` (`feat: publish B5 pilot articles`).
+
+Pending: push and direct Cloudflare production verification for final HEAD.
