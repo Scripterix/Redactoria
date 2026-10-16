@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "manual-editorial-review-0.1",
+  "action": "REVIEW",
+  "topic": "google-ai-search-2026",
+  "draftRef": "lab/drafts/google-ai-search-2026/article.md",
+  "articleHash": "9bd60793465730036825cabb4b0e69ddf0630f9428ac8559cf68ed1cba4b36a0",
+  "reviewedAt": "2026-10-16",
+  "reviewer": {
+    "role": "Critic-style manual evidence review",
+    "identity": "Codex",
+    "independence": "This is a manual review of an operator-supplied article, not a recorded execution of the runtime Critic 0.1 module."
+  },
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "result": "PASS",
+      "note": "Claims on RAG, query fan-out, AI Overviews, AI Mode, indexed Search content, Search Console reporting, FAQ, multimodal reporting and llms.txt match the official Google sources listed in the evidence section."
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "result": "PASS",
+      "note": "The current claims rely on Google Search Central documentation or an official Google product update. The historical SOURCE post is provenance only, not factual authority."
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "result": "PASS",
+      "note": "The article covers the planned 2026 scope: AI features, source links, conventional SEO, structured data, AI-assisted content, Search Console, Preferred Sources, inline links, multimodal reporting and llms.txt."
+    },
+    {
+      "criterion": "STRUCTURE",
+      "result": "PASS",
+      "note": "Rendering-only Markdown headings and lists make the supplied argument navigable without changing its prose."
+    },
+    {
+      "criterion": "CLARITY",
+      "result": "PASS",
+      "note": "The article explains the model, consequences and a bounded workflow rather than prescribing unsupported tactics."
+    },
+    {
+      "criterion": "DUPLICATION",
+      "result": "PASS",
+      "note": "No material duplication was found against the earlier SOURCE article; the article explicitly replaces its discredited Prompt SEO and AI-Citation framing."
+    },
+    {
+      "criterion": "SECURITY",
+      "result": "PASS",
+      "note": "The article contains no executable code, unsafe instructions or credentials."
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "result": "PASS",
+      "note": "Dated product/reporting assertions are bound to official 2026 announcements and should be rechecked on a future update."
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "result": "PASS",
+      "note": "It does not promise AI-feature inclusion, ranking, traffic, CTR, a citation score or special AI markup."
+    }
+  ],
+  "issues": [],
+  "optionalImprovements": [
+    {
+      "location": "AI może pomagać pisać. Problem zaczyna się gdzie indziej",
+      "note": "Google requires accuracy, quality and value for AI-assisted content; the supplied word ‘ręczne’ is a reasonable editorial practice but is not a separately mandated workflow in the cited document. It is retained unchanged under the operator’s no-rewrite instruction."
+    }
+  ],
+  "requiredChanges": [],
+  "verdict": "PASS",
+  "limitations": [
+    "The review evaluates the exact supplied prose plus rendering-only Markdown syntax. It does not measure post-publication performance or guarantee inclusion in AI Overviews, AI Mode or Preferred Sources.",
+    "Google interfaces and reports are volatile; dated 2026 claims need revalidation before a future substantial update.",
+    "This review does not claim a Writer 0.1 or runtime Critic 0.1 execution, because the article was supplied directly by the human operator."
+  ],
+  "evidence": [
+    {
+      "title": "Google's guide to optimizing for generative AI features on Google Search",
+      "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "publisher": "Google Search Central",
+      "claims": ["RAG", "query fan-out", "SEO foundations", "non-commodity content", "scaled-content warning", "images and video", "llms.txt"]
+    },
+    {
+      "title": "AI features and your website",
+      "url": "https://developers.google.com/search/docs/appearance/ai-features",
+      "publisher": "Google Search Central",
+      "claims": ["AI Overviews", "AI Mode", "supporting links", "indexed and snippet-eligible pages", "no special AI optimization"]
+    },
+    {
+      "title": "Google Search's guidance on using generative AI content",
+      "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+      "publisher": "Google Search Central",
+      "claims": ["AI-assisted content", "accuracy", "metadata", "structured data", "alternative text"]
+    },
+    {
+      "title": "Introducing Search Generative AI performance reports in Search Console",
+      "url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+      "publisher": "Google Search Central",
+      "claims": ["dedicated reports", "impressions", "pages", "countries", "devices", "dates", "2026-08-31 rollout"]
+    },
+    {
+      "title": "Guide to Preferred Sources in Google Search for Web Publishers",
+      "url": "https://developers.google.com/search/docs/appearance/preferred-sources",
+      "publisher": "Google Search Central",
+      "claims": ["user-selected preferred source", "AI Mode", "AI Overviews"]
+    },
+    {
+      "title": "Announcing web multimodal Search performance reporting in Search Console",
+      "url": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+      "publisher": "Google Search Central",
+      "claims": ["Lens", "Circle to Search", "image uploads", "Generative AI performance reporting"]
+    },
+    {
+      "title": "Latest Google Search documentation updates",
+      "url": "https://developers.google.com/search/updates",
+      "publisher": "Google Search Central",
+      "claims": ["FAQ removal", "llms.txt does not affect visibility or ranking"]
+    },
+    {
+      "title": "Updates to AI Mode and AI Overviews to explore the web",
+      "url": "https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/",
+      "publisher": "Google",
+      "claims": ["2026-10-15 inline-link and official-site experiments"]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "manual-editorial-candidate-0.1",
+  "status": "publication-candidate",
+  "topic": "google-ai-search-2026",
+  "title": "Google AI Search 2026: jak tworzyć treści widoczne w AI Overviews i AI Mode",
+  "articleRef": "lab/drafts/google-ai-search-2026/article.md",
+  "articleHash": "9bd60793465730036825cabb4b0e69ddf0630f9428ac8559cf68ed1cba4b36a0",
+  "provenanceRef": "lab/drafts/google-ai-search-2026/input-provenance.md",
+  "suppliedAttachmentHash": "7ff455b75337163a839a3dc990a3bdeca559e7c018256ee2ec49d08d5e059ada",
+  "criticReviewRef": "lab/reviews/google-ai-search-2026/critic-review.json",
+  "criticReviewHash": "d547f9058ec19253dae6cf87ac490787a2a6964140a5875bfee1b83f08a1d1d3",
+  "verdict": "PASS",
+  "readyForManualPublication": true,
+  "approvedForPublication": true,
+  "approval": {
+    "approvedBy": "human",
+    "authority": "User request of 2026-10-16: use the supplied GPT-written article for publication, preserving its prose while adding front matter, provenance, LAB candidate, Critic and validation.",
+    "scope": "one article; local CONTENT publication only"
+  },
+  "sourceLineage": {
+    "sourceId": "1329",
+    "sourcePath": "../temp-ogwo/posts/1329-post-63-ai-seo-2025-jak-google-ai-overview-i-promp.md",
+    "assessmentRef": "lab/reports/ai-search-google-ai-overview-refresh-0.1.md",
+    "decision": "major modernization"
+  },
+  "limitations": [
+    "This manual candidate intentionally does not conform to the automatic Promotion Gate candidate schemas: it has no Writer 0.1 run, research-acceptance packet or runtime execution because the human supplied the completed prose.",
+    "It cannot be used as a precedent or as an automatic publication route for another article."
+  ],
+  "preparedAt": "2026-10-16"
+}
