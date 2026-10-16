@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "c33e7bb22ddf95aedb6e9469f84bdf32acd34204c671587260f2e7510815fcf8",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "All 3 final examples have exact expected output and passed actual controlled execution.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "7ae3d9bdf676ce0a37d51fb5e06e19039cd7ca98ce85d0f6a34d8857c6d0ae16",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "3124f2127c66bca75dab7edc6d87ae3011825f1d2207829109423e3a4706b80a"
+  },
+  "draftMetadataHash": "7aef1eb2459cd95a37974e0775f58d0d41e922d934f7ff8e8a87ca555a5ae8cd",
+  "draftRef": "lab/drafts/php-language-foundation/article.md",
+  "issues": [],
+  "limitations": [
+    "This review evaluates only the exact draft, approved Research Packet and attached local execution. It is not a publication decision and does not establish coverage beyond the stated runtime."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/php-language-foundation-research-acceptance.json",
+  "researchPacket": "lab/research/php-language-foundation/research.json",
+  "schemaVersion": 1,
+  "summary": "The draft stays within the B6 beginner scope, distinguishes legacy context from verified technical evidence, and has passing actual execution for every final example.",
+  "topic": "php-language-foundation",
+  "verdict": "PASS"
+}

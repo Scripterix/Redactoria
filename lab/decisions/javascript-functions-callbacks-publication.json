@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "public-production",
+  "approvedAt": "2026-10-16T13:56:17.222Z",
+  "authorization": "Explicit B6 publication authorization: publish exactly the reviewed JavaScript Functions / return / callbacks candidate after the two preceding candidates pass their lifecycles; verify its lifecycle. The same attached authorization permits the scoped Git, push and Cloudflare checkpoint after the complete three-article local gate.",
+  "candidateRef": "lab/candidates/javascript-functions-callbacks/article.json",
+  "candidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+  "articleHash": "3f7cf34248d4e3e98adcdd95273fcfe9eba9b1ccdef8abf25d6001c7179604fc",
+  "criticReviewRef": "lab/reviews/javascript-functions-callbacks/critic-review.json",
+  "criticReviewHash": "6c405b7d71881446ea9d716d307c3f8464a5ea0a9b4f5dc2f388b88491de4930",
+  "destination": "content/articles/funkcje-javascript.md",
+  "metadata": {
+    "title": "Funkcje JavaScript: parametry, return i callbacki",
+    "description": "Podstawy funkcji JavaScript: parametry, return, obserwowanie wyniku i callback przekazany do Array.map.",
+    "slug": "funkcje-javascript",
+    "status": "published",
+    "created": "2026-10-16",
+    "updated": "2026-10-16",
+    "domain": "programming",
+    "topic": "javascript",
+    "author": { "type": "ai-assisted", "name": "Scripterix" },
+    "sources": [
+      { "title": "ECMAScript Language Specification — Functions and Classes", "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html", "publisher": "TC39" },
+      { "title": "MDN — Functions", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions", "publisher": "MDN Web Docs" },
+      { "title": "MDN — Array.prototype.map()", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map", "publisher": "MDN Web Docs" },
+      { "title": "Node.js Documentation — Command-line API", "url": "https://nodejs.org/api/cli.html", "publisher": "Node.js" }
+    ],
+    "origin": {
+      "type": "wordpress-export",
+      "source_id": "281",
+      "original_url": "https://opengateweb.com/posts/9-post-calc/",
+      "original_date": "2025-02-15T06:31:24.000Z",
+      "original_author": "Scripterix"
+    },
+    "review": { "status": "approved", "reviewer": "human — B6 publication authorization", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-16", "update_priority": "normal" },
+    "redactoria": { "decision": "rewrite", "modernization": "major" }
+  },
+  "presentationCleanup": {
+    "removeExact": ["Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"]
+  },
+  "remotePublicationApproved": true
+}

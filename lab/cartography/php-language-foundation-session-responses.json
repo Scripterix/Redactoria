@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "mode": "imported-session-analysis",
+    "model": "codex-session",
+    "description": "Focused B6 analysis of the exact prepared context source; the response distinguishes a missing entry lesson from a rewrite."
+  },
+  "focused-article": {
+    "requestHash": "b1bae1832b48113e052d51963627bd493640ad2409eac1f5009591b76843b0e6",
+    "response": {
+      "task": "SINGLE_ARTICLE",
+      "artifactName": "php-language-foundation-single",
+      "action": "NEW_CONTENT",
+      "recommended": true,
+      "confidence": 0.97,
+      "reason": "Źródło porównuje PHP z Pythonem i pokazuje pojedynczą składnię zmiennej, ale miesza marketing, frameworki, endpoint i szerokie deklaracje. Nie jest uczciwym materiałem do rewrite; potwierdza potrzebę nowej, małej lekcji wejściowej.",
+      "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }],
+      "scope": "Jeden lokalny plik PHP uruchamiany w CLI: wartości, nazwy zmiennych, podstawowe typy scalar, proste operatory, echo i czytelny wynik. Bez serwera WWW, frameworków, tablic, funkcji, formularzy i porównywania języków.",
+      "keep": [{ "id": "keep-variable-syntax-as-context", "interpretation": "Zachować wyłącznie obserwację, że zmienne PHP w pokazanej składni zaczynają się od znaku dolara; regułę i granice zweryfikuje Researcher.", "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }], "confidence": 0.88 }],
+      "correct": [{ "id": "correct-comparison-framing", "interpretation": "Nie przedstawiać nieweryfikowanych ocen intuicyjności, hostingu, asynchroniczności ani popularności jako części lekcji podstaw PHP.", "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "PHP jest mniej intuicyjny w projektach wieloplatformowych i bardziej skomplikowanych." }], "confidence": 0.94 }],
+      "outdatedOrUncertain": [{ "id": "uncertain-runtime-and-framework-claims", "interpretation": "Frameworki, hosting i zastosowania języka są poza małym zakresem oraz wymagają osobnego, aktualnego researchu, jeśli kiedykolwiek wejdą do materiału.", "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "Popularne frameworki PHP to Laravel, Symfony i WordPress." }], "confidence": 0.91 }],
+      "remove": [{ "id": "remove-python-comparison-and-endpoint", "interpretation": "Usunąć porównanie z Pythonem, endpoint HTTP i Flask — nie tworzą sekwencji dla pierwszego pliku PHP.", "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "PHP - Tworzenie prostego endpointu w aplikacji webowej:" }], "confidence": 0.98 }],
+      "missing": [{ "id": "missing-local-entry-model", "interpretation": "Brakuje kolejności od zapisania pliku i uruchomienia CLI do obserwacji wartości, typów, operatorów i wyniku — to będzie nowa treść, nie korekta istniejącej lekcji.", "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }], "confidence": 0.97 }],
+      "needsResearch": [{ "id": "research-php-entry-semantics", "interpretation": "Zweryfikować w PHP Manual składnię zmiennych, typy scalar, echo, operatory oraz poprawne użycie CLI w wybranym zakresie runtime.", "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "Pełne listy słów kluczowych można znaleźć w oficjalnej dokumentacji PHP i Pythona." }], "confidence": 0.96 }],
+      "prerequisites": ["Utworzenie zwykłego pliku tekstowego i uruchomienie jawnego polecenia PHP CLI."],
+      "relationships": [
+        { "publicPath": "/artykuly/instrukcje-sterujace-php/", "reason": "Publiczna lekcja warunków wymaga zmiennych, wartości scalar, echo i CLI; nowy węzeł ma je wprowadzić wcześniej." },
+        { "publicPath": "/artykuly/tablice-w-php/", "reason": "Publiczna lekcja tablic zakłada odczyt zmiennych, wartości i wyników prostych programów PHP." }
+      ],
+      "proposedTitle": "PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI",
+      "proposedStructure": [
+        { "order": 1, "title": "Jeden plik i wynik w terminalu", "purpose": "Ustalić najmniejszy lokalny cykl zapisania pliku, uruchomienia i obserwacji wyniku.", "sourceIds": ["977"], "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }], "needsResearch": true },
+        { "order": 2, "title": "Wartości i nazwy zmiennych", "purpose": "Pokazać prosty przypisany rezultat bez porównywania języków.", "sourceIds": ["977"], "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }], "needsResearch": true },
+        { "order": 3, "title": "Typy scalar jako obserwacja", "purpose": "Rozróżnić liczbę, napis i bool na małych, wykonywalnych danych.", "sourceIds": ["977"], "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "### Dynamiczne typowanie" }], "needsResearch": true },
+        { "order": 4, "title": "Operatory i echo", "purpose": "Zamknąć mały program wynikiem, który można sprawdzić w CLI.", "sourceIds": ["977"], "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }], "needsResearch": true }
+      ],
+      "limitations": ["Jedno źródło jest kontekstowym porównaniem, nie dowodem poprawności PHP ani gotową lekcją. Wszystkie techniczne twierdzenia i przykłady wymagają Authority Ladder oraz rzeczywistego wykonania."]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-16T13:14:27.000Z",
+  "recordedAt": "2026-10-16T13:14:27.000Z",
+  "scope": "B6: three evidence-selected foundation topics through independent LAB publication candidates only; two are genuine NEW_CONTENT with a single legacy context source, not a false rewrite.",
+  "selectionRef": "lab/reports/next-batch-selection.json",
+  "selectionHash": "7ad67da0c51b0245debeaf3b5b483a3803e181e51a3f9961ce906e7881cf10e4",
+  "authorization": "The human requested that the best three next candidates be selected from project evidence and completed through the normal manual process. The coding session may prepare and capture bounded module responses and runtime evidence through exact pending LAB candidates. Publication, CONTENT writes, Git, push and deployment remain separate human decisions.",
+  "researchAcceptance": {
+    "mode": "validation-under-human-task-authorization",
+    "humanReviewedPacket": false,
+    "writerAfterValidatedPacket": true,
+    "clarification": "A validated Authority Ladder packet and its controlled runtime evidence may advance to Writer within this exact batch. This does not state that every packet was separately read by the human and does not authorize publication."
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "topic": "php-language-foundation",
+      "origin": "CREATE_NEW",
+      "cartographerActionExpected": "NEW_CONTENT",
+      "source": {
+        "sourceId": "977",
+        "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+        "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+        "originalUrl": "https://opengateweb.com/posts/52-php-python/",
+        "title": "Post #52 Jakie są PHP i Python",
+        "role": "Context evidence: a broad PHP/Python comparison is insufficient for the missing PHP entry lesson."
+      }
+    },
+    {
+      "order": 2,
+      "topic": "javascript-language-foundation",
+      "origin": "CREATE_NEW",
+      "cartographerActionExpected": "NEW_CONTENT",
+      "source": {
+        "sourceId": "542",
+        "sourcePath": "542-post-17-przeglad-js-html-css.md",
+        "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+        "originalUrl": "https://opengateweb.com/posts/17-post-js/",
+        "title": "Post #17 Przegląd JS Html CSS",
+        "role": "Context evidence: a project catalogue is not the missing JavaScript entry lesson."
+      }
+    },
+    {
+      "order": 3,
+      "topic": "javascript-functions-callbacks",
+      "origin": "MODERNIZE",
+      "cartographerActionExpected": "REWRITE",
+      "source": {
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+        "originalUrl": "https://opengateweb.com/posts/9-post-calc/",
+        "title": "Post #9 Calculator Math Func OOP",
+        "role": "Modernizable core: functions and callbacks; calculator class and DOM breadth are outside the selected scope."
+      }
+    }
+  ],
+  "allowedStages": [
+    "cartographer",
+    "research",
+    "runtime-verification",
+    "writer",
+    "critic",
+    "limited-correction",
+    "publication-candidate"
+  ],
+  "publicationApproved": false,
+  "contentWriteApproved": false,
+  "gitApproved": false,
+  "deploymentApproved": false,
+  "otherTopicsApproved": false
+}

@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b6-authorization.json",
+        "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+      },
+      {
+        "path": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+        "sha256": "10bc9863552976ef82d7e3c7a81e424e3f36e34c3f66029369e0b030e95f7713"
+      },
+      {
+        "path": "lab/cartography/javascript-functions-callbacks-single.json",
+        "sha256": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/sources.json",
+        "sha256": "09b6421bb947042c14eadf091ba9b1cfa1fefbae385f04038bc3d1ca67092d9d"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/probes.json",
+        "sha256": "2432b68a9bb93c616146d7f7ccaad1f7da3fa91fbfc7bb5e7a63710181e1e9bb"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/research.json",
+        "sha256": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+        "sha256": "a134df935bed8647a7f00b91b93c1d3d39f8f9ae5732aeb69721c8f93ac3558e"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/runtime-verification.md",
+        "sha256": "e746507816d1b6986c674d96083d9f19b7f93b6a5ea507de517ad7e5dba2f59e"
+      }
+    ],
+    "humanApproval": "The human authorized this exact B6 batch through candidate preparation. The packet was validated in-session and was not separately reviewed by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "node",
+          "status": "PASS",
+          "version": "v24.16.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "31f670792086aa675f7918abf2ca85f844a18928c046b936a72ae6b4f913a671",
+  "nextStep": "writer",
+  "packetHash": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca",
+  "packetRef": "lab/research/javascript-functions-callbacks/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, retain the runtime limit, and execute every final draft example independently.",
+  "requestHash": "697b32f9100aa66fe36f51d47a243c17c8e0bc177b1496f58f4853d5282a05e4",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "js-function-return",
+    "js-callback-model"
+  ],
+  "schemaVersion": 3,
+  "scope": "B6 javascript-functions-callbacks: validated Authority Ladder packet and runtime evidence through LAB candidate only; no publication.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-functions-callbacks",
+  "validatedAt": "2026-10-16T13:23:35.577Z"
+}

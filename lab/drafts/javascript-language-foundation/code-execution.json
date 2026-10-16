@@ -1,0 +1,53 @@
+{
+  "articleHash": "e617936dfddc9d92b1ba4f2272ed5bffa472244b0ebc29303573c64fd95bc867",
+  "executedAt": "2026-10-16T13:25:29.938Z",
+  "limitations": [
+    "Each final example was executed independently with node v24.16.0; no browser, network, SOURCE or external service was used."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "63994334bb368ea310ddcdb156f5409a602c14b1d61405d65ba617119425f3b5",
+          "exitCode": 0,
+          "id": "node-start",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Start JavaScript\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "35c87203735f37c6fb950229059b6b58ca1f3294258b604ffde530a191e89b4d",
+          "exitCode": 0,
+          "id": "bindings-types",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Ada\n3\nnumber\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "65f527b3239824e68d54666783e6401925578db79ae989cfa6abd18c7d3698ef",
+          "exitCode": 0,
+          "id": "sum-message",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Suma: 5\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

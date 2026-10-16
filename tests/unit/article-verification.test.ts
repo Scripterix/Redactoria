@@ -83,6 +83,9 @@ describe('verify:article contract spike', () => {
 			['git-local-basics', 'PASS'],
 			['curl-http-basics', 'PASS'],
 			['python-fundamentals', 'PASS'],
+			['php-language-foundation', 'PASS'],
+			['javascript-language-foundation', 'PASS'],
+			['javascript-functions-callbacks', 'PASS'],
 		]);
 		expect(results[0]!.areas.publication.checks.contentLineage.status).toBe('PASS');
 		expect(results[0]!.areas.publication.checks.contentIntegrity.status).toBe('PASS');

@@ -1,0 +1,53 @@
+{
+  "articleHash": "3f7cf34248d4e3e98adcdd95273fcfe9eba9b1ccdef8abf25d6001c7179604fc",
+  "executedAt": "2026-10-16T13:25:31.011Z",
+  "limitations": [
+    "Each final example was executed independently with node v24.16.0; no browser, network, SOURCE or external service was used."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "60ff3559a0950220e6358dcb945c13796311a0ef8120fd560739234971ba0f83",
+          "exitCode": 0,
+          "id": "greet-parameter",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Cześć, Ada\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "c7fa8ad1e08783120edf6a9f43fb17d56ab0396621fe9f5b5ecc38e26c9a1e63",
+          "exitCode": 0,
+          "id": "add-return",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "5\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "35eea1f6e63a56d75d4bed1e0cb89e43e6887c0c2cee4597a31f8b9f8542532c",
+          "exitCode": 0,
+          "id": "double-map",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "2,4,6\n1,2,3\n"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "runtimeId": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

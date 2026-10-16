@@ -63,6 +63,15 @@ export const FROZEN_ARTICLE_FIXTURES: readonly VerificationFixture[] = [
 	{ topic: 'python-fundamentals', candidateRef: 'lab/candidates/python-fundamentals/article.json', publication: {
 		decisionRef: 'lab/decisions/python-fundamentals-publication.json', auditRef: 'lab/reports/podstawy-pythona-promotion.json',
 	} },
+	{ topic: 'php-language-foundation', candidateRef: 'lab/candidates/php-language-foundation/article.json', publication: {
+		decisionRef: 'lab/decisions/php-language-foundation-publication.json', auditRef: 'lab/reports/podstawy-php-promotion.json',
+	} },
+	{ topic: 'javascript-language-foundation', candidateRef: 'lab/candidates/javascript-language-foundation/article.json', publication: {
+		decisionRef: 'lab/decisions/javascript-language-foundation-publication.json', auditRef: 'lab/reports/podstawy-javascript-promotion.json',
+	} },
+	{ topic: 'javascript-functions-callbacks', candidateRef: 'lab/candidates/javascript-functions-callbacks/article.json', publication: {
+		decisionRef: 'lab/decisions/javascript-functions-callbacks-publication.json', auditRef: 'lab/reports/funkcje-javascript-promotion.json',
+	} },
 ] as const;
 
 export function verificationFixtureForTopic(topic: string): VerificationFixture | undefined {

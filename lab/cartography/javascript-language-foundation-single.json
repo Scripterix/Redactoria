@@ -1,0 +1,218 @@
+{
+  "action": "NEW_CONTENT",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "requestHash": "243366a867853692f6cfdece4677e5c16ae53b3bf5ad4ce2a0da8f077bad5b61",
+    "selectedInventoryHash": "fab4eb9051a58edc0e436c66e567bd61aba381a67a90834d2d17de0f4046877f"
+  },
+  "artifactName": "javascript-language-foundation-single",
+  "confidence": 0.98,
+  "correct": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "Zastosowanie tab z wyborem po id treści."
+        }
+      ],
+      "id": "correct-entry-assumption",
+      "interpretation": "Nie zakładać znajomości identyfikatorów, DOM ani efektów UI przed pokazaniem najmniejszego programu i jego wyniku."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "542",
+      "sourcePath": "542-post-17-przeglad-js-html-css.md",
+      "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.79,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "Przegląd projektów głównie w których jest praktyczne zastosowanie JavaScript."
+        }
+      ],
+      "id": "keep-practice-motivation-as-context",
+      "interpretation": "Zachować jedynie kierunek: małe programy mogą być ćwiczeniem; nie przenosić katalogu projektów do lekcji podstaw."
+    }
+  ],
+  "limitations": [
+    "Katalog projektów nie stanowi źródła semantyki JavaScript. Techniczne twierdzenia, zachowanie Node i przykłady wymagają Authority Ladder oraz lokalnego wykonania."
+  ],
+  "missing": [
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "## **Kilka projektów**"
+        }
+      ],
+      "id": "missing-js-entry-model",
+      "interpretation": "Brakuje samodzielnego programu, modelu wartości/nazw i rozróżnienia wyniku w konsoli od działania w przeglądarce."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "JavaScript"
+        }
+      ],
+      "id": "research-js-entry-semantics",
+      "interpretation": "Zweryfikować deklaracje lexical, wartości/prymitywy, typeof, operatory i template literals w ECMAScript/MDN oraz wykonanie pliku przez Node.js documentation."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "## Transition BarbaJS"
+        }
+      ],
+      "id": "uncertain-library-and-hours",
+      "interpretation": "Nazwy bibliotek oraz deklaracje liczby godzin nie są potrzebne do fundamentu i nie będą przedstawiane jako miara jakości nauki."
+    }
+  ],
+  "prerequisites": [
+    "Utworzenie pliku .js i uruchomienie jawnego polecenia Node.js."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "Przegląd projektów głównie w których jest praktyczne zastosowanie JavaScript."
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Pokazać minimalne wykonanie bez DOM i bez projektu portfolio.",
+      "sourceIds": [
+        "542"
+      ],
+      "title": "Jeden plik JavaScript i console.log"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "JavaScript"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Ustalić nazwę jako odwołanie do wartości oraz prostą zmianę tam, gdzie jest potrzebna.",
+      "sourceIds": [
+        "542"
+      ],
+      "title": "Wartości, const i let"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "Kilka projektów"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Użyć typeof do czytania wyniku, bez budowania pełnej teorii typów.",
+      "sourceIds": [
+        "542"
+      ],
+      "title": "Typ jako obserwacja"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "Java Script"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Połączyć małe dane w przewidywalny wynik terminalowy.",
+      "sourceIds": [
+        "542"
+      ],
+      "title": "Operatory i czytelny komunikat"
+    }
+  ],
+  "proposedTitle": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+  "reason": "Źródło jest katalogiem ukończonych projektów i efektów UI; nie tłumaczy wartości, zmiennych ani uruchomienia programu. Uczciwy wynik to nowy, krótki węzeł wejściowy, nie rewrite katalogu.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/warunki-w-javascript/",
+      "reason": "Warunki działają na wartościach, porównaniach i uruchamianych przykładach, które nowy węzeł wprowadza wcześniej."
+    },
+    {
+      "publicPath": "/artykuly/tablice-w-javascript/",
+      "reason": "Metody tablic używają wartości i wyrażeń JavaScript; nowy węzeł nie powiela samego tematu tablic."
+    },
+    {
+      "publicPath": "/artykuly/dom-w-javascript/",
+      "reason": "DOM jest zastosowaniem JavaScript w dokumencie; fundament oddziela składnię i CLI od modelu strony."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "## Tabs Snippets"
+        }
+      ],
+      "id": "remove-portfolio-effects",
+      "interpretation": "Usunąć portfolio, Tabs, BarbaJS, Typed i katalog folderów; to przykłady późniejszych zastosowań, nie materiał startowy."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Node.js CLI i jeden plik .js: wartości, const/let, typeof jako obserwacja, podstawowe operatory, template literal i console.log. Bez DOM, tablic, funkcji, modułów, eventów i asynchroniczności.",
+  "targets": [
+    {
+      "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+      "providedCharacters": 1119,
+      "sourceId": "542",
+      "sourcePath": "542-post-17-przeglad-js-html-css.md",
+      "title": "Post #17 Przegląd JS Html CSS",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

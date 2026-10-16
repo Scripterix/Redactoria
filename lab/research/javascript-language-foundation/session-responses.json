@@ -1,0 +1,236 @@
+{
+  "provenance": {
+    "description": "B6 Authority Ladder analysis recorded in the active coding session; exact provider model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "codex-session"
+  },
+  "research": {
+    "requestHash": "bbdcfcb54fcedf62a5c0237d52eca55e54c4fa491590cc9b17dc915b33cc0d4f",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+            }
+          ],
+          "claim": "Kontrolowana próba Node zwróciła komunikat template literal oraz obserwacje typeof dla string, number i boolean.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "ecmascript-lexical",
+              "excerptId": "lexical-declarations"
+            },
+            {
+              "documentId": "mdn-const",
+              "excerptId": "const-binding"
+            },
+            {
+              "documentId": "mdn-typeof",
+              "excerptId": "typeof-result"
+            },
+            {
+              "documentId": "node-cli",
+              "excerptId": "node-script"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "javascript-language-foundation-boundaries"
+          ],
+          "questionIds": [
+            "js-bindings-values",
+            "js-operators-output"
+          ],
+          "recommendation": "Run every final draft example independently; this probe only supports the research boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-16",
+        "evidence": [
+          {
+            "documentId": "ecmascript-lexical",
+            "excerptId": "lexical-declarations"
+          },
+          {
+            "documentId": "mdn-const",
+            "excerptId": "const-binding"
+          },
+          {
+            "documentId": "mdn-typeof",
+            "excerptId": "typeof-result"
+          },
+          {
+            "documentId": "node-cli",
+            "excerptId": "node-script"
+          }
+        ],
+        "runtimeScope": "Node v24.16.0; no browser or DOM behavior is within this article."
+      },
+      "incorrectClaims": [],
+      "limitations": [
+        "Research uses one authorized context/source body and four Authority Ladder documents. It validates neither every engine version nor publication readiness."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "js-lexical-bindings",
+            "js-type-observation",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+          "questionId": "js-bindings-values",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "js-first-node-script",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+          "questionId": "js-operators-output",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "KEEP",
+          "findingIds": [
+            "js-lexical-bindings",
+            "js-type-observation",
+            "js-first-node-script",
+            "executed-boundaries"
+          ],
+          "id": "keep-bounded-entry-scope",
+          "instruction": "Uczyć tylko zweryfikowanego, lokalnego rdzenia; nie przenosić frameworków, DOM, klas ani marketingowych porównań."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "javascript-language-foundation",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+            }
+          ],
+          "claim": "Deklaracje lexical tworzą bindingi przez let i const, a const wymaga inicjalizatora; const opisuje binding, nie ogólną niezmienność wartości złożonej.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "ecmascript-lexical",
+              "excerptId": "lexical-declarations"
+            },
+            {
+              "documentId": "mdn-const",
+              "excerptId": "const-binding"
+            }
+          ],
+          "id": "js-lexical-bindings",
+          "questionIds": [
+            "js-bindings-values"
+          ],
+          "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+            }
+          ],
+          "claim": "Operator typeof zwraca napis wskazujący typ swojego operandu, więc może służyć do prostej obserwacji wyniku początkującego programu.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "mdn-typeof",
+              "excerptId": "typeof-result"
+            }
+          ],
+          "id": "js-type-observation",
+          "questionIds": [
+            "js-bindings-values"
+          ],
+          "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+            }
+          ],
+          "claim": "Node uruchamia program JavaScript przekazany jako plik lub inne wspierane wejście; lokalny przykład może połączyć operator i template literal w deterministyczny stdout.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "node-cli",
+              "excerptId": "node-script"
+            }
+          ],
+          "id": "js-first-node-script",
+          "questionIds": [
+            "js-operators-output"
+          ],
+          "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać context SOURCE jako pełnej lub zweryfikowanej lekcji i nie wykraczać poza zakres runtime."
+          }
+        ],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Próba badawcza nie jest wykonaniem końcowych bloków artykułu."
+          }
+        ],
+        "correct": [],
+        "keep": [
+          {
+            "findingIds": [
+              "js-lexical-bindings",
+              "js-type-observation",
+              "js-first-node-script"
+            ],
+            "instruction": "Zachować krótkie samodzielne przykłady i jawne oczekiwane wyniki."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

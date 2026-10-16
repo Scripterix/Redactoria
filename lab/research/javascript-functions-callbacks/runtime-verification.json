@@ -1,0 +1,60 @@
+{
+  "errata": [],
+  "limitations": [
+    "Runtime evidence covers local Node v24.16.0; callback scope is synchronous Array.map only, excluding DOM events and asynchronous APIs."
+  ],
+  "packetHash": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca",
+  "runs": [
+    {
+      "checks": [
+        {
+          "actual": {
+            "doubled": [
+              2,
+              4,
+              6
+            ],
+            "sum": 5
+          },
+          "expected": {
+            "doubled": [
+              2,
+              4,
+              6
+            ],
+            "sum": 5
+          },
+          "id": "javascript-functions-callbacks-boundaries-observed",
+          "status": "PASS"
+        }
+      ],
+      "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+      "execution": "actual-local-cli",
+      "kind": "node",
+      "records": [
+        {
+          "code": "function add(left, right) { return left + right; } const doubled = [1, 2, 3].map(value => value * 2); console.log(JSON.stringify({ sum: add(2, 3), doubled }));",
+          "codeHash": "f68fdf6c5358f202601b749aed9ace77e58ed1d346335172757273afb4f6f9f8",
+          "description": "Function parameters, return values and Array.map callback in Node.",
+          "diagnostics": [],
+          "id": "javascript-functions-callbacks-boundaries",
+          "result": {
+            "doubled": [
+              2,
+              4,
+              6
+            ],
+            "sum": 5
+          },
+          "runtimeId": "node",
+          "runtimeVersion": "v24.16.0"
+        }
+      ],
+      "runtimeId": "node",
+      "status": "PASS",
+      "version": "v24.16.0"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

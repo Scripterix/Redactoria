@@ -1,0 +1,19 @@
+[
+  {
+    "code": "const name = \"Ada\"; let count = 2; count += 3; console.log(JSON.stringify({ message: `${name}:${count}`, types: [typeof name, typeof count, typeof true] }));",
+    "codeHash": "d6aa8af4813532c1fd67b3e6c1e3bfb26f8c7e5131530e13b9a20dbeafeb9529",
+    "description": "Local JavaScript values, type observation, arithmetic and template literal in Node.",
+    "diagnostics": [],
+    "id": "javascript-language-foundation-boundaries",
+    "result": {
+      "message": "Ada:5",
+      "types": [
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "runtimeId": "node",
+    "runtimeVersion": "v24.16.0"
+  }
+]

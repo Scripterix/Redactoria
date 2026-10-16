@@ -1,0 +1,80 @@
+{
+  "action": "REVIEW",
+  "articleHash": "3f7cf34248d4e3e98adcdd95273fcfe9eba9b1ccdef8abf25d6001c7179604fc",
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "note": "All 3 final examples have exact expected output and passed actual controlled execution.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "RESEARCH_COVERAGE",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "STRUCTURE",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "CLARITY",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "DUPLICATION",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "SECURITY",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    },
+    {
+      "criterion": "UNSUPPORTED_CLAIMS",
+      "note": "No required correction within the bounded draft, approved research evidence and stated runtime limitation.",
+      "result": "PASS"
+    }
+  ],
+  "criticExecution": {
+    "inputHash": "e462f1a24bfee4c4feed3a3dc632cabceb81cd0eb54fe9f0c5bed59f0075bbba",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "96c1ddedb29493825365e6ec9fd375888058b57a9a1ac0cdb4b6639951dd1712"
+  },
+  "draftMetadataHash": "939139a538f9fd39e6c42f091004e05b5334efa9db7fba859da5f603e46fcd53",
+  "draftRef": "lab/drafts/javascript-functions-callbacks/article.md",
+  "issues": [],
+  "limitations": [
+    "This review evaluates only the exact draft, approved Research Packet and attached local execution. It is not a publication decision and does not establish coverage beyond the stated runtime."
+  ],
+  "optionalImprovements": [],
+  "requiredChanges": [],
+  "researchApproval": "lab/decisions/javascript-functions-callbacks-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-functions-callbacks/research.json",
+  "schemaVersion": 1,
+  "summary": "The draft stays within the B6 beginner scope, distinguishes legacy context from verified technical evidence, and has passing actual execution for every final example.",
+  "topic": "javascript-functions-callbacks",
+  "verdict": "PASS"
+}

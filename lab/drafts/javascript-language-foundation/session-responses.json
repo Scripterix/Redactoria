@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "provenance": { "mode": "imported-session-analysis", "model": "codex-session", "description": "B6 Writer response from the exact approved Research Packet and runtime boundary." },
+  "writer": {
+    "requestHash": "433f0f6efa358480041b334f60e1aaaaa4dc52ab2029040f8002f7b6a22992b1",
+    "response": {
+      "action": "DRAFT", "title": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory", "targetRuntimes": [{ "id": "node", "kind": "node", "version": "v24.16.0" }],
+      "sections": [
+        {
+          "id": "first-node-file", "heading": "Jeden plik JavaScript i wynik", "coverage": ["file-node", "console-output"],
+          "body": "Zapisz program jako `start.js`, a potem uruchom `node start.js`. `console.log` wypisuje wartość do terminala. To osobny, mały program: nie potrzebuje HTML, przeglądarki ani DOM.",
+          "evidence": [{ "kind": "finding", "id": "js-first-node-script" }],
+          "examples": [{ "id": "node-start", "purpose": "Pierwszy komunikat Node", "language": "js", "code": "console.log('Start JavaScript');", "expectedOutput": "Start JavaScript\n", "expectedDiagnostics": [] }]
+        },
+        {
+          "id": "bindings-and-types", "heading": "Wartości, const, let i typeof", "coverage": ["values", "const-let", "typeof"],
+          "body": "`const` i `let` wprowadzają nazwę, pod którą program przechowuje wartość. Użyj `const`, gdy w tym małym programie nie zamierzasz przypisać nowej wartości do nazwy. Użyj `let`, gdy kolejne przypisanie jest elementem przykładu. `typeof` zwraca napis opisujący typ obserwowanej wartości.",
+          "evidence": [{ "kind": "finding", "id": "js-lexical-bindings" }, { "kind": "finding", "id": "js-type-observation" }],
+          "examples": [{ "id": "bindings-types", "purpose": "Nazwa, zmiana i obserwacja typu", "language": "js", "code": "const name = 'Ada';\nlet count = 2;\ncount = count + 1;\nconsole.log(name);\nconsole.log(count);\nconsole.log(typeof count);", "expectedOutput": "Ada\n3\nnumber\n", "expectedDiagnostics": [] }]
+        },
+        {
+          "id": "operators-message", "heading": "Operator i template literal", "coverage": ["operators", "template-literal"],
+          "body": "Operator `+` może dodać dwie liczby. Template literal, zapisany między znakami backtick, pozwala wstawić wartość nazwy do czytelnego komunikatu. Najpierw oblicz wynik, a potem wypisz go. Dzięki temu łatwiej odróżnić dane od prezentacji.",
+          "evidence": [{ "kind": "finding", "id": "js-first-node-script" }],
+          "examples": [{ "id": "sum-message", "purpose": "Suma wewnątrz komunikatu", "language": "js", "code": "const first = 2;\nconst second = 3;\nconst total = first + second;\nconsole.log(`Suma: ${total}`);", "expectedOutput": "Suma: 5\n", "expectedDiagnostics": [] }]
+        }
+      ],
+      "interactionOpportunities": [
+        { "id": "predict-node-start", "sectionId": "first-node-file", "type": "predict-output", "purpose": "Oddzielić program od jego wyniku.", "prompt": "Co wypisze node start.js?", "expectedConcept": "console.log wypisuje komunikat.", "implemented": false },
+        { "id": "compare-bindings", "sectionId": "bindings-and-types", "type": "compare", "purpose": "Rozpoznać cel const i let.", "prompt": "Która nazwa w przykładzie potrzebuje let i dlaczego?", "expectedConcept": "let umożliwia kolejne przypisanie do bindingu.", "implemented": false },
+        { "id": "predict-template", "sectionId": "operators-message", "type": "predict-output", "purpose": "Połączyć obliczenie i komunikat.", "prompt": "Zmień second na 8 i przewidź cały komunikat.", "expectedConcept": "Najpierw zmienia się total, potem template literal używa jego wartości.", "implemented": false }
+      ],
+      "limitations": ["Zakres wykonania to Node v24.16.0. Materiał nie omawia DOM, tablic, funkcji, modułów, asynchroniczności ani różnic między silnikami JavaScript."]
+    }
+  }
+}

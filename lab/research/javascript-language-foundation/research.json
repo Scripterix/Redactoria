@@ -1,0 +1,354 @@
+{
+  "action": "RESEARCH_PACKET",
+  "ambiguousClaims": [],
+  "analysisContext": {
+    "cartographyHash": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b",
+    "decisionHash": "6363638dff2d7c7bcdc9478023102ac24286bb5fef173ec589e7eedf81171028",
+    "fullReadCount": 1,
+    "inputHash": "f8862c604a5921e99f0f595b9a1920f86e1b456caabf920eaae919b5c407df43",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "probes": [
+      {
+        "codeHash": "d6aa8af4813532c1fd67b3e6c1e3bfb26f8c7e5131530e13b9a20dbeafeb9529",
+        "description": "Local JavaScript values, type observation, arithmetic and template literal in Node.",
+        "diagnostics": [],
+        "id": "javascript-language-foundation-boundaries",
+        "result": {
+          "message": "Ada:5",
+          "types": [
+            "string",
+            "number",
+            "boolean"
+          ]
+        },
+        "runtimeId": "node",
+        "runtimeVersion": "v24.16.0"
+      }
+    ],
+    "requestHash": "bbdcfcb54fcedf62a5c0237d52eca55e54c4fa491590cc9b17dc915b33cc0d4f",
+    "researchBundleHash": "2b1bbde12d995df9f3440a5b559b0591e4d9356f2e6e0b0b3f9c6037242f756f",
+    "topicSlug": "javascript-language-foundation"
+  },
+  "codeReview": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+        }
+      ],
+      "claim": "Kontrolowana próba Node zwróciła komunikat template literal oraz obserwacje typeof dla string, number i boolean.",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "documentId": "ecmascript-lexical",
+          "excerptId": "lexical-declarations"
+        },
+        {
+          "documentId": "mdn-const",
+          "excerptId": "const-binding"
+        },
+        {
+          "documentId": "mdn-typeof",
+          "excerptId": "typeof-result"
+        },
+        {
+          "documentId": "node-cli",
+          "excerptId": "node-script"
+        }
+      ],
+      "id": "executed-boundaries",
+      "probeIds": [
+        "javascript-language-foundation-boundaries"
+      ],
+      "questionIds": [
+        "js-bindings-values",
+        "js-operators-output"
+      ],
+      "recommendation": "Run every final draft example independently; this probe only supports the research boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified",
+      "verification": "executed-probe"
+    }
+  ],
+  "environment": {
+    "asOfDate": "2026-10-16",
+    "evidence": [
+      {
+        "documentId": "ecmascript-lexical",
+        "excerptId": "lexical-declarations"
+      },
+      {
+        "documentId": "mdn-const",
+        "excerptId": "const-binding"
+      },
+      {
+        "documentId": "mdn-typeof",
+        "excerptId": "typeof-result"
+      },
+      {
+        "documentId": "node-cli",
+        "excerptId": "node-script"
+      }
+    ],
+    "runtimeScope": "Node v24.16.0; no browser or DOM behavior is within this article."
+  },
+  "incorrectClaims": [],
+  "limitations": [
+    "Research uses one authorized context/source body and four Authority Ladder documents. It validates neither every engine version nor publication readiness."
+  ],
+  "outdatedClaims": [],
+  "questionAnswers": [
+    {
+      "findingIds": [
+        "js-lexical-bindings",
+        "js-type-observation",
+        "executed-boundaries"
+      ],
+      "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+      "questionId": "js-bindings-values",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "js-first-node-script",
+        "executed-boundaries"
+      ],
+      "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+      "questionId": "js-operators-output",
+      "status": "resolved"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "KEEP",
+      "findingIds": [
+        "js-lexical-bindings",
+        "js-type-observation",
+        "js-first-node-script",
+        "executed-boundaries"
+      ],
+      "id": "keep-bounded-entry-scope",
+      "instruction": "Uczyć tylko zweryfikowanego, lokalnego rdzenia; nie przenosić frameworków, DOM, klas ani marketingowych porównań."
+    }
+  ],
+  "schemaVersion": 1,
+  "securityNotes": [],
+  "sourceRegister": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "9dc67a591c688a2cb1032dfd760901b6904051ea387e19fa57c37b5a31f9daa8",
+      "evidenceIds": [
+        "lexical-declarations"
+      ],
+      "evidenceRole": "technical-authority",
+      "id": "ecmascript-lexical",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:49.407Z",
+      "sourceType": "authority-ladder",
+      "title": "ECMAScript Language Specification — Lexical Declarations",
+      "url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "c49417a637a0fd22e9a22ab3842b71632884e889ff7547845a73145ad736160f",
+      "evidenceIds": [
+        "const-binding"
+      ],
+      "evidenceRole": "practical-reference",
+      "id": "mdn-const",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:49.407Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — const",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "232972c439e4369dfc05db39ed515c90e890c6e7adaa6efd6fa99da0770f6096",
+      "evidenceIds": [
+        "typeof-result"
+      ],
+      "evidenceRole": "practical-reference",
+      "id": "mdn-typeof",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:49.407Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — typeof",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "165eeb336c8fca82d6d4db7010569cd295feedbd417026e31a3bfaf74c500a03",
+      "evidenceIds": [
+        "node-script"
+      ],
+      "evidenceRole": "technical-authority",
+      "id": "node-cli",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://nodejs.org/api/cli.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:49.407Z",
+      "sourceType": "authority-ladder",
+      "title": "Node.js Documentation — Command-line API",
+      "url": "https://nodejs.org/api/cli.html"
+    }
+  ],
+  "targets": [
+    {
+      "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+      "providedCharacters": 1119,
+      "sourceId": "542",
+      "sourcePath": "542-post-17-przeglad-js-html-css.md",
+      "title": "Post #17 Przegląd JS Html CSS",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-language-foundation",
+  "unresolvedQuestions": [],
+  "verifiedFacts": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+        }
+      ],
+      "claim": "Deklaracje lexical tworzą bindingi przez let i const, a const wymaga inicjalizatora; const opisuje binding, nie ogólną niezmienność wartości złożonej.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "ecmascript-lexical",
+          "excerptId": "lexical-declarations"
+        },
+        {
+          "documentId": "mdn-const",
+          "excerptId": "const-binding"
+        }
+      ],
+      "id": "js-lexical-bindings",
+      "questionIds": [
+        "js-bindings-values"
+      ],
+      "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+        }
+      ],
+      "claim": "Operator typeof zwraca napis wskazujący typ swojego operandu, więc może służyć do prostej obserwacji wyniku początkującego programu.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "mdn-typeof",
+          "excerptId": "typeof-result"
+        }
+      ],
+      "id": "js-type-observation",
+      "questionIds": [
+        "js-bindings-values"
+      ],
+      "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+        }
+      ],
+      "claim": "Node uruchamia program JavaScript przekazany jako plik lub inne wspierane wejście; lokalny przykład może połączyć operator i template literal w deterministyczny stdout.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "node-cli",
+          "excerptId": "node-script"
+        }
+      ],
+      "id": "js-first-node-script",
+      "questionIds": [
+        "js-operators-output"
+      ],
+      "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    }
+  ],
+  "writerHandoff": {
+    "avoid": [
+      {
+        "findingIds": [
+          "executed-boundaries"
+        ],
+        "instruction": "Nie przedstawiać context SOURCE jako pełnej lub zweryfikowanej lekcji i nie wykraczać poza zakres runtime."
+      }
+    ],
+    "caution": [
+      {
+        "findingIds": [
+          "executed-boundaries"
+        ],
+        "instruction": "Próba badawcza nie jest wykonaniem końcowych bloków artykułu."
+      }
+    ],
+    "correct": [],
+    "keep": [
+      {
+        "findingIds": [
+          "js-lexical-bindings",
+          "js-type-observation",
+          "js-first-node-script"
+        ],
+        "instruction": "Zachować krótkie samodzielne przykłady i jawne oczekiwane wyniki."
+      }
+    ],
+    "verifiedCodeFindingIds": [
+      "executed-boundaries"
+    ]
+  }
+}

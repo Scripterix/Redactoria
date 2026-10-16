@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "public-production",
+  "approvedAt": "2026-10-16T13:56:17.222Z",
+  "authorization": "Explicit B6 publication authorization: publish exactly the reviewed JavaScript Fundamentals candidate after the PHP candidate passes its lifecycle; verify its lifecycle, then continue only after PASS. The same attached authorization permits the scoped Git, push and Cloudflare checkpoint after the complete three-article local gate.",
+  "candidateRef": "lab/candidates/javascript-language-foundation/article.json",
+  "candidateHash": "fdebb15229eebe846b32eebe6281c9fbd783b05514111ce52023b087fb0e1fa4",
+  "articleHash": "e617936dfddc9d92b1ba4f2272ed5bffa472244b0ebc29303573c64fd95bc867",
+  "criticReviewRef": "lab/reviews/javascript-language-foundation/critic-review.json",
+  "criticReviewHash": "346563ad8e05c78b8bb4bfc89e5cadc0f71b20292d5724271db1d6bee3548ca5",
+  "destination": "content/articles/podstawy-javascript.md",
+  "metadata": {
+    "title": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+    "description": "Pierwszy program JavaScript w Node: console.log, wartości, const, let, typeof, operatory i template literal.",
+    "slug": "podstawy-javascript",
+    "status": "published",
+    "created": "2026-10-16",
+    "updated": "2026-10-16",
+    "domain": "programming",
+    "topic": "javascript",
+    "author": { "type": "ai-assisted", "name": "Scripterix" },
+    "sources": [
+      { "title": "ECMAScript Language Specification — Lexical Declarations", "url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html", "publisher": "TC39" },
+      { "title": "MDN — const", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const", "publisher": "MDN Web Docs" },
+      { "title": "MDN — typeof", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof", "publisher": "MDN Web Docs" },
+      { "title": "Node.js Documentation — Command-line API", "url": "https://nodejs.org/api/cli.html", "publisher": "Node.js" }
+    ],
+    "origin": {
+      "type": "wordpress-export",
+      "source_id": "542",
+      "original_url": "https://opengateweb.com/posts/17-post-js/",
+      "original_date": "2025-03-01T06:07:00.000Z",
+      "original_author": "Scripterix"
+    },
+    "review": { "status": "approved", "reviewer": "human — B6 publication authorization", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-16", "update_priority": "normal" }
+  },
+  "presentationCleanup": {
+    "removeExact": ["Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"]
+  },
+  "remotePublicationApproved": true
+}

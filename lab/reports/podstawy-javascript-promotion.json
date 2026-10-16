@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "e617936dfddc9d92b1ba4f2272ed5bffa472244b0ebc29303573c64fd95bc867",
+  "candidateHash": "fdebb15229eebe846b32eebe6281c9fbd783b05514111ce52023b087fb0e1fa4",
+  "candidateRef": "lab/candidates/javascript-language-foundation/article.json",
+  "contentHash": "e8a9ed1343a1678cc0d5f0a582416c7f1e7fe5d9878d8ba31cfa5e32bed98fc7",
+  "criticReviewHash": "346563ad8e05c78b8bb4bfc89e5cadc0f71b20292d5724271db1d6bee3548ca5",
+  "criticReviewRef": "lab/reviews/javascript-language-foundation/critic-review.json",
+  "decisionHash": "36ee6ebf34b0b742f54252b052f1eef027ccc4a515aa446f508668befc0c41f8",
+  "decisionRef": "lab/decisions/javascript-language-foundation-publication.json",
+  "destination": "content/articles/podstawy-javascript.md",
+  "localPath": "/artykuly/podstawy-javascript/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b6-authorization.json",
+        "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+      },
+      {
+        "path": "lab/decisions/javascript-language-foundation-source-decision.json",
+        "sha256": "3f4f317f71077de8ba8dd712c81cb4f2297be31099bf2fe064cf98fe3003f0dc"
+      },
+      {
+        "path": "lab/cartography/javascript-language-foundation-single.json",
+        "sha256": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/sources.json",
+        "sha256": "2b1bbde12d995df9f3440a5b559b0591e4d9356f2e6e0b0b3f9c6037242f756f"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/probes.json",
+        "sha256": "247da453b9c6e98763d32720c8ede46d6a32fa9fde24182404f578abce847044"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/research.json",
+        "sha256": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/runtime-verification.json",
+        "sha256": "1b17917e10eacd769c90f8c26631c3628cc3b68a2d972a0d606b650deaf66f7e"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/runtime-verification.md",
+        "sha256": "34ac71afac5a10f9e106d8434724bbd6398441dcb57215249b0538df45c3b1a2"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "9b3b5b1a65df1369b156e2ff9a0eccd04215489d3421d608efdfba247805b00b",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "368b9f84445ec15111e31fd314138f52348941b0faf20947351e25d98d903fdd"
+    },
+    "revisionHash": "e548467d012f1e6bc6bccb599610a8422b569054bf2d3fadaa2c823449a51ec8",
+    "revisionRef": "lab/drafts/javascript-language-foundation/revision.json",
+    "sources": [
+      {
+        "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+        "providedCharacters": 1119,
+        "sourceId": "542",
+        "sourcePath": "542-post-17-przeglad-js-html-css.md",
+        "title": "Post #17 Przegląd JS Html CSS",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "5b3f534d203d46de036f691d410c69e392c8709266de012dc2e289333c377608",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "433f0f6efa358480041b334f60e1aaaaa4dc52ab2029040f8002f7b6a22992b1"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "573b2ba23787a998bc6719623613e99c3ecdf9825c56b7ded829e67c7563a133",
+  "researchApprovalRef": "lab/decisions/javascript-language-foundation-research-acceptance.json",
+  "researchPacketHash": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d",
+  "researchPacketRef": "lab/research/javascript-language-foundation/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "6363638dff2d7c7bcdc9478023102ac24286bb5fef173ec589e7eedf81171028",
+  "sourceDecisionRef": "lab/decisions/javascript-language-foundation-source-decision.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

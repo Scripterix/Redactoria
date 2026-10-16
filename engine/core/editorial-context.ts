@@ -42,7 +42,7 @@ export const B2ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ sch
 export const B3ResearchAcceptanceSchema = HumanResearchApprovalSchema.omit({ schemaVersion: true, status: true, approvedBy: true, approvedAt: true, targets: true }).extend({
  schemaVersion: z.literal(3), status: z.literal('validated'), approvedBy: z.literal('session-review-under-human-authorization'),
  validatedAt: z.iso.datetime(), humanReviewedPacket: z.literal(false),
-	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json', 'lab/decisions/b5-authorization.json']), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
+	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json', 'lab/decisions/b5-authorization.json', 'lab/decisions/b6-authorization.json']), authorizationHash: Sha, targets: FocusedArticleResultSchema.shape.targets,
 });
 export const ResearchApprovalSchema = z.union([HumanResearchApprovalSchema, B2ResearchAcceptanceSchema, B3ResearchAcceptanceSchema]);
 export const TopicConfigV1Schema = z.strictObject({

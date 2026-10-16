@@ -1,0 +1,354 @@
+{
+  "action": "RESEARCH_PACKET",
+  "ambiguousClaims": [],
+  "analysisContext": {
+    "cartographyHash": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000",
+    "decisionHash": "c4ba1dd54897dadeae438cd02c000ba6d503ff8992a99a304d7fced9226de475",
+    "fullReadCount": 1,
+    "inputHash": "31f670792086aa675f7918abf2ca85f844a18928c046b936a72ae6b4f913a671",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "probes": [
+      {
+        "codeHash": "f68fdf6c5358f202601b749aed9ace77e58ed1d346335172757273afb4f6f9f8",
+        "description": "Function parameters, return values and Array.map callback in Node.",
+        "diagnostics": [],
+        "id": "javascript-functions-callbacks-boundaries",
+        "result": {
+          "doubled": [
+            2,
+            4,
+            6
+          ],
+          "sum": 5
+        },
+        "runtimeId": "node",
+        "runtimeVersion": "v24.16.0"
+      }
+    ],
+    "requestHash": "697b32f9100aa66fe36f51d47a243c17c8e0bc177b1496f58f4853d5282a05e4",
+    "researchBundleHash": "09b6421bb947042c14eadf091ba9b1cfa1fefbae385f04038bc3d1ca67092d9d",
+    "topicSlug": "javascript-functions-callbacks"
+  },
+  "codeReview": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum() {"
+        }
+      ],
+      "claim": "Kontrolowana próba Node potwierdziła wynik funkcji add oraz nową tablicę wyników callbacku map.",
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "documentId": "ecmascript-functions",
+          "excerptId": "function-definition"
+        },
+        {
+          "documentId": "mdn-functions",
+          "excerptId": "parameters-return"
+        },
+        {
+          "documentId": "mdn-map",
+          "excerptId": "map-callback"
+        },
+        {
+          "documentId": "node-cli",
+          "excerptId": "node-script"
+        }
+      ],
+      "id": "executed-boundaries",
+      "probeIds": [
+        "javascript-functions-callbacks-boundaries"
+      ],
+      "questionIds": [
+        "js-function-return",
+        "js-callback-model"
+      ],
+      "recommendation": "Run every final draft example independently; this probe only supports the research boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified",
+      "verification": "executed-probe"
+    }
+  ],
+  "environment": {
+    "asOfDate": "2026-10-16",
+    "evidence": [
+      {
+        "documentId": "ecmascript-functions",
+        "excerptId": "function-definition"
+      },
+      {
+        "documentId": "mdn-functions",
+        "excerptId": "parameters-return"
+      },
+      {
+        "documentId": "mdn-map",
+        "excerptId": "map-callback"
+      },
+      {
+        "documentId": "node-cli",
+        "excerptId": "node-script"
+      }
+    ],
+    "runtimeScope": "Node v24.16.0; callback is limited to synchronous Array.map, not events or asynchronous APIs."
+  },
+  "incorrectClaims": [],
+  "limitations": [
+    "Research uses one authorized context/source body and four Authority Ladder documents. It validates neither every engine version nor publication readiness."
+  ],
+  "outdatedClaims": [],
+  "questionAnswers": [
+    {
+      "findingIds": [
+        "js-function-parameters-return",
+        "js-functions-node-scope",
+        "executed-boundaries"
+      ],
+      "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+      "questionId": "js-function-return",
+      "status": "resolved"
+    },
+    {
+      "findingIds": [
+        "js-map-callback",
+        "executed-boundaries"
+      ],
+      "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+      "questionId": "js-callback-model",
+      "status": "resolved"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "KEEP",
+      "findingIds": [
+        "js-function-parameters-return",
+        "js-map-callback",
+        "js-functions-node-scope",
+        "executed-boundaries"
+      ],
+      "id": "keep-bounded-entry-scope",
+      "instruction": "Uczyć tylko zweryfikowanego, lokalnego rdzenia; nie przenosić frameworków, DOM, klas ani marketingowych porównań."
+    }
+  ],
+  "schemaVersion": 1,
+  "securityNotes": [],
+  "sourceRegister": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "28a7a6f87217b513aa9a57004ad4c41df7d8c6236883050c14ed846163ea8452",
+      "evidenceIds": [
+        "function-definition"
+      ],
+      "evidenceRole": "technical-authority",
+      "id": "ecmascript-functions",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "ECMAScript Language Specification — Functions and Classes",
+      "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "37fc068158555321bf4ef23e9097089e045913756d8228d7fbe9e7a7f436aaf2",
+      "evidenceIds": [
+        "parameters-return"
+      ],
+      "evidenceRole": "practical-reference",
+      "id": "mdn-functions",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — Functions",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "8c9dcc6b3e0b6585c076ef0b55963f0c192f7226f3782918db59c9fa1546e75d",
+      "evidenceIds": [
+        "map-callback"
+      ],
+      "evidenceRole": "practical-reference",
+      "id": "mdn-map",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — Array.prototype.map()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "165eeb336c8fca82d6d4db7010569cd295feedbd417026e31a3bfaf74c500a03",
+      "evidenceIds": [
+        "node-script"
+      ],
+      "evidenceRole": "technical-authority",
+      "id": "node-cli",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://nodejs.org/api/cli.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "Node.js Documentation — Command-line API",
+      "url": "https://nodejs.org/api/cli.html"
+    }
+  ],
+  "targets": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-functions-callbacks",
+  "unresolvedQuestions": [],
+  "verifiedFacts": [
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum() {"
+        }
+      ],
+      "claim": "Definicja funkcji tworzy function object z parametrami i body; funkcja może zwrócić wartość do miejsca wywołania przez return.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "ecmascript-functions",
+          "excerptId": "function-definition"
+        },
+        {
+          "documentId": "mdn-functions",
+          "excerptId": "parameters-return"
+        }
+      ],
+      "id": "js-function-parameters-return",
+      "questionIds": [
+        "js-function-return"
+      ],
+      "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum() {"
+        }
+      ],
+      "claim": "Array.prototype.map tworzy nową tablicę z wyników wywołania przekazanej funkcji dla kolejnych elementów.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "mdn-map",
+          "excerptId": "map-callback"
+        }
+      ],
+      "id": "js-map-callback",
+      "questionIds": [
+        "js-callback-model"
+      ],
+      "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    },
+    {
+      "articleEvidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum() {"
+        }
+      ],
+      "claim": "Node uruchamia lokalny program JavaScript, dzięki czemu parametry, return i stdout można wykonać bez zależności DOM.",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "documentId": "node-cli",
+          "excerptId": "node-script"
+        }
+      ],
+      "id": "js-functions-node-scope",
+      "questionIds": [
+        "js-function-return"
+      ],
+      "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+      "sourceType": "authority-ladder",
+      "status": "verified"
+    }
+  ],
+  "writerHandoff": {
+    "avoid": [
+      {
+        "findingIds": [
+          "executed-boundaries"
+        ],
+        "instruction": "Nie przedstawiać context SOURCE jako pełnej lub zweryfikowanej lekcji i nie wykraczać poza zakres runtime."
+      }
+    ],
+    "caution": [
+      {
+        "findingIds": [
+          "executed-boundaries"
+        ],
+        "instruction": "Próba badawcza nie jest wykonaniem końcowych bloków artykułu."
+      }
+    ],
+    "correct": [],
+    "keep": [
+      {
+        "findingIds": [
+          "js-function-parameters-return",
+          "js-map-callback",
+          "js-functions-node-scope"
+        ],
+        "instruction": "Zachować krótkie samodzielne przykłady i jawne oczekiwane wyniki."
+      }
+    ],
+    "verifiedCodeFindingIds": [
+      "executed-boundaries"
+    ]
+  }
+}

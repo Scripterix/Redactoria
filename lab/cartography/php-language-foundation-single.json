@@ -1,0 +1,214 @@
+{
+  "action": "NEW_CONTENT",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "requestHash": "b1bae1832b48113e052d51963627bd493640ad2409eac1f5009591b76843b0e6",
+    "selectedInventoryHash": "5f776d16dee42b14f8ee34196b7128e8204749c8a64a657d516a4277dea0edab"
+  },
+  "artifactName": "php-language-foundation-single",
+  "confidence": 0.97,
+  "correct": [
+    {
+      "confidence": 0.94,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "PHP jest mniej intuicyjny w projektach wieloplatformowych i bardziej skomplikowanych."
+        }
+      ],
+      "id": "correct-comparison-framing",
+      "interpretation": "Nie przedstawiać nieweryfikowanych ocen intuicyjności, hostingu, asynchroniczności ani popularności jako części lekcji podstaw PHP."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "977",
+      "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+      "value": "$x = 10; // PHP"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "$x = 10; // PHP"
+        }
+      ],
+      "id": "keep-variable-syntax-as-context",
+      "interpretation": "Zachować wyłącznie obserwację, że zmienne PHP w pokazanej składni zaczynają się od znaku dolara; regułę i granice zweryfikuje Researcher."
+    }
+  ],
+  "limitations": [
+    "Jedno źródło jest kontekstowym porównaniem, nie dowodem poprawności PHP ani gotową lekcją. Wszystkie techniczne twierdzenia i przykłady wymagają Authority Ladder oraz rzeczywistego wykonania."
+  ],
+  "missing": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "$x = 10; // PHP"
+        }
+      ],
+      "id": "missing-local-entry-model",
+      "interpretation": "Brakuje kolejności od zapisania pliku i uruchomienia CLI do obserwacji wartości, typów, operatorów i wyniku — to będzie nowa treść, nie korekta istniejącej lekcji."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "Pełne listy słów kluczowych można znaleźć w oficjalnej dokumentacji PHP i Pythona."
+        }
+      ],
+      "id": "research-php-entry-semantics",
+      "interpretation": "Zweryfikować w PHP Manual składnię zmiennych, typy scalar, echo, operatory oraz poprawne użycie CLI w wybranym zakresie runtime."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.91,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "Popularne frameworki PHP to Laravel, Symfony i WordPress."
+        }
+      ],
+      "id": "uncertain-runtime-and-framework-claims",
+      "interpretation": "Frameworki, hosting i zastosowania języka są poza małym zakresem oraz wymagają osobnego, aktualnego researchu, jeśli kiedykolwiek wejdą do materiału."
+    }
+  ],
+  "prerequisites": [
+    "Utworzenie zwykłego pliku tekstowego i uruchomienie jawnego polecenia PHP CLI."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "$x = 10; // PHP"
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Ustalić najmniejszy lokalny cykl zapisania pliku, uruchomienia i obserwacji wyniku.",
+      "sourceIds": [
+        "977"
+      ],
+      "title": "Jeden plik i wynik w terminalu"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "$x = 10; // PHP"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Pokazać prosty przypisany rezultat bez porównywania języków.",
+      "sourceIds": [
+        "977"
+      ],
+      "title": "Wartości i nazwy zmiennych"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "### Dynamiczne typowanie"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Rozróżnić liczbę, napis i bool na małych, wykonywalnych danych.",
+      "sourceIds": [
+        "977"
+      ],
+      "title": "Typy scalar jako obserwacja"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "$x = 10; // PHP"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Zamknąć mały program wynikiem, który można sprawdzić w CLI.",
+      "sourceIds": [
+        "977"
+      ],
+      "title": "Operatory i echo"
+    }
+  ],
+  "proposedTitle": "PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI",
+  "reason": "Źródło porównuje PHP z Pythonem i pokazuje pojedynczą składnię zmiennej, ale miesza marketing, frameworki, endpoint i szerokie deklaracje. Nie jest uczciwym materiałem do rewrite; potwierdza potrzebę nowej, małej lekcji wejściowej.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/instrukcje-sterujace-php/",
+      "reason": "Publiczna lekcja warunków wymaga zmiennych, wartości scalar, echo i CLI; nowy węzeł ma je wprowadzić wcześniej."
+    },
+    {
+      "publicPath": "/artykuly/tablice-w-php/",
+      "reason": "Publiczna lekcja tablic zakłada odczyt zmiennych, wartości i wyników prostych programów PHP."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "value": "PHP - Tworzenie prostego endpointu w aplikacji webowej:"
+        }
+      ],
+      "id": "remove-python-comparison-and-endpoint",
+      "interpretation": "Usunąć porównanie z Pythonem, endpoint HTTP i Flask — nie tworzą sekwencji dla pierwszego pliku PHP."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Jeden lokalny plik PHP uruchamiany w CLI: wartości, nazwy zmiennych, podstawowe typy scalar, proste operatory, echo i czytelny wynik. Bez serwera WWW, frameworków, tablic, funkcji, formularzy i porównywania języków.",
+  "targets": [
+    {
+      "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+      "providedCharacters": 5240,
+      "sourceId": "977",
+      "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+      "title": "Post #52 Jakie są PHP i Python",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

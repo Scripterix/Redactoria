@@ -26,7 +26,8 @@ export function validateWriterAnalysis(raw: unknown, basis: EditorialBasis) {
   if (section.body.includes('```')) throw new Error('Code must be structured examples, not hidden in prose.');
   for (const example of section.examples) {
    if (basis.input.config.schemaVersion === 1 && (!example.code.startsWith('<?php\n') || example.code.includes('?>'))) throw new Error('Standalone PHP block required.');
-   if (basis.input.config.schemaVersion === 2 && (!example.language || example.language === 'php')) throw new Error('JavaScript examples require an explicit js/html language.');
+  const phpCliTarget = basis.input.config.schemaVersion === 2 && runtimeTargets(basis.input.config).some(target => target.id === 'php-cli' && target.kind === 'cli');
+  if (basis.input.config.schemaVersion === 2 && (!example.language || (example.language === 'php' && !phpCliTarget))) throw new Error('Runtime-neutral examples require an explicit non-PHP language unless the approved target is php-cli.');
   }
  }
  for (const addendum of basis.approval.requiredAddenda) if (!analysis.sections.some(section => section.evidence.some(ref => ref.kind === 'addendum' && ref.id === addendum.findingId))) throw new Error('Mandatory runtime addendum omitted.');

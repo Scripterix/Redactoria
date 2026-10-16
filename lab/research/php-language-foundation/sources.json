@@ -1,0 +1,145 @@
+{
+  "asOfDate": "2026-10-16",
+  "probes": [
+    {
+      "code": "$name = \"Ada\"; $count = 2; $total = $count + 3; echo json_encode([\"line\" => \"$name:$total\", \"types\" => [get_debug_type($name), get_debug_type($count), get_debug_type(true)]], JSON_THROW_ON_ERROR), \"\\n\";",
+      "codeHash": "6a837407d7a0847365573462a5aec12c7b4acebaae54eaa54b0cf9eb9d371890",
+      "description": "Local scalar values, arithmetic, type observation and output in PHP CLI.",
+      "diagnostics": [],
+      "id": "php-language-foundation-boundaries",
+      "result": {
+        "line": "Ada:5",
+        "types": [
+          "string",
+          "int",
+          "bool"
+        ]
+      },
+      "runtimeId": "php-cli",
+      "runtimeVersion": "8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)"
+    }
+  ],
+  "provenance": "Current Authority Ladder snapshots plus one controlled local runtime probe. No SOURCE execution, external API, global configuration or publication action.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-php-entry-semantics"
+      ],
+      "id": "php-variable-type-model",
+      "question": "Jak bezpiecznie wprowadzić nazwy zmiennych i podstawowe typy scalar?",
+      "section": "values"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-php-entry-semantics"
+      ],
+      "id": "php-operators-output-cli",
+      "question": "Jak pokazać operator arytmetyczny, echo i wynik lokalnego pliku bez serwera WWW?",
+      "section": "first-script"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "070dadfd8562262079038651050d106e1de80aeb0e23bcd3477dd6438686de2c",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "dollar-name",
+          "locator": "Basics",
+          "text": "Variables in PHP are represented by a dollar sign followed by the name of the variable, and variable names are case-sensitive."
+        }
+      ],
+      "id": "php-variables",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.variables.basics.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:22:27.991Z",
+      "sourceType": "authority-ladder",
+      "title": "PHP Manual — Basics: Variables",
+      "url": "https://www.php.net/manual/en/language.variables.basics.php"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "18faa245f026b4de7bda0e6935ac65b168f8a3e7c9a5ec773d09111f117e6e93",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "built-in-types",
+          "locator": "Introduction",
+          "text": "Expressions have built-in types such as null, bool, int, float and string; PHP is dynamically typed by default."
+        }
+      ],
+      "id": "php-types",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.types.intro.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:22:27.991Z",
+      "sourceType": "authority-ladder",
+      "title": "PHP Manual — Introduction: Types",
+      "url": "https://www.php.net/manual/en/language.types.intro.php"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "0588e82170c99c94bfe367e246d22c5afc2fb6e2493908a7e25abc0eed370eb6",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "addition",
+          "locator": "Arithmetic Operators table",
+          "text": "The + operator produces the sum of two operands, while -, * and / provide subtraction, multiplication and division."
+        }
+      ],
+      "id": "php-arithmetic",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/language.operators.arithmetic.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:22:27.991Z",
+      "sourceType": "authority-ladder",
+      "title": "PHP Manual — Arithmetic Operators",
+      "url": "https://www.php.net/manual/en/language.operators.arithmetic.php"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "62ffda1f2e27db50e6f9ad3d654a6e3312362c7c68666136cca42922717c68d3",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "echo-output",
+          "locator": "Description",
+          "text": "echo outputs one or more strings and is a language construct rather than a function."
+        }
+      ],
+      "id": "php-echo",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://www.php.net/manual/en/function.echo.php",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:22:27.991Z",
+      "sourceType": "authority-ladder",
+      "title": "PHP Manual — echo",
+      "url": "https://www.php.net/manual/en/function.echo.php"
+    }
+  ],
+  "topicSlug": "php-language-foundation"
+}

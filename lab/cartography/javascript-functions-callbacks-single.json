@@ -1,0 +1,218 @@
+{
+  "action": "REWRITE",
+  "analysisContext": {
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "requestHash": "d578ce10a6f689e6eb1d4773c45ade460c14a463a003fbbc4244e021afc59e9d",
+    "selectedInventoryHash": "14f0f6d35e0f568199b689146776c42c60d7a435629cb137bb7563e90eebd31c"
+  },
+  "artifactName": "javascript-functions-callbacks-single",
+  "confidence": 0.96,
+  "correct": [
+    {
+      "confidence": 0.99,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "let person2 = new Person(\"Alice\", 25);"
+        }
+      ],
+      "id": "correct-unused-class-and-constructor-example",
+      "interpretation": "Nie używać nieużywanej Calculator2 ani tworzenia Person2 przez Person; lekcja nie potrzebuje klas do wyjaśnienia return i callbacku."
+    }
+  ],
+  "evidence": [
+    {
+      "field": "body",
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "value": "function sum() {"
+    }
+  ],
+  "keep": [
+    {
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum() {"
+        }
+      ],
+      "id": "keep-named-function-core",
+      "interpretation": "Zachować prostą ideę nazwanej funkcji wykonującej obliczenie, ale przenieść ją do czystego przykładu bez elementów strony."
+    }
+  ],
+  "limitations": [
+    "Źródło miesza DOM, liczby wejściowe i OOP. Researcher musi dostarczyć aktualną semantykę, a każdy końcowy przykład Node będzie wykonany osobno."
+  ],
+  "missing": [
+    {
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "return operand1 + operand2;"
+        }
+      ],
+      "id": "missing-return-and-callback-model",
+      "interpretation": "Brakuje jawnego kontrastu między zwróconą wartością a efektem console.log, parametrów jako danych wejściowych oraz callbacku jako funkcji przekazanej innemu wywołaniu."
+    }
+  ],
+  "needsResearch": [
+    {
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "document.getElementById('calculate').addEventListener('click', function () {"
+        }
+      ],
+      "id": "research-functions-callbacks",
+      "interpretation": "Zweryfikować deklaracje funkcji, parametry, return, callback function i zachowanie Array.prototype.map w Authority Ladder; osobno udowodnić lokalne przykłady w Node."
+    }
+  ],
+  "outdatedOrUncertain": [
+    {
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "## **Podejście Funkcyjne**"
+        }
+      ],
+      "id": "uncertain-functional-oop-claims",
+      "interpretation": "Szerokie oceny, kiedy styl funkcyjny lub OOP jest lepszy, nie wynikają z pojedynczego przykładu i pozostają poza zakresem."
+    }
+  ],
+  "prerequisites": [
+    "Wartości JavaScript, const/let i uruchomienie krótkiego pliku Node.js."
+  ],
+  "proposedStructure": [
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "function sum() {"
+        }
+      ],
+      "needsResearch": true,
+      "order": 1,
+      "purpose": "Oddzielić zapis definicji od momentu uruchomienia funkcji.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Funkcja i wywołanie"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "calculate(operand1, operator, operand2)"
+        }
+      ],
+      "needsResearch": true,
+      "order": 2,
+      "purpose": "Zastąpić odczyt DOM jawnymi danymi przekazywanymi do funkcji.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Parametry jako wejście"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "return operand1 + operand2;"
+        }
+      ],
+      "needsResearch": true,
+      "order": 3,
+      "purpose": "Ustalić kontrakt wyniku i pokaźnie go wypisać poza funkcją.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "return to wynik, console.log to obserwacja"
+    },
+    {
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "input1.addEventListener('mouseout', sum);"
+        }
+      ],
+      "needsResearch": true,
+      "order": 4,
+      "purpose": "Pokazać prostą funkcję wywołaną przez map bez wchodzenia w DOM lub asynchroniczność.",
+      "sourceIds": [
+        "281"
+      ],
+      "title": "Callback jako przekazana funkcja"
+    }
+  ],
+  "proposedTitle": "Funkcje JavaScript: parametry, return i callbacki",
+  "reason": "Źródło zawiera rozpoznawalne funkcje, parametry metody i callback zdarzenia, lecz łączy DOM, parsowanie danych, klasy i błędne użycie Person2. Nadaje się na zwężony rewrite o funkcjach i callbackach, nie na lekcję OOP ani kalkulator UI.",
+  "recommended": true,
+  "relationships": [
+    {
+      "publicPath": "/artykuly/warunki-w-javascript/",
+      "reason": "Funkcja umożliwia nazwanie i przetestowanie logiki warunku bez mieszania jej z wejściem DOM."
+    },
+    {
+      "publicPath": "/artykuly/tablice-w-javascript/",
+      "reason": "map, filter i reduce przyjmują funkcje; nowa lekcja wyjaśnia parametry, return i funkcję przekazaną dalej."
+    },
+    {
+      "publicPath": "/artykuly/dom-w-javascript/",
+      "reason": "addEventListener przyjmuje callback; lekcja wprowadza sam model bez budowy DOM."
+    }
+  ],
+  "remove": [
+    {
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "field": "body",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "value": "input1.addEventListener('mouseout', sum);"
+        }
+      ],
+      "id": "remove-dom-ui-and-oop-breadth",
+      "interpretation": "Usunąć inputy, mouseout, alert, klasy i UI kalkulatora; mieszają one czystą funkcję z dostępem do DOM."
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Czyste przykłady Node.js: deklaracja funkcji, parametry, return, wartość zwracana kontra console.log oraz funkcja przekazana jako callback. Bez DOM, klas, this, parseInt/parseFloat, alert i asynchroniczności.",
+  "targets": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "task": "SINGLE_ARTICLE"
+}

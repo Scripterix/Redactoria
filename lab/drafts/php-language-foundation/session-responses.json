@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "provenance": { "mode": "imported-session-analysis", "model": "codex-session", "description": "B6 Writer response from the exact approved Research Packet and runtime boundary." },
+  "writer": {
+    "requestHash": "a3a3c6de6a71f75604d5ba5de8e04c0e82cbf96441e09b3a147b876d9a4042ff",
+    "response": {
+      "action": "DRAFT",
+      "title": "PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI",
+      "targetRuntimes": [{ "id": "php-cli", "kind": "cli", "version": "8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)" }],
+      "sections": [
+        {
+          "id": "first-file", "heading": "Jeden plik i pierwszy wynik", "coverage": ["file-cli", "echo"],
+          "body": "Zapisz kod w pliku `start.php`. W terminalu uruchom `php start.php`. Ten mały cykl jest ważny: najpierw zapisujesz program, potem sprawdzasz jego dokładny wynik. `echo` wypisuje tekst. Nie potrzebujesz do tego serwera WWW ani formularza.",
+          "evidence": [{ "kind": "finding", "id": "php-first-output" }],
+          "examples": [{ "id": "hello-cli", "purpose": "Pierwszy wynik z echo", "language": "php", "code": "<?php\necho \"Start PHP\\n\";", "expectedOutput": "Start PHP\n", "expectedDiagnostics": [] }]
+        },
+        {
+          "id": "values-and-variables", "heading": "Wartość ma nazwę", "coverage": ["values", "variables", "scalar-types"],
+          "body": "Zmienna pozwala odwołać się do wartości przez nazwę. W PHP nazwa zmiennej zaczyna się od `$`. W tym przykładzie tekst, liczba i wartość logiczna są trzema prostymi wartościami scalar. `get_debug_type` pokazuje ich typ; to obserwacja, nie test poprawności całego programu.",
+          "evidence": [{ "kind": "finding", "id": "php-variable-name" }, { "kind": "finding", "id": "php-scalar-types" }],
+          "examples": [{ "id": "scalar-values", "purpose": "Trzy wartości i ich typy", "language": "php", "code": "<?php\n$name = 'Ada';\n$count = 2;\n$ready = true;\necho $name, \"\\n\";\necho get_debug_type($count), \"\\n\";\necho get_debug_type($ready), \"\\n\";", "expectedOutput": "Ada\nint\nbool\n", "expectedDiagnostics": [] }]
+        },
+        {
+          "id": "operators", "heading": "Operator tworzy nowy wynik", "coverage": ["arithmetic"],
+          "body": "Operator `+` dodaje wartości liczbowe. Zapis po prawej stronie przypisania jest obliczany, a wynik trafia do zmiennej po lewej stronie. Zmienna nie musi przechowywać wyłącznie liczby: wcześniej zapisana nazwa i obliczony wynik mogą zostać wypisane razem.",
+          "evidence": [{ "kind": "finding", "id": "php-first-output" }],
+          "examples": [{ "id": "add-values", "purpose": "Suma zapisana pod nową nazwą", "language": "php", "code": "<?php\n$first = 2;\n$second = 3;\n$total = $first + $second;\necho \"Suma: \", $total, \"\\n\";", "expectedOutput": "Suma: 5\n", "expectedDiagnostics": [] }]
+        }
+      ],
+      "interactionOpportunities": [
+        { "id": "predict-echo", "sectionId": "first-file", "type": "predict-output", "purpose": "Rozróżnić kod od wyniku.", "prompt": "Co zobaczysz po uruchomieniu przykładu hello-cli?", "expectedConcept": "echo wypisuje podany napis.", "implemented": false },
+        { "id": "change-value", "sectionId": "values-and-variables", "type": "exercise", "purpose": "Zmienić wartość bez zmiany nazwy.", "prompt": "Zmień $count na 7 i przewidź wynik get_debug_type.", "expectedConcept": "Zmiana liczby nie zmienia jej typu int.", "implemented": false },
+        { "id": "predict-sum", "sectionId": "operators", "type": "predict-output", "purpose": "Sprawdzić przypisanie wyniku działania.", "prompt": "Jaki będzie wynik po zmianie $second na 8?", "expectedConcept": "Operator + tworzy nową wartość przypisaną do $total.", "implemented": false }
+      ],
+      "limitations": ["Zakres wykonania to lokalne PHP 8.2.4 CLI. Materiał nie omawia tablic, funkcji, formularzy, serwera WWW, deklaracji typów ani zgodności z innymi wersjami PHP."]
+    }
+  }
+}

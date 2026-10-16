@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "3f7cf34248d4e3e98adcdd95273fcfe9eba9b1ccdef8abf25d6001c7179604fc",
+  "candidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+  "candidateRef": "lab/candidates/javascript-functions-callbacks/article.json",
+  "contentHash": "92381ea9364ce2c8cddc156b12bb82e52ba743600e63a93c74aa52e39e30a57e",
+  "criticReviewHash": "6c405b7d71881446ea9d716d307c3f8464a5ea0a9b4f5dc2f388b88491de4930",
+  "criticReviewRef": "lab/reviews/javascript-functions-callbacks/critic-review.json",
+  "decisionHash": "e78210e1d0743c57cd1e42194aa08555648288c14a5e55b33750fb1f6c2622b8",
+  "decisionRef": "lab/decisions/javascript-functions-callbacks-publication.json",
+  "destination": "content/articles/funkcje-javascript.md",
+  "localPath": "/artykuly/funkcje-javascript/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b6-authorization.json",
+        "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+      },
+      {
+        "path": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+        "sha256": "10bc9863552976ef82d7e3c7a81e424e3f36e34c3f66029369e0b030e95f7713"
+      },
+      {
+        "path": "lab/cartography/javascript-functions-callbacks-single.json",
+        "sha256": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/sources.json",
+        "sha256": "09b6421bb947042c14eadf091ba9b1cfa1fefbae385f04038bc3d1ca67092d9d"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/probes.json",
+        "sha256": "2432b68a9bb93c616146d7f7ccaad1f7da3fa91fbfc7bb5e7a63710181e1e9bb"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/research.json",
+        "sha256": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+        "sha256": "a134df935bed8647a7f00b91b93c1d3d39f8f9ae5732aeb69721c8f93ac3558e"
+      },
+      {
+        "path": "lab/research/javascript-functions-callbacks/runtime-verification.md",
+        "sha256": "e746507816d1b6986c674d96083d9f19b7f93b6a5ea507de517ad7e5dba2f59e"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "e462f1a24bfee4c4feed3a3dc632cabceb81cd0eb54fe9f0c5bed59f0075bbba",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "96c1ddedb29493825365e6ec9fd375888058b57a9a1ac0cdb4b6639951dd1712"
+    },
+    "revisionHash": "0e97a7a38d141e1a228c3d813dd7f8b1222e12f36aff256ba3000ad51f9da8c5",
+    "revisionRef": "lab/drafts/javascript-functions-callbacks/revision.json",
+    "sources": [
+      {
+        "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+        "providedCharacters": 7595,
+        "sourceId": "281",
+        "sourcePath": "281-post-9-calculator-math-func-oop.md",
+        "title": "Post #9 Calculator Math Func OOP",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "db8fad05128431fd61c878ce3d29314161dcb011b2d443712ccb8eccbdd28a86",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "956e4a9fd31a4ac857ac0a7f66986f709cd7bb6fd0d481c276eca1958681fcbe"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "5c8001312417b46fc6aed7e8d12ab1659c4ebd1e6cfd25b2ddc2b8148c00fc5a",
+  "researchApprovalRef": "lab/decisions/javascript-functions-callbacks-research-acceptance.json",
+  "researchPacketHash": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca",
+  "researchPacketRef": "lab/research/javascript-functions-callbacks/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "c4ba1dd54897dadeae438cd02c000ba6d503ff8992a99a304d7fced9226de475",
+  "sourceDecisionRef": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

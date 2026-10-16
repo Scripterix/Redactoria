@@ -1,0 +1,145 @@
+{
+  "asOfDate": "2026-10-16",
+  "probes": [
+    {
+      "code": "function add(left, right) { return left + right; } const doubled = [1, 2, 3].map(value => value * 2); console.log(JSON.stringify({ sum: add(2, 3), doubled }));",
+      "codeHash": "f68fdf6c5358f202601b749aed9ace77e58ed1d346335172757273afb4f6f9f8",
+      "description": "Function parameters, return values and Array.map callback in Node.",
+      "diagnostics": [],
+      "id": "javascript-functions-callbacks-boundaries",
+      "result": {
+        "doubled": [
+          2,
+          4,
+          6
+        ],
+        "sum": 5
+      },
+      "runtimeId": "node",
+      "runtimeVersion": "v24.16.0"
+    }
+  ],
+  "provenance": "Current Authority Ladder snapshots plus one controlled local runtime probe. No SOURCE execution, external API, global configuration or publication action.",
+  "questions": [
+    {
+      "cartographerFindingIds": [
+        "research-functions-callbacks"
+      ],
+      "id": "js-function-return",
+      "question": "Jak odróżnić parametry, return i efekt console.log?",
+      "section": "functions"
+    },
+    {
+      "cartographerFindingIds": [
+        "research-functions-callbacks"
+      ],
+      "id": "js-callback-model",
+      "question": "Jak pokazać funkcję przekazaną do map bez DOM i asynchroniczności?",
+      "section": "callbacks"
+    }
+  ],
+  "schemaVersion": 3,
+  "sources": [
+    {
+      "authorityClass": "specification-standard",
+      "authorityTier": 1,
+      "documentHash": "28a7a6f87217b513aa9a57004ad4c41df7d8c6236883050c14ed846163ea8452",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "function-definition",
+          "locator": "Function Definitions",
+          "text": "A function definition creates a function object with formal parameters and a function body."
+        }
+      ],
+      "id": "ecmascript-functions",
+      "kind": "specification",
+      "retrieval": {
+        "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "ECMAScript Language Specification — Functions and Classes",
+      "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "37fc068158555321bf4ef23e9097089e045913756d8228d7fbe9e7a7f436aaf2",
+      "evidenceRole": "practical-reference",
+      "excerpts": [
+        {
+          "id": "parameters-return",
+          "locator": "Functions guide",
+          "text": "Functions can receive parameters and return a value to the caller with return."
+        }
+      ],
+      "id": "mdn-functions",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — Functions",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
+    },
+    {
+      "authorityClass": "mdn",
+      "authorityTier": 3,
+      "documentHash": "8c9dcc6b3e0b6585c076ef0b55963f0c192f7226f3782918db59c9fa1546e75d",
+      "evidenceRole": "practical-reference",
+      "excerpts": [
+        {
+          "id": "map-callback",
+          "locator": "Description",
+          "text": "map creates a new array populated with results of calling a provided function on each element."
+        }
+      ],
+      "id": "mdn-map",
+      "kind": "web-platform-reference",
+      "retrieval": {
+        "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "practical-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "MDN — Array.prototype.map()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+    },
+    {
+      "authorityClass": "official-project-runtime",
+      "authorityTier": 2,
+      "documentHash": "165eeb336c8fca82d6d4db7010569cd295feedbd417026e31a3bfaf74c500a03",
+      "evidenceRole": "technical-authority",
+      "excerpts": [
+        {
+          "id": "node-script",
+          "locator": "Command-line API",
+          "text": "The node command executes a JavaScript program supplied as a file path or other supported input."
+        }
+      ],
+      "id": "node-cli",
+      "kind": "runtime-documentation",
+      "retrieval": {
+        "finalUrl": "https://nodejs.org/api/cli.html",
+        "httpStatus": 200,
+        "method": "https-get",
+        "selection": "authoritative-content"
+      },
+      "retrievedAt": "2026-10-16T13:21:50.850Z",
+      "sourceType": "authority-ladder",
+      "title": "Node.js Documentation — Command-line API",
+      "url": "https://nodejs.org/api/cli.html"
+    }
+  ],
+  "topicSlug": "javascript-functions-callbacks"
+}

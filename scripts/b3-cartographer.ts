@@ -11,6 +11,7 @@ import { createSourceReader } from '../engine/core/source-reader.ts';
 import { B3AuthorizationSchema, validateB3Authorization } from '../engine/core/b3-authorization.ts';
 import { B4_AUTHORIZATION_REF, B4AuthorizationSchema, B4_TOPICS, validateB4Authorization } from '../engine/core/b4-authorization.ts';
 import { B5_AUTHORIZATION_REF, B5AuthorizationSchema, B5_TOPICS, validateB5Authorization } from '../engine/core/b5-authorization.ts';
+import { B6_AUTHORIZATION_REF, B6AuthorizationSchema, B6_TOPICS, validateB6Authorization } from '../engine/core/b6-authorization.ts';
 
 const project = fileURLToPath(new URL('../', import.meta.url));
 const sourceRoot = resolve(project, '../temp-ogwo/posts');
@@ -33,23 +34,32 @@ async function main() {
 	const { topic, prepare } = parseB3CartographerArguments(process.argv.slice(2));
 	const isB4 = B4_TOPICS.includes(topic as typeof B4_TOPICS[number]);
 	const isB5 = B5_TOPICS.includes(topic as typeof B5_TOPICS[number]);
-	const authorizationRef = isB5 ? B5_AUTHORIZATION_REF : isB4 ? B4_AUTHORIZATION_REF : 'lab/decisions/b3-authorization.json';
+	const isB6 = B6_TOPICS.includes(topic as typeof B6_TOPICS[number]);
+	const authorizationRef = isB6 ? B6_AUTHORIZATION_REF : isB5 ? B5_AUTHORIZATION_REF : isB4 ? B4_AUTHORIZATION_REF : 'lab/decisions/b3-authorization.json';
 	const authorizationText = await readFile(resolve(project, authorizationRef), 'utf8');
 	const rawAuthorization = JSON.parse(authorizationText);
-	const authorization = isB5
+	const b6Authorization = isB6 ? B6AuthorizationSchema.parse(rawAuthorization) : null;
+	const legacyAuthorization = isB6 ? null : isB5
 		? B5AuthorizationSchema.parse(rawAuthorization)
 		: isB4 ? B4AuthorizationSchema.parse(rawAuthorization) : B3AuthorizationSchema.parse(rawAuthorization);
-	const job = authorization.jobs.find((item) => item.topic === topic);
+	const job = (b6Authorization ?? legacyAuthorization)?.jobs.find((item) => item.topic === topic);
 	if (!job) throw new Error('Topic is outside the authorized bounded jobs.');
-	const rankingText = await readFile(resolve(project, authorization.b1RankingRef), 'utf8');
-	if (hashBytes(rankingText) !== authorization.b1RankingHash) throw new Error('B1 ranking hash changed.');
-	const ranking = JSON.parse(rankingText) as { ranking: { recommendedOrder: number; source: { sourceId: string; sourcePath: string; contentHash: string } }[] };
-	const expectedRank = 'b1Rank' in job ? job.b1Rank : job.order + 1;
-	const ranked = ranking.ranking.find((item) => item.recommendedOrder === expectedRank);
-	if (!ranked || ranked.source.sourceId !== job.source.sourceId || ranked.source.sourcePath !== job.source.sourcePath || ranked.source.contentHash !== job.source.contentHash) throw new Error('Bounded job no longer matches its B1 rank.');
-	if (isB5) validateB5Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
-	else if (isB4) validateB4Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
-	else validateB3Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
+	if (b6Authorization) {
+		const selectionText = await readFile(resolve(project, b6Authorization.selectionRef), 'utf8');
+		if (hashBytes(selectionText) !== b6Authorization.selectionHash) throw new Error('B6 selection hash changed.');
+		validateB6Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
+	} else {
+		if (!legacyAuthorization) throw new Error('Missing historical batch authorization.');
+		const rankingText = await readFile(resolve(project, legacyAuthorization.b1RankingRef), 'utf8');
+		if (hashBytes(rankingText) !== legacyAuthorization.b1RankingHash) throw new Error('B1 ranking hash changed.');
+		const ranking = JSON.parse(rankingText) as { ranking: { recommendedOrder: number; source: { sourceId: string; sourcePath: string; contentHash: string } }[] };
+		const expectedRank = 'b1Rank' in job ? job.b1Rank : job.order + 1;
+		const ranked = ranking.ranking.find((item) => item.recommendedOrder === expectedRank);
+		if (!ranked || ranked.source.sourceId !== job.source.sourceId || ranked.source.sourcePath !== job.source.sourcePath || ranked.source.contentHash !== job.source.contentHash) throw new Error('Bounded job no longer matches its B1 rank.');
+		if (isB5) validateB5Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
+		else if (isB4) validateB4Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
+		else validateB3Authorization(authorizationText, hashBytes(authorizationText), topic, [job.source]);
+	}
 
 	const inventory = InventoryInputSchema.parse(JSON.parse(await readFile(resolve(project, 'lab/inventory/inventory.json'), 'utf8')));
 	const selected = inventory.articles.filter((item) => item.source_id === job.source.sourceId
@@ -68,6 +78,8 @@ async function main() {
 	const model = new RecordedLanguageModel(responses);
 	const result = await runFocusedArticle(input, prompt, model, reader);
 	if (result.artifactName !== `${topic}-single`) throw new Error('Recorded response belongs to another bounded topic.');
+	const b6Job = b6Authorization?.jobs.find((item) => item.topic === topic);
+	if (b6Job && result.action !== b6Job.cartographerActionExpected) throw new Error('B6 Cartographer action differs from the authorized selection.');
 	await writeLabArtifacts(project, sourceRoot, { [`cartography/${topic}-single.json`]: stableJson(result) });
 	console.log(`Cartographer: ${topic}; ${result.action}; one full source; STOP.`);
 }

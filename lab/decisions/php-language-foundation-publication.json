@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "scope": "public-production",
+  "approvedAt": "2026-10-16T13:56:17.222Z",
+  "authorization": "Explicit B6 publication authorization: publish exactly the reviewed PHP Fundamentals / CLI candidate, verify its lifecycle, then continue only after PASS. The same attached authorization permits the scoped Git, push and Cloudflare checkpoint after the complete three-article local gate.",
+  "candidateRef": "lab/candidates/php-language-foundation/article.json",
+  "candidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+  "articleHash": "c33e7bb22ddf95aedb6e9469f84bdf32acd34204c671587260f2e7510815fcf8",
+  "criticReviewRef": "lab/reviews/php-language-foundation/critic-review.json",
+  "criticReviewHash": "ecece7fa6639682d0ffe46d72cd711f057363ad1fb875452f2f9b787602e526a",
+  "destination": "content/articles/podstawy-php.md",
+  "metadata": {
+    "title": "PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI",
+    "description": "Pierwszy skrypt PHP w terminalu: echo, wartości, zmienne, podstawowe typy scalar i prosty operator arytmetyczny.",
+    "slug": "podstawy-php",
+    "status": "published",
+    "created": "2026-10-16",
+    "updated": "2026-10-16",
+    "domain": "programming",
+    "topic": "php",
+    "author": { "type": "ai-assisted", "name": "Scripterix" },
+    "sources": [
+      { "title": "PHP Manual — Basics: Variables", "url": "https://www.php.net/manual/en/language.variables.basics.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — Introduction: Types", "url": "https://www.php.net/manual/en/language.types.intro.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — Arithmetic Operators", "url": "https://www.php.net/manual/en/language.operators.arithmetic.php", "publisher": "PHP Documentation" },
+      { "title": "PHP Manual — echo", "url": "https://www.php.net/manual/en/function.echo.php", "publisher": "PHP Documentation" }
+    ],
+    "origin": {
+      "type": "wordpress-export",
+      "source_id": "977",
+      "original_url": "https://opengateweb.com/posts/52-php-python/",
+      "original_date": "2025-04-14T18:21:36.000Z",
+      "original_author": "Scripterix"
+    },
+    "review": { "status": "approved", "reviewer": "human — B6 publication authorization", "confidence": 1 },
+    "automation": { "generated": true, "last_checked": "2026-10-16", "update_priority": "normal" }
+  },
+  "presentationCleanup": {
+    "removeExact": ["Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie ograniczonej zgody oraz rzeczywiste wykonania właściwe dla wskazanego runtime. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n"]
+  },
+  "remotePublicationApproved": true
+}

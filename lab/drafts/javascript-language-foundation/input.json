@@ -1,0 +1,25 @@
+{
+  "audience": "beginner",
+  "requiredCoverage": [
+    "file-node",
+    "values",
+    "const-let",
+    "typeof",
+    "operators",
+    "template-literal",
+    "console-output"
+  ],
+  "researchApproval": "lab/decisions/javascript-language-foundation-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-language-foundation/research.json",
+  "runtimeVerification": "lab/research/javascript-language-foundation/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/javascript-language-foundation-source-decision.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "javascript-language-foundation"
+}

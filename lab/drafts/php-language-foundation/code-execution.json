@@ -1,0 +1,53 @@
+{
+  "articleHash": "c33e7bb22ddf95aedb6e9469f84bdf32acd34204c671587260f2e7510815fcf8",
+  "executedAt": "2026-10-16T13:25:28.979Z",
+  "limitations": [
+    "Each final example was executed independently with php-cli 8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64); no browser, network, SOURCE or external service was used."
+  ],
+  "runs": [
+    {
+      "examples": [
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "bc30972eea0bc638e28acf1212d5d3baccee2e56424b61521c842c63b15c6a3d",
+          "exitCode": 0,
+          "id": "hello-cli",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Start PHP\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "cf679b271cab3ca65ddaf4a89e7128684cc443702ac9aeb18502a8a57d60401d",
+          "exitCode": 0,
+          "id": "scalar-values",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Ada\nint\nbool\n"
+        },
+        {
+          "assertions": 3,
+          "automated": true,
+          "codeHash": "a5229c7443557bda3636631ce928de09c880cf423664560d96f2de667f79cbd5",
+          "exitCode": 0,
+          "id": "add-values",
+          "limitation": null,
+          "status": "PASS",
+          "stderr": "",
+          "stdout": "Suma: 5\n"
+        }
+      ],
+      "executableHash": "796ddaf767c73017fe3e0f59d4fde3972e9f6cb60ad653c57563e05fb77d40cd",
+      "execution": "actual-local-cli",
+      "kind": "cli",
+      "runtimeId": "php-cli",
+      "version": "8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)"
+    }
+  ],
+  "schemaVersion": 2,
+  "status": "PASS"
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "code": "function add(left, right) { return left + right; } const doubled = [1, 2, 3].map(value => value * 2); console.log(JSON.stringify({ sum: add(2, 3), doubled }));",
+    "codeHash": "f68fdf6c5358f202601b749aed9ace77e58ed1d346335172757273afb4f6f9f8",
+    "description": "Function parameters, return values and Array.map callback in Node.",
+    "diagnostics": [],
+    "id": "javascript-functions-callbacks-boundaries",
+    "result": {
+      "doubled": [
+        2,
+        4,
+        6
+      ],
+      "sum": 5
+    },
+    "runtimeId": "node",
+    "runtimeVersion": "v24.16.0"
+  }
+]

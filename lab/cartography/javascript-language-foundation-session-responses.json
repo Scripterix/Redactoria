@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "provenance": { "mode": "imported-session-analysis", "model": "codex-session", "description": "Focused B6 analysis of the exact prepared project catalogue as context for a missing JavaScript entry lesson." },
+  "focused-article": {
+    "requestHash": "243366a867853692f6cfdece4677e5c16ae53b3bf5ad4ce2a0da8f077bad5b61",
+    "response": {
+      "task": "SINGLE_ARTICLE", "artifactName": "javascript-language-foundation-single", "action": "NEW_CONTENT", "recommended": true, "confidence": 0.98,
+      "reason": "Źródło jest katalogiem ukończonych projektów i efektów UI; nie tłumaczy wartości, zmiennych ani uruchomienia programu. Uczciwy wynik to nowy, krótki węzeł wejściowy, nie rewrite katalogu.",
+      "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**" }],
+      "scope": "Node.js CLI i jeden plik .js: wartości, const/let, typeof jako obserwacja, podstawowe operatory, template literal i console.log. Bez DOM, tablic, funkcji, modułów, eventów i asynchroniczności.",
+      "keep": [{ "id": "keep-practice-motivation-as-context", "interpretation": "Zachować jedynie kierunek: małe programy mogą być ćwiczeniem; nie przenosić katalogu projektów do lekcji podstaw.", "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "Przegląd projektów głównie w których jest praktyczne zastosowanie JavaScript." }], "confidence": 0.79 }],
+      "correct": [{ "id": "correct-entry-assumption", "interpretation": "Nie zakładać znajomości identyfikatorów, DOM ani efektów UI przed pokazaniem najmniejszego programu i jego wyniku.", "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "Zastosowanie tab z wyborem po id treści." }], "confidence": 0.97 }],
+      "outdatedOrUncertain": [{ "id": "uncertain-library-and-hours", "interpretation": "Nazwy bibliotek oraz deklaracje liczby godzin nie są potrzebne do fundamentu i nie będą przedstawiane jako miara jakości nauki.", "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "## Transition BarbaJS" }], "confidence": 0.92 }],
+      "remove": [{ "id": "remove-portfolio-effects", "interpretation": "Usunąć portfolio, Tabs, BarbaJS, Typed i katalog folderów; to przykłady późniejszych zastosowań, nie materiał startowy.", "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "## Tabs Snippets" }], "confidence": 0.98 }],
+      "missing": [{ "id": "missing-js-entry-model", "interpretation": "Brakuje samodzielnego programu, modelu wartości/nazw i rozróżnienia wyniku w konsoli od działania w przeglądarce.", "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "## **Kilka projektów**" }], "confidence": 0.98 }],
+      "needsResearch": [{ "id": "research-js-entry-semantics", "interpretation": "Zweryfikować deklaracje lexical, wartości/prymitywy, typeof, operatory i template literals w ECMAScript/MDN oraz wykonanie pliku przez Node.js documentation.", "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "JavaScript" }], "confidence": 0.96 }],
+      "prerequisites": ["Utworzenie pliku .js i uruchomienie jawnego polecenia Node.js."],
+      "relationships": [
+        { "publicPath": "/artykuly/warunki-w-javascript/", "reason": "Warunki działają na wartościach, porównaniach i uruchamianych przykładach, które nowy węzeł wprowadza wcześniej." },
+        { "publicPath": "/artykuly/tablice-w-javascript/", "reason": "Metody tablic używają wartości i wyrażeń JavaScript; nowy węzeł nie powiela samego tematu tablic." },
+        { "publicPath": "/artykuly/dom-w-javascript/", "reason": "DOM jest zastosowaniem JavaScript w dokumencie; fundament oddziela składnię i CLI od modelu strony." }
+      ],
+      "proposedTitle": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+      "proposedStructure": [
+        { "order": 1, "title": "Jeden plik JavaScript i console.log", "purpose": "Pokazać minimalne wykonanie bez DOM i bez projektu portfolio.", "sourceIds": ["542"], "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "Przegląd projektów głównie w których jest praktyczne zastosowanie JavaScript." }], "needsResearch": true },
+        { "order": 2, "title": "Wartości, const i let", "purpose": "Ustalić nazwę jako odwołanie do wartości oraz prostą zmianę tam, gdzie jest potrzebna.", "sourceIds": ["542"], "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "JavaScript" }], "needsResearch": true },
+        { "order": 3, "title": "Typ jako obserwacja", "purpose": "Użyć typeof do czytania wyniku, bez budowania pełnej teorii typów.", "sourceIds": ["542"], "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "Kilka projektów" }], "needsResearch": true },
+        { "order": 4, "title": "Operatory i czytelny komunikat", "purpose": "Połączyć małe dane w przewidywalny wynik terminalowy.", "sourceIds": ["542"], "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "Java Script" }], "needsResearch": true }
+      ],
+      "limitations": ["Katalog projektów nie stanowi źródła semantyki JavaScript. Techniczne twierdzenia, zachowanie Node i przykłady wymagają Authority Ladder oraz lokalnego wykonania."]
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b6-authorization.json",
+        "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+      },
+      {
+        "path": "lab/decisions/javascript-language-foundation-source-decision.json",
+        "sha256": "3f4f317f71077de8ba8dd712c81cb4f2297be31099bf2fe064cf98fe3003f0dc"
+      },
+      {
+        "path": "lab/cartography/javascript-language-foundation-single.json",
+        "sha256": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/sources.json",
+        "sha256": "2b1bbde12d995df9f3440a5b559b0591e4d9356f2e6e0b0b3f9c6037242f756f"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/probes.json",
+        "sha256": "247da453b9c6e98763d32720c8ede46d6a32fa9fde24182404f578abce847044"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/research.json",
+        "sha256": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/runtime-verification.json",
+        "sha256": "1b17917e10eacd769c90f8c26631c3628cc3b68a2d972a0d606b650deaf66f7e"
+      },
+      {
+        "path": "lab/research/javascript-language-foundation/runtime-verification.md",
+        "sha256": "34ac71afac5a10f9e106d8434724bbd6398441dcb57215249b0538df45c3b1a2"
+      }
+    ],
+    "humanApproval": "The human authorized this exact B6 batch through candidate preparation. The packet was validated in-session and was not separately reviewed by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/javascript-language-foundation/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "node",
+          "status": "PASS",
+          "version": "v24.16.0"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "f8862c604a5921e99f0f595b9a1920f86e1b456caabf920eaae919b5c407df43",
+  "nextStep": "writer",
+  "packetHash": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d",
+  "packetRef": "lab/research/javascript-language-foundation/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, retain the runtime limit, and execute every final draft example independently.",
+  "requestHash": "bbdcfcb54fcedf62a5c0237d52eca55e54c4fa491590cc9b17dc915b33cc0d4f",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "js-bindings-values",
+    "js-operators-output"
+  ],
+  "schemaVersion": 3,
+  "scope": "B6 javascript-language-foundation: validated Authority Ladder packet and runtime evidence through LAB candidate only; no publication.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+      "providedCharacters": 1119,
+      "sourceId": "542",
+      "sourcePath": "542-post-17-przeglad-js-html-css.md",
+      "title": "Post #17 Przegląd JS Html CSS",
+      "truncated": false
+    }
+  ],
+  "topic": "javascript-language-foundation",
+  "validatedAt": "2026-10-16T13:23:34.385Z"
+}

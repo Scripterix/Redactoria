@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "e617936dfddc9d92b1ba4f2272ed5bffa472244b0ebc29303573c64fd95bc867",
+  "afterDraftHash": "363e3596354586914b8754943b0022abafb07e88830df64e913544a1ce58792d",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "beforeArticleHash": "e617936dfddc9d92b1ba4f2272ed5bffa472244b0ebc29303573c64fd95bc867",
+  "beforeDraftHash": "363e3596354586914b8754943b0022abafb07e88830df64e913544a1ce58792d",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "javascript-language-foundation",
+  "writerGenerations": 1
+}

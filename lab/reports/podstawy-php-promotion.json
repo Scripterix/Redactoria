@@ -1,0 +1,95 @@
+{
+  "approvedBy": "human",
+  "articleHash": "c33e7bb22ddf95aedb6e9469f84bdf32acd34204c671587260f2e7510815fcf8",
+  "candidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+  "candidateRef": "lab/candidates/php-language-foundation/article.json",
+  "contentHash": "d8dbb63b132facd45b4243cbe3082ed661279d86c5d734db0d4be85b1ef59d14",
+  "criticReviewHash": "ecece7fa6639682d0ffe46d72cd711f057363ad1fb875452f2f9b787602e526a",
+  "criticReviewRef": "lab/reviews/php-language-foundation/critic-review.json",
+  "decisionHash": "874923652c87d5f034c2458a4890963741ea12618467a96ea4d58babe63ccb5b",
+  "decisionRef": "lab/decisions/php-language-foundation-publication.json",
+  "destination": "content/articles/podstawy-php.md",
+  "localPath": "/artykuly/podstawy-php/",
+  "provenance": {
+    "approvedArtifacts": [
+      {
+        "path": "lab/decisions/b6-authorization.json",
+        "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+      },
+      {
+        "path": "lab/decisions/php-language-foundation-source-decision.json",
+        "sha256": "4df9629e4cecb3cc906cdc5dd3c68789904e508522d4401ca32e85e52b0e6c54"
+      },
+      {
+        "path": "lab/cartography/php-language-foundation-single.json",
+        "sha256": "09941e5a450c6b860d4e51350f9d397dcd8c4f67d025dc2543d41ad028920dea"
+      },
+      {
+        "path": "lab/research/php-language-foundation/sources.json",
+        "sha256": "d5d2de50a9aee4f4c23d3b9a4b7ff1f31d3e67c7d8049c990669a59dc3308778"
+      },
+      {
+        "path": "lab/research/php-language-foundation/probes.json",
+        "sha256": "c41bb88c8631d051ae03d4cb45e30904295bf73cd4a4853eee8ef87878a48b66"
+      },
+      {
+        "path": "lab/research/php-language-foundation/research.json",
+        "sha256": "be67729e55fb3c976b37c0fd048046cd9e95b5c7cf2731d134ebf0892c632e01"
+      },
+      {
+        "path": "lab/research/php-language-foundation/runtime-verification.json",
+        "sha256": "180a38c02bc7ab9778670c9ce9178dbf4a7a1d7ca5de99f4bcd22b376da94a32"
+      },
+      {
+        "path": "lab/research/php-language-foundation/runtime-verification.md",
+        "sha256": "1b3ff75faac98be37d87c5622defbf902f75d3808197cd82d493755691ca0127"
+      }
+    ],
+    "criticExecution": {
+      "inputHash": "7ae3d9bdf676ce0a37d51fb5e06e19039cd7ca98ce85d0f6a34d8857c6d0ae16",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "3124f2127c66bca75dab7edc6d87ae3011825f1d2207829109423e3a4706b80a"
+    },
+    "revisionHash": "400a6a08405340b28c138edafd568cc29192fe4be793daa01345fa87c5f1ba8f",
+    "revisionRef": "lab/drafts/php-language-foundation/revision.json",
+    "sources": [
+      {
+        "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+        "providedCharacters": 5240,
+        "sourceId": "977",
+        "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+        "title": "Post #52 Jakie są PHP i Python",
+        "truncated": false
+      }
+    ],
+    "writerExecution": {
+      "inputHash": "e3c7abc7406cc6e76de63f12c1102c7563cacb5cae4fc680c43fad071b42ac03",
+      "model": {
+        "adapter": "recorded-json",
+        "mode": "imported-session-analysis",
+        "model": "codex-session"
+      },
+      "modelCalls": 1,
+      "requestHash": "a3a3c6de6a71f75604d5ba5de8e04c0e82cbf96441e09b3a147b876d9a4042ff"
+    }
+  },
+  "remotePublicationApproved": true,
+  "researchApprovalHash": "5829dc58b1142feab5ff3fe0ecd38916e6866b7800e74ff1bcdb21deaa640791",
+  "researchApprovalRef": "lab/decisions/php-language-foundation-research-acceptance.json",
+  "researchPacketHash": "be67729e55fb3c976b37c0fd048046cd9e95b5c7cf2731d134ebf0892c632e01",
+  "researchPacketRef": "lab/research/php-language-foundation/research.json",
+  "result": "PROMOTED_PUBLIC",
+  "schemaVersion": 3,
+  "scope": "public-production",
+  "sourceDecisionHash": "a85bbf79eba94130e790fe4a6d8cf6438faa177addb8f85092a388c6df289684",
+  "sourceDecisionRef": "lab/decisions/php-language-foundation-source-decision.json",
+  "transforms": [
+    "Content Collection YAML front matter",
+    "Removed exact human-approved technical LAB/draft note"
+  ]
+}

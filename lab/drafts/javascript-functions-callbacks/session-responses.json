@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "provenance": { "mode": "imported-session-analysis", "model": "codex-session", "description": "B6 Writer response from the exact approved Research Packet and runtime boundary." },
+  "writer": {
+    "requestHash": "956e4a9fd31a4ac857ac0a7f66986f709cd7bb6fd0d481c276eca1958681fcbe",
+    "response": {
+      "action": "DRAFT", "title": "Funkcje JavaScript: parametry, return i callbacki", "targetRuntimes": [{ "id": "node", "kind": "node", "version": "v24.16.0" }],
+      "sections": [
+        {
+          "id": "function-call", "heading": "Definicja i wywołanie funkcji", "coverage": ["function-definition", "parameters"],
+          "body": "Funkcja ma nazwę, parametry i body. Parametry są nazwami dla danych przekazanych przy wywołaniu. Definicja nie uruchamia funkcji sama z siebie; wynik zobaczysz dopiero po wywołaniu. W tym materiale używamy liczb i Node, aby skupić się na samym modelu funkcji.",
+          "evidence": [{ "kind": "finding", "id": "js-function-parameters-return" }],
+          "examples": [{ "id": "greet-parameter", "purpose": "Parametr przekazany do funkcji", "language": "js", "code": "function greet(name) {\n  console.log(`Cześć, ${name}`);\n}\n\ngreet('Ada');", "expectedOutput": "Cześć, Ada\n", "expectedDiagnostics": [] }]
+        },
+        {
+          "id": "return-value", "heading": "return oddaje wynik", "coverage": ["return", "console-output"],
+          "body": "`return` kończy bieżące wywołanie funkcji i oddaje wartość do miejsca, które funkcję wywołało. To co innego niż `console.log`: log obserwuje wartość, a return pozwala użyć jej dalej. Poniżej funkcja liczy sumę, a osobna linia wypisuje wynik.",
+          "evidence": [{ "kind": "finding", "id": "js-function-parameters-return" }, { "kind": "finding", "id": "js-functions-node-scope" }],
+          "examples": [{ "id": "add-return", "purpose": "Wynik funkcji użyty poza jej body", "language": "js", "code": "function add(left, right) {\n  return left + right;\n}\n\nconst total = add(2, 3);\nconsole.log(total);", "expectedOutput": "5\n", "expectedDiagnostics": [] }]
+        },
+        {
+          "id": "map-callback", "heading": "Callback przekazany do map", "coverage": ["map-callback"],
+          "body": "Callback to funkcja przekazana innemu wywołaniu, które zdecyduje, kiedy ją uruchomić. `map` wywołuje przekazaną funkcję dla każdego elementu i tworzy nową tablicę wyników. Ten przykład jest synchroniczny i nie dotyczy zdarzeń DOM ani Promise.",
+          "evidence": [{ "kind": "finding", "id": "js-map-callback" }],
+          "examples": [{ "id": "double-map", "purpose": "Funkcja strzałkowa jako callback map", "language": "js", "code": "const values = [1, 2, 3];\nconst doubled = values.map(value => value * 2);\nconsole.log(doubled.join(','));\nconsole.log(values.join(','));", "expectedOutput": "2,4,6\n1,2,3\n", "expectedDiagnostics": [] }]
+        }
+      ],
+      "interactionOpportunities": [
+        { "id": "predict-greet", "sectionId": "function-call", "type": "predict-output", "purpose": "Rozpoznać wartość parametru.", "prompt": "Jaki napis pokaże greet('Ola')?", "expectedConcept": "Argument staje się wartością parametru name.", "implemented": false },
+        { "id": "return-vs-log", "sectionId": "return-value", "type": "compare", "purpose": "Rozdzielić wynik od obserwacji.", "prompt": "Co przestanie działać, jeśli usuniesz return, ale pozostawisz console.log wewnątrz add?", "expectedConcept": "Wywołanie nie dostarczy wartości do total.", "implemented": false },
+        { "id": "predict-map", "sectionId": "map-callback", "type": "predict-output", "purpose": "Śledzić wynik callbacku bez mutowania wejścia.", "prompt": "Co będzie w doubled po zmianie values na [2, 4]?", "expectedConcept": "map zwraca nową tablicę wyników callbacku.", "implemented": false }
+      ],
+      "limitations": ["Zakres wykonania to Node v24.16.0 i synchroniczny Array.map. Materiał nie omawia DOM, addEventListener, this, klas, wyjątków, Promise ani callbacków asynchronicznych."]
+    }
+  }
+}

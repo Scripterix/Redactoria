@@ -1,0 +1,1098 @@
+{
+  "inputHash": "5b3f534d203d46de036f691d410c69e392c8709266de012dc2e289333c377608",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+        "authorizationRef": "lab/decisions/b6-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b6-authorization.json",
+              "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+            },
+            {
+              "path": "lab/decisions/javascript-language-foundation-source-decision.json",
+              "sha256": "3f4f317f71077de8ba8dd712c81cb4f2297be31099bf2fe064cf98fe3003f0dc"
+            },
+            {
+              "path": "lab/cartography/javascript-language-foundation-single.json",
+              "sha256": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b"
+            },
+            {
+              "path": "lab/research/javascript-language-foundation/sources.json",
+              "sha256": "2b1bbde12d995df9f3440a5b559b0591e4d9356f2e6e0b0b3f9c6037242f756f"
+            },
+            {
+              "path": "lab/research/javascript-language-foundation/probes.json",
+              "sha256": "247da453b9c6e98763d32720c8ede46d6a32fa9fde24182404f578abce847044"
+            },
+            {
+              "path": "lab/research/javascript-language-foundation/research.json",
+              "sha256": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d"
+            },
+            {
+              "path": "lab/research/javascript-language-foundation/runtime-verification.json",
+              "sha256": "1b17917e10eacd769c90f8c26631c3628cc3b68a2d972a0d606b650deaf66f7e"
+            },
+            {
+              "path": "lab/research/javascript-language-foundation/runtime-verification.md",
+              "sha256": "34ac71afac5a10f9e106d8434724bbd6398441dcb57215249b0538df45c3b1a2"
+            }
+          ],
+          "humanApproval": "The human authorized this exact B6 batch through candidate preparation. The packet was validated in-session and was not separately reviewed by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/javascript-language-foundation/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "node",
+                "status": "PASS",
+                "version": "v24.16.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "f8862c604a5921e99f0f595b9a1920f86e1b456caabf920eaae919b5c407df43",
+        "nextStep": "writer",
+        "packetHash": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d",
+        "packetRef": "lab/research/javascript-language-foundation/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts, retain the runtime limit, and execute every final draft example independently.",
+        "requestHash": "bbdcfcb54fcedf62a5c0237d52eca55e54c4fa491590cc9b17dc915b33cc0d4f",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "js-bindings-values",
+          "js-operators-output"
+        ],
+        "schemaVersion": 3,
+        "scope": "B6 javascript-language-foundation: validated Authority Ladder packet and runtime evidence through LAB candidate only; no publication.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+            "providedCharacters": 1119,
+            "sourceId": "542",
+            "sourcePath": "542-post-17-przeglad-js-html-css.md",
+            "title": "Post #17 Przegląd JS Html CSS",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-language-foundation",
+        "validatedAt": "2026-10-16T13:23:34.385Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "Przegląd projektów głównie w których jest praktyczne zastosowanie JavaScript."
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Pokazać minimalne wykonanie bez DOM i bez projektu portfolio.",
+          "sourceIds": [
+            "542"
+          ],
+          "title": "Jeden plik JavaScript i console.log"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "JavaScript"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Ustalić nazwę jako odwołanie do wartości oraz prostą zmianę tam, gdzie jest potrzebna.",
+          "sourceIds": [
+            "542"
+          ],
+          "title": "Wartości, const i let"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "Kilka projektów"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Użyć typeof do czytania wyniku, bez budowania pełnej teorii typów.",
+          "sourceIds": [
+            "542"
+          ],
+          "title": "Typ jako obserwacja"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "542",
+              "sourcePath": "542-post-17-przeglad-js-html-css.md",
+              "value": "Java Script"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Połączyć małe dane w przewidywalny wynik terminalowy.",
+          "sourceIds": [
+            "542"
+          ],
+          "title": "Operatory i czytelny komunikat"
+        }
+      ],
+      "config": {
+        "audience": "beginner",
+        "requiredCoverage": [
+          "file-node",
+          "values",
+          "const-let",
+          "typeof",
+          "operators",
+          "template-literal",
+          "console-output"
+        ],
+        "researchApproval": "lab/decisions/javascript-language-foundation-research-acceptance.json",
+        "researchPacket": "lab/research/javascript-language-foundation/research.json",
+        "runtimeVerification": "lab/research/javascript-language-foundation/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/javascript-language-foundation-source-decision.json",
+        "targetRuntimes": [
+          {
+            "id": "node",
+            "kind": "node",
+            "version": "v24.16.0"
+          }
+        ],
+        "topic": "javascript-language-foundation"
+      },
+      "decision": {
+        "action": "NEW_CONTENT",
+        "analysisHash": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b",
+        "analysisRef": "lab/cartography/javascript-language-foundation-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+        "authorizationRef": "lab/decisions/b6-authorization.json",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "542",
+            "sourcePath": "542-post-17-przeglad-js-html-css.md",
+            "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "The project catalogue confirms the missing entry layer but cannot be honestly rewritten as one. The new lesson is limited to a local Node.js program, values, const/let, type observation, operators, template literals and console output.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+            "providedCharacters": 1119,
+            "sourceId": "542",
+            "sourcePath": "542-post-17-przeglad-js-html-css.md",
+            "title": "Post #17 Przegląd JS Html CSS",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-language-foundation"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b",
+          "decisionHash": "6363638dff2d7c7bcdc9478023102ac24286bb5fef173ec589e7eedf81171028",
+          "fullReadCount": 1,
+          "inputHash": "f8862c604a5921e99f0f595b9a1920f86e1b456caabf920eaae919b5c407df43",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "d6aa8af4813532c1fd67b3e6c1e3bfb26f8c7e5131530e13b9a20dbeafeb9529",
+              "description": "Local JavaScript values, type observation, arithmetic and template literal in Node.",
+              "diagnostics": [],
+              "id": "javascript-language-foundation-boundaries",
+              "result": {
+                "message": "Ada:5",
+                "types": [
+                  "string",
+                  "number",
+                  "boolean"
+                ]
+              },
+              "runtimeId": "node",
+              "runtimeVersion": "v24.16.0"
+            }
+          ],
+          "requestHash": "bbdcfcb54fcedf62a5c0237d52eca55e54c4fa491590cc9b17dc915b33cc0d4f",
+          "researchBundleHash": "2b1bbde12d995df9f3440a5b559b0591e4d9356f2e6e0b0b3f9c6037242f756f",
+          "topicSlug": "javascript-language-foundation"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "542",
+                "sourcePath": "542-post-17-przeglad-js-html-css.md",
+                "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+              }
+            ],
+            "claim": "Kontrolowana próba Node zwróciła komunikat template literal oraz obserwacje typeof dla string, number i boolean.",
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "documentId": "ecmascript-lexical",
+                "excerptId": "lexical-declarations"
+              },
+              {
+                "documentId": "mdn-const",
+                "excerptId": "const-binding"
+              },
+              {
+                "documentId": "mdn-typeof",
+                "excerptId": "typeof-result"
+              },
+              {
+                "documentId": "node-cli",
+                "excerptId": "node-script"
+              }
+            ],
+            "id": "executed-boundaries",
+            "probeIds": [
+              "javascript-language-foundation-boundaries"
+            ],
+            "questionIds": [
+              "js-bindings-values",
+              "js-operators-output"
+            ],
+            "recommendation": "Run every final draft example independently; this probe only supports the research boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-16",
+          "evidence": [
+            {
+              "documentId": "ecmascript-lexical",
+              "excerptId": "lexical-declarations"
+            },
+            {
+              "documentId": "mdn-const",
+              "excerptId": "const-binding"
+            },
+            {
+              "documentId": "mdn-typeof",
+              "excerptId": "typeof-result"
+            },
+            {
+              "documentId": "node-cli",
+              "excerptId": "node-script"
+            }
+          ],
+          "runtimeScope": "Node v24.16.0; no browser or DOM behavior is within this article."
+        },
+        "incorrectClaims": [],
+        "limitations": [
+          "Research uses one authorized context/source body and four Authority Ladder documents. It validates neither every engine version nor publication readiness."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "js-lexical-bindings",
+              "js-type-observation",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+            "questionId": "js-bindings-values",
+            "status": "resolved"
+          },
+          {
+            "findingIds": [
+              "js-first-node-script",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+            "questionId": "js-operators-output",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "KEEP",
+            "findingIds": [
+              "js-lexical-bindings",
+              "js-type-observation",
+              "js-first-node-script",
+              "executed-boundaries"
+            ],
+            "id": "keep-bounded-entry-scope",
+            "instruction": "Uczyć tylko zweryfikowanego, lokalnego rdzenia; nie przenosić frameworków, DOM, klas ani marketingowych porównań."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "9dc67a591c688a2cb1032dfd760901b6904051ea387e19fa57c37b5a31f9daa8",
+            "evidenceIds": [
+              "lexical-declarations"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "ecmascript-lexical",
+            "kind": "specification",
+            "retrieval": {
+              "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:49.407Z",
+            "sourceType": "authority-ladder",
+            "title": "ECMAScript Language Specification — Lexical Declarations",
+            "url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html"
+          },
+          {
+            "authorityClass": "mdn",
+            "authorityTier": 3,
+            "documentHash": "c49417a637a0fd22e9a22ab3842b71632884e889ff7547845a73145ad736160f",
+            "evidenceIds": [
+              "const-binding"
+            ],
+            "evidenceRole": "practical-reference",
+            "id": "mdn-const",
+            "kind": "web-platform-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "practical-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:49.407Z",
+            "sourceType": "authority-ladder",
+            "title": "MDN — const",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"
+          },
+          {
+            "authorityClass": "mdn",
+            "authorityTier": 3,
+            "documentHash": "232972c439e4369dfc05db39ed515c90e890c6e7adaa6efd6fa99da0770f6096",
+            "evidenceIds": [
+              "typeof-result"
+            ],
+            "evidenceRole": "practical-reference",
+            "id": "mdn-typeof",
+            "kind": "web-platform-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "practical-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:49.407Z",
+            "sourceType": "authority-ladder",
+            "title": "MDN — typeof",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
+          },
+          {
+            "authorityClass": "official-project-runtime",
+            "authorityTier": 2,
+            "documentHash": "165eeb336c8fca82d6d4db7010569cd295feedbd417026e31a3bfaf74c500a03",
+            "evidenceIds": [
+              "node-script"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "node-cli",
+            "kind": "runtime-documentation",
+            "retrieval": {
+              "finalUrl": "https://nodejs.org/api/cli.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:49.407Z",
+            "sourceType": "authority-ladder",
+            "title": "Node.js Documentation — Command-line API",
+            "url": "https://nodejs.org/api/cli.html"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+            "providedCharacters": 1119,
+            "sourceId": "542",
+            "sourcePath": "542-post-17-przeglad-js-html-css.md",
+            "title": "Post #17 Przegląd JS Html CSS",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-language-foundation",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "542",
+                "sourcePath": "542-post-17-przeglad-js-html-css.md",
+                "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+              }
+            ],
+            "claim": "Deklaracje lexical tworzą bindingi przez let i const, a const wymaga inicjalizatora; const opisuje binding, nie ogólną niezmienność wartości złożonej.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "ecmascript-lexical",
+                "excerptId": "lexical-declarations"
+              },
+              {
+                "documentId": "mdn-const",
+                "excerptId": "const-binding"
+              }
+            ],
+            "id": "js-lexical-bindings",
+            "questionIds": [
+              "js-bindings-values"
+            ],
+            "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "542",
+                "sourcePath": "542-post-17-przeglad-js-html-css.md",
+                "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+              }
+            ],
+            "claim": "Operator typeof zwraca napis wskazujący typ swojego operandu, więc może służyć do prostej obserwacji wyniku początkującego programu.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-typeof",
+                "excerptId": "typeof-result"
+              }
+            ],
+            "id": "js-type-observation",
+            "questionIds": [
+              "js-bindings-values"
+            ],
+            "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "542",
+                "sourcePath": "542-post-17-przeglad-js-html-css.md",
+                "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**"
+              }
+            ],
+            "claim": "Node uruchamia program JavaScript przekazany jako plik lub inne wspierane wejście; lokalny przykład może połączyć operator i template literal w deterministyczny stdout.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "node-cli",
+                "excerptId": "node-script"
+              }
+            ],
+            "id": "js-first-node-script",
+            "questionIds": [
+              "js-operators-output"
+            ],
+            "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Nie przedstawiać context SOURCE jako pełnej lub zweryfikowanej lekcji i nie wykraczać poza zakres runtime."
+            }
+          ],
+          "caution": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Próba badawcza nie jest wykonaniem końcowych bloków artykułu."
+            }
+          ],
+          "correct": [],
+          "keep": [
+            {
+              "findingIds": [
+                "js-lexical-bindings",
+                "js-type-observation",
+                "js-first-node-script"
+              ],
+              "instruction": "Zachować krótkie samodzielne przykłady i jawne oczekiwane wyniki."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "executed-boundaries"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Runtime evidence covers local Node v24.16.0; it excludes browser, DOM and module-loader behavior."
+        ],
+        "packetHash": "83375e20f75d30d87455a4fc10205aa899a7420c80669cdc819e1a0f0314be7d",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "message": "Ada:5",
+                  "types": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "expected": {
+                  "message": "Ada:5",
+                  "types": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "id": "javascript-language-foundation-boundaries-observed",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+            "execution": "actual-local-cli",
+            "kind": "node",
+            "records": [
+              {
+                "code": "const name = \"Ada\"; let count = 2; count += 3; console.log(JSON.stringify({ message: `${name}:${count}`, types: [typeof name, typeof count, typeof true] }));",
+                "codeHash": "d6aa8af4813532c1fd67b3e6c1e3bfb26f8c7e5131530e13b9a20dbeafeb9529",
+                "description": "Local JavaScript values, type observation, arithmetic and template literal in Node.",
+                "diagnostics": [],
+                "id": "javascript-language-foundation-boundaries",
+                "result": {
+                  "message": "Ada:5",
+                  "types": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "runtimeId": "node",
+                "runtimeVersion": "v24.16.0"
+              }
+            ],
+            "runtimeId": "node",
+            "status": "PASS",
+            "version": "v24.16.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — javascript-language-foundation\n\nStatus: **PASS**\n\n- runtime: node v24.16.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nRuntime evidence covers local Node v24.16.0; it excludes browser, DOM and module-loader behavior.\n",
+      "sources": [
+        {
+          "body": "\n# **Przegląd projektów ćwiczeń i nauki JS Html CSS**\n\n## **Kilka projektów**\n\nPrzegląd projektów głównie w których jest praktyczne zastosowanie JavaScript. Tych projektów jest oczywiście dużo więcej ale wybrałem do prezentacji tylko kilka i ich pliki są w portfolio. [Zobacz Portfolio](https://opengateweb.com/portfolio/)\n\n## Tabs Snippets\n\nZastosowanie tab z wyborem po id treści. Dla każdej tab jest wyświetlana inna treść.\n\n## Transition BarbaJS\n\nEfekt przejścia stron po przeniesieniu do innego URL bardzo przyjemne użycie BarbaJS\n\n## Typed\n\nEfekt Typed Java Script wypisujący w zaprogramowanej kolejności słowa. Cyfrowy Banner\n\n## TabSnippet MultipahseFrom Select 100 h\n\nKilka innych zebranych ciekawych wraz z Sliderem tylko CSS\n\n**28 kwietnia 2024** Dodanie 100 h jako uznanie ćwiczeń i nauki Vanilla Java Script Katalog z JavaScript zawiera 88 folderów o różnym poziomie trudności i śmiało można doliczyć że wszystkie zajęły po około godzinie co jest czasem zaniżonym. Niektóre z zadań były związane z wyszukiwaniem rozwiązania konkretnego problemu.\n\n## W następnym materiale przegląd skończonych kursów 300 h\n",
+          "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded single-source modernization. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under the supplied human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All examples are structured,\nself-contained and use an explicit supported language with exact expected output and diagnostics. No code fences hidden in prose.\nFollow the topic-specific scope, corrections, cautions and runtime limits from the approved evidence.\nDo not add unrelated tutorials, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser",
+                      "cli"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "433f0f6efa358480041b334f60e1aaaaa4dc52ab2029040f8002f7b6a22992b1",
+  "schemaVersion": 1
+}

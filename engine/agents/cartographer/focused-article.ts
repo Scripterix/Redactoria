@@ -13,7 +13,7 @@ const confidence = z.number().min(0).max(1);
 const finding = z.strictObject({ id: text, interpretation: text, evidence: z.array(EvidenceSchema).min(1), confidence });
 export const FocusedArticleAnalysisSchema = z.strictObject({
 	task: z.literal('SINGLE_ARTICLE'), artifactName: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*-single$/),
-	action: z.enum(['REWRITE', 'MERGE', 'SPLIT', 'KEEP_AND_UPDATE']), recommended: z.boolean(), confidence, reason: text,
+	action: z.enum(['REWRITE', 'MERGE', 'SPLIT', 'KEEP_AND_UPDATE', 'NEW_CONTENT']), recommended: z.boolean(), confidence, reason: text,
 	evidence: z.array(EvidenceSchema).min(1), scope: text,
 	keep: z.array(finding), correct: z.array(finding), outdatedOrUncertain: z.array(finding),
 	remove: z.array(finding), missing: z.array(finding), needsResearch: z.array(finding),
@@ -28,17 +28,17 @@ export const FocusedArticleResultSchema = FocusedArticleAnalysisSchema.extend({
 });
 export const ApprovedArticleDecisionV2Schema = z.strictObject({
 	schemaVersion: z.literal(2), status: z.literal('approved'), approvedBy: z.literal('human'),
-	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE']), nextStep: z.literal('research'),
+	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE', 'NEW_CONTENT']), nextStep: z.literal('research'),
 	targets: FocusedArticleResultSchema.shape.targets, confidence, reason: text, evidence: z.array(EvidenceSchema).min(1),
 	analysisHash: sha, analysisRef: z.string().regex(/^lab\/cartography\/[a-z0-9-]+-single\.json$/),
 	authorizationRef: z.string().regex(/^lab\/decisions\/[a-z0-9-]+-b2-authorization\.json$/), authorizationHash: sha,
 });
 export const ApprovedArticleDecisionV3Schema = z.strictObject({
 	schemaVersion: z.literal(3), status: z.literal('approved'), approvedBy: z.literal('human'),
-	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE']), nextStep: z.literal('research'),
+	action: z.enum(['REWRITE', 'KEEP_AND_UPDATE', 'NEW_CONTENT']), nextStep: z.literal('research'),
 	targets: FocusedArticleResultSchema.shape.targets, confidence, reason: text, evidence: z.array(EvidenceSchema).min(1),
 	analysisHash: sha, analysisRef: z.string().regex(/^lab\/cartography\/[a-z0-9-]+-single\.json$/),
-	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json', 'lab/decisions/b5-authorization.json']), authorizationHash: sha,
+	authorizationRef: z.enum(['lab/decisions/b3-authorization.json', 'lab/decisions/b4-authorization.json', 'lab/decisions/b5-authorization.json', 'lab/decisions/b6-authorization.json']), authorizationHash: sha,
 	topic: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
 });
 export const ApprovedArticleDecisionSchema = z.union([ApprovedArticleDecisionV2Schema, ApprovedArticleDecisionV3Schema]);

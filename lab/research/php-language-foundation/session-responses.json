@@ -1,0 +1,236 @@
+{
+  "provenance": {
+    "description": "B6 Authority Ladder analysis recorded in the active coding session; exact provider model identifier is unavailable.",
+    "mode": "imported-session-analysis",
+    "model": "codex-session"
+  },
+  "research": {
+    "requestHash": "1f966a8884b3c2be6fc9ffbf11981f34fb275e8fe32ae2b8562901347dba0c02",
+    "response": {
+      "action": "RESEARCH_PACKET",
+      "ambiguousClaims": [],
+      "codeReview": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "977",
+              "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+              "value": "$x = 10; // PHP"
+            }
+          ],
+          "claim": "Kontrolowana próba PHP CLI zwróciła przewidywalny komunikat, sumę i trzy obserwacje typów dla string, int i bool.",
+          "confidence": 0.99,
+          "evidence": [
+            {
+              "documentId": "php-variables",
+              "excerptId": "dollar-name"
+            },
+            {
+              "documentId": "php-types",
+              "excerptId": "built-in-types"
+            },
+            {
+              "documentId": "php-arithmetic",
+              "excerptId": "addition"
+            },
+            {
+              "documentId": "php-echo",
+              "excerptId": "echo-output"
+            }
+          ],
+          "id": "executed-boundaries",
+          "probeIds": [
+            "php-language-foundation-boundaries"
+          ],
+          "questionIds": [
+            "php-variable-type-model",
+            "php-operators-output-cli"
+          ],
+          "recommendation": "Run every final draft example independently; this probe only supports the research boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified",
+          "verification": "executed-probe"
+        }
+      ],
+      "environment": {
+        "asOfDate": "2026-10-16",
+        "evidence": [
+          {
+            "documentId": "php-variables",
+            "excerptId": "dollar-name"
+          },
+          {
+            "documentId": "php-types",
+            "excerptId": "built-in-types"
+          },
+          {
+            "documentId": "php-arithmetic",
+            "excerptId": "addition"
+          },
+          {
+            "documentId": "php-echo",
+            "excerptId": "echo-output"
+          }
+        ],
+        "runtimeScope": "PHP 8.2.4 CLI available in this environment; the article must not claim broader version coverage without a further check."
+      },
+      "incorrectClaims": [],
+      "limitations": [
+        "Research uses one authorized context/source body and four Authority Ladder documents. It validates neither every engine version nor publication readiness."
+      ],
+      "outdatedClaims": [],
+      "questionAnswers": [
+        {
+          "findingIds": [
+            "php-variable-name",
+            "php-scalar-types",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+          "questionId": "php-variable-type-model",
+          "status": "resolved"
+        },
+        {
+          "findingIds": [
+            "php-first-output",
+            "executed-boundaries"
+          ],
+          "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+          "questionId": "php-operators-output-cli",
+          "status": "resolved"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "KEEP",
+          "findingIds": [
+            "php-variable-name",
+            "php-scalar-types",
+            "php-first-output",
+            "executed-boundaries"
+          ],
+          "id": "keep-bounded-entry-scope",
+          "instruction": "Uczyć tylko zweryfikowanego, lokalnego rdzenia; nie przenosić frameworków, DOM, klas ani marketingowych porównań."
+        }
+      ],
+      "securityNotes": [],
+      "topic": "php-language-foundation",
+      "unresolvedQuestions": [],
+      "verifiedFacts": [
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "977",
+              "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+              "value": "$x = 10; // PHP"
+            }
+          ],
+          "claim": "Zmienne PHP są zapisywane znakiem dolara przed nazwą, a wielkość liter w nazwie ma znaczenie.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "php-variables",
+              "excerptId": "dollar-name"
+            }
+          ],
+          "id": "php-variable-name",
+          "questionIds": [
+            "php-variable-type-model"
+          ],
+          "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "977",
+              "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+              "value": "$x = 10; // PHP"
+            }
+          ],
+          "claim": "Wyrażenia PHP mogą mieć między innymi typ null, bool, int, float i string; domyślnie język jest dynamicznie typowany.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "php-types",
+              "excerptId": "built-in-types"
+            }
+          ],
+          "id": "php-scalar-types",
+          "questionIds": [
+            "php-variable-type-model"
+          ],
+          "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        },
+        {
+          "articleEvidence": [
+            {
+              "field": "body",
+              "sourceId": "977",
+              "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+              "value": "$x = 10; // PHP"
+            }
+          ],
+          "claim": "Operator + daje sumę operandów, a echo wypisuje jeden lub więcej napisów; ich mały przykład można sprawdzić lokalnie w CLI.",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "documentId": "php-arithmetic",
+              "excerptId": "addition"
+            },
+            {
+              "documentId": "php-echo",
+              "excerptId": "echo-output"
+            }
+          ],
+          "id": "php-first-output",
+          "questionIds": [
+            "php-operators-output-cli"
+          ],
+          "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+          "sourceType": "authority-ladder",
+          "status": "verified"
+        }
+      ],
+      "writerHandoff": {
+        "avoid": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Nie przedstawiać context SOURCE jako pełnej lub zweryfikowanej lekcji i nie wykraczać poza zakres runtime."
+          }
+        ],
+        "caution": [
+          {
+            "findingIds": [
+              "executed-boundaries"
+            ],
+            "instruction": "Próba badawcza nie jest wykonaniem końcowych bloków artykułu."
+          }
+        ],
+        "correct": [],
+        "keep": [
+          {
+            "findingIds": [
+              "php-variable-name",
+              "php-scalar-types",
+              "php-first-output"
+            ],
+            "instruction": "Zachować krótkie samodzielne przykłady i jawne oczekiwane wyniki."
+          }
+        ],
+        "verifiedCodeFindingIds": [
+          "executed-boundaries"
+        ]
+      }
+    }
+  },
+  "schemaVersion": 1
+}

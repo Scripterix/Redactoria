@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "action": "NEW_CONTENT",
+  "nextStep": "research",
+  "targets": [{
+    "sourceId": "542",
+    "sourcePath": "542-post-17-przeglad-js-html-css.md",
+    "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+    "title": "Post #17 Przegląd JS Html CSS",
+    "providedCharacters": 1119,
+    "truncated": false
+  }],
+  "confidence": 0.98,
+  "reason": "The project catalogue confirms the missing entry layer but cannot be honestly rewritten as one. The new lesson is limited to a local Node.js program, values, const/let, type observation, operators, template literals and console output.",
+  "evidence": [{ "sourceId": "542", "sourcePath": "542-post-17-przeglad-js-html-css.md", "field": "body", "value": "# **Przegląd projektów ćwiczeń i nauki JS Html CSS**" }],
+  "analysisHash": "7782a9e3474077f340f8048c7c804514483fc2370e039ea6ddd0f64ab3c8163b",
+  "analysisRef": "lab/cartography/javascript-language-foundation-single.json",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+  "topic": "javascript-language-foundation"
+}

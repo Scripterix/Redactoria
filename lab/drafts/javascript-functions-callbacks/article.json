@@ -1,0 +1,187 @@
+{
+  "action": "DRAFT",
+  "approvedArtifacts": [
+    {
+      "path": "lab/decisions/b6-authorization.json",
+      "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+    },
+    {
+      "path": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+      "sha256": "10bc9863552976ef82d7e3c7a81e424e3f36e34c3f66029369e0b030e95f7713"
+    },
+    {
+      "path": "lab/cartography/javascript-functions-callbacks-single.json",
+      "sha256": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000"
+    },
+    {
+      "path": "lab/research/javascript-functions-callbacks/sources.json",
+      "sha256": "09b6421bb947042c14eadf091ba9b1cfa1fefbae385f04038bc3d1ca67092d9d"
+    },
+    {
+      "path": "lab/research/javascript-functions-callbacks/probes.json",
+      "sha256": "2432b68a9bb93c616146d7f7ccaad1f7da3fa91fbfc7bb5e7a63710181e1e9bb"
+    },
+    {
+      "path": "lab/research/javascript-functions-callbacks/research.json",
+      "sha256": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca"
+    },
+    {
+      "path": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+      "sha256": "a134df935bed8647a7f00b91b93c1d3d39f8f9ae5732aeb69721c8f93ac3558e"
+    },
+    {
+      "path": "lab/research/javascript-functions-callbacks/runtime-verification.md",
+      "sha256": "e746507816d1b6986c674d96083d9f19b7f93b6a5ea507de517ad7e5dba2f59e"
+    }
+  ],
+  "articleHash": "3f7cf34248d4e3e98adcdd95273fcfe9eba9b1ccdef8abf25d6001c7179604fc",
+  "audience": "beginner / early intermediate",
+  "interactionOpportunities": [
+    {
+      "expectedConcept": "Argument staje się wartością parametru name.",
+      "id": "predict-greet",
+      "implemented": false,
+      "prompt": "Jaki napis pokaże greet('Ola')?",
+      "purpose": "Rozpoznać wartość parametru.",
+      "sectionId": "function-call",
+      "type": "predict-output"
+    },
+    {
+      "expectedConcept": "Wywołanie nie dostarczy wartości do total.",
+      "id": "return-vs-log",
+      "implemented": false,
+      "prompt": "Co przestanie działać, jeśli usuniesz return, ale pozostawisz console.log wewnątrz add?",
+      "purpose": "Rozdzielić wynik od obserwacji.",
+      "sectionId": "return-value",
+      "type": "compare"
+    },
+    {
+      "expectedConcept": "map zwraca nową tablicę wyników callbacku.",
+      "id": "predict-map",
+      "implemented": false,
+      "prompt": "Co będzie w doubled po zmianie values na [2, 4]?",
+      "purpose": "Śledzić wynik callbacku bez mutowania wejścia.",
+      "sectionId": "map-callback",
+      "type": "predict-output"
+    }
+  ],
+  "limitations": [
+    "Zakres wykonania to Node v24.16.0 i synchroniczny Array.map. Materiał nie omawia DOM, addEventListener, this, klas, wyjątków, Promise ani callbacków asynchronicznych."
+  ],
+  "researchApproval": "lab/decisions/javascript-functions-callbacks-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-functions-callbacks/research.json",
+  "runtimeVerification": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+  "schemaVersion": 2,
+  "sections": [
+    {
+      "body": "Funkcja ma nazwę, parametry i body. Parametry są nazwami dla danych przekazanych przy wywołaniu. Definicja nie uruchamia funkcji sama z siebie; wynik zobaczysz dopiero po wywołaniu. W tym materiale używamy liczb i Node, aby skupić się na samym modelu funkcji.",
+      "coverage": [
+        "function-definition",
+        "parameters"
+      ],
+      "evidence": [
+        {
+          "id": "js-function-parameters-return",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "function greet(name) {\n  console.log(`Cześć, ${name}`);\n}\n\ngreet('Ada');",
+          "expectedDiagnostics": [],
+          "expectedOutput": "Cześć, Ada\n",
+          "id": "greet-parameter",
+          "language": "js",
+          "purpose": "Parametr przekazany do funkcji"
+        }
+      ],
+      "heading": "Definicja i wywołanie funkcji",
+      "id": "function-call"
+    },
+    {
+      "body": "`return` kończy bieżące wywołanie funkcji i oddaje wartość do miejsca, które funkcję wywołało. To co innego niż `console.log`: log obserwuje wartość, a return pozwala użyć jej dalej. Poniżej funkcja liczy sumę, a osobna linia wypisuje wynik.",
+      "coverage": [
+        "return",
+        "console-output"
+      ],
+      "evidence": [
+        {
+          "id": "js-function-parameters-return",
+          "kind": "finding"
+        },
+        {
+          "id": "js-functions-node-scope",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "function add(left, right) {\n  return left + right;\n}\n\nconst total = add(2, 3);\nconsole.log(total);",
+          "expectedDiagnostics": [],
+          "expectedOutput": "5\n",
+          "id": "add-return",
+          "language": "js",
+          "purpose": "Wynik funkcji użyty poza jej body"
+        }
+      ],
+      "heading": "return oddaje wynik",
+      "id": "return-value"
+    },
+    {
+      "body": "Callback to funkcja przekazana innemu wywołaniu, które zdecyduje, kiedy ją uruchomić. `map` wywołuje przekazaną funkcję dla każdego elementu i tworzy nową tablicę wyników. Ten przykład jest synchroniczny i nie dotyczy zdarzeń DOM ani Promise.",
+      "coverage": [
+        "map-callback"
+      ],
+      "evidence": [
+        {
+          "id": "js-map-callback",
+          "kind": "finding"
+        }
+      ],
+      "examples": [
+        {
+          "code": "const values = [1, 2, 3];\nconst doubled = values.map(value => value * 2);\nconsole.log(doubled.join(','));\nconsole.log(values.join(','));",
+          "expectedDiagnostics": [],
+          "expectedOutput": "2,4,6\n1,2,3\n",
+          "id": "double-map",
+          "language": "js",
+          "purpose": "Funkcja strzałkowa jako callback map"
+        }
+      ],
+      "heading": "Callback przekazany do map",
+      "id": "map-callback"
+    }
+  ],
+  "sourceDecision": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+  "sources": [
+    {
+      "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+      "providedCharacters": 7595,
+      "sourceId": "281",
+      "sourcePath": "281-post-9-calculator-math-func-oop.md",
+      "title": "Post #9 Calculator Math Func OOP",
+      "truncated": false
+    }
+  ],
+  "status": "draft",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "title": "Funkcje JavaScript: parametry, return i callbacki",
+  "topic": "javascript-functions-callbacks",
+  "wordCount": 218,
+  "writerExecution": {
+    "inputHash": "db8fad05128431fd61c878ce3d29314161dcb011b2d443712ccb8eccbdd28a86",
+    "model": {
+      "adapter": "recorded-json",
+      "mode": "imported-session-analysis",
+      "model": "codex-session"
+    },
+    "modelCalls": 1,
+    "requestHash": "956e4a9fd31a4ac857ac0a7f66986f709cd7bb6fd0d481c276eca1958681fcbe"
+  }
+}

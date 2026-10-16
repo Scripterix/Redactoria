@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "action": "NEW_CONTENT",
+  "nextStep": "research",
+  "targets": [{
+    "sourceId": "977",
+    "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+    "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+    "title": "Post #52 Jakie są PHP i Python",
+    "providedCharacters": 5240,
+    "truncated": false
+  }],
+  "confidence": 0.97,
+  "reason": "The bounded source is context evidence for a missing entry node, not material honestly suitable for rewrite. The new lesson is limited to local PHP values, names, scalar types, operators, echo and CLI.",
+  "evidence": [{ "sourceId": "977", "sourcePath": "977-post-52-jakie-sa-php-i-python.md", "field": "body", "value": "$x = 10; // PHP" }],
+  "analysisHash": "09941e5a450c6b860d4e51350f9d397dcd8c4f67d025dc2543d41ad028920dea",
+  "analysisRef": "lab/cartography/php-language-foundation-single.json",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+  "topic": "php-language-foundation"
+}

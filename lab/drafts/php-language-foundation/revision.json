@@ -1,0 +1,16 @@
+{
+  "additionalWriterGenerations": 0,
+  "afterArticleHash": "c33e7bb22ddf95aedb6e9469f84bdf32acd34204c671587260f2e7510815fcf8",
+  "afterDraftHash": "7aef1eb2459cd95a37974e0775f58d0d41e922d934f7ff8e8a87ca555a5ae8cd",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "beforeArticleHash": "c33e7bb22ddf95aedb6e9469f84bdf32acd34204c671587260f2e7510815fcf8",
+  "beforeDraftHash": "7aef1eb2459cd95a37974e0775f58d0d41e922d934f7ff8e8a87ca555a5ae8cd",
+  "changedExamples": 0,
+  "issueId": null,
+  "mode": "critic-pass-no-correction",
+  "note": "First full Critic review passed; the conditional correction stage was not entered.",
+  "revisedAt": null,
+  "schemaVersion": 1,
+  "topic": "php-language-foundation",
+  "writerGenerations": 1
+}

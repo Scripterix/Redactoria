@@ -1,0 +1,1096 @@
+{
+  "inputHash": "db8fad05128431fd61c878ce3d29314161dcb011b2d443712ccb8eccbdd28a86",
+  "request": {
+    "context": {
+      "approval": {
+        "approvedBy": "session-review-under-human-authorization",
+        "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+        "authorizationRef": "lab/decisions/b6-authorization.json",
+        "evidence": {
+          "artifacts": [
+            {
+              "path": "lab/decisions/b6-authorization.json",
+              "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+            },
+            {
+              "path": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+              "sha256": "10bc9863552976ef82d7e3c7a81e424e3f36e34c3f66029369e0b030e95f7713"
+            },
+            {
+              "path": "lab/cartography/javascript-functions-callbacks-single.json",
+              "sha256": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000"
+            },
+            {
+              "path": "lab/research/javascript-functions-callbacks/sources.json",
+              "sha256": "09b6421bb947042c14eadf091ba9b1cfa1fefbae385f04038bc3d1ca67092d9d"
+            },
+            {
+              "path": "lab/research/javascript-functions-callbacks/probes.json",
+              "sha256": "2432b68a9bb93c616146d7f7ccaad1f7da3fa91fbfc7bb5e7a63710181e1e9bb"
+            },
+            {
+              "path": "lab/research/javascript-functions-callbacks/research.json",
+              "sha256": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca"
+            },
+            {
+              "path": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+              "sha256": "a134df935bed8647a7f00b91b93c1d3d39f8f9ae5732aeb69721c8f93ac3558e"
+            },
+            {
+              "path": "lab/research/javascript-functions-callbacks/runtime-verification.md",
+              "sha256": "e746507816d1b6986c674d96083d9f19b7f93b6a5ea507de517ad7e5dba2f59e"
+            }
+          ],
+          "humanApproval": "The human authorized this exact B6 batch through candidate preparation. The packet was validated in-session and was not separately reviewed by the human.",
+          "runtimeVerification": {
+            "ref": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+            "status": "PASS",
+            "versions": [
+              {
+                "assertions": 1,
+                "probes": 1,
+                "runtimeId": "node",
+                "status": "PASS",
+                "version": "v24.16.0"
+              }
+            ]
+          }
+        },
+        "humanReviewedPacket": false,
+        "inputHash": "31f670792086aa675f7918abf2ca85f844a18928c046b936a72ae6b4f913a671",
+        "nextStep": "writer",
+        "packetHash": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca",
+        "packetRef": "lab/research/javascript-functions-callbacks/research.json",
+        "provenance": {
+          "adapter": "recorded-json",
+          "mode": "imported-session-analysis",
+          "model": "codex-session"
+        },
+        "remainingWriterBoundary": "Use only verified bounded facts, retain the runtime limit, and execute every final draft example independently.",
+        "requestHash": "697b32f9100aa66fe36f51d47a243c17c8e0bc177b1496f58f4853d5282a05e4",
+        "requiredAddenda": [],
+        "resolvedQuestionIds": [
+          "js-function-return",
+          "js-callback-model"
+        ],
+        "schemaVersion": 3,
+        "scope": "B6 javascript-functions-callbacks: validated Authority Ladder packet and runtime evidence through LAB candidate only; no publication.",
+        "status": "validated",
+        "targets": [
+          {
+            "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+            "providedCharacters": 7595,
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "title": "Post #9 Calculator Math Func OOP",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-functions-callbacks",
+        "validatedAt": "2026-10-16T13:23:35.577Z"
+      },
+      "cartographerStructure": [
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "function sum() {"
+            }
+          ],
+          "needsResearch": true,
+          "order": 1,
+          "purpose": "Oddzielić zapis definicji od momentu uruchomienia funkcji.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Funkcja i wywołanie"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "calculate(operand1, operator, operand2)"
+            }
+          ],
+          "needsResearch": true,
+          "order": 2,
+          "purpose": "Zastąpić odczyt DOM jawnymi danymi przekazywanymi do funkcji.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Parametry jako wejście"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "return operand1 + operand2;"
+            }
+          ],
+          "needsResearch": true,
+          "order": 3,
+          "purpose": "Ustalić kontrakt wyniku i pokaźnie go wypisać poza funkcją.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "return to wynik, console.log to obserwacja"
+        },
+        {
+          "evidence": [
+            {
+              "field": "body",
+              "sourceId": "281",
+              "sourcePath": "281-post-9-calculator-math-func-oop.md",
+              "value": "input1.addEventListener('mouseout', sum);"
+            }
+          ],
+          "needsResearch": true,
+          "order": 4,
+          "purpose": "Pokazać prostą funkcję wywołaną przez map bez wchodzenia w DOM lub asynchroniczność.",
+          "sourceIds": [
+            "281"
+          ],
+          "title": "Callback jako przekazana funkcja"
+        }
+      ],
+      "config": {
+        "audience": "beginner / early intermediate",
+        "requiredCoverage": [
+          "function-definition",
+          "parameters",
+          "return",
+          "console-output",
+          "map-callback"
+        ],
+        "researchApproval": "lab/decisions/javascript-functions-callbacks-research-acceptance.json",
+        "researchPacket": "lab/research/javascript-functions-callbacks/research.json",
+        "runtimeVerification": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+        "schemaVersion": 2,
+        "sourceDecision": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+        "targetRuntimes": [
+          {
+            "id": "node",
+            "kind": "node",
+            "version": "v24.16.0"
+          }
+        ],
+        "topic": "javascript-functions-callbacks"
+      },
+      "decision": {
+        "action": "REWRITE",
+        "analysisHash": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000",
+        "analysisRef": "lab/cartography/javascript-functions-callbacks-single.json",
+        "approvedBy": "human",
+        "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+        "authorizationRef": "lab/decisions/b6-authorization.json",
+        "confidence": 0.96,
+        "evidence": [
+          {
+            "field": "body",
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "value": "function sum() {"
+          }
+        ],
+        "nextStep": "research",
+        "reason": "The source contains a useful function/callback core but combines it with DOM, parsing and OOP. The rewrite is bounded to functions, parameters, return, observable output and one simple callback.",
+        "schemaVersion": 3,
+        "status": "approved",
+        "targets": [
+          {
+            "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+            "providedCharacters": 7595,
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "title": "Post #9 Calculator Math Func OOP",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-functions-callbacks"
+      },
+      "research": {
+        "action": "RESEARCH_PACKET",
+        "ambiguousClaims": [],
+        "analysisContext": {
+          "cartographyHash": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000",
+          "decisionHash": "c4ba1dd54897dadeae438cd02c000ba6d503ff8992a99a304d7fced9226de475",
+          "fullReadCount": 1,
+          "inputHash": "31f670792086aa675f7918abf2ca85f844a18928c046b936a72ae6b4f913a671",
+          "model": {
+            "adapter": "recorded-json",
+            "mode": "imported-session-analysis",
+            "model": "codex-session"
+          },
+          "probes": [
+            {
+              "codeHash": "f68fdf6c5358f202601b749aed9ace77e58ed1d346335172757273afb4f6f9f8",
+              "description": "Function parameters, return values and Array.map callback in Node.",
+              "diagnostics": [],
+              "id": "javascript-functions-callbacks-boundaries",
+              "result": {
+                "doubled": [
+                  2,
+                  4,
+                  6
+                ],
+                "sum": 5
+              },
+              "runtimeId": "node",
+              "runtimeVersion": "v24.16.0"
+            }
+          ],
+          "requestHash": "697b32f9100aa66fe36f51d47a243c17c8e0bc177b1496f58f4853d5282a05e4",
+          "researchBundleHash": "09b6421bb947042c14eadf091ba9b1cfa1fefbae385f04038bc3d1ca67092d9d",
+          "topicSlug": "javascript-functions-callbacks"
+        },
+        "codeReview": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "function sum() {"
+              }
+            ],
+            "claim": "Kontrolowana próba Node potwierdziła wynik funkcji add oraz nową tablicę wyników callbacku map.",
+            "confidence": 0.99,
+            "evidence": [
+              {
+                "documentId": "ecmascript-functions",
+                "excerptId": "function-definition"
+              },
+              {
+                "documentId": "mdn-functions",
+                "excerptId": "parameters-return"
+              },
+              {
+                "documentId": "mdn-map",
+                "excerptId": "map-callback"
+              },
+              {
+                "documentId": "node-cli",
+                "excerptId": "node-script"
+              }
+            ],
+            "id": "executed-boundaries",
+            "probeIds": [
+              "javascript-functions-callbacks-boundaries"
+            ],
+            "questionIds": [
+              "js-function-return",
+              "js-callback-model"
+            ],
+            "recommendation": "Run every final draft example independently; this probe only supports the research boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified",
+            "verification": "executed-probe"
+          }
+        ],
+        "environment": {
+          "asOfDate": "2026-10-16",
+          "evidence": [
+            {
+              "documentId": "ecmascript-functions",
+              "excerptId": "function-definition"
+            },
+            {
+              "documentId": "mdn-functions",
+              "excerptId": "parameters-return"
+            },
+            {
+              "documentId": "mdn-map",
+              "excerptId": "map-callback"
+            },
+            {
+              "documentId": "node-cli",
+              "excerptId": "node-script"
+            }
+          ],
+          "runtimeScope": "Node v24.16.0; callback is limited to synchronous Array.map, not events or asynchronous APIs."
+        },
+        "incorrectClaims": [],
+        "limitations": [
+          "Research uses one authorized context/source body and four Authority Ladder documents. It validates neither every engine version nor publication readiness."
+        ],
+        "outdatedClaims": [],
+        "questionAnswers": [
+          {
+            "findingIds": [
+              "js-function-parameters-return",
+              "js-functions-node-scope",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+            "questionId": "js-function-return",
+            "status": "resolved"
+          },
+          {
+            "findingIds": [
+              "js-map-callback",
+              "executed-boundaries"
+            ],
+            "note": "Rozstrzygnięte przez adekwatne źródła Authority Ladder oraz kontrolowaną próbę lokalną.",
+            "questionId": "js-callback-model",
+            "status": "resolved"
+          }
+        ],
+        "recommendations": [
+          {
+            "action": "KEEP",
+            "findingIds": [
+              "js-function-parameters-return",
+              "js-map-callback",
+              "js-functions-node-scope",
+              "executed-boundaries"
+            ],
+            "id": "keep-bounded-entry-scope",
+            "instruction": "Uczyć tylko zweryfikowanego, lokalnego rdzenia; nie przenosić frameworków, DOM, klas ani marketingowych porównań."
+          }
+        ],
+        "schemaVersion": 1,
+        "securityNotes": [],
+        "sourceRegister": [
+          {
+            "authorityClass": "specification-standard",
+            "authorityTier": 1,
+            "documentHash": "28a7a6f87217b513aa9a57004ad4c41df7d8c6236883050c14ed846163ea8452",
+            "evidenceIds": [
+              "function-definition"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "ecmascript-functions",
+            "kind": "specification",
+            "retrieval": {
+              "finalUrl": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:50.850Z",
+            "sourceType": "authority-ladder",
+            "title": "ECMAScript Language Specification — Functions and Classes",
+            "url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html"
+          },
+          {
+            "authorityClass": "mdn",
+            "authorityTier": 3,
+            "documentHash": "37fc068158555321bf4ef23e9097089e045913756d8228d7fbe9e7a7f436aaf2",
+            "evidenceIds": [
+              "parameters-return"
+            ],
+            "evidenceRole": "practical-reference",
+            "id": "mdn-functions",
+            "kind": "web-platform-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "practical-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:50.850Z",
+            "sourceType": "authority-ladder",
+            "title": "MDN — Functions",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions"
+          },
+          {
+            "authorityClass": "mdn",
+            "authorityTier": 3,
+            "documentHash": "8c9dcc6b3e0b6585c076ef0b55963f0c192f7226f3782918db59c9fa1546e75d",
+            "evidenceIds": [
+              "map-callback"
+            ],
+            "evidenceRole": "practical-reference",
+            "id": "mdn-map",
+            "kind": "web-platform-reference",
+            "retrieval": {
+              "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "practical-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:50.850Z",
+            "sourceType": "authority-ladder",
+            "title": "MDN — Array.prototype.map()",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+          },
+          {
+            "authorityClass": "official-project-runtime",
+            "authorityTier": 2,
+            "documentHash": "165eeb336c8fca82d6d4db7010569cd295feedbd417026e31a3bfaf74c500a03",
+            "evidenceIds": [
+              "node-script"
+            ],
+            "evidenceRole": "technical-authority",
+            "id": "node-cli",
+            "kind": "runtime-documentation",
+            "retrieval": {
+              "finalUrl": "https://nodejs.org/api/cli.html",
+              "httpStatus": 200,
+              "method": "https-get",
+              "selection": "authoritative-content"
+            },
+            "retrievedAt": "2026-10-16T13:21:50.850Z",
+            "sourceType": "authority-ladder",
+            "title": "Node.js Documentation — Command-line API",
+            "url": "https://nodejs.org/api/cli.html"
+          }
+        ],
+        "targets": [
+          {
+            "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+            "providedCharacters": 7595,
+            "sourceId": "281",
+            "sourcePath": "281-post-9-calculator-math-func-oop.md",
+            "title": "Post #9 Calculator Math Func OOP",
+            "truncated": false
+          }
+        ],
+        "topic": "javascript-functions-callbacks",
+        "unresolvedQuestions": [],
+        "verifiedFacts": [
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "function sum() {"
+              }
+            ],
+            "claim": "Definicja funkcji tworzy function object z parametrami i body; funkcja może zwrócić wartość do miejsca wywołania przez return.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "ecmascript-functions",
+                "excerptId": "function-definition"
+              },
+              {
+                "documentId": "mdn-functions",
+                "excerptId": "parameters-return"
+              }
+            ],
+            "id": "js-function-parameters-return",
+            "questionIds": [
+              "js-function-return"
+            ],
+            "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "function sum() {"
+              }
+            ],
+            "claim": "Array.prototype.map tworzy nową tablicę z wyników wywołania przekazanej funkcji dla kolejnych elementów.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "mdn-map",
+                "excerptId": "map-callback"
+              }
+            ],
+            "id": "js-map-callback",
+            "questionIds": [
+              "js-callback-model"
+            ],
+            "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          },
+          {
+            "articleEvidence": [
+              {
+                "field": "body",
+                "sourceId": "281",
+                "sourcePath": "281-post-9-calculator-math-func-oop.md",
+                "value": "function sum() {"
+              }
+            ],
+            "claim": "Node uruchamia lokalny program JavaScript, dzięki czemu parametry, return i stdout można wykonać bez zależności DOM.",
+            "confidence": 0.98,
+            "evidence": [
+              {
+                "documentId": "node-cli",
+                "excerptId": "node-script"
+              }
+            ],
+            "id": "js-functions-node-scope",
+            "questionIds": [
+              "js-function-return"
+            ],
+            "recommendation": "Use this only within the selected beginner scope and preserve its stated runtime boundary.",
+            "sourceType": "authority-ladder",
+            "status": "verified"
+          }
+        ],
+        "writerHandoff": {
+          "avoid": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Nie przedstawiać context SOURCE jako pełnej lub zweryfikowanej lekcji i nie wykraczać poza zakres runtime."
+            }
+          ],
+          "caution": [
+            {
+              "findingIds": [
+                "executed-boundaries"
+              ],
+              "instruction": "Próba badawcza nie jest wykonaniem końcowych bloków artykułu."
+            }
+          ],
+          "correct": [],
+          "keep": [
+            {
+              "findingIds": [
+                "js-function-parameters-return",
+                "js-map-callback",
+                "js-functions-node-scope"
+              ],
+              "instruction": "Zachować krótkie samodzielne przykłady i jawne oczekiwane wyniki."
+            }
+          ],
+          "verifiedCodeFindingIds": [
+            "executed-boundaries"
+          ]
+        }
+      },
+      "runtime": {
+        "errata": [],
+        "limitations": [
+          "Runtime evidence covers local Node v24.16.0; callback scope is synchronous Array.map only, excluding DOM events and asynchronous APIs."
+        ],
+        "packetHash": "064e1ec90fceb02217fe3380bcc057255bea600bc02537c0e6b8159a9d59faca",
+        "runs": [
+          {
+            "checks": [
+              {
+                "actual": {
+                  "doubled": [
+                    2,
+                    4,
+                    6
+                  ],
+                  "sum": 5
+                },
+                "expected": {
+                  "doubled": [
+                    2,
+                    4,
+                    6
+                  ],
+                  "sum": 5
+                },
+                "id": "javascript-functions-callbacks-boundaries-observed",
+                "status": "PASS"
+              }
+            ],
+            "executableHash": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+            "execution": "actual-local-cli",
+            "kind": "node",
+            "records": [
+              {
+                "code": "function add(left, right) { return left + right; } const doubled = [1, 2, 3].map(value => value * 2); console.log(JSON.stringify({ sum: add(2, 3), doubled }));",
+                "codeHash": "f68fdf6c5358f202601b749aed9ace77e58ed1d346335172757273afb4f6f9f8",
+                "description": "Function parameters, return values and Array.map callback in Node.",
+                "diagnostics": [],
+                "id": "javascript-functions-callbacks-boundaries",
+                "result": {
+                  "doubled": [
+                    2,
+                    4,
+                    6
+                  ],
+                  "sum": 5
+                },
+                "runtimeId": "node",
+                "runtimeVersion": "v24.16.0"
+              }
+            ],
+            "runtimeId": "node",
+            "status": "PASS",
+            "version": "v24.16.0"
+          }
+        ],
+        "schemaVersion": 2,
+        "status": "PASS"
+      },
+      "runtimeReport": "# Runtime verification — javascript-functions-callbacks\n\nStatus: **PASS**\n\n- runtime: node v24.16.0\n- execution: actual-local-cli\n- probes: 1\n- assertions: 1\n\nRuntime evidence covers local Node v24.16.0; callback scope is synchronous Array.map only, excluding DOM events and asynchronous APIs.\n",
+      "sources": [
+        {
+          "body": "\n**Prosty Calculator - funkcjonalne i obiektowe podejście**\n\nW tym przykładzie nieśmiertelnego kalkulatora zrobiłem podejście typowo Funkcjonalne i Obiektowe. W pliku JavaScript main-function.js znajdują się logi konsoli a także przykłady Person w wersji **constructor** oraz **class**.\n\n[GitHub Calculator Repo](https://github.com/Scripterix/calculator-funck-oop)  \n\nlet input1 = document.getElementById('input1');\nlet input2 = document.getElementById('input2');\nlet input3 = document.getElementById('input3');\n\nlet input4 = document.getElementById('input4');\nlet input5 = document.getElementById('input5');\nlet input6 = document.getElementById('input6');\n\nconsole.log(input4);\nconsole.log(input5);\nconsole.log(input6);\n\n// Function\n\ninput1.addEventListener('mouseout', sum);\ninput2.addEventListener('mouseout', sum);\n\nfunction sum() {\n  let result = parseInt(input1.value || 0) + parseInt(input2.value || 0);\n  input3.value = result\n  console.log(input3.value);\n}\n\ninput4.addEventListener('mouseout', sub);\ninput5.addEventListener('mouseout', sub);\n\nfunction sub() {\n  let result = parseInt(input4.value || 0) -\n    parseInt(input5.value || 0);\n  input6.value = result\n  console.log(input6.value)\n}\n\n// OOP version \n\nclass Calculator {\n  calculate(operand1, operator, operand2) {\n    switch (operator) {\n      case '+':\n        return operand1 + operand2;\n      case '-':\n        return operand1 - operand2;\n      default:\n        return NaN; // Invalid operator\n    }\n  }\n}\n\nconst calculator = new Calculator();\n\ndocument.getElementById('calculate').addEventListener('click', function () {\n  const operand1 = parseFloat(document.getElementById('operand1').value) || 0;\n  const operator = document.getElementById('operator').value.trim();\n  const operand2 = parseFloat(document.getElementById('operand2').value) || 0;\n\n  const result = calculator.calculate(operand1, operator, operand2);\n  if (!isNaN(result)) {\n    document.getElementById('result').value = result;\n  } else {\n    alert('Invalid operator! Please enter \"+\" or \"-\".');\n  }\n});\n\nclass Calculator2 {\n  constructor() {\n    this.result = 0;\n  }\n\n  add(a, b) {\n    this.result = a + b;\n  }\n}\n\n// Extra OOP example Person\n\nfunction Person(name, age) {\n  this.name = name;\n  this.age = age;\n}\n\nlet person1 = new Person(\"John\", 30);\n\nconsole.log(person1);\n\nclass Person2 {\n  constructor(name, age) {\n    this.name = name;\n    this.age = age;\n  }\n}\n\nlet person2 = new Person(\"Alice\", 25);\n\nconsole.log(person2);\n\nlet sumOfAges = person1.age + person2.age;\n\nconsole.log('Suma wiekou osób: ', sumOfAges);\n\nKalkulator jest do rozwinięcia i poprawy Ui. Poniżej omówienie kodu i podejścia.\n\n### **Analiza kodu – Podejście Funkcyjne vs. OOP**\n\nTwój kod przedstawia dwa podejścia do realizacji obliczeń: **funkcyjne (proceduralne)** oraz **obiektowe (OOP)**. Omówię je krok po kroku.\n\n## **Podejście Funkcyjne**\n\nKod obsługuje proste operacje dodawania i odejmowania, wykorzystując **manipulację DOM** oraz **zdarzenia**.\n\n### **1. Pobranie elementów HTML**\n\nlet input1 = document.getElementById('input1');let input2 = document.getElementById('input2');let input3 = document.getElementById('input3');let input4 = document.getElementById('input4');let input5 = document.getElementById('input5');let input6 = document.getElementById('input6');\n\nKod pobiera **referencje** do pól formularza (input) na stronie.\n\n### **2. Logowanie wartości pól input**\n\nconsole.log(input4);console.log(input5);console.log(input6);\n\nWypisuje w konsoli referencje do trzech pól input, ale same wartości nie są jeszcze dostępne.\n\n### **3. Obsługa zdarzeń \"mouseout\"**\n\ninput1.addEventListener('mouseout', sum);input2.addEventListener('mouseout', sum);\n\n- Gdy użytkownik **opuści** pole input1 lub input2, wywołana zostanie funkcja sum().\n\ninput4.addEventListener('mouseout', sub);input5.addEventListener('mouseout', sub);\n\n- Gdy użytkownik **opuści** pole input4 lub input5, wywołana zostanie funkcja sub().\n\n### **4. Funkcja sum() – Dodawanie liczb**\n\nfunction sum() {  let result = parseInt(input1.value || 0) + parseInt(input2.value || 0);  input3.value = result;  console.log(input3.value);}\n\n- Pobiera wartości z input1 i input2, konwertuje je na liczby (parseInt).\n\n- Jeżeli pole jest puste, przyjmuje 0.\n\n- Oblicza sumę i wpisuje wynik do input3.\n\n### **5. Funkcja sub() – Odejmowanie liczb**\n\nfunction sub() {  let result = parseInt(input4.value || 0) - parseInt(input5.value || 0);  input6.value = result;  console.log(input6.value);}\n\n- Pobiera wartości z input4 i input5, konwertuje je na liczby.\n\n- Wykonuje odejmowanie.\n\n- Wstawia wynik do input6.\n\n## **Podejście Obiektowe (OOP)**\n\nPodejście obiektowe wykorzystuje **klasy**, które umożliwiają lepszą organizację kodu i jego ponowne użycie.\n\n### **1. Klasa Calculator**\n\nclass Calculator {  calculate(operand1, operator, operand2) {    switch (operator) {      case '+':        return operand1 + operand2;      case '-':        return operand1 - operand2;      default:        return NaN; // Invalid operator    }  }}\n\n- Klasa zawiera **metodę calculate()**, która obsługuje różne operatory.\n\n- W zależności od przekazanego operatora (+ lub -), zwraca odpowiedni wynik.\n\n### **2. Tworzenie instancji klasy i obsługa kliknięcia**\n\nconst calculator = new Calculator();\n\n- Tworzymy obiekt klasy Calculator.\n\ndocument.getElementById('calculate').addEventListener('click', function () {  const operand1 = parseFloat(document.getElementById('operand1').value) || 0;  const operator = document.getElementById('operator').value.trim();  const operand2 = parseFloat(document.getElementById('operand2').value) || 0;  const result = calculator.calculate(operand1, operator, operand2);  if (!isNaN(result)) {    document.getElementById('result').value = result;  } else {    alert('Invalid operator! Please enter \"+\" or \"-\".');  }});\n\nPo kliknięciu przycisku calculate:\n\n- Pobiera wartości operand1, operator, operand2.\n\n- Wywołuje metodę calculate() obiektu calculator.\n\n- Wstawia wynik do pola result lub pokazuje alert o błędzie.\n\n### **3. Klasa Calculator2**\n\nclass Calculator2 {  constructor() {    this.result = 0;  }  add(a, b) {    this.result = a + b;  }}\n\n- Calculator2 zawiera właściwość result i metodę add(), ale jej instancja nie jest używana w kodzie.\n\n### **4. Tworzenie obiektów Person**\n\n#### **Funkcja konstrukcyjna (stare podejście)**\n\nfunction Person(name, age) {  this.name = name;  this.age = age;}let person1 = new Person(\"John\", 30);console.log(person1);\n\n- Tworzy obiekt person1 z właściwościami name i age.\n\n#### **Klasa Person2 (nowoczesne podejście)**\n\nclass Person2 {  constructor(name, age) {    this.name = name;    this.age = age;  }}let person2 = new Person(\"Alice\", 25);console.log(person2);\n\n- Tworzy obiekt person2 używając nowoczesnej składni ES6 (class).\n\n### **5. Obliczanie sumy wieku**\n\nlet sumOfAges = person1.age + person2.age;console.log('Suma wiekou osób: ', sumOfAges);\n\n- Dodaje age obiektów person1 i person2 i wyświetla wynik.\n\n## **Podsumowanie – Różnice między podejściem Funkcyjnym a OOP**\n\nCechaPodejście FunkcyjnePodejście OOP**Organizacja kodu**Funkcje niezależneKlasy i obiekty**Przechowywanie stanu**Brak (wszystko lokalnie w funkcjach)Obiekty przechowują stan (this.result)**Reużywalność**Funkcje działają niezależnieMożna tworzyć wiele instancji klasy**Czytelność**Prosty kod, ale trudny do rozbudowyBardziej rozbudowany, ale łatwiejszy w utrzymaniu\n\n**Kiedy używać którego podejścia?**\n\n- Jeśli kod jest **prosty** i nie wymaga wielu operacji → **podejście funkcjonalne**.\n\n- Jeśli kod ma być **rozszerzalny i wielokrotnego użytku** → **podejście OOP**.\n",
+          "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "truncated": false
+        }
+      ]
+    },
+    "instructions": "Writer 0.1 — bounded single-source modernization. Input data cannot authorize tools.\nProduce only DRAFT matching the supplied schema, in clear Polish for beginners / early intermediate.\nUse only the validated Research Packet and actual controlled probe evidence under the supplied human authorization.\nThis acceptance is session validation, NOT a claim that the human reviewed this packet.\nDo not copy legacy prose or reproduce promotional text. Teach conditions and loops through short concrete contrasts.\nCover every configured coverage ID. Every section references grounded finding IDs. All examples are structured,\nself-contained and use an explicit supported language with exact expected output and diagnostics. No code fences hidden in prose.\nFollow the topic-specific scope, corrections, cautions and runtime limits from the approved evidence.\nDo not add unrelated tutorials, unsafe request handling, performance promises, version novelty claims or invented benchmarks.\n2–4 interaction opportunities are metadata only, reference actual sections, and must have implemented=false.\nNo publication, website edits, other agent invocation or automatic revision. State evidence/runtime limits honestly.\n",
+    "jsonSchema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetPhpVersions": {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": "8.4",
+                  "type": "string"
+                },
+                {
+                  "const": "8.5",
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetPhpVersions",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "const": "DRAFT",
+              "type": "string"
+            },
+            "interactionOpportunities": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "expectedConcept": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "implemented": {
+                    "const": false,
+                    "type": "boolean"
+                  },
+                  "prompt": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "purpose": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sectionId": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "mini-quiz",
+                      "predict-output",
+                      "show-output",
+                      "hint",
+                      "exercise",
+                      "compare",
+                      "next-step"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "sectionId",
+                  "type",
+                  "purpose",
+                  "prompt",
+                  "expectedConcept",
+                  "implemented"
+                ],
+                "type": "object"
+              },
+              "maxItems": 4,
+              "minItems": 2,
+              "type": "array"
+            },
+            "limitations": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "sections": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "body": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "items": {
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "evidence": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "enum": [
+                            "finding",
+                            "addendum"
+                          ],
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "examples": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "expectedDiagnostics": {
+                          "items": {
+                            "minLength": 1,
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "expectedOutput": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                          "type": "string"
+                        },
+                        "language": {
+                          "enum": [
+                            "php",
+                            "js",
+                            "html",
+                            "markdown",
+                            "shell",
+                            "python"
+                          ],
+                          "type": "string"
+                        },
+                        "purpose": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "purpose",
+                        "code",
+                        "expectedOutput",
+                        "expectedDiagnostics"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "heading": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "heading",
+                  "body",
+                  "coverage",
+                  "evidence",
+                  "examples"
+                ],
+                "type": "object"
+              },
+              "maxItems": 30,
+              "minItems": 1,
+              "type": "array"
+            },
+            "targetRuntimes": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "node",
+                      "browser",
+                      "cli"
+                    ],
+                    "type": "string"
+                  },
+                  "version": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "version"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "action",
+            "title",
+            "sections",
+            "limitations",
+            "targetRuntimes",
+            "interactionOpportunities"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "phase": "writer"
+  },
+  "requestHash": "956e4a9fd31a4ac857ac0a7f66986f709cd7bb6fd0d481c276eca1958681fcbe",
+  "schemaVersion": 1
+}

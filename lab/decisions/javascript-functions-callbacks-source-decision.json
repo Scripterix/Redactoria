@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 3,
+  "status": "approved",
+  "approvedBy": "human",
+  "action": "REWRITE",
+  "nextStep": "research",
+  "targets": [{
+    "sourceId": "281",
+    "sourcePath": "281-post-9-calculator-math-func-oop.md",
+    "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+    "title": "Post #9 Calculator Math Func OOP",
+    "providedCharacters": 7595,
+    "truncated": false
+  }],
+  "confidence": 0.96,
+  "reason": "The source contains a useful function/callback core but combines it with DOM, parsing and OOP. The rewrite is bounded to functions, parameters, return, observable output and one simple callback.",
+  "evidence": [{ "sourceId": "281", "sourcePath": "281-post-9-calculator-math-func-oop.md", "field": "body", "value": "function sum() {" }],
+  "analysisHash": "536c250b2207ee0f15d70b3c018110dfcd25a2cf6f03239cea3ce248fe22f000",
+  "analysisRef": "lab/cartography/javascript-functions-callbacks-single.json",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+  "topic": "javascript-functions-callbacks"
+}

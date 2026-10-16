@@ -1,0 +1,24 @@
+{
+  "audience": "beginner",
+  "requiredCoverage": [
+    "file-cli",
+    "values",
+    "variables",
+    "scalar-types",
+    "arithmetic",
+    "echo"
+  ],
+  "researchApproval": "lab/decisions/php-language-foundation-research-acceptance.json",
+  "researchPacket": "lab/research/php-language-foundation/research.json",
+  "runtimeVerification": "lab/research/php-language-foundation/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/php-language-foundation-source-decision.json",
+  "targetRuntimes": [
+    {
+      "id": "php-cli",
+      "kind": "cli",
+      "version": "8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)"
+    }
+  ],
+  "topic": "php-language-foundation"
+}

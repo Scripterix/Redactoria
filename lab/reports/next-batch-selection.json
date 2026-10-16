@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "status": "approved-for-lab-pipeline",
+  "selectedAt": "2026-10-16T15:14:27+02:00",
+  "selectionMethod": [
+    "PUBLIC CONTENT and SOURCE inventory",
+    "Knowledge Gap 0.2 Run A blind structural evidence",
+    "Knowledge Gap 0.2 Run B Strategic Memory for sequencing only",
+    "explicit human request for exactly three LAB-only lifecycle runs"
+  ],
+  "inputs": {
+    "knowledgeGapRunA": {
+      "path": "lab/knowledge-gaps/knowledge-gap-0.2-run-a.json",
+      "sha256AtFreeze": "98542ccd4bafc59a466a3180f8149822dad3c67bb8355789611bb3bc92bfacef"
+    },
+    "knowledgeGapRunB": {
+      "path": "lab/knowledge-gaps/knowledge-gap-0.2-run-b.json",
+      "role": "sequencing-only; it cannot raise factual confidence"
+    },
+    "inventory": {
+      "path": "lab/inventory/inventory.json",
+      "sha256": "5c21f3bacc28a11a75bd7450902334e5eb2f9a0aeb18466f57c8b6a0128586c6",
+      "records": 83
+    },
+    "publicContent": {
+      "articleCount": 12,
+      "checkedPaths": [
+        "content/articles/instrukcje-sterujace-php.md",
+        "content/articles/tablice-w-php.md",
+        "content/articles/warunki-w-javascript.md",
+        "content/articles/tablice-w-javascript.md",
+        "content/articles/dom-w-javascript.md",
+        "content/articles/kalkulator-w-javascript.md"
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "order": 1,
+      "topic": "php-language-foundation",
+      "proposedTitle": "PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI",
+      "origin": "CREATE_NEW",
+      "cartographerActionExpected": "NEW_CONTENT",
+      "contextSources": [
+        {
+          "sourceId": "977",
+          "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+          "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+          "originalUrl": "https://opengateweb.com/posts/52-php-python/",
+          "role": "bounded evidence that the legacy comparison is too broad/thin for the missing entry lesson"
+        }
+      ],
+      "prerequisites": ["utworzenie pliku tekstowego", "uruchomienie jawnego polecenia PHP CLI"],
+      "whyNow": "Jest najwyższą luką P1/HIGH w obu przebiegach i daje brakujący węzeł przed dwoma już publicznymi lekcjami: warunkami/pętlami i tablicami PHP.",
+      "downstream": ["/artykuly/instrukcje-sterujace-php/", "/artykuly/tablice-w-php/"],
+      "confidence": "HIGH",
+      "complexity": "MEDIUM",
+      "scope": "wartości, nazwy zmiennych, proste typy scalar, operatory arytmetyczne i porównania, echo oraz uruchomienie jednego pliku; bez formularzy, tablic, funkcji, serwera WWW i frameworków.",
+      "duplicateCheck": "Nie ma publicznej lekcji PHP poniżej jawnych podstaw; istniejące lekcje deklarują zmienne, scalar values, echo i CLI jako warunek startowy."
+    },
+    {
+      "order": 2,
+      "topic": "javascript-language-foundation",
+      "proposedTitle": "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+      "origin": "CREATE_NEW",
+      "cartographerActionExpected": "NEW_CONTENT",
+      "contextSources": [
+        {
+          "sourceId": "542",
+          "sourcePath": "542-post-17-przeglad-js-html-css.md",
+          "contentHash": "5256b1855671f707928ad2079925bc3fca126b87b74988221779644d70a55c07",
+          "originalUrl": "https://opengateweb.com/posts/17-post-js/",
+          "role": "bounded evidence that a project catalogue is not an entry lesson"
+        }
+      ],
+      "prerequisites": ["utworzenie pliku .js", "uruchomienie jawnego polecenia Node.js"],
+      "whyNow": "Jest luką P1/HIGH, wspólną dla trzech opublikowanych lekcji JavaScript, które zaczynają się od warunków, metod tablic i DOM.",
+      "downstream": ["/artykuly/warunki-w-javascript/", "/artykuly/tablice-w-javascript/", "/artykuly/dom-w-javascript/"],
+      "confidence": "HIGH",
+      "complexity": "MEDIUM",
+      "scope": "wartości, const/let, typeof jako obserwacja, podstawowe operatory, template literal i console.log; bez DOM, tablic, funkcji, modułów i asynchroniczności.",
+      "duplicateCheck": "Nie ma publicznej lekcji o uruchomieniu i modelu wartości JavaScript; warunki, tablice i DOM zakładają te elementy."
+    },
+    {
+      "order": 3,
+      "topic": "javascript-functions-callbacks",
+      "proposedTitle": "Funkcje JavaScript: parametry, return i callbacki",
+      "origin": "MODERNIZE",
+      "cartographerActionExpected": "REWRITE",
+      "contextSources": [
+        {
+          "sourceId": "281",
+          "sourcePath": "281-post-9-calculator-math-func-oop.md",
+          "contentHash": "4740eac41f4886772f1a4908ba3dfc11365bc384734fb65290ea547d7bf53813",
+          "originalUrl": "https://opengateweb.com/posts/9-post-calc/",
+          "role": "modernizable core: named functions, event callbacks and calculator logic; its class/DOM breadth is excluded"
+        }
+      ],
+      "prerequisites": ["JavaScript values and const/let", "uruchomienie krótkiego programu Node.js"],
+      "whyNow": "Jest luką P1/HIGH w obu przebiegach, ma najsilniejszy dostępny rdzeń SOURCE i przygotowuje parametry, return oraz funkcję przekazywaną do map/filter/reduce i addEventListener.",
+      "downstream": ["/artykuly/warunki-w-javascript/", "/artykuly/tablice-w-javascript/", "/artykuly/dom-w-javascript/"],
+      "confidence": "HIGH",
+      "complexity": "LOW",
+      "scope": "deklaracja funkcji, parametry, return, wynik a efekt console.log oraz funkcja jako callback dla jednej prostej operacji; bez this, klas, DOM, Promise i funkcji asynchronicznych.",
+      "duplicateCheck": "Kalkulator używa funkcji jako części większego zadania, ale nie zastępuje samodzielnej lekcji o parametrach, return i callbackach."
+    }
+  ],
+  "rejectedNearTerm": {
+    "topic": "html-css-before-dom",
+    "reason": "Pozostaje P1/HIGH, ale jest czwarta w obu uporządkowaniach. Trzy wybrane pozycje najpierw domykają dwie wspólne ścieżki językowe; HTML/selectors jest następnym kandydatem, nie usuniętym z mapy."
+  },
+  "authorityPlan": {
+    "php": ["PHP Manual (tier 2)", "php.net language reference (tier 2)"],
+    "javascript": ["ECMAScript / TC39 (tier 1) dla normatywnej semantyki, gdy potrzebna", "MDN (tier 3) jako praktyczna referencja", "Node.js documentation (tier 2) tylko dla uruchomienia CLI"],
+    "rule": "MDN nie jest jedynym źródłem dla twierdzeń technicznych; każde zweryfikowane twierdzenie otrzyma co najmniej adekwatne źródło z Authority Ladder."
+  },
+  "authorizationBoundary": {
+    "allowedStages": ["cartographer", "research", "runtime-verification", "writer", "critic", "publication-candidate"],
+    "publicationApproved": false,
+    "contentWriteApproved": false,
+    "gitApproved": false,
+    "deploymentApproved": false
+  },
+  "limitations": [
+    "Knowledge Gap 0.2 jest diagnozą z 2026-10-11; przeprowadzono aktualną kontrolę duplikacji względem obecnych 12 artykułów, ale nie odtwarza się całego eksperymentu.",
+    "Dwa tematy CREATE_NEW wymagają źródła kontekstowego i nowych authority-backed faktów; legacy SOURCE nie jest przedstawiany jako wystarczająca lekcja do przeróbki.",
+    "Wybór nie stanowi zgody na publikację ani faktyczną poprawność techniczną — te granice należą do Researchera, runtime evidence i Critica."
+  ]
+}

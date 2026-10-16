@@ -1,0 +1,23 @@
+{
+  "audience": "beginner / early intermediate",
+  "requiredCoverage": [
+    "function-definition",
+    "parameters",
+    "return",
+    "console-output",
+    "map-callback"
+  ],
+  "researchApproval": "lab/decisions/javascript-functions-callbacks-research-acceptance.json",
+  "researchPacket": "lab/research/javascript-functions-callbacks/research.json",
+  "runtimeVerification": "lab/research/javascript-functions-callbacks/runtime-verification.json",
+  "schemaVersion": 2,
+  "sourceDecision": "lab/decisions/javascript-functions-callbacks-source-decision.json",
+  "targetRuntimes": [
+    {
+      "id": "node",
+      "kind": "node",
+      "version": "v24.16.0"
+    }
+  ],
+  "topic": "javascript-functions-callbacks"
+}

@@ -1,0 +1,87 @@
+{
+  "approvedBy": "session-review-under-human-authorization",
+  "authorizationHash": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184",
+  "authorizationRef": "lab/decisions/b6-authorization.json",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "lab/decisions/b6-authorization.json",
+        "sha256": "9dab6eba754cb3c93b250dd5ebcae11e014b88ad0958eab8a82e633fbcf82184"
+      },
+      {
+        "path": "lab/decisions/php-language-foundation-source-decision.json",
+        "sha256": "4df9629e4cecb3cc906cdc5dd3c68789904e508522d4401ca32e85e52b0e6c54"
+      },
+      {
+        "path": "lab/cartography/php-language-foundation-single.json",
+        "sha256": "09941e5a450c6b860d4e51350f9d397dcd8c4f67d025dc2543d41ad028920dea"
+      },
+      {
+        "path": "lab/research/php-language-foundation/sources.json",
+        "sha256": "d5d2de50a9aee4f4c23d3b9a4b7ff1f31d3e67c7d8049c990669a59dc3308778"
+      },
+      {
+        "path": "lab/research/php-language-foundation/probes.json",
+        "sha256": "c41bb88c8631d051ae03d4cb45e30904295bf73cd4a4853eee8ef87878a48b66"
+      },
+      {
+        "path": "lab/research/php-language-foundation/research.json",
+        "sha256": "be67729e55fb3c976b37c0fd048046cd9e95b5c7cf2731d134ebf0892c632e01"
+      },
+      {
+        "path": "lab/research/php-language-foundation/runtime-verification.json",
+        "sha256": "180a38c02bc7ab9778670c9ce9178dbf4a7a1d7ca5de99f4bcd22b376da94a32"
+      },
+      {
+        "path": "lab/research/php-language-foundation/runtime-verification.md",
+        "sha256": "1b3ff75faac98be37d87c5622defbf902f75d3808197cd82d493755691ca0127"
+      }
+    ],
+    "humanApproval": "The human authorized this exact B6 batch through candidate preparation. The packet was validated in-session and was not separately reviewed by the human.",
+    "runtimeVerification": {
+      "ref": "lab/research/php-language-foundation/runtime-verification.json",
+      "status": "PASS",
+      "versions": [
+        {
+          "assertions": 1,
+          "probes": 1,
+          "runtimeId": "php-cli",
+          "status": "PASS",
+          "version": "8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)"
+        }
+      ]
+    }
+  },
+  "humanReviewedPacket": false,
+  "inputHash": "058ca1683e0a1db91e3cc00c20abbab219eab27f1c639a626ee6d91cded8f5d1",
+  "nextStep": "writer",
+  "packetHash": "be67729e55fb3c976b37c0fd048046cd9e95b5c7cf2731d134ebf0892c632e01",
+  "packetRef": "lab/research/php-language-foundation/research.json",
+  "provenance": {
+    "adapter": "recorded-json",
+    "mode": "imported-session-analysis",
+    "model": "codex-session"
+  },
+  "remainingWriterBoundary": "Use only verified bounded facts, retain the runtime limit, and execute every final draft example independently.",
+  "requestHash": "1f966a8884b3c2be6fc9ffbf11981f34fb275e8fe32ae2b8562901347dba0c02",
+  "requiredAddenda": [],
+  "resolvedQuestionIds": [
+    "php-variable-type-model",
+    "php-operators-output-cli"
+  ],
+  "schemaVersion": 3,
+  "scope": "B6 php-language-foundation: validated Authority Ladder packet and runtime evidence through LAB candidate only; no publication.",
+  "status": "validated",
+  "targets": [
+    {
+      "contentHash": "1378b639eb8e9bae3938be796aa4a95bd55edfcca54243b9c9c3ca6819be2ee9",
+      "providedCharacters": 5240,
+      "sourceId": "977",
+      "sourcePath": "977-post-52-jakie-sa-php-i-python.md",
+      "title": "Post #52 Jakie są PHP i Python",
+      "truncated": false
+    }
+  ],
+  "topic": "php-language-foundation",
+  "validatedAt": "2026-10-16T13:23:32.963Z"
+}

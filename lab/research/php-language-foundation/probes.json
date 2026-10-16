@@ -1,0 +1,19 @@
+[
+  {
+    "code": "$name = \"Ada\"; $count = 2; $total = $count + 3; echo json_encode([\"line\" => \"$name:$total\", \"types\" => [get_debug_type($name), get_debug_type($count), get_debug_type(true)]], JSON_THROW_ON_ERROR), \"\\n\";",
+    "codeHash": "6a837407d7a0847365573462a5aec12c7b4acebaae54eaa54b0cf9eb9d371890",
+    "description": "Local scalar values, arithmetic, type observation and output in PHP CLI.",
+    "diagnostics": [],
+    "id": "php-language-foundation-boundaries",
+    "result": {
+      "line": "Ada:5",
+      "types": [
+        "string",
+        "int",
+        "bool"
+      ]
+    },
+    "runtimeId": "php-cli",
+    "runtimeVersion": "8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)"
+  }
+]
