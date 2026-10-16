@@ -1,9 +1,10 @@
 # Redactoria — STATUS
 
 Stan po Milestone 4/5, Search 0.1, selekcji B1, lokalnej publikacji B2/B3/B4/B5,
-Pipeline Review 0.1, produkcyjnym
-read-only `verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder,
-2026-10-14. Szczegóły: [Project Brain](index.md),
+Pipeline Review 0.1, produkcyjnym read-only `verify:article`, Knowledge Gap 0.1/0.2,
+Source Authority Ladder, zamkniętej ramie wizualnej 0.2 oraz trzech zestawach po
+trzy generowane grafiki wyróżniające,
+2026-10-16. Szczegóły: [Project Brain](index.md),
 [architektura](architecture/overview.md) i [Roadmap](roadmap/ROADMAP.md).
 
 ## Current State
@@ -11,7 +12,7 @@ read-only `verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder,
 | Etap | Zakres | Status |
 | --- | --- | --- |
 | Milestone 0 | Astro foundation | DONE |
-| Cloudflare Pages | Publiczny checkpoint B4, 19 stron Astro / 18 stron indeksu | DEPLOYMENT SUCCESS — VERIFIED |
+| Cloudflare Pages | Publiczny checkpoint B5, 23 strony Astro / 22 strony indeksu | DEPLOYMENT SUCCESS — VERIFIED |
 | Milestone 0.5 | Project Brain + Tests | DONE |
 | Milestone 1 | Inventory Scanner | DONE |
 | Milestone 2 | Cartographer 0.1 | DONE |
@@ -46,6 +47,10 @@ read-only `verify:article`, Knowledge Gap 0.1/0.2 oraz Source Authority Ladder,
 | Source Authority Ladder | Researcher schema-v3 + Writer/Critic policy | IMPLEMENTED — BACKWARD COMPATIBLE |
 | B4 — ranks #5–#7 | Markdown, JS Calculator, API/HTTP/JSON | PUBLISHED — PRODUCTION VERIFIED |
 | B5 — ranks #8–#10 | Git, curl/HTTP, Python fundamentals | PUBLISHED — PRODUCTION VERIFIED |
+| JavaScript Featured Images | if/else, Arrays, DOM; 1600×900 WebP + metadata-only lineage | LOCAL GATE PASS |
+| B4 Featured Images | Markdown, JS Calculator, API/HTTP/JSON; 1600×900 WebP + metadata-only lineage | LOCAL GATE PASS |
+| Visual frame 0.2 + B5 Featured Images | Python, local Git, curl/HTTP; 1600×900 WebP + metadata-only lineage | LOCAL GATE PASS |
+| B6 foundation candidates | PHP entry, JavaScript entry, functions/callbacks; 3 Critic PASS, 9 final examples | LAB ONLY — PUBLICATION PENDING |
 | Publisher / Dispatcher | Przyszły zakres | NOT STARTED |
 
 ## Cloudflare Pages — publiczne środowisko testowe

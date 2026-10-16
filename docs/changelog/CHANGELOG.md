@@ -4,6 +4,25 @@
 
 ### Added
 
+- Featured Image visual frame 0.2: a human-selected closed palette, strong
+  charcoal linework and detailed soft-comic composition rules. It freezes the
+  later illustration language without recoloring earlier assets.
+- Three generated Featured Images for Python fundamentals, local Git and curl/HTTP.
+  The 1600×900 WebP sources use visual frame 0.2; prompt/hash evidence,
+  descriptive alt text and first recorded B5 CONTENT lineage are included.
+- Three additional generated Featured Images for Markdown, the JavaScript
+  calculator and API/HTTP/JSON. The 1600×900 WebP illustrations continue the
+  accepted DOM soft-comic language with secondary characters, dominant technical
+  motifs and restrained flowers; prompts, source references and hashes are recorded.
+- Human-approved metadata-only assignment, descriptive alt text and append-only
+  CONTENT lineage for the second three-image set. All lifecycle, test, check,
+  build and responsive browser verification passes locally.
+- Three generated, article-specific JavaScript Featured Images for if/else,
+  Arrays and DOM. The 1600×900 WebP sources use smaller secondary characters and
+  the shared Redactoria visual language; prompts, references and hashes are recorded.
+- Human-approved metadata-only assignment, descriptive alt text and append-only
+  CONTENT lineage for all three images. Lifecycle verification, responsive hero
+  and thumbnail checks preserve the effective technical reviews.
 - PHP Arrays beginner clarity pass 2: beginner-first ordering, visible state and
   labelled output across 23 self-contained examples. All 46 PHP 8.4.26/8.5.11
   executions PASS; a fresh Critic PASS and append-only `CONTENT_CHANGE` lineage

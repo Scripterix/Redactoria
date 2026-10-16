@@ -46,6 +46,9 @@ npm run verify:article -- --topic php-control-flow
 npm run verify:article -- --topic javascript-if-else
 npm run verify:article -- --topic javascript-arrays
 npm run verify:article -- --topic javascript-dom
+npm run verify:article -- --topic php-language-foundation
+npm run verify:article -- --topic javascript-language-foundation
+npm run verify:article -- --topic javascript-functions-callbacks
 ```
 
 Wynik zgodny z kontraktem, przeznaczony dla narzędzi:

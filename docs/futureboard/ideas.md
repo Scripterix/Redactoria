@@ -1,5 +1,27 @@
 # Exploring ideas
 
+## Observation: Pedagogy / article-input evidence
+
+**Status:** `OBSERVE`
+
+Pedagogy 0.1 records a learner persona, Teaching Plan and distinct
+`ENGINE_WRITTEN`, `HUMAN_WRITTEN` and `GPT_ASSISTED_EXTERNAL` routes. It is not an
+implemented Engine schema or agent. The supplied Google AI Search body demonstrates
+why content creation and verification must stay separate. Gather independent cases
+before proposing a shared contract, manifest or automation.
+
+## Experiment candidate: one article = one pipeline run
+
+**Status:** `OBSERVE`
+
+The three-candidate batch took an observed ~19 min 36 s. It may incur context
+switching, three SOURCE sets, Research Packets, Writer/Critic contexts, artifacts
+and payloads — metaphorically, a waiter carrying nine plates. This is a hypothesis,
+not a finding. A later single-article run should record start/end, stage boundaries,
+artifact/re-read/revision counts and compaction before comparing per-article cost.
+Do not build caching, compression, orchestration, auto-batching or an Article
+Manifest from this one observation.
+
 The following concepts are exploratory. They are not current implementation
 requirements.
 
@@ -86,9 +108,19 @@ The default execution would remain bounded to one job and one agent branch.
 
 ## Media in educational articles
 
-- Status: `exploring`
+- Status: `experiment`
 - Recorded: 2026-10-09, human feedback after the local website review.
 - Discuss the role of media in Redactoria EDU before choosing formats or adding assets.
 - Open questions: which materials benefit from media, where it belongs in the layout,
   and how to handle provenance, rights, accessibility and page weight.
-- No media strategy selected and no media generation or implementation started.
+- Featured Image 0.1 established the shared 16:9 hero/thumbnail contract and fallback.
+  Two human-supplied PHP illustrations and nine human-directed generated
+  illustrations now exercise article-specific media. The human has selected an
+  expanded but closed palette and detailed soft-comic language from the latter
+  sets; visual frame 0.2 records its limits. The latest set covers Python, local
+  Git and curl/HTTP. All generated sets record prompts, references, file hashes,
+  alt text and metadata-only CONTENT lineage; all affected lifecycle and browser
+  checks pass.
+- The experiment does not establish an automatic generator or complete media
+  strategy. API cost/retry evidence, selection criteria for future articles and a
+  durable source-master policy remain open.

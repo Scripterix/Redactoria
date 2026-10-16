@@ -1,9 +1,55 @@
 # Active plans
 
-Active: [027: B4 minimal contract extension and publication](027-b4-contract-and-publication.md).
-The three articles are promoted locally and all eight lifecycle checks plus the full
-quality gate pass. Only the authorized Git push and Cloudflare production checkpoint
-remain.
+No active execution plan. The end-of-day checkpoint is complete; further work
+requires a new bounded plan.
+
+Most recent completed work: [042: End-of-day closure](../completed/042-end-of-day-closure.md)
+records the approximate session-log time observations and the verified local
+quality checkpoint. The `ONE ARTICLE = ONE PIPELINE RUN` idea remains an
+OBSERVE-only Futureboard experiment; no optimization was implemented.
+
+Previous completed work: [037: Foundation publication checkpoint](../completed/037-foundation-publication-checkpoint.md)
+records three separately approved foundation publications and their verified
+lineage. Its Git and production checkpoint is recorded by plan 042.
+
+Most recent completed work: [041: Pedagogy, personas, article inputs and effort observation](../completed/041-pedagogy-personas-article-inputs.md)
+is a Project Brain and LAB observation only; it introduced no Engine, CONTENT or
+publication behavior.
+
+Most recent completed work: [040: Google AI Search 2026 manual publication](../completed/040-google-ai-search-2026-manual-publication.md)
+records one user-supplied, AI-assisted immutable-prose import with a current
+Google-first manual review, exact LAB linkage and local CONTENT publication. It
+did not create a generic workflow, commit, push or deploy.
+
+Most recent completed research: [039: AI Search / Google AI Overview refresh](../completed/039-ai-search-google-ai-overview-refresh.md)
+records a SOURCE-to-LAB, Google-first assessment. It recommends a substantial
+2026 modernization, not a candidate or publication; SOURCE, CONTENT and WEBSITE
+were unchanged.
+
+Most recent completed research: [038: Humanization research 0.1](../completed/038-humanization-research-01.md)
+records a policy-only source review. It did not change articles, runtime-agent
+contracts, CONTENT, publication, Git or deployment.
+
+Most recent: [036: Next foundation batch and efficiency observation](../completed/036-next-batch-foundations-and-efficiency.md)
+is completed. Three evidence-backed foundation topics reached LAB-only Critic-PASS
+candidates; SOURCE and CONTENT were unchanged. It also records wall-clock proxy
+observations and recommendations only, with no optimization implementation,
+publication, Git or deployment.
+
+Most recent: [035: Python, Git and curl featured images](../completed/035-b5-featured-images.md)
+is completed. Visual frame 0.2 was recorded and three illustrations were assigned
+through metadata-only CONTENT changes with append-only lineage; the complete local
+gate passed. No Git push or deployment occurred.
+
+Previous plan: [034: Markdown, calculator and API featured images](../completed/034-next-featured-images.md)
+is completed. Three soft-comic illustrations were assigned through metadata-only
+CONTENT changes with append-only lineage, and the complete local gate passed. No
+Git push or deployment occurred.
+
+Previous plan: [033: JavaScript featured images](../completed/033-javascript-featured-images.md)
+is completed. Three generated illustrations were assigned through metadata-only
+CONTENT changes with append-only lineage, and the complete local gate passed. No
+Git push or deployment occurred.
 
 Previous plan: [026: Source Authority Ladder](../completed/026-source-authority-ladder.md)
 is completed: new Researcher schema-v3 evidence records carry validated tier/class/role,

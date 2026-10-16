@@ -25,6 +25,8 @@ which ideas are still exploratory.
 - [PHP arrays draft](../lab/drafts/php-arrays/article.md) and
   [Critic review](../lab/reviews/php-arrays/critic-review.md) — human-authorized targeted
   correction, full second-pass PASS; original generation/REVISE preserved for audit.
+- [Pedagogy 0.1](pedagogy.md) — learner persona, Writer teaching role, compact
+  Teaching Plan, teaching principles and future article-input model; policy only.
 - [First publication candidate](../lab/candidates/php-arrays/article.md) and
   [metadata/audit](../lab/candidates/php-arrays/README.md) — exact reviewed copy,
   2559 prose words, PHP 8.4–8.5; preserved historical M5 state, no regeneration.
@@ -38,6 +40,18 @@ which ideas are still exploratory.
   reading time, official sitemap XML, HTML map, back-to-top and progressive code copy.
 - [Featured Image 0.1](plans/completed/028-featured-image-01.md) — optional article
   image metadata, one shared Astro-managed fallback, article hero and card thumbnails.
+- [JavaScript featured images](plans/completed/033-javascript-featured-images.md) —
+  three generated, human-approved illustrations with recorded prompts, metadata-only
+  CONTENT lineage and verified hero/thumbnail rendering.
+- [Markdown, calculator and API featured images](plans/completed/034-next-featured-images.md) —
+  a second three-image soft-comic set with the accepted smaller-character balance,
+  floral motif, recorded prompts and verified responsive rendering.
+- [Featured Image visual frame 0.2](featured-image-visual-frame.md) — the
+  human-selected closed palette, linework, comic detail and composition limits for
+  the expanded illustrated series.
+- [Python, Git and curl featured images](plans/completed/035-b5-featured-images.md) —
+  three further illustrations generated inside visual frame 0.2, with recorded
+  prompts, metadata-only lineage and verified responsive rendering.
 - [B4 ranks #5–#7](plans/completed/027-b4-contract-and-publication.md) — three
   authority-backed publications, commit `828703e` and verified production routes.
 - [B5 ranks #8–#10](plans/completed/029-b5-ranks-8-10.md) and
@@ -48,6 +62,10 @@ which ideas are still exploratory.
 - [B5 publication checkpoint](plans/completed/030-b5-publication-checkpoint.md) —
   three separate decisions and promotions, eleven lifecycle checks, full local
   gate, Git push and Cloudflare production verification complete.
+- [Next foundation batch + effort observation](plans/completed/036-next-batch-foundations-and-efficiency.md) —
+  PHP and JavaScript entry foundations plus JavaScript functions/callbacks reached
+  three LAB-only Critic-PASS candidates. The selection and wall-clock proxy map are
+  recorded without CONTENT, publication, Git or deployment action.
 - [Search/public checkpoint](plans/completed/010-pagefind-search-public-checkpoint.md) —
   Pagefind, approved public note cleanup and current human-authorized Git/Cloudflare gate.
 - [B1 pilot selection](../lab/reports/pilot-selection-b1.md) and

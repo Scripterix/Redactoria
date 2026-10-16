@@ -135,6 +135,21 @@ The roadmap contains work accepted for delivery. Exploratory ideas remain in the
 - Plan 009 website utilities DONE; icons and educational media remain exploratory Futureboard items.
 - Featured Image 0.1 DONE: one Astro-managed fallback serves responsive 16:9
   article heroes and listing thumbnails; optional metadata enables later per-article images.
+- Three JavaScript Featured Images: generated conditions, Arrays and DOM illustrations
+  use smaller secondary characters, recorded prompts and metadata-only CONTENT
+  lineage; all three lifecycle checks and the local quality/browser gate pass.
+- Markdown, calculator and API Featured Images: a second human-directed soft-comic
+  set continues the smaller-character and floral language; recorded prompts,
+  metadata-only lineage, lifecycle checks and the local quality/browser gate pass.
+- Featured Image visual frame 0.2 and B5 Featured Images: the human selected the
+  expanded palette and detailed comic language as a closed experimental frame.
+  Python, local Git and curl/HTTP now use it; each image has prompt/hash evidence,
+  metadata-only lineage, lifecycle checks and a local quality/browser gate pass.
+- B6 foundation batch: evidence-selected PHP entry, JavaScript entry and JavaScript
+  functions/callbacks each reached exact Critic-PASS publication candidates in LAB.
+  Two candidates are truthfully `NEW_CONTENT` with contextual SOURCE, the third is
+  a bounded rewrite. All nine final examples passed local execution; publication,
+  CONTENT, Git and deployment remain unapproved.
 - `verify:article` 0.1 IMPLEMENTED / ESTABLISHED; Article Manifest remains a
   separate NEXT hypothesis and Precision Gate/Humanizer remain later/too early.
 - Knowledge Gap 0.1 complete in LAB and uncommitted for human review. Its TOP 10
