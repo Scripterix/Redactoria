@@ -1,11 +1,12 @@
 {
   "articleId": "api-http-json",
   "candidateRef": "lab/candidates/api-http-json/article.json",
-  "currentContentHash": "bebaded0a1262da589dd931d98a4021ef76869b6b7d08ab37921bed7ed11df71",
+  "currentContentHash": "f7a38d27b7d4649cde080e43f3faec9934908db1310e932cefdba4532be4335a",
   "currentContentRef": "content/articles/api-http-json.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
   ],
   "promotedContentHash": "3da7f179e0102eaf26f69e6a832db65452a6b0e323434784a745f34f952faa9c",
   "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
@@ -65,6 +66,37 @@
         "kind": "remove-body-exact",
         "removals": [
           "\n---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.\n"
+        ]
+      }
+    },
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "f0abb06ad80d23942cd3b9a5390df37cd3dd2c65f9ac3fc6ffa1ce6b89f0815e",
+      "authorizationRef": "lab/decisions/next-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "f7a38d27b7d4649cde080e43f3faec9934908db1310e932cefdba4532be4335a",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "bebaded0a1262da589dd931d98a4021ef76869b6b7d08ab37921bed7ed11df71",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Assign the human-approved article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-16T10:50:28Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: api-http-json",
+            "to": "slug: api-http-json\nfeaturedImage: ../../src/assets/api-http-json.webp\nfeaturedAlt: Dziewczyna odbiera sprawdzoną paczkę danych przesłaną między serwerem a stroną."
+          }
         ]
       }
     }

@@ -1,12 +1,13 @@
 {
   "articleId": "tablice-w-javascript",
   "candidateRef": "lab/candidates/javascript-arrays/article.json",
-  "currentContentHash": "46f479449c9b31ea76c1f57d5520e68b495996dfc9ae9d77966de05fd37a2cdf",
+  "currentContentHash": "8d46ae46a3d8694baf9cbeffa1a93f5ff9f8a7a010369504953d53616ba7be43",
   "currentContentRef": "content/articles/tablice-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "The single append-only record replays the only post-promotion change.",
-    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
   ],
   "promotedContentHash": "c2d379a8c39a29c29403fafb37350cf7b2ba85953f32888d470e6e0ed18e3704",
   "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
@@ -96,6 +97,37 @@
         "kind": "remove-body-exact",
         "removals": [
           "---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.\n\n"
+        ]
+      }
+    },
+    {
+      "articleId": "tablice-w-javascript",
+      "authorizationHash": "f3cd49dcca250a5352dc7af6d695ae065e09c3d1ad333ec105aba0199e7e0001",
+      "authorizationRef": "lab/decisions/javascript-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "8d46ae46a3d8694baf9cbeffa1a93f5ff9f8a7a010369504953d53616ba7be43",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "46f479449c9b31ea76c1f57d5520e68b495996dfc9ae9d77966de05fd37a2cdf",
+      "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
+      "reason": "Assign the human-approved article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a",
+      "timestamp": "2026-10-16T09:42:59Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: tablice-w-javascript",
+            "to": "slug: tablice-w-javascript\nfeaturedImage: ../../src/assets/tablice-w-javascript.webp\nfeaturedAlt: Dziewczyna porządkuje karty w szufladach symbolizujących tablice JavaScript."
+          }
         ]
       }
     }

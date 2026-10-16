@@ -2,6 +2,8 @@
 title: "Git lokalnie: status, staging, commit i historia"
 description: "Praktyczne podstawy lokalnego Git: working tree, staging, status, diff, commit i krótka historia zmian."
 slug: git-lokalnie
+featuredImage: ../../src/assets/git-lokalnie.webp
+featuredAlt: Chłopak przenosi kartę pliku ze stołu roboczego przez staging do rozgałęzionej historii wersji.
 status: published
 created: 2026-10-14T00:00:00.000Z
 updated: 2026-10-14T00:00:00.000Z

@@ -2,6 +2,8 @@
 title: "Markdown: nagłówki, linki, listy i bloki kodu"
 description: "Praktyczne podstawy Markdown: nagłówki, wyróżnienia, linki, listy, bloki kodu oraz granica między CommonMark i GFM."
 slug: markdown-podstawy
+featuredImage: ../../src/assets/markdown-podstawy.webp
+featuredAlt: Dziewczyna przekłada karty składni Markdown w gotową, wyrenderowaną stronę.
 status: published
 created: 2026-10-12T00:00:00.000Z
 updated: 2026-10-12T00:00:00.000Z

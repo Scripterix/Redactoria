@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-16T12:50:28+02:00",
+  "scope": "markdown-calculator-api-featured-images",
+  "authorization": "Generate and assign the accepted soft-comic illustration concepts to the published Markdown, JavaScript calculator and API/HTTP/JSON articles. Continue the visual language of the DOM illustration with smaller active characters, dominant technical motifs and restrained cute floral details.",
+  "articles": [
+    "markdown-podstawy",
+    "kalkulator-w-javascript",
+    "api-http-json"
+  ],
+  "boundaries": {
+    "articleBodyChanged": false,
+    "technicalMeaningChanged": false,
+    "sourceOrHistoricalLabChanged": false,
+    "gitPushAuthorized": false,
+    "deploymentVerificationRequired": false
+  }
+}

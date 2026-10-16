@@ -1,0 +1,48 @@
+{
+  "articleId": "podstawy-pythona",
+  "candidateRef": "lab/candidates/python-fundamentals/article.json",
+  "currentContentHash": "8b14720a2a729ec5295ec58cb3055f2dc65655007e9a8d7cd55886c6720d472a",
+  "currentContentRef": "content/articles/podstawy-pythona.md",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+  ],
+  "promotedContentHash": "d362fbeacf4672ed4259066303e45952bf335fc113923002c881a91a9856d33a",
+  "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
+  "records": [
+    {
+      "articleId": "podstawy-pythona",
+      "authorizationHash": "3af7308a16ad277cc0cbb2dbb8c48d2a2aeaae5fe69073dff33dc39aed4656c1",
+      "authorizationRef": "lab/decisions/b5-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "8b14720a2a729ec5295ec58cb3055f2dc65655007e9a8d7cd55886c6720d472a",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "d362fbeacf4672ed4259066303e45952bf335fc113923002c881a91a9856d33a",
+      "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
+      "reason": "Assign the human-approved article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+      "timestamp": "2026-10-16T12:42:53Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: podstawy-pythona",
+            "to": "slug: podstawy-pythona\nfeaturedImage: ../../src/assets/podstawy-pythona.webp\nfeaturedAlt: Dziewczyna prowadzi kolorowego pytona przez stacje wartości, warunku, pętli i funkcji."
+          }
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+  "status": "RECORDED"
+}

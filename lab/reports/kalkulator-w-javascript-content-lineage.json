@@ -1,11 +1,12 @@
 {
   "articleId": "kalkulator-w-javascript",
   "candidateRef": "lab/candidates/javascript-calculator/article.json",
-  "currentContentHash": "38c395314fbd506626ccf4ab2b73028e37d44d40709ff84db4a2742af2d0cc79",
+  "currentContentHash": "189e662dd015029753f0685046fbc90a1f673b1127880791820988b4ec714a33",
   "currentContentRef": "content/articles/kalkulator-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
   ],
   "promotedContentHash": "68ce56358302f153fca5e0293c36418c77180105e75b3b3a2384e7074d36251e",
   "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
@@ -65,6 +66,37 @@
         "kind": "remove-body-exact",
         "removals": [
           "\n---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.\n"
+        ]
+      }
+    },
+    {
+      "articleId": "kalkulator-w-javascript",
+      "authorizationHash": "f0abb06ad80d23942cd3b9a5390df37cd3dd2c65f9ac3fc6ffa1ce6b89f0815e",
+      "authorizationRef": "lab/decisions/next-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "189e662dd015029753f0685046fbc90a1f673b1127880791820988b4ec714a33",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "38c395314fbd506626ccf4ab2b73028e37d44d40709ff84db4a2742af2d0cc79",
+      "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
+      "reason": "Assign the human-approved article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+      "timestamp": "2026-10-16T10:50:28Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: kalkulator-w-javascript",
+            "to": "slug: kalkulator-w-javascript\nfeaturedImage: ../../src/assets/kalkulator-w-javascript.webp\nfeaturedAlt: Chłopak wkłada dane do maszyny, która sprawdza je i oblicza wynik."
+          }
         ]
       }
     }

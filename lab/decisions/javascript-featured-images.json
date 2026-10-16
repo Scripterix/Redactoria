@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-16T11:42:59+02:00",
+  "scope": "javascript-featured-images",
+  "authorization": "Generate and assign three article-specific illustrations to the published JavaScript if/else, Arrays and DOM articles. Use smaller character proportions than the PHP illustrations, keep the established Redactoria style, and treat the images as decorative and lightly navigational rather than complete technical diagrams.",
+  "articles": [
+    "warunki-w-javascript",
+    "tablice-w-javascript",
+    "dom-w-javascript"
+  ],
+  "boundaries": {
+    "articleBodyChanged": false,
+    "technicalMeaningChanged": false,
+    "sourceOrHistoricalLabChanged": false,
+    "gitPushAuthorized": false,
+    "deploymentVerificationRequired": false
+  }
+}

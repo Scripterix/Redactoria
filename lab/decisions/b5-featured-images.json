@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-16T14:42:53+02:00",
+  "scope": "python-git-curl-featured-images",
+  "authorization": "Freeze the expanded but closed palette and detailed soft-comic visual language of the latest three-image set, then generate and assign new article-specific illustrations to the published Python fundamentals, local Git and curl/HTTP articles without introducing new colors or changing the article bodies.",
+  "articles": [
+    "podstawy-pythona",
+    "git-lokalnie",
+    "curl-http"
+  ],
+  "boundaries": {
+    "articleBodyChanged": false,
+    "technicalMeaningChanged": false,
+    "sourceOrHistoricalLabChanged": false,
+    "earlierImagesRecolored": false,
+    "gitPushAuthorized": false,
+    "deploymentVerificationRequired": false
+  }
+}

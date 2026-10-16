@@ -2,6 +2,8 @@
 title: "API, HTTP i JSON: bezpieczne pobieranie danych przez fetch"
 description: Wprowadzenie do API, metody GET, statusów HTTP, JSON i poprawnej obsługi błędów fetch na kontrolowanych przykładach.
 slug: api-http-json
+featuredImage: ../../src/assets/api-http-json.webp
+featuredAlt: Dziewczyna odbiera sprawdzoną paczkę danych przesłaną między serwerem a stroną.
 status: published
 created: 2026-10-12T00:00:00.000Z
 updated: 2026-10-12T00:00:00.000Z

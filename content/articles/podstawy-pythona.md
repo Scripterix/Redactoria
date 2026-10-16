@@ -2,6 +2,8 @@
 title: "Podstawy Pythona: wartości, warunki, pętle i funkcje"
 description: "Pierwsze kroki w Pythonie: wartości, zmienne, warunki, pętle i proste funkcje na wykonywalnych przykładach."
 slug: podstawy-pythona
+featuredImage: ../../src/assets/podstawy-pythona.webp
+featuredAlt: Dziewczyna prowadzi kolorowego pytona przez stacje wartości, warunku, pętli i funkcji.
 status: published
 created: 2026-10-14T00:00:00.000Z
 updated: 2026-10-14T00:00:00.000Z

@@ -2,6 +2,8 @@
 title: "curl i HTTP: odpowiedź, nagłówki i lokalny JSON"
 description: "Podstawy curl i HTTP: odczytywanie odpowiedzi, nagłówków, statusów oraz lokalnego dokumentu JSON."
 slug: curl-http
+featuredImage: ../../src/assets/curl-http.webp
+featuredAlt: Dziewczyna odbiera odpowiedź HTTP przesłaną zwiniętym przewodem między terminalem a lokalnym serwerem.
 status: published
 created: 2026-10-14T00:00:00.000Z
 updated: 2026-10-14T00:00:00.000Z

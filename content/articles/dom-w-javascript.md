@@ -2,6 +2,8 @@
 title: "DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia"
 description: "Praktyczne podstawy DOM: selektory, obsługa braku elementu, textContent, klasy, tworzenie węzłów i zdarzenie click."
 slug: dom-w-javascript
+featuredImage: ../../src/assets/dom-w-javascript.webp
+featuredAlt: Osoba układa moduły strony połączone w strukturę przypominającą drzewo DOM.
 status: published
 created: 2026-10-11T00:00:00.000Z
 updated: 2026-10-11T00:00:00.000Z

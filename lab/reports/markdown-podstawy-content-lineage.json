@@ -1,11 +1,12 @@
 {
   "articleId": "markdown-podstawy",
   "candidateRef": "lab/candidates/markdown/article.json",
-  "currentContentHash": "ed96a88ceb94d37618815bc24605068a1d4b3574c72fa07d74c8c9fef80410a5",
+  "currentContentHash": "7b266aadae334e18e5b9ea4546a49918ef5fdedf44ce49392cb79cf010ef3cd0",
   "currentContentRef": "content/articles/markdown-podstawy.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
   ],
   "promotedContentHash": "2ef7bc42076830ed4f2b3070b1feb695ce135d4751fbfcda0404e62f17c3f463",
   "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
@@ -65,6 +66,37 @@
         "kind": "remove-body-exact",
         "removals": [
           "\n---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B4, wskazane źródła i runtime Node; metadane interakcji nie są zaimplementowanym UI.\n"
+        ]
+      }
+    },
+    {
+      "articleId": "markdown-podstawy",
+      "authorizationHash": "f0abb06ad80d23942cd3b9a5390df37cd3dd2c65f9ac3fc6ffa1ce6b89f0815e",
+      "authorizationRef": "lab/decisions/next-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "7b266aadae334e18e5b9ea4546a49918ef5fdedf44ce49392cb79cf010ef3cd0",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "ed96a88ceb94d37618815bc24605068a1d4b3574c72fa07d74c8c9fef80410a5",
+      "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
+      "reason": "Assign the human-approved article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0a1ba6f4d6bdddea87613b138fc8c7cac82b5f6b76f26ceeb386c37b3b18e35e",
+      "timestamp": "2026-10-16T10:50:28Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: markdown-podstawy",
+            "to": "slug: markdown-podstawy\nfeaturedImage: ../../src/assets/markdown-podstawy.webp\nfeaturedAlt: Dziewczyna przekłada karty składni Markdown w gotową, wyrenderowaną stronę."
+          }
         ]
       }
     }

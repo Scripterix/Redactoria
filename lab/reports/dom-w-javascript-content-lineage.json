@@ -1,12 +1,13 @@
 {
   "articleId": "dom-w-javascript",
   "candidateRef": "lab/candidates/javascript-dom/article.json",
-  "currentContentHash": "6b54a729da2cdfd8da169df5d4151ca18cd88fc6dffd9af0a63e498ac65f5c29",
+  "currentContentHash": "090f321ee7cbd2e443a749e8fddb52207181497d4054fc353afa5857741746b8",
   "currentContentRef": "content/articles/dom-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "The single append-only record replays the only post-promotion change.",
-    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review."
+    "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
   ],
   "promotedContentHash": "4e70662ab80236747c82dd816bf7abd8825a26e62ab219b9bbaeec36262915d7",
   "promotionAuditRef": "lab/reports/dom-w-javascript-promotion.json",
@@ -96,6 +97,37 @@
         "kind": "remove-body-exact",
         "removals": [
           "---\n\n- Materiał obejmuje wyłącznie autoryzowany zakres B3 i wskazany runtime; metadane interakcji nie są zaimplementowanym UI.\n\n"
+        ]
+      }
+    },
+    {
+      "articleId": "dom-w-javascript",
+      "authorizationHash": "f3cd49dcca250a5352dc7af6d695ae065e09c3d1ad333ec105aba0199e7e0001",
+      "authorizationRef": "lab/decisions/javascript-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "090f321ee7cbd2e443a749e8fddb52207181497d4054fc353afa5857741746b8",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same Astro-managed local source is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "6b54a729da2cdfd8da169df5d4151ca18cd88fc6dffd9af0a63e498ac65f5c29",
+      "promotionAuditRef": "lab/reports/dom-w-javascript-promotion.json",
+      "reason": "Assign the human-approved article-specific illustration and descriptive alternative text to the published article.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "af490c0e36f7cab2b470dd186ab5f4489e86e4a667bcae0007e55ba267a665b9",
+      "timestamp": "2026-10-16T09:42:59Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: dom-w-javascript",
+            "to": "slug: dom-w-javascript\nfeaturedImage: ../../src/assets/dom-w-javascript.webp\nfeaturedAlt: Osoba układa moduły strony połączone w strukturę przypominającą drzewo DOM."
+          }
         ]
       }
     }
