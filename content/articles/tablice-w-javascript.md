@@ -1,12 +1,12 @@
 ---
-title: "Tablice JavaScript: map, filter, reduce i sort bez mutowania danych"
+title: "Tablice JavaScript z metodami map, filter i reduce oraz sortowaniem bez mutacji"
 description: "Praktyczne operacje na tablicach JavaScript: map, filter, reduce, przypadek pusty oraz numeryczne sortowanie bez zmiany danych wejściowych."
 slug: tablice-w-javascript
 featuredImage: ../../src/assets/tablice-w-javascript.webp
 featuredAlt: Dziewczyna porządkuje karty w szufladach symbolizujących tablice JavaScript.
 status: published
 created: 2026-10-11T00:00:00.000Z
-updated: 2026-10-11T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: javascript
 author:
@@ -40,7 +40,7 @@ redactoria:
   decision: rewrite
   modernization: major
 ---
-# Tablice JavaScript: map, filter, reduce i sort bez mutowania danych
+# Tablice JavaScript z metodami map, filter i reduce oraz sortowaniem bez mutacji
 
 Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 

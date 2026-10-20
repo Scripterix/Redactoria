@@ -10,18 +10,6 @@ implemented Engine schema or agent. The supplied Google AI Search body demonstra
 why content creation and verification must stay separate. Gather independent cases
 before proposing a shared contract, manifest or automation.
 
-## Experiment candidate: one article = one pipeline run
-
-**Status:** `OBSERVE`
-
-The three-candidate batch took an observed ~19 min 36 s. It may incur context
-switching, three SOURCE sets, Research Packets, Writer/Critic contexts, artifacts
-and payloads — metaphorically, a waiter carrying nine plates. This is a hypothesis,
-not a finding. A later single-article run should record start/end, stage boundaries,
-artifact/re-read/revision counts and compaction before comparing per-article cost.
-Do not build caching, compression, orchestration, auto-batching or an Article
-Manifest from this one observation.
-
 The following concepts are exploratory. They are not current implementation
 requirements.
 

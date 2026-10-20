@@ -1,11 +1,12 @@
 {
   "articleId": "git-lokalnie",
   "candidateRef": "lab/candidates/git-local-basics/article.json",
-  "currentContentHash": "d4cc50d853e432d9d5c16375afaa28f5b2d097f01848241bbf5e43d546f335ef",
+  "currentContentHash": "ac5951283811f74b5f195a504696f36af5c433f99ea2dbfe6670d813cd98d59a",
   "currentContentRef": "content/articles/git-lokalnie.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review."
   ],
   "promotedContentHash": "ac294931dedd9f3a2a7256ba02ff169dd687231178fdccecf397c330c33c24fa",
   "promotionAuditRef": "lab/reports/git-lokalnie-promotion.json",
@@ -37,6 +38,71 @@
           {
             "from": "slug: git-lokalnie",
             "to": "slug: git-lokalnie\nfeaturedImage: ../../src/assets/git-lokalnie.webp\nfeaturedAlt: Chłopak przenosi kartę pliku ze stołu roboczego przez staging do rozgałęzionej historii wersji."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "git-lokalnie",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "e2db65fa004375883ebc66f1d7cbec64c64c288c9ec3abdfd9bed8552b994523",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "d4cc50d853e432d9d5c16375afaa28f5b2d097f01848241bbf5e43d546f335ef",
+      "promotionAuditRef": "lab/reports/git-lokalnie-promotion.json",
+      "reason": "Replace a colon-separated content inventory with a simple reader-focused title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "e2d7e47d70d339ec1a42a3fd1df4a870cb1ff237681bd0fb6de2d4cdbcd3b83d",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Git lokalnie: status, staging, commit i historia\"",
+            "to": "title: \"Git dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-14T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "git-lokalnie",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "ac5951283811f74b5f195a504696f36af5c433f99ea2dbfe6670d813cd98d59a",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "e2db65fa004375883ebc66f1d7cbec64c64c288c9ec3abdfd9bed8552b994523",
+      "promotionAuditRef": "lab/reports/git-lokalnie-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "e2d7e47d70d339ec1a42a3fd1df4a870cb1ff237681bd0fb6de2d4cdbcd3b83d",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Git lokalnie: status, staging, commit i historia",
+            "to": "# Git dla początkujących"
           }
         ]
       }

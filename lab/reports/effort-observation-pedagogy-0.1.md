@@ -44,3 +44,21 @@ The three-candidate pipeline produced 75 LAB artifacts (~825 KB), 12 manual modu
 runs and 9 independently executed examples. Research alone is not presently the
 observed cost leader. Image generation is time-heavy but includes generation,
 conversion and integration, so it is not a token-optimization target yet.
+
+## Current conclusions and next observation
+
+- The full three-candidate lifecycle (Cartographer through Candidate) is the
+  highest observed run at ~19 min 36 s. Its cost includes coordination across three
+  independent source, research, Writer and Critic contexts, not research alone.
+- Pedagogy/personas (~57 s) and Humanization Research 0.1 (~2 min 15 s) were
+  relatively inexpensive compared with that full lifecycle.
+- The external Human/GPT canonical-body import still took ~10 min 26 s: the
+  remaining cost was provenance, verification and publication procedure, not prose
+  generation. Publishing three already-ready candidates also took ~6 min 1 s, so
+  regression and promotion checks are observable quality costs.
+
+`ONE ARTICLE = ONE PIPELINE RUN` is an unproven experiment candidate, not a design
+decision. A later single-article run should record START/END and the boundaries for
+Cartographer, Researcher, Teaching Plan, Writer, Critic and Candidate, alongside
+artifact count, re-reads, revisions and context compaction. Compare its per-article
+cost with the current three-article batch before preferring either shape.

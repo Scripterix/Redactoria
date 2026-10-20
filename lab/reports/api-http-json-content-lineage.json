@@ -1,12 +1,14 @@
 {
   "articleId": "api-http-json",
   "candidateRef": "lab/candidates/api-http-json/article.json",
-  "currentContentHash": "f7a38d27b7d4649cde080e43f3faec9934908db1310e932cefdba4532be4335a",
+  "currentContentHash": "478b38003fdf8e4a4fcd970b4eddc3ea6fdc236b8b586e7f51a5f89090047232",
   "currentContentRef": "content/articles/api-http-json.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "The human-selected title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "3da7f179e0102eaf26f69e6a832db65452a6b0e323434784a745f34f952faa9c",
   "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
@@ -96,6 +98,132 @@
           {
             "from": "slug: api-http-json",
             "to": "slug: api-http-json\nfeaturedImage: ../../src/assets/api-http-json.webp\nfeaturedAlt: Dziewczyna odbiera sprawdzoną paczkę danych przesłaną między serwerem a stroną."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "c6058960faf53ef1b97e178b770471bc3feb945711bf2ce70dc6bfcaa97a5a5e",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "f7a38d27b7d4649cde080e43f3faec9934908db1310e932cefdba4532be4335a",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Replace a colon-separated content inventory with a simple reader-focused title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"API, HTTP i JSON: bezpieczne pobieranie danych przez fetch\"",
+            "to": "title: \"API, HTTP i JSON dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-12T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "6b55b9204f17864572d63bb02b43abb5670733e52db022c2c940fa116b753395",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "c6058960faf53ef1b97e178b770471bc3feb945711bf2ce70dc6bfcaa97a5a5e",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# API, HTTP i JSON: bezpieczne pobieranie danych przez fetch",
+            "to": "# API, HTTP i JSON dla początkujących"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "2f711e9278560faef1d741a5ad050f76aaaaa446f43c929503ddc1f449bfd556",
+      "notes": [
+        "Only the front-matter title changed in this record."
+      ],
+      "previousContentHash": "6b55b9204f17864572d63bb02b43abb5670733e52db022c2c940fa116b753395",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Apply the exact reader-facing title selected by the human in the title review.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"API, HTTP i JSON dla początkujących\"",
+            "to": "title: \"Jak pobierać dane z API przez fetch\""
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "api-http-json",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "478b38003fdf8e4a4fcd970b4eddc3ea6fdc236b8b586e7f51a5f89090047232",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "2f711e9278560faef1d741a5ad050f76aaaaa446f43c929503ddc1f449bfd556",
+      "promotionAuditRef": "lab/reports/api-http-json-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the human-selected metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "3b957da470556b9b7c95f40e8e5c280ec36c9ad685b06f7922671f25cefa7d60",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# API, HTTP i JSON dla początkujących",
+            "to": "# Jak pobierać dane z API przez fetch"
           }
         ]
       }

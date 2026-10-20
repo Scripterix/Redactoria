@@ -1,11 +1,13 @@
 {
   "articleId": "podstawy-pythona",
   "candidateRef": "lab/candidates/python-fundamentals/article.json",
-  "currentContentHash": "8b14720a2a729ec5295ec58cb3055f2dc65655007e9a8d7cd55886c6720d472a",
+  "currentContentHash": "f2e23e82fc41ac9d2155521fb5ff23b85eefd93824ed7a1122b5084a195c92fd",
   "currentContentRef": "content/articles/podstawy-pythona.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "The human-selected title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "d362fbeacf4672ed4259066303e45952bf335fc113923002c881a91a9856d33a",
   "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
@@ -37,6 +39,132 @@
           {
             "from": "slug: podstawy-pythona",
             "to": "slug: podstawy-pythona\nfeaturedImage: ../../src/assets/podstawy-pythona.webp\nfeaturedAlt: Dziewczyna prowadzi kolorowego pytona przez stacje wartości, warunku, pętli i funkcji."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-pythona",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "7d5a27e372121beb5cb3525da02b2a4c8d128a90c03dce558473c23b8e9ede74",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "8b14720a2a729ec5295ec58cb3055f2dc65655007e9a8d7cd55886c6720d472a",
+      "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
+      "reason": "Replace a colon-separated content inventory with a simple reader-focused title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Podstawy Pythona: wartości, warunki, pętle i funkcje\"",
+            "to": "title: \"Podstawy Pythona dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-14T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-pythona",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "c1a9a9310eced375da715d4ae64ff3342a2450c6693f1f77490ddf9e04b8899d",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "7d5a27e372121beb5cb3525da02b2a4c8d128a90c03dce558473c23b8e9ede74",
+      "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Podstawy Pythona: wartości, warunki, pętle i funkcje",
+            "to": "# Podstawy Pythona dla początkujących"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-pythona",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "8cb2def1940671b30c119f869d8c3c353dfc98007ba0ce43790a8f6511b16493",
+      "notes": [
+        "Only the front-matter title changed in this record."
+      ],
+      "previousContentHash": "c1a9a9310eced375da715d4ae64ff3342a2450c6693f1f77490ddf9e04b8899d",
+      "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
+      "reason": "Apply the exact reader-facing title selected by the human in the title review.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Podstawy Pythona dla początkujących\"",
+            "to": "title: \"Python od podstaw\""
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-pythona",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "f2e23e82fc41ac9d2155521fb5ff23b85eefd93824ed7a1122b5084a195c92fd",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "8cb2def1940671b30c119f869d8c3c353dfc98007ba0ce43790a8f6511b16493",
+      "promotionAuditRef": "lab/reports/podstawy-pythona-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the human-selected metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "89a21dc9a0ba46853d9fe0191d5977bed7de3094a8aaaf7b1f0274518c612854",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Podstawy Pythona dla początkujących",
+            "to": "# Python od podstaw"
           }
         ]
       }

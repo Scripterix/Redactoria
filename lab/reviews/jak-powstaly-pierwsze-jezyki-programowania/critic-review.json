@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "manual-editorial-review-0.1",
+  "action": "REVIEW",
+  "topic": "jak-powstaly-pierwsze-jezyki-programowania",
+  "route": "HUMAN_WRITTEN",
+  "draftRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/article.md",
+  "articleHash": "8b679157ef276c7b865a9d6f08f73101996bca4ea5398e6bdd93a347ed54919d",
+  "reviewedAt": "2026-10-18",
+  "reviewer": {
+    "role": "Critic-style manual historical and pedagogical review",
+    "identity": "Codex",
+    "independence": "Manual review of a human-supplied article; not a runtime Critic 0.1 execution."
+  },
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "result": "PASS",
+      "note": "Institutional and primary-document sources support the Bell Labs transistor chronology, Manchester Baby program, punched and magnetic media distinctions, IBM floppy history, FORTRAN dates, team, IBM 704 target and compiler significance."
+    },
+    {
+      "criterion": "HISTORICAL_SCOPE",
+      "result": "PASS",
+      "note": "A new scope paragraph prevents the FORTRAN-centered narrative from claiming to be an exhaustive catalogue of every candidate for the first programming language."
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "result": "PASS",
+      "note": "The public source register uses IBM, IBM Research, University of Manchester, Computer History Museum, Science Museum, the preserved IBM 704 manual and the current Fortran community site."
+    },
+    {
+      "criterion": "FORTRAN_EXAMPLE",
+      "result": "PASS",
+      "note": "PRINT, FORMAT, integer I-formatting and the fixed-form column layout are consistent with the preserved IBM 704 FORTRAN manual. The fenced block retains leading spaces; no local gfortran runtime was available and none is claimed."
+    },
+    {
+      "criterion": "PEDAGOGY",
+      "result": "PASS",
+      "note": "Questions precede explanations, terms are introduced before reliance, visible state changes anchor the model, and the learner still has to connect the successive abstraction layers. This conforms to the productive-difficulty principle."
+    },
+    {
+      "criterion": "PROVENANCE",
+      "result": "PASS",
+      "note": "The untouched supplied file and its SHA-256 are preserved. Every editorial difference is enumerated in input-provenance.md."
+    },
+    {
+      "criterion": "SECURITY",
+      "result": "PASS",
+      "note": "The article contains historical pseudocode and non-destructive examples only; it contains no credentials or unsafe operational instructions."
+    }
+  ],
+  "resolvedIssues": [
+    {
+      "location": "opening scope",
+      "before": "The title could imply a complete or singular first-language history.",
+      "resolution": "Added a narrow statement that this is one important development path and not a complete catalogue."
+    },
+    {
+      "location": "section 5 — Kathleen Booth",
+      "before": "The supplied copy attached the symbolic-programming claim to the exact year 1947.",
+      "resolution": "Changed the date to the end of the 1940s and described the Birkbeck machine context without overstating a single invention date."
+    }
+  ],
+  "requiredChanges": [],
+  "verdict": "PASS",
+  "limitations": [
+    "The article is an educational synthesis, not an exhaustive historiography of all early programming-language candidates.",
+    "The reconstructed FORTRAN program is validated as a teaching example in historical style, not asserted to be an archived 1957 card deck.",
+    "This review does not claim a Writer 0.1 or runtime Critic 0.1 execution."
+  ],
+  "evidence": [
+    {
+      "title": "Fortran — History",
+      "url": "https://www.ibm.com/history/fortran",
+      "publisher": "IBM",
+      "claims": ["1954 project", "1957 debut", "IBM 704", "team", "optimizing compiler", "continued use"]
+    },
+    {
+      "title": "The History of FORTRAN I, II, and III",
+      "url": "https://research.ibm.com/publications/the-history-of-fortran-i-ii-and-iii",
+      "publisher": "IBM Research",
+      "claims": ["formation of the group", "1954 development", "compiler history"]
+    },
+    {
+      "title": "The FORTRAN Automatic Coding System for the IBM 704 EDPM",
+      "url": "https://www.softwarepreservation.org/projects/FORTRAN/704_FortranProgRefMan_Oct56.pdf",
+      "publisher": "IBM / Computer History Museum Software Preservation Group",
+      "claims": ["fixed-form layout", "PRINT", "FORMAT", "I conversion"]
+    },
+    {
+      "title": "The First Program",
+      "url": "https://curation.cs.manchester.ac.uk/digital60/www.digital60.org/birth/program/index.html",
+      "publisher": "University of Manchester",
+      "claims": ["Tom Kilburn", "highest proper factor", "17 instructions"]
+    },
+    {
+      "title": "1947 — Invention of the Point-Contact Transistor",
+      "url": "https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/",
+      "publisher": "Computer History Museum",
+      "claims": ["Bell Labs", "December 1947", "point-contact transistor"]
+    },
+    {
+      "title": "Floppy disk storage",
+      "url": "https://www.ibm.com/history/floppy-disk",
+      "publisher": "IBM",
+      "claims": ["1971 sales", "instruction and update loading", "later general storage use"]
+    },
+    {
+      "title": "The Fortran Programming Language",
+      "url": "https://fortran-lang.org/",
+      "publisher": "Fortran-lang.org",
+      "claims": ["Fortran 2023", "active development", "scientific and engineering use"]
+    }
+  ]
+}

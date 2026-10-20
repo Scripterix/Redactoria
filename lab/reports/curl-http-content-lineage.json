@@ -1,11 +1,12 @@
 {
   "articleId": "curl-http",
   "candidateRef": "lab/candidates/curl-http-basics/article.json",
-  "currentContentHash": "dc60b2ec36ce2a40749587932b091840322014e4541417df33958d639f2a10ab",
+  "currentContentHash": "5b765fbd90c8cedc32c5ab2933d3693eb09a92589b3ad0868ab4b9d6516ca9da",
   "currentContentRef": "content/articles/curl-http.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review."
   ],
   "promotedContentHash": "b9160109024b8371201c07fe4eb47b2c5aed2059f6182a6d84c6fe2663a96efe",
   "promotionAuditRef": "lab/reports/curl-http-promotion.json",
@@ -37,6 +38,71 @@
           {
             "from": "slug: curl-http",
             "to": "slug: curl-http\nfeaturedImage: ../../src/assets/curl-http.webp\nfeaturedAlt: Dziewczyna odbiera odpowiedź HTTP przesłaną zwiniętym przewodem między terminalem a lokalnym serwerem."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "curl-http",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "d3fa865d2704bc82140364b677e83e281ea6eb60c8901ed9ac36d5f4d00fb43c",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "dc60b2ec36ce2a40749587932b091840322014e4541417df33958d639f2a10ab",
+      "promotionAuditRef": "lab/reports/curl-http-promotion.json",
+      "reason": "Replace a colon-separated content inventory with a simple reader-focused title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0048cdf3e038e5abe995db735bd2541170963ada20c5f882ed8442ff49225fed",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"curl i HTTP: odpowiedź, nagłówki i lokalny JSON\"",
+            "to": "title: \"curl i HTTP dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-14T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "curl-http",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "5b765fbd90c8cedc32c5ab2933d3693eb09a92589b3ad0868ab4b9d6516ca9da",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "d3fa865d2704bc82140364b677e83e281ea6eb60c8901ed9ac36d5f4d00fb43c",
+      "promotionAuditRef": "lab/reports/curl-http-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0048cdf3e038e5abe995db735bd2541170963ada20c5f882ed8442ff49225fed",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# curl i HTTP: odpowiedź, nagłówki i lokalny JSON",
+            "to": "# curl i HTTP dla początkujących"
           }
         ]
       }

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-19T12:58:00+02:00",
+  "scope": "human-selected-article-titles",
+  "authorization": "Apply the article title choices marked in red in the supplied review image and leave unselected titles unchanged.",
+  "articles": [
+    "funkcje-javascript",
+    "podstawy-pythona",
+    "api-http-json",
+    "kalkulator-w-javascript",
+    "markdown-podstawy"
+  ],
+  "boundaries": {
+    "slugChanged": false,
+    "descriptionChanged": false,
+    "articleProseChanged": false,
+    "technicalMeaningChanged": false,
+    "immutableLabChanged": false,
+    "gitPushAuthorized": false
+  }
+}

@@ -1,12 +1,12 @@
 ---
-title: "Warunki w JavaScript: if, else i bezpieczna walidacja liczby"
+title: "Warunki w JavaScript z if, else i bezpieczną walidacją liczb"
 description: Praktyczne wprowadzenie do if/else, kolejności gałęzi, truthiness, ścisłych porównań i bezpiecznej walidacji liczb w JavaScript.
 slug: warunki-w-javascript
 featuredImage: ../../src/assets/warunki-w-javascript.webp
 featuredAlt: Osoba ogląda na monitorze wireframe z rozgałęzionym schematem warunków JavaScript.
 status: published
 created: 2026-10-11T00:00:00.000Z
-updated: 2026-10-11T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: javascript
 author:
@@ -40,7 +40,7 @@ redactoria:
   decision: rewrite
   modernization: major
 ---
-# Warunki w JavaScript: if, else i bezpieczna walidacja liczby
+# Warunki w JavaScript z if, else i bezpieczną walidacją liczb
 
 Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 

@@ -1,0 +1,30 @@
+{
+  "articleId": "google-ai-search-2026",
+  "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+  "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+  "changeType": "TITLE_ONLY",
+  "currentContentHash": "a88feee6d64c39fa11f3ccec8bc9df11e0145b1d1ff269ed6f6ac204d5ed0fb6",
+  "currentContentRef": "content/articles/google-ai-search-2026.md",
+  "notes": [
+    "The manually imported article has no Promotion Gate lifecycle bundle.",
+    "Only the front-matter title and updated date changed; article prose, sources and technical meaning are byte-identical."
+  ],
+  "previousContentHash": "9080a03d79b79ab9194822845799b7c5ce1920945501bd092660d868faa41f5b",
+  "reviewImpact": "REVIEW_STILL_VALID",
+  "schemaVersion": 1,
+  "status": "RECORDED",
+  "timestamp": "2026-10-19T10:36:26Z",
+  "transformation": {
+    "kind": "exact-replacements",
+    "replacements": [
+      {
+        "from": "title: \"Google AI Search 2026: jak tworzyć treści widoczne w AI Overviews i AI Mode\"",
+        "to": "title: \"Jak zwiększyć widoczność treści w Google AI Overviews i AI Mode\""
+      },
+      {
+        "from": "updated: 2026-10-16T00:00:00.000Z",
+        "to": "updated: 2026-10-19T00:00:00.000Z"
+      }
+    ]
+  }
+}

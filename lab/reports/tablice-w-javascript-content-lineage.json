@@ -1,13 +1,14 @@
 {
   "articleId": "tablice-w-javascript",
   "candidateRef": "lab/candidates/javascript-arrays/article.json",
-  "currentContentHash": "8d46ae46a3d8694baf9cbeffa1a93f5ff9f8a7a010369504953d53616ba7be43",
+  "currentContentHash": "45a9f7b48f665e7d92c44a9e6baefb775c72b368934cd02b8a5c5c2bc47401ae",
   "currentContentRef": "content/articles/tablice-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "The single append-only record replays the only post-promotion change.",
     "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The colon-free title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "c2d379a8c39a29c29403fafb37350cf7b2ba85953f32888d470e6e0ed18e3704",
   "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
@@ -127,6 +128,71 @@
           {
             "from": "slug: tablice-w-javascript",
             "to": "slug: tablice-w-javascript\nfeaturedImage: ../../src/assets/tablice-w-javascript.webp\nfeaturedAlt: Dziewczyna porządkuje karty w szufladach symbolizujących tablice JavaScript."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "tablice-w-javascript",
+      "authorizationHash": "bd50710206b8bbbbd7fe7d01ce61e4a9efab614aabd69e067e0d31e386548808",
+      "authorizationRef": "lab/decisions/october-10-11-colon-free-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "309048a2f64ad6bb581a585fb653d546b473ac5561dc17acbc576aff37ed4cb1",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "8d46ae46a3d8694baf9cbeffa1a93f5ff9f8a7a010369504953d53616ba7be43",
+      "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
+      "reason": "Replace a colon-separated title with one natural grammatical phrase.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a",
+      "timestamp": "2026-10-19T11:08:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Tablice JavaScript: map, filter, reduce i sort bez mutowania danych\"",
+            "to": "title: \"Tablice JavaScript z metodami map, filter i reduce oraz sortowaniem bez mutacji\""
+          },
+          {
+            "from": "updated: 2026-10-11T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "tablice-w-javascript",
+      "authorizationHash": "bd50710206b8bbbbd7fe7d01ce61e4a9efab614aabd69e067e0d31e386548808",
+      "authorizationRef": "lab/decisions/october-10-11-colon-free-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "45a9f7b48f665e7d92c44a9e6baefb775c72b368934cd02b8a5c5c2bc47401ae",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "309048a2f64ad6bb581a585fb653d546b473ac5561dc17acbc576aff37ed4cb1",
+      "promotionAuditRef": "lab/reports/tablice-w-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the colon-free metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "ffe45a50154eeec1a2dee5ee52e6ef1dd413e839b344128d4e0226059b312b9a",
+      "timestamp": "2026-10-19T11:08:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Tablice JavaScript: map, filter, reduce i sort bez mutowania danych",
+            "to": "# Tablice JavaScript z metodami map, filter i reduce oraz sortowaniem bez mutacji"
           }
         ]
       }

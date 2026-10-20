@@ -1,12 +1,12 @@
 ---
-title: "curl i HTTP: odpowiedź, nagłówki i lokalny JSON"
+title: "curl i HTTP dla początkujących"
 description: "Podstawy curl i HTTP: odczytywanie odpowiedzi, nagłówków, statusów oraz lokalnego dokumentu JSON."
 slug: curl-http
 featuredImage: ../../src/assets/curl-http.webp
 featuredAlt: Dziewczyna odbiera odpowiedź HTTP przesłaną zwiniętym przewodem między terminalem a lokalnym serwerem.
 status: published
 created: 2026-10-14T00:00:00.000Z
-updated: 2026-10-14T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: web
 author:
@@ -37,7 +37,7 @@ redactoria:
   decision: rewrite
   modernization: major
 ---
-# curl i HTTP: odpowiedź, nagłówki i lokalny JSON
+# curl i HTTP dla początkujących
 
 Zakres: cli 8.13.0. Materiał dla początkujących i osób na poziomie średnim.
 

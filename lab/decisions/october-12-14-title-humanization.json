@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-19T12:44:00+02:00",
+  "scope": "october-12-14-reader-focused-titles",
+  "authorization": "Revise every article published on 12 and 14 October according to the simple reader-focused JavaScript title pattern, without colon-separated content inventories.",
+  "articles": [
+    "podstawy-pythona",
+    "git-lokalnie",
+    "curl-http",
+    "api-http-json",
+    "kalkulator-w-javascript",
+    "markdown-podstawy"
+  ],
+  "boundaries": {
+    "slugChanged": false,
+    "descriptionChanged": false,
+    "articleProseChanged": false,
+    "technicalMeaningChanged": false,
+    "immutableLabChanged": false,
+    "gitPushAuthorized": false
+  }
+}

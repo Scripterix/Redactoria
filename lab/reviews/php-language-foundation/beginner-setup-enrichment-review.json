@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "action": "REVIEW",
+  "reviewType": "content-lineage-replacement-critic",
+  "topic": "php-language-foundation",
+  "articleRef": "content/articles/podstawy-php.md",
+  "reviewedContentHash": "8800ec7720e108c4fc2be631c07cc2155c64381bf10fd458e1e834729adf857e",
+  "authorizationRef": "lab/decisions/php-foundations-beginner-enrichment.json",
+  "teachingPlan": {
+    "ref": "lab/reports/podstawy-php-beginner-teaching-plan.md",
+    "sha256": "20252f2dda6546a58e6e30b72d5ba477355ebc683f47b950553c83788aa21180"
+  },
+  "runtimeEvidence": {
+    "ref": "lab/research/php-language-foundation/beginner-setup-enrichment-runtime.json",
+    "sha256": "6b7242374b5db254af669f391129cc665997cbf1bd267fc2e90d0b8565fbdf36",
+    "status": "PASS",
+    "validExamples": 7,
+    "intentionalErrors": 1,
+    "runtime": "PHP 8.2.4 CLI"
+  },
+  "sourceVerification": {
+    "checkedAt": "2026-10-19",
+    "authority": "Current official PHP and Visual Studio Code documentation",
+    "urls": [
+      "https://www.php.net/manual/en/install.general.php",
+      "https://www.php.net/manual/en/install.windows.php",
+      "https://www.php.net/install.windows.commandline.php",
+      "https://www.php.net/manual/en/features.commandline.usage.php",
+      "https://www.php.net/manual/en/language.basic-syntax.php",
+      "https://www.php.net/manual/en/language.variables.basics.php",
+      "https://www.php.net/manual/en/language.types.intro.php",
+      "https://www.php.net/manual/en/language.operators.arithmetic.php",
+      "https://www.php.net/manual/en/function.echo.php",
+      "https://code.visualstudio.com/docs/languages/php"
+    ]
+  },
+  "checks": [
+    {
+      "criterion": "FACTUAL_ACCURACY",
+      "result": "PASS",
+      "note": "The editor/interpreter distinction, PHP CLI checks, PATH guidance, basic syntax, values, variables, scalar types, echo and arithmetic agree with current official documentation and the declared local runtime."
+    },
+    {
+      "criterion": "SOURCE_ALIGNMENT",
+      "result": "PASS",
+      "note": "New setup and VS Code claims are backed by added official sources. Existing language claims retain their PHP Manual sources."
+    },
+    {
+      "criterion": "CODE_CORRECTNESS",
+      "result": "PASS",
+      "note": "Seven complete fenced PHP examples matched exact stdout with exit code 0 and empty stderr on PHP 8.2.4 CLI. The deliberate missing-semicolon example produced the required non-zero syntax diagnostic."
+    },
+    {
+      "criterion": "PEDAGOGICAL_ORDER",
+      "result": "PASS",
+      "note": "The article now moves from required tools and the file-interpreter-output model through create, save, run and edit before variables, type observation, arithmetic, error recovery and independent practice."
+    },
+    {
+      "criterion": "PRODUCTIVE_DIFFICULTY",
+      "result": "PASS",
+      "note": "Learners predict outputs, change values, create a deliberate error and attempt the final task before reading the example solution. Required tools and recovery hints are supplied before independent work."
+    },
+    {
+      "criterion": "CLARITY",
+      "result": "PASS",
+      "note": "The article states what must be installed, what is optional, what executes code, how to verify PHP, how to identify the correct folder and file, and how to diagnose the five most likely beginner failures."
+    },
+    {
+      "criterion": "SCOPE",
+      "result": "PASS",
+      "note": "The lesson remains local CLI practice. Web-server setup, HTTP, forms, databases, Composer, Xdebug configuration, arrays, loops, user functions, classes and frameworks remain outside scope."
+    },
+    {
+      "criterion": "VERSION_CLAIMS",
+      "result": "PASS",
+      "note": "Exact runtime claims are limited to local PHP 8.2.4 CLI on Windows. The text explicitly allows other version numbers and diagnostic wording."
+    },
+    {
+      "criterion": "PROVENANCE_AND_BOUNDARIES",
+      "result": "PASS",
+      "note": "The immutable promoted candidate, previous reviews and promotion audit remain unchanged. This review covers only the authorized current CONTENT revision."
+    }
+  ],
+  "beginnerLightTest": [
+    {
+      "question": "Czy wiadomo, co trzeba mieć przed rozpoczęciem?",
+      "result": "PASS",
+      "note": "The opening names an editor, PHP CLI and a folder, and explicitly excludes unnecessary server, database, Composer and debugger setup."
+    },
+    {
+      "question": "Czy wiadomo, czy rozszerzenie VS Code instaluje lub uruchamia PHP?",
+      "result": "PASS",
+      "note": "The article separates editor support and optional extensions from the required PHP interpreter."
+    },
+    {
+      "question": "Czy pierwszy krok daje jednoznaczny sygnał powodzenia?",
+      "result": "PASS",
+      "note": "The learner must obtain a PHP CLI version before continuing."
+    },
+    {
+      "question": "Czy wiadomo, gdzie utworzyć, zapisać i uruchomić plik?",
+      "result": "PASS",
+      "note": "Folder opening, exact filename, terminal creation and a directory listing are introduced before code execution."
+    },
+    {
+      "question": "Czy każda nowa konstrukcja ma cel i widoczny wynik?",
+      "result": "PASS",
+      "note": "Echo, assignment, type observation and arithmetic each serve a stated purpose and every complete example has visible expected output."
+    },
+    {
+      "question": "Czy uczeń wykonuje samodzielną pracę?",
+      "result": "PASS",
+      "note": "Three prediction/change prompts and a bounded shopping-cost exercise require an attempt before comparison with a solution."
+    },
+    {
+      "question": "Czy błąd jest częścią nauki, a nie ślepą uliczką?",
+      "result": "PASS",
+      "note": "The learner deliberately removes a semicolon, reads the diagnostic area, repairs one cause and reruns the file."
+    },
+    {
+      "question": "Czy wiadomo, co jest następnym krokiem bez przedwczesnego wykładu?",
+      "result": "PASS",
+      "note": "Conditions, arrays and functions are named at the end without expanding their syntax."
+    }
+  ],
+  "issues": [],
+  "requiredChanges": [],
+  "optionalImprovements": [],
+  "limitations": [
+    "This is a fresh replacement review of the authorized published CONTENT revision in the current Codex session, not an independent provider review.",
+    "Installation guidance is intentionally general; operating-system-specific installation remains in linked official documentation.",
+    "Runtime evidence covers exact CLI examples on local PHP 8.2.4, not a web server, other operating systems or every PHP release.",
+    "PASS authorizes lineage validation of this one local CONTENT revision; it does not authorize a commit, push or deployment."
+  ],
+  "summary": "The expanded lesson now gives a first-time PHP learner a complete setup-to-edit-to-run-to-repair path, preserves productive difficulty and stays within the approved local CLI scope. Runtime, source, pedagogy and boundary checks pass with no required correction.",
+  "verdict": "PASS"
+}

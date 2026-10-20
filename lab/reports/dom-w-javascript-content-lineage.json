@@ -1,13 +1,14 @@
 {
   "articleId": "dom-w-javascript",
   "candidateRef": "lab/candidates/javascript-dom/article.json",
-  "currentContentHash": "090f321ee7cbd2e443a749e8fddb52207181497d4054fc353afa5857741746b8",
+  "currentContentHash": "b40bc082f4644d6cf44867d4bdcf5475a2978fc4c4051cddc5e52f7deec7fb74",
   "currentContentRef": "content/articles/dom-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "The single append-only record replays the only post-promotion change.",
     "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The colon-free title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "4e70662ab80236747c82dd816bf7abd8825a26e62ab219b9bbaeec36262915d7",
   "promotionAuditRef": "lab/reports/dom-w-javascript-promotion.json",
@@ -127,6 +128,71 @@
           {
             "from": "slug: dom-w-javascript",
             "to": "slug: dom-w-javascript\nfeaturedImage: ../../src/assets/dom-w-javascript.webp\nfeaturedAlt: Osoba układa moduły strony połączone w strukturę przypominającą drzewo DOM."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "dom-w-javascript",
+      "authorizationHash": "bd50710206b8bbbbd7fe7d01ce61e4a9efab614aabd69e067e0d31e386548808",
+      "authorizationRef": "lab/decisions/october-10-11-colon-free-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "1a0613bdb9b7d6c09a922f410ed52f1760ec7ada6edffa516a40c4946afe063e",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "090f321ee7cbd2e443a749e8fddb52207181497d4054fc353afa5857741746b8",
+      "promotionAuditRef": "lab/reports/dom-w-javascript-promotion.json",
+      "reason": "Replace a colon-separated title with one natural grammatical phrase.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "af490c0e36f7cab2b470dd186ab5f4489e86e4a667bcae0007e55ba267a665b9",
+      "timestamp": "2026-10-19T11:08:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia\"",
+            "to": "title: \"DOM w JavaScript z selektorami, bezpiecznym tekstem i zdarzeniami\""
+          },
+          {
+            "from": "updated: 2026-10-11T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "dom-w-javascript",
+      "authorizationHash": "bd50710206b8bbbbd7fe7d01ce61e4a9efab614aabd69e067e0d31e386548808",
+      "authorizationRef": "lab/decisions/october-10-11-colon-free-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "b40bc082f4644d6cf44867d4bdcf5475a2978fc4c4051cddc5e52f7deec7fb74",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "1a0613bdb9b7d6c09a922f410ed52f1760ec7ada6edffa516a40c4946afe063e",
+      "promotionAuditRef": "lab/reports/dom-w-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the colon-free metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "af490c0e36f7cab2b470dd186ab5f4489e86e4a667bcae0007e55ba267a665b9",
+      "timestamp": "2026-10-19T11:08:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# DOM w JavaScript: selektory, bezpieczny tekst i zdarzenia",
+            "to": "# DOM w JavaScript z selektorami, bezpiecznym tekstem i zdarzeniami"
           }
         ]
       }

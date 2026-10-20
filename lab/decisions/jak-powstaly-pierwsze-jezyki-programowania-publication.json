@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "manual-human-publication-decision-0.1",
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-18",
+  "authorization": "User instruction: add the HUMAN_WRITTEN article Jak powstały pierwsze języki programowania.",
+  "scope": "one local CONTENT article plus the Historia IT topic",
+  "route": "HUMAN_WRITTEN",
+  "candidateRef": "lab/candidates/jak-powstaly-pierwsze-jezyki-programowania/candidate.json",
+  "candidateHash": "8ce6cba65b828691f738429902cab8ccb1d9557478e452335216d7c0924a83f8",
+  "articleHash": "2b50db93b40778d4d60f6958bb3acf07f5175cf13496dffce42137b6593e27c0",
+  "criticReviewRef": "lab/reviews/jak-powstaly-pierwsze-jezyki-programowania/critic-review.json",
+  "criticReviewHash": "bdfa9c144886d033286de68b956ffbac791ea8771e07368a6c7741f7e1b7952a",
+  "destination": "content/articles/jak-powstaly-pierwsze-jezyki-programowania.md",
+  "topicDestination": "content/topics/historia-it.yaml",
+  "remotePublicationApproved": false,
+  "imageGenerationApproved": false
+}
+

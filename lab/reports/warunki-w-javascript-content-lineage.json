@@ -1,13 +1,14 @@
 {
   "articleId": "warunki-w-javascript",
   "candidateRef": "lab/candidates/javascript-if-else/article.json",
-  "currentContentHash": "a0361516388d6d31a5a184992f753c76cdd0496aa6624837327753edd8d179fd",
+  "currentContentHash": "202476ef74d00bd6102a439f6ca1c6d4bc4817f93efe688a1a6e2e642ab580ef",
   "currentContentRef": "content/articles/warunki-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "The single append-only record replays the only post-promotion change.",
     "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The colon-free title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "6893e836d792c1c0073870d8d4299e151b7c181adeb3c7a721e665d1601cb8f4",
   "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
@@ -127,6 +128,71 @@
           {
             "from": "slug: warunki-w-javascript",
             "to": "slug: warunki-w-javascript\nfeaturedImage: ../../src/assets/warunki-w-javascript.webp\nfeaturedAlt: Osoba ogląda na monitorze wireframe z rozgałęzionym schematem warunków JavaScript."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "warunki-w-javascript",
+      "authorizationHash": "bd50710206b8bbbbd7fe7d01ce61e4a9efab614aabd69e067e0d31e386548808",
+      "authorizationRef": "lab/decisions/october-10-11-colon-free-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "152d9fd0c7be6009bc47b2055a77dd9fc7717b26fced712990b54b1d1ec91e10",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "a0361516388d6d31a5a184992f753c76cdd0496aa6624837327753edd8d179fd",
+      "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
+      "reason": "Replace a colon-separated title with one natural grammatical phrase.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+      "timestamp": "2026-10-19T11:08:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Warunki w JavaScript: if, else i bezpieczna walidacja liczby\"",
+            "to": "title: \"Warunki w JavaScript z if, else i bezpieczną walidacją liczb\""
+          },
+          {
+            "from": "updated: 2026-10-11T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "warunki-w-javascript",
+      "authorizationHash": "bd50710206b8bbbbd7fe7d01ce61e4a9efab614aabd69e067e0d31e386548808",
+      "authorizationRef": "lab/decisions/october-10-11-colon-free-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "202476ef74d00bd6102a439f6ca1c6d4bc4817f93efe688a1a6e2e642ab580ef",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "152d9fd0c7be6009bc47b2055a77dd9fc7717b26fced712990b54b1d1ec91e10",
+      "promotionAuditRef": "lab/reports/warunki-w-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the colon-free metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "2f11a114aa56f5bc3b9a3a7053c5d651242d16426beeb90c9e619df2817658f7",
+      "timestamp": "2026-10-19T11:08:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Warunki w JavaScript: if, else i bezpieczna walidacja liczby",
+            "to": "# Warunki w JavaScript z if, else i bezpieczną walidacją liczb"
           }
         ]
       }

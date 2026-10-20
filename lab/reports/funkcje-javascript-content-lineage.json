@@ -1,0 +1,144 @@
+{
+  "articleId": "funkcje-javascript",
+  "candidateRef": "lab/candidates/javascript-functions-callbacks/article.json",
+  "currentContentHash": "9a4c5a0645d069c3c9bb3911e577ca375ca55ff023d0f7b1a001e5b50232063f",
+  "currentContentRef": "content/articles/funkcje-javascript.md",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "The human-selected title change is append-only, hash-bound to explicit authorization and preserves the technical review."
+  ],
+  "promotedContentHash": "92381ea9364ce2c8cddc156b12bb82e52ba743600e63a93c74aa52e39e30a57e",
+  "promotionAuditRef": "lab/reports/funkcje-javascript-promotion.json",
+  "records": [
+    {
+      "articleId": "funkcje-javascript",
+      "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+      "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "77b4d1a0cc67f0603ae1422bcf9490a992a39c9bcd8b84156ee7c6727bd83ef2",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "92381ea9364ce2c8cddc156b12bb82e52ba743600e63a93c74aa52e39e30a57e",
+      "promotionAuditRef": "lab/reports/funkcje-javascript-promotion.json",
+      "reason": "Replace a formulaic colon-separated title with a simpler reader-facing topic phrase.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+      "timestamp": "2026-10-19T10:36:26Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Funkcje JavaScript: parametry, return i callbacki\"",
+            "to": "title: \"Funkcje w JavaScript dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-16T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "funkcje-javascript",
+      "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+      "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "f5925537261bb52e8c823f51f2867f09f893be941082d5db309f4e3795d4ab3e",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "77b4d1a0cc67f0603ae1422bcf9490a992a39c9bcd8b84156ee7c6727bd83ef2",
+      "promotionAuditRef": "lab/reports/funkcje-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+      "timestamp": "2026-10-19T10:36:26Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Funkcje JavaScript: parametry, return i callbacki",
+            "to": "# Funkcje w JavaScript dla początkujących"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "funkcje-javascript",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "0574222c5480e6cde9efed35179c8eb5683be660335e90937a9e5965ca87b649",
+      "notes": [
+        "Only the front-matter title changed in this record."
+      ],
+      "previousContentHash": "f5925537261bb52e8c823f51f2867f09f893be941082d5db309f4e3795d4ab3e",
+      "promotionAuditRef": "lab/reports/funkcje-javascript-promotion.json",
+      "reason": "Apply the exact reader-facing title selected by the human in the title review.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Funkcje w JavaScript dla początkujących\"",
+            "to": "title: \"Jak działają funkcje w JavaScript\""
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "funkcje-javascript",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "9a4c5a0645d069c3c9bb3911e577ca375ca55ff023d0f7b1a001e5b50232063f",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "0574222c5480e6cde9efed35179c8eb5683be660335e90937a9e5965ca87b649",
+      "promotionAuditRef": "lab/reports/funkcje-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the human-selected metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Funkcje w JavaScript dla początkujących",
+            "to": "# Jak działają funkcje w JavaScript"
+          }
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidateHash": "d514c6d0a2bcbf9d586e48e72a394928e4979e38c16dc6401be8edea0c378fb9",
+  "status": "RECORDED"
+}

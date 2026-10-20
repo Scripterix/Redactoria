@@ -1,12 +1,12 @@
 ---
-title: "Git lokalnie: status, staging, commit i historia"
+title: "Git dla początkujących"
 description: "Praktyczne podstawy lokalnego Git: working tree, staging, status, diff, commit i krótka historia zmian."
 slug: git-lokalnie
 featuredImage: ../../src/assets/git-lokalnie.webp
 featuredAlt: Chłopak przenosi kartę pliku ze stołu roboczego przez staging do rozgałęzionej historii wersji.
 status: published
 created: 2026-10-14T00:00:00.000Z
-updated: 2026-10-14T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: web
 author:
@@ -49,7 +49,7 @@ redactoria:
   decision: rewrite
   modernization: major
 ---
-# Git lokalnie: status, staging, commit i historia
+# Git dla początkujących
 
 Zakres: cli 2.21.0.windows.1. Materiał dla początkujących i osób na poziomie średnim.
 

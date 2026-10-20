@@ -1,10 +1,12 @@
 ---
-title: "JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory"
+title: "Podstawy JavaScript dla początkujących"
 description: "Pierwszy program JavaScript w Node: console.log, wartości, const, let, typeof, operatory i template literal."
 slug: podstawy-javascript
+featuredImage: ../../src/assets/podstawy-javascript.webp
+featuredAlt: Chłopak widziany od tyłu naciska duży przycisk uruchamiający pierwszy program JavaScript na ekranie.
 status: published
 created: 2026-10-16T00:00:00.000Z
-updated: 2026-10-16T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: javascript
 author:
@@ -38,7 +40,7 @@ automation:
   last_checked: 2026-10-16T00:00:00.000Z
   update_priority: normal
 ---
-# JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory
+# Podstawy JavaScript dla początkujących
 
 Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 

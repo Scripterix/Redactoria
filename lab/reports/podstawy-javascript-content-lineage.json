@@ -1,0 +1,114 @@
+{
+  "articleId": "podstawy-javascript",
+  "candidateRef": "lab/candidates/javascript-language-foundation/article.json",
+  "currentContentHash": "ea554d88838b2de8ec9df8f0dffa9de0aca17e39d07d552e06dea537dd262c31",
+  "currentContentRef": "content/articles/podstawy-javascript.md",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "B6 foundation Featured Image metadata is recorded append-only and preserves the effective technical review."
+  ],
+  "promotedContentHash": "e8a9ed1343a1678cc0d5f0a582416c7f1e7fe5d9878d8ba31cfa5e32bed98fc7",
+  "promotionAuditRef": "lab/reports/podstawy-javascript-promotion.json",
+  "records": [
+    {
+      "articleId": "podstawy-javascript",
+      "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+      "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "be55d47ed6a52fd91e653a3c2af5970ab992e26b1683be321450efa0e64b9db5",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "e8a9ed1343a1678cc0d5f0a582416c7f1e7fe5d9878d8ba31cfa5e32bed98fc7",
+      "promotionAuditRef": "lab/reports/podstawy-javascript-promotion.json",
+      "reason": "Replace a formulaic colon-separated title with a simpler reader-facing topic phrase.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "fdebb15229eebe846b32eebe6281c9fbd783b05514111ce52023b087fb0e1fa4",
+      "timestamp": "2026-10-19T10:36:26Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory\"",
+            "to": "title: \"Podstawy JavaScript dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-16T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-javascript",
+      "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+      "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "746cff09050bd3dc10b51e14743e354678ebe80e5dfc58608bd5ff1b8a73504a",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "be55d47ed6a52fd91e653a3c2af5970ab992e26b1683be321450efa0e64b9db5",
+      "promotionAuditRef": "lab/reports/podstawy-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "fdebb15229eebe846b32eebe6281c9fbd783b05514111ce52023b087fb0e1fa4",
+      "timestamp": "2026-10-19T10:36:26Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# JavaScript od pierwszego uruchomienia: wartości, zmienne, typy i operatory",
+            "to": "# Podstawy JavaScript dla początkujących"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-javascript",
+      "authorizationHash": "cc3be3e919106fd8f43c50c3a82495ae1ea686d951b7f350097b904a7769414f",
+      "authorizationRef": "lab/decisions/b6-foundations-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "ea554d88838b2de8ec9df8f0dffa9de0aca17e39d07d552e06dea537dd262c31",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same local Astro asset is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "746cff09050bd3dc10b51e14743e354678ebe80e5dfc58608bd5ff1b8a73504a",
+      "promotionAuditRef": "lab/reports/podstawy-javascript-promotion.json",
+      "reason": "Assign the human-approved foundation illustration as both the article hero and listing thumbnail.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "fdebb15229eebe846b32eebe6281c9fbd783b05514111ce52023b087fb0e1fa4",
+      "timestamp": "2026-10-18T22:00:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: podstawy-javascript",
+            "to": "slug: podstawy-javascript\nfeaturedImage: ../../src/assets/podstawy-javascript.webp\nfeaturedAlt: Chłopak widziany od tyłu naciska duży przycisk uruchamiający pierwszy program JavaScript na ekranie."
+          }
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidateHash": "fdebb15229eebe846b32eebe6281c9fbd783b05514111ce52023b087fb0e1fa4",
+  "status": "RECORDED"
+}

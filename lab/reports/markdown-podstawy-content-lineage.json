@@ -1,12 +1,14 @@
 {
   "articleId": "markdown-podstawy",
   "candidateRef": "lab/candidates/markdown/article.json",
-  "currentContentHash": "7b266aadae334e18e5b9ea4546a49918ef5fdedf44ce49392cb79cf010ef3cd0",
+  "currentContentHash": "d16066702f78467daca7b4248b138a6254fd48ab6e4e09e798016791c1aeb492",
   "currentContentRef": "content/articles/markdown-podstawy.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "The human-selected title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "2ef7bc42076830ed4f2b3070b1feb695ce135d4751fbfcda0404e62f17c3f463",
   "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
@@ -96,6 +98,132 @@
           {
             "from": "slug: markdown-podstawy",
             "to": "slug: markdown-podstawy\nfeaturedImage: ../../src/assets/markdown-podstawy.webp\nfeaturedAlt: Dziewczyna przekłada karty składni Markdown w gotową, wyrenderowaną stronę."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "markdown-podstawy",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "a4c9e359683397ea3b09972d9e895b0e32b80e0cc769eba77f49cd0ad7dae5ec",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "7b266aadae334e18e5b9ea4546a49918ef5fdedf44ce49392cb79cf010ef3cd0",
+      "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
+      "reason": "Replace a colon-separated content inventory with a simple reader-focused title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0a1ba6f4d6bdddea87613b138fc8c7cac82b5f6b76f26ceeb386c37b3b18e35e",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Markdown: nagłówki, linki, listy i bloki kodu\"",
+            "to": "title: \"Markdown dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-12T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "markdown-podstawy",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "ab615ac5d254a8fc76c7f9d90142be9274530775950ac30bbfe37062f0ce1ac8",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "a4c9e359683397ea3b09972d9e895b0e32b80e0cc769eba77f49cd0ad7dae5ec",
+      "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0a1ba6f4d6bdddea87613b138fc8c7cac82b5f6b76f26ceeb386c37b3b18e35e",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Markdown: nagłówki, linki, listy i bloki kodu",
+            "to": "# Markdown dla początkujących"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "markdown-podstawy",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "286144e850912ab9170f19960fedad4c1a0fe74b78e785a3e7a0ca5df03c2b44",
+      "notes": [
+        "Only the front-matter title changed in this record."
+      ],
+      "previousContentHash": "ab615ac5d254a8fc76c7f9d90142be9274530775950ac30bbfe37062f0ce1ac8",
+      "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
+      "reason": "Apply the exact reader-facing title selected by the human in the title review.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0a1ba6f4d6bdddea87613b138fc8c7cac82b5f6b76f26ceeb386c37b3b18e35e",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Markdown dla początkujących\"",
+            "to": "title: \"Składnia Markdown na prostych przykładach\""
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "markdown-podstawy",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "d16066702f78467daca7b4248b138a6254fd48ab6e4e09e798016791c1aeb492",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "286144e850912ab9170f19960fedad4c1a0fe74b78e785a3e7a0ca5df03c2b44",
+      "promotionAuditRef": "lab/reports/markdown-podstawy-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the human-selected metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "0a1ba6f4d6bdddea87613b138fc8c7cac82b5f6b76f26ceeb386c37b3b18e35e",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Markdown dla początkujących",
+            "to": "# Składnia Markdown na prostych przykładach"
           }
         ]
       }

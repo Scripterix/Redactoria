@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "manual-editorial-candidate-0.1",
+  "status": "publication-candidate",
+  "route": "HUMAN_WRITTEN",
+  "articleKey": "jak-powstaly-pierwsze-jezyki-programowania",
+  "topic": "historia-it",
+  "title": "Jak powstały pierwsze języki programowania? Dziadek, osiem przełączników i FORTRAN",
+  "articleRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/article.md",
+  "articleHash": "8b679157ef276c7b865a9d6f08f73101996bca4ea5398e6bdd93a347ed54919d",
+  "suppliedRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/supplied.md",
+  "suppliedHash": "5f5d16f09d8a851b648f6c813bf675936d9f3a72b0fa83c87b7d83a781200f2f",
+  "provenanceRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/input-provenance.md",
+  "articleInputRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/article-input.md",
+  "criticReviewRef": "lab/reviews/jak-powstaly-pierwsze-jezyki-programowania/critic-review.json",
+  "criticReviewHash": "3e7ee4d66d798a5ff00a5ae055dd40dc5845c5c9ec7ae909c5231f78f4899b2b",
+  "wordCountProxy": 2719,
+  "verdict": "PASS",
+  "readyForManualPublication": true,
+  "approvedForPublication": true,
+  "approval": {
+    "approvedBy": "human",
+    "authority": "User instruction of 2026-10-18: add the HUMAN_WRITTEN article Jak powstały pierwsze języki programowania.",
+    "scope": "one article and its Historia IT topic; local CONTENT publication only"
+  },
+  "limitations": [
+    "This manual candidate does not conform to the automatic Promotion Gate candidate schemas because a human supplied the completed article and Writer 0.1 was intentionally not invoked.",
+    "It cannot be used as precedent for automatic publication of another HUMAN_WRITTEN article.",
+    "Git push, deployment, featured-image generation and B6 image changes remain outside this approval."
+  ],
+  "preparedAt": "2026-10-18"
+}

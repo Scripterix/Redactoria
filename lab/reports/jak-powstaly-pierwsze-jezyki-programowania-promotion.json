@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "manual-human-publication-audit-0.1",
+  "result": "PROMOTED_LOCAL",
+  "route": "HUMAN_WRITTEN",
+  "decisionRef": "lab/decisions/jak-powstaly-pierwsze-jezyki-programowania-publication.json",
+  "candidateRef": "lab/candidates/jak-powstaly-pierwsze-jezyki-programowania/candidate.json",
+  "candidateHash": "8ce6cba65b828691f738429902cab8ccb1d9557478e452335216d7c0924a83f8",
+  "suppliedRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/supplied.md",
+  "suppliedHash": "5f5d16f09d8a851b648f6c813bf675936d9f3a72b0fa83c87b7d83a781200f2f",
+  "articleRef": "lab/drafts/jak-powstaly-pierwsze-jezyki-programowania/article.md",
+  "articleHash": "2b50db93b40778d4d60f6958bb3acf07f5175cf13496dffce42137b6593e27c0",
+  "criticReviewRef": "lab/reviews/jak-powstaly-pierwsze-jezyki-programowania/critic-review.json",
+  "criticReviewHash": "bdfa9c144886d033286de68b956ffbac791ea8771e07368a6c7741f7e1b7952a",
+  "destination": "content/articles/jak-powstaly-pierwsze-jezyki-programowania.md",
+  "contentHash": "0ef54fed5f552e0d5da933475c1b82a7c51f660537efe5cfc1785f5b0b664eb3",
+  "topicDestination": "content/topics/historia-it.yaml",
+  "localPath": "/artykuly/jak-powstaly-pierwsze-jezyki-programowania/",
+  "topicPath": "/tematy/historia-it/",
+  "transforms": [
+    "complete Content Collection front matter",
+    "bibliography rendered from structured source metadata",
+    "removed internal editorial comment",
+    "two explicit reviewed factual-scope edits recorded in provenance"
+  ],
+  "remotePublicationApproved": false,
+  "gitAction": "none",
+  "deploymentAction": "none"
+}
+

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-19T23:45:00+02:00",
+  "scope": "php-foundations-beginner-setup-enrichment",
+  "authorization": "Expand only the published Podstawy PHP article after clarifying what a person who has never written PHP needs on their computer: whether PHP itself is installed, whether VS Code extensions are required, how to create, edit, save and run the first file, and then continue with the previously accepted pedagogical enrichment plan.",
+  "article": "content/articles/podstawy-php.md",
+  "teachingPlanRef": "lab/reports/podstawy-php-beginner-teaching-plan.md",
+  "requiredEvidence": [
+    "current official PHP installation and CLI documentation",
+    "current official VS Code PHP documentation",
+    "actual local PHP CLI execution of every complete article example",
+    "intentional syntax-error verification",
+    "beginner-light pedagogical review",
+    "replacement Critic review",
+    "append-only Content Lineage validation"
+  ],
+  "boundaries": {
+    "contentMeaningChanged": true,
+    "otherArticlesAuthorized": false,
+    "webServerLessonAuthorized": false,
+    "sourceHistoryMutable": false,
+    "engineArchitectureAuthorized": false,
+    "gitAuthorized": false,
+    "deploymentAuthorized": false
+  }
+}

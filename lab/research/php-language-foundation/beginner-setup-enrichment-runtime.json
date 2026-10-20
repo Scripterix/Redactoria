@@ -1,0 +1,83 @@
+{
+  "articleRef": "content/articles/podstawy-php.md",
+  "executedAt": "2026-10-19T22:00:00Z",
+  "execution": "actual-local-cli",
+  "intentionalError": {
+    "assertion": "Non-zero exit with a PHP parse or syntax diagnostic.",
+    "exitCode": 255,
+    "id": "intentional-parse-error",
+    "status": "PASS",
+    "stderr": "PHP Parse error:  syntax error, unexpected end of file, expecting \",\" or \";\" in Command line code on line 1\n",
+    "stdout": "\nParse error: syntax error, unexpected end of file, expecting \",\" or \";\" in Command line code on line 1\n"
+  },
+  "limitations": [
+    "Execution covers the exact complete PHP examples in this article and one intentional syntax error.",
+    "It verifies local PHP CLI behavior only; no web server, browser, database or cross-version parity is claimed."
+  ],
+  "runtime": "PHP 8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64)",
+  "schemaVersion": 1,
+  "status": "PASS",
+  "topic": "php-language-foundation",
+  "validExamples": {
+    "count": 7,
+    "results": [
+      {
+        "actualStdout": "Start PHP\n",
+        "exitCode": 0,
+        "expectedStdout": "Start PHP\n",
+        "id": "first-output",
+        "status": "PASS",
+        "stderr": ""
+      },
+      {
+        "actualStdout": "Uczę się PHP\n",
+        "exitCode": 0,
+        "expectedStdout": "Uczę się PHP\n",
+        "id": "edited-output",
+        "status": "PASS",
+        "stderr": ""
+      },
+      {
+        "actualStdout": "Cześć, Ada!\n",
+        "exitCode": 0,
+        "expectedStdout": "Cześć, Ada!\n",
+        "id": "named-value",
+        "status": "PASS",
+        "stderr": ""
+      },
+      {
+        "actualStdout": "string\nint\nbool\n",
+        "exitCode": 0,
+        "expectedStdout": "string\nint\nbool\n",
+        "id": "scalar-types",
+        "status": "PASS",
+        "stderr": ""
+      },
+      {
+        "actualStdout": "Przeczytane strony: 20\n",
+        "exitCode": 0,
+        "expectedStdout": "Przeczytane strony: 20\n",
+        "id": "pages-total",
+        "status": "PASS",
+        "stderr": ""
+      },
+      {
+        "actualStdout": "Brakuje średnika\n",
+        "exitCode": 0,
+        "expectedStdout": "Brakuje średnika\n",
+        "id": "fixed-semicolon",
+        "status": "PASS",
+        "stderr": ""
+      },
+      {
+        "actualStdout": "Produkt: Notatnik\nLiczba sztuk: 3\nRazem: 36 zł\n",
+        "exitCode": 0,
+        "expectedStdout": "Produkt: Notatnik\nLiczba sztuk: 3\nRazem: 36 zł\n",
+        "id": "shopping-total",
+        "status": "PASS",
+        "stderr": ""
+      }
+    ],
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-19T13:08:00+02:00",
+  "scope": "october-10-11-colon-free-titles",
+  "authorization": "Replace the colon constructions in every article title published on 10 and 11 October with lightly adjusted natural grammar.",
+  "articles": [
+    "dom-w-javascript",
+    "tablice-w-javascript",
+    "warunki-w-javascript",
+    "instrukcje-sterujace-php"
+  ],
+  "boundaries": {
+    "slugChanged": false,
+    "descriptionChanged": false,
+    "articleProseChanged": false,
+    "technicalMeaningChanged": false,
+    "immutableLabChanged": false,
+    "gitPushAuthorized": false
+  }
+}

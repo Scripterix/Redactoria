@@ -1,10 +1,10 @@
 ---
-title: "Funkcje JavaScript: parametry, return i callbacki"
+title: "Jak działają funkcje w JavaScript"
 description: "Podstawy funkcji JavaScript: parametry, return, obserwowanie wyniku i callback przekazany do Array.map."
 slug: funkcje-javascript
 status: published
 created: 2026-10-16T00:00:00.000Z
-updated: 2026-10-16T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: javascript
 author:
@@ -41,7 +41,7 @@ redactoria:
   decision: rewrite
   modernization: major
 ---
-# Funkcje JavaScript: parametry, return i callbacki
+# Jak działają funkcje w JavaScript
 
 Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 

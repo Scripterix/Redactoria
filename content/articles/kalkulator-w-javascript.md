@@ -1,12 +1,12 @@
 ---
-title: "Kalkulator w JavaScript: walidacja, funkcja i klasa"
+title: "Jak napisać prosty kalkulator w JavaScript"
 description: Prosty kalkulator w JavaScript z jawną walidacją liczb, obsługą operatorów oraz porównaniem funkcji i metody klasy.
 slug: kalkulator-w-javascript
 featuredImage: ../../src/assets/kalkulator-w-javascript.webp
 featuredAlt: Chłopak wkłada dane do maszyny, która sprawdza je i oblicza wynik.
 status: published
 created: 2026-10-12T00:00:00.000Z
-updated: 2026-10-12T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: javascript
 author:
@@ -40,7 +40,7 @@ redactoria:
   decision: rewrite
   modernization: major
 ---
-# Kalkulator w JavaScript: walidacja, funkcja i klasa
+# Jak napisać prosty kalkulator w JavaScript
 
 Zakres: node v24.16.0. Materiał dla początkujących i osób na poziomie średnim.
 

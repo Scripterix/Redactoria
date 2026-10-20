@@ -1,0 +1,189 @@
+{
+  "articleId": "podstawy-php",
+  "candidateRef": "lab/candidates/php-language-foundation/article.json",
+  "currentContentHash": "8800ec7720e108c4fc2be631c07cc2155c64381bf10fd458e1e834729adf857e",
+  "currentContentRef": "content/articles/podstawy-php.md",
+  "notes": [
+    "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "B6 foundation Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "Beginner setup enrichment is recorded as a substantive CONTENT_CHANGE followed by reviewed metadata evidence; the effective replacement review is VALID."
+  ],
+  "promotedContentHash": "d8dbb63b132facd45b4243cbe3082ed661279d86c5d734db0d4be85b1ef59d14",
+  "promotionAuditRef": "lab/reports/podstawy-php-promotion.json",
+  "records": [
+    {
+      "articleId": "podstawy-php",
+      "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+      "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "d9f919ecbc69cc0b440be230f1c4987246242e8ed447b9a49708113794215046",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "d8dbb63b132facd45b4243cbe3082ed661279d86c5d734db0d4be85b1ef59d14",
+      "promotionAuditRef": "lab/reports/podstawy-php-promotion.json",
+      "reason": "Replace a formulaic colon-separated title with a simpler reader-facing topic phrase.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+      "timestamp": "2026-10-19T10:36:26Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI\"",
+            "to": "title: \"Podstawy PHP dla początkujących\""
+          },
+          {
+            "from": "updated: 2026-10-16T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-php",
+      "authorizationHash": "79c96f7f6faa1c10e4f55509d95185ad76c2612e2b1938fadcda3a19860b865f",
+      "authorizationRef": "lab/decisions/latest-four-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "7ab3bb370bb3005ce900f92f2e608fee57effe2b17ece86ae2d1cf05765e6793",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "d9f919ecbc69cc0b440be230f1c4987246242e8ed447b9a49708113794215046",
+      "promotionAuditRef": "lab/reports/podstawy-php-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+      "timestamp": "2026-10-19T10:36:26Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# PHP od pierwszego skryptu: wartości, zmienne, typy, operatory i CLI",
+            "to": "# Podstawy PHP dla początkujących"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-php",
+      "authorizationHash": "cc3be3e919106fd8f43c50c3a82495ae1ea686d951b7f350097b904a7769414f",
+      "authorizationRef": "lab/decisions/b6-foundations-featured-images.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "c913f130664fb089e8630c70dcc220866fa1b42938da089182069d9aaa044907",
+      "notes": [
+        "Only featuredImage and featuredAlt frontmatter fields changed; the reviewed article body is byte-identical.",
+        "The same local Astro asset is rendered as the article hero and listing thumbnail."
+      ],
+      "previousContentHash": "7ab3bb370bb3005ce900f92f2e608fee57effe2b17ece86ae2d1cf05765e6793",
+      "promotionAuditRef": "lab/reports/podstawy-php-promotion.json",
+      "reason": "Assign the human-approved foundation illustration as both the article hero and listing thumbnail.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+      "timestamp": "2026-10-18T22:00:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "slug: podstawy-php",
+            "to": "slug: podstawy-php\nfeaturedImage: ../../src/assets/podstawy-php.webp\nfeaturedAlt: Chłopak umieszcza moduł wartości w maszynie łączącej dane, operator i wynik programu PHP."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-php",
+      "authorizationHash": "82c7350c926550a8f940ddfd1d67bdb27747373804b780c6377728408d46516e",
+      "authorizationRef": "lab/decisions/php-foundations-beginner-enrichment.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "CONTENT_CHANGE",
+      "newContentHash": "2c08a2fc5ef7dfcc1bb12193aa652a174474cc9cca5aa3c7aeca255a8f918aa5",
+      "notes": [
+        "The substantive body expansion invalidates the preceding effective review.",
+        "The next metadata record binds a fresh replacement PASS review to the complete final CONTENT bytes.",
+        "The immutable candidate, original draft, earlier reviews, promotion audit and preceding lineage records remain unchanged."
+      ],
+      "previousContentHash": "c913f130664fb089e8630c70dcc220866fa1b42938da089182069d9aaa044907",
+      "promotionAuditRef": "lab/reports/podstawy-php-promotion.json",
+      "reason": "Expand the PHP foundation lesson from three terse examples into a beginner-first setup, edit-run-observe, error-recovery and independent-practice sequence.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_INVALIDATED",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+      "timestamp": "2026-10-19T22:15:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": false,
+        "replacements": [
+          {
+            "from": "# Podstawy PHP dla początkujących\n\nZakres: cli 8.2.4 (cli) (built: Mar 14 2023 17:54:25) (ZTS Visual C++ 2019 x64). Materiał dla początkujących i osób na poziomie średnim.\n\n<a id=\"first-file\"></a>\n\n## Jeden plik i pierwszy wynik\n\nZapisz kod w pliku `start.php`. W terminalu uruchom `php start.php`. Ten mały cykl jest ważny: najpierw zapisujesz program, potem sprawdzasz jego dokładny wynik. `echo` wypisuje tekst. Nie potrzebujesz do tego serwera WWW ani formularza.\n\n### Pierwszy wynik z echo\n\n```php\n<?php\necho \"Start PHP\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nStart PHP\n```\n\n<a id=\"values-and-variables\"></a>\n\n## Wartość ma nazwę\n\nZmienna pozwala odwołać się do wartości przez nazwę. W PHP nazwa zmiennej zaczyna się od `$`. W tym przykładzie tekst, liczba i wartość logiczna są trzema prostymi wartościami scalar. `get_debug_type` pokazuje ich typ; to obserwacja, nie test poprawności całego programu.\n\n### Trzy wartości i ich typy\n\n```php\n<?php\n$name = 'Ada';\n$count = 2;\n$ready = true;\necho $name, \"\\n\";\necho get_debug_type($count), \"\\n\";\necho get_debug_type($ready), \"\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nAda\nint\nbool\n```\n\n<a id=\"operators\"></a>\n\n## Operator tworzy nowy wynik\n\nOperator `+` dodaje wartości liczbowe. Zapis po prawej stronie przypisania jest obliczany, a wynik trafia do zmiennej po lewej stronie. Zmienna nie musi przechowywać wyłącznie liczby: wcześniej zapisana nazwa i obliczony wynik mogą zostać wypisane razem.\n\n### Suma zapisana pod nową nazwą\n\n```php\n<?php\n$first = 2;\n$second = 3;\n$total = $first + $second;\necho \"Suma: \", $total, \"\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nSuma: 5\n```\n\n---\n\n- Zakres wykonania to lokalne PHP 8.2.4 CLI. Materiał nie omawia tablic, funkcji, formularzy, serwera WWW, deklaracji typów ani zgodności z innymi wersjami PHP.\n",
+            "to": "# Podstawy PHP dla początkujących\n\nJeśli nigdy wcześniej nie pisałeś PHP na swoim komputerze, nie zaczynaj od zapamiętywania składni. Najpierw przygotuj prosty warsztat i sprawdź, co wykonuje kod. Do tej lekcji potrzebujesz tylko:\n\n- edytora kodu, na przykład Visual Studio Code;\n- interpretera PHP działającego w terminalu;\n- zwykłego folderu na własne pliki.\n\nNie potrzebujesz jeszcze serwera WWW, przeglądarki, bazy danych, Composera ani debuggera Xdebug. Przykłady z tej lekcji zostały wykonane w lokalnym PHP 8.2.4 CLI na Windows. Numer Twojej wersji może być inny.\n\n## Co właściwie trzeba zainstalować\n\nPlik z rozszerzeniem `.php` jest tekstem zawierającym kod źródłowy. VS Code pozwala ten tekst wygodnie pisać i edytować, ale sam go nie wykonuje. Kod wykonuje interpreter PHP.\n\nNajprostszy model wygląda tak:\n\n```text\nplik start.php → interpreter PHP → wynik albo komunikat błędu w terminalu\n```\n\nVS Code ma podstawową obsługę PHP, między innymi kolorowanie składni i proste podpowiedzi. Dodatkowe rozszerzenie, takie jak Intelephense, może zapewnić bogatsze podpowiedzi i nawigację po kodzie, ale nie jest wymagane do wykonania tej lekcji. Rozszerzenie również nie zastępuje interpretera PHP.\n\nJeśli masz już XAMPP, PHP może być zainstalowane razem z nim. Do pracy w terminalu nie musisz uruchamiać Apache ani panelu XAMPP. Najpierw sprawdź dostępne PHP, zamiast instalować drugą kopię.\n\n## Czy PHP jest już dostępne\n\nOtwórz terminal. W VS Code wybierz **Terminal → New Terminal**, a następnie wpisz:\n\n```powershell\nphp --version\n```\n\nJeśli zobaczysz wynik podobny do tego, możesz przejść dalej:\n\n```text\nPHP 8.2.4 (cli)\n```\n\nSkrót CLI oznacza tutaj program PHP uruchamiany z wiersza poleceń. Właśnie tego wariantu potrzebujesz do pierwszych ćwiczeń.\n\nJeśli terminal informuje, że polecenie `php` nie istnieje albo nie zostało rozpoznane, możliwe są dwie sytuacje:\n\n1. PHP nie jest jeszcze zainstalowane — zainstaluj PHP CLI zgodnie z instrukcją dla swojego systemu.\n2. PHP jest zainstalowane, ale folder zawierający `php.exe` nie znajduje się w zmiennej `PATH` — dodaj ten folder do `PATH` i otwórz terminal ponownie.\n\nW instalacji XAMPP plik może znajdować się na przykład pod ścieżką `C:\\xampp\\php\\php.exe`. Możesz wtedy najpierw sprawdzić go bez zmieniania `PATH`:\n\n```powershell\nC:\\xampp\\php\\php.exe --version\n```\n\nNie przechodź dalej, dopóki jedno z tych poleceń nie pokaże wersji PHP. Dzięki temu późniejszy problem z uruchomieniem pliku nie będzie zagadką dotyczącą instalacji.\n\n<a id=\"first-file\"></a>\n\n## Utwórz folder i pierwszy plik\n\nW VS Code wybierz **File → Open Folder** i utwórz folder `pierwszy-php`. Otwieranie całego folderu jest ważne: terminal uruchomiony w VS Code zacznie wtedy pracę właśnie w tym miejscu.\n\nW panelu Explorer utwórz plik:\n\n```text\nstart.php\n```\n\nSprawdź nazwę. Plik powinien kończyć się na `.php`, a nie na `.php.txt`. Rozszerzenie pomaga edytorowi rozpoznać język i od razu pokazuje, z jakim rodzajem pliku pracujesz.\n\nOtwórz ponownie terminal poleceniem **Terminal → New Terminal** i wpisz:\n\n```powershell\ndir\n```\n\nNa liście powinien znaleźć się `start.php`. Jeśli go nie widzisz, terminal prawdopodobnie pracuje w innym folderze.\n\n## Napisz pierwszy program\n\nW pliku `start.php` wpisz:\n\n```php\n<?php\necho \"Start PHP\\n\";\n```\n\nKażdy element ma zadanie:\n\n- `<?php` informuje, że zaczyna się kod PHP;\n- `echo` wysyła wartość do wyniku programu;\n- tekst między cudzysłowami jest wartością, którą chcesz wypisać;\n- `\\n` przechodzi do następnego wiersza terminala;\n- średnik `;` kończy instrukcję.\n\nNa początku pliku używaj `<?php`. W pliku zawierającym wyłącznie PHP nie potrzebujesz zamykającego `?>`.\n\n## Zapisz i uruchom kod\n\nZapisz plik skrótem **Ctrl+S**. Następnie uruchom go w terminalu:\n\n\n```powershell\nphp start.php\n```\n\nOczekiwany wynik:\n\n```text\nStart PHP\n```\n\nPolecenie składa się z dwóch części: `php` uruchamia interpreter, a `start.php` wskazuje plik do wykonania. PHP czyta instrukcje od góry do dołu i zatrzymuje się po wykonaniu ostatniej.\n\nZapamiętaj podstawowy cykl pracy:\n\n```text\nnapisz → zapisz → uruchom → przeczytaj wynik\n```\n\n## Zmień program i uruchom go ponownie\n\nZmień tekst w pliku:\n\n```php\n<?php\necho \"Uczę się PHP\\n\";\n```\n\nZanim uruchomisz kod, przewidź dokładny wynik. Następnie zapisz plik, przejdź do terminala, naciśnij strzałkę w górę, aby przywołać poprzednie polecenie, i zatwierdź je klawiszem Enter.\n\nOczekiwany wynik:\n\n```text\nUczę się PHP\n```\n\nJeśli nadal widzisz stary tekst, najpierw sprawdź, czy plik został zapisany. Edytowanie i uruchamianie to dwie oddzielne czynności.\n\n<a id=\"values-and-variables\"></a>\n\n## Wartość ma nazwę\n\nProgram staje się użyteczniejszy, gdy może przechowywać wartość pod nazwą. Taka nazwa to zmienna. W PHP zaczyna się ona od znaku dolara.\n\n```php\n<?php\n$name = 'Ada';\necho \"Cześć, \", $name, \"!\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nCześć, Ada!\n```\n\nInstrukcja `$name = 'Ada';` zapisuje tekst `Ada` pod nazwą `$name`. Znak `=` oznacza tutaj przypisanie: wartość z prawej strony trafia do zmiennej po lewej stronie. `echo` może wypisać kilka wartości oddzielonych przecinkami.\n\nZmień `Ada` na swoje imię. Przed uruchomieniem programu przewidź, co pojawi się w terminalu.\n\n## Wartości mają typy\n\nTekst, liczba całkowita i odpowiedź „tak lub nie” są różnymi rodzajami wartości. PHP nazywa je odpowiednio `string`, `int` i `bool`. Wbudowane narzędzie `get_debug_type()` przyjmuje wartość i zwraca nazwę jej typu. Użyjemy go jak lupy — nie uczymy się jeszcze tworzenia własnych funkcji.\n\n```php\n<?php\n$name = 'Ada';\n$count = 2;\n$ready = true;\necho get_debug_type($name), \"\\n\";\necho get_debug_type($count), \"\\n\";\necho get_debug_type($ready), \"\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nstring\nint\nbool\n```\n\nTe trzy rodzaje należą do prostych typów skalarnych. Nie musisz teraz zapamiętywać tej nazwy. Ważniejsze jest rozróżnienie, czy pracujesz z tekstem, liczbą, czy stanem `true` albo `false`.\n\n<a id=\"operators\"></a>\n\n## Operator tworzy nowy wynik\n\nOperator wykonuje działanie na wartościach. Operator `+` dodaje liczby. Najpierw PHP oblicza prawą stronę przypisania, a potem zapisuje wynik w zmiennej po lewej stronie.\n\nZałóżmy, że chcesz policzyć, ile stron przeczytałeś w ciągu dwóch dni:\n\n```php\n<?php\n$yesterday = 8;\n$today = 12;\n$totalPages = $yesterday + $today;\necho \"Przeczytane strony: \", $totalPages, \"\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nPrzeczytane strony: 20\n```\n\nZmień `$today` z `12` na `15`. Najpierw oblicz wynik sam, a dopiero później uruchom program.\n\n## Błąd też przekazuje informację\n\nProgramista nie tylko pisze kod. Regularnie czyta błędy i poprawia ich przyczynę. Usuń średnik z instrukcji `echo`, aby celowo utworzyć niepoprawny kod:\n\n```php\n<?php\necho \"Brakuje średnika\\n\"\n```\n\nZapisz plik i uruchom `php start.php`. PHP nie wykona programu. Zobaczysz komunikat o błędzie składni. Jego dokładne brzmienie zależy od wersji, ale powinien wskazać plik i okolicę, w której parser nie potrafił kontynuować.\n\nWskazana linia może znajdować się tuż za rzeczywistą przyczyną. Sprawdź więc również poprzednią instrukcję. Przywróć średnik:\n\n```php\n<?php\necho \"Brakuje średnika\\n\";\n```\n\nZapisz i uruchom plik ponownie. Program powinien zakończyć się poprawnie. To jest pełny cykl pracy:\n\n```text\nnapisz → przewidź → uruchom → przeczytaj wynik lub błąd → popraw\n```\n\n## Samodzielne ćwiczenie: prosty koszt zakupów\n\nUtwórz nowy plik `zakupy.php`. Program ma:\n\n1. zapisać nazwę produktu;\n2. zapisać cenę jednej sztuki;\n3. zapisać liczbę sztuk;\n4. pomnożyć cenę przez liczbę sztuk;\n5. wypisać nazwę produktu i łączny koszt.\n\nZanim zajrzysz do rozwiązania, spróbuj sam. Potrzebny operator mnożenia to `*`. Możesz użyć nazw `$product`, `$price`, `$quantity` i `$total`.\n\n### Przykładowe rozwiązanie\n\n```php\n<?php\n$product = 'Notatnik';\n$price = 12;\n$quantity = 3;\n$total = $price * $quantity;\n\necho \"Produkt: \", $product, \"\\n\";\necho \"Liczba sztuk: \", $quantity, \"\\n\";\necho \"Razem: \", $total, \" zł\\n\";\n```\n\nOczekiwany wynik:\n\n```text\nProdukt: Notatnik\nLiczba sztuk: 3\nRazem: 36 zł\n```\n\nZmień produkt, cenę i liczbę sztuk. Za każdym razem przewiduj wynik przed uruchomieniem kodu.\n\n## Gdy program nie działa\n\n| Objaw | Co sprawdzić najpierw |\n| --- | --- |\n| Polecenie `php` nie zostało rozpoznane | Czy `php --version` działa i czy folder z `php.exe` jest w `PATH` |\n| `Could not open input file` | Czy terminal jest w folderze zawierającym wskazany plik |\n| Widzisz poprzedni wynik | Czy zapisałeś plik skrótem Ctrl+S |\n| VS Code nie koloruje kodu | Czy nazwa naprawdę kończy się na `.php`, a nie `.php.txt` |\n| Pojawia się `Parse error` | Sprawdź wskazaną linię i instrukcję bezpośrednio przed nią, zwłaszcza średniki i cudzysłowy |\n\nNie poprawiaj kilku rzeczy naraz. Zmień jedną rzecz, zapisz plik i uruchom program ponownie. Dzięki temu wiesz, która zmiana rozwiązała problem.\n\n## Co już potrafisz\n\nPo wykonaniu ćwiczeń potrafisz:\n\n- sprawdzić, czy interpreter PHP jest dostępny;\n- utworzyć i edytować plik `.php` w VS Code;\n- zapisać i uruchomić program w terminalu;\n- odróżnić kod źródłowy, wynik i komunikat błędu;\n- użyć `echo`, wartości, zmiennej i prostego operatora;\n- przewidzieć wynik i poprawić prosty błąd składni.\n\nNastępnym krokiem są instrukcje warunkowe, które wykorzystują wartości `true` i `false` do wybierania jednej z kilku dróg. Później możesz przejść do tablic i funkcji. Nie są one potrzebne do zrozumienia pierwszego lokalnego programu.\n\n---\n\n- Zakres wykonania to lokalne PHP 8.2.4 CLI na Windows. Materiał nie omawia formularzy, obsługi HTTP, serwera WWW, baz danych, Composera, tablic, pętli, własnych funkcji, klas, frameworków, deklaracji typów ani zgodności każdego komunikatu diagnostycznego z innymi wersjami PHP.\n"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "podstawy-php",
+      "authorizationHash": "82c7350c926550a8f940ddfd1d67bdb27747373804b780c6377728408d46516e",
+      "authorizationRef": "lab/decisions/php-foundations-beginner-enrichment.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "8800ec7720e108c4fc2be631c07cc2155c64381bf10fd458e1e834729adf857e",
+      "notes": [
+        "The description and source list changed together with the reviewed body enrichment.",
+        "Seven complete examples and one intentional syntax error passed actual local PHP 8.2.4 CLI execution.",
+        "The fresh review covers official-source alignment, pedagogical order, productive difficulty, code correctness and scope boundaries."
+      ],
+      "previousContentHash": "2c08a2fc5ef7dfcc1bb12193aa652a174474cc9cca5aa3c7aeca255a8f918aa5",
+      "promotionAuditRef": "lab/reports/podstawy-php-promotion.json",
+      "reason": "Update the article description and add official PHP and VS Code sources that support the newly authorized setup guidance.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": {
+        "ref": "lab/reviews/php-language-foundation/beginner-setup-enrichment-review.json",
+        "reviewedContentHash": "8800ec7720e108c4fc2be631c07cc2155c64381bf10fd458e1e834729adf857e",
+        "sha256": "147ca2e41413d3965985a5fca00e2a9e9cefa236d11824250c851b74a01379ed",
+        "verdict": "PASS"
+      },
+      "reviewImpact": "REVIEW_RECHECK_REQUIRED",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+      "timestamp": "2026-10-19T22:15:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "description: \"Pierwszy skrypt PHP w terminalu: echo, wartości, zmienne, podstawowe typy scalar i prosty operator arytmetyczny.\"",
+            "to": "description: \"Jak przygotować PHP i VS Code, utworzyć pierwszy plik, uruchamiać i poprawiać kod oraz poznać echo, zmienne, typy i proste obliczenia.\""
+          },
+          {
+            "from": "sources:\n  - title: \"PHP Manual — Basics: Variables\"",
+            "to": "sources:\n  - title: \"PHP Manual — General Installation Considerations\"\n    url: https://www.php.net/manual/en/install.general.php\n    publisher: PHP Documentation\n    accessed: 2026-10-19\n  - title: \"PHP Manual — Running PHP on the command line on Windows systems\"\n    url: https://www.php.net/install.windows.commandline.php\n    publisher: PHP Documentation\n    accessed: 2026-10-19\n  - title: \"PHP Manual — Command line usage\"\n    url: https://www.php.net/manual/en/features.commandline.usage.php\n    publisher: PHP Documentation\n    accessed: 2026-10-19\n  - title: \"PHP Manual — Basic syntax\"\n    url: https://www.php.net/manual/en/language.basic-syntax.php\n    publisher: PHP Documentation\n    accessed: 2026-10-19\n  - title: \"PHP in Visual Studio Code\"\n    url: https://code.visualstudio.com/docs/languages/php\n    publisher: Visual Studio Code Documentation\n    accessed: 2026-10-19\n  - title: \"PHP Manual — Basics: Variables\""
+          }
+        ]
+      }
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidateHash": "9d193aee782bd6e3e043c4f9782dc8bc7ef12d82223d5792b9fc1c1792d77896",
+  "status": "RECORDED"
+}

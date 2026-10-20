@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-19T12:36:26+02:00",
+  "scope": "latest-four-reader-focused-titles",
+  "authorization": "Replace the latest four colon-separated article titles with simple, natural wording based on familiar topic phrases or a concrete reader task, following the humanization guidance.",
+  "articles": [
+    "podstawy-php",
+    "podstawy-javascript",
+    "funkcje-javascript",
+    "google-ai-search-2026"
+  ],
+  "boundaries": {
+    "slugChanged": false,
+    "descriptionChanged": false,
+    "articleProseChanged": false,
+    "technicalMeaningChanged": false,
+    "immutableLabChanged": false,
+    "gitPushAuthorized": false
+  }
+}

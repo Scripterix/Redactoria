@@ -1,10 +1,12 @@
 ---
-title: "Google AI Search 2026: jak tworzyć treści widoczne w AI Overviews i AI Mode"
+title: "Jak zwiększyć widoczność treści w Google AI Overviews i AI Mode"
 description: Jak działa widoczność źródeł w Google AI Overviews i AI Mode oraz które praktyki SEO, treści i pomiaru mają znaczenie w 2026 roku.
 slug: google-ai-search-2026
+featuredImage: "../../src/assets/Strategia widoczności w świecie AI.png"
+featuredAlt: Dwie osoby analizują schemat widoczności strony w wyszukiwarce wspieranej przez sztuczną inteligencję.
 status: published
 created: 2026-10-16T00:00:00.000Z
-updated: 2026-10-16T00:00:00.000Z
+updated: 2026-10-19T00:00:00.000Z
 domain: programming
 topic: web
 author:

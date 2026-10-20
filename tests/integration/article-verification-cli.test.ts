@@ -70,7 +70,7 @@ describe('verify:article operator CLI', () => {
 		], verify)).stdout));
 		expect(result.areas.publication.status).toBe('PASS');
 		expect(Object.values(result.areas.publication.checks).every(check => check.status === 'PASS')).toBe(true);
-		expect(result.areas.publication.checks.contentLineage.detail).toContain('4 post-promotion lineage record(s)');
+		expect(result.areas.publication.checks.contentLineage.detail).toContain('6 post-promotion lineage record(s)');
 		expect(result.overall).toBe('PASS');
 	});
 

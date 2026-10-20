@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "approvedBy": "human",
+  "approvedAt": "2026-10-19T00:00:00+02:00",
+  "scope": "php-javascript-foundations-featured-images",
+  "authorization": "Generate and assign two light Redactoria illustrations in the accepted closed palette: JavaScript as Pierwsze klikniecie with a boy seen from behind pressing a front-facing button, and PHP as Warsztat podstaw PHP with a small character and a dominant three-stage machine. Preserve the required small-character proportion and use both images as featured images and listing thumbnails.",
+  "articles": [
+    "podstawy-javascript",
+    "podstawy-php"
+  ],
+  "boundaries": {
+    "articleBodyChanged": false,
+    "technicalMeaningChanged": false,
+    "sourceOrHistoricalLabChanged": false,
+    "paletteExpanded": false,
+    "gitPushAuthorized": false,
+    "deploymentAuthorized": false,
+    "skillCreationDeferredUntilHumanAcceptance": true
+  }
+}

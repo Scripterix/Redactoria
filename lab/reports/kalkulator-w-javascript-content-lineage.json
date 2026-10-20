@@ -1,12 +1,14 @@
 {
   "articleId": "kalkulator-w-javascript",
   "candidateRef": "lab/candidates/javascript-calculator/article.json",
-  "currentContentHash": "189e662dd015029753f0685046fbc90a1f673b1127880791820988b4ec714a33",
+  "currentContentHash": "cf8ba6e56bf47b42084d5c5a3ad6b097fc4bb8872ad0e65a71f72bfd6a0d7348",
   "currentContentRef": "content/articles/kalkulator-w-javascript.md",
   "notes": [
     "The exact initial promotion remains reproducible from the immutable candidate and publication decision.",
     "Reader-copy cleanup is append-only, hash-bound to explicit human authorization and preserves the effective Critic review.",
-    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review."
+    "Article-specific Featured Image metadata is recorded append-only and preserves the effective technical review.",
+    "The reader-focused title change is append-only, hash-bound to explicit human authorization and preserves the technical review.",
+    "The human-selected title change is append-only, hash-bound to explicit authorization and preserves the technical review."
   ],
   "promotedContentHash": "68ce56358302f153fca5e0293c36418c77180105e75b3b3a2384e7074d36251e",
   "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
@@ -96,6 +98,132 @@
           {
             "from": "slug: kalkulator-w-javascript",
             "to": "slug: kalkulator-w-javascript\nfeaturedImage: ../../src/assets/kalkulator-w-javascript.webp\nfeaturedAlt: Chłopak wkłada dane do maszyny, która sprawdza je i oblicza wynik."
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "kalkulator-w-javascript",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "8749428b4bcd4674241a44b805cd50deee88eff5edc7c23a0ef1c7c16b252854",
+      "notes": [
+        "Only the front-matter title and updated date changed in this record."
+      ],
+      "previousContentHash": "189e662dd015029753f0685046fbc90a1f673b1127880791820988b4ec714a33",
+      "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
+      "reason": "Replace a colon-separated content inventory with a simple reader-focused title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Kalkulator w JavaScript: walidacja, funkcja i klasa\"",
+            "to": "title: \"Kalkulator w JavaScript krok po kroku\""
+          },
+          {
+            "from": "updated: 2026-10-12T00:00:00.000Z",
+            "to": "updated: 2026-10-19T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "kalkulator-w-javascript",
+      "authorizationHash": "c89c2f198f81a376494043781a947626794028c2129e784f3cf2ea5fa4010b93",
+      "authorizationRef": "lab/decisions/october-12-14-title-humanization.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "fe4399557ac54630fba474141fe90c4a94371c1d2f3f598cdce347553ac9ac60",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "8749428b4bcd4674241a44b805cd50deee88eff5edc7c23a0ef1c7c16b252854",
+      "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the reader-focused metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+      "timestamp": "2026-10-19T10:44:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Kalkulator w JavaScript: walidacja, funkcja i klasa",
+            "to": "# Kalkulator w JavaScript krok po kroku"
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "kalkulator-w-javascript",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "METADATA_ONLY",
+      "newContentHash": "6f935b88762c8761f89717fbcdd5ba32b00822d8f0a4604cf4da6ca3716bfffc",
+      "notes": [
+        "Only the front-matter title changed in this record."
+      ],
+      "previousContentHash": "fe4399557ac54630fba474141fe90c4a94371c1d2f3f598cdce347553ac9ac60",
+      "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
+      "reason": "Apply the exact reader-facing title selected by the human in the title review.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "metadata-replacements",
+        "replacements": [
+          {
+            "from": "title: \"Kalkulator w JavaScript krok po kroku\"",
+            "to": "title: \"Jak napisać prosty kalkulator w JavaScript\""
+          }
+        ]
+      }
+    },
+    {
+      "articleId": "kalkulator-w-javascript",
+      "authorizationHash": "2a8f11b79bef9ca387e0585ce447bb789df42b1ca008153e2fa53d0bb3f6dc5c",
+      "authorizationRef": "lab/decisions/human-selected-article-titles.json",
+      "authorizedBy": "human",
+      "backfilled": false,
+      "changeType": "TYPO_FIX",
+      "newContentHash": "cf8ba6e56bf47b42084d5c5a3ad6b097fc4bb8872ad0e65a71f72bfd6a0d7348",
+      "notes": [
+        "Only the Markdown H1 changed; technical prose and code are byte-identical."
+      ],
+      "previousContentHash": "6f935b88762c8761f89717fbcdd5ba32b00822d8f0a4604cf4da6ca3716bfffc",
+      "promotionAuditRef": "lab/reports/kalkulator-w-javascript-promotion.json",
+      "reason": "Keep the visible Markdown heading consistent with the human-selected metadata title.",
+      "recordType": "CONTENT_LINEAGE_RECORD",
+      "replacementReview": null,
+      "reviewImpact": "REVIEW_STILL_VALID",
+      "schemaVersion": 1,
+      "sourceCandidateHash": "a5520a73748b2637ad880a740d421f9f3062a3233835cca6373b46a89b7a7d84",
+      "timestamp": "2026-10-19T10:58:00Z",
+      "transformation": {
+        "kind": "body-replacements",
+        "meaningUnchanged": true,
+        "replacements": [
+          {
+            "from": "# Kalkulator w JavaScript krok po kroku",
+            "to": "# Jak napisać prosty kalkulator w JavaScript"
           }
         ]
       }

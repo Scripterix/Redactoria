@@ -1,7 +1,17 @@
 # Active plans
 
-No active execution plan. The end-of-day checkpoint is complete; further work
-requires a new bounded plan.
+[043: Golden pedagogy rule, History of IT article and B6 images](043-pedagogy-history-it-and-b6-images.md)
+is the current bounded plan. It records a plan only: canonical pedagogy linkage,
+a LAB-first `HUMAN_WRITTEN` history article route, use of the existing topic model
+for Historia IT, and a separately approved three-image pass for the B6 foundation
+articles. It grants no CONTENT, image-generation, Git or deployment authority.
+
+The previous end-of-day checkpoint is complete.
+
+Most recent completed work: [048: PHP foundations beginner setup and practice](../completed/048-php-foundations-beginner-enrichment.md)
+expands one published article with the missing first-computer setup, edit-run-debug
+loop and bounded practice. Fresh runtime, pedagogical, replacement-review and
+lineage evidence pass; no Git or deployment action occurred.
 
 Most recent completed work: [042: End-of-day closure](../completed/042-end-of-day-closure.md)
 records the approximate session-log time observations and the verified local

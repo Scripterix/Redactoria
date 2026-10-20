@@ -114,6 +114,13 @@ if/else, JavaScript Arrays i DOM przeszły oddzielne human publication decisions
 Promotion Gate, CONTENT lineage i produkcyjny quality gate. Pięć pełnych próbek
 potwierdza wspólny przebieg bez zmiany ról runtime agentów.
 
+Current observation (2026-10-16): the B6 three-article batch took an approximate
+19 min 36 s and produced 75 LAB artifacts (~825 KB), 12 manual module runs and
+9 executed examples. This is an experiment signal, not a conclusion: compare a
+future single-article run by stage boundaries, artifacts, re-reads, revisions and
+compaction. Do not derive caching, compression, orchestration, an Article Manifest
+or auto-batching from this one observation.
+
 **Minimalny eksperyment**
 
 Wykonany: przeprowadzić osobno JavaScript if/else, JavaScript Arrays i DOM bez

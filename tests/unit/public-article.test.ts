@@ -40,6 +40,9 @@ describe('Human-authorized PHP public CONTENT changes', () => {
 		const body = content.replace(/^---\r?\n[^]*?\r?\n---\r?\n/, '');
 		const note = 'Nota redakcyjna: draft w LAB, nie publikacja. Podstawa: zwalidowany Research Packet w zakresie zgody B2 oraz rzeczywiste wykonania PHP 8.4 i 8.5. Mapa evidence, provenance i przyszłe interakcje znajdują się w article.json.\n\n';
 		expect(candidate.split(note)).toHaveLength(2);
-		expect(body).toBe(candidate.replace(oldAudience, newAudience).replace(note, ''));
+		expect(body).toBe(candidate
+			.replace(oldAudience, newAudience)
+			.replace(note, '')
+			.replace('# Instrukcje sterujące PHP: warunki i pętle', '# Instrukcje sterujące w PHP z warunkami i pętlami'));
 	});
 });
